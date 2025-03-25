@@ -1,0 +1,37 @@
+# Makefile KStars docs latex-imageconvert
+# Convert all non standard image formats to latex friendly
+#
+# Latex can work with svg, but inkscape is needed!
+#
+WDIR=${PWD}
+
+SVGCC=inkscape
+# image conversion
+SIPS=sips
+CONVERT=convert
+
+
+SVGToPDF := $(wildcard *.svg)
+GIFToPNG := $(wildcard *.gif)
+svgConverted := $(SVGToPDF:.svg=.pdf)
+gifConverted := $(GIFToPNG:.gif=.png)
+
+all: $(gifConverted) $(svgConverted)
+	# Modify paths from original tex file
+	sed -i -e 's/}\.svg/}\.pdf/g; s/}\.gif/}\.png/g' KStarsHandbook.tex
+	sed -i -e 's/^LATEXMKOPTS.*$//LATEXMKOPTS=-xelatex -interaction=nonstopmode/' Makefile
+	# compile TeX file
+	# xelatex kritaManual.tex -interaction nonstopmode
+
+%.pdf: %.svg
+	$(SVGCC) $(WDIR)/$< -z -A $(WDIR)/$@
+
+%.png: %.gif
+ifeq ($(TERM_PROGRAM),Apple_Terminal)
+	$(SIPS) -s format png $< --out $@
+else
+	$(CONVERT) $< -flatten PNG32:$@
+endif
+
+clean:
+	rm $(gifConverted) $(svgConverted)

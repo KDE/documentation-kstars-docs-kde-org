@@ -1,0 +1,159 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KStars Handbook 3.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-12 15:53+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ko <LL@li.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../user_manual/indi-remote-control.rst:3
+msgid "Remote Device Control"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:5
+msgid ""
+"KStars provides a simple yet powerful layer for remote device control. A "
+"detailed description of the layer is described in the INDI `white paper "
+"<https://www.clearskyinstitute.com/INDI/INDI.pdf>`__."
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:10
+msgid ""
+"You need to configure both the server and client machines for remote "
+"control:"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:13
+msgid ""
+"``Server``: To prepare a device for remote control, follow the same steps in"
+" the :ref:`local/server <indi-indi-setup>` setup. When you start a device "
+"service in the ``Device Manager``, a port number is displayed under the "
+"``Port`` column. In addition to the port number, you also need the hostname "
+"or IP address of your server."
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:21
+msgid ""
+"``Client``: Select the ``Tools`` → ``Devices`` → ``Device Manager...`` menu "
+"item and you can add, modify, or delete hosts into ``Client`` tab. Add a "
+"host by clicking on the ``Add`` button. Enter the hostname/IP address of the"
+" server in the ``Host``: field, and enter the port number obtained from the "
+"*server* machine in step 1."
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:28
+msgid "|image2|"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:102
+msgid "image2"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:102
+msgid ".. image:: /images/indiclient.png"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:30
+msgid ""
+"After you add a host, right click on the host to ``Connect`` or "
+"``Disconnect``. If a connection is established, you can control the "
+"telescope from the ``Sky map`` or ``INDI Control Panel`` exactly as "
+"described in the :ref:`local/server <indi-indi-setup>` section. It is as "
+"easy at that."
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:39
+msgid "Running an INDI server from the command line"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:41
+msgid ""
+"While KStars allows you to easily deploy an INDI server; you can launch an "
+"INDI server from the command line."
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:44
+msgid ""
+"Since INDI is an independent backend component, you can run an INDI server "
+"on a host without KStars. INDI can be compiled separately to run on remote "
+"hosts. Furthermore, device drivers log messages to ``stderr`` and that can "
+"be helpful in a debugging situation. The syntax for INDI server is as "
+"following:"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:51
+msgid "$ **indiserver** [options] driver [``driver`` ...]"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:53
+msgid ""
+"Options:\n"
+" -l d     : Log driver messages to <d>/YYYY-MM-DD.islog\n"
+" -m m     : Kill client if gets more than this many MB behind, default 128.\n"
+" -d m     : Drop streaming blobs if client gets more than this many MB behind, default 5. 0 to disable.\n"
+" -p p     : Alternate IP port, default 7624.\n"
+" -r r     : Maximum driver restarts on error, default 10.\n"
+" -f path  : Path to fifo for dynamic startup and shutdown of drivers.\n"
+" -v       : Show key events, no traffic.\n"
+" -vv      : -v + key message content.\n"
+" -vvv     : -vv + complete xml.\n"
+" driver   : Executable or [device]@host[:port]"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:67
+msgid ""
+"For example, if you want to start an INDI server running an LX200 GPS driver"
+" and listening to connections on port 8000, you would run the following "
+"command:"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:71
+msgid "$ **indiserver** -p 8000 ``lx200gps``"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:76
+msgid "Secure Remote Operation"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:78
+msgid ""
+"Suppose we want to run an indiserver with INDI drivers on a remote host, "
+"``remote_host``, and connect them to KStars running on the local machine."
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:82
+msgid ""
+"From the local machine log onto the remote host, ``remote_host``, by typing:"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:85
+msgid "$ **ssh** -L ``local_port``:``remote_host``:``remote_port``"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:87
+msgid ""
+"This binds the ``local_port`` on the local machine to the ``remote_port`` on"
+" the ``remote_host``. After logging in, run indiserver on the remote host:"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:91
+msgid "$ **indiserver** -p ``remote_port`` [``driver``...]"
+msgstr ""
+
+#: ../../user_manual/indi-remote-control.rst:93
+msgid ""
+"Back on the local machine, start KStars then open the ``Device Manager`` and"
+" add a host under the ``Client`` tab. The host should be the local host "
+"(usually 127.0.0.1) and the port number should be the ``local_port`` used in"
+" the steps above. Right-click on the host and select ``Connect`` from the "
+"popup menu. KStars will connect to the remote INDI server securely. The host"
+" information will be saved for future sessions."
+msgstr ""

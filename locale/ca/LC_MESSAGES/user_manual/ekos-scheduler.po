@@ -1,0 +1,1347 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KStars Handbook 3.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-12 15:53+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: ca <LL@li.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../user_manual/ekos-scheduler.rst:3
+msgid "Scheduler"
+msgstr "Programador"
+
+#: ../../user_manual/ekos-scheduler.rst:5
+msgid "|Ekos Scheduler Module|"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:707
+msgid "Ekos Scheduler Module"
+msgstr "Mòdul del programador de l'Ekos"
+
+#: ../../user_manual/ekos-scheduler.rst:707
+msgid ".. image:: /images/ekos_scheduler.png"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:10
+msgid "Introduction"
+msgstr "Introducció"
+
+#: ../../user_manual/ekos-scheduler.rst:12
+msgid ""
+"The Ekos Scheduler is an important component of your imaging workflow. It "
+"connects to INDI, starts and stops all the other Ekos modules, schedules "
+"jobs according to their constraints and priorities, monitors those jobs as "
+"they execute, and then safely brings down the system when jobs are done, or "
+"before dawn. Whether you are running multi-day imaging sessions for multiple"
+" targets, or simply trying to image a single target for a few hours, it is "
+"advisable to have the Scheduler control your imaging sessions."
+msgstr ""
+"El programador de l'Ekos és un component important del vostre flux de "
+"treball amb les imatges. Connecta amb INDI, inicia i atura tots els altres "
+"mòduls de l'Ekos, programa les tasques d'acord amb les seves restriccions i "
+"prioritats, controla aquestes tasques mentre s'executen i després atura el "
+"sistema amb seguretat quan s'han fet les tasques, o abans de l'alba. Ja "
+"sigui que esteu executant sessions d'imatge de diversos dies per a múltiples"
+" objectius, o simplement intentant fer imatges d'un únic objectiu durant "
+"poques hores, és aconsellable que el programador controli les vostres "
+"sessions d'imatge."
+
+#: ../../user_manual/ekos-scheduler.rst:25
+msgid "Scheduler Table"
+msgstr "Taula del programador"
+
+#: ../../user_manual/ekos-scheduler.rst:27
+msgid ""
+"The heart of the Scheduler is a table displaying the list of Scheduler jobs "
+"the user wants to run. Associated with each jobs are attributes (mostly "
+"described in the settings section below). The attributes describe the name "
+"of the job, where the telescope should be pointed when imaging that job, a "
+"description of what types of images should be captured, constraints about "
+"when the jobs should run (e.g. altitude, twilight, moon, landscape "
+"blockages, etc.), things that need to be done before and after the job is "
+"run, and strategies for dealing with errors."
+msgstr ""
+"El cor del programador és una taula que mostra la llista de tasques del "
+"programador que l'usuari vol executar. Associats amb cada tasca hi ha "
+"atributs (la majoria descrits a la secció de configuració de sota). Els "
+"atributs descriuen el nom de la tasca, on cal apuntar el telescopi quan crea"
+" imatges per a aquesta tasca, una descripció de quins tipus d'imatges s'han "
+"de capturar, restriccions sobre quan s'han d'executar les tasques (pex, "
+"altitud, crepuscle, lluna, bloquejos del paisatge, etc), coses que cal fer "
+"abans i després de l'execució de la tasca, i estratègies per a fer front als"
+" errors."
+
+#: ../../user_manual/ekos-scheduler.rst:38
+msgid ""
+"You can add, delete, modify or change the order of rows in the Scheduler "
+"table."
+msgstr ""
+"Podeu afegir, suprimir, modificar o canviar l'ordre de les files a la taula "
+"del programador."
+
+#: ../../user_manual/ekos-scheduler.rst:41
+msgid ""
+"You can add a Scheduler job row into the table by clicking the ``+`` control"
+" above the table, if all required attributes are filled out (name, position,"
+" and sequence file)."
+msgstr ""
+"Podeu afegir una fila de tasques del programador a la taula fent clic al "
+"control ``+`` sobre la taula, si s'emplenen tots els atributs requerits "
+"(nom, posició i fitxer de seqüència)."
+
+#: ../../user_manual/ekos-scheduler.rst:46
+msgid ""
+"If you click on a row, you can then click the ``-`` control above the table "
+"to delete that row."
+msgstr ""
+"Si feu clic en una fila, podeu fer clic al control ``-`` sobre la taula per "
+"a suprimir aquesta fila."
+
+#: ../../user_manual/ekos-scheduler.rst:49
+msgid ""
+"If you click on a row, you can then click the ``^`` or ``v`` controls to "
+"move those rows up or down in the job list."
+msgstr ""
+"Si feu clic en una fila, podeu fer clic als controls ``.`` o ``v`` per a "
+"moure aquestes files amunt o avall a la llista de tasques."
+
+#: ../../user_manual/ekos-scheduler.rst:53
+msgid ""
+"If you double click on a row, the attributes of that job are filled in to "
+"the various settings on the Scheduler page. You can then change one or more "
+"of those attributes, and then click the checkmark above the table (after "
+"your double-click, the ``+`` became a ``checkmark``), and the new attributes"
+" are assigned to that job."
+msgstr ""
+"Si feu doble clic en una fila, els atributs d'aquesta tasca s'omplen als "
+"diversos paràmetres de la pàgina del programador. Després podeu canviar un o"
+" més d'aquests atributs, i després fer clic a la marca de selecció a sobre "
+"de la taula (després del doble clic, el ``+`` es convertirà en una marca de "
+"verificació ), i els atributs nous s'assignaran a aquesta tasca."
+
+#: ../../user_manual/ekos-scheduler.rst:64
+msgid "Scheduling Algorithm"
+msgstr "Algorisme de programació"
+
+#: ../../user_manual/ekos-scheduler.rst:66
+msgid ""
+"The Scheduler table (above) lists jobs in order of priority, with higher "
+"jobs (on lower-numbered rows) having higher priority than jobs further down "
+"the list (with higher-numbered rows)."
+msgstr ""
+"La taula del programador (a dalt) llista les tasques en ordre de prioritat, "
+"amb les tasques més altes (en files amb nombres més baixos) que tenen més "
+"prioritat que les tasques més avall de la llista (amb files amb nombres més "
+"alts)."
+
+#: ../../user_manual/ekos-scheduler.rst:71
+msgid ""
+"The Scheduler regularly plans (and re-plans) which jobs should be run, and "
+"when. It can start executing a given job, and then later preempt that job "
+"for a new one. It can become idle if no jobs can be run (e.g. in daylight), "
+"and sleep until such a time that it becomes active again. Its aim is to keep"
+" the equipment as busy as possible, while respecting the scheduler-table's "
+"priorities. Here's how it works."
+msgstr ""
+"El programador planifica regularment (i replanifica) quines tasques s'han "
+"d'executar, i quan. Pot començar a executar una tasca determinada, i després"
+" avançar-la per una de nova. Pot quedar-se en espera si no es poden executar"
+" tasques (pex, a la llum del dia), i dormir fins que torni a estar actiu. El"
+" seu objectiu és mantenir l'equip el més ocupat possible, respectant les "
+"prioritats de la taula de programació. Així és com funciona."
+
+#: ../../user_manual/ekos-scheduler.rst:79
+msgid ""
+"When the scheduler starts (or when it replans, which it does every second "
+"while active), it looks through the entire list of jobs, starting at the "
+"highest priority job, and working its way down to the lowest priority one if"
+" necessary. When it finds a job that can run, it starts that job, possibly "
+"preempting the currently running job. A jobs can run if its constraints are "
+"met, e.g. the target is not blocked by the local terrain, it meets the "
+"minimum altitude constraint, it has not already completed all the desired "
+"imaging, ..."
+msgstr ""
+"Quan s'inicia el planificador (o quan replanifica, que ho fa cada segon "
+"mentre està actiu), revisa tota la llista de tasques començant per la tasca "
+"de prioritat màxima, i continuant fins a la prioritat més baixa, si cal. "
+"Quan troba una tasca que pot executar, comença aquesta tasca, possiblement "
+"anticipant-se a la tasca actualment en execució. Una tasca pot executar-se "
+"si es compleixen les seves restriccions, pex, l'objectiu no està bloquejat "
+"pel terreny local, compleix la restricció d'altitud mínima, no ha completat "
+"totes les imatges desitjades,..."
+
+#: ../../user_manual/ekos-scheduler.rst:89
+msgid ""
+"The algorithm shows its projected next start times and stop times for all "
+"job in the Scheduler table. It also shows its estimate of times jobs will "
+"run during the next 48 hours in the log panel at the bottom of the window. "
+"See the screenshot of the scheduler window at the top of this section."
+msgstr ""
+"L'algoritme mostra les hores d'inici i les hores d'aturada previstes per a "
+"totes les tasques a la taula del programador. També mostra la seva estimació"
+" de les vegades que les tasques s'executaran durant les pròximes 48 hores en"
+" el panell de registre a la part inferior de la finestra. Vegeu la captura "
+"de pantalla de la finestra del planificador a la part superior d'aquesta "
+"secció."
+
+#: ../../user_manual/ekos-scheduler.rst:96
+msgid ""
+"The scheduling algorithm described in the above paragraph is known as the "
+"Greedy Scheduling algorithm. It is the recommended one to use. In previous "
+"versions of Ekos, there was another \"Classic scheduling algorithm\" which "
+"is no longer in Ekos. That scheme could not preempt running jobs, and thus "
+"did not make as much use of the equipment as the Greedy Algorithm."
+msgstr ""
+"L'algorisme de planificació descrit en el paràgraf anterior es coneix com "
+"l'algorisme de planificació voraç. És el que es recomana utilitzar. En "
+"versions anteriors de l'Ekos, hi havia un altre «algorisme de planificació "
+"clàssica» que ja no està a l'Ekos. Aquest esquema no podia avançar-se a les "
+"tasques en funcionament, i per tant no feia tant ús de l'equip com "
+"l'algorisme voraç."
+
+#: ../../user_manual/ekos-scheduler.rst:104
+msgid ""
+"There is a checkbox option in the scheduler options menu called ``Use greedy"
+" scheduling`` which defaults to being checked. The system works as described"
+" above when it is checked. When it is unchecked the scheduler is prevented "
+"from scheduling lower priority jobs when uncompleted higher priority jobs "
+"cannot run. This results in less efficient use of the system, but may give "
+"you more control over scheduling."
+msgstr ""
+"Hi ha una opció de casella de selecció al menú d'opcions del programador "
+"anomenada ``Usa la planificació voraç`` que està marcada de manera "
+"predeterminada. El sistema funciona com es descriu més amunt quan està "
+"marcada. Quan està desmarcada, s'impedeix que el programador planifiqui "
+"tasques de prioritat més baixa quan les tasques de prioritat més alta no es "
+"poden executar sense completar. Això resulta en un ús menys eficient del "
+"sistema, però pot donar-vos més control sobre la planificació."
+
+#: ../../user_manual/ekos-scheduler.rst:116
+msgid "Scheduler Files (.esl)"
+msgstr "Fitxers del programador (.esl)"
+
+#: ../../user_manual/ekos-scheduler.rst:118
+msgid ""
+"The scheduler table with its list of jobs and attributes can be saved onto "
+"disk and read back in. It writes an .esl file. Controls for writing the "
+"current Scheduler table to disk, and reading back other .esl files are "
+"located above the table to the right."
+msgstr ""
+"La taula del programador amb la seva llista de tasques i atributs es pot "
+"desar al disc i tornar-la a llegir. S'escriu en un fitxer «.esl». Controla "
+"l'escriptura de la taula del programador actual al disc, i per a llegir "
+"altres fitxers «.esl» que es troben a sobre de la taula a la dreta."
+
+#: ../../user_manual/ekos-scheduler.rst:127
+msgid "Settings"
+msgstr "Configuració"
+
+#: ../../user_manual/ekos-scheduler.rst:129
+msgid ""
+"Ekos Scheduler provides a simple interface to aid the user in setting the "
+"conditions and constraints required for an Scheduler job. You must select "
+"the ``Target``, its coordinates, and the ``Sequence`` before you can add a "
+"job to the Scheduler."
+msgstr ""
+"El programador de l'Ekos proporciona una interfície senzilla per a ajudar "
+"l'usuari a establir les condicions i restriccions necessàries per a una "
+"tasca del programador. Cal seleccionar l'``objectiu``, les seves "
+"coordenades, i la ``seqüència`` abans de poder afegir una tasca al "
+"programador."
+
+#: ../../user_manual/ekos-scheduler.rst:134
+msgid "Each Scheduler job is composed of the following:"
+msgstr "Cada tasca d'observació es compon del següent:"
+
+#: ../../user_manual/ekos-scheduler.rst:136
+msgid ""
+"``Target name and coordinates``: Select target from the :ref:`Find Dialog  "
+"<skyobjects-finding-objects>` or ``Add`` it from :doc:`Observation Planner  "
+"<tool-obsplanner>`. You can also enter a custom name. Coordinates can also "
+"be copied from the SkyMap using the button just to the right of the "
+"coordinates."
+msgstr ""
+"``Nom i coordenades de l'objectiu``: Seleccioneu l'objectiu des del "
+":ref:`diàleg Cerca <skyobjects-finding-objects>` o del botó ``Afegeix`` des "
+"del :doc:`Planificador d'observacions <tool-obsplanner>`. També podeu "
+"introduir un nom personalitzat. Les coordenades també es poden copiar des "
+"del mapa del cel utilitzant el botó just a la dreta de les coordenades."
+
+#: ../../user_manual/ekos-scheduler.rst:144
+msgid ""
+"Optional ``PA``: The position angle (or image rotation) can be specified for"
+" systems with camera rotation hardware."
+msgstr ""
+"Opcional ``AP``: L'angle de posició (o gir de la imatge) es pot especificar "
+"per a sistemes amb maquinari de rotació de la càmera."
+
+#: ../../user_manual/ekos-scheduler.rst:148
+msgid ""
+"Optional ``FITS File``: If a FITS file is specified, the astrometry solver "
+"solves the file and use the central RA/DEC as the target coordinates."
+msgstr ""
+"``Fitxer FITS`` opcional: Si s'especifica un fitxer FITS, el solucionador "
+"d'astrometria resol el fitxer i utilitza l'AR/Dec central com a coordenades "
+"de l'objectiu."
+
+#: ../../user_manual/ekos-scheduler.rst:152
+msgid ""
+"``Sequence`` file: The sequence file is constructed in the Ekos "
+":doc:`Capture Module  <ekos-capture>`. It has a list of capture "
+"specifications, where each spec details the number of images to capture, "
+"which filter to use, the exposure length, the gain, file naming details, "
+"temperature settings, prefixes, download directory, etc."
+msgstr ""
+"Fitxer de ``Seqüència``: El fitxer de seqüències es construeix al "
+":doc:`Mòdul de captura <ekos-capture>` de l'Ekos. Té una llista "
+"d'especificacions de captura, on cada especificació detalla el nombre "
+"d'imatges a capturar, quin filtre utilitzar, la durada de l'exposició, el "
+"guany, els detalls de la nomenclatura dels fitxers, la configuració de la "
+"temperatura, prefixos, directori de baixada, etc"
+
+#: ../../user_manual/ekos-scheduler.rst:160
+msgid ""
+"``Profile``: Select which equipment profile to utilize when starting Ekos. "
+"If Ekos & INDI are already started and online, this selection is ignored."
+msgstr ""
+"``Perfil``: Selecciona quin perfil d'equip voleu utilitzar quan s'inicia "
+"l'Ekos. Si Ekos i INDI ja estan iniciats i en línia, s'ignorarà aquesta "
+"selecció."
+
+#: ../../user_manual/ekos-scheduler.rst:164
+msgid ""
+"``Steps``: The user selects what steps should be taken at the start of the "
+"job. The possibilities are: (1) Start mount tracking, (2) autofocus, (3) run"
+" a plate solving alignment, (4) start the auto-guider. One or more can be "
+"chosen."
+msgstr ""
+"``Passos``: L'usuari selecciona quins passos s'han de prendre a l'inici de "
+"la tasca. Les possibilitats són: (1) inicia el seguiment de la muntura, (2) "
+"enfocament automàtic, (3) executa una alineació de resolució de la placa, "
+"(4) inicia el guiatge automàtic. Es pot triar un o més."
+
+#: ../../user_manual/ekos-scheduler.rst:170
+msgid ""
+"``Startup Conditions``: Conditions that must be met **before** the Scheduler"
+" job is started. Currently, the user may select to start as soon as "
+"possible, ``ASAP``, or when the target is near or past culmination, or at a "
+"specific time."
+msgstr ""
+"``Condicions d'inici``: Les condicions que s'han de complir **abans** "
+"d'iniciar la tasca del programador. Actualment, l'usuari pot seleccionar "
+"iniciar tan aviat com sigui possible, ``ASAP``, o quan l'objectiu estigui a "
+"prop o més enllà de la culminació, o a una hora determinada."
+
+#: ../../user_manual/ekos-scheduler.rst:176
+msgid ""
+"``Constraints``: These are conditions that must be met **at all times** "
+"during the Scheduler job execution process. These include minimum target "
+"altitude, minimum moon separation, twilight observation, artificial horizon "
+"altitude constraints, and weather monitoring."
+msgstr ""
+"``Restriccions``: Aquestes són les condicions que s'hauran de complir **en "
+"tot moment** durant el procés d'execució de la tasca del programador. "
+"Aquestes inclouen l'altitud mínima de l'objectiu, la separació mínima de la "
+"Lluna, l'observació del crepuscle, restriccions d'altitud horitzontal "
+"artificial i el seguiment del clima."
+
+#: ../../user_manual/ekos-scheduler.rst:183
+msgid ""
+"``Completion Conditions``: Conditions that trigger completion of the "
+"Scheduler job. The default selection is to simply mark the Scheduler job as "
+"complete once the sequence process is complete. Additional conditions enable"
+" the user to repeat the sequence process a number of times or indefinitely, "
+"or up until a specific time."
+msgstr ""
+"``Condicions de compleció``: Condicions que activen la compleció de la tasca"
+" del programador. La selecció predeterminada és simplement marcar la tasca "
+"del programador com a completada una vegada que s'ha completat el procés de "
+"la seqüència. Les condicions addicionals permeten a l'usuari repetir el "
+"procés de la seqüència un nombre de vegades o indefinidament, o fins a una "
+"hora determinada."
+
+#: ../../user_manual/ekos-scheduler.rst:194
+msgid "Other options"
+msgstr "Altres opcions"
+
+#: ../../user_manual/ekos-scheduler.rst:196
+msgid ""
+"There are several other options to control how the Scheduler behaves. These "
+"are found in the general KStars Settings menu, shown below, in its Ekos tab "
+"and Scheduler sub-tab."
+msgstr ""
+"Hi ha altres opcions diverses per a controlar com es comporta el "
+"programador. Es troben al menú general de configuració del KStars, que es "
+"mostra a continuació, a la seva pestanya Ekos i a la subpestanya del "
+"programador."
+
+#: ../../user_manual/ekos-scheduler.rst:200
+msgid "|Scheduler Settings|"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:708
+msgid "Scheduler Settings"
+msgstr "Configuració del programador"
+
+#: ../../user_manual/ekos-scheduler.rst:708
+msgid ".. image:: /images/ekos_scheduler_settings.png"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:205
+msgid "Remember job progress"
+msgstr "Recordar el progrés de la tasca"
+
+#: ../../user_manual/ekos-scheduler.rst:207
+msgid ""
+"Among the settings shown above, one important one is known as ``Remember job"
+" progress``. When this box is checked and a job is running, the Scheduler "
+"looks at the job's images already captured on disk, and doesn't re-capture "
+"the ones that are already there. The benefit is that if a job is restarted, "
+"or re-run another night, or if multiple jobs are being run together, "
+"stopping and starting when they are runnable, then jobs re-start right where"
+" they left off. This works well with the ``Repeat until terminated`` job-"
+"completion option. If ``Remember job progress`` is unchecked, jobs would "
+"restart from the start of their sequence specification each time, which "
+"probably isn't what you want. Unfortunately, if the images are not stored on"
+" the same computer that Ekos is running on, then this feature doesn't work "
+"and the jobs restart from their beginning."
+msgstr ""
+"Entre els paràmetres mostrats anteriorment, un important es coneix com "
+"``Recorda el progrés de la tasca``. Quan aquesta casella està marcada i "
+"s'està executant una tasca, el programador revisa les imatges de la tasca "
+"que ja s'han capturat al disc, i no torna a capturar les que ja hi són. El "
+"benefici és que si es reinicia una tasca, o es torna a executar una altra "
+"nit, o si s'estan executant múltiples tasques juntes, aturant-se i començant"
+" quan es poden executar, llavors les tasques tornen a començar just on es "
+"van deixar. Això funciona bé amb l'opció de compleció de tasca ``Repeteix "
+"fins que finalitzi``. Si ``Recorda el progrés de la tasca`` no està marcat, "
+"les tasques es reiniciarien des del començament de la seva especificació de "
+"seqüència cada vegada, que probablement no és el que voleu. Malauradament, "
+"si les imatges no s'emmagatzemen en el mateix ordinador en el qual s'està "
+"executant l'Ekos, aquesta característica no funcionarà i les tasques es "
+"reiniciaran des del principi."
+
+#: ../../user_manual/ekos-scheduler.rst:224
+msgid ""
+"A possibly confusing side-effect of ``Remember job progress`` is that if "
+"you've run a job using the (default) Sequence Completion finish condition, "
+"and it has captured all its images, and now you want to run the job again, "
+"the Scheduler won't schedule the job because it believes that all the images"
+" have already been captured. You'd either need to move those images "
+"elsewhere on disk, or change the finish condition to Repeat for N Times, or "
+"Repeat Until Terminated."
+msgstr ""
+"Un efecte secundari possiblement confús de ``Recorda el progrés de la "
+"tasca`` és que si heu executat una tasca utilitzant la condició de "
+"finalització de la compleció de la seqüència (predeterminat), i ha capturat "
+"totes les seves imatges, i ara voleu tornar a executar la tasca, el "
+"programador no planificarà la tasca perquè creu que totes les imatges ja "
+"s'han capturat. Necessitaríeu moure aquestes imatges en un altre lloc del "
+"disc, o canviar la condició de finalització a Repeteix N vegades, o Repeteix"
+" fins que finalitzi."
+
+#: ../../user_manual/ekos-scheduler.rst:237
+msgid "Group repeats"
+msgstr "Repeticions de grup"
+
+#: ../../user_manual/ekos-scheduler.rst:239
+msgid ""
+"This feature allows you to run two or more scheduler jobs at roughly the "
+"same priority, such that if they were both runnable, they would progress at "
+"roughly the same rate. This may be applicable, for example, to jobs imaging "
+"the multiple tiles in a mosaic, but is generally applicable to any set of "
+"jobs."
+msgstr ""
+"Aquesta característica us permet executar dues o més tasques del programador"
+" amb aproximadament la mateixa prioritat, de manera que si totes dues fossin"
+" executables, avançarien gairebé a la mateixa velocitat. Això pot ser "
+"aplicable, per exemple, a tasques que mostrin les diverses tessel·les en un "
+"mosaic, però generalment és aplicable a qualsevol conjunt de tasques."
+
+#: ../../user_manual/ekos-scheduler.rst:246
+msgid ""
+"Normally the (Greedy) scheduler's job priority is set by the row the job is "
+"listed in the Scheduler's job table. Jobs on rows closer to the top run with"
+" higher priority than jobs lower down. Thus, if a job on row 2 (Job2) uses "
+"``Repeat Until Terminated``, and that job's running constraints are "
+"satisfied, a lower down job (e.g. Job3) will not be scheduled to run."
+msgstr ""
+"Normalment, la prioritat de les tasques del programador (voraç) s'estableix "
+"per la fila que la tasca es llista a la taula de tasques del programador. "
+"Les tasques en files més properes a la part superior s'executen amb "
+"prioritat més alta que les tasques més baixes. Per tant, si una tasca a la "
+"fila 2 (Job2) utilitza ``Repeteix fins que finalitzi``, i s'han satisfet les"
+" restriccions d'execució de la tasca, no es programarà que s'executi una "
+"tasca més baixa (pex, Job3)."
+
+#: ../../user_manual/ekos-scheduler.rst:254
+msgid ""
+"If you wish to alternate jobs, you can assign each of the jobs the same "
+"``group`` name, and give the jobs one of the repeating finish conditions "
+"(e.g. Repeat for N times, or Repeat Until Terminated). With that setup, jobs"
+" in the same group will cede to each other if they have completed more "
+"'Repeat Iterations' than the other job. So, if Job2 with group \"MyGroup\" "
+"completes its 2nd iteration, and Job3 with the same group name has only "
+"completed 0 or 1 iterations, when the time comes to schedule Job2, Job3 will"
+" run instead."
+msgstr ""
+"Si voleu alternar les tasques, podeu assignar a cadascuna de les tasques el "
+"mateix nom de ``grup``, i donar a les tasques una de les condicions de "
+"finalització repetides (pex, Repeteix N vegades o Repeteix fins que "
+"finalitzi). Amb aquesta configuració, les tasques del mateix grup cediran "
+"entre elles si han completat més «Iteracions de repetició» que les altres "
+"tasques. Per tant, si el Job2 amb el grup «MyGroup» completa la seva segona "
+"iteració, i el Job3 amb el mateix nom de grup només ha completat 0 o 1 "
+"iteració, quan arribi el moment de programar el Job2, el Job3 s'executarà."
+
+#: ../../user_manual/ekos-scheduler.rst:265
+msgid ""
+"Practically speaking, imagine you had a 6-panel mosaic you wanted to "
+"alternate. You might give all of those jobs the same group name, make them "
+"all e.g. \"Repeat for 5 times\". Then, they would run in lock-step. The "
+"cadence of job switching would be controlled by the length of the sequence "
+"file assigned to each of those jobs. You wouldn't want to make the cadence "
+"too short (e.g. capturing one 2-minute image), as there is overhead in "
+"switching jobs. For instance, starting jobs may involved aligning, starting "
+"guiding, and even focusing."
+msgstr ""
+"Pràcticament parlant, imagineu que tenia un mosaic de sis plafons que voleu "
+"alternar. Podríeu donar a totes aquestes tasques el mateix nom de grup, feu-"
+"los tots, pex, «Repeteix 5 vegades». Llavors s'executarien en un pas de "
+"bloqueig. La cadència de commutació de tasques es controlaria per la "
+"longitud del fitxer de seqüència assignat a cada un d'aquestes tasques. No "
+"voldreu fer la cadència massa curta (pex, capturar una imatge de 2 minuts), "
+"ja que hi ha sobrecàrrega en canviar de tasca. Per exemple, iniciar tasques "
+"pot implicar alinear, començar a orientar i fins i tot centrar."
+
+#: ../../user_manual/ekos-scheduler.rst:279
+msgid "Repeat all jobs"
+msgstr "Repeteix totes les tasques"
+
+#: ../../user_manual/ekos-scheduler.rst:281
+msgid ""
+"There is a checkbox and number input right below the Scheduler jobs table "
+"that allows you to repeat the entire schedule N times. This can be used to "
+"alternate a few jobs. You can just list the jobs on the scheduler, set it to"
+" repeat N times, and the jobs will repeat. However, this change is "
+"incompatible with 'Remember job progress (above) and unavailable if Remember"
+" Job Progress is checked. (Note: Remember Job Progress is recommended.)"
+msgstr ""
+"Hi ha una casella de selecció i una entrada de números just a sota de la "
+"taula de tasques del programador que permet repetir la planificació completa"
+" N vegades. Això es pot utilitzar per a alternar entre tasques. Podeu "
+"llistar les tasques en el programador, establir-les per a repetir N vegades,"
+" i les tasques es repetiran. No obstant això, aquest canvi és incompatible "
+"amb «Recorda el progrés de la tasca» (a dalt) i no està disponible si es "
+"marca «Recorda el progrés de la tasca». (Nota: Es recomana recordar el "
+"progrés de la tasca)."
+
+#: ../../user_manual/ekos-scheduler.rst:293
+msgid "Editing running jobs"
+msgstr "Edició de tasques en execució"
+
+#: ../../user_manual/ekos-scheduler.rst:295
+msgid ""
+"It is possible to edit the scheduler's job table, and attributes of "
+"individual jobs, while the scheduler is running. As always, you double click"
+" on a job, change the desired attributes, and click the checkbox to finalize"
+" the change. If you edit the running job it will be restarted (i.e. the "
+"startup steps (slew, focus, align, guide) will be re-done. You can also move"
+" jobs up and down in priority, add new jobs, or deleted existing ones. You "
+"cannot delete the running job."
+msgstr ""
+"És possible editar la taula de tasques del programador, i els atributs de "
+"tasques individuals, mentre el programador està executant-se. Com sempre, "
+"feu doble clic en una tasca canvieu els atributs desitjats, i feu clic en la"
+" casella de selecció per a finalitzar el canvi. Si editeu la tasca en "
+"execució, es reiniciarà (és a dir, els passos d'inici (orientació, "
+"enfocament, alineació, guiatge) es refaran). També podeu moure feines amunt "
+"i avall en prioritat, afegir tasques noves, o eliminar-ne d'existents. No "
+"podeu eliminar la tasca en curs."
+
+#: ../../user_manual/ekos-scheduler.rst:305
+msgid ""
+"One important attribute of scheduler jobs is their sequence file (.esq) "
+"which controls the capture module while the job is running. For example, it "
+"sets number of captures, filters used, gain/ISO, etc. The .esq is normally "
+"created and edited in the capture tab, but that cannot be done while the "
+"scheduler is running. If you desire to make changes to a .esq file while the"
+" scheduler is running, or create a new one, the scheduler provides a tool "
+"called the Capture Sequence Editor."
+msgstr ""
+"Un atribut important de les tasques del programador és el seu fitxer de "
+"seqüència (.esq) que controla el mòdul de captura mentre s'executa la tasca."
+" Per exemple, estableix el nombre de captures, els filtres utilitzats, "
+"ISO/guany, etc. Normalment, el «.esq» és creat i editat en la pestanya de "
+"captura, però això no es pot fer mentre el programador està executant-se. Si"
+" desitgeu fer canvis en un fitxer «.esq» mentre el programador està en "
+"execució, o crear-ne un de nou, el programador proporciona una eina "
+"anomenada Editor de seqüències de captura."
+
+#: ../../user_manual/ekos-scheduler.rst:318
+#: ../../user_manual/ekos-scheduler.rst:709
+msgid "Capture Sequence Editor"
+msgstr "Editor de seqüències de captura"
+
+#: ../../user_manual/ekos-scheduler.rst:320
+msgid ""
+"The Capture Sequence Editor is a tool to create and edit capture sequence "
+"files (.esq) which can be started by clicking the edit (pencil) icon just "
+"above the scheduler table. A screenshot is shown below."
+msgstr ""
+"L'Editor de seqüències de captura és una eina per a crear i editar fitxers "
+"de seqüències de captura (.esq) que es pot iniciar fent clic a la icona "
+"d'edició (llapis) damunt la taula del programador. A sota es mostra una "
+"captura de pantalla."
+
+#: ../../user_manual/ekos-scheduler.rst:325
+msgid "|Capture Sequence Editor|"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:709
+msgid ".. image:: /images/ekos_capture_sequence_editor.png"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:327
+msgid ""
+"The editor is very similar in use and layout to the capture tab--though it "
+"is missing all the controls to actually capture image. You edit jobs the "
+"same way you do in capture, and load or save sequence queues the same way "
+"too (though there are additional Load and Save-To buttons provided in the "
+"editor)."
+msgstr ""
+"L'editor és molt similar en ús i disposició a la pestanya de captura, encara"
+" que li manquen tots els controls de capturar realment imatges. Editeu les "
+"tasques de la mateixa manera que ho feu en la captura, i també carregueu o "
+"deseu les cues de seqüències de la mateixa manera (encara que hi ha botons "
+"addicionals de càrrega i desament proporcionats en l'editor)."
+
+#: ../../user_manual/ekos-scheduler.rst:336
+msgid ""
+"It is important to understand that capture sequences rely to some extent on "
+"the filterwheel and camera being used (e.g. the filter names, the possible "
+"ISO values, ...). The Capture Sequence Editor, which is not connected to the"
+" device drivers, does not have direct access to this information. Instead, "
+"the editor uses the values from the last time the capture tab connected to "
+"its devices. Thus, it may not make sense to try and create a .esq file for a"
+" different camera or filterwheel than the last one connected-to. You may "
+"need to wait until your scheduler job is completed and edit that .esq "
+"directly in the capture tab."
+msgstr ""
+"És important entendre que les seqüències de captura confien fins a cert punt"
+" en la roda de filtres i la càmera que s'utilitza (p. ex., els noms de "
+"filtre, els valors ISO possibles,...). L'Editor de seqüències de captura, el"
+" qual no està connectat als controladors dels dispositius, no té accés "
+"directe a aquesta informació. En comptes d'això, l'editor utilitza els "
+"valors de l'última vegada que la pestanya de captura s'ha connectat als seus"
+" dispositius. Així, no pot tenir sentit intentar i crear un fitxer «.esq» "
+"per a una càmera o roda de filtres diferent de l'última connectada. Podeu "
+"necessitar esperar fins que la tasca programada es completi i editar "
+"directament aquest «.*esq» en la pestanya de captura."
+
+#: ../../user_manual/ekos-scheduler.rst:349
+msgid ""
+"It is also recommended that you don't overwrite .esq files when scheduler "
+"jobs are currently using those same files. (It is OK if the scheduler is "
+"running, but not running that job.) This can get the scheduler and capture "
+"modules out of sync, as they read the files at different times. Instead, you"
+" can save to a different filename and then edit the scheduler job to use the"
+" new .esq filename."
+msgstr ""
+"També es recomana no sobreescriure els fitxers «.esq» quan les tasques del "
+"programador estan utilitzant aquests mateixos fitxers. (Està bé si el "
+"programador s'està executant, però no està executant aquesta tasca.) Això "
+"pot fer que el programador i els mòduls de captura no estiguin "
+"sincronitzats, ja que llegeixen els fitxers en moments diferents. En el seu "
+"lloc, podeu desar a un nom de fitxer diferent i després editar la tasca del "
+"programador per a utilitzar el nom nou de fitxer «.esq»."
+
+#: ../../user_manual/ekos-scheduler.rst:361
+msgid "Workflow"
+msgstr "Flux de treball"
+
+#: ../../user_manual/ekos-scheduler.rst:363
+msgid "|Scheduler + Planner|"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:710
+msgid "Scheduler + Planner"
+msgstr "Programador + Planificador"
+
+#: ../../user_manual/ekos-scheduler.rst:710
+msgid ".. image:: /images/scheduler_planner.png"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:365
+msgid ""
+"The description above only tackles the **Data Acquisition** stage of the "
+"observatory workflow. The overall procedure typically utilized in an "
+"observatory can be summarized in three primary stages:"
+msgstr ""
+"La descripció anterior només aborda l'etapa d'**Adquisició de les dades** "
+"del flux de treball de l'observatori. El procediment general típicament "
+"utilitzat en un observatori es pot resumir en tres etapes primàries:"
+
+#: ../../user_manual/ekos-scheduler.rst:370
+msgid "Startup"
+msgstr "Inici"
+
+#: ../../user_manual/ekos-scheduler.rst:372
+msgid "Data Acquisition (including preprocessing and storage)"
+msgstr ""
+"Adquisició de les dades (inclòs el preprocessament i l'emmagatzematge)"
+
+#: ../../user_manual/ekos-scheduler.rst:374
+#: ../../user_manual/ekos-scheduler.rst:453
+msgid "Shutdown"
+msgstr "Tancament"
+
+#: ../../user_manual/ekos-scheduler.rst:379
+msgid "Startup Procedure"
+msgstr "Procediment d'inici"
+
+#: ../../user_manual/ekos-scheduler.rst:381
+msgid "Startup procedure is unique to each observatory but may include:"
+msgstr ""
+"El procediment d'inici és únic per a cada observatori, però pot incloure:"
+
+#: ../../user_manual/ekos-scheduler.rst:384
+msgid "Turning on power to equipment"
+msgstr "Encenent l'alimentació en l'equip"
+
+#: ../../user_manual/ekos-scheduler.rst:386
+msgid "Running safety/sanity checks"
+msgstr "Execució dels controls de seguretat/sanitat"
+
+#: ../../user_manual/ekos-scheduler.rst:388
+msgid "Checking weather conditions"
+msgstr "Comprovació de les condicions meteorològiques"
+
+#: ../../user_manual/ekos-scheduler.rst:390
+msgid "Turning off light"
+msgstr "Apagar la llum"
+
+#: ../../user_manual/ekos-scheduler.rst:392
+msgid "Fan/Light control"
+msgstr "Control de la ventilació/llum"
+
+#: ../../user_manual/ekos-scheduler.rst:394
+msgid "Unparking dome"
+msgstr "Desaparcar la cúpula"
+
+#: ../../user_manual/ekos-scheduler.rst:396
+msgid "Unparking mount"
+msgstr "Desaparcar la muntura"
+
+#: ../../user_manual/ekos-scheduler.rst:398
+msgid "etc."
+msgstr "etc"
+
+#: ../../user_manual/ekos-scheduler.rst:400
+msgid ""
+"Ekos Scheduler only initiates the startup procedure once the startup time "
+"for the first Scheduler job is close (default *lead* time is 5 minutes "
+"before *startup* time). Once the startup procedure is completed "
+"successfully, the scheduler picks the Scheduler job target and starts the "
+"sequence process. If a startup script is specified, it shall be executed "
+"first."
+msgstr ""
+"El programador de l'Ekos només inicia el procediment d'inici una vegada que "
+"l'hora d'inici de la primera tasca del programador és propera (el temps de "
+"*lliurament* predeterminat és de 5 minuts abans de l'hora d'*inici*). Un cop"
+" finalitzat el procediment d'inici, el programador seleccionarà l'objectiu "
+"de la tasca del programador i iniciarà el procés de la seqüència. Si "
+"s'especifica un script d'inici, aquest s'executarà primer."
+
+#: ../../user_manual/ekos-scheduler.rst:411
+msgid "Data Acquisition"
+msgstr "Adquisició de les dades"
+
+#: ../../user_manual/ekos-scheduler.rst:413
+msgid ""
+"Depending the on the user selection, the typical workflow proceeds as "
+"follows:"
+msgstr ""
+"Depenent de la selecció de l'usuari, el flux de treball típic procedirà de "
+"la manera següent:"
+
+#: ../../user_manual/ekos-scheduler.rst:416
+msgid ""
+"Slew mount to target. If a FITS file was specified, it first solves the "
+"files and slew to the file coordinates."
+msgstr ""
+"Orientarà la muntura cap a l'objectiu. Si s'ha especificat un fitxer FITS, "
+"primer resoldrà els fitxers i orientarà cap a les coordenades del fitxer."
+
+#: ../../user_manual/ekos-scheduler.rst:420
+msgid ""
+"Auto-focus target. The autofocus process automatically selects the best star"
+" in the frame and runs the autofocus algorithm against it."
+msgstr ""
+"Enfocarà automàticament l'objectiu. El procés d'enfocament automàtic "
+"seleccionarà automàticament la millor estrella en el fotograma i executarà "
+"l'algorisme d'enfocament automàtic contra seu."
+
+#: ../../user_manual/ekos-scheduler.rst:424
+msgid "Perform plate solving, sync mount, and slew to target coordinates."
+msgstr ""
+"Realitzarà la resolució de la placa, sincronitzarà la muntura i orientarà "
+"cap a les coordenades de l'objectiu."
+
+#: ../../user_manual/ekos-scheduler.rst:427
+msgid ""
+"Perform post-alignment focusing since the frame might have moved during the "
+"plate solving process."
+msgstr ""
+"Realitzarà l'alineació posterior de l'enfocament, ja que el fotograma podria"
+" haver-se mogut durant el procés de resolució de la placa."
+
+#: ../../user_manual/ekos-scheduler.rst:430
+msgid ""
+"Perform calibration and start auto-guiding: The calibration process "
+"automatically selects the best guide star, performs calibration, and starts "
+"the autoguide process."
+msgstr ""
+"Realitzarà el calibratge i iniciarà el guiatge automàtic: el procés de "
+"calibratge seleccionarà automàticament la millor estrella guia, realitzarà "
+"el calibratge i iniciarà el procés de guiatge automàtic."
+
+#: ../../user_manual/ekos-scheduler.rst:435
+msgid ""
+"Load the sequence file in the :doc:`Capture module  <ekos-capture>` and "
+"start the imaging process."
+msgstr ""
+"Carregarà el fitxer de seqüències al :doc:`mòdul de captura <ekos-capture>` "
+"i iniciarà el procés d'obtenció de les imatges."
+
+#: ../../user_manual/ekos-scheduler.rst:439
+msgid ""
+"Coordinate module issues, such as failures in guiding or alignment. They may"
+" result is Scheduler job suspensions and rescheduling."
+msgstr ""
+"Coordinarà els problemes dels mòduls, com ara fallades en el guiatge o "
+"l'alineació. Poden resultar en suspensions de tasques del programador i "
+"reprogramacions."
+
+#: ../../user_manual/ekos-scheduler.rst:443
+msgid ""
+"Note--some of the inter-module interactions are initiated by the modules "
+"themselves, but are monitored by the Scheduler. These include meridian "
+"flips, autofocus runs initiated by temperature change or timer expiration, "
+"and minimum guiding deviation requirements for capture."
+msgstr ""
+"Nota: algunes de les interaccions entre mòduls són iniciades pels mateixos "
+"mòduls, però són supervisades pel programador. Aquests inclouen inversions "
+"del meridià, enfocaments automàtics iniciats per canvi de temperatura o "
+"expiració del temporitzador, i requisits mínims de desviació de guiatge per "
+"a la captura."
+
+#: ../../user_manual/ekos-scheduler.rst:455
+msgid ""
+"Once the Scheduler job is completed successfully, the scheduler selects the "
+"next Scheduler job. If no job can be scheduled at this time, the mount is "
+"parked until a next job can run. Furthermore, if the next job is not due for"
+" a user-configurable time limit, the scheduler performs a *preemptive* "
+"shutdown to preserve resources and performs the startup procedure again when"
+" the target is due."
+msgstr ""
+"Un cop finalitzada la tasca del programador, aquest seleccionarà la tasca "
+"següent del programador. Si no es pot programar cap tasca en aquesta hora, "
+"la muntura estarà aparcada fins que es pugui executar la tasca següent. A "
+"més, si la tasca següent no està prevista amb un límit de temps configurable"
+" per l'usuari, el programador realitzarà un tancament *preventiu* per tal de"
+" conservar els recursos, i tornarà a executar el procediment d'inici quan "
+"venci l'objectiu."
+
+#: ../../user_manual/ekos-scheduler.rst:463
+msgid ""
+"If an unrecoverable error occurs, the observatory initiates shutdown "
+"procedure. If there is a shutdown script, it will be executed last."
+msgstr ""
+"Si es produeix un error irrecuperable, l'observatori iniciarà el procediment"
+" de tancament. Si hi ha un script de tancament, s'executarà l'últim."
+
+#: ../../user_manual/ekos-scheduler.rst:467
+msgid ""
+"The following video demonstrates an earlier version of the scheduler, but "
+"the basic principles still apply today:"
+msgstr ""
+"El vídeo següent mostra una versió anterior del programador, però els "
+"principis bàsics encara s'apliquen avui:"
+
+#: ../../user_manual/ekos-scheduler.rst:473
+msgid "Ekos Scheduler (https://youtu.be/v8vIXD1kois)"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:478
+msgid "Weather Monitoring"
+msgstr "Seguiment del clima"
+
+#: ../../user_manual/ekos-scheduler.rst:480
+msgid ""
+"Another critical feature of any remotely operated robotic observatory is "
+"weather monitoring. For weather updates, Ekos relies on the selected INDI "
+"weather driver to continuously monitor the weather conditions. For "
+"simplicity sake, the weather conditions can be summed in three states:"
+msgstr ""
+"Una altra característica crítica d'un observatori robotitzat operat "
+"remotament és el seguiment del clima. Per a les actualitzacions "
+"meteorològiques, l'Ekos es basa en el controlador meteorològic seleccionat "
+"de l'INDI per a seguir contínuament les condicions meteorològiques. Per "
+"motius de simplicitat, les condicions meteorològiques es poden resumir en "
+"tres estats:"
+
+#: ../../user_manual/ekos-scheduler.rst:486
+msgid "**Ok**: Weather conditions are clear and optimal for imaging."
+msgstr ""
+"**D'acord**: Les condicions meteorològiques són clares i òptimes per a "
+"l'obtenció de les imatges."
+
+#: ../../user_manual/ekos-scheduler.rst:489
+msgid ""
+"**Warning**: Weather conditions are not clear, seeing is subpar, or "
+"partially obstructed and not suitable for imaging. Any further imaging "
+"process is suspended until the weather improves. Warning weather status does"
+" not pose any danger to the observatory equipment so the observatory is kept"
+" operational. The exact behavior to take under Warning status can be "
+"configured."
+msgstr ""
+"**Avís**: Les condicions meteorològiques no són clares, el «seeing» és "
+"insatisfactori o està parcialment obstruïda, i no és adequada per a "
+"l'obtenció de les imatges. Qualsevol altre procés d'obtenció de les imatges "
+"serà suspès fins que millori el temps. L'estat meteorològic d'avís no suposa"
+" cap perill per a l'equip de l'observatori, de manera que es mantindrà "
+"operatiu. El comportament exacte sota l'estat d'avís es pot configurar."
+
+#: ../../user_manual/ekos-scheduler.rst:498
+msgid ""
+"**Alert**: Weather conditions are detrimental to the observatory safety and "
+"shutdown must be initiated as soon as possible."
+msgstr ""
+"**Alerta**: Les condicions meteorològiques són perjudicials per a la "
+"seguretat de l'observatori i s'hauria d'iniciar el tancament tan aviat com "
+"sigui possible."
+
+#: ../../user_manual/ekos-scheduler.rst:505
+msgid "Startup & Shutdown Scripts"
+msgstr "Scripts durant l'inici i tancament"
+
+#: ../../user_manual/ekos-scheduler.rst:507
+msgid ""
+"Due to the uniqueness of each observatory, Ekos enables the user to select "
+"startup and shutdown scripts. The scripts take care of any necessary "
+"procedures that must take place on startup and shutdown stages. On startup, "
+"Ekos executes the startup scripts and only proceeds to the remainder of the "
+"startup procedure (unpark dome/unpark mount) if the script completes "
+"successfully. Conversely, the shutdown procedure begins with parking the "
+"mount & dome before executing the shutdown script as the final procedure."
+msgstr ""
+"A causa de la singularitat de cada observatori, l'Ekos permet a l'usuari "
+"seleccionar els scripts d'inici i tancament. Els scripts s'ocuparan dels "
+"procediments necessaris que s'hauran de realitzar en les etapes d'inici i "
+"tancament. A l'inici, l'Ekos executarà els scripts d'inici i només procedirà"
+" amb la resta del procediment d'inici (desaparcar la cúpula/desaparcar la "
+"muntura) si l'script finalitza amb èxit. A la inversa, el procediment de "
+"tancament començarà amb l'aparcament de la muntura i la cúpula abans "
+"d'executar l'script de tancament com a procediment final."
+
+#: ../../user_manual/ekos-scheduler.rst:517
+msgid ""
+"Startup and shutdown scripts can be written any language that can be "
+"executed on the local machine. It must return 0 to report success, any other"
+" exist value is considered an error indicator. The script's standard output "
+"is also directed to Ekos logger window. The following is an sample demo "
+"startup script in Python:"
+msgstr ""
+"Els scripts d'inici i de tancament es poden escriure en qualsevol llenguatge"
+" que es pugui executar a l'ordinador local. Haurà de retornar 0 per a "
+"informar de l'èxit, qualsevol altre valor serà considerat com un indicador "
+"d'error. La sortida estàndard de l'script també es dirigirà a la finestra de"
+" registre de l'Ekos. El següent és un script d'inici de demostració escrit "
+"en Python:"
+
+#: ../../user_manual/ekos-scheduler.rst:524
+msgid ""
+"#!/usr/bin/env python\n"
+"# -*- coding: utf-8 -*-\n"
+"\n"
+"import os\n"
+"import time\n"
+"import sys\n"
+"\n"
+"print \"Turning on observatory equipment...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"Checking safety switches...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"All systems are GO\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"exit(0)"
+msgstr ""
+"#!/usr/bin/env python\n"
+"# -*- coding: utf-8 -*-\n"
+"\n"
+"import os\n"
+"import time\n"
+"import sys\n"
+"\n"
+"print \"S'està encenent l'equip de l'observatori..."
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)"
+"\n"
+"print \"S'estan comprovant els commutadors de seguretat...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"Tots els sistemes estan GO\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"exit(0)"
+
+#: ../../user_manual/ekos-scheduler.rst:549
+msgid ""
+"The startup and shutdown scripts must be *executable* in order for Ekos to "
+"invoke them (e.g. use **``chmod +x startup_script.py``** to mark the script "
+"as executable). Ekos Scheduler enables truly simple robotic operation "
+"without the need of any human intervention in any step of the process. "
+"Without human presence, it becomes increasingly critical to gracefully "
+"recover from failures in any stage of the observation run. Using Plasma "
+"notifications, the user can configure audible alarms and email notifications"
+" for the various events in the Scheduler."
+msgstr ""
+"Els scripts d'inici i de tancament hauran de ser *executables* per tal que "
+"l'Ekos els invoqui (pex, utilitzeu ``chmod +x script_inici.py`` per a marcar"
+" l'script com a executable). El programador de l'Ekos permet una operació "
+"robòtica veritablement senzilla sense la necessitat de cap intervenció "
+"humana en cap pas del procés. Sense presència humana, cada vegada és més "
+"crític recuperar amb facilitat els errors durant qualsevol etapa de "
+"l'observació. Emprant les notificacions del plasma, l'usuari podrà "
+"configurar alarmes audibles i notificacions per correu electrònic per als "
+"diferents esdeveniments del programador."
+
+#: ../../user_manual/ekos-scheduler.rst:563
+#: ../../user_manual/ekos-scheduler.rst:711
+msgid "Mosaic Planner"
+msgstr "Planificador de mosaics"
+
+#: ../../user_manual/ekos-scheduler.rst:565
+msgid "|Mosaic Planner|"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:711
+msgid ".. image:: /images/mosaic_planner.png"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:567
+msgid ""
+"Hubble-like super wide field images of `galaxies "
+"<http://darkskyart.com/?page_id=96>`__ and nebulae are truly awe-inspiring, "
+"and while it takes great skills to obtain such images and process them; many"
+" notable names in the field of astrophotography employ gear that is not "
+"*vastly* different from yours or mine. I emphasize *vastly* because some do "
+"indeed have impressive equipment and dedicated observatories worth tens of "
+"the thousands of dollars. Nevertheless, many amateurs can obtain stellar "
+"wide-field images by combining smaller images into a single grand mosaic."
+msgstr ""
+"Les imatges amb un camp de gran abast, com ara les del Hubble, les `galàxies"
+" <http://darkskyart.com/?page_id=96>`__ i nebuloses són realment espantoses,"
+" i si bé es necessiten grans habilitats per a obtenir aquestes imatges i "
+"processar-les, molts noms reconeguts en el camp de l'astrofotografia empren "
+"equip que no són *molt* diferents del vostre o del meu. Ho emfatitzo "
+"*enormement* perquè alguns realment tenen equip impressionant i observatoris"
+" dedicats per valor de desenes dels milers de dòlars. No obstant això, molts"
+" aficionats poden obtenir imatges estel·lars amb un camp de gran abast "
+"combinant imatges més petites en un sol i gran mosaic."
+
+#: ../../user_manual/ekos-scheduler.rst:579
+msgid ""
+"We are often limited by our camera+telescope Field of View (FOV). By "
+"increasing FOV by means of a focal reducer or a shorter tube, we gain a "
+"larger sky coverage at the expense of spatial resolution. At the same time, "
+"many attractive wide-field targets span multiple FOVs across the sky. "
+"Without any changes to your astrophotography gear, it is possible to create "
+"a super mosaic image *stitched* together from several smaller images. There "
+"are two major steps to accomplish a super mosaic image:"
+msgstr ""
+"Sovint estem limitats pel camp de visió de la càmera+telescopi (CDV). En "
+"augmentar el CDV mitjançant un reductor focal o un tub més curt, obtindrem "
+"una cobertura del cel més gran a costa de la resolució espacial. Alhora, "
+"molts dels objectius amb un camp de gran abast ocupen múltiples CDV a través"
+" del cel. Sense cap canvi en el vostre equip d'astrofotografia, és possible "
+"crear una superimatge en mosaic *enganxada* a partir de diverses imatges més"
+" petites. Hi ha dos passos principals per a aconseguir una superimatge en "
+"mosaic:"
+
+#: ../../user_manual/ekos-scheduler.rst:589
+msgid ""
+"Capture multiple images spanning the target with some overlap between "
+"images. The overlap is necessary to enable the processing software from "
+"aligning and joining the sub-images."
+msgstr ""
+"Captureu múltiples imatges que abastin l'objectiu amb certa superposició "
+"entre les imatges. La superposició és necessària per a permetre que el "
+"programari de processament alineï i uneixi les subimatges."
+
+#: ../../user_manual/ekos-scheduler.rst:594
+msgid "Process the images and *stitch* them into a super mosaic image."
+msgstr "Processeu les imatges i *enganxeu-les* en una superimatge en mosaic."
+
+#: ../../user_manual/ekos-scheduler.rst:597
+msgid ""
+"The 2nd step is handled by image processing applications such as `PixInsight"
+" <https://pixinsight.com>`__, among others, and will not be the topic of "
+"discussion here. The first step can be accomplished in Ekos Scheduler where "
+"it creates a mosaic suitable for your equipment and in accordance with the "
+"desired field of view. Not only Ekos creates the mosaic panels for your "
+"target, but it also constructs the corresponding observatory jobs required "
+"to capture all the images. This greatly facilitates the logistics of "
+"capturing many images with different filters and calibration frames across a"
+" wide area of the sky."
+msgstr ""
+"El segon pas és gestionat per les aplicacions de processament de la imatge "
+"com `PixInsight <https://pixinsight.com>`__, entre d'altres, i no serà el "
+"tema de debat aquí. El primer pas es pot aconseguir al programador de "
+"l'Ekos, on aquest crearà un mosaic adequat per al vostre equip i d'acord amb"
+" el camp de visió desitjat. No només l'Ekos crea subfinestres en mosaic per "
+"al vostre objectiu, sinó que també construeix les tasques corresponents per "
+"a l'observatori, requerides per a capturar totes les imatges. Això facilita "
+"enormement la logística de capturar moltes imatges amb diferents filtres i "
+"calibratge de l'enquadrat en una àmplia àrea del cel."
+
+#: ../../user_manual/ekos-scheduler.rst:609
+msgid ""
+"The ``Mosaic Planner`` in the Ekos Scheduler will create multiple Scheduler "
+"jobs based on a central target. To toggle the planner, click on the ``Mosaic"
+" Planner`` button in Ekos Scheduler or KStars INDI toolbar as illustrated in"
+" the screenshot. The planner draws the Mosaic Panel directly unto the sky "
+"map. It is recommended to enable HiPS overlay for the best experience. The "
+"planner is composed of four stages:"
+msgstr ""
+"El ``Planificador de mosaic`` al programador de l'Ekos crearà múltiples "
+"tasques del programador basant-se en un objectiu central. Per a commutar el "
+"planificador, feu clic al botó ``Planificador de mosaic`` a la barra d'eines"
+" Programador de l'Ekos o de l'INDI del KStars tal com s'il·lustra a la "
+"captura de pantalla. El planificador dibuixa el plafó del mosaic directament"
+" al mapa celeste. Es recomana activar la superposició HiPS per a una "
+"experiència millor. El planificador està format per quatre etapes:"
+
+#: ../../user_manual/ekos-scheduler.rst:617
+msgid ""
+"**Confirm Equipment**: Ekos attempts to load equipment settings from INDI. "
+"If unsuccessful, you need to enter your equipment settings including your "
+"telescope focal length in addition to camera's width, height, and pixel "
+"dimensions. The settings are saved for future sessions."
+msgstr ""
+"**Confirma l'equip**: l'Ekos intenta carregar la configuració de l'equip des"
+" de l'INDI. Si no funciona, haureu d'introduir la configuració de l'equip, "
+"inclosa la distància focal del telescopi, a més de les dimensions de "
+"l'amplada, l'alçada i els píxels de la càmera. Els paràmetres es desen per a"
+" sessions futures."
+
+#: ../../user_manual/ekos-scheduler.rst:624
+msgid "|Confirm Equipment|"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:712
+msgid "Confirm Equipment"
+msgstr "Confirma l'equip"
+
+#: ../../user_manual/ekos-scheduler.rst:712
+msgid ".. image:: /images/mosaic_confirm_equipment.png"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:626
+msgid ""
+"**Adjust Grid**: Select the mosaic panel dimension and overlap percentage. "
+"The Mosaic Panel is updated accordingly on the sky map. Adjust the Position "
+"Angle to match the desired mosaic orientation in the sky. If the Position "
+"Angle is different from your camera's usual orientation, you may need to "
+"rotate the camera either manually or via a mechanized rotator when the "
+"scheduler jobs are executed. Tile transparency is automatically calculated "
+"by default but may be turned off and adjusted manually. To compute the "
+"mosaic field from the number of tiles, click the ``Cover FOV`` button. The "
+"mosaic panel can be centered in the sky map by clicking on the ``Recenter`` "
+"button."
+msgstr ""
+"**Ajusta la quadrícula**: Seleccioneu la dimensió del plafó del mosaic i el "
+"percentatge de superposició. El plafó del mosaic s'actualitza en "
+"conseqüència en el mapa celeste. Ajusteu l'angle de posició perquè "
+"coincideixi amb l'orientació desitjada del mosaic al cel. Si l'angle de "
+"posició és diferent de l'orientació habitual de la càmera, és possible que "
+"hàgiu de girar la càmera manualment o mitjançant un rotor mecanitzat quan "
+"s'executin les tasques del programador. La transparència del mosaic es "
+"calcula automàticament de manera predeterminada, però es pot desactivar i "
+"ajustar manualment. Per a calcular el camp del mosaic a partir del nombre de"
+" tessel·les, feu clic al botó ``Cobertura del CDV``. El plafó del mosaic es "
+"pot centrar en el mapa celeste fent clic al botó ``Torna a centrar``."
+
+#: ../../user_manual/ekos-scheduler.rst:640
+msgid "|Select Grid|"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:713
+msgid "Select Grid"
+msgstr "Selecció de la quadrícula"
+
+#: ../../user_manual/ekos-scheduler.rst:713
+msgid ".. image:: /images/mosaic_select_grid.png"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:642
+msgid ""
+"A large overlap will make frame stitching easier during post-processing, but"
+" it requires more panes to cover the desired extent. However, if you already"
+" know the minimal amount of sub-frames your rejection algorithm will use "
+"during post-processing, you may want to increase the overlap to attain that "
+"amount on the areas covered by multiple panes. For instance, a 4x4 mosaic "
+"grid with 75% overlap has 16 sub-frames covering the central intersection, "
+"which is enough for Winsorized Sigma rejection. Although the resulting stack"
+" does not have the same height on all parts of the final frame, this method "
+"gives you control on signal-to-noise ratio and allows you to provide context"
+" to your target while exposing a relatively low number of captures."
+msgstr ""
+"Una superposició gran farà més fàcil la costura de fotogrames durant el "
+"postprocessament, però requerirà més subfinestres per a cobrir l'extensió "
+"desitjada. Tanmateix, si ja coneixeu la quantitat mínima de subfotogrames, "
+"el vostre algorisme de rebuig s'utilitzarà durant el postprocessament, "
+"possiblement voldreu fer augmentar la superposició per a assolir aquesta "
+"quantitat a les àrees cobertes per múltiples subfinestres. Per exemple, una "
+"quadrícula en mosaic de 4x4 amb una superposició del 75% tindrà 16 "
+"subfotogrames que cobriran la intersecció central, el qual és suficient per "
+"al rebuig Sigma «winsorized». Tot i que la pila resultant no té la mateixa "
+"alçada en totes les parts del fotograma final, aquest mètode proporciona "
+"control sobre la relació senyal a soroll i permet proporcionar context al "
+"vostre objectiu mentre s'exposen un nombre relativament baix de captures."
+
+#: ../../user_manual/ekos-scheduler.rst:658
+msgid ""
+"The large number drawn in the corner of each grid pane represents the order "
+"in which panes will be captured. The default S-shaped choice (west-east then"
+" alternating high-low/low-high moves), ensures minimal movement of the mount"
+" during observation. Uncheck ``Minimum mount`` move to revert to west-"
+"east/high-low movement only. The coordinates of each pane are rendered in "
+"their center as degrees, minutes and seconds. Finally, the angle each pane "
+"rotates from the center of the mosaic is displayed at the bottom. If your "
+"field of view is large, or if your mosaic is located close to a celestial "
+"pole, you may observe that rendered panes start rotating visibly due their "
+"horizontal position or high declination. Use ``the overlap`` to ensure panes"
+" cover the desired frame extents properly."
+msgstr ""
+"El nombre gran dibuixat a la cantonada de cada subfinestra en la quadrícula "
+"representa l'ordre en què s'han capturat les subfinestres. L'elecció "
+"predeterminada en forma de S (oest-est i alternant moviments alts-"
+"baixos/baixos-alts), garanteix un moviment mínim de la muntura durant "
+"l'observació. Desmarqueu ``Moviment mínim de la muntura`` per a tornar als "
+"moviments oest-est/alts-baixos. Les coordenades de cada subfinestra es "
+"representen al seu centre com a graus, minuts i segons. Finalment, l'angle "
+"de cada subfinestra girarà des del centre del mosaic mostrant-se a la part "
+"inferior. Si el vostre camp de visió és gran o si el mosaic es troba a prop "
+"d'un pol celeste, observareu que les subfinestres representades començaran a"
+" rotar visiblement a causa de la seva posició horitzontal o d'una declinació"
+" alta. Utilitzeu la ``Superposició`` per a assegurar-vos que les "
+"subfinestres cobreixin correctament l'extensió desitjada del fotograma."
+
+#: ../../user_manual/ekos-scheduler.rst:675
+msgid "|Scheduler Mosaic Tool - Large rotation|"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:714
+msgid "Scheduler Mosaic Tool - Large rotation"
+msgstr "Eina de mosaic del programador - Rotació gran"
+
+#: ../../user_manual/ekos-scheduler.rst:714
+msgid ".. image:: /images/mosaic_close_pole.png"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:677
+msgid ""
+"**Adjust Grid**: Adjust Grid center by manually entering the J2000 center or"
+" by dragging the center of the mosaic on the sky map."
+msgstr ""
+"**Ajusta la quadrícula**: Ajusta el centre de la quadrícula introduint "
+"manualment el centre J2000 o arrossegant el centre del mosaic en el mapa "
+"celeste."
+
+#: ../../user_manual/ekos-scheduler.rst:681
+msgid "|Adjust Grid|"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:715
+msgid "Adjust Grid"
+msgstr "Ajusta la quadrícula"
+
+#: ../../user_manual/ekos-scheduler.rst:715
+msgid ".. image:: /images/mosaic_adjust_grid.png"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:683
+msgid ""
+"**Create Jobs**: The final step is to select the sequence file and directory"
+" to store the images. Target field may be automatically filled but may be "
+"changed as desired. Select the steps each scheduler job should execute in "
+"sequence (Track -> Focus -> Align -> Guide -> Capture), and adjust the "
+"frequency of automatic alignment and focus routines that must be executed "
+"during the mosaic operation. For example, if ``Align Every`` is set to 2 "
+"Scheduler Jobs, then the first job will run the astrometry alignment, while "
+"the second job will skip it. When the third job is executed, alignment is "
+"performed again and so forth."
+msgstr ""
+"**Crea tasques**: El pas final és seleccionar el fitxer i el directori de "
+"seqüències per a emmagatzemar les imatges. El camp de destinació es podria "
+"omplir automàticament, però es pot canviar segons es desitgi. Seleccioneu "
+"els passos que cada tasca del programador haurà d'executar en seqüència "
+"(Seguiment -> Enfocament -> Alineació -> Guiatge -> Captura), i ajusteu la "
+"freqüència de les rutines d'alineació i enfocament automàtics que s'han "
+"d'executar durant l'operació de mosaic. Per exemple, si ``Alinea cada`` està"
+" establert a 2 tasques del programador, llavors la primera tasca executarà "
+"l'alineació d'astrometria, mentre que la segona tasca l'ometrà. Quan "
+"s'executa la tercera tasca, l'alineació es torna a realitzar i així "
+"successivament."
+
+#: ../../user_manual/ekos-scheduler.rst:696
+msgid ""
+"If you want the different mosaic tile jobs to alternate, then fill in the "
+"group name with an identifier that all the tile jobs will share, and select "
+"a repeating completion condition."
+msgstr ""
+"Si voleu que s'alternin les tasques diferents de tessel·les de mosaic, "
+"empleneu el nom del grup amb un identificador que compartiran totes les "
+"tasques de mosaic i seleccioneu una condició de compleció repetida."
+
+#: ../../user_manual/ekos-scheduler.rst:701
+msgid "|Create Jobs|"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:716
+msgid "Create Jobs"
+msgstr "Crea tasques"
+
+#: ../../user_manual/ekos-scheduler.rst:716
+msgid ".. image:: /images/mosaic_create_jobs.png"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:703
+msgid ""
+"Click ``Create Jobs`` to generate mosaic scheduler jobs and add them to the "
+"schedule queue. You can further edit the jobs individually, as you would "
+"normal Scheduler jobs."
+msgstr ""
+"Feu clic a ``Crea tasques`` per a generar les tasques del programador de "
+"mosaic i afegir-les a la cua del programador. Podeu editar les tasques "
+"individualment, com a les tasques normals del programador."

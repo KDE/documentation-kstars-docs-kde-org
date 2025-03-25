@@ -1,0 +1,89 @@
+=====================
+How to translate docs
+=====================
+
+The "full-steps" way
+=====================
+
+Whenever we make changes to the RST files, follow these steps to update translations:
+
+#. Update POT files
+
+   To take base english RST files and generate POT files for others, run: `make gettext`.
+
+   This will generate POT files under `_build/gettext/` directory.
+
+#. Update PO files
+
+   Run the command: `sphinx-intl update --pot-dir _build/gettext -l LANG_CODE1 [-l LANG_CODE2..]`
+
+   PO files for each lang specified (using -l) will be created under `locale/LANG_CODE/` directory.
+
+#. Export flattened PO files (Should we do this?)
+
+   Run the command: `sh StaticMessages.sh export PATH/TO/DEST-FOLDER` 
+
+#. Send PO files to translators for edit
+
+   Keep the edited PO files under the same path where they were (in the above step).
+
+#. Import the edited files:
+
+   Run the command: `sh StaticMessages.sh import PATH/TO/SRC-FOLDER`
+
+#. Turn the PO files to MO files
+
+   Run the command `sphinx-intl build [-l LANG_CODE]`
+
+#. Build out the changes to the language
+
+   Run the command `make -e SPHINXOPTS="-D language='LANG_CODE'" html`
+
+   Similarly we can run commands for other formats like epub, latex, etc too.
+
+#. Update theme layout language list:
+
+   If this is a new language, add the language to the list. For this:
+
+   #. Add an appropriate option to select#language-selector-container element.
+
+   #. Add an appropriate entry for the lang in meta[property="og:locale"] tag also.
+
+The "quick" way
+================
+
+All the above steps (except updating theme lang list) can be shortened into running our custom scripts as described below.
+
+Update & Export PO files
+-------------------------
+After editing the source rst files, run the script `StaticMessages.sh` to build and export PO files
+
+`./StaticMessages.sh export DEST-PATH`
+
+This will update PO files for all languages under `locale` and copy them to the DEST-PATH you provided.
+
+Import translated PO files back to locale
+------------------------------------------
+After translating the PO files generated in the above step, run `StatisMessages.sh` again as follows:
+
+`./StaticMessages.sh import SRC-PATH`
+
+Inside the SRC-PATH, the PO files must be put under a directory named by its lang code. eg, French PO files must be put under `SRC-PATH/fr`.
+
+If we are intending to import just one lang, SRC-PATH can have that one language only.
+
+Rebuild 
+---------
+After importing translated PO files, we can rebuild the site using the script, `rebuild_all.sh`, as follows.
+
+#. To rebuild site for English and one specific language, for example "French"
+
+  `./rebuild_all.sh fr`
+
+#. To rebuild for all available languages:
+
+  `./rebuild_all.sh all`
+
+#. To rebuild just the English site:
+
+  `./rebuild_all.sh`
