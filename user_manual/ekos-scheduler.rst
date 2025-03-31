@@ -58,6 +58,34 @@ Scheduler Table
                   ``checkmark``), and the new attributes are assigned to
                   that job.
 
+.. _ekos-scheduler-scheduler-graph:
+
+Scheduler Graph
+=================   
+
+            Associated with the scheduler table is a graph that represents
+            the planned execution of scheduler jobs. Each graph line
+            corresponds to a row in the scheduler table, plotting that scheduler
+            job's altitude as a function of time for tonight.
+
+               -  If a job is scheduled to run tonight, its graph line is
+                  highlighted in green during its expected run times.
+
+               -  There are arrows to the right (and possibly) left of the graph
+                  to change the display to "tomorrow night" and "the night after",
+                  or to move it back to the current night.
+
+               -  If you click on a scheduler table row, the associated graph
+                  line is highlighted. One can also identify graph lines by
+                  hovering the mouse over them.
+
+               -  Clicking in the graph will display the time and altitude
+                  for the selected scheduler job.
+
+               -  The scheduler graph can be expanded or diminished by using
+                  the mouse to grab and drag the dotted separator between the
+                  scheduler graph and scheduler table.
+
 .. _ekos-scheduler-scheduling-algorithm:
 
 Scheduling Algorithm
