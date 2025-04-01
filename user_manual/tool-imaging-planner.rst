@@ -41,75 +41,74 @@ Setting up the Imaging Planner
          instructions, if you are new to KStars. Existing KStars
          users may find the initial steps unnecessary.
 
-         ``Download KStars``
-            - Follow the instructions at `https://kstars.kde.org/download/ <https://kstars.kde.org/download/>`__.
+         #. **Download KStars**
+              * Follow the instructions at `https://kstars.kde.org/download/ <https://kstars.kde.org/download/>`__.
 
-         ``Run KStars for the first time``
-            - The ``Startup Wizard`` appears when you run KStars for the first time.
-              You can also access it from ``Settings`` → ``Startup Wizard``.
-            - Setup your geography in the Startup Wizard.
-            - Click ``Download Extra Data``.
-            - If you are running KStars 3.7.6 or later, the only required Imaging Planner
-              download is the Imaging Planner catalog (see image). It should say
-              ``Catalog 2...`` or later.
-                 |Imaging Planner Catalog Download|
-            - If you are running earlier versions, it's recommended to also
-              download the ``NGC/IC``, ``Open NGC``, ``Abell``, ``Sharpless``, ``Hickson``,
-              and ``Lynds`` catalogs to greatly speed up the time it takes the
-              Imaging Planner to start up for the first time.
-            - In either case, you can also download any other catalogs you may want.
+         #. **Run KStars for the first time**
+              * The ``Startup Wizard`` appears when you run KStars for the first time.
+                You can also access it from ``Settings`` → ``Startup Wizard``.
+              * Setup your geography in the Startup Wizard.
+              * Click ``Download Extra Data``.
+              * If you are running KStars 3.7.6 or later, the only required Imaging Planner
+                download is the Imaging Planner catalog (see image). It should say
+                ``Catalog 2...`` or later.
+                   |Imaging Planner Catalog Download|
+              * If you are running earlier versions, it's recommended to also
+                download the ``NGC/IC``, ``Open NGC``, ``Abell``, ``Sharpless``, ``Hickson``,
+                and ``Lynds`` catalogs to greatly speed up the time it takes the
+                Imaging Planner to start up for the first time.
+              * In either case, you can also download any other catalogs you may want.
 
-         ``Setup your Artificial Horizon file (optional, but nice)``
-            - Your horizon file should be formatted as follows, where the lines starting
-              with ``#`` are just comments and are optional, ``SideNearFence`` can be
-              replaced by whatever you want to call your horizon, and the other lines
-              have two floating point numbers for azimuth and altitude.
-              This format is likely similar or identical to the horizon file format
-              used by other imaging software.::
+         #. **Setup your Artificial Horizon file** (optional, but nice)
+              * Your horizon file should be formatted as follows, where the lines starting
+                with ``#`` are just comments and are optional, ``SideNearFence`` can be
+                replaced by whatever you want to call your horizon, and the other lines
+                have two floating point numbers for azimuth and altitude.
+                This format is likely similar or identical to the horizon file format
+                used by other imaging software.::
 
-                 # KStars Artificial Horizon export
-                 #
-                 Horizon SideNearFence
-                 67.6236 22.7211
-                 71.4942 21.7769
-                 73.8178 20.6722
-                 ...
+                   # KStars Artificial Horizon export
+                   #
+                   Horizon SideNearFence
+                   67.6236 22.7211
+                   71.4942 21.7769
+                   73.8178 20.6722
+                   ...
 
-            - Go to ``Settings`` → ``Artificial Horizon``. Click the icon that's the 5th from
-              the left (if you hover your mouse over it, and it should say
-              "Import a previously exported horizon file").
-            - Navigate to your horizon file and select it.
-            - Click Apply and then click Close.
+              * Go to ``Settings`` → ``Artificial Horizon``. Click the icon that's the 5th from
+                the left (if you hover your mouse over it, and it should say
+                "Import a previously exported horizon file").
+              * Navigate to your horizon file and select it.
+              * Click Apply and then click Close.
 
-         ``Change your theme (Optional)``
-            - If you prefer a darker theme, go to ``Settings`` →
-              ``Themes`` and select ``Black Body``.
+         #. **Change your theme** (Optional)
+              * If you prefer a darker theme, go to ``Settings`` →
+                ``Themes`` and select ``Black Body``.
 
-         ``Running the planner for the first time``
-            - Go to ``Tools`` → ``Imaging Planner``
-            - The planner will start, but may prompt you to load a catalog
-            - If you need a catalog or aren't using the most recent catalog (e.g. the 770-object Catalog2)
-              that was uploaded in the ``Download Extra Data`` section above,
-              then find and click ``Load Catalog`` on the right side of the Imaging Planner.
-               - It should bring up an ``Open file`` menu starting with a folder where you should
-                 be able to find Imaging Planner catalogs. Currently the latest catalog is in a
-                 folder called ImagingPlanner-catalog2.
-               - Double click that folder, and it should bring you to a folder where you should be
-                 able to find ``all.csv``.
-               - Select (single click) ``all.csv`` and click ``Open``. It should grey out the
-                 Imaging Planner, and start loading the catalog's data. This load can take several
-                 minutes when first adding a catalog on KStars versions before 3.7.6.
-                 The delay should be much shorter on and after 3.7.6.
-               - These long delays should only happen the first time you run the Imaging Planner tool.
-                 You will see a note near the top that keeps updating, saying things
-                 like ``13/66 adding Arp 240``.
-            - If you have a catalog, or you've completed loading one, the Imaging Planner is ready for use.
-            - Subsequent startups should be much faster, with your choices remembered.
-            - This video (created November 2024) demonstrates using the
-              Imaging Planner tool:
-              `https://youtu.be/hrjqglLCW2s <https://youtu.be/hrjqglLCW2s>`__
+         #. **Running the planner for the first time**
+              * Go to ``Tools`` → ``Imaging Planner``
+              * The planner will start, but may prompt you to load a catalog
+              * If you need a catalog or aren't using the most recent catalog (e.g. the 770-object Catalog2)
+                that was uploaded in the ``Download Extra Data`` section above,
+                then find and click ``Load Catalog`` on the right side of the Imaging Planner.
+                 * It should bring up an ``Open file`` menu starting with a folder where you should
+                   be able to find Imaging Planner catalogs. Currently the latest catalog is in a
+                   folder called ImagingPlanner-catalog2.
+                 * Double click that folder, and it should bring you to a folder where you should be
+                   able to find ``all.csv``.
+                 * Select (single click) ``all.csv`` and click ``Open``. It should grey out the
+                   Imaging Planner, and start loading the catalog's data. This load can take several
+                   minutes when first adding a catalog on KStars versions before 3.7.6.
+                   The delay should be much shorter on and after 3.7.6.
+                 * These long delays should only happen the first time you run the Imaging Planner tool.
+                   You will see a note near the top that keeps updating, saying things
+                   like ``13/66 adding Arp 240``.
+              * If you have a catalog, or you've completed loading one, the Imaging Planner is ready for use.
+              * Subsequent startups should be much faster, with your choices remembered.
+         #. **Using the Imaging Planner**
+              * This video (created November 2024) demonstrates using the Imaging Planner tool:
+                `https://youtu.be/hrjqglLCW2s <https://youtu.be/hrjqglLCW2s>`__
 
-         
 .. _tool-imaging-planner-the-object-table:
 
 The Object Table
