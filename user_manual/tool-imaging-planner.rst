@@ -4,56 +4,59 @@ Imaging Planner Tool
 
                |Imaging Planner|
 
-         The Imaging Planner tool helps users choose which objects to
-         image. Users can download catalogs of recommended objects, or
-         possibly create and share their own catalogs. The tool computes
-         when the objects in a read-in catalog may be imaged on the
-         selected night given constraints such as minimum altitude,
-         terrain and moon separation. It can sort the objects along
-         several different dimensions including the number of hours an
-         object may be imaged tonight (given the users geography,
-         constraints and possibly artificial horizon), its peak
-         altitude, distance from the moon, constellation, name and type.
-         Objects can also be filtered out for several reasons (e.g. type
-         of object, whether it was previously imaged, keywords the user
-         has added, whether the object has been selected, user not
-         interested, etc). This tool helps users research the objects by
-         showing small images of the objects, showing the objects' sky
-         locations on the skymap, and by providing links to follow to
-         internet sites with more information and images. It allows
-         users to attach notes and links to objects, and select certain
-         of them for further consideration. This tool can be used in
-         conjection with the Ekos imager or any other imaging tool. It
-         does not currently directly interact with the actual imager; it
-         only helps the user decide what to image.
+         The Imaging Planner tool assists users in
+         selecting objects to image. Users can download
+         catalogs of recommended objects, and may create
+         and share their own catalogs. The tool
+         calculates when objects in a catalog may be
+         imaged on the selected night, given
+         constraints such as minimum altitude, terrain,
+         and moon elevation and separation. It can sort the objects
+         along several dimensions including the number
+         of hours an object may be imaged tonight (given the 
+         user's geography, constraints and possibly artificial horizon), 
+         the object's peak altitude, distance from the moon,
+         constellation, name, and type. Objects can also
+         be filtered out for several reasons (e.g.,
+         object type, whether it was previously imaged,
+         keywords, whether the object has been selected,
+         or if the user is uninterested). This tool
+         aids object selection by displaying high-quality
+         images, showing sky locations on the skymap,
+         and providing links to follow to
+         internet sites with more information and images. It
+         allows attaching notes and links to objects,
+         and selecting them for future consideration. This tool
+         can be used with Ekos or other imaging tools,
+         but does not directly interact with the imager;
+         it helps the user decide what to image.
 
 .. _tool-imaging-planner-setup:
 
 Setting up the Imaging Planner
 ==============================
 
-         The Imaging Planner tool is a tool that can also be used even when
-         one is imaging with other software (i.e. not KStars/Ekos). This
-         section gives instructions for setting up this tool, even if you
-         are unfamiliar with KStars. Thus the first few steps are likely
-         unnecessary for existing KStars users.
-         
+         The Imaging Planner tool can be used with KStars/Ekos or other
+         astrophotography software. This section provides setup
+         instructions, if you are new to KStars. Existing KStars
+         users may find the initial steps unnecessary.
+
          ``Download KStars``
-            - Follow instructions at `https://kstars.kde.org/download/ <https://kstars.kde.org/download/>`__
+            - Follow the instructions at `https://kstars.kde.org/download/ <https://kstars.kde.org/download/>`__.
 
          ``Run KStars for the first time``
-            - The ``Startup Wizard`` appears the first time you run KStars.
-              You can also get it from the ``Settings`` → ``Startup Wizard`` menu.
+            - The ``Startup Wizard`` appears when you run KStars for the first time.
+              You can also access it from ``Settings`` → ``Startup Wizard``.
             - Setup your geography in the Startup Wizard.
-            - Click on Download Extra Data.
-            - If you are running KStars 3.7.6 or later, the only required imaging planner
+            - Click ``Download Extra Data``.
+            - If you are running KStars 3.7.6 or later, the only required Imaging Planner
               download is the Imaging Planner catalog (see image). It should say
               ``Catalog 2...`` or later.
-                 |Imaging Planner Catalog Download|              
-            - If you are running earlier versions, it's recommended that you also
-              download ``NGC/IC``, ``Open NGC``, ``Abell``, ``Sharpless``, ``Hickson``,
-              and ``Lynds`` which will greatly speed up the time it takes the
-              Imaging Planner to startup for the first time.
+                 |Imaging Planner Catalog Download|
+            - If you are running earlier versions, it's recommended to also
+              download the ``NGC/IC``, ``Open NGC``, ``Abell``, ``Sharpless``, ``Hickson``,
+              and ``Lynds`` catalogs to greatly speed up the time it takes the
+              Imaging Planner to start up for the first time.
             - In either case, you can also download any other catalogs you may want.
 
          ``Setup your Artificial Horizon file (optional, but nice)``
@@ -79,29 +82,31 @@ Setting up the Imaging Planner
             - Click Apply and then click Close.
 
          ``Change your theme (Optional)``
-            - If you like darker themes, go to ``Settings`` → ``Themes`` and select ``Black Body``
+            - If you prefer a darker theme, go to ``Settings`` →
+              ``Themes`` and select ``Black Body``.
 
          ``Running the planner for the first time``
             - Go to ``Tools`` → ``Imaging Planner``
-            - It will start the planner but may say you need to load a catalog
-            - Click OK, then click ``Load Catalog`` on the right side of the Imaging Planner.
-            - It should bring up an ``Open file`` menu starting with a folder where you should
-              be able to find Imaging Planner catalogs. Currently the latest catalog is in a
-              folder called ImagingPlanner-catalog2.
-            - Double click that folder, and it should bring you to a folder where you should be
-              able to find ``all.csv``.
-            - Select (single click) ``all.csv`` and click ``Open``. It should grey out the
-              Imaging Planner, and start loading the catalog's data. This load can take several
-              minutes when first adding a catalog on KStars versions before 3.7.6.
-              The delay should be much shorter on and after 3.7.6.
-            - These long delays should only happen the first time you run the Imaging Planner tool.
-              You will see a note near the top that keeps updating, saying things
-              like ``13/66 adding Arp 240``.
-            - Eventually the loading finishes, and the Imaging Planner is ready to go,
-              and you can use it.
-            - Next time you start the Imaging Planner, it should open up pretty quickly and you
-              don't need to load any catalogs and it remembers your various choices.
-            - This video (created November 2024) demonstrates using the Imaging Planner tool:
+            - The planner will start, but may prompt you to load a catalog
+            - If you need a catalog or aren't using the most recent catalog (e.g. the 770-object Catalog2)
+              that was uploaded in the ``Download Extra Data`` section above,
+              then find and click ``Load Catalog`` on the right side of the Imaging Planner.
+               - It should bring up an ``Open file`` menu starting with a folder where you should
+                 be able to find Imaging Planner catalogs. Currently the latest catalog is in a
+                 folder called ImagingPlanner-catalog2.
+               - Double click that folder, and it should bring you to a folder where you should be
+                 able to find ``all.csv``.
+               - Select (single click) ``all.csv`` and click ``Open``. It should grey out the
+                 Imaging Planner, and start loading the catalog's data. This load can take several
+                 minutes when first adding a catalog on KStars versions before 3.7.6.
+                 The delay should be much shorter on and after 3.7.6.
+               - These long delays should only happen the first time you run the Imaging Planner tool.
+                 You will see a note near the top that keeps updating, saying things
+                 like ``13/66 adding Arp 240``.
+            - If you have a catalog, or you've completed loading one, the Imaging Planner is ready for use.
+            - Subsequent startups should be much faster, with your choices remembered.
+            - This video (created November 2024) demonstrates using the
+              Imaging Planner tool:
               `https://youtu.be/hrjqglLCW2s <https://youtu.be/hrjqglLCW2s>`__
 
          
@@ -110,26 +115,21 @@ Setting up the Imaging Planner
 The Object Table
 ==================
 
-            The left side of the Imaging Planner tool is mostly occupied
-            by the Object Table. It lists all the objects in the loaded
-            catalog, other than those filtered out--see the Filters
-            section below. Attributes of the objects are listed in the
-            columns. Rows can be selected, and the selected row's
-            information, altitude graph and image are shown on the right
-            side of the tool.
+            The Object Table, which occupies most of the left side of the Imaging Planner tool,
+            displays a list of objects from the loaded catalog,
+            excluding any that have been filtered out (see the
+            Filters section below). The table's columns
+            display various attributes. Select a row to see details,
+            an altitude graph, and an image on the right.
 
-            The table defaults to a sort order of more imaging hours on
-            top. However one can change the sort order by clicking on
-            column headers which will sort by that column (with certain
-            secondary column sort defaults). Clicking on the same column
-            header again will reverse the sort order.
+            The table sorts by imaging hours by default.
+            Click a column header to sort by that column.
+            Click again to reverse the sort order.
 
-            Right clicking (or control-click) on a row brings up a menu
-            of operations that can be done on the object. Multiple rows
-            can be selected (by the "click then shift-click technique")
-            and the right-click menu may operate on all the selected
-            rows. The operations allow you to add attributes to the
-            object. Choices are:
+            Right-clicking a row opens a menu of operations.
+            Select multiple rows using "click then shift-click".
+            The right-click menu can operate on all selected
+            rows, adding attributes to the objects. Choices are:
 
                -  Pick the selected object (or un-pick an already picked
                   object). Note you can select more than one object at a
@@ -530,12 +530,12 @@ Catalog Format
                      RELATIVE_CATALOG_FILENAME should be read in as if
                      they were in this catalog file.
 
-               If you wanted to add your own objects to the existing
-               catalog, you could do so by creating your own catalog,
-               say on your desktop in a .csv file, and having the first
-               line include the existing catalog with a LoadCatalog
-               line, and having subsequent lines list your new objects.
-               You'd then run ``Load Catalog`` on your new .csv file.
+               To add custom objects, create a .csv file
+               (e.g., on your desktop). The first line
+               should reference the existing catalog
+               with LoadCatalog. Subsequent lines list
+               your objects. Then, use ``Load Catalog``
+               on your new .csv file.
 
 .. _tool-imaging-planner-loading-catalogs:
 
@@ -557,4 +557,3 @@ Loading Catalogs
 
 .. |Imaging Planner| image:: /images/imagingplanner.png
 .. |Imaging Planner Catalog Download| image:: /images/imagingplanner_download.png
-
