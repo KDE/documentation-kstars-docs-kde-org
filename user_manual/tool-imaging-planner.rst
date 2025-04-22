@@ -155,6 +155,9 @@ The Object Table
                   makes sense if auto-centering is disable in the
                   Options menu.
 
+               -  Screenshot. This is a more complex operation described
+                  in the screenshot sub-section below.
+
             Objects that are marked as imaged are displayed with a
             different background color as the other images in order to
             distinguish them. This tool doesn't automatically know that
@@ -173,6 +176,45 @@ The Object Table
             out. There is also a search box which will find a certain
             object if it is in the table.
 
+Screenshots
+-----------
+
+            You may want to place a nice finished example of a target you
+            are considering on the SkyMap. This could be, for example, an image
+            you admire on Astrobin. This could be useful to later help you frame
+            your planned capture. One can do this using the :doc:`image overlays <imageOverlays>`
+            capability. However, you can shortcut this procedure if all you
+            want to do is create a temporary overlay (this session only).
+            A demonstration video of this process can be found
+            `here <https://youtu.be/r-_xM8gZpM0>`__ and is summarized below:
+
+               -  Find a nice large example of the image you want to overlay
+                  and open up that web page so it's visible on your screen.
+
+               -  Go back to the Imaging Planner tool and right click on the object
+                  in the object table. There select the bottom option ``Screenshot``.
+
+               -  Your mouse cursor will change to the screenshot cursor. (You
+                  can use the ``Escape`` keyboard character if you want to
+                  cancel this operation.)
+
+               -  Using keyboard commands (not the mouse) navigate back to the
+                  nice image, move your mouse in the upper left corner of the image you wish
+                  to screenshot, press down and drag the mouse to the bottom right corner of
+                  that image, and then release the mouse. If you don't know how to
+                  navigate to the image display with keyboard commands, you'd need to adjust
+                  the sizes of the nice image display and the imaging planner tool such that
+                  both fit on your screen unobstructed.
+
+               -  If all has gone well, a window will pop up with a ``Solve``
+                  button. Click on Solve. This step can be automated by checking the
+                  ``Start Solving Immediately`` checkbox in the hamburger menu in the upper
+                  right corner of the main Imaging Planner window.
+
+               -  If the image was solved, the SkyMap should now be displayed with
+                  your example image placed correctly. You may need to zoom-in to see it
+                  if your view is zoomed out too far.
+            
 .. _tool-imaging-planner-date-time-and-geography:
 
 Date, Time and Geography
