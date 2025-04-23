@@ -198,8 +198,6 @@ Calibration Failures
 Guiding
 =========   
 
-                  |Guide Settings|
-
             Once the calibration process is completed successfully,
             guiding begins automatically. The guiding performance is
             displayed in the ``Drift Graphics`` region where ``Green`` reflects
@@ -213,37 +211,74 @@ Guiding
             inspect a specific region of the graph. Another convenient
             place to examine guiding performance is in the Analyze tab.
 
-            Ekos can utilize multiple algorithms to determine the drift
-            from the (original) lock position, but by far the most
-            accurate is the (default) SEP MultiStar algorithm. It uses
+                  |Guide Settings|
+
+            There are two types of algorithms used in the internal guider, and you
+            have choices of which variations to use for both. The first is the
+            ``Star Detection`` algorithm. The guider captures images of the sky and
+            automatically detects stars in these images. Once this is done, it can determine
+            your mount's drift in RA and DEC from its original position. The second type of
+            algorithm is the ``Guiding Algorithm`` used to compute the RA and DEC
+            guide pulses that should be sent to your mount to correct that drift.
+            
+            You can find star-detection algorithm choices in the Guide Settings
+            page (above image) at the top of the ``Other Settings`` section.
+            By far the most accurate is the (default) SEP MultiStar algorithm. It uses
             the detected position of many stars (in the above settings,
             up to 50) to determine its best estimate for the current
             drift. It is dependent on accurate star detection. Thus, it
             may be important to adjust star-detection parameters. Start
             with the default Guide-Default SEP profile, and optionally
             edit its parameters if you feel stars are not being detected
-            accurately.
+            accurately. Pretty much the only reason not to use SEP MultiStar
+            would be if you can't get your SEP star-detection to perform adequately.
 
-            Here are some of the parameters you may want to adjust.
-            Again, good advice in choosing parameters is available on
+            Guiding algorithm choices are made at the top of the settings page.
+            You can choose separate algorithms for RA and DEC.
+            Here are the possibilities:
+
+               -  Standard: The traditional proportional guide algorithm. It computes
+                  a pulse to correct the computed guide drift. The aggressiveness
+                  parameter decides what proportion of the error is corrected.
+                  Integral gain can be used but is not recommended.
+                  Errors smaller than MinError won't be corrected. Max response limits
+                  the largest correction. The hysteresis parameter is not used.
+
+               -  Hysteresis: Hysteresis is like the standard algorithm but weights in the
+                  previous correction according to the hysteresis parameter.
+
+               -  Linear: This is similar to the PHD2 Lowpass2 algorithm. It computes the
+                  error pulses based on a short history of recent errors. This may be applicable
+                  to very stable mounts and is similar to the PHD2 LowPass2 algorithm.
+
+               -  GPG: (RA Only) The GPG algorithm tries to predict periodic error and
+                  linear drifts. It uses the aggressiveness, min and max parameters here,
+                  and more parameters on the separate GPG tab. It is very similar to the
+                  PHD2 PPEC algorithm. For technical details see `this paper <https://www.researchgate.net/publication/276459268_Gaussian_Process-Based_Predictive_Control_for_Periodic_Error_Correction>`__.
+                  There is more detail on GPG below.
+
+            A good starting choice is ``Standard`` or ``Hysteresis`` (with a 0.1 hysteresis parameter).
+            You may want to use ``GPG`` for RA, as it is probably the best performing algorithm for many mounts,
+            however it is more complex to set up (see below). ``Linear`` is recommended for some
+            high-performance mounts.
+            
+            Good advice in choosing parameters is available on
             the internet, e.g. from `the above
             slideshow <https://openphdguiding.org/PHD2_BestPractices_2019-12.pdf>`__.
 
-               -  Aggressiveness. How quickly you want the guider to
-                  correct the error. Values of 0.5 or 0.6 are usually
-                  best (i.e. correcting about half the observed error).
+            The main parameter choices you have are below. They are applicable to
+            all the guiding algorithms.
+
+               -  Aggressiveness. This controls how quickly you want the guider to
+                  correct the error. Values of 0.5 to 0.7 are usually
+                  best (i.e. correcting roughly half the observed error).
                   Unintuitively, it seems that correcting 100% of the
-                  error can cause poor performance as the guider will
-                  often oscillate with overcorrections.
+                  error can cause poor performance as the guider may
+                  oscillate with overcorrections.
 
-               -  Algorithm. We strongly recommend you use the most
-                  up-to-date algorithm: SEP MultiStar. Pretty much the
-                  only reason not to would be if you can't get your SEP
-                  star-detection to perform adequately.
-
-               -  SEP Profile. Start with Guide-Default, though you may
-                  choose others if you have very large or small stars
-                  (in terms of number of pixels in diameter).
+               -  Min error. This controls the minimum deviation (in arc-seconds)
+                  for which a correction will be made. Adjusting this can avoid
+                  chasing the seeing.
 
 .. _ekos-guide-dithering:
 
