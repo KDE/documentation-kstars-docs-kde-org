@@ -308,6 +308,19 @@ The Altitude Graph
             altitude of the selected object displayed in the upper left
             of the graph.
 
+                   |Imaging Planner Graph|
+
+           In the above graph screenshot, the X axis corresponds to the nighttime between
+           about 20:30 in the evening and 05:30 in the morning. The white line is
+           a plot of the altitude of the selected object (which happened to be NGC 6384,
+           not displayed). The superimposed bright green line shows it is imageable
+           between a little after midnight until about 4:20am. The blue background on both sides
+           of the graph correspond to just before and after astronomical twilight.
+           The hashing shows some moonlight between sunset and almost 2:30am. The user
+           clicked on the graph where (on the X axis) it was 10:18pm, and at that time
+           the object's altitude was 9.6º.
+           
+
 .. _tool-imaging-planner-imaging-constraints:
 
 Imaging Constraints
@@ -598,3 +611,4 @@ Loading Catalogs
 
 .. |Imaging Planner| image:: /images/imagingplanner.png
 .. |Imaging Planner Catalog Download| image:: /images/imagingplanner_download.png
+.. |Imaging Planner Graph| image:: /images/imagingplanner_graph.png
