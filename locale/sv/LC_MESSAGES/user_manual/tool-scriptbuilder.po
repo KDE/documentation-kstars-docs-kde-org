@@ -1,0 +1,378 @@
+# translation of kstars_scriptbuilder.po to Swedish
+# Copyright (C) 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
+#
+# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2004, 2005, 2006, 2007, 2011, 2016, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars_scriptbuilder\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-10-22 00:52+0000\n"
+"PO-Revision-Date: 2021-07-29 14:35+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: scriptbuilder.docbook:2
+#, no-c-format
+msgid "<title>The Script Builder Tool</title>"
+msgstr "<title>Verktyget Skriptbyggaren</title>"
+
+#. Tag: primary
+#: scriptbuilder.docbook:3
+#, no-c-format
+msgid "Tools"
+msgstr "Verktyg"
+
+#. Tag: secondary
+#: scriptbuilder.docbook:4
+#, no-c-format
+msgid "Script Builder"
+msgstr "Skriptbyggare"
+
+#. Tag: para
+#: scriptbuilder.docbook:7
+#, no-c-format
+msgid ""
+"&kde; applications can be controlled externally from another program, from a "
+"console prompt, or from a shell script using the Inter-process communication "
+"protocol (&DBus;). &kstars; takes advantage of this feature to allow rather "
+"complex behaviors to be scripted and played back at any time. This can be "
+"used, for example, to create a classroom demo to illustrate an astronomical "
+"concept."
+msgstr ""
+"&kde;-program kan styras externt från ett annat program, från en terminal, "
+"eller från ett skalskript med hjälp av protokollet för kommunikation mellan "
+"processer (&DBus;). &kstars; utnyttjar den här funktionen för att tillåta "
+"att skapa skript med relativt komplicerade beteenden, som kan spelas upp när "
+"som helst. Detta kan till exempel användas för att skapa en demonstration i "
+"klassrummet för att illustrera astronomiska begrepp."
+
+#. Tag: para
+#: scriptbuilder.docbook:14
+#, no-c-format
+msgid ""
+"The problem with &DBus; scripts is, writing them is a bit like programming, "
+"and can seem a daunting task to those who do not have programming "
+"experience. The Script Builder Tool provides a <abbrev>GUI</abbrev> point-"
+"and-click interface for constructing &kstars; &DBus; scripts, making it very "
+"easy to create complex scripts."
+msgstr ""
+"Problemet med &DBus;-skript är att skriva dem är lite grand som "
+"programmering, och kan verka vara en skrämmande uppgift för de som saknar "
+"programmeringsvana. Skriptbyggaren tillhandahåller ett grafiskt gränssnitt "
+"där man kan peka och klicka för att skapa &kstars; &DBus;-skript, vilket gör "
+"det mycket enkelt att skapa komplexa skript."
+
+#. Tag: title
+#: scriptbuilder.docbook:23
+#, no-c-format
+msgid "Introduction to the Script Builder"
+msgstr "Introduktion till skriptbyggaren"
+
+#. Tag: para
+#: scriptbuilder.docbook:25
+#, no-c-format
+msgid ""
+"Before explaining how to use the Script Builder, I provide a very brief "
+"introduction to all of the <abbrev>GUI</abbrev> components; for more "
+"infomation, use the \"What's This?\" function."
+msgstr ""
+"Innan förklaringen av hur skriptbyggaren används, följer en mycket kort "
+"inledning till alla grafiska komponenter: För mer information, använd "
+"funktionen \"Vad är det här?\"."
+
+#. Tag: screeninfo
+#: scriptbuilder.docbook:32
+#, no-c-format
+msgid "<screeninfo>The Script Builder Tool</screeninfo>"
+msgstr "<screeninfo>Verktyget Skriptbyggare</screeninfo>"
+
+#. Tag: phrase
+#: scriptbuilder.docbook:40
+#, no-c-format
+msgid "Script Builder Tool"
+msgstr "Verktyget Skriptbyggare"
+
+#. Tag: para
+#: scriptbuilder.docbook:45
+#, no-c-format
+msgid ""
+"The Script Builder is shown in the above screenshot. The box on the left is "
+"the <firstterm>Current Script box</firstterm>; it shows the list of commands "
+"that comprise the current working script. The box on the right is the "
+"<firstterm>Function Browser</firstterm>; it displays the list of all "
+"available script functions. Below the Function Browser, there is a small "
+"panel which will display short documentation about the script function "
+"highlighted in the Function Browser. The panel below the Current Script box "
+"is the <firstterm>Function Arguments panel</firstterm>; when a function is "
+"highlighted in the Current Script box, this panel will contain items for "
+"specifying values for any arguments that the highlighted function requires."
+msgstr ""
+"Skriptbyggaren visas i skärmbilden ovanför. Rutan till vänster är "
+"<firstterm>Aktuellt skript</firstterm>. Den visar listan med kommandon som "
+"utgör det aktuella arbetsskriptet. Rutan till höger är "
+"<firstterm>Funktionsbläddraren</firstterm>. Den visar listan med "
+"tillgängliga skriptfunktioner. Under funktionsbläddraren finns en liten ruta "
+"som visar kortfattad dokumentation av skriptfunktionen som är markerad i "
+"funktionsbläddraren. Panelen under rutan Aktuellt skript är rutan "
+"<firstterm>Funktionsargument</firstterm>. När en funktion är markerad i "
+"rutan Aktuellt skript, visar rutan objekt för att ange värden för alla "
+"argument som den markerade funktionen kräver."
+
+#. Tag: para
+#: scriptbuilder.docbook:58
+#, no-c-format
+msgid ""
+"Along the top of the window, there is a row of buttons which operate on the "
+"script as a whole. From left to right, they are: <guibutton>New Script</"
+"guibutton>, <guibutton>Open Script...</guibutton>, <guibutton>Save Script</"
+"guibutton>, <guibutton>Save Script As...</guibutton>, and <guibutton>Test "
+"Script</guibutton>. The function of these buttons should be obvious, except "
+"perhaps the last button. Pressing <guibutton>Test Script</guibutton> will "
+"attempt to run the current script in the main &kstars; window. You should "
+"move the Script Builder window out of the way before pressing this, so you "
+"can see the results."
+msgstr ""
+"Längs fönstrets överkant finns en rad knappar som gäller skriptet som "
+"helhet. Från vänster till höger är de: <guibutton>Nytt skript</guibutton>, "
+"<guibutton>Öppna skript...</guibutton>, <guibutton>Spara skript</guibutton>, "
+"<guibutton>Spara skript som...</guibutton> och <guibutton>Testa skript</"
+"guibutton>. Knapparnas funktion bör vara uppenbar, möjligen med undantag för "
+"den sista knappen. Genom att trycka på <guibutton>Testa skript</guibutton>, "
+"görs ett försök att köra aktuellt skript i &kstars; huvudfönster. Du bör "
+"flytta skriptbyggarens fönster ur vägen innan du trycker på knappen, så att "
+"du kan se resultatet."
+
+#. Tag: para
+#: scriptbuilder.docbook:69
+#, no-c-format
+msgid ""
+"In the center of the window, there is a column of buttons which operate on "
+"individual script functions. From top to bottom, they are: <guibutton>Add "
+"Function</guibutton>, <guibutton>Remove Function</guibutton>, "
+"<guibutton>Copy Function</guibutton>, <guibutton>Move Up</guibutton>, and "
+"<guibutton>Move Down</guibutton>. <guibutton>Add Function</guibutton> adds "
+"the currently-highlighted function in the Function Browser to the Current "
+"Script box (you can also add a function by double-clicking on it). The rest "
+"of the buttons operate on the function highlighted in the Current Script "
+"box, either removing it, duplicating it, or changing its position in the "
+"current script."
+msgstr ""
+"I fönstrets mitt finns en kolumn med knappar som hanterar individuella "
+"funktioner i skriptet. Uppifrån och ner är de: <guibutton>Lägg till "
+"funktion</guibutton>, <guibutton>Ta bort funktion</guibutton>, "
+"<guibutton>Kopiera funktion</guibutton>, <guibutton>Flytta upp</guibutton> "
+"och <guibutton>Flytta ner</guibutton>. <guibutton>Lägg till funktion</"
+"guibutton> lägger till funktionen som för närvarande är markerad i "
+"Funktionsbläddraren i rutan Aktuellt skript (du kan också lägga till en "
+"funktion genom att dubbelklicka på den). Övriga knappar hanterar funktionen "
+"som är markerad i rutan Aktuellt skript, genom att antingen ta bort den, "
+"duplicera den eller ändra dess position i det aktuella skriptet."
+
+#. Tag: title
+#: scriptbuilder.docbook:85
+#, no-c-format
+msgid "Using the Script Builder"
+msgstr "Använda skriptbyggaren"
+
+#. Tag: para
+#: scriptbuilder.docbook:86
+#, no-c-format
+msgid ""
+"In order to illustrate using the Script Builder, we present a small tutorial "
+"example where we make a script that tracks the Moon while the clock runs at "
+"an accelerated rate."
+msgstr ""
+"För att illustrera hur skriptbyggaren används, presenterar vi ett kort "
+"handledningsexempel, där vi skapar ett skript som följer månen medan klockan "
+"går med accelererad hastighet."
+
+#. Tag: para
+#: scriptbuilder.docbook:90
+#, no-c-format
+msgid ""
+"If we are going to track the Moon, we will need to point the display at it "
+"first. The <firstterm>lookToward</firstterm> function is used to do this. "
+"Highlight this function in the Function Browser, and note the documentation "
+"displayed in the panel below the Browser. Press the <guibutton>Add Function</"
+"guibutton> button to add this function to the Current Script box. The "
+"Function Arguments panel will now contain a combobox labeled <quote>Dir</"
+"quote>, short for direction. This is the direction in which the display "
+"should be pointed. The combobox contains only the cardinal compass points, "
+"not the Moon or any other objects. You can either enter <quote>Moon</quote> "
+"in the box manually, or press the <guibutton>Object...</guibutton> button to "
+"use the <guilabel>Find Object...</guilabel> window to select the Moon from "
+"the list of named objects. Note that, as usual, centering on an object "
+"automatically engages object-tracking mode, so there is no need to add the "
+"<firstterm>setTracking</firstterm> function after lookToward."
+msgstr ""
+"Om vi ska följa månen, måste vi först peka skärmen mot den. Funktionen "
+"<firstterm>lookToward</firstterm> används för att göra detta. Markera "
+"funktionen i funktionsbläddraren, och observera dokumentationen som visas i "
+"rutan under funktionsbläddraren. Tryck på knappen <guibutton>Lägg till "
+"funktion</guibutton> för att lägga till funktionen i rutan Aktuellt skript. "
+"Rutan Funktionsargument innehåller nu en kombinationsruta som heter "
+"<quote>Riktning</quote>. Detta är riktningen som skärmen ska peka. "
+"Kombinationsrutan innehåller bara kompassens kardinalpunkter, inte månen "
+"eller något annat objekt. Du kan antingen skriva in <quote>Moon</quote> i "
+"rutan för hand, eller trycka på knappen <guibutton>Objekt...</guibutton> för "
+"att använda fönstret <guilabel>Sök objekt...</guilabel>. Här kan du välja "
+"månen i listan med namngivna objekt. Observera att som vanligt aktiveras "
+"automatiskt följning vid centrering på ett objekt, så det finns inget behov "
+"av att lägga till funktionen <firstterm>setTracking</firstterm> efter "
+"lookToward."
+
+#. Tag: para
+#: scriptbuilder.docbook:107
+#, no-c-format
+msgid ""
+"Now that we have taken care of pointing at the Moon, we next want to make "
+"time pass at an accelerated rate. Use the <firstterm>setClockScale</"
+"firstterm> function for this. Add it to the script by double-clicking on it "
+"in the Function Browser. The Function Arguments panel contains a timestep "
+"spinbox for setting the desired time step for the simulation clock. Change "
+"the timestep to 3 hours."
+msgstr ""
+"När vi nu har tagit hand om pekningen mot månen, vill vi som nästa steg få "
+"tiden att gå med en accelererad hastighet. Använd funktionen "
+"<firstterm>setClockScale</firstterm> för detta. Lägg till den i skriptet "
+"genom att dubbelklicka på den i funktionsbläddraren. Rutan Funktionsargument "
+"innehåller nu inställning av tidssteg för att ange önskat tidssteg för "
+"simulatorklockan. Ändra tidssteget till 3 timmar."
+
+#. Tag: para
+#: scriptbuilder.docbook:115
+#, no-c-format
+msgid ""
+"OK, we have pointed at the Moon and accelerated the clock. Now we just want "
+"the script to wait for several seconds while the display tracks on the Moon. "
+"Add the <firstterm>waitFor</firstterm> function to the script, and use the "
+"Function Arguments panel to specify that it should wait for 20 seconds "
+"before continuing."
+msgstr ""
+"Ja, nu har vi pekat på månen och accelererat klockan. Nu vill vi bara att "
+"skriptet ska vänta flera sekunder medan skärmen följer månen. Lägg till "
+"funktionen <firstterm>waitFor</firstterm> i skriptet, och använd panelen "
+"Funktionsargument för att ange att det ska vänta i 20 sekunder innan det "
+"fortsätter."
+
+#. Tag: para
+#: scriptbuilder.docbook:121
+#, no-c-format
+msgid ""
+"To finish up, let us reset the clock's timestep to the normal value of 1 "
+"second. Add another instance of setClockScale, and set its value to 1 sec."
+msgstr ""
+"För att avsluta, låt oss återställa klockans tidssteg till det normala "
+"värdet 1 sekund. Lägg till ytterligare ett anrop till setClockScale, och "
+"ställ in värdet 1 sek."
+
+#. Tag: para
+#: scriptbuilder.docbook:125
+#, no-c-format
+msgid ""
+"Actually, we are not quite done yet. We should probably make sure that the "
+"display is using Equatorial coordinates before the script tracks the Moon "
+"with an accelerated time step. Otherwise, if the display is using Horizontal "
+"coordinates, it will rotate very quickly through large angles as the Moon "
+"rises and sets. This can be very confusing, and is avoided by setting the "
+"View Option <firstterm>UseAltAz</firstterm> to <quote>false</quote>. To "
+"change any View Option, use the <firstterm>changeViewOption</firstterm> "
+"function. Add this function to the script, and examine the Function "
+"Arguments panel. There is a combobox which contains the list of all options "
+"which can be adjusted by changeViewOption. Since we know we want the "
+"UseAltAz option, we could simply select it from the combobox. However, the "
+"list is quite long, and there is no explanation of what each item is for. It "
+"therefore may be easier to press the <guibutton>Browse Tree...</guibutton> "
+"button, which will open a window containing a tree view of the available "
+"options, organized by topic. In addition, each item has a short explanation "
+"of what the option does, and the data type of the option's value. We find "
+"UseAltAz under the <guilabel>Skymap Options</guilabel> category. Just "
+"highlight this item and press <guibutton>OK</guibutton>, and it will be "
+"selected in the combobox of the Function Arguments panel. Finally, make its "
+"value <quote>false</quote> or <quote>0</quote>."
+msgstr ""
+"I själva verket är vi inte riktigt klara än. Vi bör troligen försäkra oss om "
+"att skärmen använder ekvatoriella koordinater innan skriptet följer månen "
+"med ett accelererat tidssteg. Annars, om skärmen använder horisontella "
+"koordinater, roterar den mycket snabbt med stora vinklar när månen går upp "
+"eller går ner. Det kan vara mycket förvirrande, och kan undvikas genom att "
+"ställa in visningsalternativet <firstterm>UseAltAz</firstterm> till "
+"<quote>0</quote>. För att ändra något visningsalternativ, använd funktionen "
+"<firstterm>changeViewOption</firstterm>. Lägg till funktionen i skriptet, "
+"och titta på rutan Funktionsargument. Där finns en kombinationsruta som "
+"innehåller en lista med alla alternativ som kan justeras av "
+"changeViewOption. Eftersom vi vet att vi vill använda alternativet UseAltAz, "
+"kunde vi helt enkelt välja det i kombinationsrutan. Listan är dock rätt "
+"lång, och det finns ingen förklaring av vad varje alternativ är till för. "
+"Därför kan det vara enklare att trycka på knappen "
+"<guibutton>Bläddringsträd...</guibutton>, som visar ett fönster med en "
+"trädvy av tillgängliga alternativ, organiserade enligt ämne. Dessutom har "
+"varje alternativ en kort förklaring av vad det gör, och datatyp för "
+"alternativets värde. Vi hittar UseAltAz i kategorin <guilabel>Alternativ för "
+"himmelskartan</guilabel>. Markera bara alternativet och tryck på "
+"<guibutton>Ok</guibutton>, så väljes det i kombinationsrutan i rutan "
+"Funktionsargument. Till sist, ställ in värdet till <quote>0</quote> eller "
+"<quote>false</quote>."
+
+#. Tag: para
+#: scriptbuilder.docbook:148
+#, no-c-format
+msgid ""
+"One more step: changing UseAltAz at the end of the script does us no good; "
+"we need this to be changed before anything else happens. So, make sure this "
+"function is highlighted in the Current Script box, and press the "
+"<guibutton>Move Up</guibutton> button until it is the first function."
+msgstr ""
+"Ytterligare ett steg: Att ändra UseAltAz i slutet på skriptet gör ingen "
+"nytta. Vi måste ändra det innan någonting annat händer. Försäkra dig om att "
+"funktionen är markerad i rutan Aktuellt skript, och tryck på knappen "
+"<guibutton>Flytta upp</guibutton> till den är första funktionen."
+
+#. Tag: para
+#: scriptbuilder.docbook:154
+#, no-c-format
+msgid ""
+"Now that we have finished the script, we should save it to disk. Press the "
+"<guibutton>Save Script</guibutton> button. This will first open a window in "
+"which you can provide a name for the script, and fill in your name as the "
+"author. Enter <quote>Tracking the Moon</quote> for a name, and your name as "
+"the author, and press <guibutton>OK</guibutton>. Next, you will see the "
+"standard &kde; Save File dialog. Specify a filename for the script and press "
+"<guibutton>OK</guibutton> to save the script. Note that if your filename "
+"does not end with <quote>.kstars</quote>, this suffix will be automatically "
+"attached. If you are curious, you can examine the script file with any text "
+"editor."
+msgstr ""
+"Nu när vi är klara med skriptet, bör vi spara det på disk. Tryck på knappen "
+"<guibutton>Spara skript</guibutton>. Då visas först ett fönster där du kan "
+"ange ett namn på skriptet, och fylla i ditt namn som författare. Skriv in "
+"<quote>Följa månen</quote> som namn, och ditt namn som författare, och tryck "
+"på <guibutton>Ok</guibutton>. Därefter ser du &kde;:s vanliga dialogruta för "
+"att spara en fil. Ange skriptets filnamn, och tryck på <guibutton>Ok</"
+"guibutton> för att spara det. Observera att om filnamnet inte slutar med "
+"<quote>.kstars</quote>, läggs ändelsen automatiskt till. Om du är nyfiken, "
+"kan du titta på skriptet med vilken texteditor som helst."
+
+#. Tag: para
+#: scriptbuilder.docbook:166
+#, no-c-format
+msgid ""
+"Now that we have a completed script, we can run it in a couple of ways. From "
+"a console prompt, you can simply execute the script as long as an instance "
+"of &kstars; is currently running. Alternatively, you can execute the script "
+"from within &kstars; using the <menuchoice><guimenu>File</guimenu> "
+"<guimenuitem>Run Script...</guimenuitem></menuchoice> menu item."
+msgstr ""
+"När vi nu har ett fullständigt skript, kan vi köra det på ett antal olika "
+"sätt. Från en terminal kan du helt enkelt köra skriptet, under förutsättning "
+"att en instans av &kstars; för närvarande kör. Som ett alternativ kan du "
+"köra skriptet inne i &kstars; med menyalternativet "
+"<menuchoice><guimenu>Arkiv</guimenu> <guimenuitem>Kör skript...</"
+"guimenuitem></menuchoice>."

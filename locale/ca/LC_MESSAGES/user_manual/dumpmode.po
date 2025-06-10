@@ -1,0 +1,144 @@
+# Translation of kstars_dumpmode.po to Catalan
+# Copyright (C) 2003-2022 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Antoni Bella Pérez <antonibella5@yahoo.com>, 2003, 2010, 2011, 2016, 2018, 2019, 2020, 2021.
+# Josep M. Ferrer <txemaq@gmail.com>, 2009, 2010, 2015, 2018, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-10-22 00:52+0000\n"
+"PO-Revision-Date: 2022-04-20 12:51+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.12.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: dumpmode.docbook:2
+#, no-c-format
+msgid "Command-Line mode for Image Generation"
+msgstr "Mode línia d'ordres per a la generació d'imatges"
+
+#. Tag: primary
+#: dumpmode.docbook:3
+#, no-c-format
+msgid "Image-dump Mode"
+msgstr "Mode bolcat de la imatge"
+
+#. Tag: para
+#: dumpmode.docbook:5
+#, no-c-format
+msgid ""
+"You can use &kstars; to generate an image of the sky without actually "
+"launching the &GUI; portion of the program. To use this feature, start "
+"&kstars; from a command prompt using arguments to specify the filename for "
+"the image, as well as the desired image dimensions:"
+msgstr ""
+"Podeu utilitzar el &kstars; per a generar una imatge del cel sense "
+"necessitat de carregar la porció &IGU; del programa. Per a utilitzar aquesta "
+"característica, engegueu el &kstars; des de l'indicador d'ordres emprant els "
+"arguments per a especificar el nom de fitxer per a la imatge, així com les "
+"dimensions que voleu per a la mateixa:"
+
+#. Tag: cmdsynopsis
+#: dumpmode.docbook:13
+#, no-c-format
+msgid ""
+"<command>kstars</command> <arg choice=\"plain\">--dump</arg> <arg>--filename "
+"<replaceable>kstars.png</replaceable></arg> <arg>--height <replaceable>640</"
+"replaceable></arg> <arg>--width <replaceable>480</replaceable></arg> <arg>--"
+"script <replaceable>myscript.kstars</replaceable></arg> <arg>--date "
+"<replaceable>\"4 July 1976 12:30:00\"</replaceable></arg>"
+msgstr ""
+"<command>kstars</command> <arg choice=\"plain\">--dump</arg> <arg>--filename "
+"<replaceable>kstars.png</replaceable></arg> <arg>--height <replaceable>640</"
+"replaceable></arg> <arg>--width <replaceable>480</replaceable></arg> <arg>--"
+"script <replaceable>el_meu_script.kstars</replaceable></arg> <arg>--date "
+"<replaceable>\"4 de juliol de 1976 12:30:00\"</replaceable></arg>"
+
+#. Tag: para
+#: dumpmode.docbook:24
+#, no-c-format
+msgid ""
+"If no filename is specified, it generates a file named <filename>kstars.png</"
+"filename>. It will attempt to generate an image that matches the extension "
+"of your filename. The following extensions are recognized: <quote>png</"
+"quote>, <quote>jpg</quote>, <quote>jpeg</quote>, <quote>gif</quote>, "
+"<quote>pnm</quote>, and <quote>bmp</quote>. If the filename extension is not "
+"recognized, it defaults to the <acronym>PNG</acronym> image type."
+msgstr ""
+"Si no s'especifica un nom de fitxer, aquest generarà un fitxer anomenat "
+"<filename>kstars.png</filename>. Intentarà generar una imatge que cassi amb "
+"l'extensió del vostre nom de fitxer. Es reconeixen les següents extensions: "
+"<quote>png</quote>, <quote>jpg</quote>, <quote>jpeg</quote>, <quote>gif</"
+"quote>, <quote>pnm</quote> i <quote>bmp</quote>. Si l'extensió del nom de "
+"fitxer no es reconeix, es deixarà el tipus d'imatge al format predeterminat "
+"<acronym>PNG</acronym>."
+
+#. Tag: para
+#: dumpmode.docbook:34
+#, no-c-format
+msgid ""
+"Likewise, if the image width and height are not specified, they default to "
+"640 and 480, respectively."
+msgstr ""
+"Tanmateix, si no s'especifiquen l'amplada i alçada de la imatge, es deixarà "
+"640 i 480, respectivament."
+
+#. Tag: para
+#: dumpmode.docbook:38
+#, no-c-format
+msgid ""
+"By default, &kstars; will read in the options values stored in your "
+"<filename>$KDEHOME/share/config/kstarsrc</filename> file to determine where "
+"the image will be centered, and how it is rendered. This means you need to "
+"run &kstars; in normal &GUI; mode, and exit the program when it is set up "
+"with the desired options for the generated images. This is not very "
+"flexible, so we also provide the ability to execute a &kstars; &DBus; script "
+"to set the scene before generating the image. The filename you specify as "
+"the script argument should be a valid &kstars; &DBus; script, such as one "
+"created with the <link linkend=\"tool-scriptbuilder\">Script Builder Tool</"
+"link>. The script can be used to set where the image is pointing, set the "
+"geographic location, set the time and date, change the Zoom level, and "
+"adjust other view options. Some of the &DBus; functions make no sense in non-"
+"&GUI; mode (such as <function>waitForKey()</function>); if these functions "
+"are encountered while parsing the script, they are simply ignored."
+msgstr ""
+"De manera predeterminada, el &kstars; llegirà en els valors d'opcions desats "
+"al vostre fitxer <filename>$KDEHOME/share/config/kstarsrc</filename> per a "
+"determinar a on centrar la imatge i com renderitzar-la. Això significa que "
+"necessitareu engegar el &kstars; en mode &IGU; normal i eixir del programa "
+"quan s'estableixin les opcions desitjades per a prendre les imatges. Això no "
+"és molt flexible, així que també proporcionem la capacitat d'executar un "
+"script de &DBus; del &kstars; per a establir l'escena abans de generar la "
+"imatge. El nom de fitxer que especifiqueu haurà de ser un script de &DBus; "
+"del &kstars; vàlid, tal com un de creat amb l'<link linkend=\"tool-"
+"scriptbuilder\">eina de constructor de scripts</link>. L'script es pot "
+"utilitzar per a establir cap a on apunta la imatge, establir l'emplaçament "
+"geogràfic, establir l'hora i la data, canviar el nivell d'ampliació i "
+"ajustar altres opcions de la vista. Algunes de les funcions &DBus; no tenen "
+"cap sentit en el mode sense &IGU; (com ara <function>waitForKey()</"
+"function>); si es troben aquestes funcions mentre analitzeu l'script, "
+"senzillament seran omeses."
+
+#. Tag: para
+#: dumpmode.docbook:59
+#, no-c-format
+msgid ""
+"By default, &kstars; will use the system CPU time and date for generating "
+"the image. Alternatively, you may specify a time and date with the <quote>--"
+"date</quote> argument. You can also use this argument for specifying the "
+"startup date in normal &GUI; mode."
+msgstr ""
+"De manera predeterminada, el &kstars; utilitzarà la data i hora del sistema "
+"per a generar la imatge. De manera alternativa, podeu especificar una data i "
+"una hora amb l'argument <quote>--date</quote>. També podreu utilitzar aquest "
+"argument per a especificar la data d'inici en el mode &IGU; (interfície "
+"gràfica d'usuari) normal."

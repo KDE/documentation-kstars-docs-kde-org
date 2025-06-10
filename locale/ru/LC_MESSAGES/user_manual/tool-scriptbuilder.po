@@ -1,0 +1,440 @@
+# translation of kstars_scriptbuilder.po to Русский
+# Copyright (C) 2005 Free Software Foundation, Inc.
+#
+# Artjom <sgartjom@mail.ru>, 2005.
+# Nick Shaforostoff <shafff@ukr.net>, 2005.
+# Nick Shaforostoff <shaforostoff@kde.ru>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars_scriptbuilder\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-10-22 00:52+0000\n"
+"PO-Revision-Date: 2008-09-16 16:22+0300\n"
+"Last-Translator: Nick Shaforostoff <shaforostoff@kde.ru>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: \n"
+"X-Text-Markup: docbook4\n"
+
+#. Tag: title
+#: scriptbuilder.docbook:2
+#, no-c-format
+msgid "<title>The Script Builder Tool</title>"
+msgstr "<title>Редактор сценариев</title>"
+
+#. Tag: primary
+#: scriptbuilder.docbook:3
+#, no-c-format
+msgid "Tools"
+msgstr "Инструменты"
+
+#. Tag: secondary
+#: scriptbuilder.docbook:4
+#, no-c-format
+msgid "Script Builder"
+msgstr "Редактор сценариев"
+
+#. Tag: para
+#: scriptbuilder.docbook:7
+#, fuzzy, no-c-format
+#| msgid ""
+#| "KDE applications can be controlled externally from another program, from "
+#| "a console prompt, or from a shell script using the Inter-process "
+#| "communication protocol (<abbrev>DCOP</abbrev>). KStars takes advantage of "
+#| "this feature to allow rather complex behaviors to be scripted and played "
+#| "back at any time. This can be used, for example, to create a classroom "
+#| "demo to illustrate an astronomical concept."
+msgid ""
+"&kde; applications can be controlled externally from another program, from a "
+"console prompt, or from a shell script using the Inter-process communication "
+"protocol (&DBus;). &kstars; takes advantage of this feature to allow rather "
+"complex behaviors to be scripted and played back at any time. This can be "
+"used, for example, to create a classroom demo to illustrate an astronomical "
+"concept."
+msgstr ""
+"Приложения KDE могут управляться из других приложений, из командной строки, "
+"или с помощью <abbrev>DBus</abbrev>. &kstars; предоставляет набор "
+"расширений, позволяющих лучше контролировать изображение с помощью "
+"сценариев. Эти возможности позволяют, например, создавать демонстрации "
+"иллюстрирующие основные концепции астрономии."
+
+#. Tag: para
+#: scriptbuilder.docbook:14
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The problem with DBus scripts is, writing them is a bit like programming, "
+#| "and can seem a daunting task to those who do not have programming "
+#| "experience. The Script Builder Tool provides a <abbrev>GUI</abbrev> point-"
+#| "and-click interface for constructing KStars DCOP scripts, making it very "
+#| "easy to create complex scripts."
+msgid ""
+"The problem with &DBus; scripts is, writing them is a bit like programming, "
+"and can seem a daunting task to those who do not have programming "
+"experience. The Script Builder Tool provides a <abbrev>GUI</abbrev> point-"
+"and-click interface for constructing &kstars; &DBus; scripts, making it very "
+"easy to create complex scripts."
+msgstr ""
+"Написание DBus-скриптов вс`-таки является программированием, что может "
+"отпугнуть тех, у кого нет опыта программирования. Редактор сценариев "
+"предоставляет графический интерфейс (<abbrev>GUI</abbrev>) для "
+"конструирования DBus-сценариев &kstars;, что сильно упрощает написание "
+"сценариев."
+
+#. Tag: title
+#: scriptbuilder.docbook:23
+#, no-c-format
+msgid "Introduction to the Script Builder"
+msgstr "Введение в редактор сценариев"
+
+#. Tag: para
+#: scriptbuilder.docbook:25
+#, no-c-format
+msgid ""
+"Before explaining how to use the Script Builder, I provide a very brief "
+"introduction to all of the <abbrev>GUI</abbrev> components; for more "
+"infomation, use the \"What's This?\" function."
+msgstr ""
+"Перед тем как подробно описывать как пользоваться редактором сценариев, "
+"прочтите небольшое вступление обо всех компонентах графического интерфейса. "
+"Для более подробной информации воспользуйтесь функцией \"справка\"."
+
+#. Tag: screeninfo
+#: scriptbuilder.docbook:32
+#, no-c-format
+msgid "<screeninfo>The Script Builder Tool</screeninfo>"
+msgstr "<screeninfo>Редактор сценариев</screeninfo>"
+
+#. Tag: phrase
+#: scriptbuilder.docbook:40
+#, no-c-format
+msgid "Script Builder Tool"
+msgstr "Редактор сценариев"
+
+#. Tag: para
+#: scriptbuilder.docbook:45
+#, no-c-format
+msgid ""
+"The Script Builder is shown in the above screenshot. The box on the left is "
+"the <firstterm>Current Script box</firstterm>; it shows the list of commands "
+"that comprise the current working script. The box on the right is the "
+"<firstterm>Function Browser</firstterm>; it displays the list of all "
+"available script functions. Below the Function Browser, there is a small "
+"panel which will display short documentation about the script function "
+"highlighted in the Function Browser. The panel below the Current Script box "
+"is the <firstterm>Function Arguments panel</firstterm>; when a function is "
+"highlighted in the Current Script box, this panel will contain items for "
+"specifying values for any arguments that the highlighted function requires."
+msgstr ""
+"На рисунке ниже представлен редактор сценариев. Панель слева -- "
+"<firstterm>Текущий скрипт</firstterm>;там показаны команды, которые вы уже "
+"включили в сценарий. Панель справа -- <firstterm>Браузер функции</"
+"firstterm>; там показан список всех доступных функций. Ниже браузера функций "
+"расположена небольшая панель, в которой содержится краткое описание функции "
+"выбранной в браузере. Панель ниже текущего скрипта -- <firstterm>Аргументы "
+"функций</firstterm>; где вы можете изменить аргументы функции выделенной в "
+"текущем скрипте."
+
+#. Tag: para
+#: scriptbuilder.docbook:58
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Along the top of the window, there is a row of buttons which operate on "
+#| "the script as a whole. From left to right, they are: <guibutton>New "
+#| "Script</guibutton>, <guibutton>Open Script</guibutton>, <guibutton>Save "
+#| "Script</guibutton>, <guibutton>Save Script As...</guibutton>, and "
+#| "<guibutton>Test Script</guibutton>. The function of these buttons should "
+#| "be obvious, except perhaps the last button. Pressing <guibutton>Test "
+#| "Script</guibutton> will attempt to run the current script in the main "
+#| "KStars window. You should move the Script Builder window out of the way "
+#| "before pressing this, so you can see the results."
+msgid ""
+"Along the top of the window, there is a row of buttons which operate on the "
+"script as a whole. From left to right, they are: <guibutton>New Script</"
+"guibutton>, <guibutton>Open Script...</guibutton>, <guibutton>Save Script</"
+"guibutton>, <guibutton>Save Script As...</guibutton>, and <guibutton>Test "
+"Script</guibutton>. The function of these buttons should be obvious, except "
+"perhaps the last button. Pressing <guibutton>Test Script</guibutton> will "
+"attempt to run the current script in the main &kstars; window. You should "
+"move the Script Builder window out of the way before pressing this, so you "
+"can see the results."
+msgstr ""
+"Вверху расположен ряд кнопок, которые оперируют со сценарием как с целым: "
+"это (слева на право) <guibutton>Создать скрипт</guibutton>, "
+"<guibutton>Открыть скрипт</guibutton>, <guibutton>Сохранить скрипт</"
+"guibutton>, <guibutton>Сохранить скрипт как...</guibutton>, и "
+"<guibutton>Тестировать скрипт</guibutton>. Значение этих кнопок очевидны, за "
+"исключением, может быть, последней. Нажав на кнопку <guibutton>Тестировать "
+"скрипт</guibutton> вы запустите его в главном окне &kstars;. Отодвиньте окно "
+"Редактора сценариев в сторону, перед тем как нажимать эту кнопку, чтобы "
+"увидеть результат выполнения сценария."
+
+#. Tag: para
+#: scriptbuilder.docbook:69
+#, no-c-format
+msgid ""
+"In the center of the window, there is a column of buttons which operate on "
+"individual script functions. From top to bottom, they are: <guibutton>Add "
+"Function</guibutton>, <guibutton>Remove Function</guibutton>, "
+"<guibutton>Copy Function</guibutton>, <guibutton>Move Up</guibutton>, and "
+"<guibutton>Move Down</guibutton>. <guibutton>Add Function</guibutton> adds "
+"the currently-highlighted function in the Function Browser to the Current "
+"Script box (you can also add a function by double-clicking on it). The rest "
+"of the buttons operate on the function highlighted in the Current Script "
+"box, either removing it, duplicating it, or changing its position in the "
+"current script."
+msgstr ""
+"В центре окна расположены кнопки, которые работают с отдельными функциями "
+"сценария. Это (сверху вниз): <guibutton>Добавить функцию</guibutton>, "
+"<guibutton>Удалить функцию</guibutton>, <guibutton>Копировать функцию</"
+"guibutton>, <guibutton>Выше</guibutton>, и <guibutton>Ниже</guibutton>. "
+"<guibutton>Добавить функцию</guibutton> -- добавляет выделенную в браузере "
+"функцию в текущий сценарий (вы также можете добавить функцию дважды щёлкнув "
+"на её названии мышью). Остальные кнопки оперируют с функциями выделенными в "
+"текущем сценарии, т.е. позволяют удалять их, копировать, изменять их "
+"положение."
+
+#. Tag: title
+#: scriptbuilder.docbook:85
+#, no-c-format
+msgid "Using the Script Builder"
+msgstr "Использование Редактора сценариев"
+
+#. Tag: para
+#: scriptbuilder.docbook:86
+#, no-c-format
+msgid ""
+"In order to illustrate using the Script Builder, we present a small tutorial "
+"example where we make a script that tracks the Moon while the clock runs at "
+"an accelerated rate."
+msgstr ""
+"В качестве иллюстрации использования редактора сценариев, мы приведём "
+"небольшой пример, где сделаем скрипт, который покажет след Луны, пока часы "
+"симуляции идут в ускоренном режиме."
+
+#. Tag: para
+#: scriptbuilder.docbook:90
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If we are going to track the Moon, we will need to point the display at "
+#| "it first. The <firstterm>lookToward</firstterm> function is used to do "
+#| "this. Highlight this function in the Function Browser, and note the "
+#| "documentation displayed in the panel below the Browser. Press the "
+#| "<guibutton>Add Function</guibutton> button to add this function to the "
+#| "Current Script box. The Function Arguments panel will now contain a "
+#| "combobox labeled <quote>dir</quote>, short for direction. This is the "
+#| "direction in which the display should be pointed. The combobox contains "
+#| "only the cardinal compass points, not the Moon or any other objects. You "
+#| "can either enter <quote>Moon</quote> in the box manually, or press the "
+#| "<guibutton>Object</guibutton> button to use the <guilabel>Find Object</"
+#| "guilabel> window to select the Moon from the list of named objects. Note "
+#| "that, as usual, centering on an object automatically engages object-"
+#| "tracking mode, so there is no need to add the <firstterm>setTracking</"
+#| "firstterm> function after lookToward."
+msgid ""
+"If we are going to track the Moon, we will need to point the display at it "
+"first. The <firstterm>lookToward</firstterm> function is used to do this. "
+"Highlight this function in the Function Browser, and note the documentation "
+"displayed in the panel below the Browser. Press the <guibutton>Add Function</"
+"guibutton> button to add this function to the Current Script box. The "
+"Function Arguments panel will now contain a combobox labeled <quote>Dir</"
+"quote>, short for direction. This is the direction in which the display "
+"should be pointed. The combobox contains only the cardinal compass points, "
+"not the Moon or any other objects. You can either enter <quote>Moon</quote> "
+"in the box manually, or press the <guibutton>Object...</guibutton> button to "
+"use the <guilabel>Find Object...</guilabel> window to select the Moon from "
+"the list of named objects. Note that, as usual, centering on an object "
+"automatically engages object-tracking mode, so there is no need to add the "
+"<firstterm>setTracking</firstterm> function after lookToward."
+msgstr ""
+"Прежде чем нарисовать след Луны, нужно привязать к ней экран. Для этого "
+"используем функцию <firstterm>lookToward</firstterm>. выделите эту функцию в "
+"списке справа, и обратите внимание, что описание этой функции появилось в "
+"панели ниже. Нажмите кнопку <guibutton>Добавить функцию</guibutton> , чтобы "
+"добавить функцию к текущему сценарию. Теперь в панели Аргументы функций "
+"появился выпадающий список <quote>направление</quote>, где вы можете выбрать "
+"направление, на которое будет привязан экран. В выпадающем списке "
+"содержаться только направления света, но нет объектов, таких как, например, "
+"Луна. Вы можете ввести имя объекта (<quote>Луна</quote>) в выпадающий список "
+"вручную, или воспользоваться окном <guilabel>Поиск объекта</guilabel> нажав "
+"кнопку <guibutton>Объект</guibutton>. Заметьте, если вы привязали экран к "
+"объекту, то автоматически начинается слежение за объектом, таким образом нет "
+"необходимости добавлять функцию <firstterm>setTracking</firstterm> перед "
+"lookToward."
+
+#. Tag: para
+#: scriptbuilder.docbook:107
+#, no-c-format
+msgid ""
+"Now that we have taken care of pointing at the Moon, we next want to make "
+"time pass at an accelerated rate. Use the <firstterm>setClockScale</"
+"firstterm> function for this. Add it to the script by double-clicking on it "
+"in the Function Browser. The Function Arguments panel contains a timestep "
+"spinbox for setting the desired time step for the simulation clock. Change "
+"the timestep to 3 hours."
+msgstr ""
+"Итак, теперь экран центрирован на Луну, следующим шагом мы хотим ускорить "
+"время. Для этого используйте функцию <firstterm>setClockScale</firstterm>. "
+"Добавьте её в сценарий, одним из описанных выше методов. После этого на "
+"панели Аргументы функций появиться окошечко счётчика, с помощью которого вы "
+"можете установить требуемую скорость течения времени симуляции. Установите "
+"скорость на 3 часа."
+
+#. Tag: para
+#: scriptbuilder.docbook:115
+#, no-c-format
+msgid ""
+"OK, we have pointed at the Moon and accelerated the clock. Now we just want "
+"the script to wait for several seconds while the display tracks on the Moon. "
+"Add the <firstterm>waitFor</firstterm> function to the script, and use the "
+"Function Arguments panel to specify that it should wait for 20 seconds "
+"before continuing."
+msgstr ""
+"Итак, мы привязали экран к Луне и ускорили время. теперь мы просто хотим "
+"приостановить исполнение сценария. Добавьте функцию <firstterm>waitFor</"
+"firstterm> и установите паузу на 20с., используя панель Аргументов функций."
+
+#. Tag: para
+#: scriptbuilder.docbook:121
+#, no-c-format
+msgid ""
+"To finish up, let us reset the clock's timestep to the normal value of 1 "
+"second. Add another instance of setClockScale, and set its value to 1 sec."
+msgstr ""
+"В завершение, установим скорость течения времени 1с. Добавьте ещё один "
+"экземпляр setClockScale, и установите значение аргумента - 1с."
+
+#. Tag: para
+#: scriptbuilder.docbook:125
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Actually, we are not quite done yet. We should probably make sure that "
+#| "the display is using Equatorial coordinates before the script tracks the "
+#| "Moon with an accelerated time step. Otherwise, if the display is using "
+#| "Horizontal coordinates, it will rotate very quickly through large angles "
+#| "as the Moon rises and sets. This can be very confusing, and is avoided by "
+#| "setting the View Option <firstterm>UseAltAz</firstterm> to <quote>false</"
+#| "quote>. To change any View Option, use the <firstterm>changeViewOption</"
+#| "firstterm> function. Add this function to the script, and examine the "
+#| "Function Arguments panel. There is a combobox which contains the list of "
+#| "all options which can be adjusted by changeViewOption. Since we know we "
+#| "want the UseAltAz option, we could simply select it from the combobox. "
+#| "However, the list is quite long, and there is no explanation of what each "
+#| "item is for. It therefore may be easier to press the <guibutton>Browse "
+#| "Tree</guibutton> button, which will open a window containing a tree view "
+#| "of the available options, organized by topic. In addition, each item has "
+#| "a short explanation of what the option does, and the data type of the "
+#| "option's value. We find UseAltAz under the <guilabel>Skymap options</"
+#| "guilabel> category. Just highlight this item and press <guibutton>OK</"
+#| "guibutton>, and it will be selected in the combobox of the Function "
+#| "Arguments panel. Finally, make its value <quote>false</quote> or "
+#| "<quote>0</quote>."
+msgid ""
+"Actually, we are not quite done yet. We should probably make sure that the "
+"display is using Equatorial coordinates before the script tracks the Moon "
+"with an accelerated time step. Otherwise, if the display is using Horizontal "
+"coordinates, it will rotate very quickly through large angles as the Moon "
+"rises and sets. This can be very confusing, and is avoided by setting the "
+"View Option <firstterm>UseAltAz</firstterm> to <quote>false</quote>. To "
+"change any View Option, use the <firstterm>changeViewOption</firstterm> "
+"function. Add this function to the script, and examine the Function "
+"Arguments panel. There is a combobox which contains the list of all options "
+"which can be adjusted by changeViewOption. Since we know we want the "
+"UseAltAz option, we could simply select it from the combobox. However, the "
+"list is quite long, and there is no explanation of what each item is for. It "
+"therefore may be easier to press the <guibutton>Browse Tree...</guibutton> "
+"button, which will open a window containing a tree view of the available "
+"options, organized by topic. In addition, each item has a short explanation "
+"of what the option does, and the data type of the option's value. We find "
+"UseAltAz under the <guilabel>Skymap Options</guilabel> category. Just "
+"highlight this item and press <guibutton>OK</guibutton>, and it will be "
+"selected in the combobox of the Function Arguments panel. Finally, make its "
+"value <quote>false</quote> or <quote>0</quote>."
+msgstr ""
+"Однако, в приведённом сценарии есть один недостаток. Мы должны сперва "
+"убедиться, что для отрисовки используются Экваториальные координаты, прежде "
+"чем начнём следить за Луной. Если используются Горизонтальные координаты, то "
+"на экране вы увидите очень быстрое вращение небесной сферы. Чтобы этого не "
+"произошло, установите параметр вида <firstterm>UseAltAz</firstterm> в "
+"<quote>false</quote>. Чтобы изменить какой-либо параметр вида, используйте "
+"функцию <firstterm>changeViewOption</firstterm>. Добавьте эту функцию к "
+"сценарию, и обратите внимание на панель аргументов функций. Здесь есть "
+"выпадающий список, содержащий все параметры вида. Так как мы точно знаем "
+"название опции, то мы можем просто выбрать её из списка. Если вы не знаете "
+"название необходимой опции, нажмите на кнопку <guibutton>Просмотреть дерево</"
+"guibutton>, чтобы открыть окно, которое показывает опции по разделам. Кроме "
+"того, рядом с каждой опцией содержится краткое описание, за что она "
+"отвечает, и тип аргументов и их предельные значения. Так опцию UseAltAz мы "
+"найдём в разделе <guilabel>Настройка звёздного неба</guilabel>. Выберите "
+"опцию и нажмите кнопку <guibutton>OK</guibutton>, после этого опция будет "
+"выбрана в выпадающем списке в панели аргументов функций. Наконец в поле "
+"Значение, наберите <quote>false</quote> или <quote>0</quote>."
+
+#. Tag: para
+#: scriptbuilder.docbook:148
+#, no-c-format
+msgid ""
+"One more step: changing UseAltAz at the end of the script does us no good; "
+"we need this to be changed before anything else happens. So, make sure this "
+"function is highlighted in the Current Script box, and press the "
+"<guibutton>Move Up</guibutton> button until it is the first function."
+msgstr ""
+"Ещё один шаг: изменение опции UseAltAz в конце сценария не принесёт "
+"желаемого результат; мы должны изменить эту опцию в начале сценария. Для "
+"этого убедитесь что выделена нужная функция в панели текущий скрипт, и "
+"нажимайте кнопку <guibutton>Выше</guibutton>, до тех пор, пока функция не "
+"окажется вверху."
+
+#. Tag: para
+#: scriptbuilder.docbook:154
+#, no-c-format
+msgid ""
+"Now that we have finished the script, we should save it to disk. Press the "
+"<guibutton>Save Script</guibutton> button. This will first open a window in "
+"which you can provide a name for the script, and fill in your name as the "
+"author. Enter <quote>Tracking the Moon</quote> for a name, and your name as "
+"the author, and press <guibutton>OK</guibutton>. Next, you will see the "
+"standard &kde; Save File dialog. Specify a filename for the script and press "
+"<guibutton>OK</guibutton> to save the script. Note that if your filename "
+"does not end with <quote>.kstars</quote>, this suffix will be automatically "
+"attached. If you are curious, you can examine the script file with any text "
+"editor."
+msgstr ""
+"Теперь, когда сценарий написан, нужно сохранить его на диск. Для этого "
+"нажмите кнопку <guibutton>Сохранить скрипт</guibutton>. Сперва откроется "
+"окно, где вам предложат ввести название сценария и ваше имя, как имя автора. "
+"Для примера, в качестве названия сценария введите <quote>Слежение за луной</"
+"quote>, и своё имя в поле автор, и нажмите <guibutton>OK</guibutton>. После "
+"этого откроется стандартный диалог &kde; Сохранить файл. Введите название "
+"файла, и нажмите <guibutton>OK</guibutton>, чтобы сохранить сценарий. "
+"Заметьте, что если имя файла НЕ оканчивается <quote>.kstars</quote>, то этот "
+"суффикс будет добавлен автоматически. Если вы чувствуете себя опытным "
+"пользователем, вы можете отредактировать сценарий вручную, с помощью любого "
+"текстового редактора."
+
+#. Tag: para
+#: scriptbuilder.docbook:166
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Now that we have a completed script, we can run it in a couple of ways. "
+#| "From a console prompt, you can simply execute the script as long as an "
+#| "instance of KStars is currently running. Alternatively, you can execute "
+#| "the script from within KStars using the <guimenuitem>Run Script</"
+#| "guimenuitem> item in the <guimenu>File</guimenu> menu."
+msgid ""
+"Now that we have a completed script, we can run it in a couple of ways. From "
+"a console prompt, you can simply execute the script as long as an instance "
+"of &kstars; is currently running. Alternatively, you can execute the script "
+"from within &kstars; using the <menuchoice><guimenu>File</guimenu> "
+"<guimenuitem>Run Script...</guimenuitem></menuchoice> menu item."
+msgstr ""
+"Готовый сценарий, можно запустить множеством способов. Из командной строки "
+"можно запустить только если &kstars; уже запущен. Также вы можете запустить "
+"сценарий из &kstars; с помощью пункта <guimenuitem>Запустить сценарий</"
+"guimenuitem>, меню <guimenuitem>Файл</guimenuitem>."

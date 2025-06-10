@@ -1,0 +1,137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars_dumpmode\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-10-22 00:52+0000\n"
+"PO-Revision-Date: 2021-07-25 01:07+0100\n"
+"Last-Translator: Tó-Zé Vieira <senador@netcabo.pt>\n"
+"Language-Team: pt <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding 8bit\n"
+"X-POFile-SpellExtra: kstars waitForKey dump gif kstarsrc share Zoom jpg\n"
+"X-POFile-SpellExtra: height width pnm omeuscript July filename config\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: dumpmode.docbook:2
+#, no-c-format
+msgid "Command-Line mode for Image Generation"
+msgstr "Modo de Linha de Comandos para a Geração de Imagens"
+
+#. Tag: primary
+#: dumpmode.docbook:3
+#, no-c-format
+msgid "Image-dump Mode"
+msgstr "Modo de Geração de Imagens"
+
+#. Tag: para
+#: dumpmode.docbook:5
+#, no-c-format
+msgid ""
+"You can use &kstars; to generate an image of the sky without actually "
+"launching the &GUI; portion of the program. To use this feature, start "
+"&kstars; from a command prompt using arguments to specify the filename for "
+"the image, as well as the desired image dimensions:"
+msgstr ""
+"Você poderá usar o &kstars; para gerar uma imagem do céu sem ter de lançar "
+"de facto a &GUI; do programa. Para usar esta funcionalidade, inicie o "
+"&kstars; a partir de uma linha de comandos, usando os argumentos para "
+"indicar o nome do ficheiro da imagem, assim como as dimensões desejadas da "
+"imagem:"
+
+#. Tag: cmdsynopsis
+#: dumpmode.docbook:13
+#, no-c-format
+msgid ""
+"<command>kstars</command> <arg choice=\"plain\">--dump</arg> <arg>--filename "
+"<replaceable>kstars.png</replaceable></arg> <arg>--height <replaceable>640</"
+"replaceable></arg> <arg>--width <replaceable>480</replaceable></arg> <arg>--"
+"script <replaceable>myscript.kstars</replaceable></arg> <arg>--date "
+"<replaceable>\"4 July 1976 12:30:00\"</replaceable></arg>"
+msgstr ""
+"<command>kstars</command> <arg choice=\"plain\">--dump</arg> <arg>--filename "
+"<replaceable>kstars.png</replaceable></arg> <arg>--height <replaceable>640</"
+"replaceable></arg> <arg>--width <replaceable>480</replaceable></arg> <arg>--"
+"script <replaceable>o_meu_script.kstars</replaceable></arg> <arg>--date "
+"<replaceable>\"4 July 1976 12:30:00\"</replaceable></arg>"
+
+#. Tag: para
+#: dumpmode.docbook:24
+#, no-c-format
+msgid ""
+"If no filename is specified, it generates a file named <filename>kstars.png</"
+"filename>. It will attempt to generate an image that matches the extension "
+"of your filename. The following extensions are recognized: <quote>png</"
+"quote>, <quote>jpg</quote>, <quote>jpeg</quote>, <quote>gif</quote>, "
+"<quote>pnm</quote>, and <quote>bmp</quote>. If the filename extension is not "
+"recognized, it defaults to the <acronym>PNG</acronym> image type."
+msgstr ""
+"Se não for indicado nenhum nome de ficheiro, ele gera um ficheiro chamado "
+"<filename>kstars.png</filename>. Ele irá tentar gerar uma imagem que "
+"corresponda à extensão do seu ficheiro. São reconhecidas as seguintes "
+"extensões: <quote>png</quote>, <quote>jpg</quote>, <quote>jpeg</quote>, "
+"<quote>gif</quote>, <quote>pnm</quote> e <quote>bmp</quote>. Se a extensão "
+"do nome do ficheiro não for reconhecida ele optar pelo tipo de imagem "
+"<acronym>PNG</acronym>."
+
+#. Tag: para
+#: dumpmode.docbook:34
+#, no-c-format
+msgid ""
+"Likewise, if the image width and height are not specified, they default to "
+"640 and 480, respectively."
+msgstr ""
+"Da mesma forma, se a largura e altura da imagem não forem indicadas, serão "
+"usados os valores respectivos 640 e 480."
+
+#. Tag: para
+#: dumpmode.docbook:38
+#, no-c-format
+msgid ""
+"By default, &kstars; will read in the options values stored in your "
+"<filename>$KDEHOME/share/config/kstarsrc</filename> file to determine where "
+"the image will be centered, and how it is rendered. This means you need to "
+"run &kstars; in normal &GUI; mode, and exit the program when it is set up "
+"with the desired options for the generated images. This is not very "
+"flexible, so we also provide the ability to execute a &kstars; &DBus; script "
+"to set the scene before generating the image. The filename you specify as "
+"the script argument should be a valid &kstars; &DBus; script, such as one "
+"created with the <link linkend=\"tool-scriptbuilder\">Script Builder Tool</"
+"link>. The script can be used to set where the image is pointing, set the "
+"geographic location, set the time and date, change the Zoom level, and "
+"adjust other view options. Some of the &DBus; functions make no sense in non-"
+"&GUI; mode (such as <function>waitForKey()</function>); if these functions "
+"are encountered while parsing the script, they are simply ignored."
+msgstr ""
+"Por omissão, o &kstars; irá ler os valores das opções guardados no seu "
+"ficheiro <filename>$KDEHOME/share/config/kstarsrc</filename> para determinar "
+"onde a imagem será centrada e como será desenhada. Isto significa que você "
+"terá de correr o &kstars; no modo &GUI; normal e sair do programa quando "
+"estiver configurado com as opções desejadas para as imagens geradas. Isto "
+"não é muito flexível, como tal oferecemos também a possibilidade de executar "
+"um programa para o &kstars; em &DBus; para configurar a cena antes de gerar "
+"a imagem. O nome do ficheiro que indicar como argumento do programa deverá "
+"ser um programa em &DBus; válido para o &kstars;, como os que são criados "
+"com a <link linkend=\"tool-scriptbuilder\">Ferramenta de Construção de "
+"Programas</link>. O programa poderá ser usado para definir aonde é que a "
+"imagem está a apontar, definir a posição geográfica, a hora e a data, mudar "
+"o nível de Zoom e ajustar outras opções de visualização. Algumas das funções "
+"de &DBus; não fazem sentido no modo não-gráfico (como o "
+"<function>waitForKey()</function>); se estas funções forem encontradas ao "
+"processar o 'script', serão simplesmente ignoradas."
+
+#. Tag: para
+#: dumpmode.docbook:59
+#, no-c-format
+msgid ""
+"By default, &kstars; will use the system CPU time and date for generating "
+"the image. Alternatively, you may specify a time and date with the <quote>--"
+"date</quote> argument. You can also use this argument for specifying the "
+"startup date in normal &GUI; mode."
+msgstr ""
+"Por omissão, o &kstars; irá usar a data e hora do sistema para gerar a "
+"imagem. Em alternativa, poderá indicar uma data e hora específicas com o "
+"argumento <quote>--date</quote>. Poderá também usar este argumento para "
+"indicar a data inicial no modo &GUI; normal."

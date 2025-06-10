@@ -1,0 +1,1600 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars_ekos-scheduler\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-01-16 01:46+0000\n"
+"PO-Revision-Date: 2023-07-15 00:26+0100\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: Ekos FITS coding chmod sleep CCD DEC py exit usr env\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-POFile-SpellExtra: print import esl bin sys utf programaarranque\n"
+"X-POFile-SpellExtra: Astrometry PixInsight CDV time preemptivo INDI\n"
+"X-POFile-SpellExtra: Winsorized KStars HiPS preemptiva esq AP\n"
+
+#. Tag: title
+#: ekos-scheduler.docbook:2
+#, no-c-format
+msgid "<title>Scheduler</title>"
+msgstr "<title>Agendamento</title>"
+
+#. Tag: primary
+#: ekos-scheduler.docbook:4
+#, no-c-format
+msgid "Tools"
+msgstr "Ferramentas"
+
+#. Tag: secondary
+#: ekos-scheduler.docbook:5
+#, no-c-format
+msgid "Ekos"
+msgstr "Ekos"
+
+#. Tag: tertiary
+#: ekos-scheduler.docbook:6
+#, no-c-format
+msgid "<tertiary>Scheduler</tertiary>"
+msgstr "<tertiary>Agendamento</tertiary>"
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:9
+#, no-c-format
+msgid "<screeninfo>Ekos Scheduler Module</screeninfo>"
+msgstr "<screeninfo>Módulo de Agendamento do Ekos</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:17
+#, no-c-format
+msgid "<phrase>Ekos Scheduler Module</phrase>"
+msgstr "<phrase>Módulo de Agendamento do Ekos</phrase>"
+
+#. Tag: title
+#: ekos-scheduler.docbook:22
+#, no-c-format
+msgid "Introduction"
+msgstr "Introdução"
+
+#. Tag: para
+#: ekos-scheduler.docbook:23
+#, no-c-format
+msgid ""
+"The Ekos Scheduler is an important component of your imaging workflow. It "
+"connects to INDI, starts and stops all the other Ekos modules, schedules "
+"jobs according to their constraints and priorities, monitors those jobs as "
+"they execute, and then safely brings down the system when jobs are done, or "
+"before dawn. Whether you are running multi-day imaging sessions for multiple "
+"targets, or simply trying to image a single target for a few hours, it is "
+"advisable to have the Scheduler control your imaging sessions."
+msgstr ""
+"O Agendamento do Ekos é um componente importante do seu processo de gestão "
+"de imagens. Ele liga-se ao INDI, inicia e termina todos os outros módulos do "
+"Ekos, agenda as tarefas de acordo com as suas restrições e prioridades, "
+"acompanha essas tarefas à medida que se executam e depois desliga o sistema "
+"em segurança à medida que as tarefas são concluídas, ou antes do fim do "
+"nascer do sol. Quando estiver a executar sessões de imagens em vários dias "
+"para vários alvos, ou simplesmente quando estiver a experimentar criar uma "
+"imagem de um único alvo por algumas horas, aconselha-se que tenha o "
+"Agendamento a controlar as suas sessões de imagens."
+
+#. Tag: title
+#: ekos-scheduler.docbook:28
+#, no-c-format
+msgid "Scheduler Table"
+msgstr "Tabela do Agendamento"
+
+#. Tag: para
+#: ekos-scheduler.docbook:29
+#, no-c-format
+msgid ""
+"The heart of the Scheduler is a table displaying the list of Scheduler jobs "
+"the user wants to run. Associated with each jobs are attributes (mostly "
+"described in the settings section below). The attributes describe the name "
+"of the job, where the telescope should be pointed when imaging that job, a "
+"description of what types of images should be captured, constraints about "
+"when the jobs should run (&eg; altitude, twilight, moon, landscape "
+"blockages, &etc;), things that need to be done before and after the job is "
+"run, and strategies for dealing with errors."
+msgstr ""
+"O componente principal do Agendamento é uma tabela que apresenta a lista de "
+"tarefas do Agendamento que o utilizador deseja executar. Associados a cada "
+"tarefa, existem os atributos (normalmente descritos na secção de "
+"Configuração baixo). Os atributos descrevem o nome da tarefa, para onde "
+"deverá estar apontado o telescópio ao gerar a imagem dessa tarefa, uma "
+"descrição dos tipos de imagens que deverão  ser capturadas, as restrições "
+"sobre quando deverão ser executadas as tarefas (&eg; altitude, madrugada, "
+"meio-dia, obstáculos na paisagem, &etc;), sendo que as coisas que precisam "
+"ser feitas antes e depois de terminar a tarefa, bem como as estratégias para "
+"lidar com os erros."
+
+#. Tag: para
+#: ekos-scheduler.docbook:32
+#, no-c-format
+msgid ""
+"You can add, delete, modify or change the order of rows in the Scheduler "
+"table."
+msgstr ""
+"Poderá adicionar, apagar, modificar ou alterar a ordem dos itens na tabela "
+"do Agendamento."
+
+#. Tag: para
+#: ekos-scheduler.docbook:37
+#, no-c-format
+msgid ""
+"You can add a Scheduler job row into the table by clicking the <guilabel>+</"
+"guilabel> control above the table, if all required attributes are filled out "
+"(name, position, and sequence file)."
+msgstr ""
+"Poderá adicionar uma linha de tarefa do Agendamento na tabela, carregando no "
+"controlo <guilabel>+</guilabel> por cima da tabela, caso todos os atributos "
+"necessários estejam preenchidos (nome, posição e ficheiro de sequência)."
+
+#. Tag: para
+#: ekos-scheduler.docbook:42
+#, no-c-format
+msgid ""
+"If you click on a row, you can then click the <guilabel>-</guilabel> control "
+"above the table to delete that row."
+msgstr ""
+"Se carregar numa dessas linhas, poderá então carregar no controlo <guilabel>-"
+"</guilabel> por cima da tabela para apagar essa linha."
+
+#. Tag: para
+#: ekos-scheduler.docbook:48
+#, no-c-format
+msgid ""
+"If you click on a row, you can then click the <guilabel>^</guilabel> or "
+"<guilabel>v</guilabel> controls to move those rows up or down in the job "
+"list."
+msgstr ""
+"Se carregar numa linha, poderá carregar nos controlos <guilabel>^</guilabel> "
+"ou <guilabel>v</guilabel> para subir ou descer essas linhas na lista de "
+"tarefas."
+
+#. Tag: para
+#: ekos-scheduler.docbook:54
+#, no-c-format
+msgid ""
+"If you double click on a row, the attributes of that job are filled in to "
+"the various settings on the Scheduler page. You can then change one or more "
+"of those attributes, and then click the checkmark above the table (after "
+"your double-click, the <guilabel>+</guilabel> became a <guilabel>checkmark</"
+"guilabel>), and the new attributes are assigned to that job."
+msgstr ""
+"Se fizer duplo-click sobre uma linha, os atributos dessa tarefa serão "
+"preenchidos com as diferentes definições na página de Agendamento. Poderá "
+"então alterar um ou mais desses atributos, carregando depois na marcação por "
+"cima da tabela (depois do seu duplo-click, o <guilabel>+</guilabel> passa a "
+"uma <guilabel>marcação</guilabel>), sendo que os novos atributos serão "
+"atribuídos a essa tarefa."
+
+#. Tag: title
+#: ekos-scheduler.docbook:62
+#, no-c-format
+msgid "Scheduling Algorithm"
+msgstr "Algoritmo de Agendamento"
+
+#. Tag: para
+#: ekos-scheduler.docbook:63
+#, no-c-format
+msgid ""
+"The Scheduler table (above) lists jobs in order of priority, with higher "
+"jobs (on lower-numbered rows) having higher priority than jobs further down "
+"the list (with higher-numbered rows)."
+msgstr ""
+"A tabela do Agendamento (acima) apresenta as tarefas por ordem de "
+"prioridade, com as tarefas superiores (nas linhas com números menores) a ter "
+"uma maior prioridade que as tarefas mais abaixo na lista (com números "
+"maiores)."
+
+#. Tag: para
+#: ekos-scheduler.docbook:66
+#, no-c-format
+msgid ""
+"The Scheduler regularly plans (and re-plans) which jobs should be run, and "
+"when. It can start executing a given job, and then later preempt that job "
+"for a new one. It can become idle if no jobs can be run (&eg; in daylight), "
+"and sleep until such a time that it becomes active again. Its aim is to keep "
+"the equipment as busy as possible, while respecting the scheduler-table's "
+"priorities. Here's how it works."
+msgstr ""
+"O Agendamento planeia regularmente (e volta a planear) quais as tarefas que "
+"devem ser executadas e quando. Poderá iniciar a execução de uma dada tarefas "
+"e depois substituir essa tarefa por uma nova de forma preemptiva. Poderá "
+"ficar inactivo, caso não possam ser executadas tarefas (&eg; durante o dia), "
+"e suspender-se até uma dada hora em que volte a ficar activa de novo. O seu "
+"objectivo é manter o equipamento o mais ocupado possível, contudo "
+"respeitando as prioridades da tabela do agendamento. Aqui está como funciona "
+"a mesma."
+
+#. Tag: para
+#: ekos-scheduler.docbook:69
+#, no-c-format
+msgid ""
+"When the scheduler starts (or when it replans, which it does every second "
+"while active), it looks through the entire list of jobs, starting at the "
+"highest priority job, and working its way down to the lowest priority one if "
+"necessary. When it finds a job that can run, it starts that job, possibly "
+"preempting the currently running job. A jobs can run if its constraints are "
+"met, &eg; the target is not blocked by the local terrain, it meets the "
+"minimum altitude constraint, it has not already completed all the desired "
+"imaging, ..."
+msgstr ""
+"Quando o agendamento é iniciado (ou quando volta a planear, algo que é feito "
+"a cada segundo durante a sua actividade), ele pesquisa a lista de tarefas "
+"inteira, a começar na tarefa com maior prioridade, seguindo o seu trabalho "
+"até à tarefa de menor prioridade, se necessário. Quando encontrar uma tarefa "
+"que possa ser executada, ele inicia a mesma, substituindo talvez a tarefa "
+"actualmente em execução. Algumas tarefas podem ser executadas se as suas "
+"restrições forem cumpridas, &eg; o alvo não esteja bloqueado pelo terreno "
+"local, cumpre a restrição da altitude mínima, não completou já todas as "
+"tarefas de imagens pretendidas, ..."
+
+#. Tag: para
+#: ekos-scheduler.docbook:72
+#, no-c-format
+msgid ""
+"The algorithm shows its projected next start times and stop times for all "
+"job in the Scheduler table. It also shows its estimate of times jobs will "
+"run during the next 48 hours in the log panel at the bottom of the window. "
+"See the screenshot of the scheduler window at the top of this section."
+msgstr ""
+"O algoritmo apresenta as suas horas de próxima execução e paragem "
+"projectadas para todas as tarefas na tabela do Agendamento. Também mostra a "
+"sua estimativa do número de vezes que as tarefas irão executar durante as "
+"próximas 48 horas, no painel de registo no fundo da janela. Veja a imagem da "
+"janela de agendamento no topo desta secção."
+
+#. Tag: para
+#: ekos-scheduler.docbook:75
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The scheduling algorithm described in the above paragraph is known as the "
+#| "Greedy Scheduling algorithm. It is the recommended one to use. In "
+#| "previous versions of Ekos, there was another \"Classic scheduling "
+#| "algorithm\" which is currently being phased out. That scheme could not "
+#| "preempt running jobs, and thus did not make as much use of the equipment "
+#| "as the Greedy Algorithm."
+msgid ""
+"The scheduling algorithm described in the above paragraph is known as the "
+"Greedy Scheduling algorithm. It is the recommended one to use. In previous "
+"versions of Ekos, there was another \"Classic scheduling algorithm\" which "
+"is no longer in Ekos. That scheme could not preempt running jobs, and thus "
+"did not make as much use of the equipment as the Greedy Algorithm."
+msgstr ""
+"O algoritmo de agendamento descrito no parágrafo acima é conhecido como o "
+"algoritmo Ambicioso. É o recomendado para ser usado. Nas versões anteriores "
+"do Ekos, existia outro \"Algoritmo de agendamento clássico\" que está a ser "
+"descontinuado neste momento. Esse esquema não conseguia trocar as tarefas em "
+"execução, pelo que não tirava tanto partido do equipamento como o Algoritmo "
+"Ambicioso."
+
+#. Tag: para
+#: ekos-scheduler.docbook:78
+#, no-c-format
+msgid ""
+"There is a checkbox option in the scheduler options menu called "
+"<guilabel>Use greedy scheduling</guilabel> which defaults to being checked. "
+"The system works as described above when it is checked. When it is unchecked "
+"the scheduler is prevented from scheduling lower priority jobs when "
+"uncompleted higher priority jobs cannot run. This results in less efficient "
+"use of the system, but may give you more control over scheduling."
+msgstr ""
+
+#. Tag: title
+#: ekos-scheduler.docbook:83
+#, fuzzy, no-c-format
+#| msgid "Scheduler Files (.esq)"
+msgid "Scheduler Files (.esl)"
+msgstr "Ficheiros de Agendamento (.esq)"
+
+#. Tag: para
+#: ekos-scheduler.docbook:84
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The scheduler table with its list of jobs and attributes can be saved "
+#| "onto disk and read back in. It writes an .esq file. Controls for writing "
+#| "the current Scheduler table to disk, and reading back other .esq files "
+#| "are located above the table to the right."
+msgid ""
+"The scheduler table with its list of jobs and attributes can be saved onto "
+"disk and read back in. It writes an .esl file. Controls for writing the "
+"current Scheduler table to disk, and reading back other .esl files are "
+"located above the table to the right."
+msgstr ""
+"A tabela de agendamento, com a sua lista de tarefas e atributos, pode ser "
+"gravada no disco e lida de volta de lá. A mesma grava um ficheiro .esq. Os "
+"controlos para gravar a tabela de Agendamento no disco, bem como a leitura "
+"de outros ficheiros .esq, encontram-se por cima da tabela à direita."
+
+#. Tag: title
+#: ekos-scheduler.docbook:89
+#, no-c-format
+msgid "Settings"
+msgstr "Configuração"
+
+#. Tag: para
+#: ekos-scheduler.docbook:90
+#, no-c-format
+msgid ""
+"Ekos Scheduler provides a simple interface to aid the user in setting the "
+"conditions and constraints required for an Scheduler job. You must select "
+"the <guilabel>Target</guilabel>, its coordinates, and the "
+"<guilabel>Sequence</guilabel> before you can add a job to the Scheduler."
+msgstr ""
+"O Agendamento do Ekos oferece uma interface simples para ajudar o utilizador "
+"a definir as condições e restrições necessárias para uma tarefa de "
+"observação. Deverá seleccionar o <guilabel>Destino</guilabel>, as suas "
+"coordenadas e a <guilabel>Sequência</guilabel>, antes de poder adicionar uma "
+"tarefa ao agendamento."
+
+#. Tag: para
+#: ekos-scheduler.docbook:93
+#, no-c-format
+msgid "Each Scheduler job is composed of the following:"
+msgstr "Cada tarefa do Agendamento é composta pelo seguinte:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:98
+#, no-c-format
+msgid ""
+"<guilabel>Target name and coordinates</guilabel>: Select target from the "
+"<link linkend=\"findobjects\">Find Dialog</link> or <guibutton>Add</"
+"guibutton> it from <link linkend=\"tool-obsplanner\">Observation Planner</"
+"link>. You can also enter a custom name. Coordinates can also be copied from "
+"the SkyMap using the button just to the right of the coordinates."
+msgstr ""
+"<guilabel>Nome e coordenadas do alvo</guilabel>: Seleccione o alvo na janela "
+"para <link linkend=\"findobjects\">Procurar</link> ou <guibutton>Adicionar</"
+"guibutton> o mesmo a partir do <link linkend=\"tool-obsplanner\">Planeamento "
+"de Observações</link>. Também poderá indicar um nome personalizado. As "
+"coordenadas também poderão ser copiada do Mapa do Céu, usando o botão à "
+"direita das coordenadas."
+
+#. Tag: para
+#: ekos-scheduler.docbook:103
+#, no-c-format
+msgid ""
+"Optional <guilabel>PA</guilabel>: The position angle (or image rotation) can "
+"be specified for systems with camera rotation hardware."
+msgstr ""
+"<guilabel>AP</guilabel> Opcional: O ângulo da posição (ou rotação da imagem) "
+"pode ser definido para sistema que tenham 'hardware' de rotação da câmara."
+
+#. Tag: para
+#: ekos-scheduler.docbook:108
+#, no-c-format
+msgid ""
+"Optional <guilabel>FITS File</guilabel>: If a FITS file is specified, the "
+"astrometry solver solves the file and use the central RA/DEC as the target "
+"coordinates."
+msgstr ""
+"<guilabel>Ficheiro FITS</guilabel> opcional: Se for indicado um ficheiro "
+"FITS, a resolução do Astrometry deverá resolver o ficheiro e usar a AR/DEC "
+"central do centro como as coordenadas do alvo."
+
+#. Tag: para
+#: ekos-scheduler.docbook:113
+#, no-c-format
+msgid ""
+"<guilabel>Sequence</guilabel> file: The sequence file is constructed in the "
+"Ekos <link linkend=\"ekos-capture\">Capture Module</link>. It has a list of "
+"capture specifications, where each spec details the number of images to "
+"capture, which filter to use, the exposure length, the gain, file naming "
+"details, temperature settings, prefixes, download directory, &etc;"
+msgstr ""
+"Ficheiro da <guilabel>Sequência</guilabel>: O ficheiro da sequência é criado "
+"no <link linkend=\"ekos-capture\">Módulo de Captura</link> do Ekos. Ele "
+"contém uma lista de definições de captura onde cada definição inclui  número "
+"de imagens a capturar, os filtros, a duração da exposição, o gano, os "
+"detalhes da nomenclatura dos ficheiros, a configuração da temperatura, os "
+"prefixos, a pasta de transferências, &etc;"
+
+#. Tag: para
+#: ekos-scheduler.docbook:118
+#, no-c-format
+msgid ""
+"<guilabel>Profile</guilabel>: Select which equipment profile to utilize when "
+"starting Ekos. If Ekos &amp; INDI are already started and online, this "
+"selection is ignored."
+msgstr ""
+"<guilabel>Perfil</guilabel>: Seleccione qual o perfil de equipamento a usar "
+"quando iniciar o Ekos. Se o Ekos &amp; o INDI já estiverem iniciados e "
+"'online', esta selecção será ignorada."
+
+#. Tag: para
+#: ekos-scheduler.docbook:123
+#, no-c-format
+msgid ""
+"<guilabel>Steps</guilabel>: The user selects what steps should be taken at "
+"the start of the job. The possibilities are: (1) Start mount tracking, (2) "
+"autofocus, (3) run a plate solving alignment, (4) start the auto-guider. One "
+"or more can be chosen."
+msgstr ""
+"<guilabel>Passos</guilabel>: O utilizador selecciona quais os passos que "
+"devem ser executados no início da tarefa. As possibilidades são: (1) Iniciar "
+"o seguimento da montagem, (2) focagem automática, (3) executar um "
+"alinhamento de resolução do prato, (4) iniciar a guia automática. Poderá "
+"escolher um ou mais destes."
+
+#. Tag: para
+#: ekos-scheduler.docbook:128
+#, no-c-format
+msgid ""
+"<guilabel>Startup Conditions</guilabel>: Conditions that must be met "
+"<emphasis role=\"bold\">before</emphasis> the Scheduler job is started. "
+"Currently, the user may select to start as soon as possible, "
+"<guimenuitem>ASAP</guimenuitem>, or when the target is near or past "
+"culmination, or at a specific time."
+msgstr ""
+"<guilabel>Condições de Arranque</guilabel>: As condições que devem ser "
+"cumpridas <emphasis role=\"bold\">antes</emphasis> de iniciar a tarefa de "
+"observação. De momento, o utilizador poderá optar por iniciar o mais cedo "
+"possível <guimenuitem>Agora</guimenuitem>, quando o alvo estiver próximo ou "
+"após culminar ou numa hora específica."
+
+#. Tag: para
+#: ekos-scheduler.docbook:133
+#, no-c-format
+msgid ""
+"<guilabel>Constraints</guilabel>: These are conditions that must be met "
+"<emphasis role=\"bold\">at all times</emphasis> during the Scheduler job "
+"execution process. These include minimum target altitude, minimum moon "
+"separation, twilight observation, artificial horizon altitude constraints, "
+"and weather monitoring."
+msgstr ""
+"<guilabel>Restrições</guilabel>: As restrições são condições que devem ser "
+"cumpridas <emphasis role=\"bold\">em todas as alturas</emphasis> durante o "
+"processo de execução da tarefa de observação. Estas incluem a altitude "
+"mínima do alvo, a separação mínima da Lua, a observação da penumbra, as "
+"restrições da altitude do horizonte artificial e a monitorização "
+"meteorológica."
+
+#. Tag: para
+#: ekos-scheduler.docbook:138
+#, no-c-format
+msgid ""
+"<guilabel>Completion Conditions</guilabel>: Conditions that trigger "
+"completion of the Scheduler job. The default selection is to simply mark the "
+"Scheduler job as complete once the sequence process is complete. Additional "
+"conditions enable the user to repeat the sequence process a number of times "
+"or indefinitely, or up until a specific time."
+msgstr ""
+"<guilabel>Condições de Finalização</guilabel>: As condições que desencadeiam "
+"a finalização da tarefa de observação. A selecção predefinida é simplesmente "
+"marcar a tarefa de observação como completa, assim que terminar o processo "
+"da sequência. As condições adicionais permitem que o utilizador repita o "
+"processo da sequência um dado número de vezes ou indefinidamente, ou até uma "
+"hora específica."
+
+#. Tag: title
+#: ekos-scheduler.docbook:145
+#, no-c-format
+msgid "Other options"
+msgstr "Outras opções"
+
+#. Tag: para
+#: ekos-scheduler.docbook:146
+#, no-c-format
+msgid ""
+"There are several other options to control how the Scheduler behaves. These "
+"are found in the general KStars Settings menu, shown below, in its Ekos tab "
+"and Scheduler sub-tab."
+msgstr ""
+"Existem várias outras opções para controlar como se comporta o Agendamento. "
+"Estas aparecem no menu geral de Configuração do KStars, que aparece abaixo, "
+"nas sua página do Ekos e na sub-página do Agendamento."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:150
+#, no-c-format
+msgid "<screeninfo>Scheduler Settings</screeninfo>"
+msgstr "<screeninfo>Configuração do Agendamento</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:158
+#, no-c-format
+msgid "<phrase>Scheduler Settings</phrase>"
+msgstr "<phrase>Configuração do Agendamento</phrase>"
+
+#. Tag: title
+#: ekos-scheduler.docbook:163
+#, no-c-format
+msgid "Remember job progress"
+msgstr "Recordar o progresso da tarefa"
+
+#. Tag: para
+#: ekos-scheduler.docbook:164
+#, no-c-format
+msgid ""
+"Among the settings shown above, one important one is known as "
+"<guilabel>Remember job progress</guilabel>. When this box is checked and a "
+"job is running, the Scheduler looks at the job's images already captured on "
+"disk, and doesn't re-capture the ones that are already there. The benefit is "
+"that if a job is restarted, or re-run another night, or if multiple jobs are "
+"being run together, stopping and starting when they are runnable, then jobs "
+"re-start right where they left off. This works well with the "
+"<guilabel>Repeat until terminated</guilabel> job-completion option. If "
+"<guilabel>Remember job progress</guilabel> is unchecked, jobs would restart "
+"from the start of their sequence specification each time, which probably "
+"isn't what you want. Unfortunately, if the images are not stored on the same "
+"computer that Ekos is running on, then this feature doesn't work and the "
+"jobs restart from their beginning."
+msgstr ""
+"Entre as definições apresentadas acima, uma importante é a "
+"<guilabel>Recordar a evolução da tarefa</guilabel>. Quando esta opção "
+"estiver assinalada e se estiver uma tarefa em execução, o Agendamento "
+"procura nas imagens da tarefa já capturadas em disco, e não captura de novo "
+"as que já lá existam,. O benefício é que, se uma tarefa for reiniciada ou "
+"executada de novo noutra noite, ou ainda se várias tarefas tiverem sido "
+"executadas em comjimto, no caso de parar ou iniciar quando as tarefas "
+"estiverem em execução, então as tarefas serão reiniciadas onde terminaram. "
+"Isto funciona bem com as opções <guilabel>Repetir até terminar</guilabel>. "
+"Se a opção <guilabel>Recordar a evolução das tarefas</guilabel> não estiver "
+"assinalada, as tarefas deveriam ser reiniciadas desde o início da sua "
+"definição de sequência de cada vez, o que provavelmente não é o que deseja. "
+"Infelizmente, se as imagens não estiverem no mesmo computador onde está a "
+"ser executado o Ekos, então esta funcionalidade não irá funcionar e as "
+"tarefas serão repetidas desde o seu início."
+
+#. Tag: para
+#: ekos-scheduler.docbook:167
+#, no-c-format
+msgid ""
+"A possibly confusing side-effect of <guilabel>Remember job progress</"
+"guilabel> is that if you've run a job using the (default) Sequence "
+"Completion finish condition, and it has captured all its images, and now you "
+"want to run the job again, the Scheduler won't schedule the job because it "
+"believes that all the images have already been captured. You'd either need "
+"to move those images elsewhere on disk, or change the finish condition to "
+"Repeat for N Times, or Repeat Until Terminated."
+msgstr ""
+"Um efeito colateral possível e talvez confuso do <guilabel>Recordar a "
+"evolução da tarefa</guilabel> é que se tiver executado uma tarefa com a "
+"condição de finalização (predefinida) da Finalização da Sequência, e caso "
+"tenha capturado todas as imagens e só queira executar a tarefa de novo, o "
+"Agendamento não colocará a tarefa por achar que todas as imagens já foram "
+"capturadas. Tanto terá de mover essas imagens para outro local no disco, "
+"como mudar a condição de finalização para Repetir N Vezes, ou Repetir Até "
+"Terminar."
+
+#. Tag: title
+#: ekos-scheduler.docbook:172
+#, no-c-format
+msgid "Group repeats"
+msgstr "Repetições do grupo"
+
+#. Tag: para
+#: ekos-scheduler.docbook:173
+#, no-c-format
+msgid ""
+"This feature allows you to run two or more scheduler jobs at roughly the "
+"same priority, such that if they were both runnable, they would progress at "
+"roughly the same rate. This may be applicable, for example, to jobs imaging "
+"the multiple tiles in a mosaic, but is generally applicable to any set of "
+"jobs."
+msgstr ""
+"Esta funcionalidade permite-lhe executar duas ou mais tarefas de agendamento "
+"com mais ou menos a mesma prioridade, de forma que se estivessem ambas em "
+"execução, iriam progredir mais ou menos ao mesmo ritmo. Isto pode ser "
+"aplicado, por exemplo, nas tarefas que geram as imagens dos vários padrões "
+"de um mosaico, mas aplica-se de um modo geral a qualquer conjunto de tarefas."
+
+#. Tag: para
+#: ekos-scheduler.docbook:176
+#, no-c-format
+msgid ""
+"Normally the (Greedy) scheduler's job priority is set by the row the job is "
+"listed in the Scheduler's job table. Jobs on rows closer to the top run with "
+"higher priority than jobs lower down. Thus, if a job on row 2 (Job2) uses "
+"<guilabel>Repeat Until Terminated</guilabel>, and that job's running "
+"constraints are satisfied, a lower down job (&eg; Job3) will not be "
+"scheduled to run."
+msgstr ""
+"Normalmente a prioridade do agendamento (Ambicioso) é configurada pela linha "
+"que a tarefa aparece na tabela de tarefas do Agendamento. As tarefas nas "
+"linhas próximas do topo são executadas com maior prioridade que as tarefas "
+"mais abaixo. Como tal, se uma tarefa na linha 2 (Tarefa2) usar a opção "
+"<guilabel>Repetir até Terminar</guilabel>, e se as restrições de execução "
+"dessa tarefa estiverem satisfeitas, não será agendada para execução nenhuma "
+"tarefa mais abaxio (&eg; Tarefa3)."
+
+#. Tag: para
+#: ekos-scheduler.docbook:179
+#, no-c-format
+msgid ""
+"If you wish to alternate jobs, you can assign each of the jobs the same "
+"<guilabel>group</guilabel> name, and give the jobs one of the repeating "
+"finish conditions (&eg; Repeat for N times, or Repeat Until Terminated). "
+"With that setup, jobs in the same group will cede to each other if they have "
+"completed more 'Repeat Iterations' than the other job. So, if Job2 with "
+"group \"MyGroup\" completes its 2nd iteration, and Job3 with the same group "
+"name has only completed 0 or 1 iterations, when the time comes to schedule "
+"Job2, Job3 will run instead."
+msgstr ""
+"Se pretender alterar as tarefas, poderá atribuir a cada uma das tarefas o "
+"mesmo nome de <guilabel>grupo</guilabel>, atribuindo a cada tarefa uma das "
+"condições de finalização em repetição (&eg; Repetir N vezes ou Repetir Até "
+"Terminar. Com essa configuração, as tarefas no mesmo grupo irão ceder umas "
+"às outras se tiverem terminado mais 'Iterações de Repetição ' que as outras "
+"tarefas. Por isso, se a Tarefa2 com o grupo \"MeGrupo\" terminar a sua 2a "
+"iteração, e se as tarefas com o mesmo nome de grupo só tiverem terminado 0 "
+"ou 1 iterações, e se chegar a altura de agendar a Tarefa2, a Tarefa3 será "
+"executada em alternativa."
+
+#. Tag: para
+#: ekos-scheduler.docbook:181
+#, no-c-format
+msgid ""
+"Practically speaking, imagine you had a 6-panel mosaic you wanted to "
+"alternate. You might give all of those jobs the same group name, make them "
+"all &eg; \"Repeat for 5 times\". Then, they would run in lock-step. The "
+"cadence of job switching would be controlled by the length of the sequence "
+"file assigned to each of those jobs. You wouldn't want to make the cadence "
+"too short (&eg; capturing one 2-minute image), as there is overhead in "
+"switching jobs. For instance, starting jobs may involved aligning, starting "
+"guiding, and even focusing."
+msgstr ""
+"De forma prática, imagine que tem um mosaico de 6 painéis que pretende "
+"alternar. Poderá atribuir todas essas tarefas ao mesmo nome de grupo, torná-"
+"las todas &eg; \"Repetir por 5 vezes\". Depois, executariam as mesmas em "
+"ciclo fechado. A cadência da mudança de tarefa seria controlada pelo tamanho "
+"do ficheiro de sequência atribuído a cada uma dessas tarefas. Não iria "
+"querer manter a cadência demasiado curta (&eg; capturar uma imagem de 2 "
+"minutos), dado que existe alguma sobrecarga na mudança de tarefas. Por "
+"exemplo, o arranque das tarefas poderá incluir o alinhamento, o início da "
+"guia e até a focagem."
+
+#. Tag: title
+#: ekos-scheduler.docbook:186
+#, no-c-format
+msgid "Repeat all jobs"
+msgstr "Repetir todas as tarefas"
+
+#. Tag: para
+#: ekos-scheduler.docbook:187
+#, no-c-format
+msgid ""
+"There is a checkbox and number input right below the Scheduler jobs table "
+"that allows you to repeat the entire schedule N times. This can be used to "
+"alternate a few jobs. You can just list the jobs on the scheduler, set it to "
+"repeat N times, and the jobs will repeat. However, this change is "
+"incompatible with 'Remember job progress (above) and unavailable if Remember "
+"Job Progress is checked. (Note: Remember Job Progress is recommended.)"
+msgstr ""
+"Existe uma opção de marcação e um campo numérico logo abaixo da tabela de "
+"Tarefas do Agendamento, a qual lhe permite repetir o agendamento inteiro N "
+"vezes. Isto pode ser usado para alternar algumas tarefas. Poderá apenas "
+"eumerar as tarefas no agendamento, configurá-la para repetir as mesmas N "
+"vezes e as tarefas repetir-se-ão. Contudo, esta alteração é incompatível com "
+"a opção 'Recordar a evolução da tarefa (acima)' e ficará indisponível se a "
+"opção para 'Recordar a evolução da tarefa' estiver assinalada. (Nota: "
+"Recomenda-se a opção para Recordar a Evolução da Tarefa.)"
+
+#. Tag: title
+#: ekos-scheduler.docbook:193
+#, no-c-format
+msgid "Editing running jobs"
+msgstr ""
+
+#. Tag: para
+#: ekos-scheduler.docbook:194
+#, no-c-format
+msgid ""
+"It is possible to edit the scheduler's job table, and attributes of "
+"individual jobs, while the scheduler is running. As always, you double click "
+"on a job, change the desired attributes, and click the checkbox to finalize "
+"the change. If you edit the running job it will be restarted (i.e. the "
+"startup steps (slew, focus, align, guide) will be re-done. You can also move "
+"jobs up and down in priority, add new jobs, or deleted existing ones. You "
+"cannot delete the running job."
+msgstr ""
+
+#. Tag: para
+#: ekos-scheduler.docbook:197
+#, no-c-format
+msgid ""
+"One important attribute of scheduler jobs is their sequence file (.esq) "
+"which controls the capture module while the job is running. For example, it "
+"sets number of captures, filters used, gain/ISO, etc. The .esq is normally "
+"created and edited in the capture tab, but that cannot be done while the "
+"scheduler is running. If you desire to make changes to a .esq file while the "
+"scheduler is running, or create a new one, the scheduler provides a tool "
+"called the Capture Sequence Editor."
+msgstr ""
+
+#. Tag: title
+#: ekos-scheduler.docbook:201
+#, fuzzy, no-c-format
+#| msgid "<title>Scheduler</title>"
+msgid "<title>Capture Sequence Editor</title>"
+msgstr "<title>Agendamento</title>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:202
+#, no-c-format
+msgid ""
+"The Capture Sequence Editor is a tool to create and edit capture sequence "
+"files (.esq) which can be started by clicking the edit (pencil) icon just "
+"above the scheduler table. A screenshot is shown below."
+msgstr ""
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:206
+#, fuzzy, no-c-format
+#| msgid "<screeninfo>Create Jobs</screeninfo>"
+msgid "<screeninfo>Capture Sequence Editor</screeninfo>"
+msgstr "<screeninfo>Criar as Tarefas</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:214
+#, fuzzy, no-c-format
+#| msgid "<phrase>Create Jobs</phrase>"
+msgid "<phrase>Capture Sequence Editor</phrase>"
+msgstr "<phrase>Criar as Tarefas</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:218
+#, no-c-format
+msgid ""
+"The editor is very similar in use and layout to the capture tab--though it "
+"is missing all the controls to actually capture image. You edit jobs the "
+"same way you do in capture, and load or save sequence queues the same way "
+"too (though there are additional Load and Save-To buttons provided in the "
+"editor)."
+msgstr ""
+
+#. Tag: para
+#: ekos-scheduler.docbook:222
+#, no-c-format
+msgid ""
+"It is important to understand that capture sequences rely to some extent on "
+"the filterwheel and camera being used (e.g. the filter names, the possible "
+"ISO values, ...). The Capture Sequence Editor, which is not connected to the "
+"device drivers, does not have direct access to this information. Instead, "
+"the editor uses the values from the last time the capture tab connected to "
+"its devices. Thus, it may not make sense to try and create a .esq file for a "
+"different camera or filterwheel than the last one connected-to. You may need "
+"to wait until your scheduler job is completed and edit that .esq directly in "
+"the capture tab."
+msgstr ""
+
+#. Tag: para
+#: ekos-scheduler.docbook:224
+#, no-c-format
+msgid ""
+"It is also recommended that you don't overwrite .esq files when scheduler "
+"jobs are currently using those same files. (It is OK if the scheduler is "
+"running, but not running that job.) This can get the scheduler and capture "
+"modules out of sync, as they read the files at different times. Instead, you "
+"can save to a different filename and then edit the scheduler job to use the "
+"new .esq filename."
+msgstr ""
+
+#. Tag: title
+#: ekos-scheduler.docbook:231
+#, no-c-format
+msgid "Workflow"
+msgstr "Fluxograma"
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:234
+#, no-c-format
+msgid "<screeninfo>Scheduler + Planner</screeninfo>"
+msgstr "<screeninfo>Agendamento + Planeamento</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:242
+#, no-c-format
+msgid "<phrase>Scheduler + Planner</phrase>"
+msgstr "<phrase>Agendamento + Planeamento</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:246
+#, no-c-format
+msgid ""
+"The description above only tackles the <emphasis role=\"bold\">Data "
+"Acquisition</emphasis> stage of the observatory workflow. The overall "
+"procedure typically utilized in an observatory can be summarized in three "
+"primary stages:"
+msgstr ""
+"A descrição acima só se foca na etapa de <emphasis role=\"bold\">Aquisição "
+"de Dados</emphasis> do fluxo do observatório. O procedimento global "
+"tipicamente usado num observatório poder-se-á resumir em três etapas "
+"principais:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:251
+#, no-c-format
+msgid "Startup"
+msgstr "Arranque"
+
+#. Tag: para
+#: ekos-scheduler.docbook:256
+#, no-c-format
+msgid "Data Acquisition (including preprocessing and storage)"
+msgstr "Aquisição de Dados (incluindo o pré-processamento e armazenamento)"
+
+#. Tag: para
+#: ekos-scheduler.docbook:261
+#, no-c-format
+msgid "<para>Shutdown</para>"
+msgstr "<para>Encerramento</para>"
+
+#. Tag: title
+#: ekos-scheduler.docbook:269
+#, no-c-format
+msgid "Startup Procedure"
+msgstr "Procedimento de Arranque"
+
+#. Tag: para
+#: ekos-scheduler.docbook:270
+#, no-c-format
+msgid "Startup procedure is unique to each observatory but may include:"
+msgstr ""
+"O procedimento de arranque é único para cada observatório mas poderá incluir:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:275
+#, no-c-format
+msgid "Turning on power to equipment"
+msgstr "Ligação da alimentação do equipamento"
+
+#. Tag: para
+#: ekos-scheduler.docbook:280
+#, no-c-format
+msgid "Running safety/sanity checks"
+msgstr "Execução das verificações de segurança/validade"
+
+#. Tag: para
+#: ekos-scheduler.docbook:285
+#, no-c-format
+msgid "Checking weather conditions"
+msgstr "Verificação das condições meteorológicas"
+
+#. Tag: para
+#: ekos-scheduler.docbook:290
+#, no-c-format
+msgid "Turning off light"
+msgstr "Desactivação da luz"
+
+#. Tag: para
+#: ekos-scheduler.docbook:295
+#, no-c-format
+msgid "Fan/Light control"
+msgstr "Controlo da ventoinha/luz"
+
+#. Tag: para
+#: ekos-scheduler.docbook:300
+#, no-c-format
+msgid "Unparking dome"
+msgstr "Desbloqueio do 'dome'"
+
+#. Tag: para
+#: ekos-scheduler.docbook:305
+#, no-c-format
+msgid "Unparking mount"
+msgstr "Desbloqueio da montagem"
+
+#. Tag: para
+#: ekos-scheduler.docbook:310
+#, no-c-format
+msgid "&etc;"
+msgstr "&etc;"
+
+#. Tag: para
+#: ekos-scheduler.docbook:315
+#, no-c-format
+msgid ""
+"Ekos Scheduler only initiates the startup procedure once the startup time "
+"for the first Scheduler job is close (default <emphasis>lead</emphasis> time "
+"is 5 minutes before <emphasis>startup</emphasis> time). Once the startup "
+"procedure is completed successfully, the scheduler picks the Scheduler job "
+"target and starts the sequence process. If a startup script is specified, it "
+"shall be executed first."
+msgstr ""
+"O Agendamento do Ekos só inicia o procedimento de arranque assim que a hora "
+"de arranque da primeira tarefa de observação estiver próxima (por omissão, o "
+"tempo <emphasis>prévio</emphasis> é 5 minutos antes da hora de "
+"<emphasis>arranque</emphasis>). Assim que o procedimento de arranque for "
+"completado com sucesso, o agendamento escolhe o alvo da tarefa de observação "
+"e inicia o processo da sequência. Se for indicado um programa de arranque, o "
+"mesmo deverá ser executado em primeiro lugar."
+
+#. Tag: title
+#: ekos-scheduler.docbook:321
+#, no-c-format
+msgid "Data Acquisition"
+msgstr "Aquisição de Dados"
+
+#. Tag: para
+#: ekos-scheduler.docbook:322
+#, no-c-format
+msgid ""
+"Depending the on the user selection, the typical workflow proceeds as "
+"follows:"
+msgstr ""
+"Dependendo da selecção do utilizador, o fluxo típico prossegue da seguinte "
+"forma:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:327
+#, no-c-format
+msgid ""
+"Slew mount to target. If a FITS file was specified, it first solves the "
+"files and slew to the file coordinates."
+msgstr ""
+"Deslocar a montagem para o destino. Se for indicado um ficheiro FITS, ele "
+"resolve primeiro os ficheiros e desloca-se para as coordenadas do ficheiro."
+
+#. Tag: para
+#: ekos-scheduler.docbook:332
+#, no-c-format
+msgid ""
+"Auto-focus target. The autofocus process automatically selects the best star "
+"in the frame and runs the autofocus algorithm against it."
+msgstr ""
+"Focagem automática do alvo. O processo de focagem automática selecciona "
+"automaticamente a melhor estrela na moldura e executa o algoritmo de focagem "
+"automática face a ela."
+
+#. Tag: para
+#: ekos-scheduler.docbook:337
+#, no-c-format
+msgid "Perform plate solving, sync mount, and slew to target coordinates."
+msgstr ""
+"Execução da resolução do prato, sincronização da montagem e deslocamento "
+"para as coordenadas do alvo."
+
+#. Tag: para
+#: ekos-scheduler.docbook:342
+#, no-c-format
+msgid ""
+"Perform post-alignment focusing since the frame might have moved during the "
+"plate solving process."
+msgstr ""
+"Execução da focagem pós-alinhamento, dado que a moldura se poderá ter movido "
+"durante o processo de resolução dos pratos."
+
+#. Tag: para
+#: ekos-scheduler.docbook:347
+#, no-c-format
+msgid ""
+"Perform calibration and start auto-guiding: The calibration process "
+"automatically selects the best guide star, performs calibration, and starts "
+"the autoguide process."
+msgstr ""
+"Execução da calibração e início da guia automática: O processo de calibração "
+"selecciona automaticamente a melhor estrela-guia, efectua a calibração e "
+"inicia o processo de guia automática."
+
+#. Tag: para
+#: ekos-scheduler.docbook:352
+#, no-c-format
+msgid ""
+"Load the sequence file in the <link linkend=\"ekos-capture\">Capture module</"
+"link> and start the imaging process."
+msgstr ""
+"Carregamento do ficheiro da sequência no <link linkend=\"ekos-capture"
+"\">módulo de Captura</link> e início do processo de imagens."
+
+#. Tag: para
+#: ekos-scheduler.docbook:357
+#, no-c-format
+msgid ""
+"Coordinate module issues, such as failures in guiding or alignment. They may "
+"result is Scheduler job suspensions and rescheduling."
+msgstr ""
+"As questões do módulo de Coordenadas, como as falhas na guia ou alinhamento. "
+"Estas poderão gerar suspensões e novos agendamentos  nas tarefas do "
+"Agendamento."
+
+#. Tag: para
+#: ekos-scheduler.docbook:362
+#, no-c-format
+msgid ""
+"Note--some of the inter-module interactions are initiated by the modules "
+"themselves, but are monitored by the Scheduler. These include meridian "
+"flips, autofocus runs initiated by temperature change or timer expiration, "
+"and minimum guiding deviation requirements for capture."
+msgstr ""
+"Nota--algumas das interacções entre módulos são iniciadas pelos próprios "
+"módulos, mas são acompanhadas pelo Agendamento. Estas incluem as inversões "
+"de meridianos, as execuções de focagens automáticas iniciadas pela mudança "
+"de temperatura ou pela expiração do tempo-limite, assim como os requisitos "
+"de desvio mínimo da guia para a captura."
+
+#. Tag: title
+#: ekos-scheduler.docbook:370
+#, no-c-format
+msgid "<title>Shutdown</title>"
+msgstr "<title>Encerramento</title>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:371
+#, no-c-format
+msgid ""
+"Once the Scheduler job is completed successfully, the scheduler selects the "
+"next Scheduler job. If no job can be scheduled at this time, the mount is "
+"parked until a next job can run. Furthermore, if the next job is not due for "
+"a user-configurable time limit, the scheduler performs a "
+"<emphasis>preemptive</emphasis> shutdown to preserve resources and performs "
+"the startup procedure again when the target is due."
+msgstr ""
+"Assim que a tarefa de observação terminar com sucesso, o agendamento escolhe "
+"o próximo alvo. Se a hora agendada do próximo alvo ainda não tiver chegado, "
+"a montagem fica bloqueada até que o alvo esteja pronto. Para além disso, se "
+"o próximo alvo agendado não estiver disponível durante um período de tempo "
+"configurado pelo utilizador, o agendamento efectua um encerramento "
+"<emphasis>preemptivo</emphasis> para preservar os recursos e efectua o "
+"procedimento de arranque de novo quando o alvo estiver disponível."
+
+#. Tag: para
+#: ekos-scheduler.docbook:374
+#, no-c-format
+msgid ""
+"If an unrecoverable error occurs, the observatory initiates shutdown "
+"procedure. If there is a shutdown script, it will be executed last."
+msgstr ""
+"Se ocorrer um erro irrecuperável, o observatório inicia o procedimento de "
+"encerramento. Se existir um programa de encerramento, será executado por "
+"último."
+
+#. Tag: para
+#: ekos-scheduler.docbook:377
+#, no-c-format
+msgid ""
+"The following video demonstrates an earlier version of the scheduler, but "
+"the basic principles still apply today:"
+msgstr ""
+"O seguinte vídeo demonstra uma versão anterior do agendamento, mas os "
+"princípios básicos ainda se aplicam hoje:"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:386
+#, no-c-format
+msgid "Ekos Scheduler"
+msgstr "Agendamento do Ekos"
+
+#. Tag: title
+#: ekos-scheduler.docbook:393
+#, no-c-format
+msgid "Weather Monitoring"
+msgstr "Monitorização da Meteorologia"
+
+#. Tag: para
+#: ekos-scheduler.docbook:394
+#, no-c-format
+msgid ""
+"Another critical feature of any remotely operated robotic observatory is "
+"weather monitoring. For weather updates, Ekos relies on the selected INDI "
+"weather driver to continuously monitor the weather conditions. For "
+"simplicity sake, the weather conditions can be summed in three states:"
+msgstr ""
+"Outra funcionalidade crítica de qualquer observatório robótico operado "
+"remotamente é a monitorização meteorológica. Para as actualizações "
+"meteorológicas, o Ekos baseia-se no controlador INDI meteorológico "
+"seleccionado para acompanhar de forma contínua as condições meteorológicas. "
+"Por razões de simplicidade, as condições meteorológicas poder-se-ão resumir "
+"em três estados:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:399
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Ok</emphasis>: Weather conditions are clear and "
+"optimal for imaging."
+msgstr ""
+"<emphasis role=\"bold\">Ok</emphasis>: As condições meteorológicas estão "
+"boas e óptimas para a extracção de imagens."
+
+#. Tag: para
+#: ekos-scheduler.docbook:404
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Warning</emphasis>: Weather conditions are not "
+"clear, seeing is subpar, or partially obstructed and not suitable for "
+"imaging. Any further imaging process is suspended until the weather "
+"improves. Warning weather status does not pose any danger to the observatory "
+"equipment so the observatory is kept operational. The exact behavior to take "
+"under Warning status can be configured."
+msgstr ""
+"<emphasis role=\"bold\">Aviso</emphasis>: As condições meteorológicas não "
+"são boas, a visibilidade está abaixo do aceitável ou está parcialmente "
+"obstruída e não é adequada para imagens. Qualquer outro processo de geração "
+"de imagens está em suspenso até que o tempo melhore. O estado meteorológico "
+"de aviso não coloca nenhum perigo ao equipamento do observatório, como tal o "
+"mesmo mantém-se operacional. O comportamento exacto a ter em conta no estado "
+"de Aviso poderá ser configurado."
+
+#. Tag: para
+#: ekos-scheduler.docbook:409
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Alert</emphasis>: Weather conditions are detrimental "
+"to the observatory safety and shutdown must be initiated as soon as possible."
+msgstr ""
+"<emphasis role=\"bold\">Alerta</emphasis>: As condições meteorológicas são "
+"prejudiciais para a segurança do observatório, pelo que o encerramento dever-"
+"se-á iniciar o mais cedo possível."
+
+#. Tag: title
+#: ekos-scheduler.docbook:417
+#, no-c-format
+msgid "Startup &amp; Shutdown Scripts"
+msgstr "Programas de Arranque &amp; Encerramento"
+
+#. Tag: para
+#: ekos-scheduler.docbook:418
+#, no-c-format
+msgid ""
+"Due to the uniqueness of each observatory, Ekos enables the user to select "
+"startup and shutdown scripts. The scripts take care of any necessary "
+"procedures that must take place on startup and shutdown stages. On startup, "
+"Ekos executes the startup scripts and only proceeds to the remainder of the "
+"startup procedure (unpark dome/unpark mount) if the script completes "
+"successfully. Conversely, the shutdown procedure begins with parking the "
+"mount &amp; dome before executing the shutdown script as the final procedure."
+msgstr ""
+"Devido às características únicas de cada observatório, o Ekos permite ao "
+"utilizador seleccionar programas de arranque e encerramento. Os programas "
+"tomam conta de quaisquer procedimentos necessários que tenham de ser "
+"executados nas etapas de arranque e encerramento. No arranque, o Ekos "
+"executa os programas de arranque e só passa ao resto do procedimento de "
+"arranque (desbloqueio do 'dome' ou montagem) se o programa tiver terminado "
+"com sucesso. De forma inversa, o procedimento de encerramento começa por "
+"bloquear a montagem &amp; 'dome' antes de executar o programa de "
+"encerramento como procedimento final."
+
+#. Tag: para
+#: ekos-scheduler.docbook:421
+#, no-c-format
+msgid ""
+"Startup and shutdown scripts can be written any language that can be "
+"executed on the local machine. It must return 0 to report success, any other "
+"exist value is considered an error indicator. The script's standard output "
+"is also directed to Ekos logger window. The following is an sample demo "
+"startup script in Python:"
+msgstr ""
+"Os programas de arranque e encerramento podem ser criados em qualquer "
+"linguagem que possa ser executada na máquina local. Deverá devolver 0 como "
+"significado de sucesso ou qualquer outro valor como indicador de erro. O "
+"'standard output' programa também é direccionado para a janela de registo do "
+"Ekos. Segue-se um exemplo de programa de arranque em Python:"
+
+#. Tag: programlisting
+#: ekos-scheduler.docbook:424
+#, no-c-format
+msgid ""
+"#!/usr/bin/env python\n"
+"# -*- coding: utf-8 -*-\n"
+"\n"
+"import os\n"
+"import time\n"
+"import sys\n"
+"\n"
+"print \"Turning on observatory equipment...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"Checking safety switches...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"All systems are GO\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"exit(0)"
+msgstr ""
+"#!/usr/bin/env python\n"
+"# -*- coding: utf-8 -*-\n"
+"\n"
+"import os\n"
+"import time\n"
+"import sys\n"
+"\n"
+"print \"A activar o equipamento do observatório...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"A verificar as opções de segurança...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"Todos os sistemas estão PRONTOS\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"exit(0)"
+
+#. Tag: para
+#: ekos-scheduler.docbook:425
+#, no-c-format
+msgid ""
+"The startup and shutdown scripts must be <emphasis>executable</emphasis> in "
+"order for Ekos to invoke them (&eg; use <userinput>chmod +x startup_script."
+"py</userinput> to mark the script as executable). Ekos Scheduler enables "
+"truly simple robotic operation without the need of any human intervention in "
+"any step of the process. Without human presence, it becomes increasingly "
+"critical to gracefully recover from failures in any stage of the observation "
+"run. Using &plasma; notifications, the user can configure audible alarms and "
+"email notifications for the various events in the Scheduler."
+msgstr ""
+"Os programas de arranque e encerramento devem ser <emphasis>executáveis</"
+"emphasis> para que o Ekos os possa invocar (&eg; usar <userinput>chmod +x "
+"programa_arranque.py</userinput> para marcar o programa como executável). O "
+"Agendamento do Ekos permite uma operação robótica realmente simples sem a "
+"necessidade de qualquer intervenção humana em qualquer etapa do processo. "
+"Sem a presença humana, torna-se cada vez mais crítico recuperar de forma "
+"ordeira de falhas em qualquer etapa da execução da observação. Ao usar as "
+"notificações do &plasma;, o utilizador poderá configurar alarmes audíveis e "
+"notificações por e-mail para os diversos eventos no agendamento."
+
+#. Tag: title
+#: ekos-scheduler.docbook:431
+#, no-c-format
+msgid "<title>Mosaic Planner</title>"
+msgstr "<title>Planeamento do Mosaico</title>"
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:433
+#, no-c-format
+msgid "<screeninfo>Mosaic Planner</screeninfo>"
+msgstr "<screeninfo>Planeamento do Mosaico</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:441
+#, no-c-format
+msgid "<phrase>Mosaic Planner</phrase>"
+msgstr "<phrase>Planeamento do Mosaico</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:445
+#, no-c-format
+msgid ""
+"Hubble-like super wide field images of <ulink url=\"http://darkskyart.com/?"
+"page_id=96\">galaxies</ulink> and nebulae are truly awe-inspiring, and while "
+"it takes great skills to obtain such images and process them; many notable "
+"names in the field of astrophotography employ gear that is not "
+"<emphasis>vastly</emphasis> different from yours or mine. I emphasize "
+"<emphasis>vastly</emphasis> because some do indeed have impressive equipment "
+"and dedicated observatories worth tens of the thousands of dollars. "
+"Nevertheless, many amateurs can obtain stellar wide-field images by "
+"combining smaller images into a single grand mosaic."
+msgstr ""
+"As imagens de campo super-panorâmicas das <ulink url=\"http://darkskyart."
+"com/?page_id=96\">galáxias</ulink> e nebulosas são realmente espantosas e, "
+"embora sejam necessárias várias competências para obter este tipo de imagens "
+"e processá-las, muitos dos nomes reconhecidos no campo da fotografia "
+"astronómica usam equipamentos que não são <emphasis>assim tão</emphasis> "
+"diferentes do seu ou do meu. Diz-se <emphasis>assim tão</emphasis>, porque "
+"alguns de facto têm equipamento impressionante e observatórios dedicados que "
+"custam dezenas de milhares de dólares. Contudo, muitos amadores conseguem "
+"obter imagens estelares panorâmicas ao combinarem imagens pequenas num único "
+"mosaico enorme."
+
+#. Tag: para
+#: ekos-scheduler.docbook:448
+#, no-c-format
+msgid ""
+"We are often limited by our camera+telescope Field of View (FOV). By "
+"increasing FOV by means of a focal reducer or a shorter tube, we gain a "
+"larger sky coverage at the expense of spatial resolution. At the same time, "
+"many attractive wide-field targets span multiple FOVs across the sky. "
+"Without any changes to your astrophotography gear, it is possible to create "
+"a super mosaic image <emphasis>stitched</emphasis> together from several "
+"smaller images. There are two major steps to accomplish a super mosaic image:"
+msgstr ""
+"Normalmente o grande limite é o Campo de Visão (CDV) da sua câmara"
+"+telescópio. Ao aumentar o CDV, seja através de um redutor focal ou um tubo "
+"mais curto, poderá ganhar uma maior cobertura do céu em detrimento da "
+"resolução espacial. Ao mesmo tempo, muitos dos alvos panorâmicos mais "
+"atractivos ocupam vários CDV's em todo o céu. Sem quaisquer alterações ao "
+"seu equipamento de fotografia astronómica, é possível criar uma super-imagem "
+"em mosaico <emphasis>colada</emphasis> a partir de várias imagens mais "
+"pequenas. Existem dois passos importantes para obter uma super-imagem em "
+"mosaico:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:453
+#, no-c-format
+msgid ""
+"Capture multiple images spanning the target with some overlap between "
+"images. The overlap is necessary to enable the processing software from "
+"aligning and joining the sub-images."
+msgstr ""
+"Capture várias imagens que percorram o alvo com alguma sobreposição entre "
+"imagens. A sobreposição é necessária para activar a aplicação de "
+"processamento para alinhar e juntar as sub-imagens."
+
+#. Tag: para
+#: ekos-scheduler.docbook:458
+#, no-c-format
+msgid ""
+"Process the images and <emphasis>stitch</emphasis> them into a super mosaic "
+"image."
+msgstr ""
+"Processe as imagens e <emphasis>recorte-as</emphasis> numa super-imagem em "
+"mosaico."
+
+#. Tag: para
+#: ekos-scheduler.docbook:463
+#, no-c-format
+msgid ""
+"The 2nd step is handled by image processing applications such as <ulink url="
+"\"https://pixinsight.com\">PixInsight</ulink>, among others, and will not be "
+"the topic of discussion here. The first step can be accomplished in Ekos "
+"Scheduler where it creates a mosaic suitable for your equipment and in "
+"accordance with the desired field of view. Not only Ekos creates the mosaic "
+"panels for your target, but it also constructs the corresponding observatory "
+"jobs required to capture all the images. This greatly facilitates the "
+"logistics of capturing many images with different filters and calibration "
+"frames across a wide area of the sky."
+msgstr ""
+"O 2º passo é tratado por aplicações de processamento de imagens, como a "
+"<ulink url=\"https://pixinsight.com\">PixInsight</ulink>, entre outras, e "
+"não será um tópico de discussão aqui. O primeiro passo pode ser cumprido no "
+"Agendamento do Ekos, onde irá criar um mosaico adequado para o seu "
+"equipamento e de acordo com o campo de visão desejado. Não só o Ekos cria os "
+"painéis do mosaico para o seu alvo, mas também cria as tarefas de observação "
+"correspondentes para capturar todas as imagens. Isto facilita em grande "
+"medida a logística de capturar várias imagens com diferentes filtros e "
+"imagens de calibração ao longo de uma grande área do céu."
+
+#. Tag: para
+#: ekos-scheduler.docbook:466
+#, no-c-format
+msgid ""
+"The <guilabel>Mosaic Planner</guilabel> in the Ekos Scheduler will create "
+"multiple Scheduler jobs based on a central target. To toggle the planner, "
+"click on the <guibutton>Mosaic Planner</guibutton> button in Ekos Scheduler "
+"or KStars INDI toolbar as illustrated in the screenshot. The planner draws "
+"the Mosaic Panel directly unto the sky map. It is recommended to enable HiPS "
+"overlay for the best experience. The planner is composed of four stages:"
+msgstr ""
+"O <guilabel>Planeamento do Mosaico</guilabel> no Agendamento do Ekos irá "
+"criar várias tarefas de Agendamento com base num alvo central. Para comutar "
+"o planeamento, carregue no botão de <guibutton>Planeamento do Mosaico</"
+"guibutton> no Agendamento do Ekos ou na barra de ferramentas INDI do KStars "
+"na imagem. O planeamento desenha o Painel do Mosaico directamente sobre o "
+"mapa do céu. Recomenda-se que activa a sobreposição do HiPS para uma melhor "
+"experiência. O planeamento consiste em quatro etapas:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:471
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Confirm Equipment</emphasis>: Ekos attempts to load "
+"equipment settings from INDI. If unsuccessful, you need to enter your "
+"equipment settings including your telescope focal length in addition to "
+"camera's width, height, and pixel dimensions. The settings are saved for "
+"future sessions."
+msgstr ""
+"<emphasis role=\"bold\">Confirmar o Equipamento</emphasis>: o Ekos teta "
+"carregar as definições do equipamento a partir do INDI. Se não tiver "
+"sucesso, terá de introduzir as definições do seu equipamento, incluindo a "
+"distância focal do seu telescópio, para além da largura e altura da câmara, "
+"bem como das dimensões dos pixels. As definições são gravadas para futuras "
+"sessões."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:475
+#, no-c-format
+msgid "<screeninfo>Confirm Equipment</screeninfo>"
+msgstr "<screeninfo>Confirmar o Equipamento</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:483
+#, no-c-format
+msgid "<phrase>Confirm Equipment</phrase>"
+msgstr "<phrase>Confirmar o Equipamento</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:489
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Adjust Grid</emphasis>: Select the mosaic panel "
+"dimension and overlap percentage. The Mosaic Panel is updated accordingly on "
+"the sky map. Adjust the Position Angle to match the desired mosaic "
+"orientation in the sky. If the Position Angle is different from your "
+"camera's usual orientation, you may need to rotate the camera either "
+"manually or via a mechanized rotator when the scheduler jobs are executed. "
+"Tile transparency is automatically calculated by default but may be turned "
+"off and adjusted manually. To compute the mosaic field from the number of "
+"tiles, click the <guibutton>Cover FOV</guibutton> button. The mosaic panel "
+"can be centered in the sky map by clicking on the <guibutton>Recenter</"
+"guibutton> button."
+msgstr ""
+"<emphasis role=\"bold\">Ajustar a Grelha</emphasis>: Seleccione a dimensão "
+"do painel do mosaico e a percentagem de sobreposição. O Painel do Mosaico é "
+"actualizado em conformidade no mapa do céu. Ajuste o Ângulo da Posição para "
+"corresponder à orientação desejada do mosaico no céu. Se o Ângulo da Posição "
+"for diferente da orientação normal da sua câmara, poderá ter de rodar a "
+"câmara manualmente ou com um rotor mecânico quando executar as tarefas "
+"agendadas. A transparência do padrão é calculada automaticamente por "
+"omissão, mas poderá ser desligada e ajustada manualmente. Para calcular o "
+"campo do mosaico a partir do número de padrões, carregue no botão "
+"<guibutton>Cobrir o CDV</guibutton>. O painel do mosaico poderá ser centrado "
+"no mapa do céu se carregar no botão <guibutton>Centrar de Novo</guibutton>."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:493
+#, no-c-format
+msgid "<screeninfo>Select Grid</screeninfo>"
+msgstr "<screeninfo>Seleccionar a Grelha</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:501
+#, no-c-format
+msgid "<phrase>Select Grid</phrase>"
+msgstr "<phrase>Seleccionar a Grelha</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:505
+#, no-c-format
+msgid ""
+"A large overlap will make frame stitching easier during post-processing, but "
+"it requires more panes to cover the desired extent. However, if you already "
+"know the minimal amount of sub-frames your rejection algorithm will use "
+"during post-processing, you may want to increase the overlap to attain that "
+"amount on the areas covered by multiple panes. For instance, a 4x4 mosaic "
+"grid with 75% overlap has 16 sub-frames covering the central intersection, "
+"which is enough for Winsorized Sigma rejection. Although the resulting stack "
+"does not have the same height on all parts of the final frame, this method "
+"gives you control on signal-to-noise ratio and allows you to provide context "
+"to your target while exposing a relatively low number of captures."
+msgstr ""
+"Uma camada sobreposta grande tornará a junção das imagens mais simples "
+"durante o pós-processamento, mas obriga a mais áreas para cobrir a extensão "
+"desejada. Contudo, se já souber o número mínimo de sub-imagens que o seu "
+"algoritmo de rejeição irá usar durante o pós-processamento, poderá querer "
+"aumentar a sobreposição para atingir esse valor nas áreas cobertas por "
+"várias áreas individuais. Por exemplo, uma grelha em mosaico 4x4 com uma "
+"sobreposição de 75% tem 16 sub-imagens que cobrem a intersecção central, o "
+"que é suficiente para a rejeição Winsorized Sigma. Ainda que a pilha "
+"resultante não tenha a mesma altura em todas as parte da imagem, este método "
+"dá-lhe controlo sobre a relação sinal-ruído e permite-lhe fornecer algum "
+"contexto ao seu destino, embora expondo um número relativamente pequeno de "
+"capturas."
+
+#. Tag: para
+#: ekos-scheduler.docbook:508
+#, no-c-format
+msgid ""
+"The large number drawn in the corner of each grid pane represents the order "
+"in which panes will be captured. The default S-shaped choice (west-east then "
+"alternating high-low/low-high moves), ensures minimal movement of the mount "
+"during observation. Uncheck <guilabel>Minimum mount move</guilabel> to "
+"revert to west-east/high-low movement only. The coordinates of each pane are "
+"rendered in their center as degrees, minutes and seconds. Finally, the angle "
+"each pane rotates from the center of the mosaic is displayed at the bottom. "
+"If your field of view is large, or if your mosaic is located close to a "
+"celestial pole, you may observe that rendered panes start rotating visibly "
+"due their horizontal position or high declination. Use the "
+"<guilabel>overlap</guilabel> to ensure panes cover the desired frame extents "
+"properly."
+msgstr ""
+"O número grande desenhado no canto de cada área da grelha representa a ordem "
+"pela qual serão capturadas as áreas. A escolha predefinida em forma de S "
+"(oeste-este e depois movimentos alternados cima-baixo/baixo-cima) garante um "
+"movimento mínimo da montagem durante a observação. Desligue a opção "
+"<guilabel>Movimento mínimo da montagem</guilabel> para reverter apenas para "
+"o movimento oeste-este/cima-baixo). As coordenadas de cada área são "
+"desenhadas no seu centro como graus, minutos e segundos. Finalmente, o "
+"ângulo que cada área roda a partir do centro do mosaico aparece no fundo. Se "
+"o seu campo de visão for grande, ou se o seu mosaico estiver próximo de um "
+"pólo celeste, poderá observar que as áreas desenhadas começam a rodar de "
+"forma visível, devido á sua posição horizontal ou declinação elevada. Use a "
+"<guilabel>sobreposição</guilabel> para garantir que as áreas cobrem os "
+"extremos das imagens de forma adequada."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:512
+#, no-c-format
+msgid "<screeninfo>Scheduler Mosaic Tool - Large rotation</screeninfo>"
+msgstr ""
+"<screeninfo>Ferramenta de Agendamento do Mosaico - rotação elevada</"
+"screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:520
+#, no-c-format
+msgid "<phrase>Scheduler Mosaic Tool - Large rotation</phrase>"
+msgstr ""
+"<phrase>Ferramenta de Agendamento do Mosaico - rotação elevada</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:526
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Adjust Grid</emphasis>: Adjust Grid center by "
+"manually entering the J2000 center or by dragging the center of the mosaic "
+"on the sky map."
+msgstr ""
+"<emphasis role=\"bold\">Ajustar a Grelha</emphasis>: Ajuste o centro da "
+"grelha, introduzindo manualmente o centro do J2000 ou arrastando o centro do "
+"mosaico no mapa do céu."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:530
+#, no-c-format
+msgid "<screeninfo>Adjust Grid</screeninfo>"
+msgstr "<screeninfo>Ajustar a Grelha</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:538
+#, no-c-format
+msgid "<phrase>Adjust Grid</phrase>"
+msgstr "<phrase>Ajustar a Grelha</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:544
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Create Jobs</emphasis>: The final step is to select "
+"the sequence file and directory to store the images. Target field may be "
+"automatically filled but may be changed as desired. Select the steps each "
+"scheduler job should execute in sequence (Track -> Focus -> Align -> Guide -"
+"> Capture), and adjust the frequency of automatic alignment and focus "
+"routines that must be executed during the mosaic operation. For example, if "
+"<guilabel>Align Every</guilabel> is set to 2 Scheduler Jobs, then the first "
+"job will run the astrometry alignment, while the second job will skip it. "
+"When the third job is executed, alignment is performed again and so forth."
+msgstr ""
+"<emphasis role=\"bold\">Criar as Tarefas</emphasis>: O passo final é "
+"seleccionar o ficheiro da sequência e a pasta onde guardar as imagens. O "
+"campo do alvo é preenchido automaticamente mas poderá ser alterado como "
+"desejar. Seleccione os passos que cada tarefa agendada deverá executar em "
+"sequência (Seguir -> Focar -> Alinhar -> Guiar -> Capturar) e ajustar a "
+"frequência das rotinas de alinhamento automático e de focagem que deverão "
+"ser executadas durante a operação do mosaico. Por exemplo, se a opção "
+"<guilabel>Alinhar a Cada</guilabel> estiver configurada como 2 Tarefas do "
+"Agendamento, então a primeira tarefa irá executar o alinhamento do "
+"Astrometry, enquanto a segunda irá saltar esse passo. Quando for executada a "
+"terceira tarefa, o alinhamento é executado de novo e assim por diante."
+
+#. Tag: para
+#: ekos-scheduler.docbook:547
+#, no-c-format
+msgid ""
+"If you want the different mosaic tile jobs to alternate, then fill in the "
+"group name with an identifier that all the tile jobs will share, and select "
+"a repeating completion condition."
+msgstr ""
+"Se quiser que as diferentes tarefas de padrões do mosaico se alternem, então "
+"preencha o nome do grupo com um identificador que todas as tarefas de "
+"padrões irão partilhar, seleccionando uma condição de finalização repetitiva."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:551
+#, no-c-format
+msgid "<screeninfo>Create Jobs</screeninfo>"
+msgstr "<screeninfo>Criar as Tarefas</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:559
+#, no-c-format
+msgid "<phrase>Create Jobs</phrase>"
+msgstr "<phrase>Criar as Tarefas</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:565
+#, no-c-format
+msgid ""
+"Click <guibutton>Create Jobs</guibutton> to generate mosaic scheduler jobs "
+"and add them to the schedule queue. You can further edit the jobs "
+"individually, as you would normal Scheduler jobs."
+msgstr ""
+"Carregue em <guibutton>Criar as Tarefas</guibutton> para gerar tarefas de "
+"agendamento do mosaico e adicioná-las à fila do agendamento. Poderá ainda "
+"editar as tarefas individualmente, como faria com as tarefas de Agendamento "
+"normais."

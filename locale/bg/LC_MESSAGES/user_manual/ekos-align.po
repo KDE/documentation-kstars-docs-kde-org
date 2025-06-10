@@ -1,0 +1,2059 @@
+# File genareted with potranslate
+# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-10-25 00:53+0000\n"
+"PO-Revision-Date: 2024-03-08 15:45+0100\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.02.0\n"
+
+#. Tag: title
+#: ekos-align.docbook:2
+#, no-c-format
+msgid "<title>Align</title>"
+msgstr "<title>Подравняване</title>"
+
+#. Tag: primary
+#: ekos-align.docbook:4
+#, no-c-format
+msgid "Tools"
+msgstr "Инструменти"
+
+#. Tag: secondary
+#: ekos-align.docbook:5
+#, no-c-format
+msgid "Ekos"
+msgstr "Ekos"
+
+#. Tag: tertiary
+#: ekos-align.docbook:6
+#, no-c-format
+msgid "<tertiary>Align</tertiary>"
+msgstr "<tertiary>Подравняване</tertiary>"
+
+#. Tag: title
+#: ekos-align.docbook:9
+#, no-c-format
+msgid "Introduction"
+msgstr "Въведение"
+
+#. Tag: screeninfo
+#: ekos-align.docbook:11
+#, no-c-format
+msgid "<screeninfo>Ekos Align Module</screeninfo>"
+msgstr "<screeninfo>Модул за Подравняване на Ekos</screeninfo>"
+
+#. Tag: phrase
+#: ekos-align.docbook:19
+#, no-c-format
+msgid "<phrase>Ekos Align Module</phrase>"
+msgstr "<phrase>Модул за Подравняване на Ekos</phrase>"
+
+#. Tag: para
+#: ekos-align.docbook:23
+#, no-c-format
+msgid ""
+"The Ekos Alignment Module enables highly accurate GOTOs and can measure and "
+"correct polar alignment errors. This is possible thanks to third-party plate-"
+"solving technology. The main plate-solving software used is the "
+"StellarSolver package, which itself makes use of the offline (and online) "
+"astrometry.net, ASTAP and Watney solvers. Ekos begins by capturing an image "
+"of a star field, feeding that image to the chosen solver (e.g. see <ulink "
+"url=\"https://astrometry.net\">astrometry.net</ulink>, <ulink url=\"https://"
+"github.com/rlancaste/stellarsolver\">StellarSolver</ulink> or <ulink url="
+"\"https://www.hnsky.org/astap\">ASTAP</ulink>), and gets in return the "
+"central coordinates (RA, DEC), scale, and orientation of the image. The "
+"solver essentially performs pattern recognition against a catalog of "
+"millions of stars. Once the coordinates are determined, the true pointing of "
+"the telescope is known."
+msgstr ""
+"Модулът за подравняване на Ekos позволява много точни GOTO операции и може "
+"да измерва и коригира грешки при полярното подравняване. Това е възможно "
+"благодарение на технологията за решаване от изображения от трети страни. "
+"Основният използван софтуер за решаване на изображения е пакетът "
+"StellarSolver, който сам по себе си използва офлайн (и онлайн) решенията на "
+"astrometry.net, ASTAP и Watney. Ekos започва със заснемане на изображение на "
+"звездно поле, подаване на това изображение към избрания решаващ инструмент "
+"(напр. вижте <ulink url=\"https://astrometry.net\">astrometry.net</ulink>, "
+"<ulink url=\"https://github.com/rlancaste/stellarsolver\">StellarSolver</"
+"ulink> или <ulink url=\"https://www.hnsky.org/astap\">ASTAP</ulink>) и "
+"получава в замяна централните координати (RA, DEC), мащаба и ориентацията на "
+"изображението. Решаващият модул по същество извършва разпознаване на образи "
+"на базата на каталог от милиони звезди. След като координатите са "
+"определени, конкретната насоченост на телескопа вече е известна."
+
+#. Tag: para
+#: ekos-align.docbook:26
+#, no-c-format
+msgid ""
+"Often, there is a discrepancy between where the telescope thinks it is "
+"looking at and where it is truly pointing. The magnitude of this discrepancy "
+"can range from a few arcminutes to a couple of degrees. Ekos can correct the "
+"discrepancy by syncing to the new coordinates, and then slewing the mount to "
+"the desired target originally requested."
+msgstr ""
+"Често има несъответствие между това накъде телескопът \"мисли\", че гледа и "
+"накъде наистина е насочен. Големината на това несъответствие може да варира "
+"от няколко ъглови минути до няколко градуса. Ekos може да коригира "
+"несъответствието чрез синхронизиране с новите координати и след това да "
+"завърти монтировката към първоначално желаната цел."
+
+#. Tag: para
+#: ekos-align.docbook:29
+#, no-c-format
+msgid ""
+"Ekos also provides a Polar Alignment Assistant Tool to correct polar "
+"alignment errors. It takes three images, slewing between the images, and "
+"calculates the offset between the mount axis and polar axis. It feeds back "
+"to the user the altitude and azimuth adjustments needed to align these axes. "
+"These images are typically taken near the celestial pole (close to Polaris "
+"for Northern Hemisphere) but can work well taken from anywhere, usually "
+"starting near the meridian and slewing either East or West."
+msgstr ""
+"Ekos също така предоставя инструмент за помощ при полярно подравняване за "
+"коригиране на грешки при полярно подравняване. Той взема три изображения, "
+"въртящи се между изображенията, и изчислява отместването между оста на "
+"монтиране и полярната ос. Той връща обратно на потребителя корекциите на "
+"височината и азимута, необходими за подравняване на тези оси. Тези "
+"изображения обикновено се правят близо до небесния полюс (близо до Полярната "
+"звезда за Северното полукълбо), но могат да работят добре заснети отвсякъде, "
+"обикновено започвайки близо до меридиана и насочвайки се на изток или на "
+"запад."
+
+#. Tag: para
+#: ekos-align.docbook:32
+#, no-c-format
+msgid ""
+"At a minimum, you need a CCD/Webcam and a telescope that supports Slew &amp; "
+"Sync commands. Most popular commercial telescope nowadays support such "
+"commands."
+msgstr ""
+"Като минимум се нуждаете от CCD/уеб камера и телескоп, който поддържа "
+"командите завъртване и синхронизиране. Повечето популярни търговски "
+"телескопи в днешно време поддържат такива команди."
+
+#. Tag: title
+#: ekos-align.docbook:38
+#, no-c-format
+msgid "Typical use"
+msgstr "Типична употреба"
+
+#. Tag: para
+#: ekos-align.docbook:39
+#, no-c-format
+msgid ""
+"Using Ekos Alignment Module, aligning your mount using the controller's 1, "
+"2, or 3 star alignment is <emphasis>not</emphasis> strictly necessary, "
+"though for some mounts it is recommended to perform a rough 1 or 2 star "
+"alignment before using Ekos alignment module. If you are using EQMod, you "
+"can start using Ekos alignment module right away. A typical workflow for "
+"GOTO alignment involves the following steps:"
+msgstr ""
+"Използвайки модула за подравняване Ekos, подравняването на вашата монтировка "
+"с помощта на подравняването на контролера с 1, 2 или 3 звезди <emphasis>не</"
+"emphasis> е строго необходимо, въпреки че за някои монтировки се препоръчва "
+"да извършите грубо подравняване с 1 или 2 звезди, преди да използвате Ekos "
+"модул за подравняване. Ако използвате EQMod, можете да започнете да "
+"използвате модула за подравняване Ekos веднага. Типичен работен процес за "
+"GOTO подравняване включва следните стъпки:"
+
+#. Tag: para
+#: ekos-align.docbook:44
+#, no-c-format
+msgid "Start KStars and Ekos and connect to INDI."
+msgstr "Стартирайте KStars и Ekos и се свържете с INDI."
+
+#. Tag: para
+#: ekos-align.docbook:49
+#, no-c-format
+msgid ""
+"Unpark your mount from its home position (usually the NCP for equatorial "
+"mounts)."
+msgstr ""
+"Разпаркирайте вашето монтиране от началната му позиция (обикновено северния "
+"небесен полюс за екваториални монтировки)."
+
+#. Tag: para
+#: ekos-align.docbook:54
+#, no-c-format
+msgid ""
+"Slew to a nearby bright star using the slew telescope command in the SkyMap "
+"using the <guilabel>Slew the telescope to the mouse-pointer position</"
+"guilabel> command."
+msgstr ""
+"Насочете към близка ярка звезда с помощта на командата завъртване на "
+"телескопа в небесната карта с помощта на командата <guilabel>Завъртване на "
+"телескопа до позицията на показалеца на мишката</guilabel>."
+
+#. Tag: para
+#: ekos-align.docbook:59
+#, no-c-format
+msgid ""
+"Select <guilabel>Slew to Target</guilabel> in the <guilabel>Solver Action</"
+"guilabel> on the Align page."
+msgstr ""
+"Изберете <guilabel>Завъртване към целта</guilabel> в <guilabel>Действие на "
+"решаващият модул</guilabel> на страницата Подравняване."
+
+#. Tag: para
+#: ekos-align.docbook:64
+#, no-c-format
+msgid ""
+"After slew is complete, click <guibutton>Capture &amp; Solve</guibutton> on "
+"the Align page."
+msgstr ""
+"След като завъртването приключи, щракнете върху <guibutton>Заснемане и "
+"Решаване</guibutton> на страницата Подравняване."
+
+#. Tag: para
+#: ekos-align.docbook:69
+#, no-c-format
+msgid ""
+"Align will capture an image and try to solve it. If the solver is "
+"successful, Ekos will send a sync command to the mount and then slew to the "
+"star. The results are displayed in the <guilabel>Solution Results</guilabel> "
+"tab along with a bullseye diagram that shows the offset the reported "
+"telescope coordinates (&ie; where the telescope <emphasis>thinks</emphasis> "
+"it is looking vs. its actual pointing position in the sky as determined by "
+"the solver). Align will stop if it is within the desired error tolerance, "
+"otherwise it will repeat the Slew/Capture/Solve/Sync process until it is "
+"within tolerance."
+msgstr ""
+"Модулът подравняване ще заснеме изображение и ще се опита да го разреши. Ако "
+"решаването е успешно, Ekos ще изпрати команда за синхронизиране до "
+"монтирането и след това ще се завърти към звездата. Резултатите се показват "
+"в раздела <guilabel>Резултати от решението</guilabel>, заедно с кръгова "
+"диаграма, която показва отместването на докладваните координати на телескопа "
+"(т.е. където телескопът <emphasis>смята</emphasis>, че гледа спрямо "
+"действителните си позиция на сочене в небето, както е определено от "
+"решаващия модул). Подравняването ще спре, ако е в рамките на желания "
+"толеранс за грешка, в противен случай ще повтори процеса Завъртване/"
+"Заснемане/Решаване/Синхронизиране, докато не влезе в рамките на толеранса."
+
+#. Tag: para
+#: ekos-align.docbook:72
+#, no-c-format
+msgid ""
+"Each time the solver is executed and returns successful results, Ekos can "
+"run on the following actions:"
+msgstr ""
+"Всеки път, когато решаващият модул се изпълнява и връща успешни резултати, "
+"Ekos може да изпълнява следните действия:"
+
+#. Tag: para
+#: ekos-align.docbook:77
+#, no-c-format
+msgid ""
+"<guilabel>Sync</guilabel>: Syncs the telescope coordinates to the solution "
+"coordinates."
+msgstr ""
+"<guilabel>Синхронизиране</guilabel>: Синхронизиране на телескопа с "
+"координатите на решението"
+
+#. Tag: para
+#: ekos-align.docbook:82
+#, no-c-format
+msgid ""
+"<guilabel>Slew to Target</guilabel>: Syncs the telescope coordinates to the "
+"solution coordinates and then slew to the target."
+msgstr ""
+"<guilabel>Завъртване към целта</guilabel>: Синхронизиране на телескопа до "
+"координатите на решението и след това придвижване до целевите координати"
+
+#. Tag: para
+#: ekos-align.docbook:87
+#, no-c-format
+msgid ""
+"<guilabel>Nothing</guilabel>: Just solve the image and display the solution "
+"coordinates."
+msgstr ""
+"<guilabel>Нищо</guilabel>: Само решаване на изображението и показване на "
+"координатите."
+
+#. Tag: title
+#: ekos-align.docbook:95
+#, no-c-format
+msgid "Configure StellarSolver Options"
+msgstr "Настройване на StellarSolver"
+
+#. Tag: screeninfo
+#: ekos-align.docbook:97
+#, no-c-format
+msgid "<screeninfo>StellarSolver Options</screeninfo>"
+msgstr "<screeninfo>Опции на StellarSolver</screeninfo>"
+
+#. Tag: phrase
+#: ekos-align.docbook:105
+#, no-c-format
+msgid "<phrase>StellarSolver Options</phrase>"
+msgstr "<phrase>Опции на StellarSolver</phrase>"
+
+#. Tag: para
+#: ekos-align.docbook:109
+#, no-c-format
+msgid ""
+"To use the solvers, you must first configure the StellarSolver options. The "
+"above page is displayed when clicking on the <guilabel>Options</guilabel> "
+"button on the lower right of the Align page, then selecting the "
+"<guilabel>StellarSolver Options</guilabel> tab. Start with the "
+"<guilabel>Builtin method for solver</guilabel> <guilabel>Source Extraction "
+"method</guilabel> so that each solver uses its preferred star-extraction "
+"code. For <guilabel>Solving Method</guilabel> we recommend choosing "
+"<guilabel>Internal Solver</guilabel> to use StellarSolver's copy of the "
+"Astrometry.net code, or choose <guilabel>Local ASTAP</guilabel> if you "
+"prefer that. The online astrometry solver is accurate, but can take a long "
+"time to solve because of all the data transfer required. For "
+"<guilabel>Options Profile</guilabel>, start with the <guilabel>1-Default</"
+"guilabel> profile."
+msgstr ""
+"За да използвате решаващите инструменти, първо трябва да конфигурирате "
+"опциите на StellarSolver. Страницата по-горе се показва, когато щракнете "
+"върху бутона <guilabel>Настройки</guilabel> в долния десен ъгъл на "
+"страницата Подравняване, след което изберете раздела <guilabel>Опции на "
+"StellarSolver</guilabel>. Започнете с <guilabel>Вграден метод за решаване</"
+"guilabel> <guilabel>Метод за извличане на източник</guilabel>, така че всеки "
+"решаващ модул да използва своя предпочитан код за извличане на звезди. За "
+"<guilabel>Метод на решаване</guilabel> препоръчваме да изберете "
+"<guilabel>Вграден решаващ модул</guilabel>, за да използвате копието на "
+"StellarSolver на кода на Astrometry.net, или изберете <guilabel>Локален "
+"ASTAP</guilabel>, ако предпочитате това. Онлайн инструментът за решаване на "
+"астрометрия е точен, но може да отнеме много време за решаване поради "
+"необходимия трансфер на голям обем данни. За <guilabel>Параметри на профила</"
+"guilabel> започнете с профила <guilabel>1-Default</guilabel>."
+
+#. Tag: para
+#: ekos-align.docbook:112
+#, no-c-format
+msgid ""
+"There are two other minor options. <guilabel>WCS</guilabel> or World-"
+"Coordinate-System is a system for embedding equatorial coordinate "
+"information within the image. When you view a solved image, you can hover it "
+"and view the coordinate for each pixel. You can also click anywhere in the "
+"image and command to the telescope to slew there. It is highly recommended "
+"to keep this option on. <guilabel>Overlay</guilabel> overlays captured "
+"images unto the sky map of &kstars;."
+msgstr ""
+"Има още две второстепенни опции. <guilabel>WCS</guilabel> или World-"
+"Coordinate-System е система за вграждане на информация за екваториалните "
+"координати в изображението. Когато разглеждате решено изображение, можете да "
+"го посочите с курсора и да видите координатите за всеки пиксел. Можете също "
+"да щракнете където и да е в изображението и да заповядате на телескопа да се "
+"завърти натам. Силно препоръчително е тази опция да остане включена. "
+"<guilabel>Наслагване</guilabel> наслагва заснети изображения върху картата "
+"на небето на &kstars;."
+
+#. Tag: title
+#: ekos-align.docbook:118
+#, no-c-format
+msgid "Configure StellarSolver External Programs"
+msgstr "Конфигуриране на външни програми на StellarSolver"
+
+#. Tag: screeninfo
+#: ekos-align.docbook:120
+#, no-c-format
+msgid "<screeninfo>StellarSolver External Programs</screeninfo>"
+msgstr "<screeninfo>Външни програми на StellarSolver</screeninfo>"
+
+#. Tag: phrase
+#: ekos-align.docbook:128
+#, no-c-format
+msgid "<phrase>StellarSolver External Programs</phrase>"
+msgstr "<phrase>Външни програми на StellarSolver</phrase>"
+
+#. Tag: para
+#: ekos-align.docbook:132
+#, no-c-format
+msgid ""
+"This is only required if you choose one of the external programs for your "
+"<guilabel>Solving Method</guilabel>. If you choose <guilabel>Internal "
+"Solver</guilabel>, then it is not necessary."
+msgstr ""
+"Това се изисква само ако изберете една от външните програми за вашия "
+"<guilabel>Метод за решаване</guilabel>. Ако изберете <guilabel>Вграден "
+"решаващ инструмент</guilabel>, това не е необходимо."
+
+#. Tag: para
+#: ekos-align.docbook:135
+#, no-c-format
+msgid ""
+"You will need to make sure the paths are correct for the solver you choose. "
+"The top menu item <guilabel>select to load one of the default sets</"
+"guilabel> usually configures the boxes correctly."
+msgstr ""
+"Ще трябва да се уверите, че пътищата са правилни за решаващия инструмент, "
+"който сте избрали. Елементът от горното меню <guilabel>Изберете, за да "
+"заредите един от наборите по подразбиране</guilabel> обикновено конфигурира "
+"полетата правилно."
+
+#. Tag: title
+#: ekos-align.docbook:141
+#, no-c-format
+msgid "Configure StellarSolver Scale and Position"
+msgstr "Конфигурирайте мащаба и позицията на StellarSolver"
+
+#. Tag: screeninfo
+#: ekos-align.docbook:143
+#, no-c-format
+msgid "<screeninfo>StellarSolver Scale and Position</screeninfo>"
+msgstr "<screeninfo>Мащаб и позиция на StellarSolver</screeninfo>"
+
+#. Tag: phrase
+#: ekos-align.docbook:151
+#, no-c-format
+msgid "<phrase>StellarSolver Scale and Position</phrase>"
+msgstr "<phrase>Мащаб и позиция на StellarSolver</phrase>"
+
+#. Tag: para
+#: ekos-align.docbook:155
+#, no-c-format
+msgid ""
+"This page tells Ekos whether you want to constrain your plate-solving search "
+"by scale or position."
+msgstr ""
+"Тази страница казва на Ekos дали искате да ограничите търсенето си за "
+"решаване на изображения по мащаб или позиция."
+
+#. Tag: para
+#: ekos-align.docbook:157
+#, no-c-format
+msgid ""
+"Scale can be the image width in degrees (<guilabel>dw</guilabel>), the image "
+"width in arc-minutes (<guilabel>aw</guilabel>), or the pixel width in arc-"
+"seconds (<guilabel>app</guilabel>). All should work, but arc-seconds per "
+"pixel is recommended. Typically you want to use this constraint for faster "
+"solving, so we recommend you check this box. The system doesn't require that "
+"the scale be exactly right--it allows deviations of 10-20%. However, "
+"frequently issues related to solving are due to an inaccurate scale being "
+"used. Therefore, if you have plate-solving problems, you may want to uncheck "
+"<guilabel>Use Scale</guilabel> until those issues are resolved. This will "
+"likely result in longer solving times. <guilabel>Auto-update</guilabel> will "
+"automatically fill the scale box with the scale found in the most-recent "
+"successful solve."
+msgstr ""
+"Мащабът може да бъде ширината на изображението в градуси - (<guilabel>dw</"
+"guilabel>), ширината на изображението в дъгови минути - (<guilabel>aw</"
+"guilabel>) или ширината на пиксела в дъгови секунди (<guilabel>app </"
+"guilabel>). Всичко би трябвало да работи, но се препоръчва дъгова секунда на "
+"пиксел. Обикновено се предпочита това ограничение за по-бързо решаване, така "
+"че ви препоръчваме да поставите отметка в това квадратче. Системата не "
+"изисква мащаба да е точен - позволяват се отклонения от 10-20%. Въпреки "
+"това, често проблемите, свързани с решаването, се дължат на използване на "
+"неточен мащаб. Следователно, ако имате проблеми с решаването на изображения, "
+"може да премахнете отметката от <guilabel>Използване на мащаб</guilabel>, "
+"докато тези проблеми не бъдат решени. Това вероятно ще доведе до по-дълго "
+"време за решаване. <guilabel>Автоматично актуализиране</guilabel> "
+"автоматично ще запълни полето за мащаб, с мащаба, намерен в последното "
+"успешно решение."
+
+#. Tag: para
+#: ekos-align.docbook:158
+#, no-c-format
+msgid ""
+"The RA and DEC positions are usually filled in from the position the "
+"telescope thinks it is pointing. Naturally, the system doesn't require an "
+"exactly correct positional constraint--afterall the purpose of plate-solving "
+"is to find that position. The maximum distance in degrees from the specified "
+"position to the actual position is given by the <guilabel>Radius</guilabel> "
+"field. Plate-solving will fail if the specified position is further away. "
+"Typically you want to enable <guilabel>Use Position</guilabel> for faster "
+"solving, so we recommend you check this box. However, frequently issues "
+"related to solving are due to using a poor positional estimate (e.g. the "
+"telescope is significantly misaligned). Therefore, if you have plate-solving "
+"problems, you may want to uncheck <guilabel>Use Position</guilabel> until "
+"those issues are resolved. As mentioned, this will result in longer solving "
+"times. <guilabel>Auto-update</guilabel> will fill the position box with the "
+"position found in the most-recent successful solve. However, a slew will "
+"update the position to the position where the telescope thinks it is "
+"pointing after the slew."
+msgstr ""
+"Позициите RA и DEC обикновено се попълват от позицията, към която телескопът "
+"мисли, че е насочен. Естествено, системата не изисква точно правилно "
+"позиционно ограничение - в края на краищата целта на решаването на "
+"изображението е да се намери тази позиция. Максималното разстояние в градуси "
+"от указаната позиция до действителната позиция се дава от полето "
+"<guilabel>Радиус</guilabel>. Разрешаването ще се провали, ако указаната "
+"позиция е по-далеч. Обикновено ще искате да активирате <guilabel>Използване "
+"на позиция</guilabel> за по-бързо решаване, така че ви препоръчваме да "
+"поставите отметка в това квадратче. Въпреки това често проблемите, свързани "
+"с решаването, се дължат на използване на лоша оценка на позицията (напр. "
+"телескопът е значително разместен). Следователно, ако имате проблеми с "
+"решаването на изображения, може да искате да премахнете отметката от "
+"<guilabel>Използване на позиция</guilabel>, докато тези проблеми не бъдат "
+"решени. Както споменахме, това ще доведе до по-дълго време за решаване. "
+"<guilabel>Автоматичното актуализиране</guilabel> ще запълни полето за "
+"позиция с позицията, намерена в най-скорошното успешно решение. Завъртането "
+"обаче ще актуализира позицията до позицията, в която телескопът смята, че е "
+"насочен след завъртането."
+
+#. Tag: title
+#: ekos-align.docbook:163
+#, no-c-format
+msgid "Configure StellarSolver Profiles"
+msgstr "Конфигуриране на профил на StellarSolver"
+
+#. Tag: screeninfo
+#: ekos-align.docbook:165
+#, no-c-format
+msgid "<screeninfo>StellarSolver Profiles</screeninfo>"
+msgstr "<screeninfo>StellarSolver профили</screeninfo>"
+
+#. Tag: phrase
+#: ekos-align.docbook:173
+#, no-c-format
+msgid "<phrase>StellarSolver Profiles</phrase>"
+msgstr "<phrase>StellarSolver профили</phrase>"
+
+#. Tag: para
+#: ekos-align.docbook:177
+#, no-c-format
+msgid ""
+"This applies if you are using the (recommended) <guilabel>Internal Solver</"
+"guilabel> <guilabel>Solving Method</guilabel>."
+msgstr ""
+"Това важи, ако използвате (препоръчително) <guilabel>Вграден решаващ модул</"
+"guilabel> <guilabel>Метод на решаване</guilabel>."
+
+#. Tag: para
+#: ekos-align.docbook:179
+#, no-c-format
+msgid ""
+"You can choose an <guilabel>Options Profile</guilabel> on the "
+"<guilabel>StellarSolver Options</guilabel> tab. Profiles are simply "
+"collections of parameters to configure the performance of the star-"
+"extraction and plate-solving system inside of StellarSolver. The <guilabel>1-"
+"Default</guilabel> profile is the recommended one to start with. There are a "
+"few other possible profiles such as <guilabel>Large Scale Solving</"
+"guilabel>, <guilabel>Small Scale Solving</guilabel>, and <guilabel>Single "
+"Thread Solving</guilabel>."
+msgstr ""
+"Можете да изберете <guilabel>Параметри на профила</guilabel> в раздела "
+"<guilabel>Опции на StellarSolver</guilabel>. Профилите са просто колекции от "
+"параметри за конфигуриране на производителността на системата за извличане "
+"на звезди и решаване на изображения вътре в StellarSolver. Профилът "
+"<guilabel>1-Default</guilabel> е препоръчителният, с който да започнете. Има "
+"няколко други възможни профила като <guilabel>Решаване в голям мащаб</"
+"guilabel>, <guilabel>Решаване в малък мащаб</guilabel> и <guilabel>Решаване "
+"в единична нишка</guilabel>."
+
+#. Tag: para
+#: ekos-align.docbook:181
+#, no-c-format
+msgid ""
+"In the <guilabel>Align Options Profile Editor</guilabel> tab you can view "
+"and edit profiles. There are many parameters, most of which you need not "
+"change to solve issues. There are 3 types of parameters."
+msgstr ""
+"В раздела <guilabel>Редактор на профили с опции за подравняване</guilabel> "
+"можете да преглеждате и редактирате профили. Има много параметри, повечето "
+"от които не е необходимо да променяте, за да се извърши решаването. Има 3 "
+"вида параметри."
+
+#. Tag: para
+#: ekos-align.docbook:184
+#, no-c-format
+msgid ""
+"The top section labelled <guilabel>Sextractor Parameters</guilabel> (with "
+"column headings <guilabel>Extraction Parameters</guilabel>, "
+"<guilabel>Deblending Params</guilabel>, and <guilabel>Photometry Params</"
+"guilabel>) are star extraction parameters--that is those that help find "
+"stars in your image."
+msgstr ""
+"Горната секция, обозначена с <guilabel>Параметри на Sextractor</guilabel> "
+"(със заглавия на колони <guilabel>Параметри на извличане</guilabel>, "
+"<guilabel>Параметри на деблендинг</guilabel> и <guilabel>Параметри на "
+"фотометрия</guilabel>) са параметри за извличане на звезди- т.е. "
+"параметрите, които ви помагат да намерите звезди във вашето изображение."
+
+#. Tag: para
+#: ekos-align.docbook:185
+#, no-c-format
+msgid ""
+"The second section labelled <guilabel>Star Filtering Parameters</guilabel> "
+"filters/reduces the number of stars extracted before sending the list to "
+"either the plate-solver (when aligning or polar-aligning), or to autofocus "
+"or the internal guider (when just a list of stars is needed)."
+msgstr ""
+"Вторият раздел, означен като <guilabel>Параметри за филтриране на звезди</"
+"guilabel>, филтрира/намалява броя на извлечените звезди, преди да изпрати "
+"списъка или към инструмента за решаване на изображения (при подравняване или "
+"полярно подравняване), или към автофокуса или вътрешния водач (когато е "
+"необходим само списък със звезди)."
+
+#. Tag: para
+#: ekos-align.docbook:186
+#, no-c-format
+msgid ""
+"The third section labelled Astrometry Parameters adjusts the performance of "
+"plate solving."
+msgstr ""
+"Третият раздел, означен с Параметри на астрометрията, регулира "
+"производителността на решаването на изображения."
+
+#. Tag: para
+#: ekos-align.docbook:188
+#, no-c-format
+msgid ""
+"All the input fields have tooltips that are displayed if you hover your "
+"mouse over the input box."
+msgstr ""
+"Всички полета за въвеждане имат подсказки, които се показват, ако задържите "
+"мишката върху полето за въвеждане."
+
+#. Tag: para
+#: ekos-align.docbook:190
+#, no-c-format
+msgid ""
+"You can make changes to the values and save the profile if you like, or "
+"restore the profile's original values."
+msgstr ""
+"Можете да направите промени в стойностите и да запазите профила, ако "
+"желаете, или да възстановите оригиналните стойности на профила."
+
+#. Tag: title
+#: ekos-align.docbook:193
+#, no-c-format
+msgid "Star-Extraction Parameters"
+msgstr "Параметри за извличане на звезди"
+
+#. Tag: para
+#: ekos-align.docbook:194
+#, no-c-format
+msgid ""
+"The column headings are links to the Sextractor manual which is the main "
+"source for these parameters. View those links to find details on all the "
+"parameters. We will touch upon some of the parameters you might consider "
+"adjusting. However, it's probably best not to get into the weeds of "
+"modifying most of these values."
+msgstr ""
+"Заглавията на колоните са връзки към ръководството на Sextractor, което е "
+"основният източник за тези параметри. Вижте тези връзки, за да намерите "
+"подробности за всички параметри. Ще се докоснем до някои от параметрите, "
+"които бихте могли да коригирате. Вероятно е най-добре обаче да не се "
+"задълбочавате в модифицирането на повечето от тези стойности."
+
+#. Tag: para
+#: ekos-align.docbook:198
+#, no-c-format
+msgid ""
+"<guilabel>Thresh Multiple</guilabel> and <guilabel>Thresh Offset</guilabel> "
+"relate to how sensitive the system will be to pixel values. The level of the "
+"background is multiplied by <guilabel>Thresh Multiple</guilabel> and then "
+"<guilabel>Thresh Offset</guilabel> is added to that. If a pixel's value "
+"exceeds the result, then it may be used to detect a star. Therefore, lower "
+"values (especially for multiple) may cause even dim pixels to be detected as "
+"stars. Higher values will reduce the number of stars detected."
+msgstr ""
+"<guilabel>Прагов коефициент</guilabel> и <guilabel>Праг на отместване</"
+"guilabel> са свързани с това колко чувствителна ще бъде системата към "
+"стойностите на пикселите. Нивото на фона се умножава по <guilabel>праговия "
+"коефициент</guilabel> и след това <guilabel>праговото отместване</guilabel> "
+"се добавя към това. Ако стойността на пиксела надвишава резултата, тогава тя "
+"може да се използва за откриване на звезда. Следователно по-ниските "
+"стойности (особено за коефициента) могат да доведат до разпознаване на дори "
+"слаби пиксели като звезди. По-високите стойности ще намалят броя на "
+"откритите звезди."
+
+#. Tag: para
+#: ekos-align.docbook:199
+#, no-c-format
+msgid ""
+"<guilabel>Min Area</guilabel> is the minimum area for a star detection--area "
+"is in square pixels where all pixels have higher-than-threshold pixel "
+"values. If you are detecting small noise spikes as stars, you might want to "
+"increase this. If you are not detecting desired smaller real stars, perhaps "
+"your <guilabel>Min Area</guilabel> is too high."
+msgstr ""
+"<guilabel>Минимална площ</guilabel> е минималната площ за откриване на "
+"звезди - площта е в квадратни пиксели, където всички пиксели имат пикселни "
+"стойности, по-високи от праговите. Ако откривате малки пикове на шум като "
+"звезди, може да искате да увеличите това. Ако не откривате желаните по-малки "
+"реални звезди, може би вашата <guilabel>Минимална площ</guilabel> е твърде "
+"голяма."
+
+#. Tag: para
+#: ekos-align.docbook:200
+#, no-c-format
+msgid ""
+"<guilabel>Conv FWHM</guilabel> should be adjusted to roughly the seeing in "
+"your area in pixels. The image is smoothed by this amount before star "
+"detection is initiated."
+msgstr ""
+"<guilabel>Конв. FWHM</guilabel> трябва да се настрои приблизително спрямо "
+"виждането във вашия район в пиксели. Изображението се изглажда с това "
+"количество, преди да започне откриването на звезди."
+
+#. Tag: title
+#: ekos-align.docbook:205
+#, no-c-format
+msgid "Star-Filtering Parameters"
+msgstr "Параметри на филтриране на звезди"
+
+#. Tag: para
+#: ekos-align.docbook:206
+#, no-c-format
+msgid ""
+"This filtering is done for the sake of speed mostly, as well as for removing "
+"clipped stars, or very elliptical objects which might be galaxies. We will "
+"touch upon some of the parameters you might consider adjusting. Zero values "
+"for these parameters disable the filter. However, once again it's probably "
+"best not to get into the weeds of modifying most of these values."
+msgstr ""
+"Това филтриране се прави най-вече в подобряване на скоростта, както и за "
+"премахване на изрязани звезди или много елиптични обекти, които може да са "
+"галактики. Ще се докоснем до някои от параметрите, които бихте могли да "
+"коригирате. Нулеви стойности за тези параметри деактивират филтъра. Въпреки "
+"това, отново вероятно е най-добре да не се задълбочавате в модифицирането на "
+"повечето от тези стойности."
+
+#. Tag: para
+#: ekos-align.docbook:210
+#, no-c-format
+msgid ""
+"<guilabel>Initial Keep</guilabel> and <guilabel>Stars Keep #</guilabel> "
+"relates to the number of stars returned by the system. The system will "
+"initially run its detection algorithm and find some number of possible "
+"detections. It will filter that list, keeping only the <guilabel>Initial "
+"Keep</guilabel> brightest stars. It will then run the rest of the filtering, "
+"including computing the HFR of all those stars and finally only return a "
+"list of <guilabel>Stars Keep #</guilabel> stars. None of the uses "
+"(alignment, autofocus, guiding) of StellarSolver require thousands of stars "
+"to be able to do their job, and the more stars processed the slower the "
+"operation. An initial list of 1000 stars and a few hundred returned stars "
+"should be sufficient for most applications."
+msgstr ""
+"<guilabel>Първоначално запазване</guilabel> и <guilabel>Звездите запазват "
+"броя</guilabel> се отнасят до броя звезди, върнати от системата. "
+"Първоначално системата ще изпълни своя алгоритъм за откриване и ще намери "
+"определен брой възможни откривания. Той ще филтрира този списък, запазвайки "
+"само най-ярките звезди <guilabel>Първоначално запазване</guilabel>. След "
+"това ще изпълни останалата част от филтрирането, включително изчисляване на "
+"HFR на всички тези звезди и накрая ще върне само списък от "
+"<guilabel>Звездите запазват броя</guilabel>. Нито едно от приложенията "
+"(подравняване, автофокус, насочване) на StellarSolver не изисква хиляди "
+"звезди, за да могат да вършат работата си, и колкото повече звезди се "
+"обработват, толкова по-бавна е операцията. Първоначален списък от 1000 "
+"звезди и няколкостотин върнати звезди трябва да са достатъчни за повечето "
+"приложения."
+
+#. Tag: para
+#: ekos-align.docbook:211
+#, no-c-format
+msgid ""
+"<guilabel>Max Size</guilabel> and <guilabel>Min Size</guilabel> filter stars "
+"by their sizes (pixel diameters), and are similar in usage to <guilabel>Min "
+"Area</guilabel> above."
+msgstr ""
+"<guilabel>Максимален размер</guilabel> и <guilabel>Минимален размер</"
+"guilabel> филтрират звездите по техните размери (диаметър на пикселите) и са "
+"подобни на употреба като <guilabel>Минимална площ</guilabel> по-горе."
+
+#. Tag: para
+#: ekos-align.docbook:212
+#, no-c-format
+msgid ""
+"<guilabel>Max Ellipse</guilabel> specifies how elliptical a star can be "
+"before being removed. 2 would mean the larger axis could be twice as large "
+"as the smaller axis."
+msgstr ""
+"<guilabel>Максимална елипса</guilabel> указва колко елипсовидна може да бъде "
+"една звезда, преди да бъде премахната. 2 би означавало, че по-голямата ос "
+"може да бъде два пъти по-голяма от по-малката ос."
+
+#. Tag: para
+#: ekos-align.docbook:213
+#, no-c-format
+msgid ""
+"<guilabel>Cut Brightest</guilabel> and <guilabel>Cut Dimmest</guilabel> "
+"remove the X% brightest or dimmest stars from consideration. <guilabel>Sat "
+"Limit</guilabel> removes stars whose pixel values exceed that percentage of "
+"the maximum pixel value--to remove saturated stars."
+msgstr ""
+"<guilabel>Изрязване на най-ярките</guilabel> и <guilabel>Изрязване на най-"
+"тъмните</guilabel> премахват X% най-ярките или най-тъмните звезди от "
+"обработването. <guilabel>Ограничение на сатурацията</guilabel> премахва "
+"звезди, чиито пикселни стойности надвишават този процент от максималната "
+"пикселна стойност - за премахване на наситени звезди."
+
+#. Tag: title
+#: ekos-align.docbook:218
+#, no-c-format
+msgid "Plate-Solving Parameters"
+msgstr "Параметри за решаване на изображения"
+
+#. Tag: para
+#: ekos-align.docbook:219
+#, no-c-format
+msgid "These plate-solving parameters mostly relate to computation resources."
+msgstr ""
+"Тези параметри за решаване на изображения се отнасят най-вече до "
+"изчислителни ресурси."
+
+#. Tag: para
+#: ekos-align.docbook:223
+#, no-c-format
+msgid ""
+"<guilabel>Search Radius</guilabel> is the distance from the position "
+"estimate in degrees that may be searched if <guilabel>Use Position</"
+"guilabel> is checked."
+msgstr ""
+"<guilabel>Радиус на търсене</guilabel> е разстоянието от приблизителната "
+"позиция в градуси, което може да се търси, ако <guilabel>Използване на "
+"позиция</guilabel> е отметнато."
+
+#. Tag: para
+#: ekos-align.docbook:224
+#, no-c-format
+msgid ""
+"<guilabel>Maximum Time</guilabel> is the maximum number of seconds that the "
+"plate-solving will run before it times out."
+msgstr ""
+"<guilabel>Максимално време</guilabel> е максималният брой секунди, за които "
+"решаването на изображение работи, преди да изтече времето."
+
+#. Tag: title
+#: ekos-align.docbook:230
+#, no-c-format
+msgid "Download Index Files"
+msgstr "Изтегляне на индексни файлове"
+
+#. Tag: para
+#: ekos-align.docbook:231
+#, no-c-format
+msgid ""
+"Index files are required if you choose the <guilabel>Internal Solver</"
+"guilabel> or <guilabel>Local Astrometry</guilabel> <guilabel>Solving Method</"
+"guilabel>."
+msgstr ""
+"Индексните файлове са необходими, ако изберете <guilabel>Вграден решаващ "
+"модул</guilabel> или <guilabel>Локална астрометрия</guilabel> в "
+"<guilabel>Метод на решаване</guilabel>."
+
+#. Tag: para
+#: ekos-align.docbook:234
+#, no-c-format
+msgid ""
+"For offline (and remote) solvers, index files are necessary for the solver "
+"to work. The complete collection of index files is huge (over 30 GB), but "
+"you only need to download what is necessary for your equipment setup. Index "
+"files are sorted by the Field-Of-View (FOV) range they cover. There are two "
+"methods to fetch the necessary index files: The new download support in "
+"Align module, and the old manual way."
+msgstr ""
+"За офлайн (и отдалечени) решаващи програми са необходими индексни файлове, "
+"за да работи решаващата програма. Пълната колекция от индексни файлове е "
+"огромна (над 30 GB), но трябва да изтеглите само това, което е необходимо за "
+"настройката на вашето оборудване. Индексните файлове са сортирани по обхвата "
+"на полето на видимост (ЗП), който покриват. Има два метода за извличане на "
+"необходимите индексни файлове: Новата поддръжка за изтегляне в модула "
+"Модулът подравняване и старият ръчен начин."
+
+#. Tag: title
+#: ekos-align.docbook:238
+#, no-c-format
+msgid "Automatic Download"
+msgstr "Автоматично изтегляне"
+
+#. Tag: screeninfo
+#: ekos-align.docbook:240
+#, no-c-format
+msgid "<screeninfo>Astrometry.net Indexes Download</screeninfo>"
+msgstr ""
+"<screeninfo>Изтегляне на индексни файлове на Astrometry.net</screeninfo>"
+
+#. Tag: phrase
+#: ekos-align.docbook:248
+#, no-c-format
+msgid "<phrase>Astrometry.net Indexes Download</phrase>"
+msgstr "<phrase>Изтегляне на индексни файлове на Astrometry.net</phrase>"
+
+#. Tag: para
+#: ekos-align.docbook:252
+#, no-c-format
+msgid ""
+"Automatic download is only available for Ekos users on &Linux; &amp; "
+"&MacOS;. For &Windows; users, please download ANSVR solver."
+msgstr ""
+"Автоматичното изтегляне е достъпно само за потребители на Ekos на &Linux; и "
+"&MacOS;. За &Windows; потребители, моля, изтеглете ANSVR solver."
+
+#. Tag: para
+#: ekos-align.docbook:255
+#, no-c-format
+msgid ""
+"To access the download page, click the <guibutton>Options</guibutton> button "
+"in the <link linkend=\"ekos-align\">Align module</link> and then select "
+"<guilabel>Astrometry Index Files</guilabel> tab. The page displays the "
+"current FOV of your current setup and below it a list of available and "
+"installed index files. Three icons are used to designate the importance of "
+"index files given your current setup as follows:"
+msgstr ""
+"За достъп до страницата за изтегляне щракнете върху бутона "
+"<guibutton>Настройки</guibutton> в <link linkend=\"ekos-align\">модула "
+"Подравняване</link> и след това изберете раздел <guilabel>Индексни файлове</"
+"guilabel> . Страницата показва текущото зрително поле на вашата настройка и "
+"под него списък с налични и инсталирани индексни файлове. Три икони се "
+"използват за обозначаване на важността на индексните файлове при текущата ви "
+"настройка, както следва:"
+
+#. Tag: guilabel
+#: ekos-align.docbook:261
+#, no-c-format
+msgid "Required"
+msgstr "Задължителни"
+
+#. Tag: guilabel
+#: ekos-align.docbook:266
+#, no-c-format
+msgid "Recommended"
+msgstr "Препоръчани"
+
+#. Tag: guilabel
+#: ekos-align.docbook:271
+#, no-c-format
+msgid "Optional"
+msgstr "По избор"
+
+#. Tag: para
+#: ekos-align.docbook:275
+#, no-c-format
+msgid ""
+"You must download all the required files, and if you have plenty of hard "
+"drive space left, you can also download the recommended indexes. If an index "
+"file is installed, the checkmark shall be checked, otherwise check it to "
+"download the relevant index file. Please only download one file at a time, "
+"especially for larger files. You might be prompted to enter the "
+"administrator password (default in StellarMate is <userinput>smate</"
+"userinput>) to install the files. Once you installed all the required files, "
+"you can begin using the offline astrometry.net solver immediately."
+msgstr ""
+"Трябва да изтеглите всички необходими файлове и ако имате останало "
+"достатъчно място на твърдия диск, можете също да изтеглите препоръчаните "
+"индекси. Ако е инсталиран индексен файл, отметката трябва да бъде отметната, "
+"в противен случай я поставете, за да изтеглите съответния индексен файл. "
+"Моля, изтегляйте само един файл наведнъж, особено за по-големи файлове. Може "
+"да бъдете подканени да въведете администраторската парола (по подразбиране в "
+"StellarMate е <userinput>smate</userinput>), за да инсталирате файловете. "
+"След като инсталирате всички необходими файлове, можете незабавно да "
+"започнете да използвате офлайн програмата за решаване на astrometry.net."
+
+#. Tag: title
+#: ekos-align.docbook:280
+#, no-c-format
+msgid "Manual Download"
+msgstr "Ръчно изтегляне"
+
+#. Tag: para
+#: ekos-align.docbook:281
+#, no-c-format
+msgid ""
+"You need to <ulink url=\"http://data.astrometry.net\">download</ulink> and "
+"install the necessary index files suitable for your telescope+CCD field of "
+"view (FOV). You need to install index files covering 100% to 10% of your "
+"FOV. For example, if your FOV is 60 arcminutes, you need to install index "
+"files covering skymarks from 6 arcminutes (10%) to 60 arcminutes (100%). "
+"There are many online tools to calculate FOVs, such as <ulink url=\"http://"
+"starizona.com/acb/ccd/calc_pixel.aspx\">Starizona Field of View Calculator</"
+"ulink>."
+msgstr ""
+"Трябва да <ulink url=\"http://data.astrometry.net\">изтеглите</ulink> и "
+"инсталирате необходимите индексни файлове, подходящи за вашия телескоп и "
+"зрителното поле (ЗП) на камерата. Трябва да инсталирате индексни файлове, "
+"покриващи 100% до 10% от вашето ЗП. Например, ако вашият ЗП е 60 ъглови "
+"минути, трябва да инсталирате индексни файлове, покриващи небесни знаци от 6 "
+"ъглови минути (10%) до 60 ъглови минути (100%). Има много онлайн инструменти "
+"за изчисляване на ЗП, като <ulink url=\"http://starizona.com/acb/ccd/"
+"calc_pixel.aspx\">Калкулатор за зрително поле на Starizona</ulink>."
+
+#. Tag: title
+#: ekos-align.docbook:285
+#, no-c-format
+msgid "Index Files"
+msgstr "Индексен файл..."
+
+#. Tag: entry
+#: ekos-align.docbook:289
+#, no-c-format
+msgid "Index Filename"
+msgstr "Име на индексен файл"
+
+#. Tag: entry
+#: ekos-align.docbook:290
+#, no-c-format
+msgid "FOV (arcminutes)"
+msgstr "ЗП (дъг/мин)"
+
+#. Tag: entry
+#: ekos-align.docbook:291
+#, no-c-format
+msgid "Debian Package"
+msgstr "Пакет на Debian"
+
+#. Tag: entry
+#: ekos-align.docbook:296
+#, no-c-format
+msgid "index-4219.fits"
+msgstr "index-4219.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:297
+#, no-c-format
+msgid "1400 - 2000"
+msgstr "1400 - 2000"
+
+#. Tag: ulink
+#: ekos-align.docbook:298
+#, no-c-format
+msgid "astrometry-data-4208-4219"
+msgstr "astrometry-data-4208-4219"
+
+#. Tag: entry
+#: ekos-align.docbook:301
+#, no-c-format
+msgid "index-4218.fits"
+msgstr "index-4218.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:302
+#, no-c-format
+msgid "1000 - 1400"
+msgstr "1000 - 1400"
+
+#. Tag: entry
+#: ekos-align.docbook:305
+#, no-c-format
+msgid "index-4217.fits"
+msgstr "index-4217.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:306
+#, no-c-format
+msgid "680 - 1000"
+msgstr "680 - 1000"
+
+#. Tag: entry
+#: ekos-align.docbook:309
+#, no-c-format
+msgid "index-4216.fits"
+msgstr "index-4216.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:310
+#, no-c-format
+msgid "480 - 680"
+msgstr "480 - 680"
+
+#. Tag: entry
+#: ekos-align.docbook:313
+#, no-c-format
+msgid "index-4215.fits"
+msgstr "index-4215.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:314
+#, no-c-format
+msgid "340 - 480"
+msgstr "340 - 480"
+
+#. Tag: entry
+#: ekos-align.docbook:317
+#, no-c-format
+msgid "index-4214.fits"
+msgstr "index-4214.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:318
+#, no-c-format
+msgid "240 - 340"
+msgstr "240 - 340"
+
+#. Tag: entry
+#: ekos-align.docbook:321
+#, no-c-format
+msgid "index-4213.fits"
+msgstr "index-4213.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:322
+#, no-c-format
+msgid "170 - 240"
+msgstr "170 - 240"
+
+#. Tag: entry
+#: ekos-align.docbook:325
+#, no-c-format
+msgid "index-4212.fits"
+msgstr "index-4212.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:326
+#, no-c-format
+msgid "120 - 170"
+msgstr "120 - 170"
+
+#. Tag: entry
+#: ekos-align.docbook:329
+#, no-c-format
+msgid "index-4211.fits"
+msgstr "index-4211.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:330
+#, no-c-format
+msgid "85 - 120"
+msgstr "85 - 120"
+
+#. Tag: entry
+#: ekos-align.docbook:333
+#, no-c-format
+msgid "index-4210.fits"
+msgstr "index-4210.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:334
+#, no-c-format
+msgid "60 - 85"
+msgstr "60 - 85"
+
+#. Tag: entry
+#: ekos-align.docbook:337
+#, no-c-format
+msgid "index-4209.fits"
+msgstr "index-4209.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:338
+#, no-c-format
+msgid "42 - 60"
+msgstr "42 - 60"
+
+#. Tag: entry
+#: ekos-align.docbook:341
+#, no-c-format
+msgid "index-4208.fits"
+msgstr "index-4208.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:342
+#, no-c-format
+msgid "30 - 42"
+msgstr "30 - 42"
+
+#. Tag: entry
+#: ekos-align.docbook:345
+#, no-c-format
+msgid "index-4207-*.fits"
+msgstr "index-4207-*.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:346
+#, no-c-format
+msgid "22 - 30"
+msgstr "22 - 30"
+
+#. Tag: ulink
+#: ekos-align.docbook:347
+#, no-c-format
+msgid "astrometry-data-4207"
+msgstr "astrometry-data-4207"
+
+#. Tag: entry
+#: ekos-align.docbook:350
+#, no-c-format
+msgid "index-4206-*.fits"
+msgstr "index-4206-*.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:351
+#, no-c-format
+msgid "16 - 22"
+msgstr "16 - 22"
+
+#. Tag: ulink
+#: ekos-align.docbook:352
+#, no-c-format
+msgid "astrometry-data-4206"
+msgstr "astrometry-data-4206"
+
+#. Tag: entry
+#: ekos-align.docbook:355
+#, no-c-format
+msgid "index-4205-*.fits"
+msgstr "index-4205-*.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:356
+#, no-c-format
+msgid "11 - 16"
+msgstr "11 - 16"
+
+#. Tag: ulink
+#: ekos-align.docbook:357
+#, no-c-format
+msgid "astrometry-data-4205"
+msgstr "astrometry-data-4205"
+
+#. Tag: entry
+#: ekos-align.docbook:360
+#, no-c-format
+msgid "index-4204-*.fits"
+msgstr "index-4204-*.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:361
+#, no-c-format
+msgid "8 - 11"
+msgstr "8 - 11"
+
+#. Tag: ulink
+#: ekos-align.docbook:362
+#, no-c-format
+msgid "astrometry-data-4204"
+msgstr "astrometry-data-4204"
+
+#. Tag: entry
+#: ekos-align.docbook:365
+#, no-c-format
+msgid "index-4203-*.fits"
+msgstr "index-4203-*.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:366
+#, no-c-format
+msgid "5.6 - 8.0"
+msgstr "5.6 - 8.0"
+
+#. Tag: ulink
+#: ekos-align.docbook:367
+#, no-c-format
+msgid "astrometry-data-4203"
+msgstr "astrometry-data-4203"
+
+#. Tag: entry
+#: ekos-align.docbook:370
+#, no-c-format
+msgid "index-4202-*.fits"
+msgstr "index-4202-*.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:371
+#, no-c-format
+msgid "4.0 - 5.6"
+msgstr "4.0 - 5.6"
+
+#. Tag: ulink
+#: ekos-align.docbook:372
+#, no-c-format
+msgid "astrometry-data-4202"
+msgstr "astrometry-data-4202"
+
+#. Tag: entry
+#: ekos-align.docbook:375
+#, no-c-format
+msgid "index-4201-*.fits"
+msgstr "index-4201-*.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:376
+#, no-c-format
+msgid "2.8 - 4.0"
+msgstr "2.8 - 4.0"
+
+#. Tag: entry
+#: ekos-align.docbook:377
+#, no-c-format
+msgid ""
+"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
+"data-4201-1_0.45_all.deb\">astrometry-data-4201-1</ulink> <ulink url="
+"\"http://data.astrometry.net/debian/astrometry-data-4201-2_0.45_all.deb"
+"\">astrometry-data-4201-2</ulink> <ulink url=\"http://data.astrometry.net/"
+"debian/astrometry-data-4201-3_0.45_all.deb\">astrometry-data-4201-3</ulink> "
+"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
+"data-4201-4_0.45_all.deb\">astrometry-data-4201-4</ulink>"
+msgstr ""
+"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
+"data-4201-1_0.45_all.deb\">astrometry-data-4201-1</ulink> <ulink url="
+"\"http://data.astrometry.net/debian/astrometry-data-4201-2_0.45_all.deb"
+"\">astrometry-data-4201-2</ulink> <ulink url=\"http://data.astrometry.net/"
+"debian/astrometry-data-4201-3_0.45_all.deb\">astrometry-data-4201-3</ulink> "
+"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
+"data-4201-4_0.45_all.deb\">astrometry-data-4201-4</ulink>"
+
+#. Tag: entry
+#: ekos-align.docbook:380
+#, no-c-format
+msgid "index-4200-*.fits"
+msgstr "index-4200-*.fits"
+
+#. Tag: entry
+#: ekos-align.docbook:381
+#, no-c-format
+msgid "2.0 - 2.8"
+msgstr "2.0 - 2.8"
+
+#. Tag: entry
+#: ekos-align.docbook:382
+#, no-c-format
+msgid ""
+"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
+"data-4200-1_0.45_all.deb\">astrometry-data-4200-1</ulink> <ulink url="
+"\"http://data.astrometry.net/debian/astrometry-data-4200-2_0.45_all.deb"
+"\">astrometry-data-4200-2</ulink> <ulink url=\"http://data.astrometry.net/"
+"debian/astrometry-data-4200-3_0.45_all.deb\">astrometry-data-4200-3</ulink> "
+"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
+"data-4200-4_0.45_all.deb\">astrometry-data-4200-4</ulink>"
+msgstr ""
+"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
+"data-4200-1_0.45_all.deb\">astrometry-data-4200-1</ulink> <ulink url="
+"\"http://data.astrometry.net/debian/astrometry-data-4200-2_0.45_all.deb"
+"\">astrometry-data-4200-2</ulink> <ulink url=\"http://data.astrometry.net/"
+"debian/astrometry-data-4200-3_0.45_all.deb\">astrometry-data-4200-3</ulink> "
+"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
+"data-4200-4_0.45_all.deb\">astrometry-data-4200-4</ulink>"
+
+#. Tag: para
+#: ekos-align.docbook:387
+#, no-c-format
+msgid ""
+"The Debian packages are suitable for any Debian-based distribution (Ubuntu, "
+"Mint, &etc;). If you downloaded the Debian Packages above for your FOV "
+"range, you can install them from your favorite package manager, or via the "
+"following command:"
+msgstr ""
+"Пакетите Debian са подходящи за всяка базирана на Debian дистрибуция "
+"(Ubuntu, Mint и т.н.). Ако сте изтеглили пакетите на Debian по-горе за вашия "
+"диапазон на зрително поле, можете да ги инсталирате от любимия си мениджър "
+"на пакети или чрез следната команда:"
+
+#. Tag: command
+#: ekos-align.docbook:391
+#, no-c-format
+msgid "sudo dpkg -i astrometry-data-*.deb"
+msgstr "sudo dpkg -i astrometry-data-*.deb"
+
+#. Tag: para
+#: ekos-align.docbook:393
+#, no-c-format
+msgid ""
+"On the other hand, if you downloaded the FITS index files directly, copy "
+"them to <filename role=\"directory\">/usr/share/astrometry</filename> "
+"directory."
+msgstr ""
+"От друга страна, ако сте изтеглили индексните файлове на FITS директно, "
+"копирайте ги в директорията <filename role=\"directory\">/usr/share/"
+"astrometry</filename>."
+
+#. Tag: para
+#: ekos-align.docbook:397
+#, no-c-format
+msgid ""
+"It is recommended to use a download manager as such <ulink url=\"https://"
+"addons.mozilla.org/en-US/firefox/addon/downthemall/\">DownThemAll!</ulink> "
+"for &firefox; to download the Debian packages as browsers' built-in download "
+"manager may have problems with download large packages."
+msgstr ""
+"Препоръчително е да използвате мениджър за изтегляне като <ulink url="
+"\"https://addons.mozilla.org/en-US/firefox/addon/downthemall/\">DownThemAll!"
+"</ulink> за &firefox; за изтегляне на пакетите на Debian, тъй като "
+"вграденият мениджър за изтегляне на браузърите може да има проблеми с "
+"изтеглянето на големи пакети."
+
+#. Tag: title
+#: ekos-align.docbook:405
+#, no-c-format
+msgid "Optionally get astrometry.net"
+msgstr "Допълнителна възможност е да изтеглите astrometry.net"
+
+#. Tag: para
+#: ekos-align.docbook:407
+#, no-c-format
+msgid ""
+"This is only required if you choose the <guilabel>Local Astrometry</"
+"guilabel> option for <guilabel>Source Extraction Method</guilabel> which is "
+"no longer recommended."
+msgstr ""
+"Това се изисква само ако изберете опцията <guilabel>Локална астрометрия</"
+"guilabel> за <guilabel>Метод за извличане на източник</guilabel>, която вече "
+"не се препоръчва."
+
+#. Tag: para
+#: ekos-align.docbook:411
+#, no-c-format
+msgid ""
+"Astrometry.net is already shipped with StellarMate so there is no need to "
+"install it. Index files from 16 arcminutes and above (4206 to 4019) are "
+"included with StellarMate. For any additional index files, you need to "
+"install them as necessary. To use Astrometry in StellarMate from a remote "
+"Ekos on &Linux;/&Windows;/&MacOS;, make sure to select <guimenuitem>Remote</"
+"guimenuitem> option in Ekos Alignment Module. Furthermore, make sure that "
+"the <guimenuitem>Astrometry</guimenuitem> driver is selected in your "
+"equipment profile."
+msgstr ""
+"Astrometry.net вече се доставя със StellarMate, така че не е необходимо да "
+"го инсталирате. Индексни файлове от 16 дъгови минути и повече (4206 до 4019) "
+"са включени в StellarMate. За всички допълнителни индексни файлове трябва да "
+"ги инсталирате, ако е необходимо. За да използвате Astrometry в StellarMate "
+"от отдалечен Ekos на &Linux;/&Windows;/&MacOS;, не забравяйте да изберете "
+"опцията <guimenuitem>Отдалечено</guimenuitem> в модула за подравняване на "
+"Ekos. Освен това се уверете, че драйверът <guimenuitem>Astrometry</"
+"guimenuitem> е избран в профила на вашето оборудване."
+
+#. Tag: screeninfo
+#: ekos-align.docbook:416
+#, no-c-format
+msgid "<screeninfo>Ekos Remote Astrometry</screeninfo>"
+msgstr "<screeninfo>Отдалечена астрометрия на Ekos</screeninfo>"
+
+#. Tag: phrase
+#: ekos-align.docbook:424
+#, no-c-format
+msgid "<phrase>Ekos Remote Astrometry</phrase>"
+msgstr "<phrase>Отдалечена астрометрия на Ekos</phrase>"
+
+#. Tag: term
+#: ekos-align.docbook:430
+#, no-c-format
+msgid "&Windows;"
+msgstr "&Windows;"
+
+#. Tag: para
+#: ekos-align.docbook:432
+#, no-c-format
+msgid ""
+"To use astrometry.net under &Windows;, you need to download and install the "
+"<ulink url=\"https://adgsoftware.com/ansvr/\">ANSVR Local Astrometry.net "
+"solver</ulink>. The ANSVR mimics the astrometry.net online server on your "
+"local computer; thus the internet not required for any astrometry queries."
+msgstr ""
+"За да използвате astrometry.net под &Windows;, трябва да изтеглите и "
+"инсталирате <ulink url=\"https://adgsoftware.com/ansvr/\">ANSVR Local "
+"Astrometry.net Solver</ulink>. ANSVR имитира онлайн сървъра astrometry.net "
+"на вашия локален компютър; следователно интернет не е необходим за никакви "
+"астрометрични запитвания."
+
+#. Tag: para
+#: ekos-align.docbook:435
+#, no-c-format
+msgid ""
+"After installing the ANSVR server and downloading the appropriate index "
+"files for your setup, make sure ANSVR server is up and running and then go "
+"to Ekos Alignment options where you can simply change the <guilabel>API URL</"
+"guilabel> to use the ANSVR server as illustrated below:"
+msgstr ""
+"След като инсталирате ANSVR сървъра и изтеглите подходящите индексни файлове "
+"за вашата настройка, уверете се, че ANSVR сървърът работи и след това "
+"отидете на опциите за подравняване на Ekos, където можете просто да "
+"промените <guilabel>URL адреса на API</guilabel>, за да използвате ANSVR "
+"сървъра както е показано по-долу:"
+
+#. Tag: screeninfo
+#: ekos-align.docbook:439
+#, no-c-format
+msgid "<screeninfo>ANSVR Parameters</screeninfo>"
+msgstr "<screeninfo>Параметри на ANSVR</screeninfo>"
+
+#. Tag: phrase
+#: ekos-align.docbook:447
+#, no-c-format
+msgid "<phrase>ANSVR Parameters</phrase>"
+msgstr "<phrase>Параметри на ANSVR</phrase>"
+
+#. Tag: para
+#: ekos-align.docbook:451
+#, no-c-format
+msgid ""
+"In Ekos Align module, you must set the solver type to <guimenuitem>Online</"
+"guimenuitem> so that it uses the local ANSVR server for all astrometry "
+"queries. Then you can use the align module as you would normally do."
+msgstr ""
+"В модула Подравняване на Ekos трябва да зададете типа решаващ инструмент на "
+"<guimenuitem>Онлайн</guimenuitem>, така че той да използва локалния ANSVR "
+"сървър за всички астрометрични заявки. След това можете да използвате модула "
+"подравняване, както обикновено."
+
+#. Tag: para
+#: ekos-align.docbook:454
+#, no-c-format
+msgid ""
+"Remember as indicated above that StellarMate <emphasis>already</emphasis> "
+"includes astrometry.net. Therefore, if you would like to use StellarMate "
+"remotely to solve your images, simply change solver type to "
+"<guimenuitem>Remote</guimenuitem> and ensure that your equipment profile "
+"includes <emphasis role=\"bold\">Astrometry</emphasis> driver which can be "
+"selected under the <guilabel>Auxiliary</guilabel> dropdown. This is "
+"applicable to all operating systems and not just &Windows;."
+msgstr ""
+"Не забравяйте, както е посочено по-горе, че StellarMate <emphasis>вече</"
+"emphasis> включва astrometry.net. Ето защо, ако искате да използвате "
+"StellarMate отдалечено за решаване на вашите изображения, просто променете "
+"типа решаващ инструмент на <guimenuitem>Отдалечен</guimenuitem> и се "
+"уверете, че профилът на вашето оборудване включва драйвера за <emphasis role="
+"\"bold\">Астрометрия</emphasis> , който може да бъде избран от падащото меню "
+"<guilabel>Помощни</guilabel>. Това е приложимо за всички операционни "
+"системи, а не само за &Windows;."
+
+#. Tag: term
+#: ekos-align.docbook:460
+#, no-c-format
+msgid "&MacOS;"
+msgstr "&MacOS;"
+
+#. Tag: para
+#: ekos-align.docbook:462
+#, no-c-format
+msgid ""
+"Astrometry.net is already included with &kstars; for &MacOS;, so no need to "
+"install it."
+msgstr ""
+"Astrometry.net вече е включен в &kstars; за &MacOS;, така че няма нужда да "
+"го инсталирате."
+
+#. Tag: term
+#: ekos-align.docbook:468
+#, no-c-format
+msgid "&Linux;"
+msgstr "&Linux;"
+
+#. Tag: para
+#: ekos-align.docbook:470
+#, no-c-format
+msgid ""
+"Astrometry.net is already included with &kstars; bleeding version. But if "
+"astrometry is not installed, then you can install it by running the "
+"following command under &ubuntu;:"
+msgstr ""
+"Astrometry.net вече е включен в най/актуалната версия на &kstars;. Но ако "
+"astrometry не е инсталиран, тогава можете да го инсталирате, като изпълните "
+"следната команда под &ubuntu;:"
+
+#. Tag: command
+#: ekos-align.docbook:474
+#, no-c-format
+msgid "sudo apt-get install astrometry.net"
+msgstr "sudo apt-get install astrometry.net"
+
+#. Tag: title
+#: ekos-align.docbook:482
+#, no-c-format
+msgid "How to Use?"
+msgstr "Как се използва?"
+
+#. Tag: para
+#: ekos-align.docbook:483
+#, no-c-format
+msgid ""
+"Ekos Align Module offers multiple functions to aid you in achieving accurate "
+"GOTOs. For some mounts it is useful to start your session with your mount in "
+"home position with the telescope tube looking directly at the celestial "
+"pole. For users in Northern Hemisphere, point the telescope as close as "
+"possible to Polaris. It is not necessary to perform 2 or 3 star alignments, "
+"but it can be useful for some mount types. Make sure your camera is focused."
+msgstr ""
+"Модулът подравняване на Ekos предлага множество функции, за да ви помогне да "
+"постигнете точни GOTO операции. За някои монтировки е полезно да започнете "
+"сесията си с монтиране в начална позиция, като тръбата на телескопа гледа "
+"директно към небесния полюс. За потребители в Северното полукълбо, насочете "
+"телескопа възможно най-близо до Полярната звезда. Не е необходимо да се "
+"извършва подравняване на 2 или 3 звезди, но може да бъде полезно за някои "
+"видове монтировки. Уверете се, че камерата ви е фокусирана."
+
+#. Tag: para
+#: ekos-align.docbook:486
+#, no-c-format
+msgid ""
+"At the top left of the Align page you can find two solver commands, and two "
+"actions to take given the solver solution."
+msgstr ""
+"В горния ляв ъгъл на страницата за подравняване можете да намерите две "
+"команди за решаване и две действия, които да предприемете спрямо решението "
+"за решаване."
+
+#. Tag: para
+#: ekos-align.docbook:491
+#, no-c-format
+msgid ""
+"<guilabel>Capture &amp; Solve</guilabel>: Capture an image and determine "
+"exactly where in the sky the telescope is pointing. The astrometry results "
+"include the equatorial coordinates (RA &amp; DEC) of the center of the "
+"captured image and the pixel scale and field rotation. Depending on the "
+"Solver Action settings, the results can be used to Sync the mount or Sync "
+"and then Slew to the target location. For example, suppose you slewed the "
+"mount to Vega then used <emphasis>Capture &amp; Solve</emphasis>. If the "
+"actual telescope location is different from Vega, it will be first synced to "
+"the solved coordinate and then Ekos shall command the mount to slew to Vega. "
+"After slew is complete, the Alignment module will repeat Capture &amp; Solve "
+"process again until the error between reported and actual position falls "
+"below the accuracy thresholds (30 arcseconds by default)."
+msgstr ""
+"<guilabel>Заснемане и Решаване</guilabel>: Направете снимка и определете "
+"точно накъде в небето е насочен телескопът. Резултатите от астрометрията "
+"включват екваториалните координати (RA и DEC) на центъра на заснетото "
+"изображение и мащаба на пикселите и въртенето на полето. В зависимост от "
+"настройките на Действие на решаващият модул, резултатите могат да се "
+"използват за синхронизиране на монтирането или за синхронизиране и след това "
+"завъртане към целевото местоположение. Да предположим например, че сте "
+"завъртяли монтировката към Вега, след което сте използвали "
+"<emphasis>Заснемане и Решаване</emphasis>. Ако действителното местоположение "
+"на телескопа е различно от Вега, то първо ще бъде синхронизирано с решената "
+"координатна позиция и след това Ekos ще командва монтировката да се насочи "
+"към Вега. След като завъртането приключи, модулът за подравняване ще повтори "
+"процеса Заснемане и Решаване отново, докато грешката между докладваната и "
+"действителната позиция падне под праговете за точност (30 дъгови секунди по "
+"подразбиране)."
+
+#. Tag: para
+#: ekos-align.docbook:496
+#, no-c-format
+msgid ""
+"<guilabel>Load &amp; Slew</guilabel>: Load a FITS or JPEG file, solve it, "
+"and then slew to it."
+msgstr ""
+"<guilabel>Зареждане и Завъртане</guilabel>: Зарежда се FITS или JPEG файл, "
+"решава се и след това се извършва завъртване към съответния обект."
+
+#. Tag: para
+#: ekos-align.docbook:502
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Never</emphasis> solve an image at or near the "
+"celestial pole (unless Ekos Polar Alignment Assistant Tool is used). Slew at "
+"least 20 degrees away from the celestial pole before solving the first "
+"image. Solving very close to the poles will make your mount pointing worse, "
+"so avoid it."
+msgstr ""
+"<emphasis role=\"bold\">Никога</emphasis> не решавайте изображение на или "
+"близо до небесния полюс (освен ако не се използва Модулът Помощник за "
+"полярно подравняване на Ekos). Завъртете се на поне 20 градуса от небесния "
+"полюс, преди да решите първото изображение. Решаването много близо до "
+"полюсите ще влоши насочването на монтировката ви, така че го избягвайте."
+
+#. Tag: title
+#: ekos-align.docbook:509
+#, no-c-format
+msgid "Alignment Settings"
+msgstr "Настройки за подравняване"
+
+#. Tag: para
+#: ekos-align.docbook:510
+#, no-c-format
+msgid ""
+"Before you begin the alignment process, select the desired optical train. "
+"You can explore astrometry.net options that are passed to the astrometry.net "
+"solver each time an image is captured:"
+msgstr ""
+"Преди да започнете процеса на подравняване, изберете желания оптичен канал. "
+"Можете да изследвате опциите на astrometry.net, които се предават на "
+"програмата за решаване на astrometry.net всеки път, когато се заснеме "
+"изображение:"
+
+#. Tag: para
+#: ekos-align.docbook:515
+#, no-c-format
+msgid ""
+"<guilabel>Accuracy</guilabel>: Acceptable difference between the desired "
+"target position and the solved coordinates from the captured image. If the "
+"difference exceeds this many arc-seconds, then the system will continue to "
+"capture, solve and slew until the solved position is close enough to the "
+"target position."
+msgstr ""
+"<guilabel>Точност</guilabel>: Допустима разлика между желаната целева "
+"позиция и решените координати от заснетото изображение. Ако разликата много "
+"надвишава тези дъгови секунди, тогава системата ще продължи да заснема, "
+"решава и насочва, докато решената позиция е достатъчно близо до целевата "
+"позиция."
+
+#. Tag: para
+#: ekos-align.docbook:520
+#, no-c-format
+msgid ""
+"<guilabel>Train</guilabel>: Select the Optical Train which will be used to "
+"capture the image to be aligned. It is also used to compute the image scale."
+msgstr ""
+"<guilabel>Система</guilabel>: Изберете оптичната система, която ще се "
+"използва за заснемане на изображението за подравняване. Използва се и за "
+"изчисляване на мащаба на изображението."
+
+#. Tag: para
+#: ekos-align.docbook:525
+#, no-c-format
+msgid "<guilabel>Exposure</guilabel>: Exposure duration in seconds."
+msgstr ""
+"<guilabel>Експозиция</guilabel>: Продължителност на експозицията в секунди."
+
+#. Tag: para
+#: ekos-align.docbook:530
+#, no-c-format
+msgid "<guilabel>Bin</guilabel>: The binning of the image before solving."
+msgstr ""
+"<guilabel>Биниране</guilabel>: Биниране на изображението преди решаване."
+
+#. Tag: para
+#: ekos-align.docbook:535
+#, no-c-format
+msgid "<guilabel>Gain/ISO</guilabel>: The camera gain or ISO."
+msgstr "<guilabel>Усилване/ISO</guilabel>: Усилване или ISO на камерата."
+
+#. Tag: para
+#: ekos-align.docbook:540
+#, no-c-format
+msgid ""
+"<guilabel>Filter/Use Current</guilabel>: The filter to use when capturing "
+"the image. <guilabel>Use Current</guilabel> uses whatever filter is "
+"currently active."
+msgstr ""
+"<guilabel>Филтър/Използване на текущия</guilabel>: Филтърът, който да се "
+"използва при заснемане на изображението. <guilabel>Използване на текущия</"
+"guilabel> използва всеки филтър, който е активен в момента."
+
+#. Tag: para
+#: ekos-align.docbook:545
+#, no-c-format
+msgid ""
+"<guilabel>Dark</guilabel>: Whether to use the dark-image subtraction scheme "
+"before analyzing the captured image."
+msgstr ""
+"<guilabel>Тъмно</guilabel>: Дали да се използва схемата за изваждане на "
+"тъмно изображение, преди да се анализира заснетото изображение."
+
+#. Tag: title
+#: ekos-align.docbook:553
+#, no-c-format
+msgid "<title>Polar Alignment</title>"
+msgstr "<title>Полярно ориентиране</title>"
+
+#. Tag: para
+#: ekos-align.docbook:554
+#, no-c-format
+msgid ""
+"When setting up a German Equatorial Mount (GEM) for imaging, a critical "
+"aspect of capturing long-exposure images is to ensure proper polar "
+"alignment. A GEM mount has two axis: Right Ascension (RA) axis and "
+"Declination (DE) axis. Ideally, the RA axis should be aligned with the "
+"celestial sphere polar axis. A mount's job is to track the star's motion "
+"around the sky, from the moment they rise at the eastern horizon, all the "
+"way up across the median, and westward until they set."
+msgstr ""
+"Когато настройвате немска екваториална монтировка (GEM) за изображения, "
+"критичен аспект при заснемането на изображения с дълга експозиция е да се "
+"осигури правилно полярно подравняване. Монтировката GEM има две оси: ос на "
+"ректасцензия (RA) и ос на деклинация (DE). В идеалния случай оста RA трябва "
+"да бъде подравнена с полярната ос на небесната сфера. Работата на "
+"монтировката е да проследява движението на звездата в небето, от момента, в "
+"който изгрее на източния хоризонт, през целия път нагоре през медианата и на "
+"запад, докато залезе."
+
+#. Tag: phrase
+#: ekos-align.docbook:564 ekos-align.docbook:606
+#, no-c-format
+msgid "<phrase>Polar Alignment Assistant</phrase>"
+msgstr "<phrase>Помощник за полярно изравняване</phrase>"
+
+#. Tag: para
+#: ekos-align.docbook:569
+#, no-c-format
+msgid ""
+"In long exposure imaging, a camera is attached to the telescope where the "
+"image sensor captures incoming photons from a particular area in the sky. "
+"The incident photons have to strike the same photo-site over and over again "
+"if we are to gather a clear and crisp image. Of course, actual photons do "
+"not behave in this way: optics, atmosphere, seeing quality all scatter and "
+"refract photons in one way or another. Furthermore, photons do not arrive "
+"uniformly but follow a Poisson distribution. For point-like sources like "
+"stars, a point spread function describes how photons are spatially "
+"distributed across the pixels. Nevertheless, the <emphasis>overall</"
+"emphasis> idea we want to keep the source photons hitting the same pixels. "
+"Otherwise, we might end up with an image plagued with various trail "
+"artifacts."
+msgstr ""
+"При изображения с дълга експозиция към телескопа е прикрепена камера, в "
+"която сензорът за изображения улавя входящите фотони от определена област в "
+"небето. Фотоните от избрания обект трябва постоянно да удрят една и съща "
+"фотоклетка, ако искаме да изградим ясно и отчетливо изображение. Разбира се, "
+"действителните фотони не се държат по този начин: оптиката, атмосферата, "
+"качеството на образа разпръскват и пречупват фотоните по един или друг "
+"начин. Освен това фотоните не пристигат равномерно, а следват разпределение "
+"на Поасон (Poisson). За точкови източници като звезди функцията за "
+"разпространение на точки описва как фотоните са пространствено разпределени "
+"в пикселите. Въпреки това, <emphasis>общата</emphasis> идея е, че искаме "
+"фотоните на източника да удрят едни и същи пиксели. В противен случай може "
+"да се окажем с изображение, изменено с различни артефакти."
+
+#. Tag: screeninfo
+#: ekos-align.docbook:573
+#, no-c-format
+msgid "<screeninfo>Polar Alignment</screeninfo>"
+msgstr "<screeninfo>Полярно ориентиране</screeninfo>"
+
+#. Tag: phrase
+#: ekos-align.docbook:581
+#, no-c-format
+msgid "<phrase>Polar Alignment</phrase>"
+msgstr "<phrase>Полярно ориентиране</phrase>"
+
+#. Tag: para
+#: ekos-align.docbook:585
+#, no-c-format
+msgid ""
+"Since mounts are not perfect, they cannot perfectly keep track of object as "
+"it transits across the sky. This can stem from many factors, one of which is "
+"the misalignment of the mount's Right Ascension axis with respect to the "
+"celestial pole axis. Polar alignment removes one of the biggest sources of "
+"tracking errors in the mount, but other sources of error still play a "
+"factor. If properly aligned, some mounts can track an object for a few "
+"minutes with the only deviation of 1-2 arcsec RMS."
+msgstr ""
+"Тъй като монтировките, чисто механично не са перфектни, те не могат "
+"перфектно да следят обекта, докато преминава през небето. Това може да "
+"произтича от много фактори, един от които е неправилното подравняване на "
+"оста на RA на монтировката по отношение на оста на небесния полюс. Полярното "
+"подравняване премахва един от най-големите източници на грешки при "
+"проследяване в монтировката, но други източници на грешки все още играят "
+"роля. Ако са правилно подравнени, някои монтировки могат да проследяват "
+"обект за няколко минути само с отклонение от 1-2 arcsec RMS."
+
+#. Tag: para
+#: ekos-align.docbook:588
+#, no-c-format
+msgid ""
+"However, unless you have a top of the line mount, then you'd probably want "
+"to use an autoguider to keep the same star locked in the same position over "
+"time. Despite all of this, if the axis of the mount is not properly aligned "
+"with the celestial pole, then even a mechanically-perfect mount would lose "
+"tracking with time. Tracking errors are proportional to the magnitude of the "
+"misalignment. It is therefore very important for long exposure imaging to "
+"get the mount polar aligned to reduce any residual errors as it spans across "
+"the sky."
+msgstr ""
+"Ако имате много висок клас монтировка, тогава вероятно бихте искали да "
+"използвате автоматично проследяване, за да поддържате целевата звезда "
+"заключена в една и съща позиция с течение на времето. Въпреки всичко това, "
+"ако оста на монтировката не е правилно подравнена с небесния полюс, тогава "
+"дори механично перфектната монтировка ще загуби проследяването с времето. "
+"Грешките при проследяване са пропорционални на големината на "
+"несъответствието. Ето защо е много важно за изображения с дълга експозиция "
+"полярността на монтировката да бъде подравнена, за да се намалят всички "
+"остатъчни грешки."
+
+#. Tag: para
+#: ekos-align.docbook:591
+#, no-c-format
+msgid ""
+"Before starting the process, point the mount as close as possible to the "
+"celestial pole with the counterweights down. If you are living in the "
+"Northern Hemisphere, point it as close as possible to Polaris. If Polaris is "
+"not visible (&eg; blocked by trees or buildings) you may point elsewhere, "
+"preferably near the Meridian. Make sure there is at least 30-60 degrees of "
+"sky viewable in an arc East or West of the Meridian from the position you "
+"choose. Select the direction of free sky, the number of degrees for each of "
+"two slews, the mount slew speed, and whether the mount will be slewing "
+"automatically (recommended) or manually."
+msgstr ""
+"Преди да започнете процеса, насочете монтировката възможно най-близо до "
+"небесния полюс с противотежестите надолу. Ако живеете в Северното полукълбо, "
+"насочете го възможно най-близо до Полярната звезда. Ако Полярната звезда не "
+"се вижда (напр. блокирана от дървета или сгради), можете да насочите "
+"другаде, за предпочитане близо до меридиана. Уверете се, че има поне 30-60 "
+"градуса видимост на небето в дъгата на изток или на запад от меридиана на "
+"позицията. Изберете посоката на свободното небе, броя на градусите за всеки "
+"от двете завъртания, скоростта на завъртане на монтировката и, дали "
+"монтировката ще се върти автоматично (препоръчително) или ръчно."
+
+#. Tag: para
+#: ekos-align.docbook:594
+#, no-c-format
+msgid ""
+"The tool works by capturing and solving three images. After capturing each, "
+"the mount rotates by the fixed amount you entered and another image is "
+"captured and solved. If you choose manual, you will need to slew the mount "
+"by roughly the angle chosen."
+msgstr ""
+"Инструментът работи, като заснема и решава три изображения. След заснемане "
+"на всяко, монтирането се завърта с фиксирания оборот, който сте въвели и се "
+"заснема и решава друго изображение . Ако изберете ръчно, ще трябва да "
+"завъртите монтировката приблизително на избрания ъгъл."
+
+#. Tag: screeninfo
+#: ekos-align.docbook:598 ekos-align.docbook:618 ekos-align.docbook:640
+#: ekos-align.docbook:656
+#, no-c-format
+msgid "<screeninfo>Polar Alignment Assistant</screeninfo>"
+msgstr "<screeninfo>Помощник за полярно изравняване</screeninfo>"
+
+#. Tag: title
+#: ekos-align.docbook:612
+#, no-c-format
+msgid "Plate Solve Correction Scheme"
+msgstr "Схема за коригиране на решаване на изображение"
+
+#. Tag: para
+#: ekos-align.docbook:614
+#, no-c-format
+msgid ""
+"The images below show the workflow when the <emphasis>Plate Solve</emphasis> "
+"correction technique is used. The image below shows a display after the 3 "
+"measurement images are captured and solved. It shows an error of almost 18' "
+"in altitude and that the mount's axis needs to be moved up. Similarly it "
+"shows an azimuth error of almost 15' and that the axis needs to be moved to "
+"the right (as viewed from behind the telescope)."
+msgstr ""
+"Изображенията по-долу показват работния процес, когато се използва "
+"корекционната техника <emphasis>Решаване на изображения</emphasis>. "
+"Изображението по-долу показва екран, след като 3-те измервателни изображения "
+"са заснети и решени. Показва грешка от почти 18' във височината и че оста на "
+"монтировката трябва да се премести нагоре. По същия начин показва азимутална "
+"грешка от почти 15' и че оста трябва да се премести надясно (както се гледа "
+"отзад на телескопа)."
+
+#. Tag: phrase
+#: ekos-align.docbook:626
+#, no-c-format
+msgid "Polar Alignment Assistant, Plate Solve Workflow 1"
+msgstr ""
+"Асистент за полярно подравняване, работен процес 1 за решаване на изображение"
+
+#. Tag: para
+#: ekos-align.docbook:630
+#, no-c-format
+msgid ""
+"If your error is low enough (&eg; less than an arc-minute) then you don't "
+"need to make any adjustments. Simply press stop and you're done."
+msgstr ""
+"Ако грешката ви е достатъчно ниска (напр. по-малко от дъгова минута), тогава "
+"не е необходимо да правите никакви корекции. Просто натиснете стоп и сте "
+"готови."
+
+#. Tag: para
+#: ekos-align.docbook:633
+#, no-c-format
+msgid ""
+"If you will be making corrections to your mount's axis, you should select "
+"the adjustment approach (we're using Plate Solve in this example), and how "
+"often the system should recapture images to re-measure the polar alignment "
+"error. The refresh interval should be frequent, but it doesn't make sense to "
+"make it faster that your CPU can capture and plate-solve the images. We're "
+"using 2s in this example. Then press the <guibutton>Refresh</guibutton> "
+"button to begin the correction process."
+msgstr ""
+"Ако ще правите корекции на оста на вашата монтировка, трябва да изберете "
+"подхода за настройка (ние използваме решаване на изображение в този пример) "
+"и колко често системата трябва да заснема отново изображения, за да измери "
+"повторно грешката на полярното подравняване. Интервалът на опресняване "
+"трябва да е чест, но няма смисъл да го правите по-бърз, за да може вашият "
+"процесор да заснеме и разкрие изображенията. В този пример използваме 2s. "
+"След това натиснете бутона <guibutton>Обнови</guibutton>, за да започнете "
+"процеса на коригиране."
+
+#. Tag: para
+#: ekos-align.docbook:636
+#, no-c-format
+msgid ""
+"The system will capture images, and re-estimate the polar alignment error "
+"after each image. You can try to reduce the error by adjusting the Altitude "
+"and Azimuth correction knobs on your mount. The image below shows the screen "
+"after the altitude error has been almost zeroed. See the difference between "
+"the <emphasis>Measured Error</emphasis> row, which shows the originally "
+"measured error after the original 3 captures, and the <emphasis>Updated "
+"Error</emphasis> row which shows the current error estimate."
+msgstr ""
+"Системата ще заснеме изображения и ще преоцени грешката на полярното "
+"подравняване след всяко изображение. Можете да опитате да намалите грешката, "
+"като регулирате копчетата за корекция на височина и азимута на вашата "
+"монтировка. Изображението по-долу показва екрана, след като грешката за "
+"височина е почти нулева. Вижте разликата между реда <emphasis>Измерена "
+"грешка</emphasis>, който показва първоначално измерената грешка след "
+"първоначалните 3 заснемания, и реда <emphasis>Актуализирана грешка</"
+"emphasis>, който показва текущата оценка на грешката."
+
+#. Tag: phrase
+#: ekos-align.docbook:648
+#, no-c-format
+msgid "Polar Alignment Assistant, Plate Solve Workflow 2"
+msgstr ""
+"Асистент за полярно подравняване, работен процес 2 за решаване на изображение"
+
+#. Tag: para
+#: ekos-align.docbook:652
+#, no-c-format
+msgid ""
+"Below the user has also adjust Azimuth to reduce the error further. Now the "
+"error is very low and the process is done. The user should press the stop "
+"button."
+msgstr ""
+"По-долу потребителят също може да коригира азимута, за да намали "
+"допълнително грешката. Сега грешката е много ниска и процесът е завършен. "
+"Потребителят трябва да натисне бутона за спиране."
+
+#. Tag: phrase
+#: ekos-align.docbook:664
+#, no-c-format
+msgid "Polar Alignment Assistant, Plate Solve Workflow 3"
+msgstr ""
+"Асистент за полярно подравняване, работен процес 3 за решаване на изображение"
+
+#. Tag: title
+#: ekos-align.docbook:670
+#, no-c-format
+msgid "Move Star Correction Scheme"
+msgstr "Схема за коригиране на движението на звездите"
+
+#. Tag: para
+#: ekos-align.docbook:672
+#, no-c-format
+msgid ""
+"We also have an alternative schemes for correcting polar alignment. Two "
+"variations are <emphasis>Move Star &amp; Calc Error</emphasis> and "
+"<emphasis>Move Star</emphasis>. When you select this scheme, the system "
+"place a yellow/green/violet triangle on the screen. The triangle can be "
+"moved by clicking near a star, and the yellow/violet corner is moved to that "
+"star. In this scheme the user corrects polar alignment by first adjusting "
+"the mount's azimuth knob so that the selected star moves along the yellow "
+"side of the triangle. Once the star is near the next vertex, the azimuth "
+"knob should be adjusted so that the star moves along the green side of the "
+"triangle. Once the star is moved to the green/violet vertex, the mount is "
+"polar aligned, and the user can click <emphasis>stop</emphasis>."
+msgstr ""
+"Имаме и алтернативни схеми за коригиране на полярното подравняване. Два "
+"варианта са <emphasis>Движение на звезда и изчисляване на грешки</emphasis> "
+"и <emphasis>Движение на звезда</emphasis>. Когато изберете тази схема, "
+"системата поставя жълт/зелен/виолетов триъгълник на екрана. Триъгълникът "
+"може да бъде преместен чрез щракване близо до звезда и жълтият/виолетов ъгъл "
+"се премества към тази звезда. В тази схема потребителят коригира полярното "
+"подравняване, като първо регулира копчето за азимута на монтировката, така "
+"че избраната звезда да се движи по жълтата страна на триъгълника. След като "
+"звездата е близо до следващия връх, копчето за азимута трябва да се регулира "
+"така, че звездата да се движи по зелената страна на триъгълника. След като "
+"звездата бъде преместена в зеления/виолетов връх, монтирането е полярно "
+"подравнено и потребителят може да щракне <emphasis>стоп</emphasis>."
+
+#. Tag: para
+#: ekos-align.docbook:675
+#, no-c-format
+msgid ""
+"The difference between <emphasis>Move Star &amp; Calc Error</emphasis> and "
+"<emphasis>Move Star</emphasis> is that in the former, the system attempts to "
+"track the star the user has selected, and places a circle around that star. "
+"In that scheme it also attempts to update the <emphasis>Updated Err</"
+"emphasis> row. If the star tracking isn't reliable, simply ignore it or use "
+"the <emphasis> Move Star </emphasis>scheme and move the star by-eye until "
+"it's close to the final target. An example of using this technique is shown "
+"in this video: <ulink url=\"https://www.youtube.com/watch?v=iOp7hrxw0oU"
+"\">https://www.youtube.com/watch?v=iOp7hrxw0oU</ulink>"
+msgstr ""
+"Разликата между <emphasis>Движение на звезда и изчисляване на грешки</"
+"emphasis> и <emphasis>Движение на звезда</emphasis> е, че при първото "
+"системата се опитва да проследи звездата, която потребителят е избрал, и "
+"поставя кръг около тази звезда. В тази схема той също се опитва да "
+"актуализира реда <emphasis>Актуализирана грешка</emphasis>. Ако "
+"проследяването на звездата не е надеждно, просто го игнорирайте или "
+"използвайте схемата <emphasis> Движение на звезда </emphasis> и преместете "
+"звездата на око, докато се доближи до крайната цел. Пример за използване на "
+"тази техника е показан в този видеоклип: <ulink url=\"https://www.youtube."
+"com/watch?v=iOp7hrxw0oU\">https://www.youtube.com/watch?v= iOp7hrxw0oU</"
+"ulink>"

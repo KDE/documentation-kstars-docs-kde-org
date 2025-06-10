@@ -1,0 +1,2440 @@
+# translation of kstars_indi.po to Estonian
+# Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+#
+# Marek Laane <bald@starman.ee>, 2003-2005,2008.
+# Hasso Tepper <hasso@kde.org>, 2004.
+# Marek Laane <bald@smail.ee>, 2010, 2011, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars_indi\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-12-06 00:51+0000\n"
+"PO-Revision-Date: 2016-08-11 05:07+0300\n"
+"Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: indi.docbook:2
+#, no-c-format
+msgid "Astronomical Device Control with <acronym>INDI</acronym>"
+msgstr "Astronoomiariista juhtimine <acronym>INDI</acronym> abil"
+
+#. Tag: primary
+#: indi.docbook:3
+#, no-c-format
+msgid "INDI Control"
+msgstr "INDI juhtimiskeskus"
+
+#. Tag: secondary
+#: indi.docbook:4
+#, no-c-format
+msgid "Overview"
+msgstr "Ülevaade"
+
+#. Tag: para
+#: indi.docbook:7
+#, no-c-format
+msgid ""
+"&kstars; provides an interface to configure and control astronomical "
+"instruments via the <acronym><link linkend=\"what-is-indi\">INDI</link></"
+"acronym> protocol."
+msgstr ""
+"&kstars; pakub liidest astronoomiliste instrumentide seadistamiseks ja "
+"juhtimiseks <acronym><link linkend=\"what-is-indi\">INDI</link></acronym> "
+"protokolli vahendusel."
+
+#. Tag: para
+#: indi.docbook:12
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The <acronym>INDI</acronym> protocol supports a variety of astronomical "
+#| "instruments such as CCD cameras and focusers. For an up to date list of "
+#| "supported devices, please visit <acronym>INDI</acronym> <ulink url="
+#| "\"http://indilib.org/index.php?title=Devices\">supported devices page</"
+#| "ulink>."
+msgid ""
+"The <acronym>INDI</acronym> protocol supports a variety of astronomical "
+"instruments such as CCD cameras and focusers. For an up to date list of "
+"supported devices, please visit <acronym>INDI</acronym> <ulink url=\"https://"
+"indilib.org/index.php?title=Devices\">supported devices page</ulink>."
+msgstr ""
+"<acronym>INDI</acronym> protokoll toetab paljusid astronoomilisi "
+"instrumente, ka näiteks CCD kaameraid ja fokuseerijaid. Toetatud seadmete "
+"uusimat nimekirja näeb <acronym>INDI</acronym> <ulink url=\"http://indilib."
+"org/index.php?title=Devices\">toetatud seadmete leheküljel</ulink>."
+
+#. Tag: title
+#: indi.docbook:19
+#, no-c-format
+msgid "INDI Setup"
+msgstr "INDI seadistamine"
+
+#. Tag: primary
+#: indi.docbook:20 indi.docbook:81
+#, no-c-format
+msgid "<primary>INDI</primary>"
+msgstr "<primary>INDI</primary>"
+
+#. Tag: secondary
+#: indi.docbook:21 indi.docbook:82 indi.docbook:306
+#, no-c-format
+msgid "Setup"
+msgstr "Seadistamine"
+
+#. Tag: para
+#: indi.docbook:23
+#, no-c-format
+msgid ""
+"&kstars; can control local and remote devices seamlessly via the <link "
+"linkend=\"what-is-indi\">INDI</link> server/client architecture. INDI "
+"devices may be run in three different modes:"
+msgstr ""
+"&kstars; suudab tänu <link linkend=\"what-is-indi\">INDI</link> server-"
+"kliendi arhitektuurile hiilgavalt juhtida nii kohalikke või võrguseadmeid. "
+"INDI seadmed võivad töötada kolmes erinevas režiimis:"
+
+#. Tag: para
+#: indi.docbook:30
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Local: The local mode is the most common and is used to control local "
+#| "device (&ie; a device attached to your machine)."
+msgid ""
+"<guilabel>Local</guilabel>: The local mode is the most common and is used to "
+"control local device (&ie; a device attached to your machine)."
+msgstr ""
+"Kohalik: kohalik režiim on levinuim ning selles juhitakse kohalikku seadet "
+"(&ie; sinu arvutiga ühendatud astronoomiariista)."
+
+#. Tag: para
+#: indi.docbook:34
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Server: The server mode establishes an INDI server for a particular "
+#| "device and waits for connections from remote clients. You cannot operate "
+#| "server devices, you can only start and shut them down."
+msgid ""
+"<guilabel>Server</guilabel>: The server mode establishes an INDI server for "
+"a particular device and waits for connections from remote clients. You "
+"cannot operate server devices, you can only start and shut them down."
+msgstr ""
+"Server: selles režiimis luuakse konkreetsele seadmele INDI server ning "
+"jäädakse ootama kaugklientide ühendumist. Serveri seadmetega iseenesest "
+"midagi ette võtta ei saa - neid on võimalik ainult tööle panna või välja "
+"lülitada."
+
+#. Tag: para
+#: indi.docbook:39
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Client: The client mode is used to connect to remote INDI servers running "
+#| "INDI devices. You can control remote devices seamlessly like local "
+#| "devices."
+msgid ""
+"<guilabel>Client</guilabel>: The client mode is used to connect to remote "
+"INDI servers running INDI devices. You can control remote devices seamlessly "
+"like local devices."
+msgstr ""
+"Klient: selles režiimis saab võtta ühendust INDI serveriga kuskil võrgus. "
+"Kaugseadmeid saab juhtida täpselt samamoodi nagu kohalikke seadmeid."
+
+#. Tag: para
+#: indi.docbook:44
+#, fuzzy, no-c-format
+#| msgid ""
+#| "You can run local device, establish INDI servers, and connect to remote "
+#| "clients from the <guimenuitem>Device Manager</guimenuitem> in the "
+#| "<menuchoice><guimenu>Tools</guimenu><guimenuitem>Devices</guimenuitem></"
+#| "menuchoice> submenu."
+msgid ""
+"You can run local device, establish INDI servers, and connect to remote "
+"clients from the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
+"guisubmenu> <guimenuitem>Device Manager...</guimenuitem></menuchoice> menu "
+"item."
+msgstr ""
+"Kohalikku seadet juhtida, INDI serverit tööle panna ning ühenduda "
+"kaugkliendiga saab menüükäsku <guimenuitem>Seadmehaldur</guimenuitem> "
+"alammenüüs <menuchoice><guimenu>Tööriistad</guimenu><guimenuitem>Seadmed</"
+"guimenuitem></menuchoice>."
+
+#. Tag: para
+#: indi.docbook:49
+#, no-c-format
+msgid "Here is a screenshot of the <guilabel>Device Manager</guilabel> window:"
+msgstr "Selline näeb välja <guilabel>seadmehaldur</guilabel>:"
+
+#. Tag: screeninfo
+#: indi.docbook:54
+#, no-c-format
+msgid "Running device drivers"
+msgstr "Seadme draiverite käivitamine"
+
+#. Tag: phrase
+#: indi.docbook:60
+#, no-c-format
+msgid "Start device drivers"
+msgstr "Seadme draiverite käivitamine"
+
+#. Tag: para
+#: indi.docbook:65
+#, no-c-format
+msgid ""
+"You can run devices by browsing the device tree, selecting a specific "
+"device, and then clicking on the <guibutton>Run Service</guibutton> button. "
+"You can select the operation mode, either local or server as defined above. "
+"The port number is randomly generated between the range from 7624 to 10,000. "
+"To specify a port, click on the port column next to the desired driver. "
+"&kstars; allows multiple drivers to run under one INDI server, and hence one "
+"port. Select multiple drivers then press <guibutton>Run Service</guibutton> "
+"button."
+msgstr ""
+"Seadmete käivitamiseks sirmi seadmepuud, vali vajalik seade ja klõpsa nupule "
+"<guibutton>Käivita teenus</guibutton>. Saab valida ka töörežiimi, milleks "
+"võib olla kohalik või server, nagu eespool määratud. Pordi number "
+"genereeritakse juhuslikult vahemikus 7624 kuni 10000. Pordi määramiseks "
+"klõpsa pordiveerul soovitud draiveri kõrval. &kstars; võimaldab ühes INDI "
+"serveris ja seega ühes pordis töötada mitmel draiveril. Vali draiverid ja "
+"klõpsa nupule <guibutton>Käivita teenus</guibutton>."
+
+#. Tag: para
+#: indi.docbook:74
+#, no-c-format
+msgid ""
+"To control remote devices, refer to the <link linkend=\"indi-remote-control"
+"\">remote device control</link> section."
+msgstr ""
+"Kaugseadmete juhtimise kohta vaata lähemalt <link linkend=\"indi-remote-"
+"control\">kaugseadmete juhtimisest</link> kõnelevat osa."
+
+#. Tag: title
+#: indi.docbook:80
+#, no-c-format
+msgid "Telescope Setup"
+msgstr "Teleskoobi seadistamine"
+
+#. Tag: para
+#: indi.docbook:85
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Most telescopes are equipped with <hardware>RS232</hardware> interface "
+#| "for remote control. Connect the RS232 jack in your telescope to your "
+#| "computer's <hardware>Serial/USB</hardware> port. Traditionally, the RS232 "
+#| "connects to the serial port of your computer, but since many new laptops "
+#| "abandoned the serial port in favor of <hardware>USB/FireWire</hardware> "
+#| "ports, you might need to obtain a Serial to USB adaptor to use with new "
+#| "laptops."
+msgid ""
+"Most telescopes are equipped with <hardware>RS232</hardware> interface for "
+"remote control. Connect the RS232 jack in your telescope to your computer's "
+"<hardware>Serial/USB</hardware> port. Traditionally, the RS232 connects to "
+"the serial port of your computer, but since many new laptops abandoned the "
+"serial port in favor of <hardware>USB/FireWire</hardware> ports, you might "
+"need to obtain a Serial to USB adaptor to use with new laptops."
+msgstr ""
+"Enamik teleskoope on varustatud kaugjuhtimist võimaldava <hardware>RS232</"
+"hardware> liidesega. Ühenda oma teleskoobi RS232 pistik arvuti "
+"<hardware>jada-/USB</hardware> porti. Traditsiooniliselt ühendatakse RS232 "
+"arvuti jadaporti, kuid paljud uuemad sülearvutid on jadapordist "
+"<hardware>USB/FireWire</hardware> pordi kasuks loobunud, mistõttu nende "
+"korral tuleks kasutada jadaport->USB adapterit."
+
+#. Tag: para
+#: indi.docbook:94
+#, fuzzy, no-c-format
+#| msgid ""
+#| "After connecting your telescope to the Serial/USB port, turn your "
+#| "telescope on. It is <emphasis>highly</emphasis> recommended that you "
+#| "download and install the latest firmware for your telescope controller."
+msgid ""
+"After connecting your telescope to the Serial/USB port, turn your telescope "
+"on. It is <emphasis>highly</emphasis> recommended that you download and "
+"install the latest firmware for your telescope controller."
+msgstr ""
+"Pärast teleskoobi ühendamist jada-/USB porti lülita teleskoop sisse. On "
+"<emphasis>äärmiselt</emphasis> soovitatav laadida alla ja paigaldada "
+"teleskoobi kontrolleri uusim püsivara (firmware)."
+
+#. Tag: para
+#: indi.docbook:100
+#, no-c-format
+msgid ""
+"The telescope needs to be aligned before it can be used properly. Align your "
+"telescope (one or two stars alignment) as illustrated in your telescope "
+"manual."
+msgstr ""
+"Enne kasutamist tuleb teleskoop korralikult monteerida. Kuidas seda teha, "
+"peaks olema kirjas teleskoobi käsiraamatus."
+
+#. Tag: para
+#: indi.docbook:105
+#, no-c-format
+msgid ""
+"&kstars; needs to verify time and location settings before connecting to the "
+"telescope. This insures proper tracking and synchronization between the "
+"telescope and &kstars;. The following steps will enable you to connect to a "
+"device that is connected to your computer. To connect and control remote "
+"devices, please refer to <link linkend=\"indi-remote-control\">remote device "
+"control</link> section."
+msgstr ""
+"&kstars; peab enne teleskoobiga ühendumist kontrollima aega ja asukohta. See "
+"tagab korrektse jälgimise ning teleskoobi ja &kstars;i sünkroonsuse. "
+"Järgnevad sammud aitavad sul võtta ühendust arvutiga ühendatud seadmega. "
+"Seda, kuidas võtta ühendust ja juhtida võrguseadmeid, vaata <link linkend="
+"\"indi-remote-control\">võrguseadmete juhtimisele</link> pühendatud osast."
+
+#. Tag: para
+#: indi.docbook:113
+#, fuzzy, no-c-format
+#| msgid ""
+#| "You can use the Telescope Setup Wizard and it will verify all the "
+#| "required information in the process. It can automatically scan ports for "
+#| "attached telescopes. You can run the wizard by selecting "
+#| "<guimenuitem>Telescope Wizard</guimenuitem> from the <guimenu>Devices</"
+#| "guimenu> menu."
+msgid ""
+"You can use the Telescope Setup Wizard and it will verify all the required "
+"information in the process. It can automatically scan ports for attached "
+"telescopes. You can run the wizard by selecting the "
+"<menuchoice><guimenu>Devices</guimenu> <guimenuitem>Telescope Wizard</"
+"guimenuitem></menuchoice> menu item."
+msgstr ""
+"Teleskoobi seadistamisnõustaja abil saab kogu vajaliku info märksa "
+"lihtsamalt sisestada. See uurib ka automaatselt porte, et leida ühendatud "
+"teleskoobid. Nõustaja saab käivitada menüükäsuga <guimenuitem>Teleskoobi "
+"nõustaja</guimenuitem>, mille leiab menüüst <guimenu>Seadmed</guimenu>."
+
+#. Tag: para
+#: indi.docbook:119
+#, no-c-format
+msgid ""
+"Alternatively, you can connect to a local telescope by performing the "
+"following steps:"
+msgstr "Kohaliku teleskoobi ühendamiseks võta aga palun ette järgmised sammud:"
+
+#. Tag: para
+#: indi.docbook:124
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Set your geographical location. Open the <guilabel>Set Geographic "
+#| "Location</guilabel> window by selecting <guimenuitem>Geographic...</"
+#| "guimenuitem> from the <guimenu>Settings</guimenu> menu, or by pressing "
+#| "the <guiicon>Globe</guiicon> icon in the toolbar, or by pressing "
+#| "<keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo>."
+msgid ""
+"Set your geographical location. Open the <guilabel>Set Geographic Location</"
+"guilabel> window by selecting the <menuchoice><guimenu>Settings</guimenu> "
+"<guimenuitem>Geographic...</guimenuitem></menuchoice> menu item, or by "
+"pressing the <guiicon>Globe</guiicon> icon in the toolbar, or by pressing "
+"<keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo>."
+msgstr ""
+"Määra oma geograafiline asukoht. Ava aken <guilabel>Geograafilise asukoha "
+"määramine</guilabel>. Selleks vali käsk <guimenuitem>Geograafiline...</"
+"guimenuitem> menüüs <guimenu>Seadistused</guimenu> või <guiicon>gloobus</"
+"guiicon>e ikoon tööriistaribal või kasuta klahvikombinatsiooni <keycombo "
+"action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo>."
+
+#. Tag: para
+#: indi.docbook:133
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Set your local time and date. You can change to any time or date by "
+#| "selecting <guimenuitem>Set Time...</guimenuitem> from the <guimenu>Time</"
+#| "guimenu> menu, or by pressing the <guiicon>time</guiicon> icon in the "
+#| "toolbar. The <guilabel>Set Time</guilabel> window uses a standard &kde; "
+#| "Date Picker widget. If you ever need to reset the clock back to the "
+#| "current time, just select <guimenuitem>Set Time to Now</guimenuitem> from "
+#| "the <guimenu>Time</guimenu> menu."
+msgid ""
+"Set your local time and date. You can change to any time or date by "
+"selecting <menuchoice><guimenu>Time</guimenu> <guimenuitem>Set Time...</"
+"guimenuitem></menuchoice> menu item, or by pressing the <guiicon>Time</"
+"guiicon> icon in the toolbar. The <guilabel>Set Time</guilabel> window uses "
+"a standard &kde; Date Picker widget. If you ever need to reset the clock "
+"back to the current time, just select the <menuchoice><guimenu>Time</"
+"guimenu> <guimenuitem>Set Time to Now</guimenuitem></menuchoice> menu item."
+msgstr ""
+"Määra kohalik aeg ja kuupäev. Aega ja kuupäeva saab muuta, kui valida käsk "
+"<guimenuitem>Sea aeg...</guimenuitem> menüüst <guimenu>Aeg</guimenu> või "
+"klõpsata tööriistaribal ikooni <guiicon>Aeg</guiicon>. Aken <guilabel>Aja "
+"määramine</guilabel> kasutab &kde; tavapärast kuupäeva valimise elementi. "
+"Kui sul tekib vajadus seada kell parajasti tegelikult kehtivale ajale, vali "
+"käsk <guimenuitem>Sea kell hetkele Praegu</guimenuitem> menüüst "
+"<guimenu>Aeg</guimenu>."
+
+#. Tag: para
+#: indi.docbook:144
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Click on the <menuchoice><guimenu>Tools</guimenu><guimenuitem>Devices</"
+#| "guimenuitem></menuchoice> submenu and select the <guimenuitem>Device "
+#| "Manager</guimenuitem>."
+msgid ""
+"Click on the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
+"guisubmenu> <guimenuitem>Device Manager...</guimenuitem></menuchoice> menu "
+"item."
+msgstr ""
+"Klõpsa alammenüül <menuchoice><guimenu>Tööriistad</"
+"guimenu><guimenuitem>Seadmed</guimenuitem></menuchoice> ja vali "
+"<guimenuitem>Seadmehaldur</guimenuitem>."
+
+#. Tag: para
+#: indi.docbook:150
+#, no-c-format
+msgid ""
+"Under the <guilabel>Device</guilabel> column, select your telescope model."
+msgstr "Vali veerus <guilabel>Seade</guilabel> oma teleskoobi mudel."
+
+#. Tag: para
+#: indi.docbook:155
+#, no-c-format
+msgid "Click on the <guibutton>Run Service</guibutton> button."
+msgstr "Klõpsa nupule <guibutton>Käivita teenus</guibutton>."
+
+#. Tag: para
+#: indi.docbook:160
+#, no-c-format
+msgid "Click <guibutton>Close</guibutton> to leave the Device Manager Dialog."
+msgstr ""
+"Seadmehalduri dialoogi sulgemiseks klõpsa nupule <guibutton>Sulge</"
+"guibutton>."
+
+#. Tag: title
+#: indi.docbook:167
+#, no-c-format
+msgid "Frequent Settings"
+msgstr "Korduvad seadistused"
+
+#. Tag: para
+#: indi.docbook:168
+#, no-c-format
+msgid ""
+"You do not need to set the geographic location and time every time you "
+"connect to a telescope. Only adjust the settings as needed."
+msgstr ""
+"Geograafilist asukohta ja aega pole vaja määrata igal teleskoobiga "
+"ühendumisel. Neid seadistusi kohanda ainult siis, kui seda on tõesti vaja."
+
+#. Tag: para
+#: indi.docbook:172
+#, fuzzy, no-c-format
+#| msgid ""
+#| "You are now ready to use the device features, &kstars; conveniently "
+#| "provides two interchangeable GUI interfaces for controlling telescopes:"
+msgid ""
+"You are now ready to use the device features, &kstars; conveniently provides "
+"two interchangeable &GUI; interfaces for controlling telescopes:"
+msgstr ""
+"Nüüd oled valmis kasutama seadme võimalusi. &kstars; lubab seda teha kahe "
+"teleskoopide juhtimist võimaldava graafilise kasutajaliidese abil:"
+
+#. Tag: title
+#: indi.docbook:177
+#, no-c-format
+msgid "Controlling your telescope"
+msgstr "Teleskoobi juhtimine"
+
+#. Tag: para
+#: indi.docbook:179
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<guilabel>Sky map Control</guilabel>: For each device you run in the "
+#| "<guilabel>Device Manager</guilabel>, a corresponding entry will show up "
+#| "in popup menu that allows you to control the properties of the device. "
+#| "You can issue commands like <command>Slew, Sync,</command> and "
+#| "<command>Track</command> directly from the sky map."
+msgid ""
+"<guilabel>Sky map Control</guilabel>: For each device you run in the "
+"<guilabel>Device Manager</guilabel>, a corresponding entry will show up in "
+"popup menu that allows you to control the properties of the device. You can "
+"issue commands like <command>Slew</command>, <command>Sync</command>, and "
+"<command>Track</command> directly from the sky map."
+msgstr ""
+"<guilabel>Juhtimine taevakaardilt</guilabel>: iga seade, mis on "
+"<guilabel>seadmehaldur</guilabel>is käivitatud, on näha ka hüpikmenüüs, kus "
+"saab selle mitmeid aspekte juhtida. Otse taevakaardilt on võimalik anda "
+"käske <command>Liiguta</command>, <command>Sünkroniseeri</command> või "
+"<command>Jälgi</command>."
+
+#. Tag: para
+#: indi.docbook:187
+#, no-c-format
+msgid ""
+"Here is a screenshot of the popup menu with an active LX200 Classic device:"
+msgstr "Selline näeb välja sisselülitatud seadme LX200 Classic hüpikmenüü:"
+
+#. Tag: screeninfo
+#: indi.docbook:191
+#, no-c-format
+msgid "Controlling devices from sky map"
+msgstr "Seadmete juhtimine taevakaardilt"
+
+#. Tag: para
+#: indi.docbook:201
+#, no-c-format
+msgid ""
+"<guilabel>INDI Control Panel</guilabel>: The panel offers the user with all "
+"the features supported by a device."
+msgstr ""
+"<guilabel>INDI juhtimiskeskus</guilabel>: see võimaldab kasutajal pruukida "
+"kõiki seadme pakutavaid võimalusi."
+
+#. Tag: para
+#: indi.docbook:206
+#, no-c-format
+msgid "The panel is divided into three main sections:"
+msgstr "Aken on jagatud kolmeks põhiosaks:"
+
+#. Tag: para
+#: indi.docbook:211
+#, no-c-format
+msgid ""
+"<guilabel>Device tabs</guilabel>: Each additional active device occupies a "
+"tab in the INDI panel. Multiple devices can run simultaneously without "
+"affecting the operation of other devices."
+msgstr ""
+"<guilabel>Seadmete kaardid</guilabel>: iga aktiivne seade võtab INDI "
+"juhtimiskeskuses enda alla ühe kaardi. Korraga võib töötada ka mitu seadet, "
+"ilma et nad üksteist segaks."
+
+#. Tag: para
+#: indi.docbook:219
+#, no-c-format
+msgid ""
+"Property views on the <guilabel>Main Control</guilabel> and "
+"<guilabel>Options</guilabel> tabs: Properties are the key element in INDI "
+"architecture. Each device defines a set of properties to communicate with "
+"the client. The current position of the telescope is an example of a "
+"property. Semantically similar properties are usually contained in logical "
+"blocks or groupings."
+msgstr ""
+"Omaduste vaated kaartidel <guilabel>Põhijuhtimine</guilabel> ja "
+"<guilabel>Valikud</guilabel>: omadused on INDI arhitektuuri põhielement. Iga "
+"seadme määrab omaduste komplekt, mille abil kliendiga suheldakse. Omadus on "
+"näiteks teleskoobi positsioon. Semantiliselt sarnased omadused on tavaliselt "
+"koondatud loogiliste blokkidesse või rühmadesse."
+
+#. Tag: para
+#: indi.docbook:229
+#, no-c-format
+msgid ""
+"<guilabel>Log viewer</guilabel>: Devices report their status and acknowledge "
+"commands by sending INDI messages. Each device has its own log view. A "
+"device usually sends messages to its device driver only, but a device is "
+"permitted to send a generic message when appropriate."
+msgstr ""
+"<guilabel>Loginäitaja</guilabel>: seadmed annavad enda staatusest teada ja "
+"võtavad vastu käske INDI teateid saates. Igal seadmel on oma logi. Seade "
+"saadab teate tavaliselt ainult oma draiverile, kuid draiveril on lubatud "
+"vajaduse  korral saata üldteateid."
+
+#. Tag: screeninfo
+#: indi.docbook:238
+#, no-c-format
+msgid "INDI Control Panel"
+msgstr "INDI juhtimiskeskus"
+
+#. Tag: para
+#: indi.docbook:248
+#, no-c-format
+msgid ""
+"You are not restricted on using one interface over another as they can be "
+"both used simultaneously. Actions from the <guilabel>Sky map</guilabel> are "
+"automatically reflected in the <guilabel>INDI Control Panel</guilabel> and "
+"vice versa."
+msgstr ""
+"Soovi ja vajaduse korral saab mõlemat liidest üheaegselt ja korraga "
+"kasutada. Tegevused <guilabel>taevakaardil</guilabel> peegelduvad "
+"automaatselt <guilabel>INDI juhtimiskeskus</guilabel>es ja vastupidi."
+
+#. Tag: para
+#: indi.docbook:253
+#, no-c-format
+msgid ""
+"To connect to your telescope, you can either select <guimenuitem>Connect</"
+"guimenuitem> from your device popup menu or alternatively, you can press "
+"<guibutton>Connect</guibutton> under your device tab in the <guilabel>INDI "
+"Control Panel</guilabel>."
+msgstr ""
+"Teleskoobi ühendamiseks valida seadme hüpikmenüüst käsk <guimenuitem>Ühenda</"
+"guimenuitem> või siis klõpsata nupule <guibutton>Ühenda</guibutton> seadme "
+"kaardil <guilabel>INDI juhtimiskeskus</guilabel>es."
+
+#. Tag: para
+#: indi.docbook:258
+#, fuzzy, no-c-format
+#| msgid ""
+#| "By default, &kstars; will try to connect to the <constant>/dev/ttyS0</"
+#| "constant> port. To change the connection port, select <guilabel>INDI "
+#| "Control Panel</guilabel> from the <menuchoice><guimenu>Tools</"
+#| "guimenu><guimenuitem>Devices</guimenuitem></menuchoice> submenu and "
+#| "change the port under your device tab."
+msgid ""
+"By default, &kstars; will try to connect to the <constant>/dev/ttyS0</"
+"constant> port. To change the connection port, select the "
+"<menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</guisubmenu> "
+"<guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> menu item and "
+"change the port under your device tab."
+msgstr ""
+"Vaikimisi püüab &kstars; ühenduda porti <constant>/dev/ttyS0</constant>. "
+"Ühenduspordi muutmiseks vali alammenüüst <menuchoice><guimenu>Tööriistad</"
+"guimenu><guimenuitem>Seadmed</guimenuitem></menuchoice> <guilabel>INDI "
+"juhtimiskeskus</guilabel> ning muuda porti vastava seadme kaardil."
+
+#. Tag: para
+#: indi.docbook:264
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&kstars; automatically updates the telescope's longitude, latitude, and "
+#| "time based on current settings in &kstars;. You can enable/disable these "
+#| "using the <guimenuitem>INDI</guimenuitem> tab from "
+#| "<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kstars;..."
+#| "</guimenuitem></menuchoice> submenu. Using the <guimenuitem>INDI</"
+#| "guimenuitem> tab you can configure &kstars; to display or not INDI status "
+#| "messages in the status bar. By default INDI server port numbers have "
+#| "values between the range from 7624 to 9000, but you can easily change the "
+#| "range using the <guilabel>From</guilabel> and <guilabel>To</guilabel> "
+#| "text boxes from the <guilabel>Server Port</guilabel> section."
+msgid ""
+"&kstars; automatically updates the telescope's longitude, latitude, and time "
+"based on current settings in &kstars;. You can enable/disable these using "
+"the <guilabel>INDI</guilabel> page from the <menuchoice><guimenu>Settings</"
+"guimenu> <guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> menu "
+"item. Using the <guilabel>INDI</guilabel> page you can configure &kstars; to "
+"display or not INDI status messages in the status bar. By default INDI "
+"server port numbers have values between the range from 7624 to 9000, but you "
+"can easily change the range using the <guilabel>From:</guilabel> and "
+"<guilabel>To:</guilabel> text boxes from the <guilabel>Server Port</"
+"guilabel> section."
+msgstr ""
+"&kstars; uuendab automaatselt teleskoobi pikkus- ja laiuskraadi ning aega "
+"vastavalt &kstars;i kehtivatele seadistustele. Seda saab lubada või keelata "
+"kaardil <guimenuitem>INDI</guimenuitem>, mille leiab dialoogist, mis avaneb "
+"menüükäsuga <menuchoice><guimenu>Seadistused</guimenu><guimenuitem>&kstars;i "
+"seadistamine...</guimenuitem></menuchoice> Kaardil <guimenuitem>INDI</"
+"guimenuitem> saab panna &kstars;i INDI olekuteateid olekuribal näitama või "
+"peitma. Vaikimisi in INDI serverite pordinumbrid vahemikus 7624 kuni 9000, "
+"kuid seda vahemikku saab hõlpsasti muuta tekstikastidega <guilabel>Alates</"
+"guilabel> ja <guilabel>Kuni</guilabel> sektsioonis <guilabel>Serveri port</"
+"guilabel>."
+
+#. Tag: para
+#: indi.docbook:274
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If &kstars; communicates successfully with the telescope, it will "
+#| "retrieve the current <abbrev>RA</abbrev> and <abbrev>DEC</abbrev> from "
+#| "the telescope and will display a crosshair on the sky map indicating the "
+#| "telescope position. You can hide the crosshair that marks telescope "
+#| "position using <guimenuitem>INDI</guimenuitem> tab from "
+#| "<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kstars;..."
+#| "</guimenuitem></menuchoice> submenu."
+msgid ""
+"If &kstars; communicates successfully with the telescope, it will retrieve "
+"the current <abbrev>RA</abbrev> and <abbrev>DEC</abbrev> from the telescope "
+"and will display a crosshair on the sky map indicating the telescope "
+"position. You can hide the crosshair that marks telescope position using "
+"<guilabel>INDI</guilabel> page from the <menuchoice><guimenu>Settings</"
+"guimenu> <guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> menu "
+"item."
+msgstr ""
+"Kui &kstars; saab teleskoobiga edukalt ühenduse, hangib ta teleskoobilt "
+"<abbrev>OT</abbrev> ja <abbrev>käände</abbrev> ning näitab taevakaardil "
+"ristikesega, kuhu teleskoop on suunatud. Teleskoobi asukohta tähistava "
+"ristikese saab ka peita, kasutades kaarti <guimenuitem>INDI</guimenuitem>, "
+"mille leiab menüükäsuga <menuchoice><guimenu>Seadistused</"
+"guimenu><guimenuitem>&kstars;i seadistamine...</guimenuitem></menuchoice>"
+
+#. Tag: title
+#: indi.docbook:282
+#, no-c-format
+msgid "Synchronizing your telescope"
+msgstr "Teleskoobi sünkroniseerimine"
+
+#. Tag: para
+#: indi.docbook:283
+#, no-c-format
+msgid ""
+"If you aligned your telescope and the last alignment star was, for example, "
+"Vega, then the crosshair should be centered around Vega. If the crosshair "
+"was off target, then you can <mousebutton>right</mousebutton>-click Vega "
+"from the sky map and select <command>Sync</command> from your telescope "
+"menu. This action will instruct the telescope to synchronize its internal "
+"coordinates to match those of Vega, and the telescope's crosshair should now "
+"be centered around Vega."
+msgstr ""
+"Kui teleskoop on enne ühendamist suunatud näiteks Veegale, siis peaks "
+"ristike taevakaardil samuti Veegale fokuseeruma. Kui see nii ei ole, klõpsa "
+"taevakaardil Veega peal hiire <mousebutton>parema</mousebutton> nupuga ning "
+"vali teleskoobimenüüst käsk <command>Sünkroniseeri</command>. See annab "
+"teleskoobile korralduse muuta oma sisekoordinaadid Veegale vastavaks ning "
+"nüüd peaks ka rist otse Veega peale liikuma."
+
+#. Tag: para
+#: indi.docbook:292
+#, no-c-format
+msgid "This is it: your telescope is ready to explore the heavens!"
+msgstr "Ja ongi kõik! Nüüd võid teleskoobiga taevalaotust uurima asuda."
+
+#. Tag: title
+#: indi.docbook:296
+#, no-c-format
+msgid "WARNING"
+msgstr "HOIATUS"
+
+#. Tag: para
+#: indi.docbook:297
+#, no-c-format
+msgid ""
+"Never use the telescope to look at the sun. Looking at the sun might cause "
+"irreversible damage to your eyes and your equipment."
+msgstr ""
+"Ära vaata kunagi teleskoobiga otse Päikesesse. See võib tekitada "
+"parandamatut kahju nii sinu silmadele kui ka instrumentidele."
+
+#. Tag: title
+#: indi.docbook:304
+#, no-c-format
+msgid "CCD and Video-Capture Setup"
+msgstr "CCD ja videohõive seadistamine"
+
+#. Tag: primary
+#: indi.docbook:305
+#, no-c-format
+msgid "CCD Video Control"
+msgstr "CCD video juhtimine"
+
+#. Tag: para
+#: indi.docbook:309
+#, fuzzy, no-c-format
+#| msgid ""
+#| "You can run CCD and Video Capture devices from the <guimenuitem>Device "
+#| "Manager</guimenuitem> in the <menuchoice><guimenu>Tools</"
+#| "guimenu><guimenuitem>Devices</guimenuitem></menuchoice> submenu. Like all "
+#| "INDI devices, some of the device controls will be accessible from the "
+#| "skymap. The device can be controlled fully from the <guimenuitem>INDI "
+#| "Control Panel</guimenuitem>."
+msgid ""
+"You can run CCD and Video Capture devices from the "
+"<menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</guisubmenu> "
+"<guimenuitem>Device Manager...</guimenuitem></menuchoice> menu item. Like "
+"all INDI devices, some of the device controls will be accessible from the "
+"skymap. The device can be controlled fully from the <guimenuitem>INDI "
+"Control Panel...</guimenuitem> item."
+msgstr ""
+"CCD-sid ja videohõiveriistu saab käivitada <guimenuitem>seadmehaldur</"
+"guimenuitem>is, mille saab avada alammenüüst "
+"<menuchoice><guimenu>Tööriistad</guimenu><guimenuitem>Seadmed</guimenuitem></"
+"menuchoice>. Nagu muudegi INDI seadmete korral, saab mõningaid riista "
+"omadusi juhtida otse taevakaardilt. Täielikult saab seadet juhtida "
+"<guimenuitem>INDI juhtimiskeskus</guimenuitem>e vahendusel."
+
+#. Tag: para
+#: indi.docbook:315
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The standard format for image capture is FITS. Once an image is captured "
+#| "and downloaded, it will be automatically displayed in the &kstars; <link "
+#| "linkend=\"tool-fitsviewer\">FITS Viewer</link>."
+msgid ""
+"The standard format for image capture is FITS. Once an image is captured and "
+"downloaded, it will be automatically displayed in the &kstars; <link linkend="
+"\"fitsviewer\">FITS Viewer</link>."
+msgstr ""
+"Kaadrite hõive standardvorming on FITS. Kui kaader on tabatud ja alla "
+"laaditud, on seda võimalik vaadata &kstars;i <link linkend=\"tool-fitsviewer"
+"\">FITS-i näitajas</link>."
+
+#. Tag: title
+#: indi.docbook:321
+#, no-c-format
+msgid "Configure INDI"
+msgstr "INDI seadistamine"
+
+#. Tag: primary
+#: indi.docbook:322
+#, no-c-format
+msgid "Configure"
+msgstr "Seadistamine"
+
+#. Tag: secondary
+#: indi.docbook:323
+#, no-c-format
+msgid "<secondary>INDI</secondary>"
+msgstr "<secondary>INDI</secondary>"
+
+#. Tag: para
+#: indi.docbook:326
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The INDI page allows you to modify <emphasis>Client side</emphasis> INDI "
+#| "specific options. To access it, select the <guimenuitem>INDI</"
+#| "guimenuitem> tab from <menuchoice><guimenu>Settings</"
+#| "guimenu><guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> "
+#| "submenu. The window is divided into several main categories: General, "
+#| "Device Updates, Display and Server Port:"
+msgid ""
+"The <guilabel>INDI</guilabel> page allows you to modify <emphasis>Client "
+"side</emphasis> INDI specific options. To access it, select the "
+"<guilabel>INDI</guilabel> page from <menuchoice><guimenu>Settings</guimenu> "
+"<guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> menu item. The "
+"window is divided into several main categories: General, Device Updates, "
+"Display and Server Port:"
+msgstr ""
+"INDI kaardil saab muuta INDI <emphasis>kliendipoolseid</emphasis> "
+"seadistusi. Selleks vali kaart <guimenuitem>INDI</guimenuitem>, milleni "
+"jõuad menüükäsuga <menuchoice><guimenu>Seadistused</"
+"guimenu><guimenuitem>&kstars;i seadistamine...</guimenuitem></menuchoice> "
+"Aken on jagatud mitmeks kategooriaks: üldine, seadmete uuendamine, kuva ja "
+"serveri port:"
+
+#. Tag: guilabel
+#: indi.docbook:334
+#, no-c-format
+msgid "General"
+msgstr "Üldine"
+
+#. Tag: para
+#: indi.docbook:336
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<option>INDI Server:</option> Specify the directory where INDI server is "
+#| "located in your system. By default, &kstars; uses <quote>/usr/bin/"
+#| "indiserver</quote> directory."
+msgid ""
+"<guilabel>INDI server:</guilabel> Specify the binary of installed INDI "
+"server in your system. By default, &kstars; uses <quote>/usr/bin/indiserver</"
+"quote> binary."
+msgstr ""
+"<option>INDI server:</option> siin saab määrata kataloogi, kus sinu "
+"süsteemis asub INDI server. Vaikimisi kasutab &kstars; kataloogi <quote>/usr/"
+"bin/indiserver</quote>."
+
+#. Tag: para
+#: indi.docbook:337
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<option>INDI Drivers Directory:</option> Specify the directory where INDI "
+#| "drivers are located in your system. By default, &kstars; uses <quote>/usr/"
+#| "share/indi</quote> directory."
+msgid ""
+"<guilabel>INDI drivers XML directory:</guilabel> Specify the &XML; directory "
+"where INDI drivers are located in your system. By default, &kstars; uses "
+"<quote>/usr/share/indi</quote> directory."
+msgstr ""
+"<option>INDI draiverite kataloog:</option>: siin saab määrata kataloogi, kus "
+"asuvad sinu süsteemis INDI draiverid. Vaikimisi kasutab &kstars; kataloogi "
+"<quote>/usr/share/indi</quote>."
+
+#. Tag: para
+#: indi.docbook:338
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<option>Default FITS directory:</option> Specify the directory where all "
+#| "captured FITS images will be saved to. If no directory is specified, "
+#| "images will be stored in $HOME."
+msgid ""
+"<guilabel>Default FITS directory:</guilabel> Specify the directory where all "
+"captured FITS images will be saved to. If no directory is specified, images "
+"will be stored in <varname>$HOME</varname>."
+msgstr ""
+"<option>FITS-i vaikekataloog:</option> kataloog, kuhu salvestatakse kõik "
+"FITS-i pildid. Kui kataloogi ei määrata, salvestatakse need "
+"keskkonnamuutujaga $HOME määratud asukohta."
+
+#. Tag: guilabel
+#: indi.docbook:345
+#, no-c-format
+msgid "Time &amp; Location Updates"
+msgstr ""
+
+#. Tag: para
+#: indi.docbook:347
+#, no-c-format
+msgid ""
+"<guilabel>KStars updates all devices</guilabel>: KStars is the master source "
+"for time and location settings. All INDI devices time and locations settings "
+"are synchronized to KStars settings."
+msgstr ""
+
+#. Tag: para
+#: indi.docbook:348
+#, no-c-format
+msgid ""
+"<guilabel>Mount updates KStars</guilabel>: Mount handset is the master "
+"source of time and location settings. KStars time and location settings are "
+"synchronized with controller settings."
+msgstr ""
+
+#. Tag: para
+#: indi.docbook:349
+#, no-c-format
+msgid ""
+"<guilabel>GPS updates KStars</guilabel>: GPS driver is the master source of "
+"time and location settings. KStars time and location settings are "
+"synchronized with GPS settings."
+msgstr ""
+
+#. Tag: para
+#: indi.docbook:350
+#, no-c-format
+msgid ""
+"<guilabel>Time</guilabel>: Synchronize KStars date and time automatically "
+"from the update source."
+msgstr ""
+
+#. Tag: para
+#: indi.docbook:351
+#, no-c-format
+msgid ""
+"<guilabel>Location</guilabel>: Synchronize KStars location settings from the "
+"update source."
+msgstr ""
+
+#. Tag: guilabel
+#: indi.docbook:354
+#, no-c-format
+msgid "Display"
+msgstr "Kuva"
+
+#. Tag: para
+#: indi.docbook:356
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<option>Telescope crosshair:</option> When checked, &kstars; displays the "
+#| "telescope's target crosshair on the sky map. The crosshair is displayed "
+#| "upon a successful connection to the telescope and its location is updated "
+#| "periodically. The telescope's name is displayed next to the crosshair. "
+#| "&kstars; displays one crosshair per each connected telescope. To change "
+#| "the color of the telescope's crosshair, open the <link linkend=\"viewops"
+#| "\">Configure &kstars;</link> window. Select the <guilabel>Colors</"
+#| "guilabel> tab, and then change the color of the <emphasis>Target "
+#| "Indicator</emphasis> item to the desired color."
+msgid ""
+"<guilabel>Telescope crosshair</guilabel>: When checked, &kstars; displays "
+"the telescope's target crosshair on the sky map. The crosshair is displayed "
+"upon a successful connection to the telescope and its location is updated "
+"periodically. The telescope's name is displayed next to the crosshair. "
+"&kstars; displays one crosshair per each connected telescope. To change the "
+"color of the telescope's crosshair, open the <link linkend=\"viewops"
+"\">Configure - &kstars;</link> window. Select the <guilabel>Colors</"
+"guilabel> page, and then change the color of the <guimenuitem>Target "
+"Indicator</guimenuitem> item to the desired color."
+msgstr ""
+"<option>Teleskoobi ristik:</option> märkimisel näitab &kstars; taevakaardil "
+"teleskoobi ristikujulist sihtmärki. Seda näidatakse teleskoobi eduka "
+"ühendamise järel ning seda uuendatakse perioodiliselt. Ristiku kõrval "
+"näidatakse teleskoobi nime. &kstars; näitab üht ristikut iga ühendatud "
+"teleskoobi kohta. Ristiku värvi muutmiseks ava dialoog <link linkend="
+"\"viewops\">&kstars;i seadistamine</link>, vali kaart <guilabel>Värvid</"
+"guilabel> ja määra <emphasis>sihtmärgi indikaatorile</emphasis> meelepärane "
+"värv."
+
+#. Tag: para
+#: indi.docbook:357
+#, no-c-format
+msgid ""
+"<guilabel>Independent window</guilabel>: Make <guilabel>FITS Viewer</"
+"guilabel> window independent."
+msgstr ""
+
+#. Tag: para
+#: indi.docbook:358
+#, no-c-format
+msgid ""
+"<guilabel>Message notifications</guilabel>: Show INDI messages as desktop "
+"notifications instead of dialogs."
+msgstr ""
+
+#. Tag: guilabel
+#: indi.docbook:368
+#, no-c-format
+msgid "Server Port"
+msgstr ""
+
+#. Tag: para
+#: indi.docbook:370
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Server Port: Specify range of ports that INDI Server will bind to when "
+#| "starting new drivers."
+msgid ""
+"Specify range of ports that INDI Server will bind to when starting new "
+"drivers."
+msgstr ""
+"Serveri port: pordivahemiku määramine, millega INDI server loob ühenduse "
+"uute draiverite käivitamisel."
+
+#. Tag: title
+#: indi.docbook:378
+#, no-c-format
+msgid "INDI Concepts"
+msgstr "INDI põhimõtted"
+
+#. Tag: primary
+#: indi.docbook:379 indi.docbook:492 indi.docbook:598
+#, no-c-format
+msgid "Telescope Control"
+msgstr "Teleskoobi juhtimine"
+
+#. Tag: secondary
+#: indi.docbook:380
+#, no-c-format
+msgid "Concepts"
+msgstr "Põhimõtted"
+
+#. Tag: para
+#: indi.docbook:383
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The main key concept in INDI is that devices have the ability to describe "
+#| "themselves. This is accomplished by using XML to describe a generic "
+#| "hierarchy that can represent both canonical and non-canonical devices. In "
+#| "INDI, all <emphasis>devices</emphasis> may contain one or more "
+#| "<emphasis>properties</emphasis>. Any <emphasis>property</emphasis> may "
+#| "contain one or more <emphasis>elements</emphasis>. There are four types "
+#| "of INDI properties:"
+msgid ""
+"The main key concept in INDI is that devices have the ability to describe "
+"themselves. This is accomplished by using &XML; to describe a generic "
+"hierarchy that can represent both canonical and non-canonical devices. In "
+"INDI, all <emphasis>devices</emphasis> may contain one or more "
+"<emphasis>properties</emphasis>. Any <emphasis>property</emphasis> may "
+"contain one or more <emphasis>elements</emphasis>. There are four types of "
+"INDI properties:"
+msgstr ""
+"INDI tähtsaimaks põhimõtteks on asjaolu, et seadmed suudavad ennast ise "
+"kirjeldada. Selleks kasutatakse XML-i, mis kirjeldab üldist hierarhiat, mis "
+"esindab nii kanoonilisi kui mittekanoonilisi seadmeid. INDI-s on igal "
+"<emphasis>seadmel</emphasis> vähemalt üks <emphasis>omadus</emphasis>. Iga "
+"<emphasis>omadus</emphasis> võib ühendada endas mitu <emphasis>elementi</"
+"emphasis>. INDI omadused jagunevad nelja tüüpi:"
+
+#. Tag: para
+#: indi.docbook:392
+#, no-c-format
+msgid "Text property."
+msgstr "Tekstiomadus."
+
+#. Tag: para
+#: indi.docbook:393
+#, no-c-format
+msgid "Number property."
+msgstr "Arvomadus."
+
+#. Tag: para
+#: indi.docbook:394
+#, fuzzy, no-c-format
+#| msgid "Switch property (Represented in GUI by buttons and checkboxes)."
+msgid "Switch property (Represented in &GUI; by buttons and checkboxes)."
+msgstr "Lülitamisomadus (graafilises liideses nupud ja märkekastid)."
+
+#. Tag: para
+#: indi.docbook:395
+#, fuzzy, no-c-format
+#| msgid "Light property (Represented in GUI by colored LEDs)."
+msgid "Light property (Represented in &GUI; by colored LEDs)."
+msgstr "Valgusomadus (graafilises liideses värvilised LED-nupud)."
+
+#. Tag: para
+#: indi.docbook:398
+#, fuzzy, no-c-format
+#| msgid ""
+#| "For example, all INDI devices share the CONNECTION standard switch "
+#| "<emphasis>property</emphasis>. The CONNECTION property has two elements: "
+#| "CONNECT and DISCONNECT switches. &kstars; parses the generic XML "
+#| "description of properties and builds a GUI representation suitable for "
+#| "direct human interaction."
+msgid ""
+"For example, all INDI devices share the CONNECTION standard switch "
+"<emphasis>property</emphasis>. The CONNECTION property has two elements: "
+"CONNECT and DISCONNECT switches. &kstars; parses the generic &XML; "
+"description of properties and builds a &GUI; representation suitable for "
+"direct human interaction."
+msgstr ""
+"Nii näiteks on kõigil INDI-seadmetel standardne <emphasis>lülitamisomadus</"
+"emphasis> CONNECTION. Omadusel CONNECTION on kaks elementi: lülitid CONNECT "
+"(ühendamine) ja DISCONNECT (lahutamine). &kstars; parsib omaduste üldist XML-"
+"kirjeldust ning loob selle põhjal graafilise liidese, mida kasutajal on "
+"hõlpus käsitseda."
+
+#. Tag: para
+#: indi.docbook:403
+#, no-c-format
+msgid ""
+"The INDI control panel offers many device properties not accessible from the "
+"sky map. The properties offered differ from one device to another. "
+"Nevertheless, all properties share common features that constrains how they "
+"are displayed and used:"
+msgstr ""
+"INDI juhtimiskeskus pakub võimalust seadistada paljusid omadusi, mida otse "
+"taevakaardilt teha ei ole võimalik. Pakutavad võimalused võivad vastavalt "
+"seadmele erineda. Kuid kõigil neil on teatud ühisjooned, mis määravad, "
+"kuiidas neid näidatakse ja kasutatakse:"
+
+#. Tag: para
+#: indi.docbook:410
+#, no-c-format
+msgid ""
+"Permission: All properties can either be read-only, write-only, or read and "
+"write enabled. An example of a read-write property is the telescope's Right "
+"Ascension. You can enter a new Right Ascension and the telescope, based on "
+"current settings, will either slew or sync to the new input. Furthermore, "
+"when the telescope slews, its Right Ascension gets updated and sent back to "
+"the client."
+msgstr ""
+"Õigused: kõik omadused on kas ainult lugemiseks, ainult kirjutamiseks või "
+"nii lugemiseks kui kirjutamiseks. Viimase näiteks on teleskoobi otsetõus. "
+"Sul on võimalik sisestada uus otsetõus ning vastavalt parajasti "
+"valitsevatele seadistustele teleskoop kas liigutab ennast vajalikku "
+"asendisse või sünkroniseerib end uute andmetega. Kui teleskoop liigub, siis "
+"muutub ka otsetõus, mis saadetakse tagasi kliendile."
+
+#. Tag: para
+#: indi.docbook:420
+#, no-c-format
+msgid ""
+"State: Prefixed to each property is a state indicator (round LED). Each "
+"property has a state and an associated color code:"
+msgstr ""
+"Staatus: iga omaduse ees paikneb staatuse indikaator (ümmargune LED). Igal "
+"omadusel on oma staatus ja sellele vastav värv:"
+
+#. Tag: title
+#: indi.docbook:423
+#, no-c-format
+msgid "INDI State color code"
+msgstr "INDI staatusevärvid"
+
+#. Tag: entry
+#: indi.docbook:427
+#, no-c-format
+msgid "State"
+msgstr "Staatus"
+
+#. Tag: entry
+#: indi.docbook:428
+#, no-c-format
+msgid "Color"
+msgstr "Värv"
+
+#. Tag: entry
+#: indi.docbook:429
+#, no-c-format
+msgid "Description"
+msgstr "Kirjeldus"
+
+#. Tag: entry
+#: indi.docbook:434
+#, no-c-format
+msgid "Idle"
+msgstr "Jõude"
+
+#. Tag: entry
+#: indi.docbook:435
+#, no-c-format
+msgid "Gray"
+msgstr "Hall"
+
+#. Tag: entry
+#: indi.docbook:436
+#, no-c-format
+msgid "Device is performing no action with respect to this property"
+msgstr "Seade ei tee antud omaduse suhtes parajasti mitte midagi"
+
+#. Tag: entry
+#: indi.docbook:439
+#, no-c-format
+msgid "<entry>Ok</entry>"
+msgstr "<entry>OK</entry>"
+
+#. Tag: entry
+#: indi.docbook:440
+#, no-c-format
+msgid "Green"
+msgstr "Roheline"
+
+#. Tag: entry
+#: indi.docbook:441
+#, no-c-format
+msgid "Last operation performed on this property was successful and active"
+msgstr ""
+"Viimane selle omaduse suhtes ette võetud toiming oli edukas ning see on veel "
+"aktiivne"
+
+#. Tag: entry
+#: indi.docbook:445
+#, no-c-format
+msgid "Busy"
+msgstr "Hõivatud"
+
+#. Tag: entry
+#: indi.docbook:446
+#, no-c-format
+msgid "Yellow"
+msgstr "Kollane"
+
+#. Tag: entry
+#: indi.docbook:447
+#, no-c-format
+msgid "The property is performing an action"
+msgstr "Omaduse suhtes parajasti võetakse midagi ette"
+
+#. Tag: entry
+#: indi.docbook:450
+#, no-c-format
+msgid "Alert"
+msgstr "Hoiatus"
+
+#. Tag: entry
+#: indi.docbook:451
+#, no-c-format
+msgid "<entry>Red</entry>"
+msgstr "<entry>Punane</entry>"
+
+#. Tag: entry
+#: indi.docbook:452
+#, no-c-format
+msgid "The property is in critical condition and needs immediate attention"
+msgstr "Omadus on kriitilises olukorras, midagi on vaja kohe ette võtta"
+
+#. Tag: para
+#: indi.docbook:459
+#, no-c-format
+msgid ""
+"The device driver updates the property state in real-time when necessary. "
+"For example, if the telescope is in the process of slewing to a target, then "
+"the RA/DEC properties will be signaled as <guilabel>Busy</guilabel>. When "
+"the slew process is completed successfully, the properties will be signaled "
+"as <guilabel>Ok</guilabel>."
+msgstr ""
+"Seadme draiver uuendab omaduse staatust vajaduse korral reaalajas. Kui "
+"näiteks teleskoop liigub parajasti uuele sihtmärgile, siis on omadused OT ja "
+"kääne tähistatud märkega <guilabel>Hõivatud</guilabel>. Kui liikumine lõpeb "
+"edukalt, saab omadus väärtuseks <guilabel>OK</guilabel>."
+
+#. Tag: para
+#: indi.docbook:467
+#, no-c-format
+msgid ""
+"Context: Numerical properties can accept and process numbers in two formats: "
+"decimal and sexagesimal. The sexagesimal format is convenient when "
+"expressing time or equatorial/geographical coordinates. You can use any "
+"format at your convenience. For example, all the following numbers are equal:"
+msgstr ""
+"Kontekst: numbrilised omadused tunnustavad ja suudavad töödelda numbreid "
+"kahes vormingus: kümnendarvuna ja kuuekümnend- ehk tunnisüsteemis. Viimane "
+"on mugav näiteks aja või ekvaatoriliste ja geograafiliste koordinaatide "
+"väljendamisel. Millist vormingut kasutada, on puhtalt sinu otsustada. "
+"Järgnevad arvud on igas mõttes võrdsed (vähemalt rakendusele):"
+
+#. Tag: para
+#: indi.docbook:474
+#, no-c-format
+msgid "-156.40"
+msgstr "-156.40"
+
+#. Tag: para
+#: indi.docbook:475
+#, no-c-format
+msgid "-156:24:00"
+msgstr "-156:24:00"
+
+#. Tag: para
+#: indi.docbook:476
+#, no-c-format
+msgid "-156:24"
+msgstr "-156:24"
+
+#. Tag: para
+#: indi.docbook:480
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Time: The standard time for all INDI-related communications is Universal "
+#| "Time UTC specified as YYYY-MM-DDTHH:MM:SS in accord with ISO 8601. "
+#| "&kstars; communicates the correct UTC time with device drivers "
+#| "automatically. You can enable/disable automatic time updates from the "
+#| "<guimenuitem>INDI</guimenuitem> page in the settings dialog."
+msgid ""
+"Time: The standard time for all INDI-related communications is Universal "
+"Time UTC specified as YYYY-MM-DDTHH:MM:SS in accord with ISO 8601. &kstars; "
+"communicates the correct UTC time with device drivers automatically. You can "
+"enable/disable automatic time updates from the <guilabel>INDI</guilabel> "
+"page in the settings dialog."
+msgstr ""
+"Aeg: kogu INDI suhtluse standardaeg on maailmaaeg UTC, mis ISO 8601 kohaselt "
+"on väljendatud kujul YYYY-MM-DDTHH:MM:SS. &kstars; vahendab korrektse "
+"maailmaaja seadme draiverile automaatselt. Aja automaatse uuendamise saab "
+"sisse või välja lülitada seadistustedialoogi kaardil <guimenuitem>INDI</"
+"guimenuitem>."
+
+#. Tag: title
+#: indi.docbook:491
+#, no-c-format
+msgid "Remote Device Control"
+msgstr "Võrguseadme juhtimine"
+
+#. Tag: secondary
+#: indi.docbook:493
+#, no-c-format
+msgid "Remote Devices"
+msgstr "Võrguseadmed"
+
+#. Tag: para
+#: indi.docbook:496
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&kstars; provides a simple yet powerful layer for remote device control. "
+#| "A detailed description of the layer is described in the INDI <ulink url="
+#| "\"http://www.clearskyinstitute.com/INDI/INDI.pdf\">white paper</ulink>."
+msgid ""
+"&kstars; provides a simple yet powerful layer for remote device control. A "
+"detailed description of the layer is described in the INDI <ulink url="
+"\"https://www.clearskyinstitute.com/INDI/INDI.pdf\">white paper</ulink>."
+msgstr ""
+"&kstars; pakub lihtsa, kuid siiski võimsa kihi võrguseadme juhtimiseks. "
+"Täpsemalt on seda kihti kirjeldatud INDI <ulink url=\"http://www."
+"clearskyinstitute.com/INDI/INDI.pdf\">ülevaates</ulink> (inglise keeles)."
+
+#. Tag: para
+#: indi.docbook:501
+#, no-c-format
+msgid ""
+"You need to configure both the server and client machines for remote control:"
+msgstr "Kaugjuhtimiseks on vaja seadistada nii server kui kliendi masin:"
+
+#. Tag: para
+#: indi.docbook:506
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Server: To prepare a device for remote control, follow the same steps in "
+#| "the <link linkend=\"indi-kstars-setup\">local/server</link> setup. When "
+#| "you start a device service in the <guimenu>Device Manager</guimenu>, a "
+#| "port number is displayed under the <guilabel>Port</guilabel> column. In "
+#| "addition to the port number, you also need the hostname or IP address of "
+#| "your server."
+msgid ""
+"<guilabel>Server</guilabel>: To prepare a device for remote control, follow "
+"the same steps in the <link linkend=\"indi-kstars-setup\">local/server</"
+"link> setup. When you start a device service in the <guilabel>Device "
+"Manager</guilabel>, a port number is displayed under the <guilabel>Port</"
+"guilabel> column. In addition to the port number, you also need the hostname "
+"or IP address of your server."
+msgstr ""
+"Server: seadme ettevalmistamiseks kaugjuhtimiseks tee läbi samad sammud, mis "
+"<link linkend=\"indi-kstars-setup\">kohaliku serveri</link> korral. Kui "
+"käivitad teenuse <guimenu>seadmehaldur</guimenu>is, näidatakse veerus "
+"<guilabel>Port</guilabel> ka pordi numbrit. Lisaks sellele läheb vaja ka "
+"serveri nime või IP-aadressi."
+
+#. Tag: para
+#: indi.docbook:515
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Client: Select the <guimenuitem>Device Manager</guimenuitem> from the "
+#| "<menuchoice><guimenu>Tools</guimenu><guimenuitem>Devices</guimenuitem></"
+#| "menuchoice> submenu and click on the <guilabel>Client</guilabel> tab. You "
+#| "can add, modify, or delete hosts under the <guilabel>Client</guilabel> "
+#| "tab. Add a host by clicking on the <guibutton>Add</guibutton> button. "
+#| "Enter the hostname/IP address of the server in the <guilabel>Host</"
+#| "guilabel> field, and enter the port number obtained from the "
+#| "<emphasis>server</emphasis> machine in step 1."
+msgid ""
+"<guilabel>Client</guilabel>: Select the <menuchoice><guimenu>Tools</guimenu> "
+"<guisubmenu>Devices</guisubmenu> <guimenuitem>Device Manager...</"
+"guimenuitem></menuchoice> menu item and you can add, modify, or delete hosts "
+"into <guilabel>Client</guilabel> tab. Add a host by clicking on the "
+"<guibutton>Add</guibutton> button. Enter the hostname/IP address of the "
+"server in the <guilabel>Host:</guilabel> field, and enter the port number "
+"obtained from the <emphasis>server</emphasis> machine in step 1."
+msgstr ""
+"Klient: vali menüüst <menuchoice><guimenu>Tööriistad</"
+"guimenu><guimenuitem>Seadmed</guimenuitem></menuchoice> "
+"<guimenuitem>Seadmehaldur</guimenuitem> ja klõpsa kaardil <guilabel>Klient</"
+"guilabel>. Kaardil <guilabel>Klient</guilabel> saab servereid lisada, muuta "
+"või eemaldada. Serveri lisamiseks klõpsa nupule <guibutton>Lisa</guibutton>. "
+"Kirjuta väljale <guilabel>Server</guilabel> serveri nimi või IP aadress ning "
+"ka pordi number, mis on saadud esimeses sammus kirjeldatud "
+"<emphasis>serveri</emphasis> seadistamisel."
+
+#. Tag: screeninfo
+#: indi.docbook:526
+#, no-c-format
+msgid "INDI Client"
+msgstr "INDI klient"
+
+#. Tag: para
+#: indi.docbook:534
+#, no-c-format
+msgid ""
+"After you add a host, right click on the host to <guimenuitem>Connect</"
+"guimenuitem> or <guimenuitem>Disconnect</guimenuitem>. If a connection is "
+"established, you can control the telescope from the <guilabel>Sky map</"
+"guilabel> or <guilabel>INDI Control Panel</guilabel> exactly as described in "
+"the <link linkend=\"indi-kstars-setup\">local/server</link> section. It is "
+"as easy at that."
+msgstr ""
+"Kui server on lisatud, klõpsa serveris käsul <guimenuitem>Ühenda</"
+"guimenuitem> või <guimenuitem>Katkesta ühendus</guimenuitem>. Kui ühendus on "
+"loodud, saab teleskoopi juhtida <guilabel>taevakaardilt</guilabel> või "
+"<guilabel>INDI juhtimiskeskus</guilabel>est täpselt samamoodi, nagu on "
+"kirjeldatud <link linkend=\"indi-kstars-setup\">kohaliku serveri</link> "
+"seadistamist käsitlevas osas. Nii lihtne see ongi!"
+
+#. Tag: title
+#: indi.docbook:542
+#, no-c-format
+msgid "Running an INDI server from the command line"
+msgstr "INDI serveri käivitamine käsurealt"
+
+#. Tag: para
+#: indi.docbook:543
+#, no-c-format
+msgid ""
+"While &kstars; allows you to easily deploy an INDI server; you can launch an "
+"INDI server from the command line."
+msgstr ""
+"Kuigi &kstars; võimaldab äärmiselt lihtsalt kasutada INDI serverit, on seda "
+"soovi korral võimalik käivitada ka käsurealt."
+
+#. Tag: para
+#: indi.docbook:547
+#, no-c-format
+msgid ""
+"Since INDI is an independent backend component, you can run an INDI server "
+"on a host without &kstars;. INDI can be compiled separately to run on remote "
+"hosts. Furthermore, device drivers log messages to <constant>stderr</"
+"constant> and that can be helpful in a debugging situation. The syntax for "
+"INDI server is as following:"
+msgstr ""
+"Et INDI kujutab endast sõltumatut taustakomponenti, võib INDI serveri tööle "
+"panna ka ilma &kstars;i rakendamata. Selle üks eeliseid on see, et seadme "
+"draiverite logiteated lähevad <constant>stderr</constant>-i, millest võib "
+"olla kasu siis, kui vaja peaks olema vigades selgusele jõuda. INDI serverit "
+"saab käivitada nii:"
+
+#. Tag: para
+#: indi.docbook:554
+#, fuzzy, no-c-format
+#| msgid ""
+#| "$ <command>indiserver</command> [options] [<filename>driver</"
+#| "filename> ...]"
+msgid ""
+"$ <command>indiserver</command> [options] driver [<filename>driver</"
+"filename> ...]"
+msgstr ""
+"$ <command>indiserver</command> [võtmed] [<filename>draiver</filename> ...]"
+
+#. Tag: screen
+#: indi.docbook:557
+#, no-c-format
+msgid ""
+"Options:\n"
+" -l d     : Log driver messages to &lt;d&gt;/YYYY-MM-DD.islog\n"
+" -m m     : Kill client if gets more than this many MB behind, default 128.\n"
+" -d m     : Drop streaming blobs if client gets more than this many MB "
+"behind, default 5. 0 to disable.\n"
+" -p p     : Alternate IP port, default 7624.\n"
+" -r r     : Maximum driver restarts on error, default 10.\n"
+" -f path  : Path to fifo for dynamic startup and shutdown of drivers.\n"
+" -v       : Show key events, no traffic.\n"
+" -vv      : -v + key message content.\n"
+" -vvv     : -vv + complete xml.\n"
+" driver   : Executable or [device]@host[:port]"
+msgstr ""
+
+#. Tag: para
+#: indi.docbook:559
+#, no-c-format
+msgid ""
+"For example, if you want to start an INDI server running an LX200 GPS driver "
+"and listening to connections on port 8000, you would run the following "
+"command:"
+msgstr ""
+"Kui soovid näiteks käivitada INDI serverit, mis töötaks LX200 GPS draiveriga "
+"ja jälgiks ühendusi pordis 8000, näeb käsk välja selline:"
+
+#. Tag: para
+#: indi.docbook:564
+#, no-c-format
+msgid "$ <command>indiserver</command> -p 8000 <filename>lx200gps</filename>"
+msgstr "$ <command>indiserver</command> -p 8000 <filename>lx200gps</filename>"
+
+#. Tag: title
+#: indi.docbook:568
+#, no-c-format
+msgid "Secure Remote Operation"
+msgstr "Turvalised võrguoperatsioonid"
+
+#. Tag: para
+#: indi.docbook:570
+#, no-c-format
+msgid ""
+"Suppose we want to run an indiserver with INDI drivers on a remote host, "
+"<constant>remote_host</constant>, and connect them to &kstars; running on "
+"the local machine."
+msgstr ""
+"Oletame, et soovid INDI serveri ja selle kliendid tööle panna võrgumasinas "
+"<constant>kaugmasin</constant> ja ühendada need kohalikus masinas töötava "
+"&kstars;iga."
+
+#. Tag: para
+#: indi.docbook:574
+#, no-c-format
+msgid ""
+"From the local machine log onto the remote host, <constant>remote_host</"
+"constant>, by typing:"
+msgstr ""
+"Logi end kohalikust masinast võrgumasinasse <constant>kaugmasin</constant> "
+"järgmise käsuga:"
+
+#. Tag: para
+#: indi.docbook:578
+#, no-c-format
+msgid ""
+"$ <command>ssh</command> -L <varname>local_port</varname>:"
+"<constant>remote_host</constant>:<varname>remote_port</varname>"
+msgstr ""
+"$ <command>ssh</command> -L <varname>kohalik_port</varname>:"
+"<constant>kaugmasin</constant>:<varname>kaugport</varname>"
+
+#. Tag: para
+#: indi.docbook:580
+#, no-c-format
+msgid ""
+"This binds the <varname>local_port</varname> on the local machine to the "
+"<varname>remote_port</varname> on the <constant>remote_host</constant>. "
+"After logging in, run indiserver on the remote host:"
+msgstr ""
+"Selle abil seotakse kohaliku masina <varname>kohaliku_pordi</varname> "
+"<constant>kaugmasina</constant> <varname>kaugpordiga</varname>. Pärast "
+"sisselogimist käivita kaugmasinas INDI server:"
+
+#. Tag: para
+#: indi.docbook:585
+#, no-c-format
+msgid ""
+"$ <command>indiserver</command> -p <varname>remote_port</varname> "
+"[<filename>driver</filename>...]"
+msgstr ""
+"$ <command>indiserver</command> -p <varname>kaugport</varname> "
+"[<filename>draiver</filename>...]"
+
+#. Tag: para
+#: indi.docbook:587
+#, no-c-format
+msgid ""
+"Back on the local machine, start &kstars; then open the <guimenuitem>Device "
+"Manager</guimenuitem> and add a host under the <guilabel>Client</guilabel> "
+"tab. The host should be the local host (usually 127.0.0.1) and the port "
+"number should be the <varname>local_port</varname> used in the steps above. "
+"<mousebutton>Right</mousebutton>-click on the host and select "
+"<guimenuitem>Connect</guimenuitem> from the popup menu. &kstars; will "
+"connect to the remote INDI server securely. The host information will be "
+"saved for future sessions."
+msgstr ""
+"Käivita kohalikus masinas &kstars;, ava <guimenuitem>seadmehaldur</"
+"guimenuitem> ja lisa kaardil <guilabel>Klient</guilabel> server. Masin peaks "
+"olema kohalik masin (tavaliselt 127.0.0.1) ning pordi number ülal kasutatud "
+"sammudes näidatud <varname>kohalik_port</varname>. Klõpsa hiire "
+"<mousebutton>parema</mousebutton> nupuga serveril ja vali hüpikmenüüst käsk "
+"<guimenuitem>Ühenda</guimenuitem>. Nüüd võtabki &kstars; turvaliselt "
+"ühendust võrguserveriga. Serveri info salvestatakse ka edasiste seansside "
+"tarbeks."
+
+#. Tag: title
+#: indi.docbook:597
+#, no-c-format
+msgid "INDI Frequently Asked Questions"
+msgstr "INDI Korduma Kippuvad Küsimused"
+
+#. Tag: secondary
+#: indi.docbook:599
+#, no-c-format
+msgid "&FAQ;"
+msgstr ""
+
+#. Tag: para
+#: indi.docbook:605
+#, no-c-format
+msgid "What is INDI?"
+msgstr "Mis on INDI?"
+
+#. Tag: para
+#: indi.docbook:608
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<acronym>INDI</acronym> is the <ulink url=\"http://indi.sourceforge.net"
+#| "\"> Instrument-Neutral-Distributed-Interface</ulink> control protocol "
+#| "developed by <author><firstname>Elwood</firstname><surname>C. Downey</"
+#| "surname></author> of <ulink url=\"http://www.clearskyinstitute.com/"
+#| "\">ClearSky Institute</ulink>. &kstars; employs device drivers that are "
+#| "compatible with the INDI protocol. INDI has many advantages including "
+#| "loose coupling between hardware devices and software drivers. Clients "
+#| "that use the device drivers (like &kstars;) are completely unaware of the "
+#| "device capabilities. In run time, &kstars; communicates with the device "
+#| "drivers and builds a completely dynamical GUI based on services provided "
+#| "by the device. Therefore, new device drivers can be written or updated "
+#| "and &kstars; can take full advantage of them without any changes on the "
+#| "client side."
+msgid ""
+"<acronym>INDI</acronym> is the <ulink url=\"https://indilib.org\"> "
+"Instrument-Neutral-Distributed-Interface</ulink> control protocol developed "
+"by <author><firstname>Elwood</firstname><surname>C. Downey</surname></"
+"author> of <ulink url=\"https://www.clearskyinstitute.com/\">ClearSky "
+"Institute</ulink>. &kstars; employs device drivers that are compatible with "
+"the INDI protocol. INDI has many advantages including loose coupling between "
+"hardware devices and software drivers. Clients that use the device drivers "
+"(like &kstars;) are completely unaware of the device capabilities. In run "
+"time, &kstars; communicates with the device drivers and builds a completely "
+"dynamical &GUI; based on services provided by the device. Therefore, new "
+"device drivers can be written or updated and &kstars; can take full "
+"advantage of them without any changes on the client side."
+msgstr ""
+"<acronym>INDI</acronym> on <ulink url=\"http://indi.sourceforge.net\"> "
+"instrumendist sõltumatu jagamisliides</ulink> (inglise keeles Instrument-"
+"Neutral-Distributed-Interface) ehk juhtimisprotokoll, mille töötas välja "
+"<author><firstname>Elwood</firstname><surname>C. Downey</surname></author> "
+"<ulink url=\"http://www.clearskyinstitute.com/\">ClearSky instituudist</"
+"ulink>. &kstars; kasutab seadmedraivereid, mis sobivad kasutamiseks INDI "
+"protokolliga. INDI-l on päris palju eeliseid, sealhulgas suudab ta üsna "
+"edukalt panna koos töötama erinevaid riistvaralisi seadmeid ja tarkvaralisi "
+"draivereid. Draivereid kasutavad kliendid (näiteks &kstars;) ei pruugi "
+"midagi teada seadme võimalustest. Käivitamisajal võtab &kstars; ühendust "
+"seadme draiveritega ning loob selle pakutavate teenuste põhjal täielikult "
+"dünaamilise graafilise kasutajaliidese. Seepärast võib tegemist olla ka uue "
+"või uuendatud draiveriga ning &kstars; võib ometi neid täiel määral "
+"kasutada, ilma et klient peaks mingeid muudatusi ette võtma."
+
+#. Tag: para
+#: indi.docbook:624
+#, no-c-format
+msgid "Do you plan to support more devices?"
+msgstr "Kas on kavas toetada ka muid seadmeid?"
+
+#. Tag: para
+#: indi.docbook:629
+#, no-c-format
+msgid ""
+"Yes. We plan to support major CCD cameras and focusers and extend support "
+"for more telescopes. If you would like INDI to support a particular device, "
+"please send an email to <email>indi-devel@lists.sourceforge.net</email>"
+msgstr ""
+"Jah. Me kavatseme toetada põhilisi CCD kaameraid ja fokuseerijaid ning "
+"laiendada toetatavate telskoopide hulka. Kui soovid, et INDI toetaks mingit "
+"konkreetset seadet, anna sellest teada aadressil <email>indi-devel@lists."
+"sourceforge.net</email>"
+
+#. Tag: para
+#: indi.docbook:639
+#, no-c-format
+msgid "What operations does &kstars; provide to control the telescope?"
+msgstr "Milliste operatsioonidega laseb &kstars; teleskoopi juhtida?"
+
+#. Tag: para
+#: indi.docbook:644
+#, fuzzy, no-c-format
+#| msgid ""
+#| "It depends on the particular telescope you're running, but the minimum "
+#| "three operations are <command>Slew</command>, <command>Track</command>, "
+#| "and <command>Sync</command>, which you can issue directly from the sky "
+#| "map. Your telescope must be aligned for those operations to perform "
+#| "correctly. Some telescopes offer you more operations like site "
+#| "management, slew modes, focusing, parking, and more. You can access the "
+#| "telescopes extended features from the INDI Control Panel in the "
+#| "<menuchoice><guimenu>Tools</guimenu><guimenuitem>Devices</guimenuitem></"
+#| "menuchoice> submenu."
+msgid ""
+"It depends on the particular telescope you're running, but the minimum three "
+"operations are <command>Slew</command>, <command>Track</command>, and "
+"<command>Sync</command>, which you can issue directly from the sky map. Your "
+"telescope must be aligned for those operations to perform correctly. Some "
+"telescopes offer you more operations like site management, slew modes, "
+"focusing, parking, and more. You can access the telescopes extended features "
+"from the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
+"guisubmenu> <guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> "
+"menu item."
+msgstr ""
+"See sõltub konkreetsest teleskoobist, aga vähemalt kolme käsku on võimalik "
+"otse taevakaardilt anda: <command>Liigu</command>, <command>Jälgi</command> "
+"ja <command>Sünkroniseeri</command>. Teleskoop peab nende täitmiseks olema "
+"mõistagi korrektselt monteeritud. Mõned teleskoobid pakuvad veel "
+"lisavõimalusi: asukoha haldus, liikumisrežiimid, fokuseerimine jne. "
+"Teleskoobi lisavõimalusi saab kasutada INDI juhtimiskeskusest, mille saab "
+"avada menüüst <menuchoice><guimenu>Tööriistad</guimenu><guimenuitem>Seadmed</"
+"guimenuitem></menuchoice>."
+
+#. Tag: para
+#: indi.docbook:658
+#, no-c-format
+msgid ""
+"What's the difference between <command>Slew</command>, <command>Track</"
+"command>, and <command>Sync</command> exactly?"
+msgstr ""
+"Milles täpselt seisab käskude <command>Liiguta</command>, <command>Jälgi</"
+"command> ja <command>Sünkroniseeri</command> vahe?"
+
+#. Tag: para
+#: indi.docbook:663
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The command <command>Slew</command> orders the telescope to move to a "
+#| "particular target, and once the telescope reaches its target, the "
+#| "telescope keeps tracking that target at a <emphasis>sidereal</emphasis> "
+#| "rate (i.e. the rate at which stars move across the sky). This works well "
+#| "for stars, Messier objects, and about everything outside our solar "
+#| "system. But solar system objects travel differently across the sky and so "
+#| "the telescope must <command>Track</command> the objects as they move."
+msgid ""
+"The command <command>Slew</command> orders the telescope to move to a "
+"particular target, and once the telescope reaches its target, the telescope "
+"keeps tracking that target at a <emphasis>sidereal</emphasis> rate (&ie;, "
+"the rate at which stars move across the sky). This works well for stars, "
+"Messier objects, and about everything outside our solar system. But solar "
+"system objects travel differently across the sky and so the telescope must "
+"<command>Track</command> the objects as they move."
+msgstr ""
+"Käsk <command>Liigu</command> annab teleskoobile korralduse asuda jälgima "
+"teatud konkreetset sihtmärki ja kui teleskoop on sellele suunatud, siis "
+"jälgib see sihtmärki <emphasis>täheajas</emphasis> (s.t. liigutab ennast "
+"sama kiirusega, nagu liiguvad tähed üle taevalaotuse). See sobib hästi "
+"tähtedele, Messieri objektidele ja kõigele, mis jääb Päikesesüsteemist "
+"välja. Päikesesüsteemi objektid aga liiguvad üle taevalaotuse veidi teisiti "
+"ning sestap tuleb sel juhul kasutada käsku <command>Jälgi</command>."
+
+#. Tag: para
+#: indi.docbook:670
+#, no-c-format
+msgid ""
+"Therefore, you need to issue a track command if you want to track an object "
+"with non-sidereal motion. On the other hand, <command>Sync</command> is used "
+"to synchronize the telescope's internal coordinates with that of an object "
+"you select."
+msgstr ""
+"Niisiis tuleb anda jälgimiskäsk, kui soovid jälgida objekti kuidagi teisiti "
+"kui täheajas. Käsuga <command>Sünkroniseeri</command> saab aga teleskoobi "
+"sisemised koordinaadid viia kooskõlla sinu valitud objekti koordinaatidega."
+
+#. Tag: para
+#: indi.docbook:680
+#, no-c-format
+msgid "Can I control my telescope remotely?"
+msgstr "Kas teleskoopi saab ka võrgust juhtida?"
+
+#. Tag: para
+#: indi.docbook:685
+#, no-c-format
+msgid ""
+"Yes. You can start an INDI server on the machine connected to your telescope "
+"and the server will listen to requests from &kstars; clients. Once you're "
+"connected, you can control your telescope directly from the sky map. This "
+"procedure is described in detail in the <link linkend=\"indi-remote-control"
+"\">Remote device control</link> section."
+msgstr ""
+"Jah. Selleks käivita INDI-server masinas, millega teleskoop on ühendatud, "
+"ning server hakkab jälgima &kstars;i klientide päringuid. Kui oled "
+"ühendatud, saab telskoopi juhtida otse taevakaardilt. Sellest räägib "
+"lähemalt osa <link linkend=\"indi-remote-control\">Võrguseadmete juhtimine</"
+"link>."
+
+#. Tag: para
+#: indi.docbook:696
+#, fuzzy, no-c-format
+#| msgid ""
+#| "When I try to <guibutton>Connect</guibutton>, &kstars; reports that the "
+#| "telescope is not connected to the serial/USB port. What can I do?"
+msgid ""
+"When I try to <guibutton>Connect</guibutton>, &kstars; reports that the "
+"telescope is not connected to the serial/USB port. What can I do?"
+msgstr ""
+"Nupule <guibutton>Ühenda</guibutton> klõpsates teatab &kstars;, et teleskoop "
+"ei ole ühendatud jada-/USB porti. Mida see tähendab?"
+
+#. Tag: para
+#: indi.docbook:702
+#, no-c-format
+msgid ""
+"This message is triggered when &kstars; cannot communicate with the "
+"telescope. Here are few things you can do:"
+msgstr ""
+"See teade ilmub siis, kui &kstars; ei suuda teleskoobiga ühendust saada. "
+"Sellisel juhul võiks ette võtta järgmist:"
+
+#. Tag: para
+#: indi.docbook:706
+#, no-c-format
+msgid ""
+"Check that you have both reading and writing permission for the port you are "
+"trying to connect to."
+msgstr ""
+"Kontrollida, kas sul on pordis, millega püüad ühendust luua, nii lugemis- "
+"kui kirjutamisõigus."
+
+#. Tag: para
+#: indi.docbook:709
+#, no-c-format
+msgid ""
+"Check the connection cable, make sure it is in good condition and test it "
+"with other applications."
+msgstr ""
+"Kontrollida ühenduskaablit, võimaluse korral testida seda muude rakendustega."
+
+#. Tag: para
+#: indi.docbook:712
+#, no-c-format
+msgid ""
+"Check your telescope power, make sure the power is on and that the telescope "
+"is getting enough power."
+msgstr ""
+"Kontrollida, kas teleskoobi toitega on kõik korras ja toide vastab "
+"nimiväärtusele."
+
+#. Tag: para
+#: indi.docbook:715
+#, no-c-format
+msgid ""
+"Select the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
+"guisubmenu> <guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> "
+"menu item and set the correct port in the <guilabel>INDI Control Panel</"
+"guilabel> dialog. The default device is <constant>/dev/ttyS0</constant>"
+msgstr ""
+
+#. Tag: para
+#: indi.docbook:721
+#, no-c-format
+msgid "Restart &kstars; and retry again."
+msgstr "Käivitada &kstars; uuesti ja võtta ette uus katse."
+
+#. Tag: para
+#: indi.docbook:729
+#, no-c-format
+msgid ""
+"&kstars; reports that the telescope is online and ready, but I cannot find "
+"the telescope's crosshair, where is it?"
+msgstr ""
+"&kstars; teatab, et teleskoop on ühendatud ja töövalmis, aga taevakaardil ei "
+"ole kuskil risti näha?"
+
+#. Tag: para
+#: indi.docbook:732
+#, no-c-format
+msgid ""
+"&kstars; retrieves the telescopes RA and DEC coordinates upon connection. If "
+"your alignment was performed correctly, then you should see the crosshair "
+"around your target in the Sky Map. However, the RA and DEC coordinates "
+"provided by the telescope may be incorrect (even below the horizon) and you "
+"need to <link linkend=\"indi-sync\">Sync</link> your telescope to your "
+"current target. You can use the right-click menu to center and track the "
+"telescope crosshair in the sky map."
+msgstr ""
+"&kstars; hangib teleskoobi OT ja käände ühendumisel. Kui monteering on "
+"korrektne, siis peaks rist liikuma üle taevalaotuse kohta, kuhu teleskoop on "
+"suunatud. Kuid teleskoobi teatatud OT ja kääne võivad olla ekslikud (isegi "
+"allpool horisonti) ja sellisel juhul tuleb teleskoop <link linkend=\"indi-"
+"sync\">sünkroniseerida</link> vajaliku asukohaga. Teleskoobi ristiku "
+"tsentreerimiseks ja jälgimise sisselülitamiseks võib ka lihtsalt "
+"taevakaardil hiire parema nupuga klõpsata ja vajalik käsk valida."
+
+#. Tag: para
+#: indi.docbook:744
+#, no-c-format
+msgid ""
+"The telescope is moving erratically or not moving at all. What can I do?"
+msgstr "Teleskoop liigub valesti või ei liigu üldse. Mida teha?"
+
+#. Tag: para
+#: indi.docbook:747
+#, no-c-format
+msgid ""
+"This behavior is mostly due to incorrect settings, please verify the "
+"following check list:"
+msgstr ""
+"Seda põhjustab enamasti vigane seadistus. Võiks üle kontrollida järgmised "
+"asjad:"
+
+#. Tag: para
+#: indi.docbook:750
+#, no-c-format
+msgid "Is the telescope aligned?"
+msgstr "Kas teleskoop on korrektselt monteeritud?"
+
+#. Tag: para
+#: indi.docbook:753
+#, no-c-format
+msgid ""
+"Is the telescope alignment mode correct? Use <guilabel>INDI Control Panel</"
+"guilabel> to check and change these settings (<constant>Alt/Az,Polar, Land</"
+"constant>)."
+msgstr ""
+"Kas monteeringurežiim on korrektne? Kasuta selle kontrollimiseks ja "
+"vajadusel muutmiseks <guilabel>INDI juhtimiskeskus</guilabel>t "
+"(valikuvõimalusteks on <constant>H/As, Polaarne, Maa</constant>)."
+
+#. Tag: para
+#: indi.docbook:758
+#, no-c-format
+msgid "Are the telescope's time and date settings correct?"
+msgstr "Kas teleskoobi ajaseadistus on korrektne?"
+
+#. Tag: para
+#: indi.docbook:761
+#, no-c-format
+msgid "Are the telescope's longitude and latitude settings correct?"
+msgstr "Kas teleskoobi pikkus- ja laiuskraad on korrektselt määratud?"
+
+#. Tag: para
+#: indi.docbook:764
+#, no-c-format
+msgid "Is the telescope's UTC offset correct?"
+msgstr "Kas teleskoobi erinevus MA-st on korrektne?"
+
+#. Tag: para
+#: indi.docbook:767
+#, no-c-format
+msgid "Are the telescope's RA and DEC axis locked firmly?"
+msgstr "Kas teleskoobi OT- ja käändetelg on fikseeritud?"
+
+#. Tag: para
+#: indi.docbook:770
+#, no-c-format
+msgid ""
+"Is the telescope's N/S switch (when applicable) setup correctly for your "
+"hemisphere?"
+msgstr ""
+"Kas teleskoobi põhja-lõunalülitus (kui seda kasutatakse) on määratud ikka "
+"korrektselt vastavalt siu asukoha poolkerale?"
+
+#. Tag: para
+#: indi.docbook:773
+#, no-c-format
+msgid "Is the cable between the telescope and computer in good condition?"
+msgstr "Kas teleskoopi ja arvutit ühendav kaabel on ikka korras?"
+
+#. Tag: para
+#: indi.docbook:777
+#, no-c-format
+msgid ""
+"If you think all settings are correct but the telescope still moves "
+"erratically or not at all, then please send a report to <email>indi-"
+"devel@lists.sourceforge.net</email>."
+msgstr ""
+"Kui sinu arvates on kõik eeltoodu korras, aga teleskoop ikkagi liigub "
+"valesti või ei liigu üldse, siis võiksid saata veateate aadressile "
+"<email>indi-devel@lists.sourceforge.net</email>."
+
+#, fuzzy
+#~| msgid ""
+#~| "<option>INDI messages in status bar:</option> When checked, &kstars; "
+#~| "displays INDI status messages in the &kstars; status bar."
+#~ msgid ""
+#~ "<guilabel>INDI messages in status bar</guilabel>: When checked, &kstars; "
+#~ "displays INDI status messages in the &kstars; status bar."
+#~ msgstr ""
+#~ "<option>INDI teated olekuribal:</option> märkimisel näitab &kstars; INDI "
+#~ "olekuteateid &kstars;i olekuribal."
+
+#~ msgid "Device Updates"
+#~ msgstr "Seadmete uuendamine"
+
+#~ msgid ""
+#~ "<option>Computer:</option> Sync the device to the computer's time and "
+#~ "location settings."
+#~ msgstr ""
+#~ "<option>Arvuti:</option> seadme sünkroonimine arvuti aja- ja "
+#~ "asukohamäärangutega."
+
+#~ msgid ""
+#~ "<option>Device:</option> Sync the computer to the device's time and "
+#~ "location settings."
+#~ msgstr ""
+#~ "<option>Seade:</option> arvuti sünkroonimine seadme aja- ja "
+#~ "asukohamäärangutega."
+
+#~ msgid ""
+#~ "<option>Time:</option> Update the telescope's date and time, if "
+#~ "supported, upon connection."
+#~ msgstr ""
+#~ "<option>Aeg:</option> teleskoobi kuupäeva ja kellaaega uuendatakse "
+#~ "ühendumisel (kui see on toetatud)."
+
+#~ msgid ""
+#~ "<option>Geographic location:</option> Update the telescope's geographical "
+#~ "location information (current longitude and latitude), if supported, upon "
+#~ "connection."
+#~ msgstr ""
+#~ "<option>Geograafiline asukoht:</option> teleskoobi geograafilise asukoha "
+#~ "infot (kehtiv pikkus- ja laiuskraad) uuendatakse ühendumisel (kui see on "
+#~ "toetatud)."
+
+#~ msgid "Options:"
+#~ msgstr "Võtmed:"
+
+#~ msgid "-l d : log driver messages to d/YYYY-MM-DD.islog"
+#~ msgstr "-l d : draiveri teated logitakse faili d/YYYY-MM-DD.islog"
+
+#~ msgid "-m m : kill client if gets more than this many MB behind, default 10"
+#~ msgstr ""
+#~ "-m m : kliendi tapmine, kui see jääb enam kui määratud MB maha, vaikimisi "
+#~ "10"
+
+#~ msgid "-p p : alternate IP port, default 7624"
+#~ msgstr "-p p : alternatiivne IP port, vaikimisi on see 7624"
+
+#~ msgid "-f path : Path to fifo for dynamic startup and shutdown of drivers."
+#~ msgstr ""
+#~ "-f asukoht : draiverite dünaamilise käivitamise ja peatamise FIFO asukoht."
+
+#~ msgid "-v : show key events, no traffic"
+#~ msgstr "-v : võtmesündmuste, mitte liikluse näitamine"
+
+#~ msgid "-vv : -v + key message content"
+#~ msgstr "-vv : -v + võtmesündmuste sisu"
+
+#~ msgid "-vvv : -vv + complete xml"
+#~ msgstr "-vvv : -vv + täielik XML"
+
+#~ msgid "driver : executable or device@host[:port]"
+#~ msgstr "driver : käivitatav fail või seade@host[:port]"
+
+#~ msgid "<acronym>FAQ</acronym>"
+#~ msgstr "<acronym>FAQ</acronym>"
+
+#~ msgid ""
+#~ "Set the correct port in the <guilabel>INDI Control Panel</guilabel> under "
+#~ "the <guimenu>Devices</guimenu> menu. The default device is <constant>/dev/"
+#~ "ttyS0</constant>"
+#~ msgstr ""
+#~ "Määrata korrektne port <guilabel>INDI juhtimiskeskus</guilabel>es (selle "
+#~ "saab avada menüüst <guimenu>Seadmed</guimenu>). Vaikimisi on port "
+#~ "<constant>/dev/ttyS0</constant>"
+
+#~ msgid ""
+#~ "&kstars; automatically updates the telescope's longitude, latitude, and "
+#~ "time based on current settings in &kstars;. You can enable/disable these "
+#~ "updates from <guimenuitem>Configure INDI</guimenuitem> dialog under the "
+#~ "<guimenu>Devices</guimenu> menu."
+#~ msgstr ""
+#~ "&kstars; kohandab teleskoobi pikkus- ja laiuskraadi ning aja automaatselt "
+#~ "vastavaks &kstars;i väärtustele. Sellise uuendamise saab lubada või "
+#~ "keelata menüüst <guimenu>Seadmed</guimenu> käsuga <guimenuitem>INDI "
+#~ "seadistamine</guimenuitem> avatavas dialoogis."
+
+#~ msgid ""
+#~ "<option>Telescope port:</option> The default telescope port. When you "
+#~ "connect to a local or remote telescope service, &kstars; will "
+#~ "automatically fill the telescope's device port with the specified default "
+#~ "port."
+#~ msgstr ""
+#~ "<option>Teleskoobi port:</option> teleskoobi vaikimisi port. Ühendumisel "
+#~ "kohaliku või võrguteleskoobiga teatab &kstars; automaatselt teleskoobi "
+#~ "pordiks siinmääratud vaikepordi."
+
+#~ msgid ""
+#~ "<option>Video port:</option> The default video port. When you connect to "
+#~ "a local or remote video service, &kstars; will automatically fill the "
+#~ "webcam's device port with the specified default port."
+#~ msgstr ""
+#~ "<option>Videoport:</option> vaikimisi videoport. Ühendumisel kohaliku või "
+#~ "võrguvideoteenusega teatab &kstars; automaatselt veebikaamera seadme "
+#~ "pordiks siinmääratud vaikepordi."
+
+#~ msgid "Automatic device updates"
+#~ msgstr "Seadmete automaatne uuendamine"
+
+#~ msgid ""
+#~ "<option>Automatic Display of FITS upon capture:</option> When checked, "
+#~ "&kstars; will display captured FITS in &kstars; <link linkend=\"tool-"
+#~ "fitsviewer\">FITS Viewer</link> tool."
+#~ msgstr ""
+#~ "<option>FITS-i näidatakse hõive korral automaatselt:</option> "
+#~ "sisselülitamisel näitab &kstars; pildistatud FITS-i &kstars;i <link "
+#~ "linkend=\"tool-fitsviewer\">FITS-i näitajas</link>."
+
+#~ msgid ""
+#~ "Filter Wheel: Assign color codes to the filter wheel slots (e.g. Slot #0 "
+#~ "Red, Slot #1 Blue..etc). You can assign color codes for up to 10 filter "
+#~ "slots (0 to 9). To assign a color code, select a slot number from the "
+#~ "drop down combo box, and then type the corresponding color code in the "
+#~ "edit field. Repeat the process for all desired slots and then press OK."
+#~ msgstr ""
+#~ "Ratasfilter: värviväärtuste omistamine ratasfiltri pesadele (nt. Pesa 0 "
+#~ "punane, Pesa 1 sinine jne.). Värvikoode saab omistada kuni kümnele "
+#~ "filtripesale (0 kuni 9). Värvikoodi omistamiseks vali liitkastist pesa "
+#~ "number ja kirjuta vajalik värvikood tekstiväljale. Tee seda kõigi pesade "
+#~ "korral, millele soovid värvi omistada, ning klõpsa seejärel nupule OK."
+
+#~ msgid "<title>Capture Image Sequence</title>"
+#~ msgstr "<title>Taeva pildistamine</title>"
+
+#~ msgid "Capture"
+#~ msgstr "Hõive"
+
+#~ msgid "Image"
+#~ msgstr "Pilt"
+
+#~ msgid ""
+#~ "The Capture Image Sequence tool can be used to aquire images from cameras "
+#~ "and CCDs in interactive and batch modes. Furthermore, you can select "
+#~ "which filter, if any, you want to use for your images. The capture tool "
+#~ "remains disabled until you establish a connection to an imaging device."
+#~ msgstr ""
+#~ "Taeva pildistamise tööriista saab kasutada kaadrite hankimiseks "
+#~ "kaameratest ja CCD-dest interaktiivselt ja hulgi. Lisaks saab valida, "
+#~ "millist filtrit ja kas üldse kaadrite jaoks kasutada. Seda tööriista saab "
+#~ "kasutada ainult siis, kui on olemas ühendus mõne pildistamisseadmega."
+
+#~ msgid "<screeninfo>Capture Image Sequence</screeninfo>"
+#~ msgstr "<screeninfo>Taeva pildistamine</screeninfo>"
+
+#~ msgid ""
+#~ "The above screenshot depicts a sample capture session. The tool provides "
+#~ "the following options:"
+#~ msgstr ""
+#~ "Ülaltoodud pildil on näha näitlik pildistamisseanss. Tööriist pakub "
+#~ "järgmisi valikuid:"
+
+#~ msgid "Camera/CCD"
+#~ msgstr "Kaamera/CCD"
+
+#~ msgid "<option>Device:</option> The desired imaging device."
+#~ msgstr "<option>Seade:</option> pildistamisseade."
+
+#~ msgid ""
+#~ "<option>Prefix:</option> The image prefix which will be prepended to each "
+#~ "captured filename."
+#~ msgstr "<option>Prefiks:</option> see lisatakse iga kaadri failinime ette."
+
+#~ msgid ""
+#~ "<option>Exposure:</option> The number of seconds to expose each frame."
+#~ msgstr "<option>Säritus:</option> iga kaadri säritusaeg sekundites."
+
+#~ msgid "<option>Count:</option> The number of images to aquire."
+#~ msgstr "<option>Arv:</option> kaadrite arv."
+
+#~ msgid ""
+#~ "<option>Delay:</option> The delay in seconds between consecutive images."
+#~ msgstr "<option>Viivitus:</option> kaadritevaheline intervall sekundites."
+
+#~ msgid ""
+#~ "<option>ISO 8601 time stamp:</option> Append ISO 8601 time stamp to the "
+#~ "filename. (e.g. image_01_20050427T09:48:05)."
+#~ msgstr ""
+#~ "<option>ISO-8601 ajatempel:</option> failinimele lisatakse ISO-8601 "
+#~ "ajatempel (nt. pilt_01_20050427T09:48:05)."
+
+#~ msgid "Filter"
+#~ msgstr "Filter"
+
+#~ msgid "<option>Device:</option> The desired filter device."
+#~ msgstr "<option>Seade:</option> filtriseade."
+
+#~ msgid ""
+#~ "<option>Filter:</option> The desired filter slot. You can assign color "
+#~ "values to slot numbers using the <link linkend=\"indi-configure\">INDI</"
+#~ "link> page (e.g. Slot #1 = Red, Slot #2 = Blue..etc)."
+#~ msgstr ""
+#~ "<option>Filter:</option> filtri pesa. Pesanumbrile saab omistada "
+#~ "värviväärtused kaardil <link linkend=\"indi-configure\">INDI</link> (nt. "
+#~ "Pesa 1 = punane, Pesa 2 = sinine jne)."
+
+#~ msgid ""
+#~ "After you fill in the desired options, you can begin the capture "
+#~ "procedure by pressing the <guibutton>Start</guibutton> button. You may "
+#~ "cancel at any time using the <guibutton>Stop</guibutton> button. All "
+#~ "captured images will be saved to the default FITS directory which can be "
+#~ "specified in the <link linkend=\"indi-configure\">INDI</link> page of the "
+#~ "settings dialog."
+#~ msgstr ""
+#~ "Vajalike valikute langetamise järel saab alustada pildistamisega, "
+#~ "klõpsates nupule <guibutton>Käivita</guibutton>. Pildistamise saab "
+#~ "peatada klõpsuga nupule <guibutton>Peata</guibutton>. Kõik kaadrid "
+#~ "salvestatakse FITS-i vaikekataloogi, mille saab määrata "
+#~ "seadistustedialoogi kaardil <link linkend=\"indi-configure\">INDI</link>."
+
+#~ msgid ""
+#~ "If you have more complex capturing requirements and conditions to fulfil, "
+#~ "it is recommended to create a script to meet your specific needs using "
+#~ "the <link linkend=\"tool-scriptbuilder\">Script Builder</link> tool in "
+#~ "the <guimenu>Tools</guimenu> menu."
+#~ msgstr ""
+#~ "Kui sul on pildistamisele suuremad nõuded või pead järgima mingeid väga "
+#~ "kindlaid nõudeid, on soovitatav luua just sinu vajadusi rahuldav skript, "
+#~ "milleks saab kasutada menüüst <guimenu>Tööriistad</guimenu> leitavat "
+#~ "<link linkend=\"tool-scriptbuilder\">skriptiloojat</link>."
+
+#~ msgid "Can I use &kstars; to do guiding?"
+#~ msgstr "Kas &kstars; võimaldab gideerida?"
+
+#~ msgid ""
+#~ "Currently, there are no plans to support guiding in &kstars;. Users may "
+#~ "utilize <ulink url=\"http://code.google.com/p/open-phd-guiding/\">OpenPHD "
+#~ "Guiding</ulink> as it is compatible with &kstars; and INDI."
+#~ msgstr ""
+#~ "Praegu ei ole kavas toetada &kstars;is gideerimist. Soovijad võivad "
+#~ "kasutada tarkvara <ulink url=\"http://code.google.com/p/open-phd-guiding/"
+#~ "\">OpenPHD Guiding</ulink>, mis ühildub nii &kstars;i kui ka INDI-ga."
+
+#~ msgid "Supported Telescopes"
+#~ msgstr "Toetatud teleskoobid"
+
+#~ msgid "Telescope"
+#~ msgstr "Teleskoop"
+
+#~ msgid "LX200 8\"-12\" Classic"
+#~ msgstr "LX200 8\"-12\" Classic"
+
+#~ msgid "indi_lx200classic"
+#~ msgstr "indi_lx200classic"
+
+#~ msgid "Autostar based telescopes"
+#~ msgstr "Autostari teleskoobid"
+
+#~ msgid "indi_lx200autostar"
+#~ msgstr "indi_lx200autostar"
+
+#~ msgid "LX200 GPS 8\"-16\""
+#~ msgstr "LX200 GPS 8\"-16\""
+
+#~ msgid "indi_lx200gps"
+#~ msgstr "indi_lx200gps"
+
+#~ msgid "LX200 Classic 16\""
+#~ msgstr "LX200 Classic 16\""
+
+#~ msgid "indi_lx200_16"
+#~ msgstr "indi_lx200_16"
+
+#~ msgid "NexStar GPS, CGE, AS-GT"
+#~ msgstr "NexStar GPS, CGE, AS-GT"
+
+#~ msgid "indi_celestrongps"
+#~ msgstr "indi_celestrongps"
+
+#~ msgid "New GT, NexStar 5i/8i"
+#~ msgstr "New GT, NexStar 5i/8i"
+
+#~ msgid "Takahashi Temma"
+#~ msgstr "Takahashi Temma"
+
+#~ msgid "indi_temma"
+#~ msgstr "indi_temma"
+
+#~ msgid "Astro-Electronic FS-2"
+#~ msgstr "Astro-Electronic FS-2"
+
+#~ msgid "indi_lx200basic"
+#~ msgstr "indi_lx200basic"
+
+#~ msgid "Argo Navis"
+#~ msgstr "Argo Navis"
+
+#~ msgid "Losmandy Gemini"
+#~ msgstr "Losmandy Gemini"
+
+#~ msgid "Mel Bartels Controllers"
+#~ msgstr "Mel Bartels Controllers"
+
+#~ msgid "Sky Commander"
+#~ msgstr "Sky Commander"
+
+#~ msgid "indi_skycommander"
+#~ msgstr "indi_skycommander"
+
+#~ msgid "Intelliscope/SkyWizard"
+#~ msgstr "Intelliscope/SkyWizard"
+
+#~ msgid "indi_intelliscope"
+#~ msgstr "indi_intelliscope"
+
+#~ msgid "Orion Atlas"
+#~ msgstr "Orion Atlas"
+
+#~ msgid "indi_orion_atlas"
+#~ msgstr "indi_orion_atlas"
+
+#~ msgid "Supported Focusers"
+#~ msgstr "Toetatud fokuseerijad"
+
+#~ msgid "Focuser"
+#~ msgstr "Fokuseerija"
+
+#~ msgid "Meade LX200GPS Microfocuser"
+#~ msgstr "Meade LX200GPS Microfocuser"
+
+#~ msgid "Meade 1206 Primary Mirror Focuser"
+#~ msgstr "Meade 1206 Primary Mirror Focuser"
+
+#~ msgid "JMI NGF Series"
+#~ msgstr "JMI NGF seeria"
+
+#~ msgid "JMI MOTOFOCUS"
+#~ msgstr "JMI MOTOFOCUS"
+
+#~ msgid "FLI Precision Focuser"
+#~ msgstr "FLI Precision Focuser"
+
+#~ msgid "indi_fli_pdf"
+#~ msgstr "indi_fli_pdf"
+
+#~ msgid "RoboFocus"
+#~ msgstr "RoboFocus"
+
+#~ msgid "indi_robofocus"
+#~ msgstr "indi_robofocus"
+
+#~ msgid "Supported CCDs"
+#~ msgstr "Toetatud CCD-d"
+
+#~ msgid "<entry>CCD</entry>"
+#~ msgstr "<entry>CCD</entry>"
+
+#~ msgid "Finger Lakes Instruments CCDs"
+#~ msgstr "Finger Lakes Instrumentsi CCD-d"
+
+#~ msgid "indi_fli_ccd"
+#~ msgstr "indi_fli_ccd"
+
+#~ msgid "Santa Barbara Instrument CCDs"
+#~ msgstr "Santa Barbara Instrumenti CCD-d"
+
+#~ msgid "indi_sbig_ccd"
+#~ msgstr "indi_sbig_ccd"
+
+#~ msgid "Apogee CCDs"
+#~ msgstr "Apogee CCD-d"
+
+#~ msgid "indi_apogee_alta"
+#~ msgstr "indi_apogee_alta"
+
+#~ msgid "Supported Filter Wheels"
+#~ msgstr "Toetatud ratasfiltrid"
+
+#~ msgid "Filter Wheel"
+#~ msgstr "Ratasfilter"
+
+#~ msgid "FLI Filter Wheels"
+#~ msgstr "FLI ratasfiltrid"
+
+#~ msgid "indi_fli_wheel"
+#~ msgstr "indi_fli_wheel"
+
+#~ msgid "True Technology Wheel"
+#~ msgstr "True Technology Wheel"
+
+#~ msgid "indi_trutech_wheel"
+#~ msgstr "indi_trutech_wheel"
+
+#~ msgid "Supported Webcams"
+#~ msgstr "Toetatud veebikaamerad"
+
+#~ msgid "Webcam"
+#~ msgstr "Veebikaamera"
+
+#~ msgid "Any Video4Linux compatible device"
+#~ msgstr "Iga Video4Linuxiga ühilduv seade"
+
+#~ msgid "indi_v4l_generic"
+#~ msgstr "indi_v4l_generic"
+
+#~ msgid "Philips webcam"
+#~ msgstr "Philipsi veebikaamera"
+
+#~ msgid "indi_v4l_philips"
+#~ msgstr "indi_v4l_philips"
+
+#~ msgid "Meade Lunar Planetary Imager"
+#~ msgstr "Meade Lunar Planetary Imager"
+
+#~ msgid "indi_meade_lpi"
+#~ msgstr "indi_meade_lpi"
+
+#~ msgid "SBIG STV"
+#~ msgstr "SBIG STV"
+
+#~ msgid "indi_sbig_stv"
+#~ msgstr "indi_sbig_stv"
+
+#~ msgid ""
+#~ "You can run devices by browsing the device tree, selecting a specific "
+#~ "device, and then clicking on the <guibutton>Run Service button</"
+#~ "guibutton>. You can select the operation mode, either local or server as "
+#~ "defined above."
+#~ msgstr ""
+#~ "Seadmete käivitamiseks sirvi seadmepuud, vali vajalik seade ning klõpsa "
+#~ "nupule <guibutton>Käivita teenus</guibutton>. Valida on võimalik ka "
+#~ "töörežiim, milleks võib olla kohalik või server, nagu eespool mainitud."
+
+#, fuzzy
+#~| msgid "KStars supports the following imaging devices:"
+#~ msgid "&kstars; supports the following imaging devices:"
+#~ msgstr "KStars toetab järgmisi pildistamisseadmeid:"
+
+#~ msgid "Finger Lakes instruments CCDs"
+#~ msgstr "Finger Lakes Instrumentsi CCD-d"
+
+#~ msgid ""
+#~ "SBIG CCDs: In order to use SBIG CCDs, you must download and install the "
+#~ "Universal SBIG Driver library from <ulink url=\"http://indi.sourceforge."
+#~ "net\">INDI</ulink> website."
+#~ msgstr ""
+#~ "SBIG CCD-d: SBIG CCD-de kasutamiseks tuleb alla laadida ja paigaldada "
+#~ "universaalne SBIG draiveri teek <ulink url=\"http://indi.sourceforge.net"
+#~ "\">INDI</ulink> veebileheküljelt."
+
+#~ msgid ""
+#~ "Apogee CCDs: Only USB versions are supported. You must have libusb "
+#~ "installed."
+#~ msgstr ""
+#~ "Apogee CCD-d: ainult USB-versioonid on toetatud. Paigaldatud peab olema "
+#~ "libusb."
+
+#~ msgid ""
+#~ "<ulink url=\"http://www.exploits.org/v4l/\">Video4Linux</ulink> "
+#~ "compatible devices. Philips webcam extended features are supported as "
+#~ "well."
+#~ msgstr ""
+#~ "<ulink url=\"http://www.exploits.org/v4l/\">Video4Linuxiga</ulink> "
+#~ "ühilduvad seadmed. Toetatud on ka Philipsi veebikaamera täiendavad "
+#~ "võimalused."
+
+#~ msgid ""
+#~ "The fli and apogee drivers requires root privileges in order to operate "
+#~ "properly. Note that running the driver as root is considered a security "
+#~ "risk."
+#~ msgstr ""
+#~ "fli ja apogee draiverid nõuavad korralikuks toimimiseks administraatori "
+#~ "(root) õiguseid. Arvesta, et draiveri kasutamist administraatori õigustes "
+#~ "peetakse turvariskiks."
+
+#~ msgid ""
+#~ "<mousebutton>Right</mousebutton>-click on the device and select "
+#~ "<guilabel>Run Service</guilabel>."
+#~ msgstr ""
+#~ "Klõpsa seadmele hiire <mousebutton>parema</mousebutton> nupuga ja vali "
+#~ "käsk <guilabel>Käivita teenus</guilabel>."
+
+#~ msgid "-r n : max restart attempts, default 2"
+#~ msgstr "-r n : maks. taaskäivituste arv, vaikimisi 2"
+
+#~ msgid "I do not have a serial port, how can I connect to the telescope?"
+#~ msgstr "Kui jadaporti ei ole, kuidas siis teleskoop ühendada?"
+
+#~ msgid ""
+#~ "Many modern laptops do not have a serial port. You will need a Serial To "
+#~ "USB adaptor that is supported under Linux. For example, "
+#~ "<trademark>Keyspan</trademark>'s USA-19QW Serial to USB adaptor is well "
+#~ "supported under Linux and had been tested with &kstars;. You need to "
+#~ "refer to your adaptor's documentation to find which ports they provide (e."
+#~ "g. <constant>/dev/ttyUSB0 .... /dev/ttyUSB9</constant>)."
+#~ msgstr ""
+#~ "Paljudel sülearvutitel ei ole jadaporti. Siis läheb vaja jadaport->USB "
+#~ "(inglise keeles Serial To USB) adapterit, mis töötaks Linuxis. Näiteks "
+#~ "<trademark>Keyspan</trademark> USA-19QW adapter töötab Linuxis väga "
+#~ "edukalt ning seda on ka &kstars;iga testitud. Adapteri dokumentatsioonis "
+#~ "peaks olema kirjas, milliseid porte see pakub (nt. <constant>/dev/"
+#~ "ttyUSB0 .... /dev/ttyUSB9</constant>)."

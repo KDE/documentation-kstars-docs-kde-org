@@ -1,0 +1,1849 @@
+#
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# Jaap Woldringh <jjhwoldringh@kde.nl>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-01-16 01:46+0000\n"
+"PO-Revision-Date: 2024-01-16 12:40+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 23.08.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: ekos-scheduler.docbook:2
+#, no-c-format
+msgid "<title>Scheduler</title>"
+msgstr "<title>Planner</title>"
+
+#. Tag: primary
+#: ekos-scheduler.docbook:4
+#, no-c-format
+msgid "Tools"
+msgstr "Tools"
+
+#. Tag: secondary
+#: ekos-scheduler.docbook:5
+#, no-c-format
+msgid "Ekos"
+msgstr "Ekos"
+
+#. Tag: tertiary
+#: ekos-scheduler.docbook:6
+#, no-c-format
+msgid "<tertiary>Scheduler</tertiary>"
+msgstr "<tertiary>Planner</tertiary>"
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:9
+#, no-c-format
+msgid "<screeninfo>Ekos Scheduler Module</screeninfo>"
+msgstr "<screeninfo>Planmodule van Ekos</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:17
+#, no-c-format
+msgid "<phrase>Ekos Scheduler Module</phrase>"
+msgstr "<phrase>Planmodule van Ekos</phrase>"
+
+#. Tag: title
+#: ekos-scheduler.docbook:22
+#, no-c-format
+msgid "Introduction"
+msgstr "Inleiding"
+
+#. Tag: para
+#: ekos-scheduler.docbook:23
+#, no-c-format
+msgid ""
+"The Ekos Scheduler is an important component of your imaging workflow. It "
+"connects to INDI, starts and stops all the other Ekos modules, schedules "
+"jobs according to their constraints and priorities, monitors those jobs as "
+"they execute, and then safely brings down the system when jobs are done, or "
+"before dawn. Whether you are running multi-day imaging sessions for multiple "
+"targets, or simply trying to image a single target for a few hours, it is "
+"advisable to have the Scheduler control your imaging sessions."
+msgstr ""
+"De Ekos-planner is een belangrijke component van uw werkmethode voor "
+"afbeeldingen maken. Het verbindt met INDI, start en stopt alle andere Ekos-"
+"modulen, plant taken volgens hun voorwaarden en prioriteiten, monitort die "
+"taken terwijl ze worden uitgevoerd en brengt het systeem down wanneer taken "
+"gereed zijn of voor het ochtendgloren. Of u sessies voor afbeeldingen "
+"uitvoert over meerdere dagen voor meerdere doelen of eenvoudig een enkele "
+"doel probeert gedurende een paar uur, wordt het aanbevolen dat de planner uw "
+"sessies voor afbeeldingen bestuurt."
+
+#. Tag: title
+#: ekos-scheduler.docbook:28
+#, no-c-format
+msgid "Scheduler Table"
+msgstr "Plannertabel"
+
+#. Tag: para
+#: ekos-scheduler.docbook:29
+#, no-c-format
+msgid ""
+"The heart of the Scheduler is a table displaying the list of Scheduler jobs "
+"the user wants to run. Associated with each jobs are attributes (mostly "
+"described in the settings section below). The attributes describe the name "
+"of the job, where the telescope should be pointed when imaging that job, a "
+"description of what types of images should be captured, constraints about "
+"when the jobs should run (&eg; altitude, twilight, moon, landscape "
+"blockages, &etc;), things that need to be done before and after the job is "
+"run, and strategies for dealing with errors."
+msgstr ""
+"Het hart van de planner is een tabel die de lijst van plannertaken toont die "
+"de gebruiker wil uitvoeren. Verbonden met elke taak zijn attributen (meestal "
+"beschreven in de onderstaande instellingensectie). De attributen beschrijven "
+"de naam van de taak, waar de telescoop naar moet wijzen bij maken van de "
+"afbeelding van die taak, een beschrijving van welke typen afbeeldingen "
+"opgenomen moeten worden, voorwaarden over wanneer de taken uitgevoerd moeten "
+"worden (&eg; hoogte, schemering, maan, blokkades in landschap, &etc;), "
+"dingen die gedaan moeten worden voor en nadat de taak is uitgevoerd en "
+"strategieën voor afhandeling van fouten."
+
+#. Tag: para
+#: ekos-scheduler.docbook:32
+#, no-c-format
+msgid ""
+"You can add, delete, modify or change the order of rows in the Scheduler "
+"table."
+msgstr ""
+"U kunt de rijen in de tabel van de planner toevoegen, verwijderen, wijzigen "
+"of de volgorde wijzigen."
+
+#. Tag: para
+#: ekos-scheduler.docbook:37
+#, no-c-format
+msgid ""
+"You can add a Scheduler job row into the table by clicking the <guilabel>+</"
+"guilabel> control above the table, if all required attributes are filled out "
+"(name, position, and sequence file)."
+msgstr ""
+"U kunt een plantaakrij toevoegen in de tabel, als alle vereiste attributen "
+"zijn ingevuld (naam, positie en reeksbestand), door op de knop <guilabel>+</"
+"guilabel> boven de tabel te klikken."
+
+#. Tag: para
+#: ekos-scheduler.docbook:42
+#, no-c-format
+msgid ""
+"If you click on a row, you can then click the <guilabel>-</guilabel> control "
+"above the table to delete that row."
+msgstr ""
+"Als u op een rij klikt, dan kunt u op de besturing <guilabel>-</guilabel> "
+"klikken boven de tabel om die rij te verwijderen."
+
+#. Tag: para
+#: ekos-scheduler.docbook:48
+#, no-c-format
+msgid ""
+"If you click on a row, you can then click the <guilabel>^</guilabel> or "
+"<guilabel>v</guilabel> controls to move those rows up or down in the job "
+"list."
+msgstr ""
+"Als u op een rij klikt, dan kunt u op de besturingen <guilabel>^</guilabel> "
+"of <guilabel>v</guilabel> klikken om die rijen omhoog of omlaag in de lijst "
+"met taken verplaatsen."
+
+#. Tag: para
+#: ekos-scheduler.docbook:54
+#, no-c-format
+msgid ""
+"If you double click on a row, the attributes of that job are filled in to "
+"the various settings on the Scheduler page. You can then change one or more "
+"of those attributes, and then click the checkmark above the table (after "
+"your double-click, the <guilabel>+</guilabel> became a <guilabel>checkmark</"
+"guilabel>), and the new attributes are assigned to that job."
+msgstr ""
+"Als u dubbelklikt op een rij, dan worden de attributen van die taak ingevuld "
+"in de verschillende instellingen op de pagina van de planner. U kunt dan een "
+"of meer van die attributen wijzigen en dan klikken op het vinkje boven de "
+"tabel (na uw dubbelklik werd de <guilabel>+</guilabel> een <guilabel>vinkje</"
+"guilabel>) en de nieuwe attributen zijn toegekend aan die taak."
+
+#. Tag: title
+#: ekos-scheduler.docbook:62
+#, no-c-format
+msgid "Scheduling Algorithm"
+msgstr "Planning-algoritme"
+
+#. Tag: para
+#: ekos-scheduler.docbook:63
+#, no-c-format
+msgid ""
+"The Scheduler table (above) lists jobs in order of priority, with higher "
+"jobs (on lower-numbered rows) having higher priority than jobs further down "
+"the list (with higher-numbered rows)."
+msgstr ""
+"De plannertabel (boven) heeft een lijst met taken in volgorde van "
+"prioriteit, met hogere taken (op lager genummerde rijen) die hogere "
+"prioriteit hebben dan jobs verder omlaag in de lijst (met hoger genummerde "
+"rijen)."
+
+#. Tag: para
+#: ekos-scheduler.docbook:66
+#, no-c-format
+msgid ""
+"The Scheduler regularly plans (and re-plans) which jobs should be run, and "
+"when. It can start executing a given job, and then later preempt that job "
+"for a new one. It can become idle if no jobs can be run (&eg; in daylight), "
+"and sleep until such a time that it becomes active again. Its aim is to keep "
+"the equipment as busy as possible, while respecting the scheduler-table's "
+"priorities. Here's how it works."
+msgstr ""
+"De planner plant regelmatig (en plant opnieuw) welke taken zouden uitgevoerd "
+"moeten worden en wanneer. Deze kan beginnen met het uitvoeren van een "
+"gegeven taak en dan later die taak vervangen door een nieuwe. Deze kan "
+"inactief worden als er geen taken uitgevoerd kunnen worden (&eg; in "
+"daglicht) en slapen tot een tijd dat deze weer actief wordt. Zijn doel is om "
+"de apparatuur zoveel als mogelijk is bezig te houden, met in acht neming van "
+"de prioriteiten in de tabel van de planner. Hier is hoe het werkt."
+
+#. Tag: para
+#: ekos-scheduler.docbook:69
+#, no-c-format
+msgid ""
+"When the scheduler starts (or when it replans, which it does every second "
+"while active), it looks through the entire list of jobs, starting at the "
+"highest priority job, and working its way down to the lowest priority one if "
+"necessary. When it finds a job that can run, it starts that job, possibly "
+"preempting the currently running job. A jobs can run if its constraints are "
+"met, &eg; the target is not blocked by the local terrain, it meets the "
+"minimum altitude constraint, it has not already completed all the desired "
+"imaging, ..."
+msgstr ""
+"Wanneer de planner start (of wanneer deze opnieuw plant, wat elke seconde "
+"wordt gedaan indien actief), dan wordt er gekeken in de gehele lijst met "
+"taken, beginnend met de taak met de hoogste prioriteit en werkt omlaag naar "
+"die met de laagste prioriteit indien nodig. Wanneer het een taak vindt die "
+"uitgevoerd kan worden, dan wordt die taak gestart, mogelijk met stoppen van "
+"de nu in uitvoering zijnde taak. Een taak kan uitgevoerd worden als aan zijn "
+"voorwaarden is voldaan, &eg; het doel is niet geblokkeerd door het lokale "
+"terrein, deze voldoet aan de voorwaarde van minimale hoogte, deze heeft nog "
+"niet alle gewenste afbeeldingen voltooid, ..."
+
+#. Tag: para
+#: ekos-scheduler.docbook:72
+#, no-c-format
+msgid ""
+"The algorithm shows its projected next start times and stop times for all "
+"job in the Scheduler table. It also shows its estimate of times jobs will "
+"run during the next 48 hours in the log panel at the bottom of the window. "
+"See the screenshot of the scheduler window at the top of this section."
+msgstr ""
+"Het algoritme toont zijn geprojecteerde volgende starttijden en stoptijden "
+"voor alle taken in de plannertabel. Deze toont ook zijn schatting van het "
+"aantal keren dat de taken uitgevoerd zullen worden tijdens de volgende 48 "
+"uren in het logpaneel onderaan het venster. Zie de schermafdruk van het "
+"plannervenster bovenaan deze sectie."
+
+#. Tag: para
+#: ekos-scheduler.docbook:75
+#, no-c-format
+msgid ""
+"The scheduling algorithm described in the above paragraph is known as the "
+"Greedy Scheduling algorithm. It is the recommended one to use. In previous "
+"versions of Ekos, there was another \"Classic scheduling algorithm\" which "
+"is no longer in Ekos. That scheme could not preempt running jobs, and thus "
+"did not make as much use of the equipment as the Greedy Algorithm."
+msgstr ""
+"Het planningsalgoritme beschreven in de bovenstaande paragraaf staat bekend "
+"als het Greedy planningsalgoritme. Deze is aanbevolen. In eerdere versies "
+"van Ekos was er een ander \"Klassiek planningsalgoritme\" dat nu niet meer "
+"in Ekos is. Dat schema kon geen actieve jobs afbreken en maakte dus geen "
+"goed gebruik van de apparatuur zoals het Greedy algoritme."
+
+#. Tag: para
+#: ekos-scheduler.docbook:78
+#, no-c-format
+msgid ""
+"There is a checkbox option in the scheduler options menu called "
+"<guilabel>Use greedy scheduling</guilabel> which defaults to being checked. "
+"The system works as described above when it is checked. When it is unchecked "
+"the scheduler is prevented from scheduling lower priority jobs when "
+"uncompleted higher priority jobs cannot run. This results in less efficient "
+"use of the system, but may give you more control over scheduling."
+msgstr ""
+"Er is een keuzevak in het optiesmenu van de planner genaamd "
+"<guilabel>Gretige planning gebruiken</guilabel> die standaard is "
+"geactiveerd. Het systeem werkt zoals bovenstaand beschreven wanneer het is "
+"geactiveerd. Wanneer het niet is geactiveerd zal de planner het plannen van "
+"lagere prioriteit jobs voorkomen wanneer niet voltooide hogere prioriteit "
+"jobs niet kunnen draaien. Dit resulteert in minder efficiënt gebruik van het "
+"systeem, maar kan u meer controle over de planning geven."
+
+#. Tag: title
+#: ekos-scheduler.docbook:83
+#, no-c-format
+msgid "Scheduler Files (.esl)"
+msgstr "Plannerbestanden (.esl)"
+
+#. Tag: para
+#: ekos-scheduler.docbook:84
+#, no-c-format
+msgid ""
+"The scheduler table with its list of jobs and attributes can be saved onto "
+"disk and read back in. It writes an .esl file. Controls for writing the "
+"current Scheduler table to disk, and reading back other .esl files are "
+"located above the table to the right."
+msgstr ""
+"De plannertabel met zijn lijst met taken en attributen kan opgeslagen worden "
+"op schijf en terug ingelezen. Het schrijft een .esl-bestand. Besturing voor "
+"het schrijven van de huidige plannertabel naar schijf en teruglezen van "
+"andere .esl-bestanden staan boven de tabel rechts."
+
+#. Tag: title
+#: ekos-scheduler.docbook:89
+#, no-c-format
+msgid "Settings"
+msgstr "Instellingen"
+
+#. Tag: para
+#: ekos-scheduler.docbook:90
+#, no-c-format
+msgid ""
+"Ekos Scheduler provides a simple interface to aid the user in setting the "
+"conditions and constraints required for an Scheduler job. You must select "
+"the <guilabel>Target</guilabel>, its coordinates, and the "
+"<guilabel>Sequence</guilabel> before you can add a job to the Scheduler."
+msgstr ""
+"De planner van Ekos heeft een eenvoudige interface, waarin de gebruiker de "
+"condities en beperkingen kan instellen, die vereist zijn voor een job in de "
+"planner. U moet het <guilabel>Doel</guilabel>, zijn coördinaten en de "
+"<guilabel>Reeks</guilabel> selecteren voordat u een job aan de planner kunt "
+"toevoegen."
+
+#. Tag: para
+#: ekos-scheduler.docbook:93
+#, no-c-format
+msgid "Each Scheduler job is composed of the following:"
+msgstr "Elke job in de planner bestaat uit het volgende:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:98
+#, no-c-format
+msgid ""
+"<guilabel>Target name and coordinates</guilabel>: Select target from the "
+"<link linkend=\"findobjects\">Find Dialog</link> or <guibutton>Add</"
+"guibutton> it from <link linkend=\"tool-obsplanner\">Observation Planner</"
+"link>. You can also enter a custom name. Coordinates can also be copied from "
+"the SkyMap using the button just to the right of the coordinates."
+msgstr ""
+"<guilabel>Naam en coördinaten</guilabel>: selecteer het doel in de <link "
+"linkend=\"findobjects\">Zoekdialoog</link> of <guibutton>Voeg het toe</"
+"guibutton> uit de <link linkend=\"tool-obsplanner\">Waarneemplanner</link>. "
+"U kunt ook zelf een naam invoeren. Coördinaten kunnen ook gekopieerd worden "
+"uit de hemelkaart met de knop net rechts van de coördinaten."
+
+#. Tag: para
+#: ekos-scheduler.docbook:103
+#, no-c-format
+msgid ""
+"Optional <guilabel>PA</guilabel>: The position angle (or image rotation) can "
+"be specified for systems with camera rotation hardware."
+msgstr ""
+"Optioneel <guilabel>PA</guilabel>: De positiehoek (of afbeeldingsdraaiing) "
+"kan gespecificeerd worden voor systemen met hardware voor draaien van de "
+"camera."
+
+#. Tag: para
+#: ekos-scheduler.docbook:108
+#, no-c-format
+msgid ""
+"Optional <guilabel>FITS File</guilabel>: If a FITS file is specified, the "
+"astrometry solver solves the file and use the central RA/DEC as the target "
+"coordinates."
+msgstr ""
+"Optioneel <guilabel>FITS-bestand</guilabel>: Als een FITS-bestand wordt "
+"opgegeven, lost de astrometrie-oplosser het bestand op en gebruikt de "
+"centrale RK/Dec als de doelcoördinaten."
+
+#. Tag: para
+#: ekos-scheduler.docbook:113
+#, no-c-format
+msgid ""
+"<guilabel>Sequence</guilabel> file: The sequence file is constructed in the "
+"Ekos <link linkend=\"ekos-capture\">Capture Module</link>. It has a list of "
+"capture specifications, where each spec details the number of images to "
+"capture, which filter to use, the exposure length, the gain, file naming "
+"details, temperature settings, prefixes, download directory, &etc;"
+msgstr ""
+"<guilabel>Reeks</guilabel>bestand: Het reeksbestand wordt samengesteld in "
+"de<link linkend=\"ekos-capture\">Opnamemodule</link> van Ekos. Het bevat een "
+"lijst met opnamespecificaties, waar elk specificatiedetail het aantal op te "
+"nemen afbeeldingen bevat, welk te gebruiken filter, de opnameduur, de "
+"versterking, details van de naam van het bestand, temperatuurinstellingen, "
+"voorvoegsels, downloadmap, &etc;"
+
+#. Tag: para
+#: ekos-scheduler.docbook:118
+#, no-c-format
+msgid ""
+"<guilabel>Profile</guilabel>: Select which equipment profile to utilize when "
+"starting Ekos. If Ekos &amp; INDI are already started and online, this "
+"selection is ignored."
+msgstr ""
+"<guilabel>Profiel</guilabel>: Selecteert het te gebruiken apparatuurprofiel "
+"wanneer Ekos wordt gestart. Indien Ekos &amp; INDI al gestart zijn, en "
+"online, wordt deze selectie genegeerd."
+
+#. Tag: para
+#: ekos-scheduler.docbook:123
+#, no-c-format
+msgid ""
+"<guilabel>Steps</guilabel>: The user selects what steps should be taken at "
+"the start of the job. The possibilities are: (1) Start mount tracking, (2) "
+"autofocus, (3) run a plate solving alignment, (4) start the auto-guider. One "
+"or more can be chosen."
+msgstr ""
+"<guilabel>Stappen</guilabel>: de gebruiker selecteert welke stappen genomen "
+"moeten worden bij de start van de taak. De mogelijkheden zijn: (1) Start "
+"volgen van de opstelling, (2) autofocus, (3) een oplossen van de uitlijning "
+"van de plaat uitvoeren, (4) het automatisch volgen starten. Een of meer kan "
+"gekozen worden."
+
+#. Tag: para
+#: ekos-scheduler.docbook:128
+#, no-c-format
+msgid ""
+"<guilabel>Startup Conditions</guilabel>: Conditions that must be met "
+"<emphasis role=\"bold\">before</emphasis> the Scheduler job is started. "
+"Currently, the user may select to start as soon as possible, "
+"<guimenuitem>ASAP</guimenuitem>, or when the target is near or past "
+"culmination, or at a specific time."
+msgstr ""
+"<guilabel>Opstartcondities</guilabel>: Condities waaraan moet worden voldaan "
+"<emphasis role=\"bold\">voordat</emphasis> de job in de planner wordt "
+"gestart. Op dit moment kan de gebruiker zo snel als mogelijk te starten, "
+"<guimenuitem>ASAP</guimenuitem>, of wanneer het doel nabij of na de "
+"culminatie is, of op een bepaald tijdstip."
+
+#. Tag: para
+#: ekos-scheduler.docbook:133
+#, no-c-format
+msgid ""
+"<guilabel>Constraints</guilabel>: These are conditions that must be met "
+"<emphasis role=\"bold\">at all times</emphasis> during the Scheduler job "
+"execution process. These include minimum target altitude, minimum moon "
+"separation, twilight observation, artificial horizon altitude constraints, "
+"and weather monitoring."
+msgstr ""
+"<guilabel>Beperkingen</guilabel>: dit zijn condities waaraan <emphasis role="
+"\"bold\">altijd</emphasis> moet worden voldaan tijdens het uitvoeren van de "
+"job in de planner. Hiertoe behoren minimum hoogte van het doel, minimum "
+"afstand tot de maan, waarnemen tijdens de schemering, kunstmatige "
+"beperkingen in horizonhoogte en het monitoren van het weer."
+
+#. Tag: para
+#: ekos-scheduler.docbook:138
+#, no-c-format
+msgid ""
+"<guilabel>Completion Conditions</guilabel>: Conditions that trigger "
+"completion of the Scheduler job. The default selection is to simply mark the "
+"Scheduler job as complete once the sequence process is complete. Additional "
+"conditions enable the user to repeat the sequence process a number of times "
+"or indefinitely, or up until a specific time."
+msgstr ""
+"<guilabel>Condities voor voltooien</guilabel>: Condities die het voltooien "
+"van de plannertaak inleiden. De standaard selectie is het eenvoudig "
+"aanmerken van de plannertaak als voltooid, als het hele proces klaar is. "
+"Extra condities maken het mogelijk de gehele reeks een aantal keren of "
+"oneindig te herhalen, of tot een specifiek tijdstip."
+
+#. Tag: title
+#: ekos-scheduler.docbook:145
+#, no-c-format
+msgid "Other options"
+msgstr "Overige opties"
+
+#. Tag: para
+#: ekos-scheduler.docbook:146
+#, no-c-format
+msgid ""
+"There are several other options to control how the Scheduler behaves. These "
+"are found in the general KStars Settings menu, shown below, in its Ekos tab "
+"and Scheduler sub-tab."
+msgstr ""
+"Er zijn verschillende andere opties om te besturen hoe de planner zich "
+"gedraagt. Deze zijn te vinden in het menu algemene KStars instellingen, "
+"zoals onderstaand getoond, in zijn tabblad Ekos en sub-tabblad Planner."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:150
+#, no-c-format
+msgid "<screeninfo>Scheduler Settings</screeninfo>"
+msgstr "<screeninfo>Instellingen van de planner</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:158
+#, no-c-format
+msgid "<phrase>Scheduler Settings</phrase>"
+msgstr "<phrase>Instellingen van de planner</phrase>"
+
+#. Tag: title
+#: ekos-scheduler.docbook:163
+#, no-c-format
+msgid "Remember job progress"
+msgstr "Taakvoortgang onthouden"
+
+#. Tag: para
+#: ekos-scheduler.docbook:164
+#, no-c-format
+msgid ""
+"Among the settings shown above, one important one is known as "
+"<guilabel>Remember job progress</guilabel>. When this box is checked and a "
+"job is running, the Scheduler looks at the job's images already captured on "
+"disk, and doesn't re-capture the ones that are already there. The benefit is "
+"that if a job is restarted, or re-run another night, or if multiple jobs are "
+"being run together, stopping and starting when they are runnable, then jobs "
+"re-start right where they left off. This works well with the "
+"<guilabel>Repeat until terminated</guilabel> job-completion option. If "
+"<guilabel>Remember job progress</guilabel> is unchecked, jobs would restart "
+"from the start of their sequence specification each time, which probably "
+"isn't what you want. Unfortunately, if the images are not stored on the same "
+"computer that Ekos is running on, then this feature doesn't work and the "
+"jobs restart from their beginning."
+msgstr ""
+"Onder de boven getoonde instellingen, is er een belangrijke bekend als "
+"<guilabel>Takenvoortgang onthouden</guilabel>. Wanneer dit vakje is "
+"geactiveerd en er is een taak actief, dan kijkt de planner naar de al "
+"opgenomen afbeeldingen op schijf en zal diegene die al hebt niet opnieuw "
+"opnemen . Het voordeel is dat als een taak opnieuw wordt gestart, of in een "
+"andere nacht opnieuw uitgevoerd of als meerdere taken tegelijk actief zijn, "
+"stoppen en starten wanneer ze zijn uit te voeren, dan starten taken opnieuw "
+"daar waar ze zijn gebleven. Dit werkt goed met de optie voor taak-gereed "
+"<guilabel>Herhalen tot beëindigen</guilabel>. Als <guilabel>Taakvoortgang "
+"herinneren</guilabel> niet is geactiveerd, zouden taken elke keer opnieuw "
+"gestart worden vanaf het begin van hun reeksspecificatie, wat waarschijnlijk "
+"niet is wat u wilt. Helaas, als de afbeeldingen niet opgeslagen worden op "
+"dezelfde computer waarop Ekos actief is, dan werkt deze functie niet en de "
+"taken beginnen van voor af aan."
+
+#. Tag: para
+#: ekos-scheduler.docbook:167
+#, no-c-format
+msgid ""
+"A possibly confusing side-effect of <guilabel>Remember job progress</"
+"guilabel> is that if you've run a job using the (default) Sequence "
+"Completion finish condition, and it has captured all its images, and now you "
+"want to run the job again, the Scheduler won't schedule the job because it "
+"believes that all the images have already been captured. You'd either need "
+"to move those images elsewhere on disk, or change the finish condition to "
+"Repeat for N Times, or Repeat Until Terminated."
+msgstr ""
+"Een mogelijk verwarrend bijeffect van <guilabel>Taakvoortgang herinneren</"
+"guilabel> is dat als u een taak hebt uitgevoerd met de (standaard) "
+"eindvoorwaarde van de beëindiging van de reeks, en alle zijn afbeeldingen "
+"zijn opgenomen en nu wilt u de taak opnieuw uitvoeren, dan zal de planner de "
+"taak niet uitvoeren omdat deze geloofd dat alle afbeeldingen al zijn "
+"opgenomen. U moet ofwel deze afbeeldingen verplaatsen naar elders op de "
+"schijf of de eindvoorwaarde  wijzigen naar N keer herhalen of Herhalen tot "
+"beëindiging."
+
+#. Tag: title
+#: ekos-scheduler.docbook:172
+#, no-c-format
+msgid "Group repeats"
+msgstr "Herhalingen van groepen"
+
+#. Tag: para
+#: ekos-scheduler.docbook:173
+#, no-c-format
+msgid ""
+"This feature allows you to run two or more scheduler jobs at roughly the "
+"same priority, such that if they were both runnable, they would progress at "
+"roughly the same rate. This may be applicable, for example, to jobs imaging "
+"the multiple tiles in a mosaic, but is generally applicable to any set of "
+"jobs."
+msgstr ""
+"Deze functie biedt u het uitvoeren van twee of meer plannertaken op ruwweg "
+"dezelfde prioriteit, zodat als ze beiden uitvoerbaar zijn, ze voortgang "
+"zouden hebben op ruwweg dezelfde snelheid. Dit kan van toepassing zijn, "
+"bijvoorbeeld, voor taken die opnamen maken voor meerder tegels in een "
+"mozaïek, maar is algemeen van toepassing op elke set taken."
+
+#. Tag: para
+#: ekos-scheduler.docbook:176
+#, no-c-format
+msgid ""
+"Normally the (Greedy) scheduler's job priority is set by the row the job is "
+"listed in the Scheduler's job table. Jobs on rows closer to the top run with "
+"higher priority than jobs lower down. Thus, if a job on row 2 (Job2) uses "
+"<guilabel>Repeat Until Terminated</guilabel>, and that job's running "
+"constraints are satisfied, a lower down job (&eg; Job3) will not be "
+"scheduled to run."
+msgstr ""
+"Normaal is de taakprioriteit van de (Greedy) planner ingesteld door de rij "
+"waarin de taak in de lijst in de takentabel van de planner staat. Taken in "
+"rijen dichter bij de top worden met een hogere prioriteit uitgevoerd dan "
+"taken lager in de tabel. Dus, als een taak op rij 2 (Taak2) "
+"<guilabel>Herhalen tot beëindigen</guilabel> en aan de voorwaarden voor "
+"uitvoeren van die taak is voldaan, dan zal een lagere taak (&eg; Taak3) niet "
+"gepland worden voor uitvoeren."
+
+#. Tag: para
+#: ekos-scheduler.docbook:179
+#, no-c-format
+msgid ""
+"If you wish to alternate jobs, you can assign each of the jobs the same "
+"<guilabel>group</guilabel> name, and give the jobs one of the repeating "
+"finish conditions (&eg; Repeat for N times, or Repeat Until Terminated). "
+"With that setup, jobs in the same group will cede to each other if they have "
+"completed more 'Repeat Iterations' than the other job. So, if Job2 with "
+"group \"MyGroup\" completes its 2nd iteration, and Job3 with the same group "
+"name has only completed 0 or 1 iterations, when the time comes to schedule "
+"Job2, Job3 will run instead."
+msgstr ""
+"Als u taken wilt laten wisselen, dan kunt u aan elk van de taken dezelfde "
+"<guilabel>groep</guilabel> toekennen en aan de taken een van de "
+"beëindigingsvoorwaarden voor herhaling geven (&eg; N keer herhalen of "
+"Herhalen tot beëindiging). Met die opzet, zullen taken in dezelfde groep het "
+"uitvoer afstaan aan elkaar als ze meet 'Herhalingen' dan de andere taak "
+"hebben. Dus, als Taak2 met groep \"MijnGroep\" zijn tweede iteratie heeft "
+"voltooid en Taak3 met dezelfde groepsnaam heeft slechts 0 of 1 iteratie "
+"voltooid, dan wanneer de tijd komt om Taak2 uit te voeren, zal Taak3 in "
+"plaats daarvan worden uitgevoerd."
+
+#. Tag: para
+#: ekos-scheduler.docbook:181
+#, no-c-format
+msgid ""
+"Practically speaking, imagine you had a 6-panel mosaic you wanted to "
+"alternate. You might give all of those jobs the same group name, make them "
+"all &eg; \"Repeat for 5 times\". Then, they would run in lock-step. The "
+"cadence of job switching would be controlled by the length of the sequence "
+"file assigned to each of those jobs. You wouldn't want to make the cadence "
+"too short (&eg; capturing one 2-minute image), as there is overhead in "
+"switching jobs. For instance, starting jobs may involved aligning, starting "
+"guiding, and even focusing."
+msgstr ""
+"Praktisch gesproken, stel u hebt een 6-paneel mozaïek dat u wilt afwisselen. "
+"U zou al die taken dezelfde groepsnaam geven, maak ze allen  &eg; \"Herhaal "
+"5 keer\". Daarna zou u ze uitvoeren in vergrendelde stap. De cadens van het "
+"omschakelen van taken zou bestuurd worden door de lengte van het "
+"reeksbestand toegekend aan elk van die taken. U wilt de cadans niet te kort "
+"maken (&eg; een 2-minuten afbeelding), omdat er overhead is in het "
+"omschakelen van taken. Bijvoorbeeld, starten van taken kan uitlijnen, volgen "
+"starten en zelfs focusseren betekenen."
+
+#. Tag: title
+#: ekos-scheduler.docbook:186
+#, no-c-format
+msgid "Repeat all jobs"
+msgstr "Alle jobs herhalen"
+
+#. Tag: para
+#: ekos-scheduler.docbook:187
+#, no-c-format
+msgid ""
+"There is a checkbox and number input right below the Scheduler jobs table "
+"that allows you to repeat the entire schedule N times. This can be used to "
+"alternate a few jobs. You can just list the jobs on the scheduler, set it to "
+"repeat N times, and the jobs will repeat. However, this change is "
+"incompatible with 'Remember job progress (above) and unavailable if Remember "
+"Job Progress is checked. (Note: Remember Job Progress is recommended.)"
+msgstr ""
+"Er is een keuzevak en getalinvoer direct onder de takentabel van de planner "
+"die u het herhalen biedt van het gehele plan N keer. Dit kan gebruikt worden "
+"om een paar taken te alterneren. U kunt de taken in de planner bekijken, "
+"deze instellen op N keer herhalen en de taken zullen zich herhalen. Deze "
+"wijziging is niet compatibel met 'Taakvoortgang onthouden (hier boven) en "
+"niet beschikbaar als Taakvoortgang onthouden is geactiveerd. (Opmerking: "
+"taakvoortgang onthouden is aanbevolen)."
+
+#. Tag: title
+#: ekos-scheduler.docbook:193
+#, no-c-format
+msgid "Editing running jobs"
+msgstr "Actieve taken bewerken"
+
+#. Tag: para
+#: ekos-scheduler.docbook:194
+#, no-c-format
+msgid ""
+"It is possible to edit the scheduler's job table, and attributes of "
+"individual jobs, while the scheduler is running. As always, you double click "
+"on a job, change the desired attributes, and click the checkbox to finalize "
+"the change. If you edit the running job it will be restarted (i.e. the "
+"startup steps (slew, focus, align, guide) will be re-done. You can also move "
+"jobs up and down in priority, add new jobs, or deleted existing ones. You "
+"cannot delete the running job."
+msgstr ""
+"Het is mogelijk de tabel met taken in de planner en attributen van "
+"individuele taken te bewerken, terwijl de planner actief is. Zoals altijd "
+"klikt u dubbel op een taak, wijzigt de gewenste attributen en klikt op het "
+"keuzevak om de wijziging af te ronden. Als u edit de actieve taak bewerkt "
+"zal deze opnieuw gestart worden (d.w.z. de opstartstappen (draaien, "
+"focusseren, uitlijnen, volgen) zullen opnieuw gedaan worden. U kunt ook "
+"taken omhoog en omlaag in prioriteit verplaatsen, nieuwe taken toevoegen of "
+"bestaande verwijderen. U kunt de actieve taak niet verwijderen."
+
+#. Tag: para
+#: ekos-scheduler.docbook:197
+#, no-c-format
+msgid ""
+"One important attribute of scheduler jobs is their sequence file (.esq) "
+"which controls the capture module while the job is running. For example, it "
+"sets number of captures, filters used, gain/ISO, etc. The .esq is normally "
+"created and edited in the capture tab, but that cannot be done while the "
+"scheduler is running. If you desire to make changes to a .esq file while the "
+"scheduler is running, or create a new one, the scheduler provides a tool "
+"called the Capture Sequence Editor."
+msgstr ""
+"Eén belangrijk attribuut van plannertaken is hun reeksbestand (.esq) die de "
+"opnamemodule bestuurt terwijl de taak actief is. Het stelt bijvoorbeeld het "
+"aantal opnamen, gebruikte filters, versterking/ISO, etc. in. De .esq wordt "
+"normaal aangemaakt en bewerkt in het tabblad Opnamen, maar dat kan niet "
+"gedaan worden terwijl de planner actief is. Als u wijzigingen wilt maken in "
+"een .esq-bestand terwijl de planner actief is of een nieuwe wilt aanmaken, "
+"biedt de planner een hulpmiddel genaamd de bewerker van opnamereeksen."
+
+#. Tag: title
+#: ekos-scheduler.docbook:201
+#, no-c-format
+msgid "<title>Capture Sequence Editor</title>"
+msgstr "<title>Bewerker van opnamereeks</title>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:202
+#, no-c-format
+msgid ""
+"The Capture Sequence Editor is a tool to create and edit capture sequence "
+"files (.esq) which can be started by clicking the edit (pencil) icon just "
+"above the scheduler table. A screenshot is shown below."
+msgstr ""
+"De Bewerker van opnamereeksen is een hulpmiddel om opnamereeksbestanden aan "
+"te maken en te bewerken (.esq) die gestart kunnen worden door te klikken op "
+"het bewerkpictogram (potlood) net boven de plannertabel. Een schermafdruk "
+"wordt onderstaand getoond."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:206
+#, no-c-format
+msgid "<screeninfo>Capture Sequence Editor</screeninfo>"
+msgstr "<screeninfo>Bewerker van opnamereeks</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:214
+#, no-c-format
+msgid "<phrase>Capture Sequence Editor</phrase>"
+msgstr "<phrase>Bewerker van opnamereeks</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:218
+#, no-c-format
+msgid ""
+"The editor is very similar in use and layout to the capture tab--though it "
+"is missing all the controls to actually capture image. You edit jobs the "
+"same way you do in capture, and load or save sequence queues the same way "
+"too (though there are additional Load and Save-To buttons provided in the "
+"editor)."
+msgstr ""
+"De bewerker lijkt in gebruik en indeling erg op het tabblad Opname--hoewel "
+"er alle besturing ontbreekt om de afbeelding op te nemen. U bewerkt taken op "
+"dezelfde manier zoals u doet in opnamen en laadt of slaat reekswachtrijen op "
+"ook op dezelfde manier (hoewel er extra knoppen Laden en Opslaan naar in de "
+"bewerker geboden worden)."
+
+#. Tag: para
+#: ekos-scheduler.docbook:222
+#, no-c-format
+msgid ""
+"It is important to understand that capture sequences rely to some extent on "
+"the filterwheel and camera being used (e.g. the filter names, the possible "
+"ISO values, ...). The Capture Sequence Editor, which is not connected to the "
+"device drivers, does not have direct access to this information. Instead, "
+"the editor uses the values from the last time the capture tab connected to "
+"its devices. Thus, it may not make sense to try and create a .esq file for a "
+"different camera or filterwheel than the last one connected-to. You may need "
+"to wait until your scheduler job is completed and edit that .esq directly in "
+"the capture tab."
+msgstr ""
+"Het is belangrijk te begrijpen dat opnamereeksen tot op zekere hoogt "
+"afhangen van het te gebruiken filterwiel en camera (bijv. de filternamen, de "
+"mogelijke ISO-waarden, ...). De Bewerker van opnamereeksen, die niet "
+"verbonden is met de apparaatbesturing, heeft geen directe toegang tot die "
+"informatie. In plaats daarvan gebruikt de bewerker de waarde uit de laatste "
+"keer dat het tabblad Opnamen was verbonden met zijn apparaten. Het kan dus "
+"zinloos zijn om een .esq-bestand aan te maken voor een andere camera of "
+"filterwiel dan de laatste waarmee was verbonden. U moet misschien wachten "
+"totdat u plannertaak gereed is en die .esq direct bewerken in het tabblad "
+"Opnemen."
+
+#. Tag: para
+#: ekos-scheduler.docbook:224
+#, no-c-format
+msgid ""
+"It is also recommended that you don't overwrite .esq files when scheduler "
+"jobs are currently using those same files. (It is OK if the scheduler is "
+"running, but not running that job.) This can get the scheduler and capture "
+"modules out of sync, as they read the files at different times. Instead, you "
+"can save to a different filename and then edit the scheduler job to use the "
+"new .esq filename."
+msgstr ""
+"Het is ook aanbevolen dat u geen .esq-bestanden overschrijft wanneer "
+"plannertaken nu diezelfde bestanden gebruiken. (Het is OK als de planner "
+"actief is, maar niet die taak uitvoert.) Dit kan de planner en opnamemodulen "
+"uit synchronisatie halen, omdat ze de bestanden op verschillende momenten "
+"lezen. In plaats daarvan kunt u opslaan naar een verschillende bestandsnaam "
+"en daarna de te gebruiken plannertaak de nieuwe .esq bestandsnaam geven."
+
+#. Tag: title
+#: ekos-scheduler.docbook:231
+#, no-c-format
+msgid "Workflow"
+msgstr "Werkmethode"
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:234
+#, no-c-format
+msgid "<screeninfo>Scheduler + Planner</screeninfo>"
+msgstr "<screeninfo>Planner</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:242
+#, no-c-format
+msgid "<phrase>Scheduler + Planner</phrase>"
+msgstr "<phrase>Planner</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:246
+#, no-c-format
+msgid ""
+"The description above only tackles the <emphasis role=\"bold\">Data "
+"Acquisition</emphasis> stage of the observatory workflow. The overall "
+"procedure typically utilized in an observatory can be summarized in three "
+"primary stages:"
+msgstr ""
+"De bovenstaande beschrijving betreft alleen het <emphasis role=\"bold"
+"\">Verzamelen  van gegevens</emphasis>. De hele procedure die typisch in een "
+"waarneemstation wordt gebruikt kan in drie primaire fasen worden samengevat:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:251
+#, no-c-format
+msgid "Startup"
+msgstr "Opstarten"
+
+#. Tag: para
+#: ekos-scheduler.docbook:256
+#, no-c-format
+msgid "Data Acquisition (including preprocessing and storage)"
+msgstr "Verzamelen van gegevens (inclusief preprocessen en opslag)"
+
+#. Tag: para
+#: ekos-scheduler.docbook:261
+#, no-c-format
+msgid "<para>Shutdown</para>"
+msgstr "<para>Afsluiten</para>"
+
+#. Tag: title
+#: ekos-scheduler.docbook:269
+#, no-c-format
+msgid "Startup Procedure"
+msgstr "Opstartprocedure"
+
+#. Tag: para
+#: ekos-scheduler.docbook:270
+#, no-c-format
+msgid "Startup procedure is unique to each observatory but may include:"
+msgstr ""
+"De opstartprocedure is uniek voor elk waarneemstation, maar kan inhouden: "
+
+#. Tag: para
+#: ekos-scheduler.docbook:275
+#, no-c-format
+msgid "Turning on power to equipment"
+msgstr "Aanzetten apparatuur voor de energievoorziening"
+
+#. Tag: para
+#: ekos-scheduler.docbook:280
+#, no-c-format
+msgid "Running safety/sanity checks"
+msgstr "Controleren op veiligheid/juistheid"
+
+#. Tag: para
+#: ekos-scheduler.docbook:285
+#, no-c-format
+msgid "Checking weather conditions"
+msgstr "Weercondities controleren"
+
+#. Tag: para
+#: ekos-scheduler.docbook:290
+#, no-c-format
+msgid "Turning off light"
+msgstr "Licht uitdoen"
+
+#. Tag: para
+#: ekos-scheduler.docbook:295
+#, no-c-format
+msgid "Fan/Light control"
+msgstr "Besturing ventilatie en licht"
+
+#. Tag: para
+#: ekos-scheduler.docbook:300
+#, no-c-format
+msgid "Unparking dome"
+msgstr "Uitparkeren koepel"
+
+#. Tag: para
+#: ekos-scheduler.docbook:305
+#, no-c-format
+msgid "Unparking mount"
+msgstr "Uitparkeren opstelling"
+
+#. Tag: para
+#: ekos-scheduler.docbook:310
+#, no-c-format
+msgid "&etc;"
+msgstr "&etc;"
+
+#. Tag: para
+#: ekos-scheduler.docbook:315
+#, no-c-format
+msgid ""
+"Ekos Scheduler only initiates the startup procedure once the startup time "
+"for the first Scheduler job is close (default <emphasis>lead</emphasis> time "
+"is 5 minutes before <emphasis>startup</emphasis> time). Once the startup "
+"procedure is completed successfully, the scheduler picks the Scheduler job "
+"target and starts the sequence process. If a startup script is specified, it "
+"shall be executed first."
+msgstr ""
+"De planner van Ekos begint pas aan de opstartprocedure wanneer opstarttijd "
+"voor de eerste plannertaak nabij is  (standaard is de <emphasis>voorloop</"
+"emphasis>tijd 5 minuten voor de <emphasis>opstart</emphasis>tijd). Zodra het "
+"opstarten met succes is voltooid, kiest de planner de plannertaak en wordt "
+"de eerste waarneemreeks gestart. Indien een opstartscript werd opgegeven, "
+"wordt die eerst uitgevoerd."
+
+#. Tag: title
+#: ekos-scheduler.docbook:321
+#, no-c-format
+msgid "Data Acquisition"
+msgstr "Gegevens verzamelen"
+
+#. Tag: para
+#: ekos-scheduler.docbook:322
+#, no-c-format
+msgid ""
+"Depending the on the user selection, the typical workflow proceeds as "
+"follows:"
+msgstr ""
+"Afhankelijk van de keuzes van de gebruiker, gaat dit typisch als volgt:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:327
+#, no-c-format
+msgid ""
+"Slew mount to target. If a FITS file was specified, it first solves the "
+"files and slew to the file coordinates."
+msgstr ""
+"Draai de opstelling naar het doel. Indien een FITS-bestand werd opgegeven, "
+"wordt dit eerst opgelost, en wordt daarna naar de coördinaten gedraaid."
+
+#. Tag: para
+#: ekos-scheduler.docbook:332
+#, no-c-format
+msgid ""
+"Auto-focus target. The autofocus process automatically selects the best star "
+"in the frame and runs the autofocus algorithm against it."
+msgstr ""
+"Het doel automatisch focussen. Het autofocusproces kiest automatisch de "
+"beste ster in de frame, en gebruikt dit in het autofocus-algoritme."
+
+#. Tag: para
+#: ekos-scheduler.docbook:337
+#, no-c-format
+msgid "Perform plate solving, sync mount, and slew to target coordinates."
+msgstr ""
+"Los de plaat op, sync de opstelling, en draai naar de coördinaten van het "
+"doel."
+
+#. Tag: para
+#: ekos-scheduler.docbook:342
+#, no-c-format
+msgid ""
+"Perform post-alignment focusing since the frame might have moved during the "
+"plate solving process."
+msgstr ""
+"Focussen herhalen na het uitlijnen, omdat de frame tijdens het oplossen van "
+"de plaat kan zijn bewogen."
+
+#. Tag: para
+#: ekos-scheduler.docbook:347
+#, no-c-format
+msgid ""
+"Perform calibration and start auto-guiding: The calibration process "
+"automatically selects the best guide star, performs calibration, and starts "
+"the autoguide process."
+msgstr ""
+"Calibreren en autovolgen: het calibratieproces selecteert automatisch de "
+"beste ster om te volgen, voert de calibratie uit, en start het "
+"autovolgproces."
+
+#. Tag: para
+#: ekos-scheduler.docbook:352
+#, no-c-format
+msgid ""
+"Load the sequence file in the <link linkend=\"ekos-capture\">Capture module</"
+"link> and start the imaging process."
+msgstr ""
+"Lees het rijbestand in in de <link linkend=\"ekos-capture\">Opnamemodule</"
+"link> en start het afbeeldingsproces."
+
+#. Tag: para
+#: ekos-scheduler.docbook:357
+#, no-c-format
+msgid ""
+"Coordinate module issues, such as failures in guiding or alignment. They may "
+"result is Scheduler job suspensions and rescheduling."
+msgstr ""
+"Coördineer moduleproblemen, zoals mislukken bij volgen of uitlijning. Ze "
+"kunnen resulteren in onderbreken en opnieuw plannen van taken in de planner."
+
+#. Tag: para
+#: ekos-scheduler.docbook:362
+#, no-c-format
+msgid ""
+"Note--some of the inter-module interactions are initiated by the modules "
+"themselves, but are monitored by the Scheduler. These include meridian "
+"flips, autofocus runs initiated by temperature change or timer expiration, "
+"and minimum guiding deviation requirements for capture."
+msgstr ""
+"Opmerking--sommige van de interacties tussen modulen worden geïnitieerd door "
+"de modulen zelf, maar worden gemonitord door de planner. Deze omvatten "
+"meridiaan omdraaiingen, uitvoeren van autofocus geïnitieerd door "
+"temperatuurwijzigingen of aflopen van timers en vereisten voor opnamen voor "
+"minimale afwijkingen in het volgen."
+
+#. Tag: title
+#: ekos-scheduler.docbook:370
+#, no-c-format
+msgid "<title>Shutdown</title>"
+msgstr "<title>Afsluiten</title>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:371
+#, no-c-format
+msgid ""
+"Once the Scheduler job is completed successfully, the scheduler selects the "
+"next Scheduler job. If no job can be scheduled at this time, the mount is "
+"parked until a next job can run. Furthermore, if the next job is not due for "
+"a user-configurable time limit, the scheduler performs a "
+"<emphasis>preemptive</emphasis> shutdown to preserve resources and performs "
+"the startup procedure again when the target is due."
+msgstr ""
+"Zodra de plannertaak met succes is voltooid, selecteert de planner de "
+"volgende plannertaak. Indien er geen taak gepland kan worden wordt de "
+"opstelling geparkeerd, totdat de volgende taak uitgevoerd kan worden. "
+"Verder, indien de volgende taak nog niet aan de beurt is gedurende een door "
+"de gebruiker instelbare tijd, voert de planner een afsluitprocedure uit als "
+"<emphasis>voorzorg</emphasis>, om hulpbronnen te besparen en voert de "
+"opstartprocedure weer uit, als doel zover is."
+
+#. Tag: para
+#: ekos-scheduler.docbook:374
+#, no-c-format
+msgid ""
+"If an unrecoverable error occurs, the observatory initiates shutdown "
+"procedure. If there is a shutdown script, it will be executed last."
+msgstr ""
+"Indien een onherstelbare fout optreedt, zal de waarneemstation een "
+"afsluitprocedure beginnen. Als er een script is voor afsluiten, wordt die "
+"het laatst uitgevoerd."
+
+#. Tag: para
+#: ekos-scheduler.docbook:377
+#, no-c-format
+msgid ""
+"The following video demonstrates an earlier version of the scheduler, but "
+"the basic principles still apply today:"
+msgstr ""
+"In de volgende video ziet u een eerdere versie van de planner in actie, maar "
+"de basisprincipes gelden nog steeds:"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:386
+#, no-c-format
+msgid "Ekos Scheduler"
+msgstr "Planner van Ekos"
+
+#. Tag: title
+#: ekos-scheduler.docbook:393
+#, no-c-format
+msgid "Weather Monitoring"
+msgstr "Weer monitoren"
+
+#. Tag: para
+#: ekos-scheduler.docbook:394
+#, no-c-format
+msgid ""
+"Another critical feature of any remotely operated robotic observatory is "
+"weather monitoring. For weather updates, Ekos relies on the selected INDI "
+"weather driver to continuously monitor the weather conditions. For "
+"simplicity sake, the weather conditions can be summed in three states:"
+msgstr ""
+"Nog een kritieke eigenschap van elke op afstand bediende automatische "
+"waarneemstation is het monitoren van het weer. Voor weer-updates vertrouwt "
+"Ekos op de geselecteerde weer-driver van INDI, voor het continu monitoren "
+"van de weercondities. Eenvoudigheidshalve kunnen de weercondities opgesomd "
+"worden in drie toestanden:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:399
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Ok</emphasis>: Weather conditions are clear and "
+"optimal for imaging."
+msgstr ""
+"<emphasis role=\"bold\">Ok</emphasis>: Helder weer, optimaal voor opnames."
+
+#. Tag: para
+#: ekos-scheduler.docbook:404
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Warning</emphasis>: Weather conditions are not "
+"clear, seeing is subpar, or partially obstructed and not suitable for "
+"imaging. Any further imaging process is suspended until the weather "
+"improves. Warning weather status does not pose any danger to the observatory "
+"equipment so the observatory is kept operational. The exact behavior to take "
+"under Warning status can be configured."
+msgstr ""
+"<emphasis role=\"bold\">Waarschuwing</emphasis>:  Geen helder weer, zicht is "
+"onvoldoende, of gedeeltelijk geblokkeerd en ongeschikt voor het maken van "
+"afbeeldingen. Verder afbeelden wordt opgeschort tot het weer verbetert. "
+"Weercondities zijn niet schadelijk voor de apparatuur in de waarneemstation, "
+"dus blijft die operationeel. Wat er precies moet gebeuren tijdens een "
+"waarschuwing, kan worden ingesteld."
+
+#. Tag: para
+#: ekos-scheduler.docbook:409
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Alert</emphasis>: Weather conditions are detrimental "
+"to the observatory safety and shutdown must be initiated as soon as possible."
+msgstr ""
+"<emphasis role=\"bold\">Alert</emphasis>: Weercondities zijn schadelijk voor "
+"de veiligheid van de waarneemstation, en die moet zo snel mogelijk worden "
+"afgesloten."
+
+#. Tag: title
+#: ekos-scheduler.docbook:417
+#, no-c-format
+msgid "Startup &amp; Shutdown Scripts"
+msgstr "Scripts voor Opstarten &amp; en Afsluiten"
+
+#. Tag: para
+#: ekos-scheduler.docbook:418
+#, no-c-format
+msgid ""
+"Due to the uniqueness of each observatory, Ekos enables the user to select "
+"startup and shutdown scripts. The scripts take care of any necessary "
+"procedures that must take place on startup and shutdown stages. On startup, "
+"Ekos executes the startup scripts and only proceeds to the remainder of the "
+"startup procedure (unpark dome/unpark mount) if the script completes "
+"successfully. Conversely, the shutdown procedure begins with parking the "
+"mount &amp; dome before executing the shutdown script as the final procedure."
+msgstr ""
+"Omdat elk waarneemstation uniek is, maakt Ekos het mogelijk scripts te maken "
+"voor het opstarten en het afsluiten. In de scripts staan alle nodige "
+"procedures hiervoor. Bij het opstarten voert Ekos de opstartscripts uit en "
+"gaat alleen verder met de rest van de opstartprocedure (ontparkeren van "
+"koepel en opstelling), als dit met succes wordt voltooid. Omgekeerd, begint "
+"de afsluitprocedure met het parkeren van opstelling &amp; en koepel, voordat "
+"tenslotte de uitvoerscript wordt uitgevoerd."
+
+#. Tag: para
+#: ekos-scheduler.docbook:421
+#, no-c-format
+msgid ""
+"Startup and shutdown scripts can be written any language that can be "
+"executed on the local machine. It must return 0 to report success, any other "
+"exist value is considered an error indicator. The script's standard output "
+"is also directed to Ekos logger window. The following is an sample demo "
+"startup script in Python:"
+msgstr ""
+"OPstart en afsluitscripts kunnen in elke taal worden geschreven die op de "
+"lokale machine beschikbaar is. 0 moet worden gerapporteerd bij succes, elke "
+"andere waard betekent dat er iets niet goed is gegaan. De standaarduitvoer "
+"van een script gaat ook naar het logvenster van Ekos. Hier volgt een "
+"voorbeeld-demo van een opstartscript in Python:"
+
+#. Tag: programlisting
+#: ekos-scheduler.docbook:424
+#, no-c-format
+msgid ""
+"#!/usr/bin/env python\n"
+"# -*- coding: utf-8 -*-\n"
+"\n"
+"import os\n"
+"import time\n"
+"import sys\n"
+"\n"
+"print \"Turning on observatory equipment...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"Checking safety switches...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"All systems are GO\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"exit(0)"
+msgstr ""
+"#!/usr/bin/env python\n"
+"# -*- coding: utf-8 -*-\n"
+"\n"
+"import os\n"
+"import time\n"
+"import sys\n"
+"\n"
+"print \"Apparatuur aanzetten...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"Veiligheidsschakelaars controleren...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"Alle systemen zijn GO\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"exit(0)"
+
+#. Tag: para
+#: ekos-scheduler.docbook:425
+#, no-c-format
+msgid ""
+"The startup and shutdown scripts must be <emphasis>executable</emphasis> in "
+"order for Ekos to invoke them (&eg; use <userinput>chmod +x startup_script."
+"py</userinput> to mark the script as executable). Ekos Scheduler enables "
+"truly simple robotic operation without the need of any human intervention in "
+"any step of the process. Without human presence, it becomes increasingly "
+"critical to gracefully recover from failures in any stage of the observation "
+"run. Using &plasma; notifications, the user can configure audible alarms and "
+"email notifications for the various events in the Scheduler."
+msgstr ""
+"Opstart- en afsluitsripts moeten <emphasis>uitvoerbaar</emphasis> worden "
+"gemaakt, voordat die door Ekos kunnen worden gebruikt  (&eg; gebruik "
+"hiervoor <userinput>chmod +x script_naam.py</userinput>). De planner van "
+"Ekos maakt een werkelijk eenvoudige automatische werking mogelijk van elk "
+"stap in het proces. Zonder iemand in de buurt, wordt het steeds belangrijker "
+"dat als er iets misgaat in enige fase van de waarnemingen, dat de "
+"waarnemingen op een goede manier worden beëindigd. Met &plasma;-berichten "
+"kan de gebruiker hoorbare alarmen en e-mailberichten instellen voor de "
+"diverse gebeurtenissen in de planner."
+
+#. Tag: title
+#: ekos-scheduler.docbook:431
+#, no-c-format
+msgid "<title>Mosaic Planner</title>"
+msgstr "<title>Mozaïekplanner</title>"
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:433
+#, no-c-format
+msgid "<screeninfo>Mosaic Planner</screeninfo>"
+msgstr "<screeninfo>Mozaïekplanner</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:441
+#, no-c-format
+msgid "<phrase>Mosaic Planner</phrase>"
+msgstr "<phrase>Mozaïekplanner</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:445
+#, no-c-format
+msgid ""
+"Hubble-like super wide field images of <ulink url=\"http://darkskyart.com/?"
+"page_id=96\">galaxies</ulink> and nebulae are truly awe-inspiring, and while "
+"it takes great skills to obtain such images and process them; many notable "
+"names in the field of astrophotography employ gear that is not "
+"<emphasis>vastly</emphasis> different from yours or mine. I emphasize "
+"<emphasis>vastly</emphasis> because some do indeed have impressive equipment "
+"and dedicated observatories worth tens of the thousands of dollars. "
+"Nevertheless, many amateurs can obtain stellar wide-field images by "
+"combining smaller images into a single grand mosaic."
+msgstr ""
+"Super wide-field afbeeldingen als van de Hubbletelescoop van <ulink url="
+"\"http://darkskyart.com/?page_id=96\">melkwegstelsels</ulink> en nevels zijn "
+"werkelijk heel indrukwekkend, en hoewel er veel vakmanschap nodig is om deze "
+"opnames te maken en te bewerken; zijn er veel opmerkelijke namen op het "
+"gebied van de astrofotografie, die apparatuur gebruiken die niet "
+"<emphasis>heel veel</emphasis> verschillen van die van u en mij. Ik benadruk "
+"<emphasis>heel veel</emphasis>, omdat sommigen inderdaad indrukwekkende "
+"apparatuur hebben en speciale waarneemstations die tienduizenden Euro's "
+"kosten. Niettemin, vele amateurs kunnen wide-field opnames maken van "
+"sterren, door kleinere afbeeldingen te combineren in een enkele grootse "
+"mozaïek."
+
+#. Tag: para
+#: ekos-scheduler.docbook:448
+#, no-c-format
+msgid ""
+"We are often limited by our camera+telescope Field of View (FOV). By "
+"increasing FOV by means of a focal reducer or a shorter tube, we gain a "
+"larger sky coverage at the expense of spatial resolution. At the same time, "
+"many attractive wide-field targets span multiple FOVs across the sky. "
+"Without any changes to your astrophotography gear, it is possible to create "
+"a super mosaic image <emphasis>stitched</emphasis> together from several "
+"smaller images. There are two major steps to accomplish a super mosaic image:"
+msgstr ""
+"We worden vaak beperkt door het gezichtsveld (GV) van onze camera+telescoop "
+"combinatie. Door het GV te vergroten door middel van het verkorten van de "
+"brandpuntsafstand, of een kortere buis, zien we een groter gedeelte van de "
+"hemel, ten koste van de ruimtelijke resolutie. Tegelijkertijd zijn er vele "
+"aantrekkelijke wide-field doelen die meerdere GV's beslaan aan de hemel. "
+"Zonder veranderingen in uw astrografische apparatuur, is het mogelijk een "
+"aantal kleinere afbeeldingen tot een super mozaïekbeeld aan elkaar te "
+"<emphasis>plakken</emphasis>. Dit kan op twee manieren:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:453
+#, no-c-format
+msgid ""
+"Capture multiple images spanning the target with some overlap between "
+"images. The overlap is necessary to enable the processing software from "
+"aligning and joining the sub-images."
+msgstr ""
+"Maak meerdere opnamen die samen met enige overlap het hele object beslaan. "
+"De overlap is nodig voor de software die de sub-afbeeldingen met elkaar "
+"uitlijnt en aan elkaar verbindt."
+
+#. Tag: para
+#: ekos-scheduler.docbook:458
+#, no-c-format
+msgid ""
+"Process the images and <emphasis>stitch</emphasis> them into a super mosaic "
+"image."
+msgstr ""
+"Bewerk de afbeeldingen en <emphasis>plak</emphasis> ze aan elkaar tot een "
+"super mozaïek afbeelding."
+
+#. Tag: para
+#: ekos-scheduler.docbook:463
+#, no-c-format
+msgid ""
+"The 2nd step is handled by image processing applications such as <ulink url="
+"\"https://pixinsight.com\">PixInsight</ulink>, among others, and will not be "
+"the topic of discussion here. The first step can be accomplished in Ekos "
+"Scheduler where it creates a mosaic suitable for your equipment and in "
+"accordance with the desired field of view. Not only Ekos creates the mosaic "
+"panels for your target, but it also constructs the corresponding observatory "
+"jobs required to capture all the images. This greatly facilitates the "
+"logistics of capturing many images with different filters and calibration "
+"frames across a wide area of the sky."
+msgstr ""
+"De tweede manier wordt afgehandeld door toepassingen voor het bewerken van "
+"afbeeldingen, zoals <ulink url=\"https://pixinsight.com\">PixInsight</"
+"ulink>, onder andere, welke hier niet zullen worden besproken. De eerste "
+"stap wordt gedaan in de planner van Ekos, waarin een mozaïek wordt "
+"aangemaakt die geschikt is voor uw apparatuur, in overeenstemming met de "
+"gewenste GV. Ekos maakt niet alleen de mozaïekpanelen aan voor uw doel, maar "
+"ook de ermee corresponderende waarneemtaken die nodig zijn voor het maken "
+"van alle opnames. Hiermee wordt  de logistiek van het maken van veel opnames "
+"met verschillende filters en calibratie-frames over een groot gebied van de "
+"hemel, veel eenvoudiger."
+
+#. Tag: para
+#: ekos-scheduler.docbook:466
+#, no-c-format
+msgid ""
+"The <guilabel>Mosaic Planner</guilabel> in the Ekos Scheduler will create "
+"multiple Scheduler jobs based on a central target. To toggle the planner, "
+"click on the <guibutton>Mosaic Planner</guibutton> button in Ekos Scheduler "
+"or KStars INDI toolbar as illustrated in the screenshot. The planner draws "
+"the Mosaic Panel directly unto the sky map. It is recommended to enable HiPS "
+"overlay for the best experience. The planner is composed of four stages:"
+msgstr ""
+"De <guilabel>Mozaïekplanner</guilabel> in de Ekos planner zal meerdere "
+"plannerjobs aanmaken gebaseerd op een centraal doel. Om de planner om te "
+"schakelen, klik op de knop <guibutton>Mozaïekplanner</guibutton> in de Ekos "
+"planner of KStars INDI werkbalk zoals getoond in de schermafdruk. De planner "
+"tekent het Mozaïekpaneel direct op de hemelkaart. Aanbevolen is het "
+"inschakelen van HiPS overlay voor de beste ervaring. De planner is opgebouwd "
+"uit vier stadia:"
+
+#. Tag: para
+#: ekos-scheduler.docbook:471
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Confirm Equipment</emphasis>: Ekos attempts to load "
+"equipment settings from INDI. If unsuccessful, you need to enter your "
+"equipment settings including your telescope focal length in addition to "
+"camera's width, height, and pixel dimensions. The settings are saved for "
+"future sessions."
+msgstr ""
+"<emphasis role=\"bold\">Apparatuur bevestigen</emphasis>: Ekos probeert "
+"apparaatinstellingen uit INDI te laden. Indien, zonder succes, moet u uw "
+"apparatuurinstellingen inclusief uw brandpuntsafstand van de telescoop naast "
+"breedte, hoogte en pixelafmetingen. De instellingen worden opgeslagen voor "
+"toekomstige sessies."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:475
+#, no-c-format
+msgid "<screeninfo>Confirm Equipment</screeninfo>"
+msgstr "<screeninfo>Apparatuur bevestigen</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:483
+#, no-c-format
+msgid "<phrase>Confirm Equipment</phrase>"
+msgstr "<phrase>Apparatuur bevestigen</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:489
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Adjust Grid</emphasis>: Select the mosaic panel "
+"dimension and overlap percentage. The Mosaic Panel is updated accordingly on "
+"the sky map. Adjust the Position Angle to match the desired mosaic "
+"orientation in the sky. If the Position Angle is different from your "
+"camera's usual orientation, you may need to rotate the camera either "
+"manually or via a mechanized rotator when the scheduler jobs are executed. "
+"Tile transparency is automatically calculated by default but may be turned "
+"off and adjusted manually. To compute the mosaic field from the number of "
+"tiles, click the <guibutton>Cover FOV</guibutton> button. The mosaic panel "
+"can be centered in the sky map by clicking on the <guibutton>Recenter</"
+"guibutton> button."
+msgstr ""
+"<emphasis role=\"bold\">Raster aanpassen</emphasis>: selecteer de afmetingen "
+"van het mozaïekpaneel en het percentage overlap. Het mozaïekpaneel wordt "
+"bijgewerkt dan ook op de hemelkaart. Pas de positiehoek aan om overeen te "
+"komen met de gewenste mozaïek-oriëntatie in de hemel. Als de positiehoek "
+"verschilt van de gebruikelijke oriëntatie van uw camera, dan moet u "
+"misschien de camera draaien ofwel handmatig of via een gemechaniseerde "
+"rotator wanneer de planjobs zijn uitgevoerd. Transparantie van vakjes wordt "
+"standaard automatisch berekend maar kan uitgeschakeld worden en handmatig "
+"aangepast. Om het mozaïekveld uit het aantal vakjes te berekenen, klik op de "
+"knop <guibutton>FOV dekken</guibutton>. Het mozaïekpaneel kan gecentreerd "
+"worden in de hemelkaart door te klikken op de knop <guibutton>Opnieuw "
+"centreren</guibutton>."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:493
+#, no-c-format
+msgid "<screeninfo>Select Grid</screeninfo>"
+msgstr "<screeninfo>Raster selecteren</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:501
+#, no-c-format
+msgid "<phrase>Select Grid</phrase>"
+msgstr "<phrase>Raster selecteren</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:505
+#, no-c-format
+msgid ""
+"A large overlap will make frame stitching easier during post-processing, but "
+"it requires more panes to cover the desired extent. However, if you already "
+"know the minimal amount of sub-frames your rejection algorithm will use "
+"during post-processing, you may want to increase the overlap to attain that "
+"amount on the areas covered by multiple panes. For instance, a 4x4 mosaic "
+"grid with 75% overlap has 16 sub-frames covering the central intersection, "
+"which is enough for Winsorized Sigma rejection. Although the resulting stack "
+"does not have the same height on all parts of the final frame, this method "
+"gives you control on signal-to-noise ratio and allows you to provide context "
+"to your target while exposing a relatively low number of captures."
+msgstr ""
+"Een grote overlap zorgt er voor dat het aan elkaar naaien van frames "
+"gemakkelijker zal zijn tijdens nabewerking, maar het vereist meer panelen om "
+"de gewenste uitbreiding te dekken. Als u echter al het minimale aantal sub-"
+"frames weet dat uw afwijs-algoritme zal gebruiken tijdens nabewerken, dan "
+"kunt u de overlap verhogen om die hoeveelheid te halen op de gebieden gedekt "
+"door meerdere panelen. Bijvoorbeeld, een 4x4 mozaïekraster met 75% overlap "
+"heeft 16 sub-frames die de centrale doorsnede dekken, wat genoeg is voor "
+"Winsorized Sigma afwijzing. Hoewel de resulterende stapel niet dezelfde "
+"hoogte heeft op alle delen van het uiteindelijke frame, geeft deze methode u "
+"controle over de signaal-ruisverhouding en biedt u om de context naar uw "
+"doel te leveren tijdens het leveren van een relatief laag aantal opnamen."
+
+#. Tag: para
+#: ekos-scheduler.docbook:508
+#, no-c-format
+msgid ""
+"The large number drawn in the corner of each grid pane represents the order "
+"in which panes will be captured. The default S-shaped choice (west-east then "
+"alternating high-low/low-high moves), ensures minimal movement of the mount "
+"during observation. Uncheck <guilabel>Minimum mount move</guilabel> to "
+"revert to west-east/high-low movement only. The coordinates of each pane are "
+"rendered in their center as degrees, minutes and seconds. Finally, the angle "
+"each pane rotates from the center of the mosaic is displayed at the bottom. "
+"If your field of view is large, or if your mosaic is located close to a "
+"celestial pole, you may observe that rendered panes start rotating visibly "
+"due their horizontal position or high declination. Use the "
+"<guilabel>overlap</guilabel> to ensure panes cover the desired frame extents "
+"properly."
+msgstr ""
+"Het grote getal getoond in de hoek van elk rasterpaneel representeert de "
+"volgorde waarin panelen zullen worden opgenomen. De standaard S-vormige "
+"keuze (west-oost daarna afwisselend verplaatsingen omhoog-omlaag/omlaag-"
+"omhoog), verzekert minimale beweging van de opstelling tijdens de "
+"observatie. Deactiveer <guilabel>Minimale beweging van de opstelling</"
+"guilabel> om terug te gaan naar alleen beweging west-oost/omhoog-omlaag. De "
+"coördinaten van elk paneel behoren bij hun centrum als graden, minuten en "
+"seconden. Tenslotte wordt de hoek, die elk paneel draait vanuit het centrum "
+"van het mozaïek, onderaan getoond. Als uw zichtveld groot is of als uw "
+"mozaïek zich dicht bij een hemelpool bevindt, zou u kunnen zien dat "
+"gerenderde panelen zichtbaar beginnen te draaien vanwege hun horizontale "
+"positie of hoge declinatie. Gebruik de <guilabel>overlap</guilabel> om te "
+"verzekeren dat panelen de gewenste uitbreidingen van het frame juist dekken."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:512
+#, no-c-format
+msgid "<screeninfo>Scheduler Mosaic Tool - Large rotation</screeninfo>"
+msgstr ""
+"<screeninfo>Planner van Mozaïekhulpmiddel - Grote draaiing</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:520
+#, no-c-format
+msgid "<phrase>Scheduler Mosaic Tool - Large rotation</phrase>"
+msgstr "<phrase>Planner van Mozaïekhulpmiddel - Grote draaiing</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:526
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Adjust Grid</emphasis>: Adjust Grid center by "
+"manually entering the J2000 center or by dragging the center of the mosaic "
+"on the sky map."
+msgstr ""
+"<emphasis role=\"bold\">Raster aanpassen</emphasis>: Centrum van raster "
+"aanpassen door handmatig het J2000-centrum in te voeren of door het centrum "
+"van het mozaïek op de hemelkaart te slepen."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:530
+#, no-c-format
+msgid "<screeninfo>Adjust Grid</screeninfo>"
+msgstr "<screeninfo>Raster aanpassen</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:538
+#, no-c-format
+msgid "<phrase>Adjust Grid</phrase>"
+msgstr "<phrase>Raster aanpassen</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:544
+#, no-c-format
+msgid ""
+"<emphasis role=\"bold\">Create Jobs</emphasis>: The final step is to select "
+"the sequence file and directory to store the images. Target field may be "
+"automatically filled but may be changed as desired. Select the steps each "
+"scheduler job should execute in sequence (Track -> Focus -> Align -> Guide -"
+"> Capture), and adjust the frequency of automatic alignment and focus "
+"routines that must be executed during the mosaic operation. For example, if "
+"<guilabel>Align Every</guilabel> is set to 2 Scheduler Jobs, then the first "
+"job will run the astrometry alignment, while the second job will skip it. "
+"When the third job is executed, alignment is performed again and so forth."
+msgstr ""
+"<emphasis role=\"bold\">Taken aanmaken</emphasis>: de laatste stap is het "
+"selecteren van het volgordebestand en map voor opslag van de afbeeldingen. "
+"Het doelveld kan automatisch gevuld worden maar kan naar wens gewijzigd "
+"worden. Selecteer de stappen die elke planjob in volgorde zou moeten "
+"uitvoeren (Track -> Focus -> Uitlijnen -> volgen -> Opnemen) en pas de "
+"frequentie van automatische uitlijning en focusroutines die uitgevoerd "
+"moeten worden tijdens de mozaïek bewerking. Bijvoorbeeld, als "
+"<guilabel>Alles uitlijnen</guilabel> is ingesteld op 2 planjobs, dan zal de "
+"eerste job de uitlijning van de astrometrie doen, terwijl de tweede job dat "
+"zal overslaan. Wanneer de derde job wordt uitgevoerd, dan is uitlijnen "
+"gedaan enzovoort."
+
+#. Tag: para
+#: ekos-scheduler.docbook:547
+#, no-c-format
+msgid ""
+"If you want the different mosaic tile jobs to alternate, then fill in the "
+"group name with an identifier that all the tile jobs will share, and select "
+"a repeating completion condition."
+msgstr ""
+"Als u de verschillende taken in de mozaïekvelden wilt alterneren, vul dan in "
+"de groepsnaam een identifier die alle taken in de mozaïekvelden zullen delen "
+"en selecteer een herhalende voorwaarde voor gereed."
+
+#. Tag: screeninfo
+#: ekos-scheduler.docbook:551
+#, no-c-format
+msgid "<screeninfo>Create Jobs</screeninfo>"
+msgstr "<screeninfo>Jobs aanmaken</screeninfo>"
+
+#. Tag: phrase
+#: ekos-scheduler.docbook:559
+#, no-c-format
+msgid "<phrase>Create Jobs</phrase>"
+msgstr "<phrase>Jobs aanmaken</phrase>"
+
+#. Tag: para
+#: ekos-scheduler.docbook:565
+#, no-c-format
+msgid ""
+"Click <guibutton>Create Jobs</guibutton> to generate mosaic scheduler jobs "
+"and add them to the schedule queue. You can further edit the jobs "
+"individually, as you would normal Scheduler jobs."
+msgstr ""
+"Klik op <guibutton>Jobs aanmaken</guibutton> om mozaïek planjobs te "
+"genereren en ze toe te voegen aan de wachtrij. U kunt de taken verder "
+"individueel bewerken, zoals u met normale plantaken zou doen."
+
+#~ msgid ""
+#~ "Ekos Scheduler is an indispensable arsenal in building your robotic "
+#~ "observatory. A Robotic observatory is an observatory composed of several "
+#~ "subsystems that are orchestrated together to achieve a set of scientific "
+#~ "objectives without human intervention. It is the only Ekos module that "
+#~ "does not require Ekos to be started as it is utilized to <emphasis>start</"
+#~ "emphasis> and <emphasis>stop</emphasis> Ekos. It is designed to be "
+#~ "straightforward and intuitive. However, the scheduler should only be used "
+#~ "after you mastered Ekos and knows all the quirks of your equipment. Since "
+#~ "the complete process is automated, including focus, guiding, and meridian "
+#~ "flip, all equipment should be thoroughly used with Ekos and all their "
+#~ "parameters and settings adjusted to achieve the best result."
+#~ msgstr ""
+#~ "De planner van Ekos is onmisbaar voor het inrichten van uw automatisch "
+#~ "waarneemstation. Een automatisch waarneemstation bevat diverse "
+#~ "subsystemen die samenwerken om een aantal wetenschappelijke doelen te "
+#~ "bereiken zonder menselijk ingrijpen. Dit is de enige module van Ekos, "
+#~ "waarvoor het niet nodig is eerst Ekos te starten, omdat hierin Ekos wordt "
+#~ "<emphasis>gestart</emphasis> en <emphasis>gestopt</emphasis>. Het is "
+#~ "bedoeld rechtlijnig en intuïtief te zijn. Maar u moet de planner alleen "
+#~ "gebruiken als u Ekos zelf beheerst, en elke merkwaardigheid kent van uw "
+#~ "apparatuur. Omdat het hele proces automatisch verloopt, inclusief focus, "
+#~ "volgen, en meridiaanflip, moet alle apparatuur grondig door Ekos worden "
+#~ "gebruikt, en alle parameters en instellingen juist zijn, voor het beste "
+#~ "resultaat."
+
+#~ msgid ""
+#~ "With Ekos, the user can utilize the powerful sequence queue to image "
+#~ "batches of images for a particular target. In simple setups, the user is "
+#~ "expected to focus the CCD, align the mount, frame the target, and start "
+#~ "guiding before initiating the capture process. For more complex "
+#~ "observatory environments, there are usually predefined custom procedures "
+#~ "to be executed to prepare the observatory for imaging, and another set of "
+#~ "procedures on shutdown. The user may plan to image one or more targets "
+#~ "during the night and expects data to be ready by morning. In &kstars;, "
+#~ "tools such as the <link linkend=\"tool-obsplanner\">Observation Planner</"
+#~ "link> and <link linkend=\"tool-whatsup\">What's up Tonight</link> help "
+#~ "the user in selecting candidates for imaging. After selecting the desired "
+#~ "candidates, the user can add them to the Ekos Scheduler list for "
+#~ "evaluation. The user may also add the targets directly in Ekos scheduler "
+#~ "or select a FITS file of a previous image."
+#~ msgstr ""
+#~ "Met Ekos kan de gebruiker de krachtige opnamerij (sequence queue) "
+#~ "gebruiken voor het maken van opnames van een bepaald doel in batches "
+#~ "(stapels). Bij eenvoudige instellingen moet de gebruiker de CCD "
+#~ "focusseren, de opstelling uitlijnen, het doel opzoeken, en het volgen "
+#~ "starten, voordat het opnemen wordt gestart. In complexere omgevingen zijn "
+#~ "er meestal voorgedefinieerde te volgen procedures aanwezig, om de "
+#~ "waarnemingen voor te bereiden, voor het maken van opnames, en andere "
+#~ "procedures die gevolgd moeten worden bij het afsluiten. De gebruiker kan "
+#~ "opnames willen maken van een of meer doelen gedurende de nacht, en de "
+#~ "data tegen de ochtend beschikbaar willen hebben. In &kstars; kunnen "
+#~ "hulpmiddelen zoals <link linkend=\"tool-obsplanner\">Waarneemplanner</"
+#~ "link> en <link linkend=\"tool-whatsup\">Wat is er vanavond te zien</link> "
+#~ "de gebruiker helpen bij het selecteren van mogelijke doelen voor opnames. "
+#~ "Na het selecteren van de gewenste kandidaten kan de gebruiker die "
+#~ "toevoegen aan de planner van Ekos ter evaluatie. De gebruiker kan de "
+#~ "doelen ook zonder meer toevoegen aan de planner van Ekos, of een FITS-"
+#~ "afbeeldingsbestand van een eerdere opname."
+
+#~ msgid ""
+#~ "<guilabel>Priority</guilabel>: Set job priority in the range of 1 to 20 "
+#~ "where 1 designates the highest priority and 20 the lowest priority. "
+#~ "Priority is applied in calculating the weight used to select the next "
+#~ "target to image."
+#~ msgstr ""
+#~ "<guilabel>Prioriteit</guilabel>: Stelt de prioriteit in van de taak, van "
+#~ "1 tot 20. Hierin is 1 de hoogste prioriteit, en 20 de laagste. Prioriteit "
+#~ "bepaalt het gewicht bij de selectie van het volgende doel voor de op te "
+#~ "nemen afbeelding."
+
+#~ msgid ""
+#~ "<guilabel>Steps</guilabel>: The user selects which Ekos modules should be "
+#~ "utilized in the observation job execution workflow."
+#~ msgstr ""
+#~ "<guilabel>Stappen</guilabel>: De gebruiker selecteert de modules van "
+#~ "Ekos, die bij de waarneemtaak zullen worden gebruikt."
+
+#~ msgid ""
+#~ "You must select the <guilabel>Target</guilabel> and <guilabel>Sequence</"
+#~ "guilabel> before you can add a job to the Scheduler. When the scheduler "
+#~ "starts, it evaluates all jobs in accord to the conditions and constraints "
+#~ "specified and attempts to select the best job to execute. Selection of "
+#~ "the job depends on a simple heuristic algorithm that scores each job "
+#~ "given the conditions and constraints, each of which is weighted "
+#~ "accordingly. If two targets have identical conditions and constraints, "
+#~ "usually the higher priority target followed by higher altitude target is "
+#~ "selected for execution. If no candidates are available at the current "
+#~ "time, the scheduler goes into sleep mode and wakes up when the next job "
+#~ "is ready for execution."
+#~ msgstr ""
+#~ "U moet het <guilabel>Doel</guilabel> en de <guilabel>Rij</guilabel> "
+#~ "selecteren voordat u een taak aan de planner kunt toevoegen. Wanneer de "
+#~ "planner start, bekijkt die alle taken wat betreft de opgegeven condities "
+#~ "en beperkingen, en poogt de beste taak te kiezen voor uitvoering. "
+#~ "Selectie van de taak hangt af van een eenvoudig heuristisch algoritme dat "
+#~ "elke taak een score geeft voor de opgegeven condities en beperkingen. "
+#~ "Indien twee doelen in aanmerking komen,wordt het  doel met de hoogste "
+#~ "prioriteit, en daarna dat met de grotere hoogte, gekozen om te worden "
+#~ "uitgevoerd. Indien op dit tijdstip geen kandidaat kan worden gevonden, "
+#~ "gaat de planner in slaapmodus, totdat de volgende taak klaar is om te "
+#~ "worden gedaan."
+
+#~ msgid ""
+#~ "The <guilabel>Mosaic Job Creator</guilabel> in the Ekos Scheduler will "
+#~ "create multiple Scheduler jobs based on a central target. It requires "
+#~ "that you select first one target and one sequence file. The Sequence File "
+#~ "contains all the information necessary to capture an image including "
+#~ "exposure time, filters, temperature setting, &etc;, and that information "
+#~ "will be used for each pane of the mosaic. Observation job conditions and "
+#~ "constraints shall be assigned too, so check that they are as per your "
+#~ "requirements. You may simply prepare a new job without adding it, or pick "
+#~ "an existing job, as long as both target and sequence file fields are "
+#~ "valid in the Scheduler form. If you added jobs to the observation list "
+#~ "previously, Ekos will ask you if you would want to keep or remove them "
+#~ "before inserting the mosaic jobs in the list."
+#~ msgstr ""
+#~ "Het <guilabel>Aanmaken van een mozaïek</guilabel> in de Ekos-planner zal "
+#~ "meerdere planningjobs aanmaken gebaseerd op een centraal doel. Het "
+#~ "vereist dat u eerst één doel en één volgordebestand selecteert. Het "
+#~ "Volgordebestand bevat alle informatie die nodig is voor het maken van een "
+#~ "afbeelding, zoals belichtingstijd, filters, temperatuurinstellingen, "
+#~ "&etc;, en dat informatie gebruikt zal worden voor elk paneel van het "
+#~ "mozaïek. Observatiejobcondities en beperkingen zullen ook worden "
+#~ "toegekend, controleer dus dat ze aan uw eisen voldoen. U kunt eenvoudig "
+#~ "een nieuwe job voorbereiden zonder het toe te voegen of een een bestaande "
+#~ "job kiezen, zolang beide doelen en volgordevelden gelig zijn in het "
+#~ "Planningsformulier. Als u eerder jobs hebt toegevoegd aan de "
+#~ "observatielijst zal Ekos u vragen of u ze zou willen behouden of "
+#~ "verwijderen alvorens ze in te voegen in de mozaïekjobs in de lijst."
+
+#~ msgid ""
+#~ "When your target and conditions are ready, start the Mosaic Job Creator "
+#~ "by clicking on the icon next to the <guibutton>Find</guibutton> button in "
+#~ "Ekos Module. A new window will open with a left-side form and your target "
+#~ "centered in a sky chart. For convenience, maximize that window. There is "
+#~ "a help icon on the top left part of the sky chart. Move your mouse over "
+#~ "it to display the latest documentation of the tool. Each gadget also has "
+#~ "its own tooltip."
+#~ msgstr ""
+#~ "Wanneer uw doel en condities gereed zijn, start de Mozaïekjobmaker door "
+#~ "te klikken op het pictogram naast de knop <guibutton>Zoeken</guibutton> "
+#~ "in de Ekosmodule. Een nieuw venster zal openen met een formulier links en "
+#~ "uw doel gecentreerd in een hemelkaart. Voor het gemak, maximaliseer dat "
+#~ "venster. Er is een help-pictogram linksboven op de hemelkaart. Beweeg uw "
+#~ "muis erover om de laatste documentatie van het hulpmiddel te tonen. Elk "
+#~ "dingetje heeft ook zijn eigen tekstballon."
+
+#~ msgid ""
+#~ "On first use, you need to enter your equipment settings including your "
+#~ "telescope focal length in addition to camera's width, height, and pixel "
+#~ "dimensions. You also need to enter the rotation of the camera with "
+#~ "respect to the celestial pole your mount is pointing to. If Ekos is "
+#~ "already started, you may retrieve optical information by clicking the "
+#~ "<guibutton>Fetch</guibutton> to fill those fields automatically. However, "
+#~ "if the camera rotation angle is unknown at that step, you will first need "
+#~ "to use the <link linkend=\"ekos-align\">Align module</link> to solve a "
+#~ "field, preferentially close to the celestial equator, in order to "
+#~ "determine it precisely. The rotation angle is an important parameter of "
+#~ "your mosaic, as the Tool will create a grid using this orientation."
+#~ msgstr ""
+#~ "Bij eerste gebruik moet u de instellingen van uw apparatuur invoeren, "
+#~ "zoals de brandpuntsafstand van uw telescoop, de breedte en hoogte en de "
+#~ "pixelgrootte van de camera. U moet ook de rotatie invoeren van de camera "
+#~ "ten opzichte van de hemelpool waar uw opstelling naar verwijst. Als Ekos "
+#~ "al is ge start, kunt u optische informatie ophalen door te klikken op "
+#~ "<guibutton>Ophalen</guibutton> om die velden automatisch te vullen. Als "
+#~ "de rotatiehoek van de camera onbekend is in die stap, dan moet u eerst de "
+#~ "<link linkend=\"ekos-align\">Module uitlijnen</link> gebruiken om een "
+#~ "veld op te lossen, bij voorkeur dicht bij de hemelevenaar, om het precies "
+#~ "te bepalen. De rotatiehoek is een belangrijke parameter van uw mozaïek, "
+#~ "omdat het hulpmiddel een raster aan zal maken met deze oriëntatie."
+
+#~ msgid ""
+#~ "Next, enter the desired <guilabel>overlap</guilabel> and number of "
+#~ "horizontal and vertical <guilabel>mosaic grid</guilabel> panels (&eg; "
+#~ "2x2, 3x3, &etc;). The sky chart will update automatically after a short "
+#~ "time, with target FOV calculated given the number of grid panes and your "
+#~ "camera's FOV. By default, the percentage of the overlap among images is "
+#~ "5%, but you can change this value to your desired value. Changing the "
+#~ "<guilabel>overlap</guilabel> will adjust the <guilabel>mosaic grid</"
+#~ "guilabel> to cover the same area, while changing the <guilabel>mosaic "
+#~ "grid</guilabel> will extend or shrink the mosaic area. To reset the "
+#~ "extents of the mosaic field of view to the area expectedly covered by the "
+#~ "grid, click <guibutton>Cover FOV</guibutton>."
+#~ msgstr ""
+#~ "Daarna vult u de gewenste <guilabel>overlap</guilabel> en het aantal "
+#~ "horizontale en verticale <guilabel>mozaïekraster</guilabel>panelen in "
+#~ "(&eg; 2x2, 3x3, &etc;). De hemelkaart zal automatisch na een korte tijd "
+#~ "worden bijgewerkt, met de doel-GV berekend, gegeven het aantal "
+#~ "rasterpanelen en de GV van uw camera. Standaard is het percentage overlap "
+#~ "tussen afbeeldingen 5%, maar u kunt deze waarde naar uw gewenste waarde "
+#~ "wijzigen. De <guilabel>overlap</guilabel> wijzigen zal het "
+#~ "<guilabel>mozaïekraster</guilabel> aanpassen om hetzelfde gebied te "
+#~ "dekken, terwijl het wijzigen van het <guilabel>mozaïekraster</guilabel> "
+#~ "het mozaïekgebied zal inkrimpen of uitbreiden. Om de uitbreidingen van "
+#~ "het mozaïekzichtveld te restten naar het gebied dat naar verwachting "
+#~ "gedekt wordt door het raster, klik op <guibutton>GV bedekken</guibutton>."
+
+#~ msgid "<screeninfo>Scheduler Mosaic Tool - Field of view</screeninfo>"
+#~ msgstr ""
+#~ "<screeninfo>Planner van Mozaïekhulpmiddel - Gezichtsveld</screeninfo>"
+
+#~ msgid "<phrase>Scheduler Mosaic Tool - Field of view</phrase>"
+#~ msgstr "<phrase>Planner van Mozaïekhulpmiddel - Gezichtveld</phrase>"
+
+#~ msgid "<screeninfo>Scheduler Mosaic Tool - 75% overlap</screeninfo>"
+#~ msgstr ""
+#~ "<screeninfo>Planner van Mozaïekhulpmiddel - 75% overlap</screeninfo>"
+
+#~ msgid "<phrase>Scheduler Mosaic Tool - 75% overlap</phrase>"
+#~ msgstr "<phrase>Planner van Mozaïekhulpmiddel - 75% overlap</phrase>"
+
+#~ msgid ""
+#~ "If you need to adjust the position of the mosaic, click on the view and "
+#~ "drag the chart to recenter your target. When satisfied, set the frequency "
+#~ "of alignment and focus steps during the mosaic execution and choose an "
+#~ "output folder and accept the dialog. Ekos shall create an observation job "
+#~ "and a corresponding customized sequence file for each panel. Save the "
+#~ "plan to an Ekos Scheduler List (<literal role=\"extension\">.esl</"
+#~ "literal>) file with the <guibutton>Save as...</guibutton> button, so that "
+#~ "you may load it on any suitable observing night and, with the "
+#~ "<guilabel>Remember Job Progress</guilabel> option, it will pick off where "
+#~ "you left."
+#~ msgstr ""
+#~ "Als u de positie van het mozaïek moet aanpassen, klik op de weergave en "
+#~ "sleep de grafiek om uw doel opnieuw te centreren. Wanneer u tevreden "
+#~ "bent, stel de frequentie van uitlijning en scherpstellingstappen in "
+#~ "tijdens het uitvoeren van het mozaïek en kies een uitvoermap en accepteer "
+#~ "de dialoog. Ekos zal een observatiejob aanmaken en een overeenkomstig "
+#~ "aangepast volgordebestand voor elk paneel. Sla het plan op in een "
+#~ "Ekosplannerlijst (<filename role=\"extension\">.esl</filename>) bestand "
+#~ "met de knop <guibutton>Opslaan als...</guibutton>, zodat u die kunt laden "
+#~ "op elke geschikte observatienacht en met de optie <guilabel>Jobvoortgang "
+#~ "onthouden</guilabel>, zal verder gaan waar u bent gebleven."
+
+#~ msgid ""
+#~ "With Ekos Scheduler, multi-night imaging is greatly facilitated and "
+#~ "creating super mosaics has never been so easy."
+#~ msgstr ""
+#~ "Met behulp van de planner van Ekos, is het maken van afbeeldingen "
+#~ "gedurende meerdere nachten veel eenvoudiger, en het aanmaken van "
+#~ "supermozaïeken nooit zo gemakkelijk."

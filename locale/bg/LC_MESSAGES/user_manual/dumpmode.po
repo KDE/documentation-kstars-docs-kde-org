@@ -1,0 +1,142 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Zlatko Popov <zlatkopopov@fsa-bg.org>, 2006, 2007.
+# Yasen Pramatarov <yasen@lindeas.com>, 2009, 2010, 2011, 2013, 2021.
+# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-10-22 00:52+0000\n"
+"PO-Revision-Date: 2024-03-02 18:51+0100\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#. Tag: title
+#: dumpmode.docbook:2
+#, no-c-format
+msgid "Command-Line mode for Image Generation"
+msgstr "Генериране на изображения от командния ред"
+
+#. Tag: primary
+#: dumpmode.docbook:3
+#, no-c-format
+msgid "Image-dump Mode"
+msgstr "Режим генериране на изображение"
+
+#. Tag: para
+#: dumpmode.docbook:5
+#, no-c-format
+msgid ""
+"You can use &kstars; to generate an image of the sky without actually "
+"launching the &GUI; portion of the program. To use this feature, start "
+"&kstars; from a command prompt using arguments to specify the filename for "
+"the image, as well as the desired image dimensions:"
+msgstr ""
+"Можете да използвате &kstars;, за да генерирате изображение на небето, без "
+"всъщност да стартирате графичния интерфейс на програмата. За да използвате "
+"тази функция, стартирайте &kstars; от командния ред, като използвате "
+"аргументи за задаване на името на файла на изображението, както и желаните "
+"размери на изображението:"
+
+#. Tag: cmdsynopsis
+#: dumpmode.docbook:13
+#, no-c-format
+msgid ""
+"<command>kstars</command> <arg choice=\"plain\">--dump</arg> <arg>--filename "
+"<replaceable>kstars.png</replaceable></arg> <arg>--height <replaceable>640</"
+"replaceable></arg> <arg>--width <replaceable>480</replaceable></arg> <arg>--"
+"script <replaceable>myscript.kstars</replaceable></arg> <arg>--date "
+"<replaceable>\"4 July 1976 12:30:00\"</replaceable></arg>"
+msgstr ""
+"<command>kstars</command> <arg choice=\"plain\">--dump</arg> <arg>--filename "
+"<replaceable>kstars.png</replaceable></arg> <arg>--height <replaceable>640</"
+"replaceable></arg> <arg>--width <replaceable>480</replaceable></arg> <arg>--"
+"script <replaceable>myscript.kstars</replaceable></arg> <arg>--date "
+"<replaceable>\"4 July 1976 12:30:00\"</replaceable></arg>"
+
+#. Tag: para
+#: dumpmode.docbook:24
+#, no-c-format
+msgid ""
+"If no filename is specified, it generates a file named <filename>kstars.png</"
+"filename>. It will attempt to generate an image that matches the extension "
+"of your filename. The following extensions are recognized: <quote>png</"
+"quote>, <quote>jpg</quote>, <quote>jpeg</quote>, <quote>gif</quote>, "
+"<quote>pnm</quote>, and <quote>bmp</quote>. If the filename extension is not "
+"recognized, it defaults to the <acronym>PNG</acronym> image type."
+msgstr ""
+"Ако не е указано име на файл, се генерира файл с име <filename>kstars.png</"
+"filename>. Програмата ще се опита да генерира изображение, което съответства "
+"на разширението на името на вашия файл. Разпознават се следните разширения:"
+"<quote>png</quote>, <quote>jpg</quote>, <quote>jpeg</quote>, <quote>gif</"
+"quote>, <quote>pnm</quote> и <quote>bmp</quote>. Ако разширението на името "
+"на файла не се разпознава, то по подразбиране е от тип <acronym>PNG</"
+"acronym> изображение."
+
+#. Tag: para
+#: dumpmode.docbook:34
+#, no-c-format
+msgid ""
+"Likewise, if the image width and height are not specified, they default to "
+"640 and 480, respectively."
+msgstr ""
+"По същия начин, ако ширината и височината на изображението не са посочени, "
+"те по подразбиране са съответно 640 и 480, респективно."
+
+#. Tag: para
+#: dumpmode.docbook:38
+#, no-c-format
+msgid ""
+"By default, &kstars; will read in the options values stored in your "
+"<filename>$KDEHOME/share/config/kstarsrc</filename> file to determine where "
+"the image will be centered, and how it is rendered. This means you need to "
+"run &kstars; in normal &GUI; mode, and exit the program when it is set up "
+"with the desired options for the generated images. This is not very "
+"flexible, so we also provide the ability to execute a &kstars; &DBus; script "
+"to set the scene before generating the image. The filename you specify as "
+"the script argument should be a valid &kstars; &DBus; script, such as one "
+"created with the <link linkend=\"tool-scriptbuilder\">Script Builder Tool</"
+"link>. The script can be used to set where the image is pointing, set the "
+"geographic location, set the time and date, change the Zoom level, and "
+"adjust other view options. Some of the &DBus; functions make no sense in non-"
+"&GUI; mode (such as <function>waitForKey()</function>); if these functions "
+"are encountered while parsing the script, they are simply ignored."
+msgstr ""
+"По подразбиране &kstars; ще прочете стойностите на опциите, съхранени във "
+"вашия <filename>$KDEHOME/share/config/kstarsrc</filename> файл, за да "
+"определите къде ще бъде центрирано изображението и как се изобразява. Това "
+"означава, че трябва да стартирате &kstars; в нормален графичен режим и да "
+"излезете от програмата, когато е настроена с желаните опции за плануваните "
+"генерирани изображения. Това не е много гъвкаво, така че ние също "
+"предоставяме възможност, да изпълните D-Bus скрипт на &kstars;, за да "
+"настроите сцената, преди да генерирате изображението. Файлът, който "
+"посочвате като аргумент на командния ред трябва да бъде валиден D-Bus скрипт "
+"на &kstars;, като например, създаден с <link linkend=\"tool-scriptbuilder"
+"\">редактора на скриптове</link>. Скриптът може да се използва за задаване "
+"на центрирането на изображението, на географско местоположение, час и дата, "
+"нивото на мащабиране и за настройване на други опции за изглед. Някои от "
+"функциите на D-Bus нямат смисъл, когато не се изпълняват в графичния "
+"интерфейс на &kstars; (като waitForKey()) и ако тези функции се срещнат при "
+"анализиране на скрипта, те просто се игнорират."
+
+#. Tag: para
+#: dumpmode.docbook:59
+#, no-c-format
+msgid ""
+"By default, &kstars; will use the system CPU time and date for generating "
+"the image. Alternatively, you may specify a time and date with the <quote>--"
+"date</quote> argument. You can also use this argument for specifying the "
+"startup date in normal &GUI; mode."
+msgstr ""
+"По подразбиране &kstars; ще използва времето и датата на системния процесор "
+"за генериране на изображението. Алтернативно, можете да посочите час и дата "
+"с аргумента <quote>--date</quote>. Можете също да използвате този аргумент "
+"за указване на датата при стартиране в нормален графичен режим."
