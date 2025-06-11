@@ -7,7 +7,7 @@ FILE_PREFIX=kstars_docs_
 IFS=$'\n'; read -a LANGS -d EOF < available_locales.txt
 
 # First parameter will be the path of the directory where we have to store the po files
-function export_po_dir 
+function export_pot_dir
 {
     echo "Creating POT files in $1"
     if ! make gettext; then
