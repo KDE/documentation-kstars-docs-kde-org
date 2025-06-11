@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-06 00:51+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-09 00:05+0200\n"
 "PO-Revision-Date: 2025-01-28 15:58+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -15,1746 +15,1287 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Poedit 3.5\n"
 
-#. Tag: title
-#: indi.docbook:2
-#, no-c-format
-msgid "Astronomical Device Control with <acronym>INDI</acronym>"
+#: ../../user_manual/indi.rst:3
+#, fuzzy
+#| msgid "Astronomical Device Control with <acronym>INDI</acronym>"
+msgid "Chapter 9. Astronomical Device Control with INDI"
 msgstr "Nadzor astronomske naprave z <acronym>INDI</acronym>"
 
-#. Tag: primary
-#: indi.docbook:3
-#, no-c-format
-msgid "INDI Control"
-msgstr "Nadzor INDI"
-
-#. Tag: secondary
-#: indi.docbook:4
-#, no-c-format
-msgid "Overview"
-msgstr "Pregled"
-
-#. Tag: para
-#: indi.docbook:7
-#, no-c-format
+#: ../../user_manual/indi.rst:5
+#, fuzzy
+#| msgid ""
+#| "&kstars; provides an interface to configure and control astronomical "
+#| "instruments via the <acronym><link linkend=\"what-is-indi\">INDI</link></"
+#| "acronym> protocol."
 msgid ""
-"&kstars; provides an interface to configure and control astronomical "
-"instruments via the <acronym><link linkend=\"what-is-indi\">INDI</link></"
-"acronym> protocol."
+"KStars provides an interface to configure and control astronomical "
+"instruments via the :ref:`INDI <indi-faq-what-is-indi>` protocol."
 msgstr ""
 "&kstars; ponuja vmesnik za konfiguracijo in nadzor astronomskih instrumentov "
 "prek protokola <acronym><link linkend=\"what-is-indi\">INDI</link></acronym>."
 
-#. Tag: para
-#: indi.docbook:12
-#, no-c-format
+#: ../../user_manual/indi.rst:9
+#, fuzzy
+#| msgid ""
+#| "The <acronym>INDI</acronym> protocol supports a variety of astronomical "
+#| "instruments such as CCD cameras and focusers. For an up to date list of "
+#| "supported devices, please visit <acronym>INDI</acronym> <ulink url="
+#| "\"https://indilib.org/index.php?title=Devices\">supported devices page</"
+#| "ulink>."
 msgid ""
-"The <acronym>INDI</acronym> protocol supports a variety of astronomical "
-"instruments such as CCD cameras and focusers. For an up to date list of "
-"supported devices, please visit <acronym>INDI</acronym> <ulink url=\"https://"
-"indilib.org/index.php?title=Devices\">supported devices page</ulink>."
+"The INDI protocol supports a variety of astronomical instruments such as CCD "
+"cameras and focusers. For an up to date list of supported devices, please "
+"visit INDI `supported devices page <https://indilib.org/index.php?"
+"title=Devices>`__."
 msgstr ""
 "Protokol <acronym>INDI</acronym> podpira različne astronomske instrumente, "
 "kot so kamere CCD in fokuserji. Za posodobljen seznam podprtih naprav "
 "obiščite <acronym>INDI</acronym> <ulink url=\"https://indilib.org/index.php?"
 "title=Devices\">stran s podprtimi napravami (supported devices page)</ulink>."
 
-#. Tag: title
-#: indi.docbook:19
-#, no-c-format
-msgid "INDI Setup"
-msgstr "Nastavitev INDI"
-
-#. Tag: primary
-#: indi.docbook:20 indi.docbook:81
-#, no-c-format
-msgid "<primary>INDI</primary>"
-msgstr "<primary>INDI</primary>"
-
-#. Tag: secondary
-#: indi.docbook:21 indi.docbook:82 indi.docbook:306
-#, no-c-format
-msgid "Setup"
-msgstr "Nastavitve"
-
-#. Tag: para
-#: indi.docbook:23
-#, no-c-format
-msgid ""
-"&kstars; can control local and remote devices seamlessly via the <link "
-"linkend=\"what-is-indi\">INDI</link> server/client architecture. INDI "
-"devices may be run in three different modes:"
-msgstr ""
-"&kstars; lahko nemoteno nadzoruje lokalne in oddaljene naprave prek "
-"arhitekture strežnik/odjemalec <link linkend=\"what-is-indi\">INDI</link>. "
-"Naprave INDI lahko delujejo v treh različnih načinih:"
-
-#. Tag: para
-#: indi.docbook:30
-#, no-c-format
-msgid ""
-"<guilabel>Local</guilabel>: The local mode is the most common and is used to "
-"control local device (&ie; a device attached to your machine)."
-msgstr ""
-"<guilabel>Lokalno</guilabel>: Lokalni način je najpogostejši in se uporablja "
-"za nadzor lokalne naprave (&ie; naprave, priključene na vaš stroj)."
-
-#. Tag: para
-#: indi.docbook:34
-#, no-c-format
-msgid ""
-"<guilabel>Server</guilabel>: The server mode establishes an INDI server for "
-"a particular device and waits for connections from remote clients. You "
-"cannot operate server devices, you can only start and shut them down."
-msgstr ""
-"<guilabel>Strežnik</guilabel>: strežniški način vzpostavi strežnik INDI za "
-"določeno napravo in čaka na povezave oddaljenih odjemalcev. Strežniških "
-"naprav ne morete upravljati, lahko jih samo zaženete in izklopite."
-
-#. Tag: para
-#: indi.docbook:39
-#, no-c-format
-msgid ""
-"<guilabel>Client</guilabel>: The client mode is used to connect to remote "
-"INDI servers running INDI devices. You can control remote devices seamlessly "
-"like local devices."
-msgstr ""
-"<guilabel>Odjemalec</guilabel>: Način odjemalca se uporablja za povezavo z "
-"oddaljenimi strežniki INDI, ki poganjajo naprave INDI. Oddaljene naprave "
-"lahko brez težav nadzorujete kot lokalne naprave."
-
-#. Tag: para
-#: indi.docbook:44
-#, no-c-format
-msgid ""
-"You can run local device, establish INDI servers, and connect to remote "
-"clients from the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
-"guisubmenu> <guimenuitem>Device Manager...</guimenuitem></menuchoice> menu "
-"item."
-msgstr ""
-"Lokalno napravo lahko zaženete, vzpostavite strežnike INDI in se povežete z "
-"oddaljenimi odjemalci iz elementa menija <menuchoice><guimenu>Orodja</"
-"guimenu> <guisubmenu>Naprave</guisubmenu> <guimenuitem>Upravitelj naprav...</"
-"guimenuitem></menuchoice>."
-
-#. Tag: para
-#: indi.docbook:49
-#, no-c-format
-msgid "Here is a screenshot of the <guilabel>Device Manager</guilabel> window:"
-msgstr "Tukaj je posnetek zaslona okna <guilabel>Upravitelj naprav</guilabel>:"
-
-#. Tag: screeninfo
-#: indi.docbook:54
-#, no-c-format
-msgid "Running device drivers"
-msgstr "Izvajanje gonilnikov naprav"
-
-#. Tag: phrase
-#: indi.docbook:60
-#, no-c-format
-msgid "Start device drivers"
-msgstr "Zaženite gonilnike naprav"
-
-#. Tag: para
-#: indi.docbook:65
-#, no-c-format
-msgid ""
-"You can run devices by browsing the device tree, selecting a specific "
-"device, and then clicking on the <guibutton>Run Service</guibutton> button. "
-"You can select the operation mode, either local or server as defined above. "
-"The port number is randomly generated between the range from 7624 to 10,000. "
-"To specify a port, click on the port column next to the desired driver. "
-"&kstars; allows multiple drivers to run under one INDI server, and hence one "
-"port. Select multiple drivers then press <guibutton>Run Service</guibutton> "
-"button."
-msgstr ""
-"Naprave lahko zaženete tako, da brskate po drevesu naprav, izberete določeno "
-"napravo in nato kliknete gumb <guibutton>Zaženi storitev</guibutton>. "
-"Izberete lahko način delovanja, lokalnega ali strežniškega, kot je "
-"definirano zgoraj. Številka vrat je naključno ustvarjena v razponu od 7624 "
-"do 10.000. Če želite določiti vrata, kliknite stolpec vrat poleg želenega "
-"gonilnika. &kstars; omogoča izvajanje več gonilnikov pod enim strežnikom "
-"INDI in s tem ena vrata. Izberite več gonilnikov in pritisnite gumb "
-"<guibutton>Zaženi storitev</guibutton>."
-
-#. Tag: para
-#: indi.docbook:74
-#, no-c-format
-msgid ""
-"To control remote devices, refer to the <link linkend=\"indi-remote-control"
-"\">remote device control</link> section."
-msgstr ""
-"Za nadzor oddaljenih naprav glejte razdelek <link linkend=\"indi-remote-"
-"control\">nadzor oddaljenih naprav</link>."
-
-#. Tag: title
-#: indi.docbook:80
-#, no-c-format
-msgid "Telescope Setup"
-msgstr "Nastavitev teleskopa"
-
-#. Tag: para
-#: indi.docbook:85
-#, no-c-format
-msgid ""
-"Most telescopes are equipped with <hardware>RS232</hardware> interface for "
-"remote control. Connect the RS232 jack in your telescope to your computer's "
-"<hardware>Serial/USB</hardware> port. Traditionally, the RS232 connects to "
-"the serial port of your computer, but since many new laptops abandoned the "
-"serial port in favor of <hardware>USB/FireWire</hardware> ports, you might "
-"need to obtain a Serial to USB adaptor to use with new laptops."
-msgstr ""
-"Večina teleskopov je opremljena z vmesnikom <hardware>RS232</hardware> za "
-"daljinsko upravljanje. Povežite vtičnico RS232 v vašem teleskopu z "
-"<hardware>Serial/USB</hardware> vrati vašega računalnika. Tradicionalno se "
-"RS232 poveže s serijskimi vrati vašega računalnika, a ker je veliko novih "
-"prenosnikov opustilo serijska vrata v korist vrat <hardware>USB/FireWire</"
-"hardware>, boste morda morali pridobiti adapter Serial to USB za uporabo z "
-"novimi prenosniki."
-
-#. Tag: para
-#: indi.docbook:94
-#, no-c-format
-msgid ""
-"After connecting your telescope to the Serial/USB port, turn your telescope "
-"on. It is <emphasis>highly</emphasis> recommended that you download and "
-"install the latest firmware for your telescope controller."
-msgstr ""
-"Po priključitvi teleskopa na serijska/USB vrata vklopite teleskop. "
-"<emphasis>Zelo</emphasis> priporočamo, da prenesete in namestite najnovejšo "
-"vdelano programsko opremo za vaš krmilnik teleskopa."
-
-#. Tag: para
-#: indi.docbook:100
-#, no-c-format
-msgid ""
-"The telescope needs to be aligned before it can be used properly. Align your "
-"telescope (one or two stars alignment) as illustrated in your telescope "
-"manual."
-msgstr ""
-"Pred pravilno uporabo je treba teleskop poravnati. Poravnajte svoj teleskop "
-"(poravnava z eno ali dvema zvezdama), kot je prikazano v priročniku za vaš "
-"teleskop."
-
-#. Tag: para
-#: indi.docbook:105
-#, no-c-format
-msgid ""
-"&kstars; needs to verify time and location settings before connecting to the "
-"telescope. This insures proper tracking and synchronization between the "
-"telescope and &kstars;. The following steps will enable you to connect to a "
-"device that is connected to your computer. To connect and control remote "
-"devices, please refer to <link linkend=\"indi-remote-control\">remote device "
-"control</link> section."
-msgstr ""
-"&kstars; mora preveriti nastavitve časa in lokacije, preden se poveže s "
-"teleskopom. To zagotavlja pravilno sledenje in sinhronizacijo med teleskopom "
-"in &kstars;. Naslednji koraki vam bodo omogočili povezavo z napravo, ki je "
-"povezana z vašim računalnikom. Če želite povezati in upravljati oddaljene "
-"naprave, glejte razdelek <link linkend=\"indi-remote-control\">nadzor "
-"oddaljenih naprav</link>."
-
-#. Tag: para
-#: indi.docbook:113
-#, no-c-format
-msgid ""
-"You can use the Telescope Setup Wizard and it will verify all the required "
-"information in the process. It can automatically scan ports for attached "
-"telescopes. You can run the wizard by selecting the "
-"<menuchoice><guimenu>Devices</guimenu> <guimenuitem>Telescope Wizard</"
-"guimenuitem></menuchoice> menu item."
-msgstr ""
-"Uporabite lahko čarovnika za nastavitev teleskopa, ki bo med postopkom "
-"preveril vse zahtevane informacije. Samodejno lahko skenira vrata za "
-"priključene teleskope. Čarovnika lahko zaženete tako, da izberete menijsko "
-"postavko <menuchoice><guimenu>Naprave</guimenu> <guimenuitem>Čarovnik za "
-"teleskop</guimenuitem></menuchoice>."
-
-#. Tag: para
-#: indi.docbook:119
-#, no-c-format
-msgid ""
-"Alternatively, you can connect to a local telescope by performing the "
-"following steps:"
-msgstr ""
-"Lahko pa se povežete z lokalnim teleskopom tako, da izvedete naslednje "
-"korake:"
-
-#. Tag: para
-#: indi.docbook:124
-#, no-c-format
-msgid ""
-"Set your geographical location. Open the <guilabel>Set Geographic Location</"
-"guilabel> window by selecting the <menuchoice><guimenu>Settings</guimenu> "
-"<guimenuitem>Geographic...</guimenuitem></menuchoice> menu item, or by "
-"pressing the <guiicon>Globe</guiicon> icon in the toolbar, or by pressing "
-"<keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo>."
-msgstr ""
-"Nastavite svojo geografsko lokacijo. Odprite okno <guilabel>Nastavi "
-"geografsko lokacijo</guilabel> tako, da izberete menijsko postavko "
-"<menuchoice><guimenu>Nastavitve</guimenu> <guimenuitem>Geografsko...</"
-"guimenuitem></menuchoice> ali pritisnete <guiicon>Globus</guiicon> v orodni "
-"vrstici ali s pritiskom <keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></"
-"keycombo>."
-
-#. Tag: para
-#: indi.docbook:133
-#, no-c-format
-msgid ""
-"Set your local time and date. You can change to any time or date by "
-"selecting <menuchoice><guimenu>Time</guimenu> <guimenuitem>Set Time...</"
-"guimenuitem></menuchoice> menu item, or by pressing the <guiicon>Time</"
-"guiicon> icon in the toolbar. The <guilabel>Set Time</guilabel> window uses "
-"a standard &kde; Date Picker widget. If you ever need to reset the clock "
-"back to the current time, just select the <menuchoice><guimenu>Time</"
-"guimenu> <guimenuitem>Set Time to Now</guimenuitem></menuchoice> menu item."
-msgstr ""
-"Nastavite lokalni čas in datum. Lahko spremenite kateri koli čas ali datum "
-"tako, da izberete menijski element <menuchoice><guimenu>Čas</"
-"guimenu><guimenuitem>Nastavi čas...</guimenuitem></menuchoice> ali "
-"pritisnete <guiicon>Čas</guiicon> v orodni vrstici. Okno <guilabel>Nastavi "
-"čas</guilabel> uporablja standardni &kde; Pripomoček za izbiro datuma. Če "
-"boste kdaj morali ponastaviti uro nazaj na trenutni čas, samo izberite "
-"menijsko postavko <menuchoice><guimenu>Čas</guimenu> <guimenuitem>Nastavi "
-"čas na zdaj</guimenuitem></menuchoice>."
-
-#. Tag: para
-#: indi.docbook:144
-#, no-c-format
-msgid ""
-"Click on the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
-"guisubmenu> <guimenuitem>Device Manager...</guimenuitem></menuchoice> menu "
-"item."
-msgstr ""
-"Kliknite na menijsko postavko <menuchoice><guimenu>Orodja</guimenu> "
-"<guisubmenu>Naprave</guisubmenu> <guimenuitem>Upravitelj naprav...</"
-"guimenuitem></menuchoice>."
-
-#. Tag: para
-#: indi.docbook:150
-#, no-c-format
-msgid ""
-"Under the <guilabel>Device</guilabel> column, select your telescope model."
-msgstr "V stolpcu <guilabel>Naprava</guilabel> izberite svoj model teleskopa."
-
-#. Tag: para
-#: indi.docbook:155
-#, no-c-format
-msgid "Click on the <guibutton>Run Service</guibutton> button."
-msgstr "Kliknite gumb <guibutton>Zaženi storitev</guibutton>."
-
-#. Tag: para
-#: indi.docbook:160
-#, no-c-format
-msgid "Click <guibutton>Close</guibutton> to leave the Device Manager Dialog."
-msgstr ""
-"Kliknite <guibutton>Zapri</guibutton>, da zapustite pogovorno okno "
-"upravljalnika naprav."
-
-#. Tag: title
-#: indi.docbook:167
-#, no-c-format
-msgid "Frequent Settings"
-msgstr "Pogoste nastavitve"
-
-#. Tag: para
-#: indi.docbook:168
-#, no-c-format
-msgid ""
-"You do not need to set the geographic location and time every time you "
-"connect to a telescope. Only adjust the settings as needed."
-msgstr ""
-"Ni vam treba nastaviti geografske lokacije in časa vsakič, ko se povežete s "
-"teleskopom. Nastavitve prilagodite le po potrebi."
-
-#. Tag: para
-#: indi.docbook:172
-#, no-c-format
-msgid ""
-"You are now ready to use the device features, &kstars; conveniently provides "
-"two interchangeable &GUI; interfaces for controlling telescopes:"
-msgstr ""
-"Zdaj ste pripravljeni na uporabo funkcij naprave, &kstars; priročno ponuja "
-"dva zamenljiva &GUI; vmesnika za krmiljenje teleskopov:"
-
-#. Tag: title
-#: indi.docbook:177
-#, no-c-format
-msgid "Controlling your telescope"
-msgstr "Upravljanje vašega teleskopa"
-
-#. Tag: para
-#: indi.docbook:179
-#, no-c-format
-msgid ""
-"<guilabel>Sky map Control</guilabel>: For each device you run in the "
-"<guilabel>Device Manager</guilabel>, a corresponding entry will show up in "
-"popup menu that allows you to control the properties of the device. You can "
-"issue commands like <command>Slew</command>, <command>Sync</command>, and "
-"<command>Track</command> directly from the sky map."
-msgstr ""
-"<guilabel>Nadzor karte neba</guilabel>: Za vsako napravo, ki jo zaženete v "
-"<guilabel>Upravljalniku naprav</guilabel>, se v pojavnem meniju prikaže "
-"ustrezen vnos, ki vam omogoča nadzor nad lastnostmi naprave. Ukaze, kot so "
-"<command>Slew</command>, <command>Sync</command> in <command>Track</"
-"command>, lahko izdate neposredno s karte neba."
-
-#. Tag: para
-#: indi.docbook:187
-#, no-c-format
-msgid ""
-"Here is a screenshot of the popup menu with an active LX200 Classic device:"
-msgstr ""
-"Tukaj je posnetek zaslona pojavnega menija z aktivno napravo LX200 Classic:"
-
-#. Tag: screeninfo
-#: indi.docbook:191
-#, no-c-format
-msgid "Controlling devices from sky map"
-msgstr "Upravljanje naprav iz karte neba"
-
-#. Tag: para
-#: indi.docbook:201
-#, no-c-format
-msgid ""
-"<guilabel>INDI Control Panel</guilabel>: The panel offers the user with all "
-"the features supported by a device."
-msgstr ""
-"<guilabel>Nadzorna plošča INDI</guilabel>: plošča ponuja uporabniku vse "
-"zmožnosti, ki jih podpira naprava."
-
-#. Tag: para
-#: indi.docbook:206
-#, no-c-format
-msgid "The panel is divided into three main sections:"
-msgstr "Plošča je razdeljena na tri glavne dele:"
-
-#. Tag: para
-#: indi.docbook:211
-#, no-c-format
-msgid ""
-"<guilabel>Device tabs</guilabel>: Each additional active device occupies a "
-"tab in the INDI panel. Multiple devices can run simultaneously without "
-"affecting the operation of other devices."
-msgstr ""
-"<guilabel>Zavihki naprave</guilabel>: Vsaka dodatna aktivna naprava zavzame "
-"zavihek na plošči INDI. Več naprav lahko deluje hkrati, ne da bi to vplivalo "
-"na delovanje drugih naprav."
-
-#. Tag: para
-#: indi.docbook:219
-#, no-c-format
-msgid ""
-"Property views on the <guilabel>Main Control</guilabel> and "
-"<guilabel>Options</guilabel> tabs: Properties are the key element in INDI "
-"architecture. Each device defines a set of properties to communicate with "
-"the client. The current position of the telescope is an example of a "
-"property. Semantically similar properties are usually contained in logical "
-"blocks or groupings."
-msgstr ""
-"Pogledi lastnosti na zavihkih <guilabel>Glavni nadzor</guilabel> in "
-"<guilabel>Možnosti</guilabel>: Lastnosti so ključni element v arhitekturi "
-"INDI. Vsaka naprava definira nabor lastnosti za komunikacijo z odjemalcem. "
-"Trenutni položaj teleskopa je primer lastnosti. Pomensko podobne lastnosti "
-"so običajno vsebovane v logičnih blokih ali skupinah."
-
-#. Tag: para
-#: indi.docbook:229
-#, no-c-format
-msgid ""
-"<guilabel>Log viewer</guilabel>: Devices report their status and acknowledge "
-"commands by sending INDI messages. Each device has its own log view. A "
-"device usually sends messages to its device driver only, but a device is "
-"permitted to send a generic message when appropriate."
-msgstr ""
-"<guilabel>Pregledovalnik dnevnika</guilabel>: Naprave poročajo o svojem "
-"statusu in potrjujejo ukaze s pošiljanjem sporočil INDI. Vsaka naprava ima "
-"svoj pogled dnevnika. Naprava običajno pošilja sporočila samo svojemu "
-"gonilniku naprave, vendar pa lahko naprava, kadar je primerno, pošlje "
-"generično sporočilo."
-
-#. Tag: screeninfo
-#: indi.docbook:238
-#, no-c-format
-msgid "INDI Control Panel"
-msgstr "Nadzorna plošča INDI"
-
-#. Tag: para
-#: indi.docbook:248
-#, no-c-format
-msgid ""
-"You are not restricted on using one interface over another as they can be "
-"both used simultaneously. Actions from the <guilabel>Sky map</guilabel> are "
-"automatically reflected in the <guilabel>INDI Control Panel</guilabel> and "
-"vice versa."
-msgstr ""
-"Niste omejeni pri uporabi enega vmesnika namesto drugega, saj se lahko oba "
-"uporabljata hkrati. Dejanja iz <guilabel>Karte neba</guilabel> se samodejno "
-"odražajo v <guilabel>Nadzorni plošči INDI</guilabel> in obratno."
-
-#. Tag: para
-#: indi.docbook:253
-#, no-c-format
-msgid ""
-"To connect to your telescope, you can either select <guimenuitem>Connect</"
-"guimenuitem> from your device popup menu or alternatively, you can press "
-"<guibutton>Connect</guibutton> under your device tab in the <guilabel>INDI "
-"Control Panel</guilabel>."
-msgstr ""
-"Za povezavo s svojim teleskopom lahko izberete <guimenuitem>Poveži</"
-"guimenuitem> v pojavnem meniju naprave ali pa pritisnete <guibutton>Poveži</"
-"guibutton> pod zavihkom naprave v <guilabel>Nadzorni plošči INDI</guilabel>."
-
-#. Tag: para
-#: indi.docbook:258
-#, no-c-format
-msgid ""
-"By default, &kstars; will try to connect to the <constant>/dev/ttyS0</"
-"constant> port. To change the connection port, select the "
-"<menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</guisubmenu> "
-"<guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> menu item and "
-"change the port under your device tab."
-msgstr ""
-"Privzeto se bo &kstars; poskusil povezati z vrati <constant>/dev/ttyS0</"
-"constant>. Če želite spremeniti vrata povezave, izberite element menija "
-"<menuchoice><guimenu>Orodja</guimenu> <guisubmenu>Naprave</guisubmenu> "
-"<guimenuitem>Nadzorna plošča INDI...</guimenuitem></menuchoice> in "
-"spremenite vrata pod zavihkom vaše naprave."
-
-#. Tag: para
-#: indi.docbook:264
-#, no-c-format
-msgid ""
-"&kstars; automatically updates the telescope's longitude, latitude, and time "
-"based on current settings in &kstars;. You can enable/disable these using "
-"the <guilabel>INDI</guilabel> page from the <menuchoice><guimenu>Settings</"
-"guimenu> <guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> menu "
-"item. Using the <guilabel>INDI</guilabel> page you can configure &kstars; to "
-"display or not INDI status messages in the status bar. By default INDI "
-"server port numbers have values between the range from 7624 to 9000, but you "
-"can easily change the range using the <guilabel>From:</guilabel> and "
-"<guilabel>To:</guilabel> text boxes from the <guilabel>Server Port</"
-"guilabel> section."
-msgstr ""
-"&kstars; samodejno posodablja zemljepisno dolžino, širino in čas teleskopa "
-"glede na trenutne nastavitve v &kstars;. Te lahko omogočite/onemogočite na "
-"strani <guilabel>INDI</guilabel> v meniju <menuchoice><guimenu>Nastavitve</"
-"guimenu> <guimenuitem>Konfiguriraj &kstars;...</guimenuitem></menuchoice>. "
-"Na strani <guilabel>INDI</guilabel> lahko konfigurirate &kstars; za prikaz "
-"INDI statusnih sporočil v statusni vrstici ali ne. Številke vrat strežnika "
-"INDI imajo privzeto vrednosti med razponom od 7624 do 9000, vendar lahko "
-"obseg enostavno spremenite z uporabo besedilnih polj <guilabel>Od:</"
-"guilabel> in <guilabel>Do:</guilabel> v <guilabel >Strežniška vrata</"
-"guilabel>."
-
-#. Tag: para
-#: indi.docbook:274
-#, no-c-format
-msgid ""
-"If &kstars; communicates successfully with the telescope, it will retrieve "
-"the current <abbrev>RA</abbrev> and <abbrev>DEC</abbrev> from the telescope "
-"and will display a crosshair on the sky map indicating the telescope "
-"position. You can hide the crosshair that marks telescope position using "
-"<guilabel>INDI</guilabel> page from the <menuchoice><guimenu>Settings</"
-"guimenu> <guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> menu "
-"item."
-msgstr ""
-"Če &kstars; uspešno komunicira s teleskopom, bo od teleskopa pridobil "
-"trenutni <abbrev>RA</abbrev> in <abbrev>DEC</abbrev> ter na zemljevidu neba "
-"prikazal križec, ki označuje položaj teleskopa. Nitni križec, ki označuje "
-"položaj teleskopa, lahko skrijete s stranjo <guilabel>INDI</guilabel> v "
-"meniju <menuchoice><guimenu>Nastavitve</guimenu><guimenuitem>Konfiguriraj "
-"&kstars;...</guimenuitem></menuchoice> postavki."
-
-#. Tag: title
-#: indi.docbook:282
-#, no-c-format
-msgid "Synchronizing your telescope"
-msgstr "Sinhronizacija vašega teleskopa"
-
-#. Tag: para
-#: indi.docbook:283
-#, no-c-format
-msgid ""
-"If you aligned your telescope and the last alignment star was, for example, "
-"Vega, then the crosshair should be centered around Vega. If the crosshair "
-"was off target, then you can <mousebutton>right</mousebutton>-click Vega "
-"from the sky map and select <command>Sync</command> from your telescope "
-"menu. This action will instruct the telescope to synchronize its internal "
-"coordinates to match those of Vega, and the telescope's crosshair should now "
-"be centered around Vega."
-msgstr ""
-"Če ste naravnali svoj teleskop in je bila zadnja poravnalna zvezda na primer "
-"Vega, mora biti križec središče okoli Vege. Če ni bil križec izven cilja, "
-"potem lahko <mousebutton>desno</mousebutton>kliknete Vega na zemljevidu neba "
-"in izberete <command>Sync</command> v meniju svojega teleskopa. To dejanje "
-"bo teleskopu naročilo, naj sinhronizira svoje notranje koordinate, da se "
-"ujemajo s Veginimi koordinatami, teleskopski križ pa bi moral biti zdaj "
-"osredotočen okoli Vege."
-
-#. Tag: para
-#: indi.docbook:292
-#, no-c-format
-msgid "This is it: your telescope is ready to explore the heavens!"
-msgstr "To je to: vaš teleskop je pripravljen za raziskovanje nebes!"
-
-#. Tag: title
-#: indi.docbook:296
-#, no-c-format
-msgid "WARNING"
-msgstr "OPOZORILO"
-
-#. Tag: para
-#: indi.docbook:297
-#, no-c-format
-msgid ""
-"Never use the telescope to look at the sun. Looking at the sun might cause "
-"irreversible damage to your eyes and your equipment."
-msgstr ""
-"Nikoli ne uporabljajte teleskopa za gledanje v sonce. Gledanje v sonce lahko "
-"povzroči nepopravljivo škodo vašim očem in vaši opremi."
-
-#. Tag: title
-#: indi.docbook:304
-#, no-c-format
-msgid "CCD and Video-Capture Setup"
-msgstr "CCD in nastavitev za zajemanje videa"
-
-#. Tag: primary
-#: indi.docbook:305
-#, no-c-format
-msgid "CCD Video Control"
-msgstr "CCD video nadzor"
-
-#. Tag: para
-#: indi.docbook:309
-#, no-c-format
-msgid ""
-"You can run CCD and Video Capture devices from the "
-"<menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</guisubmenu> "
-"<guimenuitem>Device Manager...</guimenuitem></menuchoice> menu item. Like "
-"all INDI devices, some of the device controls will be accessible from the "
-"skymap. The device can be controlled fully from the <guimenuitem>INDI "
-"Control Panel...</guimenuitem> item."
-msgstr ""
-"Naprave CCD in Video Capture lahko zaženete iz menijske postavke "
-"<menuchoice><guimenu>Orodja</guimenu> <guisubmenu>Naprave</guisubmenu> "
-"<guimenuitem>Upravljalnik naprav...</guimenuitem></menuchoice>. Tako kot pri "
-"vseh napravah INDI bodo nekateri kontrolniki naprave dostopni zvezdne karte. "
-"Napravo je mogoče v celoti nadzorovati iz elementa <guimenuitem>Nadzorna "
-"plošča INDI...</guimenuitem>."
-
-#. Tag: para
-#: indi.docbook:315
-#, no-c-format
-msgid ""
-"The standard format for image capture is FITS. Once an image is captured and "
-"downloaded, it will be automatically displayed in the &kstars; <link linkend="
-"\"fitsviewer\">FITS Viewer</link>."
-msgstr ""
-"Standardni format za zajem slike je FITS. Ko je slika zajeta in prenesena, "
-"bo samodejno prikazana v mapi &kstars; <link linkend=\"fitsviewer"
-"\">Ogledovalnik FITS</link>."
-
-#. Tag: title
-#: indi.docbook:321
-#, no-c-format
-msgid "Configure INDI"
-msgstr "Konfigurirajte INDI"
-
-#. Tag: primary
-#: indi.docbook:322
-#, no-c-format
-msgid "Configure"
-msgstr "Konfiguriraj"
-
-#. Tag: secondary
-#: indi.docbook:323
-#, no-c-format
-msgid "<secondary>INDI</secondary>"
-msgstr "<secondary>INDI</secondary>"
-
-#. Tag: para
-#: indi.docbook:326
-#, no-c-format
-msgid ""
-"The <guilabel>INDI</guilabel> page allows you to modify <emphasis>Client "
-"side</emphasis> INDI specific options. To access it, select the "
-"<guilabel>INDI</guilabel> page from <menuchoice><guimenu>Settings</guimenu> "
-"<guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> menu item. The "
-"window is divided into several main categories: General, Device Updates, "
-"Display and Server Port:"
-msgstr ""
-"Stran <guilabel>INDI</guilabel> vam omogoča spreminjanje specifičnih "
-"možnosti INDI <emphasis>na strani odjemalca</emphasis>. Za dostop do njega "
-"izberite stran <guilabel>INDI</guilabel> v meniju "
-"<menuchoice><guimenu>Nastavitve</guimenu> <guimenuitem>Konfiguriraj "
-"&kstars;...</guimenuitem></menuchoice>. Okno je razdeljeno na več glavnih "
-"kategorij: Splošno, Posodobitve naprav, Zaslon in Vrata strežnika:"
-
-#. Tag: guilabel
-#: indi.docbook:334
-#, no-c-format
-msgid "General"
-msgstr "Splošno"
-
-#. Tag: para
-#: indi.docbook:336
-#, no-c-format
-msgid ""
-"<guilabel>INDI server:</guilabel> Specify the binary of installed INDI "
-"server in your system. By default, &kstars; uses <quote>/usr/bin/indiserver</"
-"quote> binary."
-msgstr ""
-"<guilabel>Strežnik INDI:</guilabel> Določite dvojiško datoteko nameščenega "
-"strežnika INDI v vašem sistemu. Privzeto &kstars; uporablja izvodljivi "
-"program <quote>/usr/bin/indiserver</quote>."
-
-#. Tag: para
-#: indi.docbook:337
-#, no-c-format
-msgid ""
-"<guilabel>INDI drivers XML directory:</guilabel> Specify the &XML; directory "
-"where INDI drivers are located in your system. By default, &kstars; uses "
-"<quote>/usr/share/indi</quote> directory."
-msgstr ""
-"<guilabel>Imenik XML gonilnikov INDI:</guilabel> Določite &XML; imenik, kjer "
-"se gonilniki INDI nahajajo v vašem sistemu. Privzeto je &kstars; uporablja "
-"imenik <quote>/usr/share/indi</quote>."
-
-#. Tag: para
-#: indi.docbook:338
-#, no-c-format
-msgid ""
-"<guilabel>Default FITS directory:</guilabel> Specify the directory where all "
-"captured FITS images will be saved to. If no directory is specified, images "
-"will be stored in <varname>$HOME</varname>."
-msgstr ""
-"<guilabel>Privzeti imenik FITS:</guilabel> Določite imenik, kamor bodo "
-"shranjene vse zajete slike FITS. Če imenik ni določen, bodo slike shranjene "
-"v <varname>$HOME</varname>."
-
-#. Tag: guilabel
-#: indi.docbook:345
-#, no-c-format
-msgid "Time &amp; Location Updates"
-msgstr "Čas &amp; Posodobitve lokacije"
-
-#. Tag: para
-#: indi.docbook:347
-#, no-c-format
-msgid ""
-"<guilabel>KStars updates all devices</guilabel>: KStars is the master source "
-"for time and location settings. All INDI devices time and locations settings "
-"are synchronized to KStars settings."
-msgstr ""
-"<guilabel>KStars posodobi vse naprave</guilabel>: KStars je glavni vir za "
-"nastavitve časa in lokacije. Vse nastavitve časa in lokacije naprav INDI so "
-"sinhronizirane z nastavitvami KStars."
-
-#. Tag: para
-#: indi.docbook:348
-#, no-c-format
-msgid ""
-"<guilabel>Mount updates KStars</guilabel>: Mount handset is the master "
-"source of time and location settings. KStars time and location settings are "
-"synchronized with controller settings."
-msgstr ""
-"<guilabel>Montaža posodobi KStars</guilabel>: Upravljalnik montaže je glavni "
-"vir nastavitev časa in lokacije. Nastavitve časa in lokacije KStars so "
-"sinhronizirane z nastavitvami krmilnika."
-
-#. Tag: para
-#: indi.docbook:349
-#, no-c-format
-msgid ""
-"<guilabel>GPS updates KStars</guilabel>: GPS driver is the master source of "
-"time and location settings. KStars time and location settings are "
-"synchronized with GPS settings."
-msgstr ""
-"<guilabel>GPS posodobi KStars</guilabel>: gonilnik GPS je glavni vir "
-"nastavitev časa in lokacije. Nastavitve časa in lokacije KStars so "
-"sinhronizirane z nastavitvami GPS."
-
-#. Tag: para
-#: indi.docbook:350
-#, no-c-format
-msgid ""
-"<guilabel>Time</guilabel>: Synchronize KStars date and time automatically "
-"from the update source."
-msgstr ""
-"<guilabel>Čas</guilabel>: samodejno sinhronizira datum in čas KStars iz vira "
-"posodobitve."
-
-#. Tag: para
-#: indi.docbook:351
-#, no-c-format
-msgid ""
-"<guilabel>Location</guilabel>: Synchronize KStars location settings from the "
-"update source."
-msgstr ""
-"<guilabel>Lokacija</guilabel>: Sinhronizira nastavitve lokacije KStars iz "
-"vira posodobitve."
-
-#. Tag: guilabel
-#: indi.docbook:354
-#, no-c-format
-msgid "Display"
-msgstr "Zaslon"
-
-#. Tag: para
-#: indi.docbook:356
-#, no-c-format
-msgid ""
-"<guilabel>Telescope crosshair</guilabel>: When checked, &kstars; displays "
-"the telescope's target crosshair on the sky map. The crosshair is displayed "
-"upon a successful connection to the telescope and its location is updated "
-"periodically. The telescope's name is displayed next to the crosshair. "
-"&kstars; displays one crosshair per each connected telescope. To change the "
-"color of the telescope's crosshair, open the <link linkend=\"viewops"
-"\">Configure - &kstars;</link> window. Select the <guilabel>Colors</"
-"guilabel> page, and then change the color of the <guimenuitem>Target "
-"Indicator</guimenuitem> item to the desired color."
-msgstr ""
-"<guilabel>Teleskopski križec</guilabel>: Ko je označeno, &kstars; prikaže "
-"ciljni križec teleskopa na zemljevidu neba. Nitni križec se prikaže ob "
-"uspešni povezavi s teleskopom in njegova lokacija se občasno posodablja. Ime "
-"teleskopa je prikazano poleg nitnega križca. &kstars; prikaže en križec na "
-"vsak povezan teleskop. Če želite spremeniti barvo nitnega križa teleskopa, "
-"odprite okno <link linkend=\"viewops\">Konfiguriraj - &kstars;</link>. "
-"Izberite stran <guilabel>Barve</guilabel> in nato spremenite barvo elementa "
-"<guimenuitem>Indikator cilja</guimenuitem> na želeno barvo."
-
-#. Tag: para
-#: indi.docbook:357
-#, no-c-format
-msgid ""
-"<guilabel>Independent window</guilabel>: Make <guilabel>FITS Viewer</"
-"guilabel> window independent."
-msgstr ""
-"<guilabel>Neodvisno okno</guilabel>: naredi okno <guilabel>FITS Viewer</"
-"guilabel> neodvisno."
-
-#. Tag: para
-#: indi.docbook:358
-#, no-c-format
-msgid ""
-"<guilabel>Message notifications</guilabel>: Show INDI messages as desktop "
-"notifications instead of dialogs."
-msgstr ""
-"<guilabel>Obvestila o sporočilih</guilabel>: Pokaži sporočila INDI kot "
-"obvestila na namizju namesto pogovornih oken."
-
-#. Tag: guilabel
-#: indi.docbook:368
-#, no-c-format
-msgid "Server Port"
-msgstr "Vrata strežnika"
-
-#. Tag: para
-#: indi.docbook:370
-#, no-c-format
-msgid ""
-"Specify range of ports that INDI Server will bind to when starting new "
-"drivers."
-msgstr ""
-"Določite obseg vrat, na katere se bo strežnik INDI povezal pri zagonu novih "
-"gonilnikov."
-
-#. Tag: title
-#: indi.docbook:378
-#, no-c-format
-msgid "INDI Concepts"
-msgstr "Koncepti INDI"
-
-#. Tag: primary
-#: indi.docbook:379 indi.docbook:492 indi.docbook:598
-#, no-c-format
-msgid "Telescope Control"
-msgstr "Nadzor teleskopa"
-
-#. Tag: secondary
-#: indi.docbook:380
-#, no-c-format
-msgid "Concepts"
-msgstr "Koncepti"
-
-#. Tag: para
-#: indi.docbook:383
-#, no-c-format
-msgid ""
-"The main key concept in INDI is that devices have the ability to describe "
-"themselves. This is accomplished by using &XML; to describe a generic "
-"hierarchy that can represent both canonical and non-canonical devices. In "
-"INDI, all <emphasis>devices</emphasis> may contain one or more "
-"<emphasis>properties</emphasis>. Any <emphasis>property</emphasis> may "
-"contain one or more <emphasis>elements</emphasis>. There are four types of "
-"INDI properties:"
-msgstr ""
-"Glavni ključni koncept v INDI je, da se naprave lahko opišejo. To se doseže "
-"z uporabo &XML; za opis generične hierarhije, ki lahko predstavlja kanonične "
-"in nekanonične naprave. V INDI lahko vse <emphasis>naprave</emphasis> "
-"vsebujejo eno ali več <emphasis>lastnosti</emphasis>. Vsaka "
-"<emphasis>lastnost</emphasis> lahko vsebuje enega ali več "
-"<emphasis>elementov</emphasis>. Obstajajo štiri vrste lastnosti INDI:"
-
-#. Tag: para
-#: indi.docbook:392
-#, no-c-format
-msgid "Text property."
-msgstr "Lastnost besedila."
-
-#. Tag: para
-#: indi.docbook:393
-#, no-c-format
-msgid "Number property."
-msgstr "Lastnost števila."
-
-#. Tag: para
-#: indi.docbook:394
-#, no-c-format
-msgid "Switch property (Represented in &GUI; by buttons and checkboxes)."
-msgstr ""
-"Lastnost preklopa (predstavljeno v &GUI; z gumbi in potrditvenimi polji)."
-
-#. Tag: para
-#: indi.docbook:395
-#, no-c-format
-msgid "Light property (Represented in &GUI; by colored LEDs)."
-msgstr "Lastnost svetlobe (predstavljena v &GUI; z barvnimi diodami LED)."
-
-#. Tag: para
-#: indi.docbook:398
-#, no-c-format
-msgid ""
-"For example, all INDI devices share the CONNECTION standard switch "
-"<emphasis>property</emphasis>. The CONNECTION property has two elements: "
-"CONNECT and DISCONNECT switches. &kstars; parses the generic &XML; "
-"description of properties and builds a &GUI; representation suitable for "
-"direct human interaction."
-msgstr ""
-"Na primer, vse naprave INDI imajo <emphasis>lastnost</emphasis> standardnega "
-"stikala CONNECTION. Lastnost CONNECTION ima dva elementa: stikali CONNECT in "
-"DISCONNECT. &kstars; razčleni generični &XML; opis lastnosti in gradi &GUI; "
-"predstavitev, primerno za neposredno človeško interakcijo."
-
-#. Tag: para
-#: indi.docbook:403
-#, no-c-format
-msgid ""
-"The INDI control panel offers many device properties not accessible from the "
-"sky map. The properties offered differ from one device to another. "
-"Nevertheless, all properties share common features that constrains how they "
-"are displayed and used:"
-msgstr ""
-"Nadzorna plošča INDI ponuja številne lastnosti naprave, ki niso dostopne z "
-"zemljevida neba. Ponujene lastnosti se razlikujejo od ene naprave do druge. "
-"Kljub temu imajo vse lastnosti skupne značilnosti, ki omejujejo njihov "
-"prikaz in uporabo:"
-
-#. Tag: para
-#: indi.docbook:410
-#, no-c-format
-msgid ""
-"Permission: All properties can either be read-only, write-only, or read and "
-"write enabled. An example of a read-write property is the telescope's Right "
-"Ascension. You can enter a new Right Ascension and the telescope, based on "
-"current settings, will either slew or sync to the new input. Furthermore, "
-"when the telescope slews, its Right Ascension gets updated and sent back to "
-"the client."
-msgstr ""
-"Dovoljenje: vse lastnosti so lahko samo za branje, samo za pisanje ali "
-"omogočene za branje in pisanje. Primer lastnosti branja in pisanja je "
-"rektascenzija teleskopa. Vnesete lahko novo rektascenzijo in teleskop bo na "
-"podlagi trenutnih nastavitev zasukal ali sinhroniziral z novim vhodom. "
-"Nadalje, ko se teleskop obrne, se njegova rektascenzija posodobi in pošlje "
-"nazaj odjemalcu."
-
-#. Tag: para
-#: indi.docbook:420
-#, no-c-format
-msgid ""
-"State: Prefixed to each property is a state indicator (round LED). Each "
-"property has a state and an associated color code:"
-msgstr ""
-"Stanje: pred vsako lastnostjo je indikator stanja (okrogla LED). Vsaka "
-"lastnost ima stanje in povezano barvno kodo:"
-
-#. Tag: title
-#: indi.docbook:423
-#, no-c-format
-msgid "INDI State color code"
-msgstr "Barvna oznaka stanja INDI"
-
-#. Tag: entry
-#: indi.docbook:427
-#, no-c-format
-msgid "State"
-msgstr "Stanje"
-
-#. Tag: entry
-#: indi.docbook:428
-#, no-c-format
-msgid "Color"
-msgstr "Barva"
-
-#. Tag: entry
-#: indi.docbook:429
-#, no-c-format
-msgid "Description"
-msgstr "Opis"
-
-#. Tag: entry
-#: indi.docbook:434
-#, no-c-format
-msgid "Idle"
-msgstr "Nedejaven"
-
-#. Tag: entry
-#: indi.docbook:435
-#, no-c-format
-msgid "Gray"
-msgstr "Siva"
-
-#. Tag: entry
-#: indi.docbook:436
-#, no-c-format
-msgid "Device is performing no action with respect to this property"
-msgstr "Naprava ne izvaja nobenega dejanja v zvezi s to lastnostjo"
-
-#. Tag: entry
-#: indi.docbook:439
-#, no-c-format
-msgid "<entry>Ok</entry>"
-msgstr "<entry>V redu</entry>"
-
-#. Tag: entry
-#: indi.docbook:440
-#, no-c-format
-msgid "Green"
-msgstr "Zelena"
-
-#. Tag: entry
-#: indi.docbook:441
-#, no-c-format
-msgid "Last operation performed on this property was successful and active"
-msgstr "Zadnja operacija, izvedena na tej lastnini, je bila uspešna in aktivna"
-
-#. Tag: entry
-#: indi.docbook:445
-#, no-c-format
-msgid "Busy"
-msgstr "Zaseden"
-
-#. Tag: entry
-#: indi.docbook:446
-#, no-c-format
-msgid "Yellow"
-msgstr "Rumena"
-
-#. Tag: entry
-#: indi.docbook:447
-#, no-c-format
-msgid "The property is performing an action"
-msgstr "Naprava izvaja dejanje"
-
-#. Tag: entry
-#: indi.docbook:450
-#, no-c-format
-msgid "Alert"
-msgstr "Opozorilo"
-
-#. Tag: entry
-#: indi.docbook:451
-#, no-c-format
-msgid "<entry>Red</entry>"
-msgstr "<entry>Rdeča</entry>"
-
-#. Tag: entry
-#: indi.docbook:452
-#, no-c-format
-msgid "The property is in critical condition and needs immediate attention"
-msgstr "Naprava je v kritičnem stanju in potrebuje takojšnjo pomoč"
-
-#. Tag: para
-#: indi.docbook:459
-#, no-c-format
-msgid ""
-"The device driver updates the property state in real-time when necessary. "
-"For example, if the telescope is in the process of slewing to a target, then "
-"the RA/DEC properties will be signaled as <guilabel>Busy</guilabel>. When "
-"the slew process is completed successfully, the properties will be signaled "
-"as <guilabel>Ok</guilabel>."
-msgstr ""
-"Gonilnik naprave po potrebi posodobi stanje lastnosti v realnem času. Na "
-"primer, če je teleskop v procesu obračanja na cilj, bodo lastnosti RA/DEC "
-"signalizirane kot <guilabel>Zasedeno</guilabel>. Ko je postopek obračanja "
-"uspešno zaključen, bodo lastnosti označene kot <guilabel>V redu</guilabel>."
-
-#. Tag: para
-#: indi.docbook:467
-#, no-c-format
-msgid ""
-"Context: Numerical properties can accept and process numbers in two formats: "
-"decimal and sexagesimal. The sexagesimal format is convenient when "
-"expressing time or equatorial/geographical coordinates. You can use any "
-"format at your convenience. For example, all the following numbers are equal:"
-msgstr ""
-"Kontekst: Numerične lastnosti lahko sprejemajo in obdelujejo števila v dveh "
-"oblikah: decimalni in šestdesetiški. Šestdesetiški format je primeren za "
-"izražanje časa ali ekvatorialnih/geografskih koordinat. Uporabite lahko "
-"katero koli obliko, ki vam ustreza. Na primer, vsa naslednja števila so "
-"enaka:"
-
-#. Tag: para
-#: indi.docbook:474
-#, no-c-format
-msgid "-156.40"
-msgstr "-156,4"
-
-#. Tag: para
-#: indi.docbook:475
-#, no-c-format
-msgid "-156:24:00"
-msgstr "-156:24:00"
-
-#. Tag: para
-#: indi.docbook:476
-#, no-c-format
-msgid "-156:24"
-msgstr "-156:24"
-
-#. Tag: para
-#: indi.docbook:480
-#, no-c-format
-msgid ""
-"Time: The standard time for all INDI-related communications is Universal "
-"Time UTC specified as YYYY-MM-DDTHH:MM:SS in accord with ISO 8601. &kstars; "
-"communicates the correct UTC time with device drivers automatically. You can "
-"enable/disable automatic time updates from the <guilabel>INDI</guilabel> "
-"page in the settings dialog."
-msgstr ""
-"Čas: Standardni čas za vse komunikacije, povezane z INDI, je univerzalni čas "
-"UTC, določen kot YYYY-MM-DDTHH:MM:SS v skladu z ISO 8601. &kstars; samodejno "
-"sporoči pravilen čas UTC z gonilniki naprav. Samodejne posodobitve časa "
-"lahko omogočite/onemogočite na strani <guilabel>INDI</guilabel> v pogovornem "
-"oknu z nastavitvami."
-
-#. Tag: title
-#: indi.docbook:491
-#, no-c-format
-msgid "Remote Device Control"
-msgstr "Oddaljeno upravljanje naprave"
-
-#. Tag: secondary
-#: indi.docbook:493
-#, no-c-format
-msgid "Remote Devices"
-msgstr "Oddaljene naprave"
-
-#. Tag: para
-#: indi.docbook:496
-#, no-c-format
-msgid ""
-"&kstars; provides a simple yet powerful layer for remote device control. A "
-"detailed description of the layer is described in the INDI <ulink url="
-"\"https://www.clearskyinstitute.com/INDI/INDI.pdf\">white paper</ulink>."
-msgstr ""
-"&kstars; zagotavlja preprosto, a zmogljivo plast za daljinsko upravljanje "
-"naprave. Podroben opis sloja je opisan v INDI <ulink url=\"https://www."
-"clearskyinstitute.com/INDI/INDI.pdf\">beli knjigi</ulink>."
-
-#. Tag: para
-#: indi.docbook:501
-#, no-c-format
-msgid ""
-"You need to configure both the server and client machines for remote control:"
-msgstr ""
-"Za daljinsko upravljanje morate konfigurirati strežniške in odjemalske "
-"naprave:"
-
-#. Tag: para
-#: indi.docbook:506
-#, no-c-format
-msgid ""
-"<guilabel>Server</guilabel>: To prepare a device for remote control, follow "
-"the same steps in the <link linkend=\"indi-kstars-setup\">local/server</"
-"link> setup. When you start a device service in the <guilabel>Device "
-"Manager</guilabel>, a port number is displayed under the <guilabel>Port</"
-"guilabel> column. In addition to the port number, you also need the hostname "
-"or IP address of your server."
-msgstr ""
-"<guilabel>Strežnik</guilabel>: Če želite pripraviti napravo za daljinsko "
-"upravljanje, sledite istim korakom v nastavitvi <link linkend=\"indi-kstars-"
-"setup\">lokalno/strežniško</link>. Ko zaženete storitev naprave v "
-"<guilabel>Upravljalniku naprav</guilabel>, se pod stolpcem <guilabel>Vrata</"
-"guilabel> prikaže številka vrat. Poleg številke vrat potrebujete tudi ime "
-"gostitelja ali naslov IP vašega strežnika."
-
-#. Tag: para
-#: indi.docbook:515
-#, no-c-format
-msgid ""
-"<guilabel>Client</guilabel>: Select the <menuchoice><guimenu>Tools</guimenu> "
-"<guisubmenu>Devices</guisubmenu> <guimenuitem>Device Manager...</"
-"guimenuitem></menuchoice> menu item and you can add, modify, or delete hosts "
-"into <guilabel>Client</guilabel> tab. Add a host by clicking on the "
-"<guibutton>Add</guibutton> button. Enter the hostname/IP address of the "
-"server in the <guilabel>Host:</guilabel> field, and enter the port number "
-"obtained from the <emphasis>server</emphasis> machine in step 1."
-msgstr ""
-"<guilabel>Odjemalec</guilabel>: izberite menijski element "
-"<menuchoice><guimenu>Orodja</guimenu> <guisubmenu>Naprave</"
-"guisubmenu><guimenuitem>Upravljalnik naprav...</guimenuitem></menuchoice> in "
-"lahko dodaja, spreminja ali briše gostitelje na zavihku <guilabel>Odjemalec</"
-"guilabel>. Dodajte gostitelja s klikom na gumb <guibutton>Dodaj</guibutton>. "
-"Vnesite ime gostitelja/naslov IP strežnika v polje <guilabel>Gostitelj:</"
-"guilabel> in vnesite številko vrat, pridobljeno od stroja "
-"<emphasis>strežnika</emphasis> v 1. koraku."
-
-#. Tag: screeninfo
-#: indi.docbook:526
-#, no-c-format
-msgid "INDI Client"
-msgstr "Odjemalec INDI"
-
-#. Tag: para
-#: indi.docbook:534
-#, no-c-format
-msgid ""
-"After you add a host, right click on the host to <guimenuitem>Connect</"
-"guimenuitem> or <guimenuitem>Disconnect</guimenuitem>. If a connection is "
-"established, you can control the telescope from the <guilabel>Sky map</"
-"guilabel> or <guilabel>INDI Control Panel</guilabel> exactly as described in "
-"the <link linkend=\"indi-kstars-setup\">local/server</link> section. It is "
-"as easy at that."
-msgstr ""
-"Ko dodate gostitelja, z desnim klikom na gostitelja <guimenuitem>Poveži</"
-"guimenuitem> ali <guimenuitem>Prekini povezavo</guimenuitem>. Če je povezava "
-"vzpostavljena, lahko upravljate teleskop iz <guilabel>Sky map</guilabel> "
-"ali  <guilabel>Kontrolna plošča INDI</guilabel> natančno tako, kot je "
-"opisano v <link linkend=\"indi-kstars-setup\"> razdelek local/server</link>. "
-"To je tako enostavno."
-
-#. Tag: title
-#: indi.docbook:542
-#, no-c-format
-msgid "Running an INDI server from the command line"
-msgstr "Zagon strežnika INDI iz ukazne vrstice"
-
-#. Tag: para
-#: indi.docbook:543
-#, no-c-format
-msgid ""
-"While &kstars; allows you to easily deploy an INDI server; you can launch an "
-"INDI server from the command line."
-msgstr ""
-"Medtem ko &kstars; omogoča preprosto namestitev strežnika INDI; strežnik "
-"INDI lahko zaženete iz ukazne vrstice."
-
-#. Tag: para
-#: indi.docbook:547
-#, no-c-format
-msgid ""
-"Since INDI is an independent backend component, you can run an INDI server "
-"on a host without &kstars;. INDI can be compiled separately to run on remote "
-"hosts. Furthermore, device drivers log messages to <constant>stderr</"
-"constant> and that can be helpful in a debugging situation. The syntax for "
-"INDI server is as following:"
-msgstr ""
-"Ker je INDI neodvisna zaledna komponenta, lahko zaženete strežnik INDI na "
-"gostitelju brez &kstars;. INDI je mogoče ločeno prevesti za delovanje na "
-"oddaljenih gostiteljih. Poleg tega gonilniki naprav beležijo sporočila v "
-"<constant>stderr</constant>, kar je lahko v pomoč pri odpravljanju napak. "
-"Sintaksa za strežnik INDI je naslednja:"
-
-#. Tag: para
-#: indi.docbook:554
-#, no-c-format
-msgid ""
-"$ <command>indiserver</command> [options] driver [<filename>driver</"
-"filename> ...]"
-msgstr ""
-"$ <command>indiserver</command> [options] driver [<filename>driver</"
-"filename> ...]"
-
-#. Tag: screen
-#: indi.docbook:557
-#, no-c-format
-msgid ""
-"Options:\n"
-" -l d     : Log driver messages to &lt;d&gt;/YYYY-MM-DD.islog\n"
-" -m m     : Kill client if gets more than this many MB behind, default 128.\n"
-" -d m     : Drop streaming blobs if client gets more than this many MB "
-"behind, default 5. 0 to disable.\n"
-" -p p     : Alternate IP port, default 7624.\n"
-" -r r     : Maximum driver restarts on error, default 10.\n"
-" -f path  : Path to fifo for dynamic startup and shutdown of drivers.\n"
-" -v       : Show key events, no traffic.\n"
-" -vv      : -v + key message content.\n"
-" -vvv     : -vv + complete xml.\n"
-" driver   : Executable or [device]@host[:port]"
-msgstr ""
-"Možnosti:\n"
-" -l d : beleži sporočila gonilnika v &lt;d&gt;/YYYY-MM-DD.islog\n"
-" -m m : ukini odjemalca, če zaostaja več kot toliko MB, privzeto 128.\n"
-" -d m : izpusti pretočne blob-e, če odjemalec dobi več kot to veliko MB "
-"zadaj, privzeto 5. 0 za onemogočanje.\n"
-" -p p : Nadomestna vrata IP, privzeto 7624.\n"
-" -r r : Največje število ponovnih zagonov gonilnika ob napaki, privzeto 10.\n"
-" -f pot : Pot do fifo za dinamični zagon in zaustavitev gonilnikov.\n"
-" -v : Prikaži ključne dogodke, ni prometa.\n"
-" -vv : -v + ključna vsebina sporočila.\n"
-" -vvv : vv + celoten xml.\n"
-" driver: izvedljiv program ali [naprava]@gostitelj[:vrata]"
-
-#. Tag: para
-#: indi.docbook:559
-#, no-c-format
-msgid ""
-"For example, if you want to start an INDI server running an LX200 GPS driver "
-"and listening to connections on port 8000, you would run the following "
-"command:"
-msgstr ""
-"Na primer, če želite zagnati strežnik INDI, ki izvaja gonilnik GPS LX200 in "
-"posluša povezave na vratih 8000, bi zagnali naslednji ukaz:"
-
-#. Tag: para
-#: indi.docbook:564
-#, no-c-format
-msgid "$ <command>indiserver</command> -p 8000 <filename>lx200gps</filename>"
-msgstr "$ <command>indiserver</command> -p 8000 <filename>lx200gps</filename>"
-
-#. Tag: title
-#: indi.docbook:568
-#, no-c-format
-msgid "Secure Remote Operation"
-msgstr "Varno oddaljeno delovanje"
-
-#. Tag: para
-#: indi.docbook:570
-#, no-c-format
-msgid ""
-"Suppose we want to run an indiserver with INDI drivers on a remote host, "
-"<constant>remote_host</constant>, and connect them to &kstars; running on "
-"the local machine."
-msgstr ""
-"Recimo, da želimo zagnati indiserver z gonilniki INDI na oddaljenem "
-"gostitelju, <constant>remote_host</constant>, in jih povezati z &kstars; "
-"teče na lokalnem računalniku."
-
-#. Tag: para
-#: indi.docbook:574
-#, no-c-format
-msgid ""
-"From the local machine log onto the remote host, <constant>remote_host</"
-"constant>, by typing:"
-msgstr ""
-"Iz lokalnega strojnega dnevnika na oddaljenega gostitelja, "
-"<constant>remote_host</constant>, tako da vnesete:"
-
-#. Tag: para
-#: indi.docbook:578
-#, no-c-format
-msgid ""
-"$ <command>ssh</command> -L <varname>local_port</varname>:"
-"<constant>remote_host</constant>:<varname>remote_port</varname>"
-msgstr ""
-"$ <command>ssh</command> -L <varname>local_port</varname>:"
-"<constant>remote_host</constant>:<varname>remote_port</varname>"
-
-#. Tag: para
-#: indi.docbook:580
-#, no-c-format
-msgid ""
-"This binds the <varname>local_port</varname> on the local machine to the "
-"<varname>remote_port</varname> on the <constant>remote_host</constant>. "
-"After logging in, run indiserver on the remote host:"
-msgstr ""
-"To poveže <varname>local_port</varname> na lokalnem računalniku z "
-"<varname>remote_port</varname> na <constant>remote_host</constant>. Po "
-"prijavi zaženite indiserver na oddaljenem gostitelju:"
-
-#. Tag: para
-#: indi.docbook:585
-#, no-c-format
-msgid ""
-"$ <command>indiserver</command> -p <varname>remote_port</varname> "
-"[<filename>driver</filename>...]"
-msgstr ""
-"$ <command>indiserver</command> -p <varname>remote_port</varname> "
-"[<filename>driver</filename>...]"
-
-#. Tag: para
-#: indi.docbook:587
-#, no-c-format
-msgid ""
-"Back on the local machine, start &kstars; then open the <guimenuitem>Device "
-"Manager</guimenuitem> and add a host under the <guilabel>Client</guilabel> "
-"tab. The host should be the local host (usually 127.0.0.1) and the port "
-"number should be the <varname>local_port</varname> used in the steps above. "
-"<mousebutton>Right</mousebutton>-click on the host and select "
-"<guimenuitem>Connect</guimenuitem> from the popup menu. &kstars; will "
-"connect to the remote INDI server securely. The host information will be "
-"saved for future sessions."
-msgstr ""
-"Nazaj na lokalnem računalniku zaženite &kstars; nato odprite "
-"<guimenuitem>Upravljalnika  naprav</guimenuitem> in dodajte gostitelja pod "
-"zavihkom <guilabel>Odjemalec</guilabel>. Gostitelj mora biti lokalni "
-"gostitelj (običajno 127.0.0.1), številka vrat pa mora biti "
-"<varname>local_port</varname>, uporabljena v zgornjih korakih. "
-"<mousebutton>Desni</mousebutton>-kliknite gostitelja in v pojavnem meniju "
-"izberite <guimenuitem>Poveži</guimenuitem>. &kstars; se bo varno povezal z "
-"oddaljenim strežnikom INDI. Podatki o gostitelju bodo shranjeni za prihodnje "
-"seje."
-
-#. Tag: title
-#: indi.docbook:597
-#, no-c-format
-msgid "INDI Frequently Asked Questions"
-msgstr "INDI Pogosto zastavljena vprašanja"
-
-#. Tag: secondary
-#: indi.docbook:599
-#, no-c-format
-msgid "&FAQ;"
-msgstr "&FAQ;"
-
-#. Tag: para
-#: indi.docbook:605
-#, no-c-format
-msgid "What is INDI?"
-msgstr "Kaj je INDI?"
-
-#. Tag: para
-#: indi.docbook:608
-#, no-c-format
-msgid ""
-"<acronym>INDI</acronym> is the <ulink url=\"https://indilib.org\"> "
-"Instrument-Neutral-Distributed-Interface</ulink> control protocol developed "
-"by <author><firstname>Elwood</firstname><surname>C. Downey</surname></"
-"author> of <ulink url=\"https://www.clearskyinstitute.com/\">ClearSky "
-"Institute</ulink>. &kstars; employs device drivers that are compatible with "
-"the INDI protocol. INDI has many advantages including loose coupling between "
-"hardware devices and software drivers. Clients that use the device drivers "
-"(like &kstars;) are completely unaware of the device capabilities. In run "
-"time, &kstars; communicates with the device drivers and builds a completely "
-"dynamical &GUI; based on services provided by the device. Therefore, new "
-"device drivers can be written or updated and &kstars; can take full "
-"advantage of them without any changes on the client side."
-msgstr ""
-"<acronym>INDI</acronym> je nadzorni protokol <ulink url=\"https://indilib.org"
-"\"> Instrument-Neutral-Distributed-Interface</ulink>, ki ga je razvil "
-"<author><firstname>Elwood</firstname> <surname>C. Downey</surname></author> "
-"iz <ulink url=\"https://www.clearskyinstitute.com/\">ClearSky Institute</"
-"ulink>. &kstars; uporablja gonilnike naprav, ki so združljivi s protokolom "
-"INDI. INDI ima veliko prednosti, vključno z ohlapno povezavo med napravami "
-"strojne opreme in gonilniki programske opreme. Odjemalci, ki uporabljajo "
-"gonilnike naprav (kot je &kstars;), se popolnoma ne zavedajo zmogljivosti "
-"naprave. V času izvajanja &kstars; komunicira z gonilniki naprav in gradi "
-"popolnoma dinamičen &GUI; na podlagi storitev, ki jih zagotavlja naprava. "
-"Zato je mogoče nove gonilnike naprav napisati ali posodobiti in &kstars; jih "
-"lahko v celoti izkoristi brez sprememb na strani odjemalca."
-
-#. Tag: para
-#: indi.docbook:624
-#, no-c-format
-msgid "Do you plan to support more devices?"
-msgstr "Ali nameravate podpirati več naprav?"
-
-#. Tag: para
-#: indi.docbook:629
-#, no-c-format
-msgid ""
-"Yes. We plan to support major CCD cameras and focusers and extend support "
-"for more telescopes. If you would like INDI to support a particular device, "
-"please send an email to <email>indi-devel@lists.sourceforge.net</email>"
-msgstr ""
-"Da Načrtujemo podporo večjim kameram CCD in fokuserjem ter razširitev "
-"podpore za več teleskopov. Če želite, da INDI podpira določeno napravo, "
-"pošljite e-pošto na <email>indi-devel@lists.sourceforge.net</email>"
-
-#. Tag: para
-#: indi.docbook:639
-#, no-c-format
-msgid "What operations does &kstars; provide to control the telescope?"
-msgstr "Katere operacije izvaja &kstars; zagotoviti nadzor nad teleskopom?"
-
-#. Tag: para
-#: indi.docbook:644
-#, no-c-format
-msgid ""
-"It depends on the particular telescope you're running, but the minimum three "
-"operations are <command>Slew</command>, <command>Track</command>, and "
-"<command>Sync</command>, which you can issue directly from the sky map. Your "
-"telescope must be aligned for those operations to perform correctly. Some "
-"telescopes offer you more operations like site management, slew modes, "
-"focusing, parking, and more. You can access the telescopes extended features "
-"from the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
-"guisubmenu> <guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> "
-"menu item."
-msgstr ""
-"Odvisno je od določenega teleskopa, ki ga uporabljate, vendar so najmanj tri "
-"operacije <command>Slew</command>, <command>Track</command> in "
-"<command>Sync</command>, ki jih lahko izdate neposredno z zemljevida neba. "
-"Vaš teleskop mora biti poravnan, da se te operacije izvajajo pravilno. "
-"Nekateri teleskopi vam ponujajo več operacij, kot so upravljanje mesta, "
-"načini obračanja, ostrenje, parkiranje in drugo. Do razširjenih funkcij "
-"teleskopov lahko dostopate iz menijske postavke <menuchoice><guimenu>Orodja</"
-"guimenu> <guisubmenu>Naprave</guisubmenu> <guimenuitem>Nadzorna plošča "
-"INDI...</guimenuitem></menuchoice>."
-
-#. Tag: para
-#: indi.docbook:658
-#, no-c-format
-msgid ""
-"What's the difference between <command>Slew</command>, <command>Track</"
-"command>, and <command>Sync</command> exactly?"
-msgstr ""
-"Kakšna je natančna razlika med <command>Slew</command>, <command>Track</"
-"command> in <command>Sync</command>?"
-
-#. Tag: para
-#: indi.docbook:663
-#, no-c-format
-msgid ""
-"The command <command>Slew</command> orders the telescope to move to a "
-"particular target, and once the telescope reaches its target, the telescope "
-"keeps tracking that target at a <emphasis>sidereal</emphasis> rate (&ie;, "
-"the rate at which stars move across the sky). This works well for stars, "
-"Messier objects, and about everything outside our solar system. But solar "
-"system objects travel differently across the sky and so the telescope must "
-"<command>Track</command> the objects as they move."
-msgstr ""
-"Ukaz <command>Slew</command> ukaže teleskopu, da se premakne na določen "
-"cilj, in ko teleskop doseže svoj cilj, teleskop še naprej sledi temu cilju z "
-"<emphasis>zvezdno</emphasis> hitrostjo (&ie; hitrost premikanja zvezd po "
-"nebu). To dobro deluje pri zvezdah, Messierjevih objektih in pri vsem zunaj "
-"našega sončevega sistema. Toda objekti sončevega sistema potujejo drugače po "
-"nebu, zato mora teleskop <command>Slediti - Track</command> objektom, ko se "
-"premikajo."
-
-#. Tag: para
-#: indi.docbook:670
-#, no-c-format
-msgid ""
-"Therefore, you need to issue a track command if you want to track an object "
-"with non-sidereal motion. On the other hand, <command>Sync</command> is used "
-"to synchronize the telescope's internal coordinates with that of an object "
-"you select."
-msgstr ""
-"Zato morate izdati ukaz za sledenje, če želite slediti objektu z nezvezdnim "
-"gibanjem. Po drugi strani se <command>Sync</command> uporablja za "
-"sinhronizacijo notranjih koordinat teleskopa s koordinatami objekta, ki ga "
-"izberete."
-
-#. Tag: para
-#: indi.docbook:680
-#, no-c-format
-msgid "Can I control my telescope remotely?"
-msgstr "Ali lahko upravljam svoj teleskop na daljavo?"
-
-#. Tag: para
-#: indi.docbook:685
-#, no-c-format
-msgid ""
-"Yes. You can start an INDI server on the machine connected to your telescope "
-"and the server will listen to requests from &kstars; clients. Once you're "
-"connected, you can control your telescope directly from the sky map. This "
-"procedure is described in detail in the <link linkend=\"indi-remote-control"
-"\">Remote device control</link> section."
-msgstr ""
-"Da Strežnik INDI lahko zaženete na napravi, ki je povezana z vašim "
-"teleskopom, in strežnik bo poslušal zahteve &kstars; odjemalca. Ko ste "
-"povezani, lahko svoj teleskop upravljate neposredno s karto neba. Ta "
-"postopek je podrobno opisan v razdelku <link linkend=\"indi-remote-control"
-"\">Oddaljeno upravljanje naprave</link>."
-
-#. Tag: para
-#: indi.docbook:696
-#, no-c-format
-msgid ""
-"When I try to <guibutton>Connect</guibutton>, &kstars; reports that the "
-"telescope is not connected to the serial/USB port. What can I do?"
-msgstr ""
-"Ko se poskusim <guibutton>Povezati</guibutton>, &kstars; poroča, da teleskop "
-"ni priključen na serijska/USB vrata. Kaj lahko naredim?"
-
-#. Tag: para
-#: indi.docbook:702
-#, no-c-format
-msgid ""
-"This message is triggered when &kstars; cannot communicate with the "
-"telescope. Here are few things you can do:"
-msgstr ""
-"To sporočilo se sproži, ko &kstars; ne more komunicirati s teleskopom. Tukaj "
-"je nekaj stvari, ki jih lahko storite:"
-
-#. Tag: para
-#: indi.docbook:706
-#, no-c-format
-msgid ""
-"Check that you have both reading and writing permission for the port you are "
-"trying to connect to."
-msgstr ""
-"Preverite, ali imate dovoljenje za branje in pisanje za vrata, s katerimi se "
-"poskušate povezati."
-
-#. Tag: para
-#: indi.docbook:709
-#, no-c-format
-msgid ""
-"Check the connection cable, make sure it is in good condition and test it "
-"with other applications."
-msgstr ""
-"Preverite priključni kabel, se prepričajte, da je v dobrem stanju in ga "
-"preizkusite z drugimi aplikacijami."
-
-#. Tag: para
-#: indi.docbook:712
-#, no-c-format
-msgid ""
-"Check your telescope power, make sure the power is on and that the telescope "
-"is getting enough power."
-msgstr ""
-"Preverite napajanje svojega teleskopa, preverite, ali je napajanje "
-"vklopljeno in ali teleskop dobiva dovolj energije."
-
-#. Tag: para
-#: indi.docbook:715
-#, no-c-format
-msgid ""
-"Select the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
-"guisubmenu> <guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> "
-"menu item and set the correct port in the <guilabel>INDI Control Panel</"
-"guilabel> dialog. The default device is <constant>/dev/ttyS0</constant>"
-msgstr ""
-"Izberite menijski element <menuchoice><guimenu>Orodja</guimenu> "
-"<guisubmenu>Naprave</guisubmenu> <guimenuitem>Nadzorna plošča INDI...</"
-"guimenuitem></menuchoice> in nastavite pravilna vrata v <guilabel> Pogovorno "
-"okno nadzorne plošče INDI</guilabel>. Privzeta naprava je <constant>/dev/"
-"ttyS0</constant>"
-
-#. Tag: para
-#: indi.docbook:721
-#, no-c-format
-msgid "Restart &kstars; and retry again."
-msgstr "Znova zaženite &kstars; in poskusite znova."
-
-#. Tag: para
-#: indi.docbook:729
-#, no-c-format
-msgid ""
-"&kstars; reports that the telescope is online and ready, but I cannot find "
-"the telescope's crosshair, where is it?"
-msgstr ""
-"&kstars; poroča, da je teleskop na spletu in pripravljen, vendar ne najdem "
-"križca teleskopa, kje je?"
-
-#. Tag: para
-#: indi.docbook:732
-#, no-c-format
-msgid ""
-"&kstars; retrieves the telescopes RA and DEC coordinates upon connection. If "
-"your alignment was performed correctly, then you should see the crosshair "
-"around your target in the Sky Map. However, the RA and DEC coordinates "
-"provided by the telescope may be incorrect (even below the horizon) and you "
-"need to <link linkend=\"indi-sync\">Sync</link> your telescope to your "
-"current target. You can use the right-click menu to center and track the "
-"telescope crosshair in the sky map."
-msgstr ""
-"&kstars; ob povezavi pridobi koordinate RA in DEC teleskopov. Če je bila "
-"vaša poravnava izvedena pravilno, bi morali videti križec okoli vašega cilja "
-"na zemljevidu neba. Vendar pa so lahko koordinate RA in DEC, ki jih "
-"posreduje teleskop, napačne (tudi pod obzorjem) in morate <link linkend="
-"\"indi-sync\">sinhronizirati</link> svoj teleskop s trenutnim ciljem. Meni z "
-"desnim klikom lahko uporabite za centriranje in sledenje križcu teleskopa na "
-"karti neba."
-
-#. Tag: para
-#: indi.docbook:744
-#, no-c-format
-msgid ""
-"The telescope is moving erratically or not moving at all. What can I do?"
-msgstr ""
-"Teleskop se premika neenakomerno ali pa se sploh ne premika. Kaj lahko "
-"naredim?"
-
-#. Tag: para
-#: indi.docbook:747
-#, no-c-format
-msgid ""
-"This behavior is mostly due to incorrect settings, please verify the "
-"following check list:"
-msgstr ""
-"To vedenje je večinoma posledica nepravilnih nastavitev, prosimo preverite "
-"naslednji kontrolni seznam:"
-
-#. Tag: para
-#: indi.docbook:750
-#, no-c-format
-msgid "Is the telescope aligned?"
-msgstr "Ali je teleskop poravnan?"
-
-#. Tag: para
-#: indi.docbook:753
-#, no-c-format
-msgid ""
-"Is the telescope alignment mode correct? Use <guilabel>INDI Control Panel</"
-"guilabel> to check and change these settings (<constant>Alt/Az,Polar, Land</"
-"constant>)."
-msgstr ""
-"Ali je način naravnavanja teleskopa pravilen? Uporabite <guilabel>Nadzorno "
-"ploščo INDI</guilabel>, da preverite in spremenite te nastavitve "
-"(<constant>Alt/Az,Polar, Land</constant>)."
-
-#. Tag: para
-#: indi.docbook:758
-#, no-c-format
-msgid "Are the telescope's time and date settings correct?"
-msgstr "Ali so nastavitve časa in datuma teleskopa pravilne?"
-
-#. Tag: para
-#: indi.docbook:761
-#, no-c-format
-msgid "Are the telescope's longitude and latitude settings correct?"
-msgstr "Ali so nastavitve dolžine in širine teleskopa pravilne?"
-
-#. Tag: para
-#: indi.docbook:764
-#, no-c-format
-msgid "Is the telescope's UTC offset correct?"
-msgstr "Ali je odmik teleskopa UTC pravilen?"
-
-#. Tag: para
-#: indi.docbook:767
-#, no-c-format
-msgid "Are the telescope's RA and DEC axis locked firmly?"
-msgstr "Ali sta osi RA in DEC teleskopa trdno zaklenjeni?"
-
-#. Tag: para
-#: indi.docbook:770
-#, no-c-format
-msgid ""
-"Is the telescope's N/S switch (when applicable) setup correctly for your "
-"hemisphere?"
-msgstr ""
-"Ali je teleskopsko stikalo N/S (če je na voljo) pravilno nastavljeno za vašo "
-"poloblo?"
-
-#. Tag: para
-#: indi.docbook:773
-#, no-c-format
-msgid "Is the cable between the telescope and computer in good condition?"
-msgstr "Ali je kabel med teleskopom in računalnikom v dobrem stanju?"
-
-#. Tag: para
-#: indi.docbook:777
-#, no-c-format
-msgid ""
-"If you think all settings are correct but the telescope still moves "
-"erratically or not at all, then please send a report to <email>indi-"
-"devel@lists.sourceforge.net</email>."
-msgstr ""
-"Če menite, da so vse nastavitve pravilne, vendar se teleskop še vedno "
-"premika nepravilno ali se sploh ne premika, pošljite poročilo na <email>indi-"
-"devel@lists.sourceforge.net</email>."
+#~ msgid "INDI Control"
+#~ msgstr "Nadzor INDI"
+
+#~ msgid "Overview"
+#~ msgstr "Pregled"
+
+#~ msgid "INDI Setup"
+#~ msgstr "Nastavitev INDI"
+
+#~ msgid "<primary>INDI</primary>"
+#~ msgstr "<primary>INDI</primary>"
+
+#~ msgid "Setup"
+#~ msgstr "Nastavitve"
+
+#~ msgid ""
+#~ "&kstars; can control local and remote devices seamlessly via the <link "
+#~ "linkend=\"what-is-indi\">INDI</link> server/client architecture. INDI "
+#~ "devices may be run in three different modes:"
+#~ msgstr ""
+#~ "&kstars; lahko nemoteno nadzoruje lokalne in oddaljene naprave prek "
+#~ "arhitekture strežnik/odjemalec <link linkend=\"what-is-indi\">INDI</"
+#~ "link>. Naprave INDI lahko delujejo v treh različnih načinih:"
+
+#~ msgid ""
+#~ "<guilabel>Local</guilabel>: The local mode is the most common and is used "
+#~ "to control local device (&ie; a device attached to your machine)."
+#~ msgstr ""
+#~ "<guilabel>Lokalno</guilabel>: Lokalni način je najpogostejši in se "
+#~ "uporablja za nadzor lokalne naprave (&ie; naprave, priključene na vaš "
+#~ "stroj)."
+
+#~ msgid ""
+#~ "<guilabel>Server</guilabel>: The server mode establishes an INDI server "
+#~ "for a particular device and waits for connections from remote clients. "
+#~ "You cannot operate server devices, you can only start and shut them down."
+#~ msgstr ""
+#~ "<guilabel>Strežnik</guilabel>: strežniški način vzpostavi strežnik INDI "
+#~ "za določeno napravo in čaka na povezave oddaljenih odjemalcev. "
+#~ "Strežniških naprav ne morete upravljati, lahko jih samo zaženete in "
+#~ "izklopite."
+
+#~ msgid ""
+#~ "<guilabel>Client</guilabel>: The client mode is used to connect to remote "
+#~ "INDI servers running INDI devices. You can control remote devices "
+#~ "seamlessly like local devices."
+#~ msgstr ""
+#~ "<guilabel>Odjemalec</guilabel>: Način odjemalca se uporablja za povezavo "
+#~ "z oddaljenimi strežniki INDI, ki poganjajo naprave INDI. Oddaljene "
+#~ "naprave lahko brez težav nadzorujete kot lokalne naprave."
+
+#~ msgid ""
+#~ "You can run local device, establish INDI servers, and connect to remote "
+#~ "clients from the <menuchoice><guimenu>Tools</guimenu> "
+#~ "<guisubmenu>Devices</guisubmenu> <guimenuitem>Device Manager...</"
+#~ "guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Lokalno napravo lahko zaženete, vzpostavite strežnike INDI in se povežete "
+#~ "z oddaljenimi odjemalci iz elementa menija <menuchoice><guimenu>Orodja</"
+#~ "guimenu> <guisubmenu>Naprave</guisubmenu> <guimenuitem>Upravitelj "
+#~ "naprav...</guimenuitem></menuchoice>."
+
+#~ msgid ""
+#~ "Here is a screenshot of the <guilabel>Device Manager</guilabel> window:"
+#~ msgstr ""
+#~ "Tukaj je posnetek zaslona okna <guilabel>Upravitelj naprav</guilabel>:"
+
+#~ msgid "Running device drivers"
+#~ msgstr "Izvajanje gonilnikov naprav"
+
+#~ msgid "Start device drivers"
+#~ msgstr "Zaženite gonilnike naprav"
+
+#~ msgid ""
+#~ "You can run devices by browsing the device tree, selecting a specific "
+#~ "device, and then clicking on the <guibutton>Run Service</guibutton> "
+#~ "button. You can select the operation mode, either local or server as "
+#~ "defined above. The port number is randomly generated between the range "
+#~ "from 7624 to 10,000. To specify a port, click on the port column next to "
+#~ "the desired driver. &kstars; allows multiple drivers to run under one "
+#~ "INDI server, and hence one port. Select multiple drivers then press "
+#~ "<guibutton>Run Service</guibutton> button."
+#~ msgstr ""
+#~ "Naprave lahko zaženete tako, da brskate po drevesu naprav, izberete "
+#~ "določeno napravo in nato kliknete gumb <guibutton>Zaženi storitev</"
+#~ "guibutton>. Izberete lahko način delovanja, lokalnega ali strežniškega, "
+#~ "kot je definirano zgoraj. Številka vrat je naključno ustvarjena v razponu "
+#~ "od 7624 do 10.000. Če želite določiti vrata, kliknite stolpec vrat poleg "
+#~ "želenega gonilnika. &kstars; omogoča izvajanje več gonilnikov pod enim "
+#~ "strežnikom INDI in s tem ena vrata. Izberite več gonilnikov in pritisnite "
+#~ "gumb <guibutton>Zaženi storitev</guibutton>."
+
+#~ msgid ""
+#~ "To control remote devices, refer to the <link linkend=\"indi-remote-"
+#~ "control\">remote device control</link> section."
+#~ msgstr ""
+#~ "Za nadzor oddaljenih naprav glejte razdelek <link linkend=\"indi-remote-"
+#~ "control\">nadzor oddaljenih naprav</link>."
+
+#~ msgid "Telescope Setup"
+#~ msgstr "Nastavitev teleskopa"
+
+#~ msgid ""
+#~ "Most telescopes are equipped with <hardware>RS232</hardware> interface "
+#~ "for remote control. Connect the RS232 jack in your telescope to your "
+#~ "computer's <hardware>Serial/USB</hardware> port. Traditionally, the RS232 "
+#~ "connects to the serial port of your computer, but since many new laptops "
+#~ "abandoned the serial port in favor of <hardware>USB/FireWire</hardware> "
+#~ "ports, you might need to obtain a Serial to USB adaptor to use with new "
+#~ "laptops."
+#~ msgstr ""
+#~ "Večina teleskopov je opremljena z vmesnikom <hardware>RS232</hardware> za "
+#~ "daljinsko upravljanje. Povežite vtičnico RS232 v vašem teleskopu z "
+#~ "<hardware>Serial/USB</hardware> vrati vašega računalnika. Tradicionalno "
+#~ "se RS232 poveže s serijskimi vrati vašega računalnika, a ker je veliko "
+#~ "novih prenosnikov opustilo serijska vrata v korist vrat <hardware>USB/"
+#~ "FireWire</hardware>, boste morda morali pridobiti adapter Serial to USB "
+#~ "za uporabo z novimi prenosniki."
+
+#~ msgid ""
+#~ "After connecting your telescope to the Serial/USB port, turn your "
+#~ "telescope on. It is <emphasis>highly</emphasis> recommended that you "
+#~ "download and install the latest firmware for your telescope controller."
+#~ msgstr ""
+#~ "Po priključitvi teleskopa na serijska/USB vrata vklopite teleskop. "
+#~ "<emphasis>Zelo</emphasis> priporočamo, da prenesete in namestite "
+#~ "najnovejšo vdelano programsko opremo za vaš krmilnik teleskopa."
+
+#~ msgid ""
+#~ "The telescope needs to be aligned before it can be used properly. Align "
+#~ "your telescope (one or two stars alignment) as illustrated in your "
+#~ "telescope manual."
+#~ msgstr ""
+#~ "Pred pravilno uporabo je treba teleskop poravnati. Poravnajte svoj "
+#~ "teleskop (poravnava z eno ali dvema zvezdama), kot je prikazano v "
+#~ "priročniku za vaš teleskop."
+
+#~ msgid ""
+#~ "&kstars; needs to verify time and location settings before connecting to "
+#~ "the telescope. This insures proper tracking and synchronization between "
+#~ "the telescope and &kstars;. The following steps will enable you to "
+#~ "connect to a device that is connected to your computer. To connect and "
+#~ "control remote devices, please refer to <link linkend=\"indi-remote-"
+#~ "control\">remote device control</link> section."
+#~ msgstr ""
+#~ "&kstars; mora preveriti nastavitve časa in lokacije, preden se poveže s "
+#~ "teleskopom. To zagotavlja pravilno sledenje in sinhronizacijo med "
+#~ "teleskopom in &kstars;. Naslednji koraki vam bodo omogočili povezavo z "
+#~ "napravo, ki je povezana z vašim računalnikom. Če želite povezati in "
+#~ "upravljati oddaljene naprave, glejte razdelek <link linkend=\"indi-remote-"
+#~ "control\">nadzor oddaljenih naprav</link>."
+
+#~ msgid ""
+#~ "You can use the Telescope Setup Wizard and it will verify all the "
+#~ "required information in the process. It can automatically scan ports for "
+#~ "attached telescopes. You can run the wizard by selecting the "
+#~ "<menuchoice><guimenu>Devices</guimenu> <guimenuitem>Telescope Wizard</"
+#~ "guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Uporabite lahko čarovnika za nastavitev teleskopa, ki bo med postopkom "
+#~ "preveril vse zahtevane informacije. Samodejno lahko skenira vrata za "
+#~ "priključene teleskope. Čarovnika lahko zaženete tako, da izberete "
+#~ "menijsko postavko <menuchoice><guimenu>Naprave</guimenu> "
+#~ "<guimenuitem>Čarovnik za teleskop</guimenuitem></menuchoice>."
+
+#~ msgid ""
+#~ "Alternatively, you can connect to a local telescope by performing the "
+#~ "following steps:"
+#~ msgstr ""
+#~ "Lahko pa se povežete z lokalnim teleskopom tako, da izvedete naslednje "
+#~ "korake:"
+
+#~ msgid ""
+#~ "Set your geographical location. Open the <guilabel>Set Geographic "
+#~ "Location</guilabel> window by selecting the "
+#~ "<menuchoice><guimenu>Settings</guimenu> <guimenuitem>Geographic...</"
+#~ "guimenuitem></menuchoice> menu item, or by pressing the <guiicon>Globe</"
+#~ "guiicon> icon in the toolbar, or by pressing <keycombo action=\"simul"
+#~ "\">&Ctrl;<keycap>G</keycap></keycombo>."
+#~ msgstr ""
+#~ "Nastavite svojo geografsko lokacijo. Odprite okno <guilabel>Nastavi "
+#~ "geografsko lokacijo</guilabel> tako, da izberete menijsko postavko "
+#~ "<menuchoice><guimenu>Nastavitve</guimenu> <guimenuitem>Geografsko...</"
+#~ "guimenuitem></menuchoice> ali pritisnete <guiicon>Globus</guiicon> v "
+#~ "orodni vrstici ali s pritiskom <keycombo action=\"simul\">&Ctrl;"
+#~ "<keycap>G</keycap></keycombo>."
+
+#~ msgid ""
+#~ "Set your local time and date. You can change to any time or date by "
+#~ "selecting <menuchoice><guimenu>Time</guimenu> <guimenuitem>Set Time...</"
+#~ "guimenuitem></menuchoice> menu item, or by pressing the <guiicon>Time</"
+#~ "guiicon> icon in the toolbar. The <guilabel>Set Time</guilabel> window "
+#~ "uses a standard &kde; Date Picker widget. If you ever need to reset the "
+#~ "clock back to the current time, just select the "
+#~ "<menuchoice><guimenu>Time</guimenu> <guimenuitem>Set Time to Now</"
+#~ "guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Nastavite lokalni čas in datum. Lahko spremenite kateri koli čas ali "
+#~ "datum tako, da izberete menijski element <menuchoice><guimenu>Čas</"
+#~ "guimenu><guimenuitem>Nastavi čas...</guimenuitem></menuchoice> ali "
+#~ "pritisnete <guiicon>Čas</guiicon> v orodni vrstici. Okno "
+#~ "<guilabel>Nastavi čas</guilabel> uporablja standardni &kde; Pripomoček za "
+#~ "izbiro datuma. Če boste kdaj morali ponastaviti uro nazaj na trenutni "
+#~ "čas, samo izberite menijsko postavko <menuchoice><guimenu>Čas</guimenu> "
+#~ "<guimenuitem>Nastavi čas na zdaj</guimenuitem></menuchoice>."
+
+#~ msgid ""
+#~ "Click on the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
+#~ "guisubmenu> <guimenuitem>Device Manager...</guimenuitem></menuchoice> "
+#~ "menu item."
+#~ msgstr ""
+#~ "Kliknite na menijsko postavko <menuchoice><guimenu>Orodja</guimenu> "
+#~ "<guisubmenu>Naprave</guisubmenu> <guimenuitem>Upravitelj naprav...</"
+#~ "guimenuitem></menuchoice>."
+
+#~ msgid ""
+#~ "Under the <guilabel>Device</guilabel> column, select your telescope model."
+#~ msgstr ""
+#~ "V stolpcu <guilabel>Naprava</guilabel> izberite svoj model teleskopa."
+
+#~ msgid "Click on the <guibutton>Run Service</guibutton> button."
+#~ msgstr "Kliknite gumb <guibutton>Zaženi storitev</guibutton>."
+
+#~ msgid ""
+#~ "Click <guibutton>Close</guibutton> to leave the Device Manager Dialog."
+#~ msgstr ""
+#~ "Kliknite <guibutton>Zapri</guibutton>, da zapustite pogovorno okno "
+#~ "upravljalnika naprav."
+
+#~ msgid "Frequent Settings"
+#~ msgstr "Pogoste nastavitve"
+
+#~ msgid ""
+#~ "You do not need to set the geographic location and time every time you "
+#~ "connect to a telescope. Only adjust the settings as needed."
+#~ msgstr ""
+#~ "Ni vam treba nastaviti geografske lokacije in časa vsakič, ko se povežete "
+#~ "s teleskopom. Nastavitve prilagodite le po potrebi."
+
+#~ msgid ""
+#~ "You are now ready to use the device features, &kstars; conveniently "
+#~ "provides two interchangeable &GUI; interfaces for controlling telescopes:"
+#~ msgstr ""
+#~ "Zdaj ste pripravljeni na uporabo funkcij naprave, &kstars; priročno "
+#~ "ponuja dva zamenljiva &GUI; vmesnika za krmiljenje teleskopov:"
+
+#~ msgid "Controlling your telescope"
+#~ msgstr "Upravljanje vašega teleskopa"
+
+#~ msgid ""
+#~ "<guilabel>Sky map Control</guilabel>: For each device you run in the "
+#~ "<guilabel>Device Manager</guilabel>, a corresponding entry will show up "
+#~ "in popup menu that allows you to control the properties of the device. "
+#~ "You can issue commands like <command>Slew</command>, <command>Sync</"
+#~ "command>, and <command>Track</command> directly from the sky map."
+#~ msgstr ""
+#~ "<guilabel>Nadzor karte neba</guilabel>: Za vsako napravo, ki jo zaženete "
+#~ "v <guilabel>Upravljalniku naprav</guilabel>, se v pojavnem meniju prikaže "
+#~ "ustrezen vnos, ki vam omogoča nadzor nad lastnostmi naprave. Ukaze, kot "
+#~ "so <command>Slew</command>, <command>Sync</command> in <command>Track</"
+#~ "command>, lahko izdate neposredno s karte neba."
+
+#~ msgid ""
+#~ "Here is a screenshot of the popup menu with an active LX200 Classic "
+#~ "device:"
+#~ msgstr ""
+#~ "Tukaj je posnetek zaslona pojavnega menija z aktivno napravo LX200 "
+#~ "Classic:"
+
+#~ msgid "Controlling devices from sky map"
+#~ msgstr "Upravljanje naprav iz karte neba"
+
+#~ msgid ""
+#~ "<guilabel>INDI Control Panel</guilabel>: The panel offers the user with "
+#~ "all the features supported by a device."
+#~ msgstr ""
+#~ "<guilabel>Nadzorna plošča INDI</guilabel>: plošča ponuja uporabniku vse "
+#~ "zmožnosti, ki jih podpira naprava."
+
+#~ msgid "The panel is divided into three main sections:"
+#~ msgstr "Plošča je razdeljena na tri glavne dele:"
+
+#~ msgid ""
+#~ "<guilabel>Device tabs</guilabel>: Each additional active device occupies "
+#~ "a tab in the INDI panel. Multiple devices can run simultaneously without "
+#~ "affecting the operation of other devices."
+#~ msgstr ""
+#~ "<guilabel>Zavihki naprave</guilabel>: Vsaka dodatna aktivna naprava "
+#~ "zavzame zavihek na plošči INDI. Več naprav lahko deluje hkrati, ne da bi "
+#~ "to vplivalo na delovanje drugih naprav."
+
+#~ msgid ""
+#~ "Property views on the <guilabel>Main Control</guilabel> and "
+#~ "<guilabel>Options</guilabel> tabs: Properties are the key element in INDI "
+#~ "architecture. Each device defines a set of properties to communicate with "
+#~ "the client. The current position of the telescope is an example of a "
+#~ "property. Semantically similar properties are usually contained in "
+#~ "logical blocks or groupings."
+#~ msgstr ""
+#~ "Pogledi lastnosti na zavihkih <guilabel>Glavni nadzor</guilabel> in "
+#~ "<guilabel>Možnosti</guilabel>: Lastnosti so ključni element v arhitekturi "
+#~ "INDI. Vsaka naprava definira nabor lastnosti za komunikacijo z "
+#~ "odjemalcem. Trenutni položaj teleskopa je primer lastnosti. Pomensko "
+#~ "podobne lastnosti so običajno vsebovane v logičnih blokih ali skupinah."
+
+#~ msgid ""
+#~ "<guilabel>Log viewer</guilabel>: Devices report their status and "
+#~ "acknowledge commands by sending INDI messages. Each device has its own "
+#~ "log view. A device usually sends messages to its device driver only, but "
+#~ "a device is permitted to send a generic message when appropriate."
+#~ msgstr ""
+#~ "<guilabel>Pregledovalnik dnevnika</guilabel>: Naprave poročajo o svojem "
+#~ "statusu in potrjujejo ukaze s pošiljanjem sporočil INDI. Vsaka naprava "
+#~ "ima svoj pogled dnevnika. Naprava običajno pošilja sporočila samo svojemu "
+#~ "gonilniku naprave, vendar pa lahko naprava, kadar je primerno, pošlje "
+#~ "generično sporočilo."
+
+#~ msgid "INDI Control Panel"
+#~ msgstr "Nadzorna plošča INDI"
+
+#~ msgid ""
+#~ "You are not restricted on using one interface over another as they can be "
+#~ "both used simultaneously. Actions from the <guilabel>Sky map</guilabel> "
+#~ "are automatically reflected in the <guilabel>INDI Control Panel</"
+#~ "guilabel> and vice versa."
+#~ msgstr ""
+#~ "Niste omejeni pri uporabi enega vmesnika namesto drugega, saj se lahko "
+#~ "oba uporabljata hkrati. Dejanja iz <guilabel>Karte neba</guilabel> se "
+#~ "samodejno odražajo v <guilabel>Nadzorni plošči INDI</guilabel> in obratno."
+
+#~ msgid ""
+#~ "To connect to your telescope, you can either select <guimenuitem>Connect</"
+#~ "guimenuitem> from your device popup menu or alternatively, you can press "
+#~ "<guibutton>Connect</guibutton> under your device tab in the "
+#~ "<guilabel>INDI Control Panel</guilabel>."
+#~ msgstr ""
+#~ "Za povezavo s svojim teleskopom lahko izberete <guimenuitem>Poveži</"
+#~ "guimenuitem> v pojavnem meniju naprave ali pa pritisnete "
+#~ "<guibutton>Poveži</guibutton> pod zavihkom naprave v <guilabel>Nadzorni "
+#~ "plošči INDI</guilabel>."
+
+#~ msgid ""
+#~ "By default, &kstars; will try to connect to the <constant>/dev/ttyS0</"
+#~ "constant> port. To change the connection port, select the "
+#~ "<menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</guisubmenu> "
+#~ "<guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> menu item "
+#~ "and change the port under your device tab."
+#~ msgstr ""
+#~ "Privzeto se bo &kstars; poskusil povezati z vrati <constant>/dev/ttyS0</"
+#~ "constant>. Če želite spremeniti vrata povezave, izberite element menija "
+#~ "<menuchoice><guimenu>Orodja</guimenu> <guisubmenu>Naprave</guisubmenu> "
+#~ "<guimenuitem>Nadzorna plošča INDI...</guimenuitem></menuchoice> in "
+#~ "spremenite vrata pod zavihkom vaše naprave."
+
+#~ msgid ""
+#~ "&kstars; automatically updates the telescope's longitude, latitude, and "
+#~ "time based on current settings in &kstars;. You can enable/disable these "
+#~ "using the <guilabel>INDI</guilabel> page from the "
+#~ "<menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kstars;..."
+#~ "</guimenuitem></menuchoice> menu item. Using the <guilabel>INDI</"
+#~ "guilabel> page you can configure &kstars; to display or not INDI status "
+#~ "messages in the status bar. By default INDI server port numbers have "
+#~ "values between the range from 7624 to 9000, but you can easily change the "
+#~ "range using the <guilabel>From:</guilabel> and <guilabel>To:</guilabel> "
+#~ "text boxes from the <guilabel>Server Port</guilabel> section."
+#~ msgstr ""
+#~ "&kstars; samodejno posodablja zemljepisno dolžino, širino in čas "
+#~ "teleskopa glede na trenutne nastavitve v &kstars;. Te lahko omogočite/"
+#~ "onemogočite na strani <guilabel>INDI</guilabel> v meniju "
+#~ "<menuchoice><guimenu>Nastavitve</guimenu> <guimenuitem>Konfiguriraj "
+#~ "&kstars;...</guimenuitem></menuchoice>. Na strani <guilabel>INDI</"
+#~ "guilabel> lahko konfigurirate &kstars; za prikaz INDI statusnih sporočil "
+#~ "v statusni vrstici ali ne. Številke vrat strežnika INDI imajo privzeto "
+#~ "vrednosti med razponom od 7624 do 9000, vendar lahko obseg enostavno "
+#~ "spremenite z uporabo besedilnih polj <guilabel>Od:</guilabel> in "
+#~ "<guilabel>Do:</guilabel> v <guilabel >Strežniška vrata</guilabel>."
+
+#~ msgid ""
+#~ "If &kstars; communicates successfully with the telescope, it will "
+#~ "retrieve the current <abbrev>RA</abbrev> and <abbrev>DEC</abbrev> from "
+#~ "the telescope and will display a crosshair on the sky map indicating the "
+#~ "telescope position. You can hide the crosshair that marks telescope "
+#~ "position using <guilabel>INDI</guilabel> page from the "
+#~ "<menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kstars;..."
+#~ "</guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Če &kstars; uspešno komunicira s teleskopom, bo od teleskopa pridobil "
+#~ "trenutni <abbrev>RA</abbrev> in <abbrev>DEC</abbrev> ter na zemljevidu "
+#~ "neba prikazal križec, ki označuje položaj teleskopa. Nitni križec, ki "
+#~ "označuje položaj teleskopa, lahko skrijete s stranjo <guilabel>INDI</"
+#~ "guilabel> v meniju <menuchoice><guimenu>Nastavitve</"
+#~ "guimenu><guimenuitem>Konfiguriraj &kstars;...</guimenuitem></menuchoice> "
+#~ "postavki."
+
+#~ msgid "Synchronizing your telescope"
+#~ msgstr "Sinhronizacija vašega teleskopa"
+
+#~ msgid ""
+#~ "If you aligned your telescope and the last alignment star was, for "
+#~ "example, Vega, then the crosshair should be centered around Vega. If the "
+#~ "crosshair was off target, then you can <mousebutton>right</mousebutton>-"
+#~ "click Vega from the sky map and select <command>Sync</command> from your "
+#~ "telescope menu. This action will instruct the telescope to synchronize "
+#~ "its internal coordinates to match those of Vega, and the telescope's "
+#~ "crosshair should now be centered around Vega."
+#~ msgstr ""
+#~ "Če ste naravnali svoj teleskop in je bila zadnja poravnalna zvezda na "
+#~ "primer Vega, mora biti križec središče okoli Vege. Če ni bil križec izven "
+#~ "cilja, potem lahko <mousebutton>desno</mousebutton>kliknete Vega na "
+#~ "zemljevidu neba in izberete <command>Sync</command> v meniju svojega "
+#~ "teleskopa. To dejanje bo teleskopu naročilo, naj sinhronizira svoje "
+#~ "notranje koordinate, da se ujemajo s Veginimi koordinatami, teleskopski "
+#~ "križ pa bi moral biti zdaj osredotočen okoli Vege."
+
+#~ msgid "This is it: your telescope is ready to explore the heavens!"
+#~ msgstr "To je to: vaš teleskop je pripravljen za raziskovanje nebes!"
+
+#~ msgid "WARNING"
+#~ msgstr "OPOZORILO"
+
+#~ msgid ""
+#~ "Never use the telescope to look at the sun. Looking at the sun might "
+#~ "cause irreversible damage to your eyes and your equipment."
+#~ msgstr ""
+#~ "Nikoli ne uporabljajte teleskopa za gledanje v sonce. Gledanje v sonce "
+#~ "lahko povzroči nepopravljivo škodo vašim očem in vaši opremi."
+
+#~ msgid "CCD and Video-Capture Setup"
+#~ msgstr "CCD in nastavitev za zajemanje videa"
+
+#~ msgid "CCD Video Control"
+#~ msgstr "CCD video nadzor"
+
+#~ msgid ""
+#~ "You can run CCD and Video Capture devices from the "
+#~ "<menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</guisubmenu> "
+#~ "<guimenuitem>Device Manager...</guimenuitem></menuchoice> menu item. Like "
+#~ "all INDI devices, some of the device controls will be accessible from the "
+#~ "skymap. The device can be controlled fully from the <guimenuitem>INDI "
+#~ "Control Panel...</guimenuitem> item."
+#~ msgstr ""
+#~ "Naprave CCD in Video Capture lahko zaženete iz menijske postavke "
+#~ "<menuchoice><guimenu>Orodja</guimenu> <guisubmenu>Naprave</guisubmenu> "
+#~ "<guimenuitem>Upravljalnik naprav...</guimenuitem></menuchoice>. Tako kot "
+#~ "pri vseh napravah INDI bodo nekateri kontrolniki naprave dostopni zvezdne "
+#~ "karte. Napravo je mogoče v celoti nadzorovati iz elementa "
+#~ "<guimenuitem>Nadzorna plošča INDI...</guimenuitem>."
+
+#~ msgid ""
+#~ "The standard format for image capture is FITS. Once an image is captured "
+#~ "and downloaded, it will be automatically displayed in the &kstars; <link "
+#~ "linkend=\"fitsviewer\">FITS Viewer</link>."
+#~ msgstr ""
+#~ "Standardni format za zajem slike je FITS. Ko je slika zajeta in "
+#~ "prenesena, bo samodejno prikazana v mapi &kstars; <link linkend="
+#~ "\"fitsviewer\">Ogledovalnik FITS</link>."
+
+#~ msgid "Configure INDI"
+#~ msgstr "Konfigurirajte INDI"
+
+#~ msgid "Configure"
+#~ msgstr "Konfiguriraj"
+
+#~ msgid "<secondary>INDI</secondary>"
+#~ msgstr "<secondary>INDI</secondary>"
+
+#~ msgid ""
+#~ "The <guilabel>INDI</guilabel> page allows you to modify <emphasis>Client "
+#~ "side</emphasis> INDI specific options. To access it, select the "
+#~ "<guilabel>INDI</guilabel> page from <menuchoice><guimenu>Settings</"
+#~ "guimenu> <guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> "
+#~ "menu item. The window is divided into several main categories: General, "
+#~ "Device Updates, Display and Server Port:"
+#~ msgstr ""
+#~ "Stran <guilabel>INDI</guilabel> vam omogoča spreminjanje specifičnih "
+#~ "možnosti INDI <emphasis>na strani odjemalca</emphasis>. Za dostop do "
+#~ "njega izberite stran <guilabel>INDI</guilabel> v meniju "
+#~ "<menuchoice><guimenu>Nastavitve</guimenu> <guimenuitem>Konfiguriraj "
+#~ "&kstars;...</guimenuitem></menuchoice>. Okno je razdeljeno na več glavnih "
+#~ "kategorij: Splošno, Posodobitve naprav, Zaslon in Vrata strežnika:"
+
+#~ msgid "General"
+#~ msgstr "Splošno"
+
+#~ msgid ""
+#~ "<guilabel>INDI server:</guilabel> Specify the binary of installed INDI "
+#~ "server in your system. By default, &kstars; uses <quote>/usr/bin/"
+#~ "indiserver</quote> binary."
+#~ msgstr ""
+#~ "<guilabel>Strežnik INDI:</guilabel> Določite dvojiško datoteko "
+#~ "nameščenega strežnika INDI v vašem sistemu. Privzeto &kstars; uporablja "
+#~ "izvodljivi program <quote>/usr/bin/indiserver</quote>."
+
+#~ msgid ""
+#~ "<guilabel>INDI drivers XML directory:</guilabel> Specify the &XML; "
+#~ "directory where INDI drivers are located in your system. By default, "
+#~ "&kstars; uses <quote>/usr/share/indi</quote> directory."
+#~ msgstr ""
+#~ "<guilabel>Imenik XML gonilnikov INDI:</guilabel> Določite &XML; imenik, "
+#~ "kjer se gonilniki INDI nahajajo v vašem sistemu. Privzeto je &kstars; "
+#~ "uporablja imenik <quote>/usr/share/indi</quote>."
+
+#~ msgid ""
+#~ "<guilabel>Default FITS directory:</guilabel> Specify the directory where "
+#~ "all captured FITS images will be saved to. If no directory is specified, "
+#~ "images will be stored in <varname>$HOME</varname>."
+#~ msgstr ""
+#~ "<guilabel>Privzeti imenik FITS:</guilabel> Določite imenik, kamor bodo "
+#~ "shranjene vse zajete slike FITS. Če imenik ni določen, bodo slike "
+#~ "shranjene v <varname>$HOME</varname>."
+
+#~ msgid "Time &amp; Location Updates"
+#~ msgstr "Čas &amp; Posodobitve lokacije"
+
+#~ msgid ""
+#~ "<guilabel>KStars updates all devices</guilabel>: KStars is the master "
+#~ "source for time and location settings. All INDI devices time and "
+#~ "locations settings are synchronized to KStars settings."
+#~ msgstr ""
+#~ "<guilabel>KStars posodobi vse naprave</guilabel>: KStars je glavni vir za "
+#~ "nastavitve časa in lokacije. Vse nastavitve časa in lokacije naprav INDI "
+#~ "so sinhronizirane z nastavitvami KStars."
+
+#~ msgid ""
+#~ "<guilabel>Mount updates KStars</guilabel>: Mount handset is the master "
+#~ "source of time and location settings. KStars time and location settings "
+#~ "are synchronized with controller settings."
+#~ msgstr ""
+#~ "<guilabel>Montaža posodobi KStars</guilabel>: Upravljalnik montaže je "
+#~ "glavni vir nastavitev časa in lokacije. Nastavitve časa in lokacije "
+#~ "KStars so sinhronizirane z nastavitvami krmilnika."
+
+#~ msgid ""
+#~ "<guilabel>GPS updates KStars</guilabel>: GPS driver is the master source "
+#~ "of time and location settings. KStars time and location settings are "
+#~ "synchronized with GPS settings."
+#~ msgstr ""
+#~ "<guilabel>GPS posodobi KStars</guilabel>: gonilnik GPS je glavni vir "
+#~ "nastavitev časa in lokacije. Nastavitve časa in lokacije KStars so "
+#~ "sinhronizirane z nastavitvami GPS."
+
+#~ msgid ""
+#~ "<guilabel>Time</guilabel>: Synchronize KStars date and time automatically "
+#~ "from the update source."
+#~ msgstr ""
+#~ "<guilabel>Čas</guilabel>: samodejno sinhronizira datum in čas KStars iz "
+#~ "vira posodobitve."
+
+#~ msgid ""
+#~ "<guilabel>Location</guilabel>: Synchronize KStars location settings from "
+#~ "the update source."
+#~ msgstr ""
+#~ "<guilabel>Lokacija</guilabel>: Sinhronizira nastavitve lokacije KStars iz "
+#~ "vira posodobitve."
+
+#~ msgid "Display"
+#~ msgstr "Zaslon"
+
+#~ msgid ""
+#~ "<guilabel>Telescope crosshair</guilabel>: When checked, &kstars; displays "
+#~ "the telescope's target crosshair on the sky map. The crosshair is "
+#~ "displayed upon a successful connection to the telescope and its location "
+#~ "is updated periodically. The telescope's name is displayed next to the "
+#~ "crosshair. &kstars; displays one crosshair per each connected telescope. "
+#~ "To change the color of the telescope's crosshair, open the <link linkend="
+#~ "\"viewops\">Configure - &kstars;</link> window. Select the "
+#~ "<guilabel>Colors</guilabel> page, and then change the color of the "
+#~ "<guimenuitem>Target Indicator</guimenuitem> item to the desired color."
+#~ msgstr ""
+#~ "<guilabel>Teleskopski križec</guilabel>: Ko je označeno, &kstars; prikaže "
+#~ "ciljni križec teleskopa na zemljevidu neba. Nitni križec se prikaže ob "
+#~ "uspešni povezavi s teleskopom in njegova lokacija se občasno posodablja. "
+#~ "Ime teleskopa je prikazano poleg nitnega križca. &kstars; prikaže en "
+#~ "križec na vsak povezan teleskop. Če želite spremeniti barvo nitnega križa "
+#~ "teleskopa, odprite okno <link linkend=\"viewops\">Konfiguriraj - &kstars;"
+#~ "</link>. Izberite stran <guilabel>Barve</guilabel> in nato spremenite "
+#~ "barvo elementa <guimenuitem>Indikator cilja</guimenuitem> na želeno barvo."
+
+#~ msgid ""
+#~ "<guilabel>Independent window</guilabel>: Make <guilabel>FITS Viewer</"
+#~ "guilabel> window independent."
+#~ msgstr ""
+#~ "<guilabel>Neodvisno okno</guilabel>: naredi okno <guilabel>FITS Viewer</"
+#~ "guilabel> neodvisno."
+
+#~ msgid ""
+#~ "<guilabel>Message notifications</guilabel>: Show INDI messages as desktop "
+#~ "notifications instead of dialogs."
+#~ msgstr ""
+#~ "<guilabel>Obvestila o sporočilih</guilabel>: Pokaži sporočila INDI kot "
+#~ "obvestila na namizju namesto pogovornih oken."
+
+#~ msgid "Server Port"
+#~ msgstr "Vrata strežnika"
+
+#~ msgid ""
+#~ "Specify range of ports that INDI Server will bind to when starting new "
+#~ "drivers."
+#~ msgstr ""
+#~ "Določite obseg vrat, na katere se bo strežnik INDI povezal pri zagonu "
+#~ "novih gonilnikov."
+
+#~ msgid "INDI Concepts"
+#~ msgstr "Koncepti INDI"
+
+#~ msgid "Telescope Control"
+#~ msgstr "Nadzor teleskopa"
+
+#~ msgid "Concepts"
+#~ msgstr "Koncepti"
+
+#~ msgid ""
+#~ "The main key concept in INDI is that devices have the ability to describe "
+#~ "themselves. This is accomplished by using &XML; to describe a generic "
+#~ "hierarchy that can represent both canonical and non-canonical devices. In "
+#~ "INDI, all <emphasis>devices</emphasis> may contain one or more "
+#~ "<emphasis>properties</emphasis>. Any <emphasis>property</emphasis> may "
+#~ "contain one or more <emphasis>elements</emphasis>. There are four types "
+#~ "of INDI properties:"
+#~ msgstr ""
+#~ "Glavni ključni koncept v INDI je, da se naprave lahko opišejo. To se "
+#~ "doseže z uporabo &XML; za opis generične hierarhije, ki lahko predstavlja "
+#~ "kanonične in nekanonične naprave. V INDI lahko vse <emphasis>naprave</"
+#~ "emphasis> vsebujejo eno ali več <emphasis>lastnosti</emphasis>. Vsaka "
+#~ "<emphasis>lastnost</emphasis> lahko vsebuje enega ali več "
+#~ "<emphasis>elementov</emphasis>. Obstajajo štiri vrste lastnosti INDI:"
+
+#~ msgid "Text property."
+#~ msgstr "Lastnost besedila."
+
+#~ msgid "Number property."
+#~ msgstr "Lastnost števila."
+
+#~ msgid "Switch property (Represented in &GUI; by buttons and checkboxes)."
+#~ msgstr ""
+#~ "Lastnost preklopa (predstavljeno v &GUI; z gumbi in potrditvenimi polji)."
+
+#~ msgid "Light property (Represented in &GUI; by colored LEDs)."
+#~ msgstr "Lastnost svetlobe (predstavljena v &GUI; z barvnimi diodami LED)."
+
+#~ msgid ""
+#~ "For example, all INDI devices share the CONNECTION standard switch "
+#~ "<emphasis>property</emphasis>. The CONNECTION property has two elements: "
+#~ "CONNECT and DISCONNECT switches. &kstars; parses the generic &XML; "
+#~ "description of properties and builds a &GUI; representation suitable for "
+#~ "direct human interaction."
+#~ msgstr ""
+#~ "Na primer, vse naprave INDI imajo <emphasis>lastnost</emphasis> "
+#~ "standardnega stikala CONNECTION. Lastnost CONNECTION ima dva elementa: "
+#~ "stikali CONNECT in DISCONNECT. &kstars; razčleni generični &XML; opis "
+#~ "lastnosti in gradi &GUI; predstavitev, primerno za neposredno človeško "
+#~ "interakcijo."
+
+#~ msgid ""
+#~ "The INDI control panel offers many device properties not accessible from "
+#~ "the sky map. The properties offered differ from one device to another. "
+#~ "Nevertheless, all properties share common features that constrains how "
+#~ "they are displayed and used:"
+#~ msgstr ""
+#~ "Nadzorna plošča INDI ponuja številne lastnosti naprave, ki niso dostopne "
+#~ "z zemljevida neba. Ponujene lastnosti se razlikujejo od ene naprave do "
+#~ "druge. Kljub temu imajo vse lastnosti skupne značilnosti, ki omejujejo "
+#~ "njihov prikaz in uporabo:"
+
+#~ msgid ""
+#~ "Permission: All properties can either be read-only, write-only, or read "
+#~ "and write enabled. An example of a read-write property is the telescope's "
+#~ "Right Ascension. You can enter a new Right Ascension and the telescope, "
+#~ "based on current settings, will either slew or sync to the new input. "
+#~ "Furthermore, when the telescope slews, its Right Ascension gets updated "
+#~ "and sent back to the client."
+#~ msgstr ""
+#~ "Dovoljenje: vse lastnosti so lahko samo za branje, samo za pisanje ali "
+#~ "omogočene za branje in pisanje. Primer lastnosti branja in pisanja je "
+#~ "rektascenzija teleskopa. Vnesete lahko novo rektascenzijo in teleskop bo "
+#~ "na podlagi trenutnih nastavitev zasukal ali sinhroniziral z novim vhodom. "
+#~ "Nadalje, ko se teleskop obrne, se njegova rektascenzija posodobi in "
+#~ "pošlje nazaj odjemalcu."
+
+#~ msgid ""
+#~ "State: Prefixed to each property is a state indicator (round LED). Each "
+#~ "property has a state and an associated color code:"
+#~ msgstr ""
+#~ "Stanje: pred vsako lastnostjo je indikator stanja (okrogla LED). Vsaka "
+#~ "lastnost ima stanje in povezano barvno kodo:"
+
+#~ msgid "INDI State color code"
+#~ msgstr "Barvna oznaka stanja INDI"
+
+#~ msgid "State"
+#~ msgstr "Stanje"
+
+#~ msgid "Color"
+#~ msgstr "Barva"
+
+#~ msgid "Description"
+#~ msgstr "Opis"
+
+#~ msgid "Idle"
+#~ msgstr "Nedejaven"
+
+#~ msgid "Gray"
+#~ msgstr "Siva"
+
+#~ msgid "Device is performing no action with respect to this property"
+#~ msgstr "Naprava ne izvaja nobenega dejanja v zvezi s to lastnostjo"
+
+#~ msgid "<entry>Ok</entry>"
+#~ msgstr "<entry>V redu</entry>"
+
+#~ msgid "Green"
+#~ msgstr "Zelena"
+
+#~ msgid "Last operation performed on this property was successful and active"
+#~ msgstr ""
+#~ "Zadnja operacija, izvedena na tej lastnini, je bila uspešna in aktivna"
+
+#~ msgid "Busy"
+#~ msgstr "Zaseden"
+
+#~ msgid "Yellow"
+#~ msgstr "Rumena"
+
+#~ msgid "The property is performing an action"
+#~ msgstr "Naprava izvaja dejanje"
+
+#~ msgid "Alert"
+#~ msgstr "Opozorilo"
+
+#~ msgid "<entry>Red</entry>"
+#~ msgstr "<entry>Rdeča</entry>"
+
+#~ msgid "The property is in critical condition and needs immediate attention"
+#~ msgstr "Naprava je v kritičnem stanju in potrebuje takojšnjo pomoč"
+
+#~ msgid ""
+#~ "The device driver updates the property state in real-time when necessary. "
+#~ "For example, if the telescope is in the process of slewing to a target, "
+#~ "then the RA/DEC properties will be signaled as <guilabel>Busy</guilabel>. "
+#~ "When the slew process is completed successfully, the properties will be "
+#~ "signaled as <guilabel>Ok</guilabel>."
+#~ msgstr ""
+#~ "Gonilnik naprave po potrebi posodobi stanje lastnosti v realnem času. Na "
+#~ "primer, če je teleskop v procesu obračanja na cilj, bodo lastnosti RA/DEC "
+#~ "signalizirane kot <guilabel>Zasedeno</guilabel>. Ko je postopek obračanja "
+#~ "uspešno zaključen, bodo lastnosti označene kot <guilabel>V redu</"
+#~ "guilabel>."
+
+#~ msgid ""
+#~ "Context: Numerical properties can accept and process numbers in two "
+#~ "formats: decimal and sexagesimal. The sexagesimal format is convenient "
+#~ "when expressing time or equatorial/geographical coordinates. You can use "
+#~ "any format at your convenience. For example, all the following numbers "
+#~ "are equal:"
+#~ msgstr ""
+#~ "Kontekst: Numerične lastnosti lahko sprejemajo in obdelujejo števila v "
+#~ "dveh oblikah: decimalni in šestdesetiški. Šestdesetiški format je "
+#~ "primeren za izražanje časa ali ekvatorialnih/geografskih koordinat. "
+#~ "Uporabite lahko katero koli obliko, ki vam ustreza. Na primer, vsa "
+#~ "naslednja števila so enaka:"
+
+#~ msgid "-156.40"
+#~ msgstr "-156,4"
+
+#~ msgid "-156:24:00"
+#~ msgstr "-156:24:00"
+
+#~ msgid "-156:24"
+#~ msgstr "-156:24"
+
+#~ msgid ""
+#~ "Time: The standard time for all INDI-related communications is Universal "
+#~ "Time UTC specified as YYYY-MM-DDTHH:MM:SS in accord with ISO 8601. "
+#~ "&kstars; communicates the correct UTC time with device drivers "
+#~ "automatically. You can enable/disable automatic time updates from the "
+#~ "<guilabel>INDI</guilabel> page in the settings dialog."
+#~ msgstr ""
+#~ "Čas: Standardni čas za vse komunikacije, povezane z INDI, je univerzalni "
+#~ "čas UTC, določen kot YYYY-MM-DDTHH:MM:SS v skladu z ISO 8601. &kstars; "
+#~ "samodejno sporoči pravilen čas UTC z gonilniki naprav. Samodejne "
+#~ "posodobitve časa lahko omogočite/onemogočite na strani <guilabel>INDI</"
+#~ "guilabel> v pogovornem oknu z nastavitvami."
+
+#~ msgid "Remote Device Control"
+#~ msgstr "Oddaljeno upravljanje naprave"
+
+#~ msgid "Remote Devices"
+#~ msgstr "Oddaljene naprave"
+
+#~ msgid ""
+#~ "&kstars; provides a simple yet powerful layer for remote device control. "
+#~ "A detailed description of the layer is described in the INDI <ulink url="
+#~ "\"https://www.clearskyinstitute.com/INDI/INDI.pdf\">white paper</ulink>."
+#~ msgstr ""
+#~ "&kstars; zagotavlja preprosto, a zmogljivo plast za daljinsko upravljanje "
+#~ "naprave. Podroben opis sloja je opisan v INDI <ulink url=\"https://www."
+#~ "clearskyinstitute.com/INDI/INDI.pdf\">beli knjigi</ulink>."
+
+#~ msgid ""
+#~ "You need to configure both the server and client machines for remote "
+#~ "control:"
+#~ msgstr ""
+#~ "Za daljinsko upravljanje morate konfigurirati strežniške in odjemalske "
+#~ "naprave:"
+
+#~ msgid ""
+#~ "<guilabel>Server</guilabel>: To prepare a device for remote control, "
+#~ "follow the same steps in the <link linkend=\"indi-kstars-setup\">local/"
+#~ "server</link> setup. When you start a device service in the "
+#~ "<guilabel>Device Manager</guilabel>, a port number is displayed under the "
+#~ "<guilabel>Port</guilabel> column. In addition to the port number, you "
+#~ "also need the hostname or IP address of your server."
+#~ msgstr ""
+#~ "<guilabel>Strežnik</guilabel>: Če želite pripraviti napravo za daljinsko "
+#~ "upravljanje, sledite istim korakom v nastavitvi <link linkend=\"indi-"
+#~ "kstars-setup\">lokalno/strežniško</link>. Ko zaženete storitev naprave v "
+#~ "<guilabel>Upravljalniku naprav</guilabel>, se pod stolpcem "
+#~ "<guilabel>Vrata</guilabel> prikaže številka vrat. Poleg številke vrat "
+#~ "potrebujete tudi ime gostitelja ali naslov IP vašega strežnika."
+
+#~ msgid ""
+#~ "<guilabel>Client</guilabel>: Select the <menuchoice><guimenu>Tools</"
+#~ "guimenu> <guisubmenu>Devices</guisubmenu> <guimenuitem>Device Manager...</"
+#~ "guimenuitem></menuchoice> menu item and you can add, modify, or delete "
+#~ "hosts into <guilabel>Client</guilabel> tab. Add a host by clicking on the "
+#~ "<guibutton>Add</guibutton> button. Enter the hostname/IP address of the "
+#~ "server in the <guilabel>Host:</guilabel> field, and enter the port number "
+#~ "obtained from the <emphasis>server</emphasis> machine in step 1."
+#~ msgstr ""
+#~ "<guilabel>Odjemalec</guilabel>: izberite menijski element "
+#~ "<menuchoice><guimenu>Orodja</guimenu> <guisubmenu>Naprave</"
+#~ "guisubmenu><guimenuitem>Upravljalnik naprav...</guimenuitem></menuchoice> "
+#~ "in lahko dodaja, spreminja ali briše gostitelje na zavihku "
+#~ "<guilabel>Odjemalec</guilabel>. Dodajte gostitelja s klikom na gumb "
+#~ "<guibutton>Dodaj</guibutton>. Vnesite ime gostitelja/naslov IP strežnika "
+#~ "v polje <guilabel>Gostitelj:</guilabel> in vnesite številko vrat, "
+#~ "pridobljeno od stroja <emphasis>strežnika</emphasis> v 1. koraku."
+
+#~ msgid "INDI Client"
+#~ msgstr "Odjemalec INDI"
+
+#~ msgid ""
+#~ "After you add a host, right click on the host to <guimenuitem>Connect</"
+#~ "guimenuitem> or <guimenuitem>Disconnect</guimenuitem>. If a connection is "
+#~ "established, you can control the telescope from the <guilabel>Sky map</"
+#~ "guilabel> or <guilabel>INDI Control Panel</guilabel> exactly as described "
+#~ "in the <link linkend=\"indi-kstars-setup\">local/server</link> section. "
+#~ "It is as easy at that."
+#~ msgstr ""
+#~ "Ko dodate gostitelja, z desnim klikom na gostitelja <guimenuitem>Poveži</"
+#~ "guimenuitem> ali <guimenuitem>Prekini povezavo</guimenuitem>. Če je "
+#~ "povezava vzpostavljena, lahko upravljate teleskop iz <guilabel>Sky map</"
+#~ "guilabel> ali  <guilabel>Kontrolna plošča INDI</guilabel> natančno tako, "
+#~ "kot je opisano v <link linkend=\"indi-kstars-setup\"> razdelek local/"
+#~ "server</link>. To je tako enostavno."
+
+#~ msgid "Running an INDI server from the command line"
+#~ msgstr "Zagon strežnika INDI iz ukazne vrstice"
+
+#~ msgid ""
+#~ "While &kstars; allows you to easily deploy an INDI server; you can launch "
+#~ "an INDI server from the command line."
+#~ msgstr ""
+#~ "Medtem ko &kstars; omogoča preprosto namestitev strežnika INDI; strežnik "
+#~ "INDI lahko zaženete iz ukazne vrstice."
+
+#~ msgid ""
+#~ "Since INDI is an independent backend component, you can run an INDI "
+#~ "server on a host without &kstars;. INDI can be compiled separately to run "
+#~ "on remote hosts. Furthermore, device drivers log messages to "
+#~ "<constant>stderr</constant> and that can be helpful in a debugging "
+#~ "situation. The syntax for INDI server is as following:"
+#~ msgstr ""
+#~ "Ker je INDI neodvisna zaledna komponenta, lahko zaženete strežnik INDI na "
+#~ "gostitelju brez &kstars;. INDI je mogoče ločeno prevesti za delovanje na "
+#~ "oddaljenih gostiteljih. Poleg tega gonilniki naprav beležijo sporočila v "
+#~ "<constant>stderr</constant>, kar je lahko v pomoč pri odpravljanju napak. "
+#~ "Sintaksa za strežnik INDI je naslednja:"
+
+#~ msgid ""
+#~ "$ <command>indiserver</command> [options] driver [<filename>driver</"
+#~ "filename> ...]"
+#~ msgstr ""
+#~ "$ <command>indiserver</command> [options] driver [<filename>driver</"
+#~ "filename> ...]"
+
+#~ msgid ""
+#~ "Options:\n"
+#~ " -l d     : Log driver messages to &lt;d&gt;/YYYY-MM-DD.islog\n"
+#~ " -m m     : Kill client if gets more than this many MB behind, default "
+#~ "128.\n"
+#~ " -d m     : Drop streaming blobs if client gets more than this many MB "
+#~ "behind, default 5. 0 to disable.\n"
+#~ " -p p     : Alternate IP port, default 7624.\n"
+#~ " -r r     : Maximum driver restarts on error, default 10.\n"
+#~ " -f path  : Path to fifo for dynamic startup and shutdown of drivers.\n"
+#~ " -v       : Show key events, no traffic.\n"
+#~ " -vv      : -v + key message content.\n"
+#~ " -vvv     : -vv + complete xml.\n"
+#~ " driver   : Executable or [device]@host[:port]"
+#~ msgstr ""
+#~ "Možnosti:\n"
+#~ " -l d : beleži sporočila gonilnika v &lt;d&gt;/YYYY-MM-DD.islog\n"
+#~ " -m m : ukini odjemalca, če zaostaja več kot toliko MB, privzeto 128.\n"
+#~ " -d m : izpusti pretočne blob-e, če odjemalec dobi več kot to veliko MB "
+#~ "zadaj, privzeto 5. 0 za onemogočanje.\n"
+#~ " -p p : Nadomestna vrata IP, privzeto 7624.\n"
+#~ " -r r : Največje število ponovnih zagonov gonilnika ob napaki, privzeto "
+#~ "10.\n"
+#~ " -f pot : Pot do fifo za dinamični zagon in zaustavitev gonilnikov.\n"
+#~ " -v : Prikaži ključne dogodke, ni prometa.\n"
+#~ " -vv : -v + ključna vsebina sporočila.\n"
+#~ " -vvv : vv + celoten xml.\n"
+#~ " driver: izvedljiv program ali [naprava]@gostitelj[:vrata]"
+
+#~ msgid ""
+#~ "For example, if you want to start an INDI server running an LX200 GPS "
+#~ "driver and listening to connections on port 8000, you would run the "
+#~ "following command:"
+#~ msgstr ""
+#~ "Na primer, če želite zagnati strežnik INDI, ki izvaja gonilnik GPS LX200 "
+#~ "in posluša povezave na vratih 8000, bi zagnali naslednji ukaz:"
+
+#~ msgid ""
+#~ "$ <command>indiserver</command> -p 8000 <filename>lx200gps</filename>"
+#~ msgstr ""
+#~ "$ <command>indiserver</command> -p 8000 <filename>lx200gps</filename>"
+
+#~ msgid "Secure Remote Operation"
+#~ msgstr "Varno oddaljeno delovanje"
+
+#~ msgid ""
+#~ "Suppose we want to run an indiserver with INDI drivers on a remote host, "
+#~ "<constant>remote_host</constant>, and connect them to &kstars; running on "
+#~ "the local machine."
+#~ msgstr ""
+#~ "Recimo, da želimo zagnati indiserver z gonilniki INDI na oddaljenem "
+#~ "gostitelju, <constant>remote_host</constant>, in jih povezati z &kstars; "
+#~ "teče na lokalnem računalniku."
+
+#~ msgid ""
+#~ "From the local machine log onto the remote host, <constant>remote_host</"
+#~ "constant>, by typing:"
+#~ msgstr ""
+#~ "Iz lokalnega strojnega dnevnika na oddaljenega gostitelja, "
+#~ "<constant>remote_host</constant>, tako da vnesete:"
+
+#~ msgid ""
+#~ "$ <command>ssh</command> -L <varname>local_port</varname>:"
+#~ "<constant>remote_host</constant>:<varname>remote_port</varname>"
+#~ msgstr ""
+#~ "$ <command>ssh</command> -L <varname>local_port</varname>:"
+#~ "<constant>remote_host</constant>:<varname>remote_port</varname>"
+
+#~ msgid ""
+#~ "This binds the <varname>local_port</varname> on the local machine to the "
+#~ "<varname>remote_port</varname> on the <constant>remote_host</constant>. "
+#~ "After logging in, run indiserver on the remote host:"
+#~ msgstr ""
+#~ "To poveže <varname>local_port</varname> na lokalnem računalniku z "
+#~ "<varname>remote_port</varname> na <constant>remote_host</constant>. Po "
+#~ "prijavi zaženite indiserver na oddaljenem gostitelju:"
+
+#~ msgid ""
+#~ "$ <command>indiserver</command> -p <varname>remote_port</varname> "
+#~ "[<filename>driver</filename>...]"
+#~ msgstr ""
+#~ "$ <command>indiserver</command> -p <varname>remote_port</varname> "
+#~ "[<filename>driver</filename>...]"
+
+#~ msgid ""
+#~ "Back on the local machine, start &kstars; then open the "
+#~ "<guimenuitem>Device Manager</guimenuitem> and add a host under the "
+#~ "<guilabel>Client</guilabel> tab. The host should be the local host "
+#~ "(usually 127.0.0.1) and the port number should be the "
+#~ "<varname>local_port</varname> used in the steps above. "
+#~ "<mousebutton>Right</mousebutton>-click on the host and select "
+#~ "<guimenuitem>Connect</guimenuitem> from the popup menu. &kstars; will "
+#~ "connect to the remote INDI server securely. The host information will be "
+#~ "saved for future sessions."
+#~ msgstr ""
+#~ "Nazaj na lokalnem računalniku zaženite &kstars; nato odprite "
+#~ "<guimenuitem>Upravljalnika  naprav</guimenuitem> in dodajte gostitelja "
+#~ "pod zavihkom <guilabel>Odjemalec</guilabel>. Gostitelj mora biti lokalni "
+#~ "gostitelj (običajno 127.0.0.1), številka vrat pa mora biti "
+#~ "<varname>local_port</varname>, uporabljena v zgornjih korakih. "
+#~ "<mousebutton>Desni</mousebutton>-kliknite gostitelja in v pojavnem meniju "
+#~ "izberite <guimenuitem>Poveži</guimenuitem>. &kstars; se bo varno povezal "
+#~ "z oddaljenim strežnikom INDI. Podatki o gostitelju bodo shranjeni za "
+#~ "prihodnje seje."
+
+#~ msgid "INDI Frequently Asked Questions"
+#~ msgstr "INDI Pogosto zastavljena vprašanja"
+
+#~ msgid "&FAQ;"
+#~ msgstr "&FAQ;"
+
+#~ msgid "What is INDI?"
+#~ msgstr "Kaj je INDI?"
+
+#~ msgid ""
+#~ "<acronym>INDI</acronym> is the <ulink url=\"https://indilib.org\"> "
+#~ "Instrument-Neutral-Distributed-Interface</ulink> control protocol "
+#~ "developed by <author><firstname>Elwood</firstname><surname>C. Downey</"
+#~ "surname></author> of <ulink url=\"https://www.clearskyinstitute.com/"
+#~ "\">ClearSky Institute</ulink>. &kstars; employs device drivers that are "
+#~ "compatible with the INDI protocol. INDI has many advantages including "
+#~ "loose coupling between hardware devices and software drivers. Clients "
+#~ "that use the device drivers (like &kstars;) are completely unaware of the "
+#~ "device capabilities. In run time, &kstars; communicates with the device "
+#~ "drivers and builds a completely dynamical &GUI; based on services "
+#~ "provided by the device. Therefore, new device drivers can be written or "
+#~ "updated and &kstars; can take full advantage of them without any changes "
+#~ "on the client side."
+#~ msgstr ""
+#~ "<acronym>INDI</acronym> je nadzorni protokol <ulink url=\"https://indilib."
+#~ "org\"> Instrument-Neutral-Distributed-Interface</ulink>, ki ga je razvil "
+#~ "<author><firstname>Elwood</firstname> <surname>C. Downey</surname></"
+#~ "author> iz <ulink url=\"https://www.clearskyinstitute.com/\">ClearSky "
+#~ "Institute</ulink>. &kstars; uporablja gonilnike naprav, ki so združljivi "
+#~ "s protokolom INDI. INDI ima veliko prednosti, vključno z ohlapno povezavo "
+#~ "med napravami strojne opreme in gonilniki programske opreme. Odjemalci, "
+#~ "ki uporabljajo gonilnike naprav (kot je &kstars;), se popolnoma ne "
+#~ "zavedajo zmogljivosti naprave. V času izvajanja &kstars; komunicira z "
+#~ "gonilniki naprav in gradi popolnoma dinamičen &GUI; na podlagi storitev, "
+#~ "ki jih zagotavlja naprava. Zato je mogoče nove gonilnike naprav napisati "
+#~ "ali posodobiti in &kstars; jih lahko v celoti izkoristi brez sprememb na "
+#~ "strani odjemalca."
+
+#~ msgid "Do you plan to support more devices?"
+#~ msgstr "Ali nameravate podpirati več naprav?"
+
+#~ msgid ""
+#~ "Yes. We plan to support major CCD cameras and focusers and extend support "
+#~ "for more telescopes. If you would like INDI to support a particular "
+#~ "device, please send an email to <email>indi-devel@lists.sourceforge.net</"
+#~ "email>"
+#~ msgstr ""
+#~ "Da Načrtujemo podporo večjim kameram CCD in fokuserjem ter razširitev "
+#~ "podpore za več teleskopov. Če želite, da INDI podpira določeno napravo, "
+#~ "pošljite e-pošto na <email>indi-devel@lists.sourceforge.net</email>"
+
+#~ msgid "What operations does &kstars; provide to control the telescope?"
+#~ msgstr "Katere operacije izvaja &kstars; zagotoviti nadzor nad teleskopom?"
+
+#~ msgid ""
+#~ "It depends on the particular telescope you're running, but the minimum "
+#~ "three operations are <command>Slew</command>, <command>Track</command>, "
+#~ "and <command>Sync</command>, which you can issue directly from the sky "
+#~ "map. Your telescope must be aligned for those operations to perform "
+#~ "correctly. Some telescopes offer you more operations like site "
+#~ "management, slew modes, focusing, parking, and more. You can access the "
+#~ "telescopes extended features from the <menuchoice><guimenu>Tools</"
+#~ "guimenu> <guisubmenu>Devices</guisubmenu> <guimenuitem>INDI Control "
+#~ "Panel...</guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Odvisno je od določenega teleskopa, ki ga uporabljate, vendar so najmanj "
+#~ "tri operacije <command>Slew</command>, <command>Track</command> in "
+#~ "<command>Sync</command>, ki jih lahko izdate neposredno z zemljevida "
+#~ "neba. Vaš teleskop mora biti poravnan, da se te operacije izvajajo "
+#~ "pravilno. Nekateri teleskopi vam ponujajo več operacij, kot so "
+#~ "upravljanje mesta, načini obračanja, ostrenje, parkiranje in drugo. Do "
+#~ "razširjenih funkcij teleskopov lahko dostopate iz menijske postavke "
+#~ "<menuchoice><guimenu>Orodja</guimenu> <guisubmenu>Naprave</guisubmenu> "
+#~ "<guimenuitem>Nadzorna plošča INDI...</guimenuitem></menuchoice>."
+
+#~ msgid ""
+#~ "What's the difference between <command>Slew</command>, <command>Track</"
+#~ "command>, and <command>Sync</command> exactly?"
+#~ msgstr ""
+#~ "Kakšna je natančna razlika med <command>Slew</command>, <command>Track</"
+#~ "command> in <command>Sync</command>?"
+
+#~ msgid ""
+#~ "The command <command>Slew</command> orders the telescope to move to a "
+#~ "particular target, and once the telescope reaches its target, the "
+#~ "telescope keeps tracking that target at a <emphasis>sidereal</emphasis> "
+#~ "rate (&ie;, the rate at which stars move across the sky). This works well "
+#~ "for stars, Messier objects, and about everything outside our solar "
+#~ "system. But solar system objects travel differently across the sky and so "
+#~ "the telescope must <command>Track</command> the objects as they move."
+#~ msgstr ""
+#~ "Ukaz <command>Slew</command> ukaže teleskopu, da se premakne na določen "
+#~ "cilj, in ko teleskop doseže svoj cilj, teleskop še naprej sledi temu "
+#~ "cilju z <emphasis>zvezdno</emphasis> hitrostjo (&ie; hitrost premikanja "
+#~ "zvezd po nebu). To dobro deluje pri zvezdah, Messierjevih objektih in pri "
+#~ "vsem zunaj našega sončevega sistema. Toda objekti sončevega sistema "
+#~ "potujejo drugače po nebu, zato mora teleskop <command>Slediti - Track</"
+#~ "command> objektom, ko se premikajo."
+
+#~ msgid ""
+#~ "Therefore, you need to issue a track command if you want to track an "
+#~ "object with non-sidereal motion. On the other hand, <command>Sync</"
+#~ "command> is used to synchronize the telescope's internal coordinates with "
+#~ "that of an object you select."
+#~ msgstr ""
+#~ "Zato morate izdati ukaz za sledenje, če želite slediti objektu z "
+#~ "nezvezdnim gibanjem. Po drugi strani se <command>Sync</command> uporablja "
+#~ "za sinhronizacijo notranjih koordinat teleskopa s koordinatami objekta, "
+#~ "ki ga izberete."
+
+#~ msgid "Can I control my telescope remotely?"
+#~ msgstr "Ali lahko upravljam svoj teleskop na daljavo?"
+
+#~ msgid ""
+#~ "Yes. You can start an INDI server on the machine connected to your "
+#~ "telescope and the server will listen to requests from &kstars; clients. "
+#~ "Once you're connected, you can control your telescope directly from the "
+#~ "sky map. This procedure is described in detail in the <link linkend="
+#~ "\"indi-remote-control\">Remote device control</link> section."
+#~ msgstr ""
+#~ "Da Strežnik INDI lahko zaženete na napravi, ki je povezana z vašim "
+#~ "teleskopom, in strežnik bo poslušal zahteve &kstars; odjemalca. Ko ste "
+#~ "povezani, lahko svoj teleskop upravljate neposredno s karto neba. Ta "
+#~ "postopek je podrobno opisan v razdelku <link linkend=\"indi-remote-control"
+#~ "\">Oddaljeno upravljanje naprave</link>."
+
+#~ msgid ""
+#~ "When I try to <guibutton>Connect</guibutton>, &kstars; reports that the "
+#~ "telescope is not connected to the serial/USB port. What can I do?"
+#~ msgstr ""
+#~ "Ko se poskusim <guibutton>Povezati</guibutton>, &kstars; poroča, da "
+#~ "teleskop ni priključen na serijska/USB vrata. Kaj lahko naredim?"
+
+#~ msgid ""
+#~ "This message is triggered when &kstars; cannot communicate with the "
+#~ "telescope. Here are few things you can do:"
+#~ msgstr ""
+#~ "To sporočilo se sproži, ko &kstars; ne more komunicirati s teleskopom. "
+#~ "Tukaj je nekaj stvari, ki jih lahko storite:"
+
+#~ msgid ""
+#~ "Check that you have both reading and writing permission for the port you "
+#~ "are trying to connect to."
+#~ msgstr ""
+#~ "Preverite, ali imate dovoljenje za branje in pisanje za vrata, s katerimi "
+#~ "se poskušate povezati."
+
+#~ msgid ""
+#~ "Check the connection cable, make sure it is in good condition and test it "
+#~ "with other applications."
+#~ msgstr ""
+#~ "Preverite priključni kabel, se prepričajte, da je v dobrem stanju in ga "
+#~ "preizkusite z drugimi aplikacijami."
+
+#~ msgid ""
+#~ "Check your telescope power, make sure the power is on and that the "
+#~ "telescope is getting enough power."
+#~ msgstr ""
+#~ "Preverite napajanje svojega teleskopa, preverite, ali je napajanje "
+#~ "vklopljeno in ali teleskop dobiva dovolj energije."
+
+#~ msgid ""
+#~ "Select the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
+#~ "guisubmenu> <guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> "
+#~ "menu item and set the correct port in the <guilabel>INDI Control Panel</"
+#~ "guilabel> dialog. The default device is <constant>/dev/ttyS0</constant>"
+#~ msgstr ""
+#~ "Izberite menijski element <menuchoice><guimenu>Orodja</guimenu> "
+#~ "<guisubmenu>Naprave</guisubmenu> <guimenuitem>Nadzorna plošča INDI...</"
+#~ "guimenuitem></menuchoice> in nastavite pravilna vrata v <guilabel> "
+#~ "Pogovorno okno nadzorne plošče INDI</guilabel>. Privzeta naprava je "
+#~ "<constant>/dev/ttyS0</constant>"
+
+#~ msgid "Restart &kstars; and retry again."
+#~ msgstr "Znova zaženite &kstars; in poskusite znova."
+
+#~ msgid ""
+#~ "&kstars; reports that the telescope is online and ready, but I cannot "
+#~ "find the telescope's crosshair, where is it?"
+#~ msgstr ""
+#~ "&kstars; poroča, da je teleskop na spletu in pripravljen, vendar ne "
+#~ "najdem križca teleskopa, kje je?"
+
+#~ msgid ""
+#~ "&kstars; retrieves the telescopes RA and DEC coordinates upon connection. "
+#~ "If your alignment was performed correctly, then you should see the "
+#~ "crosshair around your target in the Sky Map. However, the RA and DEC "
+#~ "coordinates provided by the telescope may be incorrect (even below the "
+#~ "horizon) and you need to <link linkend=\"indi-sync\">Sync</link> your "
+#~ "telescope to your current target. You can use the right-click menu to "
+#~ "center and track the telescope crosshair in the sky map."
+#~ msgstr ""
+#~ "&kstars; ob povezavi pridobi koordinate RA in DEC teleskopov. Če je bila "
+#~ "vaša poravnava izvedena pravilno, bi morali videti križec okoli vašega "
+#~ "cilja na zemljevidu neba. Vendar pa so lahko koordinate RA in DEC, ki jih "
+#~ "posreduje teleskop, napačne (tudi pod obzorjem) in morate <link linkend="
+#~ "\"indi-sync\">sinhronizirati</link> svoj teleskop s trenutnim ciljem. "
+#~ "Meni z desnim klikom lahko uporabite za centriranje in sledenje križcu "
+#~ "teleskopa na karti neba."
+
+#~ msgid ""
+#~ "The telescope is moving erratically or not moving at all. What can I do?"
+#~ msgstr ""
+#~ "Teleskop se premika neenakomerno ali pa se sploh ne premika. Kaj lahko "
+#~ "naredim?"
+
+#~ msgid ""
+#~ "This behavior is mostly due to incorrect settings, please verify the "
+#~ "following check list:"
+#~ msgstr ""
+#~ "To vedenje je večinoma posledica nepravilnih nastavitev, prosimo "
+#~ "preverite naslednji kontrolni seznam:"
+
+#~ msgid "Is the telescope aligned?"
+#~ msgstr "Ali je teleskop poravnan?"
+
+#~ msgid ""
+#~ "Is the telescope alignment mode correct? Use <guilabel>INDI Control "
+#~ "Panel</guilabel> to check and change these settings (<constant>Alt/Az,"
+#~ "Polar, Land</constant>)."
+#~ msgstr ""
+#~ "Ali je način naravnavanja teleskopa pravilen? Uporabite "
+#~ "<guilabel>Nadzorno ploščo INDI</guilabel>, da preverite in spremenite te "
+#~ "nastavitve (<constant>Alt/Az,Polar, Land</constant>)."
+
+#~ msgid "Are the telescope's time and date settings correct?"
+#~ msgstr "Ali so nastavitve časa in datuma teleskopa pravilne?"
+
+#~ msgid "Are the telescope's longitude and latitude settings correct?"
+#~ msgstr "Ali so nastavitve dolžine in širine teleskopa pravilne?"
+
+#~ msgid "Is the telescope's UTC offset correct?"
+#~ msgstr "Ali je odmik teleskopa UTC pravilen?"
+
+#~ msgid "Are the telescope's RA and DEC axis locked firmly?"
+#~ msgstr "Ali sta osi RA in DEC teleskopa trdno zaklenjeni?"
+
+#~ msgid ""
+#~ "Is the telescope's N/S switch (when applicable) setup correctly for your "
+#~ "hemisphere?"
+#~ msgstr ""
+#~ "Ali je teleskopsko stikalo N/S (če je na voljo) pravilno nastavljeno za "
+#~ "vašo poloblo?"
+
+#~ msgid "Is the cable between the telescope and computer in good condition?"
+#~ msgstr "Ali je kabel med teleskopom in računalnikom v dobrem stanju?"
+
+#~ msgid ""
+#~ "If you think all settings are correct but the telescope still moves "
+#~ "erratically or not at all, then please send a report to <email>indi-"
+#~ "devel@lists.sourceforge.net</email>."
+#~ msgstr ""
+#~ "Če menite, da so vse nastavitve pravilne, vendar se teleskop še vedno "
+#~ "premika nepravilno ali se sploh ne premika, pošljite poročilo na "
+#~ "<email>indi-devel@lists.sourceforge.net</email>."

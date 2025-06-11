@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: kstars_indi\n"
-"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-06 00:51+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-09 00:05+0200\n"
 "PO-Revision-Date: 2020-09-10 17:14-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -21,1543 +21,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 20.04.3\n"
 
-#. Tag: title
-#: indi.docbook:2
-#, no-c-format
-msgid "Astronomical Device Control with <acronym>INDI</acronym>"
-msgstr "Controle de dispositivo astronômico com o <acronym>INDI</acronym>"
-
-#. Tag: primary
-#: indi.docbook:3
-#, no-c-format
-msgid "INDI Control"
-msgstr "Controle INDI"
-
-#. Tag: secondary
-#: indi.docbook:4
-#, no-c-format
-msgid "Overview"
-msgstr "Resumo"
-
-#. Tag: para
-#: indi.docbook:7
-#, no-c-format
-msgid ""
-"&kstars; provides an interface to configure and control astronomical "
-"instruments via the <acronym><link linkend=\"what-is-indi\">INDI</link></"
-"acronym> protocol."
-msgstr ""
-"O &kstars; fornece uma interface para configurar e controlar instrumentos "
-"astronômicos através do protocolo <acronym><link linkend=\"what-is-indi"
-"\">INDI</link></acronym>."
-
-#. Tag: para
-#: indi.docbook:12
-#, fuzzy, no-c-format
-#| msgid ""
-#| "The <acronym>INDI</acronym> protocol supports a variety of astronomical "
-#| "instruments such as CCD cameras and focusers. For an up to date list of "
-#| "supported devices, please visit <acronym>INDI</acronym> <ulink url="
-#| "\"http://indilib.org/index.php?title=Devices\">supported devices page</"
-#| "ulink>."
-msgid ""
-"The <acronym>INDI</acronym> protocol supports a variety of astronomical "
-"instruments such as CCD cameras and focusers. For an up to date list of "
-"supported devices, please visit <acronym>INDI</acronym> <ulink url=\"https://"
-"indilib.org/index.php?title=Devices\">supported devices page</ulink>."
-msgstr ""
-"O protocolo <acronym>INDI</acronym> suporta uma grande variedade de "
-"instrumentos astronômicos como câmeras CCD e focalizadores. Para uma lista "
-"atualizada dos dispositivos suportados, por favor visite a <ulink url="
-"\"http://indilib.org/index.php?title=Devices\">página de dispositivos "
-"suportados</ulink> do <acronym>INDI</acronym>."
-
-#. Tag: title
-#: indi.docbook:19
-#, no-c-format
-msgid "INDI Setup"
-msgstr "Configuração do INDI"
-
-#. Tag: primary
-#: indi.docbook:20 indi.docbook:81
-#, no-c-format
-msgid "<primary>INDI</primary>"
-msgstr "<primary>INDI</primary>"
-
-#. Tag: secondary
-#: indi.docbook:21 indi.docbook:82 indi.docbook:306
-#, no-c-format
-msgid "Setup"
-msgstr "Configuração"
-
-#. Tag: para
-#: indi.docbook:23
-#, no-c-format
-msgid ""
-"&kstars; can control local and remote devices seamlessly via the <link "
-"linkend=\"what-is-indi\">INDI</link> server/client architecture. INDI "
-"devices may be run in three different modes:"
-msgstr ""
-"O &kstars; pode controlar dispositivos remotos ou locais indiferentemente "
-"através da arquitetura cliente/servidor do <link linkend=\"what-is-indi"
-"\">INDI</link>. Dispositivos INDI podem ser executados em três diferentes "
-"modos:"
-
-#. Tag: para
-#: indi.docbook:30
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Local: The local mode is the most common and is used to control local "
-#| "device (&ie; a device attached to your machine)."
-msgid ""
-"<guilabel>Local</guilabel>: The local mode is the most common and is used to "
-"control local device (&ie; a device attached to your machine)."
-msgstr ""
-"Local: O modo local é o mais comum sendo usado para controlar um dispositivo "
-"local (&ie; um dispositivo conectado a sua máquina)."
-
-#. Tag: para
-#: indi.docbook:34
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Server: The server mode establishes an INDI server for a particular "
-#| "device and waits for connections from remote clients. You cannot operate "
-#| "server devices, you can only start and shut them down."
-msgid ""
-"<guilabel>Server</guilabel>: The server mode establishes an INDI server for "
-"a particular device and waits for connections from remote clients. You "
-"cannot operate server devices, you can only start and shut them down."
-msgstr ""
-"Servidor: O modo servidor estabelece um servidor INDI para um dispositivo "
-"específico e espera por conexões a partir de clientes remotos. Você não pode "
-"operar dispositivos servidor, você pode somente iniciá-los e desligá-los."
-
-#. Tag: para
-#: indi.docbook:39
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Client: The client mode is used to connect to remote INDI servers running "
-#| "INDI devices. You can control remote devices seamlessly like local "
-#| "devices."
-msgid ""
-"<guilabel>Client</guilabel>: The client mode is used to connect to remote "
-"INDI servers running INDI devices. You can control remote devices seamlessly "
-"like local devices."
-msgstr ""
-"Cliente: O modo cliente é usado para conectar à servidores remotos INDI "
-"executando dispositivos INDI. Você pode controlar dispositivos remotos da "
-"mesma maneira que controla dispositivos locais."
-
-#. Tag: para
-#: indi.docbook:44
-#, fuzzy, no-c-format
-#| msgid ""
-#| "You can run local device, establish INDI servers, and connect to remote "
-#| "clients from the <guimenuitem>Device Manager</guimenuitem> in the "
-#| "<guimenu>Devices</guimenu> menu."
-msgid ""
-"You can run local device, establish INDI servers, and connect to remote "
-"clients from the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
-"guisubmenu> <guimenuitem>Device Manager...</guimenuitem></menuchoice> menu "
-"item."
-msgstr ""
-"Você pode executar um dispositivo local, estabelecer servidores INDI, e "
-"conectar à clientes remotos a partir do <guimenuitem>Gerenciador de "
-"dispositivo</guimenuitem> no menu <guimenu>Dispositivos</guimenu>."
-
-#. Tag: para
-#: indi.docbook:49
-#, no-c-format
-msgid "Here is a screenshot of the <guilabel>Device Manager</guilabel> window:"
-msgstr ""
-"Aqui está uma captura de tela da janela do <guilabel>Gerenciador de "
-"dispositivo</guilabel>:"
-
-#. Tag: screeninfo
-#: indi.docbook:54
-#, no-c-format
-msgid "Running device drivers"
-msgstr "Executando drivers de dispositivo"
-
-#. Tag: phrase
-#: indi.docbook:60
-#, no-c-format
-msgid "Start device drivers"
-msgstr "Iniciar drivers de dispositivo"
-
-#. Tag: para
-#: indi.docbook:65
-#, no-c-format
-msgid ""
-"You can run devices by browsing the device tree, selecting a specific "
-"device, and then clicking on the <guibutton>Run Service</guibutton> button. "
-"You can select the operation mode, either local or server as defined above. "
-"The port number is randomly generated between the range from 7624 to 10,000. "
-"To specify a port, click on the port column next to the desired driver. "
-"&kstars; allows multiple drivers to run under one INDI server, and hence one "
-"port. Select multiple drivers then press <guibutton>Run Service</guibutton> "
-"button."
-msgstr ""
-"Você pode executar dispositivos navegando na árvore de dispositivos, "
-"selecionando o dispositivo específico, e então clicando no botão "
-"<guibutton>Executar serviço</guibutton>. Você pode selecionar o modo de "
-"operação, tanto local como servidor como definido acima. O número da porta é "
-"gerado aleatoriamente dentro do intervalo de 7624 a 10.000. Para especificar "
-"uma porta, clique na coluna porta próxima do controlador desejado. O "
-"&kstars; permite que vários controladores rodem em um servidor INDI, e mesmo "
-"em uma porta. Selecione vários controladores e então pressione o botão "
-"<guibutton>Executar serviço</guibutton>."
-
-#. Tag: para
-#: indi.docbook:74
-#, no-c-format
-msgid ""
-"To control remote devices, refer to the <link linkend=\"indi-remote-control"
-"\">remote device control</link> section."
-msgstr ""
-"Para controlar dispositivos remotos, veja a seção <link linkend=\"indi-"
-"remote-control\">controle de dispositivos remotos</link>."
-
-#. Tag: title
-#: indi.docbook:80
-#, no-c-format
-msgid "Telescope Setup"
-msgstr "Configuração de telescópio"
-
-#. Tag: para
-#: indi.docbook:85
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Most telescopes are equipped with <hardware>RS232</hardware> interface "
-#| "for remote control. Connect the RS232 jack in your telescope to your "
-#| "computer's <hardware>Serial/USB</hardware> port. Traditionally, the RS232 "
-#| "connects to the serial port of your computer, but since many new laptops "
-#| "abandoned the serial port in favor of <hardware>USB/FireWire</hardware> "
-#| "ports, you might need to obtain a Serial to USB adaptor to use with new "
-#| "laptops."
-msgid ""
-"Most telescopes are equipped with <hardware>RS232</hardware> interface for "
-"remote control. Connect the RS232 jack in your telescope to your computer's "
-"<hardware>Serial/USB</hardware> port. Traditionally, the RS232 connects to "
-"the serial port of your computer, but since many new laptops abandoned the "
-"serial port in favor of <hardware>USB/FireWire</hardware> ports, you might "
-"need to obtain a Serial to USB adaptor to use with new laptops."
-msgstr ""
-"A maioria dos telescópios são equipados com a interface <hardware>RS232</"
-"hardware> para controle remoto. Conecte o plugue RS232 em seu telescópio à "
-"porta <hardware>Serial/USB</hardware> do seu computador. Tradicionalmente, o "
-"RS232 se conecta à porta serial do seu computador, mas uma vez que muitos "
-"dos novos laptops abandonaram a porta serial em favor das portas "
-"<hardware>USB/FireWire</hardware>, você pode precisar obter um adaptador "
-"serial para USB para usar com novos laptops."
-
-#. Tag: para
-#: indi.docbook:94
-#, fuzzy, no-c-format
-#| msgid ""
-#| "After connecting your telescope to the Serial/USB port, turn your "
-#| "telescope on. It is <emphasis>highly</emphasis> recommended that you "
-#| "download and install the latest firmware for your telescope controller."
-msgid ""
-"After connecting your telescope to the Serial/USB port, turn your telescope "
-"on. It is <emphasis>highly</emphasis> recommended that you download and "
-"install the latest firmware for your telescope controller."
-msgstr ""
-"Após conectar seu telescópio à porta serial/USB, ligue seu telescópio. É "
-"<emphasis>altamente</emphasis> recomendável que você baixe e instale o "
-"último firmware para o controlador do seu telescópio."
-
-#. Tag: para
-#: indi.docbook:100
-#, no-c-format
-msgid ""
-"The telescope needs to be aligned before it can be used properly. Align your "
-"telescope (one or two stars alignment) as illustrated in your telescope "
-"manual."
-msgstr ""
-"O telescópio precisa ser alinhado antes de poder ser usado corretamente. "
-"Alinhe seu telescópio (alinhamento de uma ou duas estrelas) como ilustrado "
-"no manual do seu telescópio."
-
-#. Tag: para
-#: indi.docbook:105
-#, no-c-format
-msgid ""
-"&kstars; needs to verify time and location settings before connecting to the "
-"telescope. This insures proper tracking and synchronization between the "
-"telescope and &kstars;. The following steps will enable you to connect to a "
-"device that is connected to your computer. To connect and control remote "
-"devices, please refer to <link linkend=\"indi-remote-control\">remote device "
-"control</link> section."
-msgstr ""
-"O &kstars; precisa verificar as configurações de hora e localização antes de "
-"conectar-se ao telescópio. Isto garante o rastreamento apropriado e "
-"sincronização entre o telescópio e o &kstars;. Os passos a seguir "
-"habilitarão que você conecte-se a um dispositivo que está conectado ao seu "
-"computador. Para conectar e controlar dispositivos remotos, por favor acesse "
-"a seção <link linkend=\"indi-remote-control\">controle de dispositivo "
-"remoto</link>."
-
-#. Tag: para
-#: indi.docbook:113
-#, fuzzy, no-c-format
-#| msgid ""
-#| "You can use the Telescope Setup Wizard and it will verify all the "
-#| "required information in the process. It can automatically scan ports for "
-#| "attached telescopes. You can run the wizard by selecting "
-#| "<guimenuitem>Telescope Wizard</guimenuitem> from the <guimenu>Devices</"
-#| "guimenu> menu."
-msgid ""
-"You can use the Telescope Setup Wizard and it will verify all the required "
-"information in the process. It can automatically scan ports for attached "
-"telescopes. You can run the wizard by selecting the "
-"<menuchoice><guimenu>Devices</guimenu> <guimenuitem>Telescope Wizard</"
-"guimenuitem></menuchoice> menu item."
-msgstr ""
-"Você pode usar o assistente de configuração de telescópio e ele verificará "
-"todas as informações necessárias no processo. Ele pode automaticamente "
-"procurar nas portas por telescópios conectados. Você pode executar o "
-"assistente selecionando o <guimenuitem>Assistente de telescópio</"
-"guimenuitem> a partir do menu <guimenu>Dispositivos</guimenu>."
-
-#. Tag: para
-#: indi.docbook:119
-#, no-c-format
-msgid ""
-"Alternatively, you can connect to a local telescope by performing the "
-"following steps:"
-msgstr ""
-"Alternativamente, você pode conectar a um telescópio local executando os "
-"seguintes passos:"
-
-#. Tag: para
-#: indi.docbook:124
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Set your geographical location. Open the <guilabel>Set Geographic "
-#| "Location</guilabel> window by selecting <guimenuitem>Geographic...</"
-#| "guimenuitem> from the <guimenu>Settings</guimenu> menu, or by pressing "
-#| "the <guiicon>Globe</guiicon> icon in the toolbar, or by pressing "
-#| "<keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo>."
-msgid ""
-"Set your geographical location. Open the <guilabel>Set Geographic Location</"
-"guilabel> window by selecting the <menuchoice><guimenu>Settings</guimenu> "
-"<guimenuitem>Geographic...</guimenuitem></menuchoice> menu item, or by "
-"pressing the <guiicon>Globe</guiicon> icon in the toolbar, or by pressing "
-"<keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo>."
-msgstr ""
-"Configure sua localização geográfica. Abra a janela <guilabel>Definir "
-"localização geográfica</guilabel> selecionando o <guimenuitem>Geográfica...</"
-"guimenuitem> a partir do menu <guimenu>Configurações</guimenu> ou "
-"pressionando o ícone em forma de <guiicon>Globo</guiicon> na barra de "
-"ferramentas, ou ainda pressionando <keycombo action=\"simul\">&Ctrl;"
-"<keycap>G</keycap></keycombo>."
-
-#. Tag: para
-#: indi.docbook:133
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Set your local time and date. You can change to any time or date by "
-#| "selecting <guimenuitem>Set Time...</guimenuitem> from the <guimenu>Time</"
-#| "guimenu> menu, or by pressing the <guiicon>time</guiicon> icon in the "
-#| "toolbar. The <guilabel>Set Time</guilabel> window uses a standard &kde; "
-#| "Date Picker widget. If you ever need to reset the clock back to the "
-#| "current time, just select <guimenuitem>Set Time to Now</guimenuitem> from "
-#| "the <guimenu>Time</guimenu> menu."
-msgid ""
-"Set your local time and date. You can change to any time or date by "
-"selecting <menuchoice><guimenu>Time</guimenu> <guimenuitem>Set Time...</"
-"guimenuitem></menuchoice> menu item, or by pressing the <guiicon>Time</"
-"guiicon> icon in the toolbar. The <guilabel>Set Time</guilabel> window uses "
-"a standard &kde; Date Picker widget. If you ever need to reset the clock "
-"back to the current time, just select the <menuchoice><guimenu>Time</"
-"guimenu> <guimenuitem>Set Time to Now</guimenuitem></menuchoice> menu item."
-msgstr ""
-"Configure sua hora local e data. Você pode mudar para qualquer hora ou data "
-"selecionando o <guimenuitem>Configurar hora...</guimenuitem> a partir do "
-"menu <guimenu>Hora</guimenu>, ou pressionando o ícone <guiicon>hora</"
-"guiicon> na barra de ferramentas. A janela <guilabel>Configurar hora</"
-"guilabel> usa o widget padrão para selecionar data do &kde;,. Se você "
-"precisar reiniciar o relógio para a hora atual, simplesmente selecione "
-"<guimenuitem>Configurar hora para agora</guimenuitem> a partir do menu "
-"<guimenu>Hora</guimenu>."
-
-#. Tag: para
-#: indi.docbook:144
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Click on the <guimenu>Devices</guimenu> menu and select the "
-#| "<guimenuitem>Device Manager</guimenuitem>."
-msgid ""
-"Click on the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
-"guisubmenu> <guimenuitem>Device Manager...</guimenuitem></menuchoice> menu "
-"item."
-msgstr ""
-"Clique no menu <guimenu>Dispositivos</guimenu> e selecione o "
-"<guimenuitem>Gerenciador de dispositivos</guimenuitem>."
-
-#. Tag: para
-#: indi.docbook:150
-#, no-c-format
-msgid ""
-"Under the <guilabel>Device</guilabel> column, select your telescope model."
-msgstr ""
-"Sob a coluna <guilabel>Dispositivo</guilabel>, selecione o modelo do seu "
-"telescópio."
-
-#. Tag: para
-#: indi.docbook:155
-#, no-c-format
-msgid "Click on the <guibutton>Run Service</guibutton> button."
-msgstr "Clique no botão <guibutton>Executar serviço</guibutton>."
-
-#. Tag: para
-#: indi.docbook:160
-#, no-c-format
-msgid "Click <guibutton>Close</guibutton> to leave the Device Manager Dialog."
-msgstr ""
-"Clique em <guibutton>Fechar</guibutton> para deixar o diálogo do gerenciador "
-"de dispositivo."
-
-#. Tag: title
-#: indi.docbook:167
-#, no-c-format
-msgid "Frequent Settings"
-msgstr "Configurações frequentes"
-
-#. Tag: para
-#: indi.docbook:168
-#, no-c-format
-msgid ""
-"You do not need to set the geographic location and time every time you "
-"connect to a telescope. Only adjust the settings as needed."
-msgstr ""
-"Você não precisa configurar a localização geográfica e hora toda vez que "
-"você conecta ao seu telescópio. Somente ajuste as configurações se precisar."
-
-#. Tag: para
-#: indi.docbook:172
-#, fuzzy, no-c-format
-#| msgid ""
-#| "You are now ready to use the device features, &kstars; conveniently "
-#| "provides two interchangeable GUI interfaces for controlling telescopes:"
-msgid ""
-"You are now ready to use the device features, &kstars; conveniently provides "
-"two interchangeable &GUI; interfaces for controlling telescopes:"
-msgstr ""
-"Você está agora pronto para usar os recursos do dispositivo. O &kstars; "
-"convenientemente fornece duas interfaces gráficas intercambiáveis para "
-"controlar os telescópios:"
-
-#. Tag: title
-#: indi.docbook:177
-#, no-c-format
-msgid "Controlling your telescope"
-msgstr "Controlando seu telescópio"
-
-#. Tag: para
-#: indi.docbook:179
-#, fuzzy, no-c-format
-#| msgid ""
-#| "<guilabel>Sky map Control</guilabel>: For each device you run in the "
-#| "<guilabel>Device Manager</guilabel>, a corresponding entry will show up "
-#| "in popup menu that allows you to control the properties of the device. "
-#| "You can issue commands like <command>Slew, Sync,</command> and "
-#| "<command>Track</command> directly from the sky map."
-msgid ""
-"<guilabel>Sky map Control</guilabel>: For each device you run in the "
-"<guilabel>Device Manager</guilabel>, a corresponding entry will show up in "
-"popup menu that allows you to control the properties of the device. You can "
-"issue commands like <command>Slew</command>, <command>Sync</command>, and "
-"<command>Track</command> directly from the sky map."
-msgstr ""
-"<guilabel>Controle de mapa celeste</guilabel>: Para cada dispositivo que "
-"você executa no <guilabel>Gerenciador de dispositivo</guilabel>, uma entrada "
-"correspondente mostrará um menu de contexto que permite controlar as "
-"propriedades do dispositivo. Você pode enviar comandos como "
-"<command>rotacionar, sincronizar</command> e <command>rastrear</command> "
-"diretamente a partir do mapa celeste."
-
-#. Tag: para
-#: indi.docbook:187
-#, no-c-format
-msgid ""
-"Here is a screenshot of the popup menu with an active LX200 Classic device:"
-msgstr ""
-"Aqui está uma captura de tela do menu de contexto com um dispositivo LX200 "
-"Classic ativo:"
-
-#. Tag: screeninfo
-#: indi.docbook:191
-#, no-c-format
-msgid "Controlling devices from sky map"
-msgstr "Controlando dispositivos a partir do mapa celeste"
-
-#. Tag: para
-#: indi.docbook:201
-#, no-c-format
-msgid ""
-"<guilabel>INDI Control Panel</guilabel>: The panel offers the user with all "
-"the features supported by a device."
-msgstr ""
-"<guilabel>Painel de controle INDI</guilabel>: O painel oferece ao usuário "
-"todos os recursos suportados por um dispositivo."
-
-#. Tag: para
-#: indi.docbook:206
-#, no-c-format
-msgid "The panel is divided into three main sections:"
-msgstr "O painel é dividido em três seções principais:"
-
-#. Tag: para
-#: indi.docbook:211
-#, no-c-format
-msgid ""
-"<guilabel>Device tabs</guilabel>: Each additional active device occupies a "
-"tab in the INDI panel. Multiple devices can run simultaneously without "
-"affecting the operation of other devices."
-msgstr ""
-"<guilabel>Aba de dispositivo</guilabel>: Cada dispositivo ativo adicional "
-"ocupa uma aba no painel INDI. Dispositivos múltiplos pode ser executados "
-"simultaneamente sem afetar a operação de outros dispositivos."
-
-#. Tag: para
-#: indi.docbook:219
-#, no-c-format
-msgid ""
-"Property views on the <guilabel>Main Control</guilabel> and "
-"<guilabel>Options</guilabel> tabs: Properties are the key element in INDI "
-"architecture. Each device defines a set of properties to communicate with "
-"the client. The current position of the telescope is an example of a "
-"property. Semantically similar properties are usually contained in logical "
-"blocks or groupings."
-msgstr ""
-"Visualizações de propriedade nas abas <guilabel>Controle principal</"
-"guilabel> e <guilabel>Opções</guilabel>: Propriedades são os elementos chave "
-"na arquitetura INDI. Cada dispositivo define um conjunto de propriedades "
-"para comunicar-se com o cliente. A posição atual do telescópio é um exemplo "
-"de uma propriedade. Propriedades semanticamente similares são normalmente "
-"reunidas em blocos ou grupos lógicos."
-
-#. Tag: para
-#: indi.docbook:229
-#, no-c-format
-msgid ""
-"<guilabel>Log viewer</guilabel>: Devices report their status and acknowledge "
-"commands by sending INDI messages. Each device has its own log view. A "
-"device usually sends messages to its device driver only, but a device is "
-"permitted to send a generic message when appropriate."
-msgstr ""
-"<guilabel>Visualizador de registro</guilabel>: Dispositivos relatam seu "
-"estado e comando reconhecidos enviando mensagens INDI. Cada dispositivo "
-"possui seu próprio visualizador de registro. Um dispositivo normalmente "
-"envia mensagens para seu driver de dispositivo somente, mas a um dispositivo "
-"é permitido enviar uma mensagem genérica quando apropriado."
-
-#. Tag: screeninfo
-#: indi.docbook:238
-#, no-c-format
-msgid "INDI Control Panel"
-msgstr "Painel de controle INDI"
-
-#. Tag: para
-#: indi.docbook:248
-#, no-c-format
-msgid ""
-"You are not restricted on using one interface over another as they can be "
-"both used simultaneously. Actions from the <guilabel>Sky map</guilabel> are "
-"automatically reflected in the <guilabel>INDI Control Panel</guilabel> and "
-"vice versa."
-msgstr ""
-"Você não está restrito a usar uma interface ou outra uma vez que elas podem "
-"ser usadas simultaneamente. Ações a partir do <guilabel>Mapa celeste</"
-"guilabel> são automaticamente refletidas no <guilabel>Painel de controle "
-"INDI</guilabel> e vice-versa."
-
-#. Tag: para
-#: indi.docbook:253
-#, no-c-format
-msgid ""
-"To connect to your telescope, you can either select <guimenuitem>Connect</"
-"guimenuitem> from your device popup menu or alternatively, you can press "
-"<guibutton>Connect</guibutton> under your device tab in the <guilabel>INDI "
-"Control Panel</guilabel>."
-msgstr ""
-"Para conectar ao seu telescópio, você pode tanto selecionar "
-"<guimenuitem>Conectar</guimenuitem> a partir do menu de contexto ou, "
-"alternativamente, pressionar o <guibutton>Conectar</guibutton> sob a aba de "
-"dispositivo no <guilabel>Painel de controle INDI</guilabel>."
-
-#. Tag: para
-#: indi.docbook:258
-#, fuzzy, no-c-format
-#| msgid ""
-#| "By default, &kstars; will try to connect to the <constant>/dev/ttyS0</"
-#| "constant> port. To change the connection port, select <guilabel>INDI "
-#| "Control Panel</guilabel> from the <guimenu>Devices</guimenu> menu and "
-#| "change the port under your device tab."
-msgid ""
-"By default, &kstars; will try to connect to the <constant>/dev/ttyS0</"
-"constant> port. To change the connection port, select the "
-"<menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</guisubmenu> "
-"<guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> menu item and "
-"change the port under your device tab."
-msgstr ""
-"Por padrão, o &kstars; tentará conectar à porta <constant>/dev/ttyS0</"
-"constant>. Para mudar a porta de conexão, selecione no <guilabel>Painel de "
-"controle INDI</guilabel> o menu <guimenu>Dispositivos</guimenu> e mude a "
-"porta na aba do seu dispositivo."
-
-#. Tag: para
-#: indi.docbook:264
-#, no-c-format
-msgid ""
-"&kstars; automatically updates the telescope's longitude, latitude, and time "
-"based on current settings in &kstars;. You can enable/disable these using "
-"the <guilabel>INDI</guilabel> page from the <menuchoice><guimenu>Settings</"
-"guimenu> <guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> menu "
-"item. Using the <guilabel>INDI</guilabel> page you can configure &kstars; to "
-"display or not INDI status messages in the status bar. By default INDI "
-"server port numbers have values between the range from 7624 to 9000, but you "
-"can easily change the range using the <guilabel>From:</guilabel> and "
-"<guilabel>To:</guilabel> text boxes from the <guilabel>Server Port</"
-"guilabel> section."
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:274
-#, fuzzy, no-c-format
-#| msgid ""
-#| "If &kstars; communicates successfully with the telescope, it will "
-#| "retrieve the current <abbrev>RA</abbrev> and <abbrev>DEC</abbrev> from "
-#| "the telescope and will display a crosshair on the sky map indicating the "
-#| "telescope position."
-msgid ""
-"If &kstars; communicates successfully with the telescope, it will retrieve "
-"the current <abbrev>RA</abbrev> and <abbrev>DEC</abbrev> from the telescope "
-"and will display a crosshair on the sky map indicating the telescope "
-"position. You can hide the crosshair that marks telescope position using "
-"<guilabel>INDI</guilabel> page from the <menuchoice><guimenu>Settings</"
-"guimenu> <guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> menu "
-"item."
-msgstr ""
-"Se o &kstars; se comunicar com sucesso com o telescópio, ele obterá o "
-"<abbrev>RA</abbrev> e <abbrev>DEC</abbrev> atuais do telescópio e exibirá "
-"uma cruz no mapa celeste indicando a posição do telescópio."
-
-#. Tag: title
-#: indi.docbook:282
-#, no-c-format
-msgid "Synchronizing your telescope"
-msgstr "Sincronizando seu telescópio"
-
-#. Tag: para
-#: indi.docbook:283
-#, no-c-format
-msgid ""
-"If you aligned your telescope and the last alignment star was, for example, "
-"Vega, then the crosshair should be centered around Vega. If the crosshair "
-"was off target, then you can <mousebutton>right</mousebutton>-click Vega "
-"from the sky map and select <command>Sync</command> from your telescope "
-"menu. This action will instruct the telescope to synchronize its internal "
-"coordinates to match those of Vega, and the telescope's crosshair should now "
-"be centered around Vega."
-msgstr ""
-"Se você alinhou seu telescópio e o última estrela alinhada foi, por exemplo, "
-"Vega, então a cruz deve estar centrada próximo a Vega. Se a cruz estiver "
-"fora do alvo, então você pode dar um clique-<mousebutton>direito</"
-"mousebutton> em Vega no mapa estelar e selecionar <command>Sincronizar</"
-"command> a partir do menu do seu telescópio. Esta ação instruirá o "
-"telescópio a sincronizar suas coordenadas internas para corresponder com as "
-"de Vega, e a cruz do telescópio deve agora estar centrada próximo à Vega."
-
-#. Tag: para
-#: indi.docbook:292
-#, no-c-format
-msgid "This is it: your telescope is ready to explore the heavens!"
-msgstr "É isto: seu telescópio está pronto para explorar o universo!"
-
-#. Tag: title
-#: indi.docbook:296
-#, no-c-format
-msgid "WARNING"
-msgstr "AVISO"
-
-#. Tag: para
-#: indi.docbook:297
-#, no-c-format
-msgid ""
-"Never use the telescope to look at the sun. Looking at the sun might cause "
-"irreversible damage to your eyes and your equipment."
-msgstr ""
-"Nunca usa o telescópio para olhar o Sol. Olhar diretamente o Sol pode causar "
-"um dano irreversível aos seus olhos, bem como ao seu equipamento."
-
-#. Tag: title
-#: indi.docbook:304
-#, no-c-format
-msgid "CCD and Video-Capture Setup"
-msgstr "Configuração de captura de vídeo e CCD"
-
-#. Tag: primary
-#: indi.docbook:305
-#, no-c-format
-msgid "CCD Video Control"
-msgstr "Controle de vídeo CCD"
-
-#. Tag: para
-#: indi.docbook:309
-#, fuzzy, no-c-format
-#| msgid ""
-#| "You can run CCD and Video Capture devices from the <guimenuitem>Device "
-#| "Manager</guimenuitem> in the <guimenu>Devices</guimenu> menu. Like all "
-#| "INDI devices, some of the device controls will be accessible from the "
-#| "skymap. The device can be controlled fully from the <guimenuitem>INDI "
-#| "Control Panel.</guimenuitem>"
-msgid ""
-"You can run CCD and Video Capture devices from the "
-"<menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</guisubmenu> "
-"<guimenuitem>Device Manager...</guimenuitem></menuchoice> menu item. Like "
-"all INDI devices, some of the device controls will be accessible from the "
-"skymap. The device can be controlled fully from the <guimenuitem>INDI "
-"Control Panel...</guimenuitem> item."
-msgstr ""
-"Você pode executar dispositivos de captura de vídeo e CCD a partir do "
-"<guimenuitem>Gerenciador de dispositivos</guimenuitem> no menu "
-"<guimenu>Dispositivos</guimenu>. Como todos os dispositivos INDI, alguns "
-"controles do dispositivo serão acessíveis a partir do mapa celeste. O "
-"dispositivo pode ser controlado totalmente a partir do <guimenuitem>Painel "
-"de controle INDI</guimenuitem>."
-
-#. Tag: para
-#: indi.docbook:315
-#, fuzzy, no-c-format
-#| msgid ""
-#| "The standard format for image capture is FITS. Once an image is captured "
-#| "and downloaded, it will be automatically displayed in the &kstars; <link "
-#| "linkend=\"tool-fitsviewer\">FITS Viewer</link>."
-msgid ""
-"The standard format for image capture is FITS. Once an image is captured and "
-"downloaded, it will be automatically displayed in the &kstars; <link linkend="
-"\"fitsviewer\">FITS Viewer</link>."
-msgstr ""
-"O formato padrão para captura de imagem é o FITS. Uma vez que uma imagem "
-"seja capturada e baixada, ela será automaticamente exibida no <link linkend="
-"\"tool-fitsviewer\">visualizador FITS</link> do &kstars;."
-
-#. Tag: title
-#: indi.docbook:321
-#, no-c-format
-msgid "Configure INDI"
-msgstr "Configurar INDI"
-
-#. Tag: primary
-#: indi.docbook:322
-#, no-c-format
-msgid "Configure"
-msgstr "Configurar"
-
-#. Tag: secondary
-#: indi.docbook:323
-#, no-c-format
-msgid "<secondary>INDI</secondary>"
-msgstr "<secondary>INDI</secondary>"
-
-#. Tag: para
-#: indi.docbook:326
-#, fuzzy, no-c-format
-#| msgid ""
-#| "The INDI page allows you to modify <emphasis>Client side</emphasis> INDI "
-#| "specific options. The window is divided into several main categories: "
-#| "General, Automatic device updates, Display, Update Source, Filter Wheel "
-#| "and Server Port:"
-msgid ""
-"The <guilabel>INDI</guilabel> page allows you to modify <emphasis>Client "
-"side</emphasis> INDI specific options. To access it, select the "
-"<guilabel>INDI</guilabel> page from <menuchoice><guimenu>Settings</guimenu> "
-"<guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> menu item. The "
-"window is divided into several main categories: General, Device Updates, "
-"Display and Server Port:"
-msgstr ""
-"A página INDI permite a você modificar as opções específicas do "
-"<emphasis>lado cliente</emphasis> do INDI. A janela é dividida em diversas "
-"categorias principais: geral, atualizações automáticas do dispositivo, tela, "
-"atualizar fonte, roda de filtro e porta do servidor:"
-
-#. Tag: guilabel
-#: indi.docbook:334
-#, no-c-format
-msgid "General"
-msgstr "Geral"
-
-#. Tag: para
-#: indi.docbook:336
-#, no-c-format
-msgid ""
-"<guilabel>INDI server:</guilabel> Specify the binary of installed INDI "
-"server in your system. By default, &kstars; uses <quote>/usr/bin/indiserver</"
-"quote> binary."
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:337
-#, no-c-format
-msgid ""
-"<guilabel>INDI drivers XML directory:</guilabel> Specify the &XML; directory "
-"where INDI drivers are located in your system. By default, &kstars; uses "
-"<quote>/usr/share/indi</quote> directory."
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:338
-#, fuzzy, no-c-format
-#| msgid ""
-#| "<option>Default FITS directory:</option> Specify the directory where all "
-#| "captured FITS images will be saved to. If no directory is specified, "
-#| "images will be stored in $HOME."
-msgid ""
-"<guilabel>Default FITS directory:</guilabel> Specify the directory where all "
-"captured FITS images will be saved to. If no directory is specified, images "
-"will be stored in <varname>$HOME</varname>."
-msgstr ""
-"<option>Pasta FITS padrão:</option> Especifica a pasta onde todas as imagens "
-"FITS capturadas serão salvas. Se nenhuma pasta for especificada, as imagens "
-"serão salvas no $HOME."
-
-#. Tag: guilabel
-#: indi.docbook:345
-#, no-c-format
-msgid "Time &amp; Location Updates"
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:347
-#, no-c-format
-msgid ""
-"<guilabel>KStars updates all devices</guilabel>: KStars is the master source "
-"for time and location settings. All INDI devices time and locations settings "
-"are synchronized to KStars settings."
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:348
-#, no-c-format
-msgid ""
-"<guilabel>Mount updates KStars</guilabel>: Mount handset is the master "
-"source of time and location settings. KStars time and location settings are "
-"synchronized with controller settings."
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:349
-#, no-c-format
-msgid ""
-"<guilabel>GPS updates KStars</guilabel>: GPS driver is the master source of "
-"time and location settings. KStars time and location settings are "
-"synchronized with GPS settings."
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:350
-#, no-c-format
-msgid ""
-"<guilabel>Time</guilabel>: Synchronize KStars date and time automatically "
-"from the update source."
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:351
-#, no-c-format
-msgid ""
-"<guilabel>Location</guilabel>: Synchronize KStars location settings from the "
-"update source."
-msgstr ""
-
-#. Tag: guilabel
-#: indi.docbook:354
-#, no-c-format
-msgid "Display"
-msgstr "Tela"
-
-#. Tag: para
-#: indi.docbook:356
-#, fuzzy, no-c-format
-#| msgid ""
-#| "<option>Device target crosshair:</option> When checked, &kstars; displays "
-#| "the telescope's target crosshair on the sky map. The crosshair is "
-#| "displayed upon a successful connection to the telescope and its location "
-#| "is updated periodically. The telescope's name is displayed next to the "
-#| "crosshair. &kstars; displays one crosshair per each connected telescope. "
-#| "To change the color of the telescope's crosshair, open the <link linkend="
-#| "\"viewops\">Configure &kstars;</link> window. Select the "
-#| "<guilabel>Colors</guilabel> tab, and then change the color of the "
-#| "<emphasis>Target Indicator</emphasis> item to the desired color."
-msgid ""
-"<guilabel>Telescope crosshair</guilabel>: When checked, &kstars; displays "
-"the telescope's target crosshair on the sky map. The crosshair is displayed "
-"upon a successful connection to the telescope and its location is updated "
-"periodically. The telescope's name is displayed next to the crosshair. "
-"&kstars; displays one crosshair per each connected telescope. To change the "
-"color of the telescope's crosshair, open the <link linkend=\"viewops"
-"\">Configure - &kstars;</link> window. Select the <guilabel>Colors</"
-"guilabel> page, and then change the color of the <guimenuitem>Target "
-"Indicator</guimenuitem> item to the desired color."
-msgstr ""
-"<option>Mira do dispositivo:</option> Quando marcado, o &kstars; exibe a "
-"mira do telescópio no mapa do céu. A mira é exibida sobre uma conexão com "
-"sucesso ao telescópio e sua localização é atualizada periodicamente. O nome "
-"do telescópio é exibido próximo à mira. O &kstars; exibe uma mira para cada "
-"telescópio conectado. Para alterar a cor da mira do telescópio, abra a "
-"janela <link linkend=\"viewops\">Configurar o &kstars;</link>. Selecione a "
-"aba <guilabel>Cores</guilabel> e então altere a cor do item "
-"<emphasis>Indicador de mira</emphasis> para a cor desejada."
-
-#. Tag: para
-#: indi.docbook:357
-#, no-c-format
-msgid ""
-"<guilabel>Independent window</guilabel>: Make <guilabel>FITS Viewer</"
-"guilabel> window independent."
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:358
-#, no-c-format
-msgid ""
-"<guilabel>Message notifications</guilabel>: Show INDI messages as desktop "
-"notifications instead of dialogs."
-msgstr ""
-
-#. Tag: guilabel
-#: indi.docbook:368
-#, no-c-format
-msgid "Server Port"
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:370
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Server Port: Specify range of ports that INDI Server will bind to when "
-#| "starting new drivers."
-msgid ""
-"Specify range of ports that INDI Server will bind to when starting new "
-"drivers."
-msgstr ""
-"Porta do servidor: Especifica o intervalo de portas que o Servidor INDI irá "
-"se conectar ao iniciar novos dispositivos."
-
-#. Tag: title
-#: indi.docbook:378
-#, no-c-format
-msgid "INDI Concepts"
-msgstr "Conceitos do INDI"
-
-#. Tag: primary
-#: indi.docbook:379 indi.docbook:492 indi.docbook:598
-#, no-c-format
-msgid "Telescope Control"
-msgstr "Controle do telescópio"
-
-#. Tag: secondary
-#: indi.docbook:380
-#, no-c-format
-msgid "Concepts"
-msgstr "Conceitos"
-
-#. Tag: para
-#: indi.docbook:383
-#, fuzzy, no-c-format
-#| msgid ""
-#| "The main key concept in INDI is that devices have the ability to describe "
-#| "themselves. This is accomplished by using XML to describe a generic "
-#| "hierarchy that can represent both canonical and non-canonical devices. In "
-#| "INDI, all <emphasis>devices</emphasis> may contain one or more "
-#| "<emphasis>properties</emphasis>. Any <emphasis>property</emphasis> may "
-#| "contain one or more <emphasis>elements</emphasis>. There are four types "
-#| "of INDI properties:"
-msgid ""
-"The main key concept in INDI is that devices have the ability to describe "
-"themselves. This is accomplished by using &XML; to describe a generic "
-"hierarchy that can represent both canonical and non-canonical devices. In "
-"INDI, all <emphasis>devices</emphasis> may contain one or more "
-"<emphasis>properties</emphasis>. Any <emphasis>property</emphasis> may "
-"contain one or more <emphasis>elements</emphasis>. There are four types of "
-"INDI properties:"
-msgstr ""
-"O conceito chave no INDI é que os dispositivos possuem a habilidade de "
-"descreverem-se a si mesmos. Isto é conseguido usando o XML para descrever "
-"uma hierarquia genérica que pode representar tanto dispositivos canônicos "
-"como não canônicos. No INDI, todos os <emphasis>dispositivos</emphasis> "
-"podem conter uma ou mais <emphasis>propriedades</emphasis>. Qualquer "
-"<emphasis>propriedade</emphasis> pode conter um ou mais <emphasis>elementos</"
-"emphasis>. Existem quatro tipos de propriedades INDI:"
-
-#. Tag: para
-#: indi.docbook:392
-#, no-c-format
-msgid "Text property."
-msgstr "Propriedade textual."
-
-#. Tag: para
-#: indi.docbook:393
-#, no-c-format
-msgid "Number property."
-msgstr "Propriedade numérica."
-
-#. Tag: para
-#: indi.docbook:394
-#, fuzzy, no-c-format
-#| msgid "Switch property (Represented in GUI by buttons and checkboxes)."
-msgid "Switch property (Represented in &GUI; by buttons and checkboxes)."
-msgstr ""
-"Propriedade de opção/ação (representadas na interface gráfica por botões e "
-"caixas de opção)."
-
-#. Tag: para
-#: indi.docbook:395
-#, fuzzy, no-c-format
-#| msgid "Light property (Represented in GUI by colored LEDs)."
-msgid "Light property (Represented in &GUI; by colored LEDs)."
-msgstr ""
-"Propriedade de luz (representada na interface gráfica por LEDs coloridos)."
-
-#. Tag: para
-#: indi.docbook:398
-#, fuzzy, no-c-format
-#| msgid ""
-#| "For example, all INDI devices share the CONNECTION standard switch "
-#| "<emphasis>property</emphasis>. The CONNECTION property has two elements: "
-#| "CONNECT and DISCONNECT switches. &kstars; parses the generic XML "
-#| "description of properties and builds a GUI representation suitable for "
-#| "direct human interaction."
-msgid ""
-"For example, all INDI devices share the CONNECTION standard switch "
-"<emphasis>property</emphasis>. The CONNECTION property has two elements: "
-"CONNECT and DISCONNECT switches. &kstars; parses the generic &XML; "
-"description of properties and builds a &GUI; representation suitable for "
-"direct human interaction."
-msgstr ""
-"Por exemplo, todos os dispositivos INDI compartilhas a "
-"<emphasis>propriedade</emphasis> de opção/ação padrão CONNECTION. A "
-"propriedade CONNECTION possui dois elementos: as chaves CONNECT e "
-"DISCONNECT. O &kstars; analisa a descrição XML genérica das propriedades e "
-"constrói uma representação de interface gráfica adequada para interação "
-"humana direta."
-
-#. Tag: para
-#: indi.docbook:403
-#, no-c-format
-msgid ""
-"The INDI control panel offers many device properties not accessible from the "
-"sky map. The properties offered differ from one device to another. "
-"Nevertheless, all properties share common features that constrains how they "
-"are displayed and used:"
-msgstr ""
-"O painel de controle INDI oferece muitas propriedades do dispositivo não "
-"acessíveis a partir do mapa celeste. As propriedades oferecidas diferem de "
-"um dispositivo para outro. No entanto, todas as propriedades compartilham "
-"recursos que indicam como eles são exibidos e usados:"
-
-#. Tag: para
-#: indi.docbook:410
-#, no-c-format
-msgid ""
-"Permission: All properties can either be read-only, write-only, or read and "
-"write enabled. An example of a read-write property is the telescope's Right "
-"Ascension. You can enter a new Right Ascension and the telescope, based on "
-"current settings, will either slew or sync to the new input. Furthermore, "
-"when the telescope slews, its Right Ascension gets updated and sent back to "
-"the client."
-msgstr ""
-"Permissão: Todas as propriedades podem estar habilitadas tanto para leitura-"
-"somente, como para escrita-somente, ou ainda para leitura e escrita. Um "
-"exemplo de uma propriedade de leitura e escrita é a acensão direta (do "
-"inglês, RA) do telescópio. Você pode inserir uma nova acensão direta e o "
-"telescópio, baseado nas configurações atuais, rotacionará e sincronizará "
-"para a nova entrada. Além disso, quando o telescópio rotaciona, sua acensão "
-"direta é atualizada e enviada para o cliente."
-
-#. Tag: para
-#: indi.docbook:420
-#, no-c-format
-msgid ""
-"State: Prefixed to each property is a state indicator (round LED). Each "
-"property has a state and an associated color code:"
-msgstr ""
-"Estado: Prefixado para cada propriedade é um indicador de estado (LED "
-"redondo). Cada propriedade possui um estado e um código de cor associado:"
-
-#. Tag: title
-#: indi.docbook:423
-#, no-c-format
-msgid "INDI State color code"
-msgstr "Código de cor de estado do INDI"
-
-#. Tag: entry
-#: indi.docbook:427
-#, no-c-format
-msgid "State"
-msgstr "Estado"
-
-#. Tag: entry
-#: indi.docbook:428
-#, no-c-format
-msgid "Color"
-msgstr "Cor"
-
-#. Tag: entry
-#: indi.docbook:429
-#, no-c-format
-msgid "Description"
-msgstr "Descrição"
-
-#. Tag: entry
-#: indi.docbook:434
-#, no-c-format
-msgid "Idle"
-msgstr "Disponível"
-
-#. Tag: entry
-#: indi.docbook:435
-#, no-c-format
-msgid "Gray"
-msgstr "Cinza"
-
-#. Tag: entry
-#: indi.docbook:436
-#, no-c-format
-msgid "Device is performing no action with respect to this property"
-msgstr ""
-"O dispositivo não está executando nenhuma ação relacionada a esta propriedade"
-
-#. Tag: entry
-#: indi.docbook:439
-#, no-c-format
-msgid "<entry>Ok</entry>"
-msgstr "<entry>OK</entry>"
-
-#. Tag: entry
-#: indi.docbook:440
-#, no-c-format
-msgid "Green"
-msgstr "Verde"
-
-#. Tag: entry
-#: indi.docbook:441
-#, no-c-format
-msgid "Last operation performed on this property was successful and active"
-msgstr "A última operação realizada nesta propriedade foi bem sucedida e ativa"
-
-#. Tag: entry
-#: indi.docbook:445
-#, no-c-format
-msgid "Busy"
-msgstr "Ocupado"
-
-#. Tag: entry
-#: indi.docbook:446
-#, no-c-format
-msgid "Yellow"
-msgstr "Amarelo"
-
-#. Tag: entry
-#: indi.docbook:447
-#, no-c-format
-msgid "The property is performing an action"
-msgstr "A propriedade está executando um ação"
-
-#. Tag: entry
-#: indi.docbook:450
-#, no-c-format
-msgid "Alert"
-msgstr "Alerta"
-
-#. Tag: entry
-#: indi.docbook:451
-#, no-c-format
-msgid "<entry>Red</entry>"
-msgstr "<entry>Vermelho</entry>"
-
-#. Tag: entry
-#: indi.docbook:452
-#, no-c-format
-msgid "The property is in critical condition and needs immediate attention"
-msgstr ""
-"A propriedade está em uma condição crítica e precisa de atenção imediata"
-
-#. Tag: para
-#: indi.docbook:459
-#, no-c-format
-msgid ""
-"The device driver updates the property state in real-time when necessary. "
-"For example, if the telescope is in the process of slewing to a target, then "
-"the RA/DEC properties will be signaled as <guilabel>Busy</guilabel>. When "
-"the slew process is completed successfully, the properties will be signaled "
-"as <guilabel>Ok</guilabel>."
-msgstr ""
-"O driver do dispositivo atualiza o estado da propriedade em tempo real "
-"quando necessário. Por exemplo, se o telescópio está no processo de rotação "
-"para um alvo, então as propriedades RA/DEC serão assinaladas como "
-"<guilabel>Ocupada</guilabel>. Quando o processo de rotação estiver concluído "
-"com sucesso, as propriedades serão assinaladas como <guilabel>OK</guilabel>."
-
-#. Tag: para
-#: indi.docbook:467
-#, no-c-format
-msgid ""
-"Context: Numerical properties can accept and process numbers in two formats: "
-"decimal and sexagesimal. The sexagesimal format is convenient when "
-"expressing time or equatorial/geographical coordinates. You can use any "
-"format at your convenience. For example, all the following numbers are equal:"
-msgstr ""
-"Contexto: Propriedades numéricas pode aceitar e processar números em dois "
-"formatos: decimal e sexagesimal. O formato sexagesimal é conveniente para "
-"expressar hora ou coordenadas equatoriais/geográficas. Você pode usar "
-"qualquer formato de acordo com sua conveniência. Por exemplo, todos os "
-"seguintes números são iguais:"
-
-#. Tag: para
-#: indi.docbook:474
-#, no-c-format
-msgid "-156.40"
-msgstr "-156,40"
-
-#. Tag: para
-#: indi.docbook:475
-#, no-c-format
-msgid "-156:24:00"
-msgstr "-156:24:00"
-
-#. Tag: para
-#: indi.docbook:476
-#, no-c-format
-msgid "-156:24"
-msgstr "-156:24"
-
-#. Tag: para
-#: indi.docbook:480
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Time: The standard time for all INDI-related communications is Universal "
-#| "Time UTC specified as YYYY-MM-DDTHH:MM:SS in accord with ISO 8601. "
-#| "&kstars; communicates the correct UTC time with device drivers "
-#| "automatically. You can enable/disable automatic time updates from the "
-#| "<guimenuitem>INDI</guimenuitem> page in the settings dialog."
-msgid ""
-"Time: The standard time for all INDI-related communications is Universal "
-"Time UTC specified as YYYY-MM-DDTHH:MM:SS in accord with ISO 8601. &kstars; "
-"communicates the correct UTC time with device drivers automatically. You can "
-"enable/disable automatic time updates from the <guilabel>INDI</guilabel> "
-"page in the settings dialog."
-msgstr ""
-"Hora: A hora padrão para todos as comunicações relacionadas com o INDI é a "
-"hora universal UTC especificada como AAAA-MM-DDTHH:MM:SS de acordo com a ISO "
-"8601. O &kstars; comunica a hora correta UTC com os drivers do dispositivo "
-"automaticamente. Você pode habilitar/desabilitar atualizações de hora a "
-"partir da página <guimenuitem>INDI</guimenuitem> da janela de configurações."
-
-#. Tag: title
-#: indi.docbook:491
-#, no-c-format
-msgid "Remote Device Control"
-msgstr "Controle de dispositivo remoto"
-
-#. Tag: secondary
-#: indi.docbook:493
-#, no-c-format
-msgid "Remote Devices"
-msgstr "Dispositivos remotos"
-
-#. Tag: para
-#: indi.docbook:496
-#, fuzzy, no-c-format
-#| msgid ""
-#| "&kstars; provides a simple yet powerful layer for remote device control. "
-#| "A detailed description of the layer is described in the INDI <ulink url="
-#| "\"http://www.clearskyinstitute.com/INDI/INDI.pdf\">white paper</ulink>."
-msgid ""
-"&kstars; provides a simple yet powerful layer for remote device control. A "
-"detailed description of the layer is described in the INDI <ulink url="
-"\"https://www.clearskyinstitute.com/INDI/INDI.pdf\">white paper</ulink>."
-msgstr ""
-"O &kstars; fornece uma camada simples e poderosa para controle de "
-"dispositivo remoto. Uma descrição detalhada da camada é descrita na <ulink "
-"url=\"http://www.clearskyinstitute.com/INDI/INDI.pdf\">folha técnica</ulink> "
-"do INDI."
-
-#. Tag: para
-#: indi.docbook:501
-#, no-c-format
-msgid ""
-"You need to configure both the server and client machines for remote control:"
-msgstr ""
-"Você precisa configurar tanto a máquina servidora como a cliente para "
-"controle remoto:"
-
-#. Tag: para
-#: indi.docbook:506
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Server: To prepare a device for remote control, follow the same steps in "
-#| "the <link linkend=\"indi-kstars-setup\">local/server</link> setup. When "
-#| "you start a device service in the <guimenu>Device Manager</guimenu>, a "
-#| "port number is displayed under the <guilabel>Listening port</guilabel> "
-#| "column. In addition to the port number, you also need the hostname or IP "
-#| "address of your server."
-msgid ""
-"<guilabel>Server</guilabel>: To prepare a device for remote control, follow "
-"the same steps in the <link linkend=\"indi-kstars-setup\">local/server</"
-"link> setup. When you start a device service in the <guilabel>Device "
-"Manager</guilabel>, a port number is displayed under the <guilabel>Port</"
-"guilabel> column. In addition to the port number, you also need the hostname "
-"or IP address of your server."
-msgstr ""
-"Servidor: Para preparar um dispositivo para controle remoto, siga os "
-"seguintes passos na configuração <link linkend=\"indi-kstars-setup\">local/"
-"servidor</link>. Ao iniciar um serviço de dispositivo no "
-"<guimenu>Gerenciador de dispositivo</guimenu>, um número de porta é exibido "
-"na coluna <guilabel>Ouvir porta</guilabel>. Além do número da porta, você "
-"também precisará do nome de máquina ou endereço IP do seu servidor."
-
-#. Tag: para
-#: indi.docbook:515
-#, fuzzy, no-c-format
-#| msgid ""
-#| "Client: Select the <guimenuitem>Device Manager</guimenuitem> from the "
-#| "<guimenu>Device</guimenu> menu and click on the <guilabel>Client</"
-#| "guilabel> tab. You can add, modify, or delete hosts under the "
-#| "<guilabel>Client</guilabel> tab. Add a host by clicking on the "
-#| "<guibutton>Add</guibutton> button. Enter the hostname/IP address of the "
-#| "server in the <guilabel>Host</guilabel> field, and enter the port number "
-#| "obtained from the <emphasis>server</emphasis> machine in step 1."
-msgid ""
-"<guilabel>Client</guilabel>: Select the <menuchoice><guimenu>Tools</guimenu> "
-"<guisubmenu>Devices</guisubmenu> <guimenuitem>Device Manager...</"
-"guimenuitem></menuchoice> menu item and you can add, modify, or delete hosts "
-"into <guilabel>Client</guilabel> tab. Add a host by clicking on the "
-"<guibutton>Add</guibutton> button. Enter the hostname/IP address of the "
-"server in the <guilabel>Host:</guilabel> field, and enter the port number "
-"obtained from the <emphasis>server</emphasis> machine in step 1."
-msgstr ""
-"Cliente: Selecione o <guimenuitem>Gerenciador de dispositivo</guimenuitem> a "
-"partir do menu <guimenu>Dispositivo</guimenu> e clique na aba "
-"<guilabel>Cliente</guilabel>. Você pode adicionar, modificar ou excluir "
-"máquinas na aba <guilabel>Cliente</guilabel>. Adicione uma máquina clicando "
-"no botão <guibutton>Adicionar</guibutton>. Insira o nome de máquina/endereço "
-"IP do servidor no campo <guilabel>Máquina</guilabel>, e insira o número da "
-"porta obtido da máquina <emphasis>servidora</emphasis> no passo 1."
-
-#. Tag: screeninfo
-#: indi.docbook:526
-#, no-c-format
-msgid "INDI Client"
-msgstr "Cliente INDI"
-
-#. Tag: para
-#: indi.docbook:534
-#, no-c-format
-msgid ""
-"After you add a host, right click on the host to <guimenuitem>Connect</"
-"guimenuitem> or <guimenuitem>Disconnect</guimenuitem>. If a connection is "
-"established, you can control the telescope from the <guilabel>Sky map</"
-"guilabel> or <guilabel>INDI Control Panel</guilabel> exactly as described in "
-"the <link linkend=\"indi-kstars-setup\">local/server</link> section. It is "
-"as easy at that."
-msgstr ""
-"Após você adicionar uma máquina, dê um clique direito na máquina para "
-"<guimenuitem>Conectar</guimenuitem> ou <guimenuitem>Desconectar</"
-"guimenuitem>. Se uma conexão for estabelecida, você pode controlar o "
-"telescópio a partir do <guilabel>Mapa celeste</guilabel> ou do "
-"<guilabel>Painel de controle INDI</guilabel> exatamente como descrito na "
-"seção <link linkend=\"indi-kstars-setup\">local/servidor</link>. Isto é "
-"muito fácil!"
-
-#. Tag: title
-#: indi.docbook:542
-#, no-c-format
-msgid "Running an INDI server from the command line"
-msgstr "Executando um servidor INDI a partir da linha de comando"
-
-#. Tag: para
-#: indi.docbook:543
-#, no-c-format
-msgid ""
-"While &kstars; allows you to easily deploy an INDI server; you can launch an "
-"INDI server from the command line."
-msgstr ""
-"Apesar do &kstars; permitir que você facilmente estabeleça um servidor INDI, "
-"você pode lançar um servidor INDI a partir da linha de comando."
-
-#. Tag: para
-#: indi.docbook:547
-#, no-c-format
-msgid ""
-"Since INDI is an independent backend component, you can run an INDI server "
-"on a host without &kstars;. INDI can be compiled separately to run on remote "
-"hosts. Furthermore, device drivers log messages to <constant>stderr</"
-"constant> and that can be helpful in a debugging situation. The syntax for "
-"INDI server is as following:"
-msgstr ""
-"Uma vez que o INDI é um componente de infraestrutura independente, você pode "
-"rodar um servidor INDI em uma máquina sem o &kstars;. O INDI pode ser "
-"compilado separadamente para ser executado em máquinas remotas. Além do "
-"mais, drivers de dispositivo registram mensagens para o <constant>stderr</"
-"constant> e que podem ser úteis na depuração de uma situação. A sintaxe para "
-"um servidor INDI é a seguinte:"
-
-#. Tag: para
-#: indi.docbook:554
-#, fuzzy, no-c-format
-#| msgid ""
-#| "$ <command>indiserver</command> [options] [<filename>driver</"
-#| "filename> ...]"
-msgid ""
-"$ <command>indiserver</command> [options] driver [<filename>driver</"
-"filename> ...]"
-msgstr ""
-"$ <command>indiserver</command> [opções] [<filename>driver</filename> ...]"
-
-#. Tag: screen
-#: indi.docbook:557
-#, no-c-format
-msgid ""
-"Options:\n"
-" -l d     : Log driver messages to &lt;d&gt;/YYYY-MM-DD.islog\n"
-" -m m     : Kill client if gets more than this many MB behind, default 128.\n"
-" -d m     : Drop streaming blobs if client gets more than this many MB "
-"behind, default 5. 0 to disable.\n"
-" -p p     : Alternate IP port, default 7624.\n"
-" -r r     : Maximum driver restarts on error, default 10.\n"
-" -f path  : Path to fifo for dynamic startup and shutdown of drivers.\n"
-" -v       : Show key events, no traffic.\n"
-" -vv      : -v + key message content.\n"
-" -vvv     : -vv + complete xml.\n"
-" driver   : Executable or [device]@host[:port]"
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:559
-#, no-c-format
-msgid ""
-"For example, if you want to start an INDI server running an LX200 GPS driver "
-"and listening to connections on port 8000, you would run the following "
-"command:"
-msgstr ""
-"Por exemplo, se você deseja iniciar um servidor INDI rodando um driver LX200 "
-"GPS e recebendo conexões na porta 8000, você deve executar o seguinte "
-"comando:"
-
-#. Tag: para
-#: indi.docbook:564
-#, no-c-format
-msgid "$ <command>indiserver</command> -p 8000 <filename>lx200gps</filename>"
-msgstr "$ <command>indiserver</command> -p 8000 <filename>lx200gps</filename>"
-
-#. Tag: title
-#: indi.docbook:568
-#, no-c-format
-msgid "Secure Remote Operation"
-msgstr "Operação remota segura"
-
-#. Tag: para
-#: indi.docbook:570
-#, no-c-format
-msgid ""
-"Suppose we want to run an indiserver with INDI drivers on a remote host, "
-"<constant>remote_host</constant>, and connect them to &kstars; running on "
-"the local machine."
-msgstr ""
-"Suponhamos que nós desejemos executar um servidor indi com drivers INDI em "
-"uma máquina remota, <constant>maquina_remota</constant>, e conectá-lo ao "
-"&kstars; executado em uma máquina local."
-
-#. Tag: para
-#: indi.docbook:574
-#, no-c-format
-msgid ""
-"From the local machine log onto the remote host, <constant>remote_host</"
-"constant>, by typing:"
-msgstr ""
-"A partir da máquina local registrar a máquina remota, "
-"<constant>maquina_remota</constant>, digitando:"
-
-#. Tag: para
-#: indi.docbook:578
-#, no-c-format
-msgid ""
-"$ <command>ssh</command> -L <varname>local_port</varname>:"
-"<constant>remote_host</constant>:<varname>remote_port</varname>"
-msgstr ""
-"$ <command>ssh</command> -L <varname>porta_local</varname>:"
-"<constant>maquina_remota</constant>:<varname>porta_remota</varname>"
-
-#. Tag: para
-#: indi.docbook:580
-#, no-c-format
-msgid ""
-"This binds the <varname>local_port</varname> on the local machine to the "
-"<varname>remote_port</varname> on the <constant>remote_host</constant>. "
-"After logging in, run indiserver on the remote host:"
-msgstr ""
-"Isto conecta a <varname>porta_local</varname> na máquina local à "
-"<varname>porta_remota</varname> na <constant>maquina_remota</constant>. Após "
-"o login, executar o servidor indi na máquina remota:"
-
-#. Tag: para
-#: indi.docbook:585
-#, no-c-format
-msgid ""
-"$ <command>indiserver</command> -p <varname>remote_port</varname> "
-"[<filename>driver</filename>...]"
-msgstr ""
-"$ <command>indiserver</command> -p <varname>porta_remota</varname> "
-"[<filename>driver</filename>...]"
-
-#. Tag: para
-#: indi.docbook:587
-#, no-c-format
-msgid ""
-"Back on the local machine, start &kstars; then open the <guimenuitem>Device "
-"Manager</guimenuitem> and add a host under the <guilabel>Client</guilabel> "
-"tab. The host should be the local host (usually 127.0.0.1) and the port "
-"number should be the <varname>local_port</varname> used in the steps above. "
-"<mousebutton>Right</mousebutton>-click on the host and select "
-"<guimenuitem>Connect</guimenuitem> from the popup menu. &kstars; will "
-"connect to the remote INDI server securely. The host information will be "
-"saved for future sessions."
-msgstr ""
-"De volta a máquina local, inicie o &kstars; e então abra o "
-"<guimenuitem>Gerenciador de dispositivos</guimenuitem> e adicione uma "
-"máquina na aba <guilabel>Cliente</guilabel>. A máquina deve ser a máquina "
-"local (normalmente 127.0.0.1) e o número da porta deve ser a "
-"<varname>porta_local</varname> usada nos passos anteriores. Dê um clique "
-"<mousebutton>direito</mousebutton> na máquina e selecione "
-"<guimenuitem>Conectar</guimenuitem> a partir do menu de contexto. O &kstars; "
-"conectará ao servidor INDI de maneira segura. As informações da máquina "
-"serão salvas para sessões futuras."
-
-#. Tag: title
-#: indi.docbook:597
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:3
 msgid "INDI Frequently Asked Questions"
 msgstr "Perguntas frequentes sobre o INDI"
 
-#. Tag: secondary
-#: indi.docbook:599
-#, no-c-format
-msgid "&FAQ;"
-msgstr ""
-
-#. Tag: para
-#: indi.docbook:605
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:8
 msgid "What is INDI?"
 msgstr "O que é o INDI?"
 
-#. Tag: para
-#: indi.docbook:608
-#, fuzzy, no-c-format
+#: ../../user_manual/indi-faq.rst:10
+#, fuzzy
 #| msgid ""
 #| "<acronym>INDI</acronym> is the <ulink url=\"http://indi.sourceforge.net"
 #| "\"> Instrument-Neutral-Distributed-Interface</ulink> control protocol "
@@ -1573,18 +46,17 @@ msgstr "O que é o INDI?"
 #| "and &kstars; can take full advantage of them without any changes on the "
 #| "client side."
 msgid ""
-"<acronym>INDI</acronym> is the <ulink url=\"https://indilib.org\"> "
-"Instrument-Neutral-Distributed-Interface</ulink> control protocol developed "
-"by <author><firstname>Elwood</firstname><surname>C. Downey</surname></"
-"author> of <ulink url=\"https://www.clearskyinstitute.com/\">ClearSky "
-"Institute</ulink>. &kstars; employs device drivers that are compatible with "
-"the INDI protocol. INDI has many advantages including loose coupling between "
-"hardware devices and software drivers. Clients that use the device drivers "
-"(like &kstars;) are completely unaware of the device capabilities. In run "
-"time, &kstars; communicates with the device drivers and builds a completely "
-"dynamical &GUI; based on services provided by the device. Therefore, new "
-"device drivers can be written or updated and &kstars; can take full "
-"advantage of them without any changes on the client side."
+"INDI is the `Instrument-Neutral-Distributed-Interface <https://indilib."
+"org>`__ control protocol developed by **Elwood C. Downey** of `ClearSky "
+"Institute <https://www.clearskyinstitute.com/>`__. KStars employs device "
+"drivers that are compatible with the INDI protocol. INDI has many advantages "
+"including loose coupling between hardware devices and software drivers. "
+"Clients that use the device drivers (like KStars) are completely unaware of "
+"the device capabilities. In run time, KStars communicates with the device "
+"drivers and builds a completely dynamical GUI based on services provided by "
+"the device. Therefore, new device drivers can be written or updated and "
+"KStars can take full advantage of them without any changes on the client "
+"side."
 msgstr ""
 "O <acronym>INDI</acronym> é o protocolo de controle denominado, do inglês, "
 "<ulink url=\"http://indi.sourceforge.net\">Instrument-Neutral-Distributed-"
@@ -1602,34 +74,35 @@ msgstr ""
 "escritos e atualizados e o &kstars; pode obter todas as vantagens que ele "
 "oferece sem precisar de nenhuma mudança no lado cliente."
 
-#. Tag: para
-#: indi.docbook:624
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:15
 msgid "Do you plan to support more devices?"
 msgstr "Vocês planejam suportar mais dispositivos?"
 
-#. Tag: para
-#: indi.docbook:629
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:17
+#, fuzzy
+#| msgid ""
+#| "Yes. We plan to support major CCD cameras and focusers and extend support "
+#| "for more telescopes. If you would like INDI to support a particular "
+#| "device, please send an email to <email>indi-devel@lists.sourceforge.net</"
+#| "email>"
 msgid ""
 "Yes. We plan to support major CCD cameras and focusers and extend support "
 "for more telescopes. If you would like INDI to support a particular device, "
-"please send an email to <email>indi-devel@lists.sourceforge.net</email>"
+"please send an email to *indi-devel@lists.sourceforge.net*"
 msgstr ""
 "Sim. Nós planejamos suportar a maioria das câmeras CCD e focalizadores e "
 "ampliar o suporte para mais telescópios. Se você gostaria que o INDI "
 "suportasse um dispositivo em particular, por favor envie uma mensagem "
 "eletrônica para <email>indi-devel@lists.sourceforge.net</email>"
 
-#. Tag: para
-#: indi.docbook:639
-#, no-c-format
-msgid "What operations does &kstars; provide to control the telescope?"
+#: ../../user_manual/indi-faq.rst:24
+#, fuzzy
+#| msgid "What operations does &kstars; provide to control the telescope?"
+msgid "What operations does KStars provide to control the telescope?"
 msgstr "Quais operações o &kstars; fornece para controlar o telescópio?"
 
-#. Tag: para
-#: indi.docbook:644
-#, fuzzy, no-c-format
+#: ../../user_manual/indi-faq.rst:26
+#, fuzzy
 #| msgid ""
 #| "It depends on the particular telescope you're running, but the minimum "
 #| "three operations are <command>Slew</command>, <command>Track</command>, "
@@ -1641,14 +114,12 @@ msgstr "Quais operações o &kstars; fornece para controlar o telescópio?"
 #| "Menu."
 msgid ""
 "It depends on the particular telescope you're running, but the minimum three "
-"operations are <command>Slew</command>, <command>Track</command>, and "
-"<command>Sync</command>, which you can issue directly from the sky map. Your "
-"telescope must be aligned for those operations to perform correctly. Some "
-"telescopes offer you more operations like site management, slew modes, "
-"focusing, parking, and more. You can access the telescopes extended features "
-"from the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
-"guisubmenu> <guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> "
-"menu item."
+"operations are :command:`Slew`, :command:`Track`, and :command:`Sync`, which "
+"you can issue directly from the sky map. Your telescope must be aligned for "
+"those operations to perform correctly. Some telescopes offer you more "
+"operations like site management, slew modes, focusing, parking, and more. "
+"You can access the telescopes extended features from the ``Tools`` → "
+"``Devices`` → ``INDI Control Panel...`` menu item."
 msgstr ""
 "Isto depende do telescópio em particular que você está usando, mas as três "
 "operações mínimas são <command>Rotação</command>, <command>Rastrear</"
@@ -1659,19 +130,20 @@ msgstr ""
 "pode acessar os recursos estendidos do telescópio no painel de controle do "
 "INDI no menu de dispositivos."
 
-#. Tag: para
-#: indi.docbook:658
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:31
+#, fuzzy
+#| msgid ""
+#| "What's the difference between <command>Slew</command>, <command>Track</"
+#| "command>, and <command>Sync</command> exactly?"
 msgid ""
-"What's the difference between <command>Slew</command>, <command>Track</"
-"command>, and <command>Sync</command> exactly?"
+"What's the difference between :command:`Slew`, :command:`Track`, and :"
+"command:`Sync` exactly?"
 msgstr ""
 "Qual é a diferença entre <command>Rotação</command>, <command>Rastrear</"
 "command> e <command>Sincronizar</command> exatamente?"
 
-#. Tag: para
-#: indi.docbook:663
-#, fuzzy, no-c-format
+#: ../../user_manual/indi-faq.rst:33
+#, fuzzy
 #| msgid ""
 #| "The command <command>Slew</command> orders the telescope to move to a "
 #| "particular target, and once the telescope reaches its target, the "
@@ -1681,13 +153,13 @@ msgstr ""
 #| "system. But solar system objects travel differently across the sky and so "
 #| "the telescope must <command>Track</command> the objects as they move."
 msgid ""
-"The command <command>Slew</command> orders the telescope to move to a "
-"particular target, and once the telescope reaches its target, the telescope "
-"keeps tracking that target at a <emphasis>sidereal</emphasis> rate (&ie;, "
-"the rate at which stars move across the sky). This works well for stars, "
-"Messier objects, and about everything outside our solar system. But solar "
-"system objects travel differently across the sky and so the telescope must "
-"<command>Track</command> the objects as they move."
+"The command :command:`Slew` orders the telescope to move to a particular "
+"target, and once the telescope reaches its target, the telescope keeps "
+"tracking that target at a *sidereal* rate (i.e., the rate at which stars "
+"move across the sky). This works well for stars, Messier objects, and about "
+"everything outside our solar system. But solar system objects travel "
+"differently across the sky and so the telescope must :command:`Track` the "
+"objects as they move."
 msgstr ""
 "O comando <command>Rotação</command> ordena o telescópio a mover-se para um "
 "destino em particular e uma vez que o telescópio atinge o destino, o "
@@ -1698,35 +170,42 @@ msgstr ""
 "o telescópio deve <command>Rastrear</command> os objetos conforme estes "
 "movem."
 
-#. Tag: para
-#: indi.docbook:670
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:35
+#, fuzzy
+#| msgid ""
+#| "Therefore, you need to issue a track command if you want to track an "
+#| "object with non-sidereal motion. On the other hand, <command>Sync</"
+#| "command> is used to synchronize the telescope's internal coordinates with "
+#| "that of an object you select."
 msgid ""
 "Therefore, you need to issue a track command if you want to track an object "
-"with non-sidereal motion. On the other hand, <command>Sync</command> is used "
-"to synchronize the telescope's internal coordinates with that of an object "
-"you select."
+"with non-sidereal motion. On the other hand, :command:`Sync` is used to "
+"synchronize the telescope's internal coordinates with that of an object you "
+"select."
 msgstr ""
 "No entanto, você precisa emitir um comando de rastreio se quiser rastrear um "
 "objeto com movimento não sideral. Por outro lado, <command>Sincronizar</"
 "command> é usado para sincronizar as coordenadas internas do telescópio com "
 "aquelas do objeto que você selecionou."
 
-#. Tag: para
-#: indi.docbook:680
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:42
 msgid "Can I control my telescope remotely?"
 msgstr "Posso controlar meu telescópio remotamente?"
 
-#. Tag: para
-#: indi.docbook:685
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:44
+#, fuzzy
+#| msgid ""
+#| "Yes. You can start an INDI server on the machine connected to your "
+#| "telescope and the server will listen to requests from &kstars; clients. "
+#| "Once you're connected, you can control your telescope directly from the "
+#| "sky map. This procedure is described in detail in the <link linkend="
+#| "\"indi-remote-control\">Remote device control</link> section."
 msgid ""
 "Yes. You can start an INDI server on the machine connected to your telescope "
-"and the server will listen to requests from &kstars; clients. Once you're "
+"and the server will listen to requests from KStars clients. Once you're "
 "connected, you can control your telescope directly from the sky map. This "
-"procedure is described in detail in the <link linkend=\"indi-remote-control"
-"\">Remote device control</link> section."
+"procedure is described in detail in the :doc:`Remote device control <indi-"
+"remote-control>` section."
 msgstr ""
 "Sim. Você pode iniciar um servidor INDI na máquina conectada ao seu "
 "telescópio e o servidor irá escutar as requisições dos clientes &kstars;. "
@@ -1735,32 +214,31 @@ msgstr ""
 "seção <link linkend=\"indi-remote-control\">controle de dispositivo remoto</"
 "link>."
 
-#. Tag: para
-#: indi.docbook:696
-#, fuzzy, no-c-format
+#: ../../user_manual/indi-faq.rst:51
+#, fuzzy
 #| msgid ""
 #| "When I try to <guibutton>Connect</guibutton>, &kstars; reports that the "
 #| "telescope is not connected to the serial/USB port. What can I do?"
 msgid ""
-"When I try to <guibutton>Connect</guibutton>, &kstars; reports that the "
-"telescope is not connected to the serial/USB port. What can I do?"
+"When I try to ``Connect``, KStars reports that the telescope is not "
+"connected to the serial/USB port. What can I do?"
 msgstr ""
 "Quando eu tento <guibutton>Conectar</guibutton>, o &kstars; relata que o "
 "telescópio não está conectado com a porta serial/USB. O que eu posso fazer?"
 
-#. Tag: para
-#: indi.docbook:702
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:53
+#, fuzzy
+#| msgid ""
+#| "This message is triggered when &kstars; cannot communicate with the "
+#| "telescope. Here are few things you can do:"
 msgid ""
-"This message is triggered when &kstars; cannot communicate with the "
-"telescope. Here are few things you can do:"
+"This message is triggered when KStars cannot communicate with the telescope. "
+"Here are few things you can do:"
 msgstr ""
 "Esta mensagem é disparada quando o &kstars; não consegue se comunicar com o "
 "telescópio. Aqui vão algumas coisas que você pode fazer:"
 
-#. Tag: para
-#: indi.docbook:706
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:55
 msgid ""
 "Check that you have both reading and writing permission for the port you are "
 "trying to connect to."
@@ -1768,9 +246,7 @@ msgstr ""
 "Verifique se você tem tanto permissão de leitura como de escrita para a "
 "porta que você está tentando conectar-se."
 
-#. Tag: para
-#: indi.docbook:709
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:57
 msgid ""
 "Check the connection cable, make sure it is in good condition and test it "
 "with other applications."
@@ -1778,9 +254,7 @@ msgstr ""
 "Verificar a conexão do cabo, certificando-se de que ela está em boas "
 "condições e testá-la com outros aplicativos."
 
-#. Tag: para
-#: indi.docbook:712
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:59
 msgid ""
 "Check your telescope power, make sure the power is on and that the telescope "
 "is getting enough power."
@@ -1788,41 +262,47 @@ msgstr ""
 "Verificar a energia do telescópio, certificando-se de que ele esteja ligado "
 "e que esteja recebendo energia suficiente."
 
-#. Tag: para
-#: indi.docbook:715
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:61
 msgid ""
-"Select the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
-"guisubmenu> <guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> "
-"menu item and set the correct port in the <guilabel>INDI Control Panel</"
-"guilabel> dialog. The default device is <constant>/dev/ttyS0</constant>"
+"Select the ``Tools`` → ``Devices`` → ``INDI Control Panel...`` menu item and "
+"set the correct port in the ``INDI Control Panel`` dialog. The default "
+"device is ``/dev/ttyS0``"
 msgstr ""
 
-#. Tag: para
-#: indi.docbook:721
-#, no-c-format
-msgid "Restart &kstars; and retry again."
+#: ../../user_manual/indi-faq.rst:64
+#, fuzzy
+#| msgid "Restart &kstars; and retry again."
+msgid "Restart KStars and retry again."
 msgstr "Reiniciar o &kstars; e tentar novamente."
 
-#. Tag: para
-#: indi.docbook:729
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:69
+#, fuzzy
+#| msgid ""
+#| "&kstars; reports that the telescope is online and ready, but I cannot "
+#| "find the telescope's crosshair, where is it?"
 msgid ""
-"&kstars; reports that the telescope is online and ready, but I cannot find "
-"the telescope's crosshair, where is it?"
+"KStars reports that the telescope is online and ready, but I cannot find the "
+"telescope's crosshair, where is it?"
 msgstr ""
 "O &kstars; relata que o telescópio está on-line e pronto, mas eu não consigo "
 "encontrar a cruz do telescópio. O que é isto?"
 
-#. Tag: para
-#: indi.docbook:732
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:71
+#, fuzzy
+#| msgid ""
+#| "&kstars; retrieves the telescopes RA and DEC coordinates upon connection. "
+#| "If your alignment was performed correctly, then you should see the "
+#| "crosshair around your target in the Sky Map. However, the RA and DEC "
+#| "coordinates provided by the telescope may be incorrect (even below the "
+#| "horizon) and you need to <link linkend=\"indi-sync\">Sync</link> your "
+#| "telescope to your current target. You can use the right-click menu to "
+#| "center and track the telescope crosshair in the sky map."
 msgid ""
-"&kstars; retrieves the telescopes RA and DEC coordinates upon connection. If "
+"KStars retrieves the telescopes RA and DEC coordinates upon connection. If "
 "your alignment was performed correctly, then you should see the crosshair "
 "around your target in the Sky Map. However, the RA and DEC coordinates "
 "provided by the telescope may be incorrect (even below the horizon) and you "
-"need to <link linkend=\"indi-sync\">Sync</link> your telescope to your "
+"need to :ref:`Sync <indi-telescope-setup-indi-sync>` your telescope to your "
 "current target. You can use the right-click menu to center and track the "
 "telescope crosshair in the sky map."
 msgstr ""
@@ -1834,18 +314,14 @@ msgstr ""
 "seu telescópio para seu alvo atual. Você pode usar o menu do clique direito "
 "para centralizar e rastrear a cruz do telescópio no mapa celeste."
 
-#. Tag: para
-#: indi.docbook:744
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:81
 msgid ""
 "The telescope is moving erratically or not moving at all. What can I do?"
 msgstr ""
 "O telescópio está se movendo erraticamente ou não realiza nenhum movimento. "
 "O que eu posso fazer?"
 
-#. Tag: para
-#: indi.docbook:747
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:83
 msgid ""
 "This behavior is mostly due to incorrect settings, please verify the "
 "following check list:"
@@ -1853,51 +329,41 @@ msgstr ""
 "Este comportamento é normalmente resultado de configurações incorretas. Por "
 "favor verifique a seguinte lista de checagem:"
 
-#. Tag: para
-#: indi.docbook:750
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:85
 msgid "Is the telescope aligned?"
 msgstr "O telescópio está alinhado?"
 
-#. Tag: para
-#: indi.docbook:753
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:87
+#, fuzzy
+#| msgid ""
+#| "Is the telescope alignment mode correct? Use <guilabel>INDI Control "
+#| "Panel</guilabel> to check and change these settings (<constant>Alt/Az,"
+#| "Polar, Land</constant>)."
 msgid ""
-"Is the telescope alignment mode correct? Use <guilabel>INDI Control Panel</"
-"guilabel> to check and change these settings (<constant>Alt/Az,Polar, Land</"
-"constant>)."
+"Is the telescope alignment mode correct? Use ``INDI Control Panel`` to check "
+"and change these settings (``Alt/Az,Polar, Land``)."
 msgstr ""
 "O modo de alinhamento do telescópio está correto? Use o <guilabel>Painel de "
 "controle INDI</guilabel> para verificar e mudar estas configurações "
 "(<constant>Alt/Az,Polar, Land</constant>)."
 
-#. Tag: para
-#: indi.docbook:758
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:90
 msgid "Are the telescope's time and date settings correct?"
 msgstr "As configurações de data e hora do telescópio estão corretas?"
 
-#. Tag: para
-#: indi.docbook:761
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:92
 msgid "Are the telescope's longitude and latitude settings correct?"
 msgstr "As configurações de latitude e longitude do telescópio estão corretas?"
 
-#. Tag: para
-#: indi.docbook:764
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:94
 msgid "Is the telescope's UTC offset correct?"
 msgstr "O desvio UTC do telescópio está correto?"
 
-#. Tag: para
-#: indi.docbook:767
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:96
 msgid "Are the telescope's RA and DEC axis locked firmly?"
 msgstr "Os eixos RA e DEC do telescópio estão travados firmemente?"
 
-#. Tag: para
-#: indi.docbook:770
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:98
 msgid ""
 "Is the telescope's N/S switch (when applicable) setup correctly for your "
 "hemisphere?"
@@ -1905,27 +371,1105 @@ msgstr ""
 "A configuração de troca N/S do telescópio (quando aplicável) está correta "
 "para o seu hemisfério?"
 
-#. Tag: para
-#: indi.docbook:773
-#, no-c-format
+#: ../../user_manual/indi-faq.rst:100
 msgid "Is the cable between the telescope and computer in good condition?"
 msgstr "O cabo entre o telescópio e o computador está em boas condições?"
 
-#. Tag: para
-#: indi.docbook:777
-#, fuzzy, no-c-format
+#: ../../user_manual/indi-faq.rst:102
+#, fuzzy
 #| msgid ""
 #| "If you think all settings are correct but the telescope still moves "
 #| "erratically or not at all, then please send a report to <email>indi-"
 #| "devel@lists.sourceforge.net</email>"
 msgid ""
 "If you think all settings are correct but the telescope still moves "
-"erratically or not at all, then please send a report to <email>indi-"
-"devel@lists.sourceforge.net</email>."
+"erratically or not at all, then please send a report to indi-devel@lists."
+"sourceforge.net."
 msgstr ""
 "Se você acha que todas as configurações estão corretas mas o telescópio "
 "ainda continua a mover-se erraticamente ou a não mover-se, então por favor "
 "envie um relatório para <email>indi-devel@lists.sourceforge.net</email>"
+
+#~ msgid "Astronomical Device Control with <acronym>INDI</acronym>"
+#~ msgstr "Controle de dispositivo astronômico com o <acronym>INDI</acronym>"
+
+#~ msgid "INDI Control"
+#~ msgstr "Controle INDI"
+
+#~ msgid "Overview"
+#~ msgstr "Resumo"
+
+#~ msgid ""
+#~ "&kstars; provides an interface to configure and control astronomical "
+#~ "instruments via the <acronym><link linkend=\"what-is-indi\">INDI</link></"
+#~ "acronym> protocol."
+#~ msgstr ""
+#~ "O &kstars; fornece uma interface para configurar e controlar instrumentos "
+#~ "astronômicos através do protocolo <acronym><link linkend=\"what-is-indi"
+#~ "\">INDI</link></acronym>."
+
+#, fuzzy
+#~| msgid ""
+#~| "The <acronym>INDI</acronym> protocol supports a variety of astronomical "
+#~| "instruments such as CCD cameras and focusers. For an up to date list of "
+#~| "supported devices, please visit <acronym>INDI</acronym> <ulink url="
+#~| "\"http://indilib.org/index.php?title=Devices\">supported devices page</"
+#~| "ulink>."
+#~ msgid ""
+#~ "The <acronym>INDI</acronym> protocol supports a variety of astronomical "
+#~ "instruments such as CCD cameras and focusers. For an up to date list of "
+#~ "supported devices, please visit <acronym>INDI</acronym> <ulink url="
+#~ "\"https://indilib.org/index.php?title=Devices\">supported devices page</"
+#~ "ulink>."
+#~ msgstr ""
+#~ "O protocolo <acronym>INDI</acronym> suporta uma grande variedade de "
+#~ "instrumentos astronômicos como câmeras CCD e focalizadores. Para uma "
+#~ "lista atualizada dos dispositivos suportados, por favor visite a <ulink "
+#~ "url=\"http://indilib.org/index.php?title=Devices\">página de dispositivos "
+#~ "suportados</ulink> do <acronym>INDI</acronym>."
+
+#~ msgid "INDI Setup"
+#~ msgstr "Configuração do INDI"
+
+#~ msgid "<primary>INDI</primary>"
+#~ msgstr "<primary>INDI</primary>"
+
+#~ msgid "Setup"
+#~ msgstr "Configuração"
+
+#~ msgid ""
+#~ "&kstars; can control local and remote devices seamlessly via the <link "
+#~ "linkend=\"what-is-indi\">INDI</link> server/client architecture. INDI "
+#~ "devices may be run in three different modes:"
+#~ msgstr ""
+#~ "O &kstars; pode controlar dispositivos remotos ou locais indiferentemente "
+#~ "através da arquitetura cliente/servidor do <link linkend=\"what-is-indi"
+#~ "\">INDI</link>. Dispositivos INDI podem ser executados em três diferentes "
+#~ "modos:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Local: The local mode is the most common and is used to control local "
+#~| "device (&ie; a device attached to your machine)."
+#~ msgid ""
+#~ "<guilabel>Local</guilabel>: The local mode is the most common and is used "
+#~ "to control local device (&ie; a device attached to your machine)."
+#~ msgstr ""
+#~ "Local: O modo local é o mais comum sendo usado para controlar um "
+#~ "dispositivo local (&ie; um dispositivo conectado a sua máquina)."
+
+#, fuzzy
+#~| msgid ""
+#~| "Server: The server mode establishes an INDI server for a particular "
+#~| "device and waits for connections from remote clients. You cannot operate "
+#~| "server devices, you can only start and shut them down."
+#~ msgid ""
+#~ "<guilabel>Server</guilabel>: The server mode establishes an INDI server "
+#~ "for a particular device and waits for connections from remote clients. "
+#~ "You cannot operate server devices, you can only start and shut them down."
+#~ msgstr ""
+#~ "Servidor: O modo servidor estabelece um servidor INDI para um dispositivo "
+#~ "específico e espera por conexões a partir de clientes remotos. Você não "
+#~ "pode operar dispositivos servidor, você pode somente iniciá-los e desligá-"
+#~ "los."
+
+#, fuzzy
+#~| msgid ""
+#~| "Client: The client mode is used to connect to remote INDI servers "
+#~| "running INDI devices. You can control remote devices seamlessly like "
+#~| "local devices."
+#~ msgid ""
+#~ "<guilabel>Client</guilabel>: The client mode is used to connect to remote "
+#~ "INDI servers running INDI devices. You can control remote devices "
+#~ "seamlessly like local devices."
+#~ msgstr ""
+#~ "Cliente: O modo cliente é usado para conectar à servidores remotos INDI "
+#~ "executando dispositivos INDI. Você pode controlar dispositivos remotos da "
+#~ "mesma maneira que controla dispositivos locais."
+
+#, fuzzy
+#~| msgid ""
+#~| "You can run local device, establish INDI servers, and connect to remote "
+#~| "clients from the <guimenuitem>Device Manager</guimenuitem> in the "
+#~| "<guimenu>Devices</guimenu> menu."
+#~ msgid ""
+#~ "You can run local device, establish INDI servers, and connect to remote "
+#~ "clients from the <menuchoice><guimenu>Tools</guimenu> "
+#~ "<guisubmenu>Devices</guisubmenu> <guimenuitem>Device Manager...</"
+#~ "guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Você pode executar um dispositivo local, estabelecer servidores INDI, e "
+#~ "conectar à clientes remotos a partir do <guimenuitem>Gerenciador de "
+#~ "dispositivo</guimenuitem> no menu <guimenu>Dispositivos</guimenu>."
+
+#~ msgid ""
+#~ "Here is a screenshot of the <guilabel>Device Manager</guilabel> window:"
+#~ msgstr ""
+#~ "Aqui está uma captura de tela da janela do <guilabel>Gerenciador de "
+#~ "dispositivo</guilabel>:"
+
+#~ msgid "Running device drivers"
+#~ msgstr "Executando drivers de dispositivo"
+
+#~ msgid "Start device drivers"
+#~ msgstr "Iniciar drivers de dispositivo"
+
+#~ msgid ""
+#~ "You can run devices by browsing the device tree, selecting a specific "
+#~ "device, and then clicking on the <guibutton>Run Service</guibutton> "
+#~ "button. You can select the operation mode, either local or server as "
+#~ "defined above. The port number is randomly generated between the range "
+#~ "from 7624 to 10,000. To specify a port, click on the port column next to "
+#~ "the desired driver. &kstars; allows multiple drivers to run under one "
+#~ "INDI server, and hence one port. Select multiple drivers then press "
+#~ "<guibutton>Run Service</guibutton> button."
+#~ msgstr ""
+#~ "Você pode executar dispositivos navegando na árvore de dispositivos, "
+#~ "selecionando o dispositivo específico, e então clicando no botão "
+#~ "<guibutton>Executar serviço</guibutton>. Você pode selecionar o modo de "
+#~ "operação, tanto local como servidor como definido acima. O número da "
+#~ "porta é gerado aleatoriamente dentro do intervalo de 7624 a 10.000. Para "
+#~ "especificar uma porta, clique na coluna porta próxima do controlador "
+#~ "desejado. O &kstars; permite que vários controladores rodem em um "
+#~ "servidor INDI, e mesmo em uma porta. Selecione vários controladores e "
+#~ "então pressione o botão <guibutton>Executar serviço</guibutton>."
+
+#~ msgid ""
+#~ "To control remote devices, refer to the <link linkend=\"indi-remote-"
+#~ "control\">remote device control</link> section."
+#~ msgstr ""
+#~ "Para controlar dispositivos remotos, veja a seção <link linkend=\"indi-"
+#~ "remote-control\">controle de dispositivos remotos</link>."
+
+#~ msgid "Telescope Setup"
+#~ msgstr "Configuração de telescópio"
+
+#, fuzzy
+#~| msgid ""
+#~| "Most telescopes are equipped with <hardware>RS232</hardware> interface "
+#~| "for remote control. Connect the RS232 jack in your telescope to your "
+#~| "computer's <hardware>Serial/USB</hardware> port. Traditionally, the "
+#~| "RS232 connects to the serial port of your computer, but since many new "
+#~| "laptops abandoned the serial port in favor of <hardware>USB/FireWire</"
+#~| "hardware> ports, you might need to obtain a Serial to USB adaptor to use "
+#~| "with new laptops."
+#~ msgid ""
+#~ "Most telescopes are equipped with <hardware>RS232</hardware> interface "
+#~ "for remote control. Connect the RS232 jack in your telescope to your "
+#~ "computer's <hardware>Serial/USB</hardware> port. Traditionally, the RS232 "
+#~ "connects to the serial port of your computer, but since many new laptops "
+#~ "abandoned the serial port in favor of <hardware>USB/FireWire</hardware> "
+#~ "ports, you might need to obtain a Serial to USB adaptor to use with new "
+#~ "laptops."
+#~ msgstr ""
+#~ "A maioria dos telescópios são equipados com a interface <hardware>RS232</"
+#~ "hardware> para controle remoto. Conecte o plugue RS232 em seu telescópio "
+#~ "à porta <hardware>Serial/USB</hardware> do seu computador. "
+#~ "Tradicionalmente, o RS232 se conecta à porta serial do seu computador, "
+#~ "mas uma vez que muitos dos novos laptops abandonaram a porta serial em "
+#~ "favor das portas <hardware>USB/FireWire</hardware>, você pode precisar "
+#~ "obter um adaptador serial para USB para usar com novos laptops."
+
+#, fuzzy
+#~| msgid ""
+#~| "After connecting your telescope to the Serial/USB port, turn your "
+#~| "telescope on. It is <emphasis>highly</emphasis> recommended that you "
+#~| "download and install the latest firmware for your telescope controller."
+#~ msgid ""
+#~ "After connecting your telescope to the Serial/USB port, turn your "
+#~ "telescope on. It is <emphasis>highly</emphasis> recommended that you "
+#~ "download and install the latest firmware for your telescope controller."
+#~ msgstr ""
+#~ "Após conectar seu telescópio à porta serial/USB, ligue seu telescópio. É "
+#~ "<emphasis>altamente</emphasis> recomendável que você baixe e instale o "
+#~ "último firmware para o controlador do seu telescópio."
+
+#~ msgid ""
+#~ "The telescope needs to be aligned before it can be used properly. Align "
+#~ "your telescope (one or two stars alignment) as illustrated in your "
+#~ "telescope manual."
+#~ msgstr ""
+#~ "O telescópio precisa ser alinhado antes de poder ser usado corretamente. "
+#~ "Alinhe seu telescópio (alinhamento de uma ou duas estrelas) como "
+#~ "ilustrado no manual do seu telescópio."
+
+#~ msgid ""
+#~ "&kstars; needs to verify time and location settings before connecting to "
+#~ "the telescope. This insures proper tracking and synchronization between "
+#~ "the telescope and &kstars;. The following steps will enable you to "
+#~ "connect to a device that is connected to your computer. To connect and "
+#~ "control remote devices, please refer to <link linkend=\"indi-remote-"
+#~ "control\">remote device control</link> section."
+#~ msgstr ""
+#~ "O &kstars; precisa verificar as configurações de hora e localização antes "
+#~ "de conectar-se ao telescópio. Isto garante o rastreamento apropriado e "
+#~ "sincronização entre o telescópio e o &kstars;. Os passos a seguir "
+#~ "habilitarão que você conecte-se a um dispositivo que está conectado ao "
+#~ "seu computador. Para conectar e controlar dispositivos remotos, por favor "
+#~ "acesse a seção <link linkend=\"indi-remote-control\">controle de "
+#~ "dispositivo remoto</link>."
+
+#, fuzzy
+#~| msgid ""
+#~| "You can use the Telescope Setup Wizard and it will verify all the "
+#~| "required information in the process. It can automatically scan ports for "
+#~| "attached telescopes. You can run the wizard by selecting "
+#~| "<guimenuitem>Telescope Wizard</guimenuitem> from the <guimenu>Devices</"
+#~| "guimenu> menu."
+#~ msgid ""
+#~ "You can use the Telescope Setup Wizard and it will verify all the "
+#~ "required information in the process. It can automatically scan ports for "
+#~ "attached telescopes. You can run the wizard by selecting the "
+#~ "<menuchoice><guimenu>Devices</guimenu> <guimenuitem>Telescope Wizard</"
+#~ "guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Você pode usar o assistente de configuração de telescópio e ele "
+#~ "verificará todas as informações necessárias no processo. Ele pode "
+#~ "automaticamente procurar nas portas por telescópios conectados. Você pode "
+#~ "executar o assistente selecionando o <guimenuitem>Assistente de "
+#~ "telescópio</guimenuitem> a partir do menu <guimenu>Dispositivos</guimenu>."
+
+#~ msgid ""
+#~ "Alternatively, you can connect to a local telescope by performing the "
+#~ "following steps:"
+#~ msgstr ""
+#~ "Alternativamente, você pode conectar a um telescópio local executando os "
+#~ "seguintes passos:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Set your geographical location. Open the <guilabel>Set Geographic "
+#~| "Location</guilabel> window by selecting <guimenuitem>Geographic...</"
+#~| "guimenuitem> from the <guimenu>Settings</guimenu> menu, or by pressing "
+#~| "the <guiicon>Globe</guiicon> icon in the toolbar, or by pressing "
+#~| "<keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo>."
+#~ msgid ""
+#~ "Set your geographical location. Open the <guilabel>Set Geographic "
+#~ "Location</guilabel> window by selecting the "
+#~ "<menuchoice><guimenu>Settings</guimenu> <guimenuitem>Geographic...</"
+#~ "guimenuitem></menuchoice> menu item, or by pressing the <guiicon>Globe</"
+#~ "guiicon> icon in the toolbar, or by pressing <keycombo action=\"simul"
+#~ "\">&Ctrl;<keycap>G</keycap></keycombo>."
+#~ msgstr ""
+#~ "Configure sua localização geográfica. Abra a janela <guilabel>Definir "
+#~ "localização geográfica</guilabel> selecionando o "
+#~ "<guimenuitem>Geográfica...</guimenuitem> a partir do menu "
+#~ "<guimenu>Configurações</guimenu> ou pressionando o ícone em forma de "
+#~ "<guiicon>Globo</guiicon> na barra de ferramentas, ou ainda pressionando "
+#~ "<keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo>."
+
+#, fuzzy
+#~| msgid ""
+#~| "Set your local time and date. You can change to any time or date by "
+#~| "selecting <guimenuitem>Set Time...</guimenuitem> from the <guimenu>Time</"
+#~| "guimenu> menu, or by pressing the <guiicon>time</guiicon> icon in the "
+#~| "toolbar. The <guilabel>Set Time</guilabel> window uses a standard &kde; "
+#~| "Date Picker widget. If you ever need to reset the clock back to the "
+#~| "current time, just select <guimenuitem>Set Time to Now</guimenuitem> "
+#~| "from the <guimenu>Time</guimenu> menu."
+#~ msgid ""
+#~ "Set your local time and date. You can change to any time or date by "
+#~ "selecting <menuchoice><guimenu>Time</guimenu> <guimenuitem>Set Time...</"
+#~ "guimenuitem></menuchoice> menu item, or by pressing the <guiicon>Time</"
+#~ "guiicon> icon in the toolbar. The <guilabel>Set Time</guilabel> window "
+#~ "uses a standard &kde; Date Picker widget. If you ever need to reset the "
+#~ "clock back to the current time, just select the "
+#~ "<menuchoice><guimenu>Time</guimenu> <guimenuitem>Set Time to Now</"
+#~ "guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Configure sua hora local e data. Você pode mudar para qualquer hora ou "
+#~ "data selecionando o <guimenuitem>Configurar hora...</guimenuitem> a "
+#~ "partir do menu <guimenu>Hora</guimenu>, ou pressionando o ícone "
+#~ "<guiicon>hora</guiicon> na barra de ferramentas. A janela "
+#~ "<guilabel>Configurar hora</guilabel> usa o widget padrão para selecionar "
+#~ "data do &kde;,. Se você precisar reiniciar o relógio para a hora atual, "
+#~ "simplesmente selecione <guimenuitem>Configurar hora para agora</"
+#~ "guimenuitem> a partir do menu <guimenu>Hora</guimenu>."
+
+#, fuzzy
+#~| msgid ""
+#~| "Click on the <guimenu>Devices</guimenu> menu and select the "
+#~| "<guimenuitem>Device Manager</guimenuitem>."
+#~ msgid ""
+#~ "Click on the <menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</"
+#~ "guisubmenu> <guimenuitem>Device Manager...</guimenuitem></menuchoice> "
+#~ "menu item."
+#~ msgstr ""
+#~ "Clique no menu <guimenu>Dispositivos</guimenu> e selecione o "
+#~ "<guimenuitem>Gerenciador de dispositivos</guimenuitem>."
+
+#~ msgid ""
+#~ "Under the <guilabel>Device</guilabel> column, select your telescope model."
+#~ msgstr ""
+#~ "Sob a coluna <guilabel>Dispositivo</guilabel>, selecione o modelo do seu "
+#~ "telescópio."
+
+#~ msgid "Click on the <guibutton>Run Service</guibutton> button."
+#~ msgstr "Clique no botão <guibutton>Executar serviço</guibutton>."
+
+#~ msgid ""
+#~ "Click <guibutton>Close</guibutton> to leave the Device Manager Dialog."
+#~ msgstr ""
+#~ "Clique em <guibutton>Fechar</guibutton> para deixar o diálogo do "
+#~ "gerenciador de dispositivo."
+
+#~ msgid "Frequent Settings"
+#~ msgstr "Configurações frequentes"
+
+#~ msgid ""
+#~ "You do not need to set the geographic location and time every time you "
+#~ "connect to a telescope. Only adjust the settings as needed."
+#~ msgstr ""
+#~ "Você não precisa configurar a localização geográfica e hora toda vez que "
+#~ "você conecta ao seu telescópio. Somente ajuste as configurações se "
+#~ "precisar."
+
+#, fuzzy
+#~| msgid ""
+#~| "You are now ready to use the device features, &kstars; conveniently "
+#~| "provides two interchangeable GUI interfaces for controlling telescopes:"
+#~ msgid ""
+#~ "You are now ready to use the device features, &kstars; conveniently "
+#~ "provides two interchangeable &GUI; interfaces for controlling telescopes:"
+#~ msgstr ""
+#~ "Você está agora pronto para usar os recursos do dispositivo. O &kstars; "
+#~ "convenientemente fornece duas interfaces gráficas intercambiáveis para "
+#~ "controlar os telescópios:"
+
+#~ msgid "Controlling your telescope"
+#~ msgstr "Controlando seu telescópio"
+
+#, fuzzy
+#~| msgid ""
+#~| "<guilabel>Sky map Control</guilabel>: For each device you run in the "
+#~| "<guilabel>Device Manager</guilabel>, a corresponding entry will show up "
+#~| "in popup menu that allows you to control the properties of the device. "
+#~| "You can issue commands like <command>Slew, Sync,</command> and "
+#~| "<command>Track</command> directly from the sky map."
+#~ msgid ""
+#~ "<guilabel>Sky map Control</guilabel>: For each device you run in the "
+#~ "<guilabel>Device Manager</guilabel>, a corresponding entry will show up "
+#~ "in popup menu that allows you to control the properties of the device. "
+#~ "You can issue commands like <command>Slew</command>, <command>Sync</"
+#~ "command>, and <command>Track</command> directly from the sky map."
+#~ msgstr ""
+#~ "<guilabel>Controle de mapa celeste</guilabel>: Para cada dispositivo que "
+#~ "você executa no <guilabel>Gerenciador de dispositivo</guilabel>, uma "
+#~ "entrada correspondente mostrará um menu de contexto que permite controlar "
+#~ "as propriedades do dispositivo. Você pode enviar comandos como "
+#~ "<command>rotacionar, sincronizar</command> e <command>rastrear</command> "
+#~ "diretamente a partir do mapa celeste."
+
+#~ msgid ""
+#~ "Here is a screenshot of the popup menu with an active LX200 Classic "
+#~ "device:"
+#~ msgstr ""
+#~ "Aqui está uma captura de tela do menu de contexto com um dispositivo "
+#~ "LX200 Classic ativo:"
+
+#~ msgid "Controlling devices from sky map"
+#~ msgstr "Controlando dispositivos a partir do mapa celeste"
+
+#~ msgid ""
+#~ "<guilabel>INDI Control Panel</guilabel>: The panel offers the user with "
+#~ "all the features supported by a device."
+#~ msgstr ""
+#~ "<guilabel>Painel de controle INDI</guilabel>: O painel oferece ao usuário "
+#~ "todos os recursos suportados por um dispositivo."
+
+#~ msgid "The panel is divided into three main sections:"
+#~ msgstr "O painel é dividido em três seções principais:"
+
+#~ msgid ""
+#~ "<guilabel>Device tabs</guilabel>: Each additional active device occupies "
+#~ "a tab in the INDI panel. Multiple devices can run simultaneously without "
+#~ "affecting the operation of other devices."
+#~ msgstr ""
+#~ "<guilabel>Aba de dispositivo</guilabel>: Cada dispositivo ativo adicional "
+#~ "ocupa uma aba no painel INDI. Dispositivos múltiplos pode ser executados "
+#~ "simultaneamente sem afetar a operação de outros dispositivos."
+
+#~ msgid ""
+#~ "Property views on the <guilabel>Main Control</guilabel> and "
+#~ "<guilabel>Options</guilabel> tabs: Properties are the key element in INDI "
+#~ "architecture. Each device defines a set of properties to communicate with "
+#~ "the client. The current position of the telescope is an example of a "
+#~ "property. Semantically similar properties are usually contained in "
+#~ "logical blocks or groupings."
+#~ msgstr ""
+#~ "Visualizações de propriedade nas abas <guilabel>Controle principal</"
+#~ "guilabel> e <guilabel>Opções</guilabel>: Propriedades são os elementos "
+#~ "chave na arquitetura INDI. Cada dispositivo define um conjunto de "
+#~ "propriedades para comunicar-se com o cliente. A posição atual do "
+#~ "telescópio é um exemplo de uma propriedade. Propriedades semanticamente "
+#~ "similares são normalmente reunidas em blocos ou grupos lógicos."
+
+#~ msgid ""
+#~ "<guilabel>Log viewer</guilabel>: Devices report their status and "
+#~ "acknowledge commands by sending INDI messages. Each device has its own "
+#~ "log view. A device usually sends messages to its device driver only, but "
+#~ "a device is permitted to send a generic message when appropriate."
+#~ msgstr ""
+#~ "<guilabel>Visualizador de registro</guilabel>: Dispositivos relatam seu "
+#~ "estado e comando reconhecidos enviando mensagens INDI. Cada dispositivo "
+#~ "possui seu próprio visualizador de registro. Um dispositivo normalmente "
+#~ "envia mensagens para seu driver de dispositivo somente, mas a um "
+#~ "dispositivo é permitido enviar uma mensagem genérica quando apropriado."
+
+#~ msgid "INDI Control Panel"
+#~ msgstr "Painel de controle INDI"
+
+#~ msgid ""
+#~ "You are not restricted on using one interface over another as they can be "
+#~ "both used simultaneously. Actions from the <guilabel>Sky map</guilabel> "
+#~ "are automatically reflected in the <guilabel>INDI Control Panel</"
+#~ "guilabel> and vice versa."
+#~ msgstr ""
+#~ "Você não está restrito a usar uma interface ou outra uma vez que elas "
+#~ "podem ser usadas simultaneamente. Ações a partir do <guilabel>Mapa "
+#~ "celeste</guilabel> são automaticamente refletidas no <guilabel>Painel de "
+#~ "controle INDI</guilabel> e vice-versa."
+
+#~ msgid ""
+#~ "To connect to your telescope, you can either select <guimenuitem>Connect</"
+#~ "guimenuitem> from your device popup menu or alternatively, you can press "
+#~ "<guibutton>Connect</guibutton> under your device tab in the "
+#~ "<guilabel>INDI Control Panel</guilabel>."
+#~ msgstr ""
+#~ "Para conectar ao seu telescópio, você pode tanto selecionar "
+#~ "<guimenuitem>Conectar</guimenuitem> a partir do menu de contexto ou, "
+#~ "alternativamente, pressionar o <guibutton>Conectar</guibutton> sob a aba "
+#~ "de dispositivo no <guilabel>Painel de controle INDI</guilabel>."
+
+#, fuzzy
+#~| msgid ""
+#~| "By default, &kstars; will try to connect to the <constant>/dev/ttyS0</"
+#~| "constant> port. To change the connection port, select <guilabel>INDI "
+#~| "Control Panel</guilabel> from the <guimenu>Devices</guimenu> menu and "
+#~| "change the port under your device tab."
+#~ msgid ""
+#~ "By default, &kstars; will try to connect to the <constant>/dev/ttyS0</"
+#~ "constant> port. To change the connection port, select the "
+#~ "<menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</guisubmenu> "
+#~ "<guimenuitem>INDI Control Panel...</guimenuitem></menuchoice> menu item "
+#~ "and change the port under your device tab."
+#~ msgstr ""
+#~ "Por padrão, o &kstars; tentará conectar à porta <constant>/dev/ttyS0</"
+#~ "constant>. Para mudar a porta de conexão, selecione no <guilabel>Painel "
+#~ "de controle INDI</guilabel> o menu <guimenu>Dispositivos</guimenu> e mude "
+#~ "a porta na aba do seu dispositivo."
+
+#, fuzzy
+#~| msgid ""
+#~| "If &kstars; communicates successfully with the telescope, it will "
+#~| "retrieve the current <abbrev>RA</abbrev> and <abbrev>DEC</abbrev> from "
+#~| "the telescope and will display a crosshair on the sky map indicating the "
+#~| "telescope position."
+#~ msgid ""
+#~ "If &kstars; communicates successfully with the telescope, it will "
+#~ "retrieve the current <abbrev>RA</abbrev> and <abbrev>DEC</abbrev> from "
+#~ "the telescope and will display a crosshair on the sky map indicating the "
+#~ "telescope position. You can hide the crosshair that marks telescope "
+#~ "position using <guilabel>INDI</guilabel> page from the "
+#~ "<menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kstars;..."
+#~ "</guimenuitem></menuchoice> menu item."
+#~ msgstr ""
+#~ "Se o &kstars; se comunicar com sucesso com o telescópio, ele obterá o "
+#~ "<abbrev>RA</abbrev> e <abbrev>DEC</abbrev> atuais do telescópio e exibirá "
+#~ "uma cruz no mapa celeste indicando a posição do telescópio."
+
+#~ msgid "Synchronizing your telescope"
+#~ msgstr "Sincronizando seu telescópio"
+
+#~ msgid ""
+#~ "If you aligned your telescope and the last alignment star was, for "
+#~ "example, Vega, then the crosshair should be centered around Vega. If the "
+#~ "crosshair was off target, then you can <mousebutton>right</mousebutton>-"
+#~ "click Vega from the sky map and select <command>Sync</command> from your "
+#~ "telescope menu. This action will instruct the telescope to synchronize "
+#~ "its internal coordinates to match those of Vega, and the telescope's "
+#~ "crosshair should now be centered around Vega."
+#~ msgstr ""
+#~ "Se você alinhou seu telescópio e o última estrela alinhada foi, por "
+#~ "exemplo, Vega, então a cruz deve estar centrada próximo a Vega. Se a cruz "
+#~ "estiver fora do alvo, então você pode dar um clique-<mousebutton>direito</"
+#~ "mousebutton> em Vega no mapa estelar e selecionar <command>Sincronizar</"
+#~ "command> a partir do menu do seu telescópio. Esta ação instruirá o "
+#~ "telescópio a sincronizar suas coordenadas internas para corresponder com "
+#~ "as de Vega, e a cruz do telescópio deve agora estar centrada próximo à "
+#~ "Vega."
+
+#~ msgid "This is it: your telescope is ready to explore the heavens!"
+#~ msgstr "É isto: seu telescópio está pronto para explorar o universo!"
+
+#~ msgid "WARNING"
+#~ msgstr "AVISO"
+
+#~ msgid ""
+#~ "Never use the telescope to look at the sun. Looking at the sun might "
+#~ "cause irreversible damage to your eyes and your equipment."
+#~ msgstr ""
+#~ "Nunca usa o telescópio para olhar o Sol. Olhar diretamente o Sol pode "
+#~ "causar um dano irreversível aos seus olhos, bem como ao seu equipamento."
+
+#~ msgid "CCD and Video-Capture Setup"
+#~ msgstr "Configuração de captura de vídeo e CCD"
+
+#~ msgid "CCD Video Control"
+#~ msgstr "Controle de vídeo CCD"
+
+#, fuzzy
+#~| msgid ""
+#~| "You can run CCD and Video Capture devices from the <guimenuitem>Device "
+#~| "Manager</guimenuitem> in the <guimenu>Devices</guimenu> menu. Like all "
+#~| "INDI devices, some of the device controls will be accessible from the "
+#~| "skymap. The device can be controlled fully from the <guimenuitem>INDI "
+#~| "Control Panel.</guimenuitem>"
+#~ msgid ""
+#~ "You can run CCD and Video Capture devices from the "
+#~ "<menuchoice><guimenu>Tools</guimenu> <guisubmenu>Devices</guisubmenu> "
+#~ "<guimenuitem>Device Manager...</guimenuitem></menuchoice> menu item. Like "
+#~ "all INDI devices, some of the device controls will be accessible from the "
+#~ "skymap. The device can be controlled fully from the <guimenuitem>INDI "
+#~ "Control Panel...</guimenuitem> item."
+#~ msgstr ""
+#~ "Você pode executar dispositivos de captura de vídeo e CCD a partir do "
+#~ "<guimenuitem>Gerenciador de dispositivos</guimenuitem> no menu "
+#~ "<guimenu>Dispositivos</guimenu>. Como todos os dispositivos INDI, alguns "
+#~ "controles do dispositivo serão acessíveis a partir do mapa celeste. O "
+#~ "dispositivo pode ser controlado totalmente a partir do "
+#~ "<guimenuitem>Painel de controle INDI</guimenuitem>."
+
+#, fuzzy
+#~| msgid ""
+#~| "The standard format for image capture is FITS. Once an image is captured "
+#~| "and downloaded, it will be automatically displayed in the &kstars; <link "
+#~| "linkend=\"tool-fitsviewer\">FITS Viewer</link>."
+#~ msgid ""
+#~ "The standard format for image capture is FITS. Once an image is captured "
+#~ "and downloaded, it will be automatically displayed in the &kstars; <link "
+#~ "linkend=\"fitsviewer\">FITS Viewer</link>."
+#~ msgstr ""
+#~ "O formato padrão para captura de imagem é o FITS. Uma vez que uma imagem "
+#~ "seja capturada e baixada, ela será automaticamente exibida no <link "
+#~ "linkend=\"tool-fitsviewer\">visualizador FITS</link> do &kstars;."
+
+#~ msgid "Configure INDI"
+#~ msgstr "Configurar INDI"
+
+#~ msgid "Configure"
+#~ msgstr "Configurar"
+
+#~ msgid "<secondary>INDI</secondary>"
+#~ msgstr "<secondary>INDI</secondary>"
+
+#, fuzzy
+#~| msgid ""
+#~| "The INDI page allows you to modify <emphasis>Client side</emphasis> INDI "
+#~| "specific options. The window is divided into several main categories: "
+#~| "General, Automatic device updates, Display, Update Source, Filter Wheel "
+#~| "and Server Port:"
+#~ msgid ""
+#~ "The <guilabel>INDI</guilabel> page allows you to modify <emphasis>Client "
+#~ "side</emphasis> INDI specific options. To access it, select the "
+#~ "<guilabel>INDI</guilabel> page from <menuchoice><guimenu>Settings</"
+#~ "guimenu> <guimenuitem>Configure &kstars;...</guimenuitem></menuchoice> "
+#~ "menu item. The window is divided into several main categories: General, "
+#~ "Device Updates, Display and Server Port:"
+#~ msgstr ""
+#~ "A página INDI permite a você modificar as opções específicas do "
+#~ "<emphasis>lado cliente</emphasis> do INDI. A janela é dividida em "
+#~ "diversas categorias principais: geral, atualizações automáticas do "
+#~ "dispositivo, tela, atualizar fonte, roda de filtro e porta do servidor:"
+
+#~ msgid "General"
+#~ msgstr "Geral"
+
+#, fuzzy
+#~| msgid ""
+#~| "<option>Default FITS directory:</option> Specify the directory where all "
+#~| "captured FITS images will be saved to. If no directory is specified, "
+#~| "images will be stored in $HOME."
+#~ msgid ""
+#~ "<guilabel>Default FITS directory:</guilabel> Specify the directory where "
+#~ "all captured FITS images will be saved to. If no directory is specified, "
+#~ "images will be stored in <varname>$HOME</varname>."
+#~ msgstr ""
+#~ "<option>Pasta FITS padrão:</option> Especifica a pasta onde todas as "
+#~ "imagens FITS capturadas serão salvas. Se nenhuma pasta for especificada, "
+#~ "as imagens serão salvas no $HOME."
+
+#~ msgid "Display"
+#~ msgstr "Tela"
+
+#, fuzzy
+#~| msgid ""
+#~| "<option>Device target crosshair:</option> When checked, &kstars; "
+#~| "displays the telescope's target crosshair on the sky map. The crosshair "
+#~| "is displayed upon a successful connection to the telescope and its "
+#~| "location is updated periodically. The telescope's name is displayed next "
+#~| "to the crosshair. &kstars; displays one crosshair per each connected "
+#~| "telescope. To change the color of the telescope's crosshair, open the "
+#~| "<link linkend=\"viewops\">Configure &kstars;</link> window. Select the "
+#~| "<guilabel>Colors</guilabel> tab, and then change the color of the "
+#~| "<emphasis>Target Indicator</emphasis> item to the desired color."
+#~ msgid ""
+#~ "<guilabel>Telescope crosshair</guilabel>: When checked, &kstars; displays "
+#~ "the telescope's target crosshair on the sky map. The crosshair is "
+#~ "displayed upon a successful connection to the telescope and its location "
+#~ "is updated periodically. The telescope's name is displayed next to the "
+#~ "crosshair. &kstars; displays one crosshair per each connected telescope. "
+#~ "To change the color of the telescope's crosshair, open the <link linkend="
+#~ "\"viewops\">Configure - &kstars;</link> window. Select the "
+#~ "<guilabel>Colors</guilabel> page, and then change the color of the "
+#~ "<guimenuitem>Target Indicator</guimenuitem> item to the desired color."
+#~ msgstr ""
+#~ "<option>Mira do dispositivo:</option> Quando marcado, o &kstars; exibe a "
+#~ "mira do telescópio no mapa do céu. A mira é exibida sobre uma conexão com "
+#~ "sucesso ao telescópio e sua localização é atualizada periodicamente. O "
+#~ "nome do telescópio é exibido próximo à mira. O &kstars; exibe uma mira "
+#~ "para cada telescópio conectado. Para alterar a cor da mira do telescópio, "
+#~ "abra a janela <link linkend=\"viewops\">Configurar o &kstars;</link>. "
+#~ "Selecione a aba <guilabel>Cores</guilabel> e então altere a cor do item "
+#~ "<emphasis>Indicador de mira</emphasis> para a cor desejada."
+
+#, fuzzy
+#~| msgid ""
+#~| "Server Port: Specify range of ports that INDI Server will bind to when "
+#~| "starting new drivers."
+#~ msgid ""
+#~ "Specify range of ports that INDI Server will bind to when starting new "
+#~ "drivers."
+#~ msgstr ""
+#~ "Porta do servidor: Especifica o intervalo de portas que o Servidor INDI "
+#~ "irá se conectar ao iniciar novos dispositivos."
+
+#~ msgid "INDI Concepts"
+#~ msgstr "Conceitos do INDI"
+
+#~ msgid "Telescope Control"
+#~ msgstr "Controle do telescópio"
+
+#~ msgid "Concepts"
+#~ msgstr "Conceitos"
+
+#, fuzzy
+#~| msgid ""
+#~| "The main key concept in INDI is that devices have the ability to "
+#~| "describe themselves. This is accomplished by using XML to describe a "
+#~| "generic hierarchy that can represent both canonical and non-canonical "
+#~| "devices. In INDI, all <emphasis>devices</emphasis> may contain one or "
+#~| "more <emphasis>properties</emphasis>. Any <emphasis>property</emphasis> "
+#~| "may contain one or more <emphasis>elements</emphasis>. There are four "
+#~| "types of INDI properties:"
+#~ msgid ""
+#~ "The main key concept in INDI is that devices have the ability to describe "
+#~ "themselves. This is accomplished by using &XML; to describe a generic "
+#~ "hierarchy that can represent both canonical and non-canonical devices. In "
+#~ "INDI, all <emphasis>devices</emphasis> may contain one or more "
+#~ "<emphasis>properties</emphasis>. Any <emphasis>property</emphasis> may "
+#~ "contain one or more <emphasis>elements</emphasis>. There are four types "
+#~ "of INDI properties:"
+#~ msgstr ""
+#~ "O conceito chave no INDI é que os dispositivos possuem a habilidade de "
+#~ "descreverem-se a si mesmos. Isto é conseguido usando o XML para descrever "
+#~ "uma hierarquia genérica que pode representar tanto dispositivos canônicos "
+#~ "como não canônicos. No INDI, todos os <emphasis>dispositivos</emphasis> "
+#~ "podem conter uma ou mais <emphasis>propriedades</emphasis>. Qualquer "
+#~ "<emphasis>propriedade</emphasis> pode conter um ou mais "
+#~ "<emphasis>elementos</emphasis>. Existem quatro tipos de propriedades INDI:"
+
+#~ msgid "Text property."
+#~ msgstr "Propriedade textual."
+
+#~ msgid "Number property."
+#~ msgstr "Propriedade numérica."
+
+#, fuzzy
+#~| msgid "Switch property (Represented in GUI by buttons and checkboxes)."
+#~ msgid "Switch property (Represented in &GUI; by buttons and checkboxes)."
+#~ msgstr ""
+#~ "Propriedade de opção/ação (representadas na interface gráfica por botões "
+#~ "e caixas de opção)."
+
+#, fuzzy
+#~| msgid "Light property (Represented in GUI by colored LEDs)."
+#~ msgid "Light property (Represented in &GUI; by colored LEDs)."
+#~ msgstr ""
+#~ "Propriedade de luz (representada na interface gráfica por LEDs coloridos)."
+
+#, fuzzy
+#~| msgid ""
+#~| "For example, all INDI devices share the CONNECTION standard switch "
+#~| "<emphasis>property</emphasis>. The CONNECTION property has two elements: "
+#~| "CONNECT and DISCONNECT switches. &kstars; parses the generic XML "
+#~| "description of properties and builds a GUI representation suitable for "
+#~| "direct human interaction."
+#~ msgid ""
+#~ "For example, all INDI devices share the CONNECTION standard switch "
+#~ "<emphasis>property</emphasis>. The CONNECTION property has two elements: "
+#~ "CONNECT and DISCONNECT switches. &kstars; parses the generic &XML; "
+#~ "description of properties and builds a &GUI; representation suitable for "
+#~ "direct human interaction."
+#~ msgstr ""
+#~ "Por exemplo, todos os dispositivos INDI compartilhas a "
+#~ "<emphasis>propriedade</emphasis> de opção/ação padrão CONNECTION. A "
+#~ "propriedade CONNECTION possui dois elementos: as chaves CONNECT e "
+#~ "DISCONNECT. O &kstars; analisa a descrição XML genérica das propriedades "
+#~ "e constrói uma representação de interface gráfica adequada para interação "
+#~ "humana direta."
+
+#~ msgid ""
+#~ "The INDI control panel offers many device properties not accessible from "
+#~ "the sky map. The properties offered differ from one device to another. "
+#~ "Nevertheless, all properties share common features that constrains how "
+#~ "they are displayed and used:"
+#~ msgstr ""
+#~ "O painel de controle INDI oferece muitas propriedades do dispositivo não "
+#~ "acessíveis a partir do mapa celeste. As propriedades oferecidas diferem "
+#~ "de um dispositivo para outro. No entanto, todas as propriedades "
+#~ "compartilham recursos que indicam como eles são exibidos e usados:"
+
+#~ msgid ""
+#~ "Permission: All properties can either be read-only, write-only, or read "
+#~ "and write enabled. An example of a read-write property is the telescope's "
+#~ "Right Ascension. You can enter a new Right Ascension and the telescope, "
+#~ "based on current settings, will either slew or sync to the new input. "
+#~ "Furthermore, when the telescope slews, its Right Ascension gets updated "
+#~ "and sent back to the client."
+#~ msgstr ""
+#~ "Permissão: Todas as propriedades podem estar habilitadas tanto para "
+#~ "leitura-somente, como para escrita-somente, ou ainda para leitura e "
+#~ "escrita. Um exemplo de uma propriedade de leitura e escrita é a acensão "
+#~ "direta (do inglês, RA) do telescópio. Você pode inserir uma nova acensão "
+#~ "direta e o telescópio, baseado nas configurações atuais, rotacionará e "
+#~ "sincronizará para a nova entrada. Além disso, quando o telescópio "
+#~ "rotaciona, sua acensão direta é atualizada e enviada para o cliente."
+
+#~ msgid ""
+#~ "State: Prefixed to each property is a state indicator (round LED). Each "
+#~ "property has a state and an associated color code:"
+#~ msgstr ""
+#~ "Estado: Prefixado para cada propriedade é um indicador de estado (LED "
+#~ "redondo). Cada propriedade possui um estado e um código de cor associado:"
+
+#~ msgid "INDI State color code"
+#~ msgstr "Código de cor de estado do INDI"
+
+#~ msgid "State"
+#~ msgstr "Estado"
+
+#~ msgid "Color"
+#~ msgstr "Cor"
+
+#~ msgid "Description"
+#~ msgstr "Descrição"
+
+#~ msgid "Idle"
+#~ msgstr "Disponível"
+
+#~ msgid "Gray"
+#~ msgstr "Cinza"
+
+#~ msgid "Device is performing no action with respect to this property"
+#~ msgstr ""
+#~ "O dispositivo não está executando nenhuma ação relacionada a esta "
+#~ "propriedade"
+
+#~ msgid "<entry>Ok</entry>"
+#~ msgstr "<entry>OK</entry>"
+
+#~ msgid "Green"
+#~ msgstr "Verde"
+
+#~ msgid "Last operation performed on this property was successful and active"
+#~ msgstr ""
+#~ "A última operação realizada nesta propriedade foi bem sucedida e ativa"
+
+#~ msgid "Busy"
+#~ msgstr "Ocupado"
+
+#~ msgid "Yellow"
+#~ msgstr "Amarelo"
+
+#~ msgid "The property is performing an action"
+#~ msgstr "A propriedade está executando um ação"
+
+#~ msgid "Alert"
+#~ msgstr "Alerta"
+
+#~ msgid "<entry>Red</entry>"
+#~ msgstr "<entry>Vermelho</entry>"
+
+#~ msgid "The property is in critical condition and needs immediate attention"
+#~ msgstr ""
+#~ "A propriedade está em uma condição crítica e precisa de atenção imediata"
+
+#~ msgid ""
+#~ "The device driver updates the property state in real-time when necessary. "
+#~ "For example, if the telescope is in the process of slewing to a target, "
+#~ "then the RA/DEC properties will be signaled as <guilabel>Busy</guilabel>. "
+#~ "When the slew process is completed successfully, the properties will be "
+#~ "signaled as <guilabel>Ok</guilabel>."
+#~ msgstr ""
+#~ "O driver do dispositivo atualiza o estado da propriedade em tempo real "
+#~ "quando necessário. Por exemplo, se o telescópio está no processo de "
+#~ "rotação para um alvo, então as propriedades RA/DEC serão assinaladas como "
+#~ "<guilabel>Ocupada</guilabel>. Quando o processo de rotação estiver "
+#~ "concluído com sucesso, as propriedades serão assinaladas como "
+#~ "<guilabel>OK</guilabel>."
+
+#~ msgid ""
+#~ "Context: Numerical properties can accept and process numbers in two "
+#~ "formats: decimal and sexagesimal. The sexagesimal format is convenient "
+#~ "when expressing time or equatorial/geographical coordinates. You can use "
+#~ "any format at your convenience. For example, all the following numbers "
+#~ "are equal:"
+#~ msgstr ""
+#~ "Contexto: Propriedades numéricas pode aceitar e processar números em dois "
+#~ "formatos: decimal e sexagesimal. O formato sexagesimal é conveniente para "
+#~ "expressar hora ou coordenadas equatoriais/geográficas. Você pode usar "
+#~ "qualquer formato de acordo com sua conveniência. Por exemplo, todos os "
+#~ "seguintes números são iguais:"
+
+#~ msgid "-156.40"
+#~ msgstr "-156,40"
+
+#~ msgid "-156:24:00"
+#~ msgstr "-156:24:00"
+
+#~ msgid "-156:24"
+#~ msgstr "-156:24"
+
+#, fuzzy
+#~| msgid ""
+#~| "Time: The standard time for all INDI-related communications is Universal "
+#~| "Time UTC specified as YYYY-MM-DDTHH:MM:SS in accord with ISO 8601. "
+#~| "&kstars; communicates the correct UTC time with device drivers "
+#~| "automatically. You can enable/disable automatic time updates from the "
+#~| "<guimenuitem>INDI</guimenuitem> page in the settings dialog."
+#~ msgid ""
+#~ "Time: The standard time for all INDI-related communications is Universal "
+#~ "Time UTC specified as YYYY-MM-DDTHH:MM:SS in accord with ISO 8601. "
+#~ "&kstars; communicates the correct UTC time with device drivers "
+#~ "automatically. You can enable/disable automatic time updates from the "
+#~ "<guilabel>INDI</guilabel> page in the settings dialog."
+#~ msgstr ""
+#~ "Hora: A hora padrão para todos as comunicações relacionadas com o INDI é "
+#~ "a hora universal UTC especificada como AAAA-MM-DDTHH:MM:SS de acordo com "
+#~ "a ISO 8601. O &kstars; comunica a hora correta UTC com os drivers do "
+#~ "dispositivo automaticamente. Você pode habilitar/desabilitar atualizações "
+#~ "de hora a partir da página <guimenuitem>INDI</guimenuitem> da janela de "
+#~ "configurações."
+
+#~ msgid "Remote Device Control"
+#~ msgstr "Controle de dispositivo remoto"
+
+#~ msgid "Remote Devices"
+#~ msgstr "Dispositivos remotos"
+
+#, fuzzy
+#~| msgid ""
+#~| "&kstars; provides a simple yet powerful layer for remote device control. "
+#~| "A detailed description of the layer is described in the INDI <ulink url="
+#~| "\"http://www.clearskyinstitute.com/INDI/INDI.pdf\">white paper</ulink>."
+#~ msgid ""
+#~ "&kstars; provides a simple yet powerful layer for remote device control. "
+#~ "A detailed description of the layer is described in the INDI <ulink url="
+#~ "\"https://www.clearskyinstitute.com/INDI/INDI.pdf\">white paper</ulink>."
+#~ msgstr ""
+#~ "O &kstars; fornece uma camada simples e poderosa para controle de "
+#~ "dispositivo remoto. Uma descrição detalhada da camada é descrita na "
+#~ "<ulink url=\"http://www.clearskyinstitute.com/INDI/INDI.pdf\">folha "
+#~ "técnica</ulink> do INDI."
+
+#~ msgid ""
+#~ "You need to configure both the server and client machines for remote "
+#~ "control:"
+#~ msgstr ""
+#~ "Você precisa configurar tanto a máquina servidora como a cliente para "
+#~ "controle remoto:"
+
+#, fuzzy
+#~| msgid ""
+#~| "Server: To prepare a device for remote control, follow the same steps in "
+#~| "the <link linkend=\"indi-kstars-setup\">local/server</link> setup. When "
+#~| "you start a device service in the <guimenu>Device Manager</guimenu>, a "
+#~| "port number is displayed under the <guilabel>Listening port</guilabel> "
+#~| "column. In addition to the port number, you also need the hostname or IP "
+#~| "address of your server."
+#~ msgid ""
+#~ "<guilabel>Server</guilabel>: To prepare a device for remote control, "
+#~ "follow the same steps in the <link linkend=\"indi-kstars-setup\">local/"
+#~ "server</link> setup. When you start a device service in the "
+#~ "<guilabel>Device Manager</guilabel>, a port number is displayed under the "
+#~ "<guilabel>Port</guilabel> column. In addition to the port number, you "
+#~ "also need the hostname or IP address of your server."
+#~ msgstr ""
+#~ "Servidor: Para preparar um dispositivo para controle remoto, siga os "
+#~ "seguintes passos na configuração <link linkend=\"indi-kstars-setup"
+#~ "\">local/servidor</link>. Ao iniciar um serviço de dispositivo no "
+#~ "<guimenu>Gerenciador de dispositivo</guimenu>, um número de porta é "
+#~ "exibido na coluna <guilabel>Ouvir porta</guilabel>. Além do número da "
+#~ "porta, você também precisará do nome de máquina ou endereço IP do seu "
+#~ "servidor."
+
+#, fuzzy
+#~| msgid ""
+#~| "Client: Select the <guimenuitem>Device Manager</guimenuitem> from the "
+#~| "<guimenu>Device</guimenu> menu and click on the <guilabel>Client</"
+#~| "guilabel> tab. You can add, modify, or delete hosts under the "
+#~| "<guilabel>Client</guilabel> tab. Add a host by clicking on the "
+#~| "<guibutton>Add</guibutton> button. Enter the hostname/IP address of the "
+#~| "server in the <guilabel>Host</guilabel> field, and enter the port number "
+#~| "obtained from the <emphasis>server</emphasis> machine in step 1."
+#~ msgid ""
+#~ "<guilabel>Client</guilabel>: Select the <menuchoice><guimenu>Tools</"
+#~ "guimenu> <guisubmenu>Devices</guisubmenu> <guimenuitem>Device Manager...</"
+#~ "guimenuitem></menuchoice> menu item and you can add, modify, or delete "
+#~ "hosts into <guilabel>Client</guilabel> tab. Add a host by clicking on the "
+#~ "<guibutton>Add</guibutton> button. Enter the hostname/IP address of the "
+#~ "server in the <guilabel>Host:</guilabel> field, and enter the port number "
+#~ "obtained from the <emphasis>server</emphasis> machine in step 1."
+#~ msgstr ""
+#~ "Cliente: Selecione o <guimenuitem>Gerenciador de dispositivo</"
+#~ "guimenuitem> a partir do menu <guimenu>Dispositivo</guimenu> e clique na "
+#~ "aba <guilabel>Cliente</guilabel>. Você pode adicionar, modificar ou "
+#~ "excluir máquinas na aba <guilabel>Cliente</guilabel>. Adicione uma "
+#~ "máquina clicando no botão <guibutton>Adicionar</guibutton>. Insira o nome "
+#~ "de máquina/endereço IP do servidor no campo <guilabel>Máquina</guilabel>, "
+#~ "e insira o número da porta obtido da máquina <emphasis>servidora</"
+#~ "emphasis> no passo 1."
+
+#~ msgid "INDI Client"
+#~ msgstr "Cliente INDI"
+
+#~ msgid ""
+#~ "After you add a host, right click on the host to <guimenuitem>Connect</"
+#~ "guimenuitem> or <guimenuitem>Disconnect</guimenuitem>. If a connection is "
+#~ "established, you can control the telescope from the <guilabel>Sky map</"
+#~ "guilabel> or <guilabel>INDI Control Panel</guilabel> exactly as described "
+#~ "in the <link linkend=\"indi-kstars-setup\">local/server</link> section. "
+#~ "It is as easy at that."
+#~ msgstr ""
+#~ "Após você adicionar uma máquina, dê um clique direito na máquina para "
+#~ "<guimenuitem>Conectar</guimenuitem> ou <guimenuitem>Desconectar</"
+#~ "guimenuitem>. Se uma conexão for estabelecida, você pode controlar o "
+#~ "telescópio a partir do <guilabel>Mapa celeste</guilabel> ou do "
+#~ "<guilabel>Painel de controle INDI</guilabel> exatamente como descrito na "
+#~ "seção <link linkend=\"indi-kstars-setup\">local/servidor</link>. Isto é "
+#~ "muito fácil!"
+
+#~ msgid "Running an INDI server from the command line"
+#~ msgstr "Executando um servidor INDI a partir da linha de comando"
+
+#~ msgid ""
+#~ "While &kstars; allows you to easily deploy an INDI server; you can launch "
+#~ "an INDI server from the command line."
+#~ msgstr ""
+#~ "Apesar do &kstars; permitir que você facilmente estabeleça um servidor "
+#~ "INDI, você pode lançar um servidor INDI a partir da linha de comando."
+
+#~ msgid ""
+#~ "Since INDI is an independent backend component, you can run an INDI "
+#~ "server on a host without &kstars;. INDI can be compiled separately to run "
+#~ "on remote hosts. Furthermore, device drivers log messages to "
+#~ "<constant>stderr</constant> and that can be helpful in a debugging "
+#~ "situation. The syntax for INDI server is as following:"
+#~ msgstr ""
+#~ "Uma vez que o INDI é um componente de infraestrutura independente, você "
+#~ "pode rodar um servidor INDI em uma máquina sem o &kstars;. O INDI pode "
+#~ "ser compilado separadamente para ser executado em máquinas remotas. Além "
+#~ "do mais, drivers de dispositivo registram mensagens para o "
+#~ "<constant>stderr</constant> e que podem ser úteis na depuração de uma "
+#~ "situação. A sintaxe para um servidor INDI é a seguinte:"
+
+#, fuzzy
+#~| msgid ""
+#~| "$ <command>indiserver</command> [options] [<filename>driver</"
+#~| "filename> ...]"
+#~ msgid ""
+#~ "$ <command>indiserver</command> [options] driver [<filename>driver</"
+#~ "filename> ...]"
+#~ msgstr ""
+#~ "$ <command>indiserver</command> [opções] [<filename>driver</filename> ...]"
+
+#~ msgid ""
+#~ "For example, if you want to start an INDI server running an LX200 GPS "
+#~ "driver and listening to connections on port 8000, you would run the "
+#~ "following command:"
+#~ msgstr ""
+#~ "Por exemplo, se você deseja iniciar um servidor INDI rodando um driver "
+#~ "LX200 GPS e recebendo conexões na porta 8000, você deve executar o "
+#~ "seguinte comando:"
+
+#~ msgid ""
+#~ "$ <command>indiserver</command> -p 8000 <filename>lx200gps</filename>"
+#~ msgstr ""
+#~ "$ <command>indiserver</command> -p 8000 <filename>lx200gps</filename>"
+
+#~ msgid "Secure Remote Operation"
+#~ msgstr "Operação remota segura"
+
+#~ msgid ""
+#~ "Suppose we want to run an indiserver with INDI drivers on a remote host, "
+#~ "<constant>remote_host</constant>, and connect them to &kstars; running on "
+#~ "the local machine."
+#~ msgstr ""
+#~ "Suponhamos que nós desejemos executar um servidor indi com drivers INDI "
+#~ "em uma máquina remota, <constant>maquina_remota</constant>, e conectá-lo "
+#~ "ao &kstars; executado em uma máquina local."
+
+#~ msgid ""
+#~ "From the local machine log onto the remote host, <constant>remote_host</"
+#~ "constant>, by typing:"
+#~ msgstr ""
+#~ "A partir da máquina local registrar a máquina remota, "
+#~ "<constant>maquina_remota</constant>, digitando:"
+
+#~ msgid ""
+#~ "$ <command>ssh</command> -L <varname>local_port</varname>:"
+#~ "<constant>remote_host</constant>:<varname>remote_port</varname>"
+#~ msgstr ""
+#~ "$ <command>ssh</command> -L <varname>porta_local</varname>:"
+#~ "<constant>maquina_remota</constant>:<varname>porta_remota</varname>"
+
+#~ msgid ""
+#~ "This binds the <varname>local_port</varname> on the local machine to the "
+#~ "<varname>remote_port</varname> on the <constant>remote_host</constant>. "
+#~ "After logging in, run indiserver on the remote host:"
+#~ msgstr ""
+#~ "Isto conecta a <varname>porta_local</varname> na máquina local à "
+#~ "<varname>porta_remota</varname> na <constant>maquina_remota</constant>. "
+#~ "Após o login, executar o servidor indi na máquina remota:"
+
+#~ msgid ""
+#~ "$ <command>indiserver</command> -p <varname>remote_port</varname> "
+#~ "[<filename>driver</filename>...]"
+#~ msgstr ""
+#~ "$ <command>indiserver</command> -p <varname>porta_remota</varname> "
+#~ "[<filename>driver</filename>...]"
+
+#~ msgid ""
+#~ "Back on the local machine, start &kstars; then open the "
+#~ "<guimenuitem>Device Manager</guimenuitem> and add a host under the "
+#~ "<guilabel>Client</guilabel> tab. The host should be the local host "
+#~ "(usually 127.0.0.1) and the port number should be the "
+#~ "<varname>local_port</varname> used in the steps above. "
+#~ "<mousebutton>Right</mousebutton>-click on the host and select "
+#~ "<guimenuitem>Connect</guimenuitem> from the popup menu. &kstars; will "
+#~ "connect to the remote INDI server securely. The host information will be "
+#~ "saved for future sessions."
+#~ msgstr ""
+#~ "De volta a máquina local, inicie o &kstars; e então abra o "
+#~ "<guimenuitem>Gerenciador de dispositivos</guimenuitem> e adicione uma "
+#~ "máquina na aba <guilabel>Cliente</guilabel>. A máquina deve ser a máquina "
+#~ "local (normalmente 127.0.0.1) e o número da porta deve ser a "
+#~ "<varname>porta_local</varname> usada nos passos anteriores. Dê um clique "
+#~ "<mousebutton>direito</mousebutton> na máquina e selecione "
+#~ "<guimenuitem>Conectar</guimenuitem> a partir do menu de contexto. O "
+#~ "&kstars; conectará ao servidor INDI de maneira segura. As informações da "
+#~ "máquina serão salvas para sessões futuras."
 
 #, fuzzy
 #~| msgid ""

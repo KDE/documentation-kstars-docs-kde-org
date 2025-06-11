@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-10 01:53+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-09 00:05+0200\n"
 "PO-Revision-Date: 2024-09-10 09:35+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -16,39 +16,15 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#. Tag: title
-#: ekos-extensions.docbook:2
-#, no-c-format
-msgid "<title>Extensions</title>"
-msgstr "<title>Розширення</title>"
+#: ../../user_manual/ekos-extensions.rst:3
+msgid "Extensions"
+msgstr ""
 
-#. Tag: primary
-#: ekos-extensions.docbook:4
-#, no-c-format
-msgid "Tools"
-msgstr "Інструменти"
-
-#. Tag: secondary
-#: ekos-extensions.docbook:5
-#, no-c-format
-msgid "Ekos"
-msgstr "Ekos"
-
-#. Tag: tertiary
-#: ekos-extensions.docbook:6
-#, no-c-format
-msgid "<tertiary>Extensions</tertiary>"
-msgstr "<tertiary>Розширення</tertiary>"
-
-#. Tag: title
-#: ekos-extensions.docbook:9
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:8
 msgid "Introduction"
 msgstr "Вступ"
 
-#. Tag: para
-#: ekos-extensions.docbook:10
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:10
 msgid ""
 "Extensions are small programs that can be added to interact with Kstars/Ekos/"
 "INDI in order to provide extra functions and features."
@@ -57,9 +33,7 @@ msgstr ""
 "Kstars/Ekos/INDI з метою забезпечення роботи додаткових функцій або "
 "можливостей."
 
-#. Tag: para
-#: ekos-extensions.docbook:14
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:14
 msgid ""
 "Extensions are separate from Kstars/Ekos/INDI. They are not provided as part "
 "of this software. Only a means to call them is provided for convenience. "
@@ -71,15 +45,11 @@ msgstr ""
 "викликати ці розширення. Вам слід бути обізнаними із вимогами та ризиками "
 "використання розширень."
 
-#. Tag: title
-#: ekos-extensions.docbook:20
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:19
 msgid "Requirements"
 msgstr "Вимоги"
 
-#. Tag: para
-#: ekos-extensions.docbook:21
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:21
 msgid ""
 "Each extension must consist of at least 2 files, with an optional third icon "
 "file."
@@ -87,9 +57,7 @@ msgstr ""
 "Кожне розширення має складатися із принаймні 2 файлів із необов'язковим "
 "третім файлом піктограми."
 
-#. Tag: para
-#: ekos-extensions.docbook:26
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:23
 msgid ""
 "The program file. This is any executable file that will run on the users "
 "system. The user under which KStars is running must have execute permission "
@@ -99,9 +67,7 @@ msgstr ""
 "користувача. Користувач, від імені якого запущено KStars, повинен мати права "
 "на виконання цього файла."
 
-#. Tag: para
-#: ekos-extensions.docbook:31
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:25
 msgid ""
 "The configuration file. This is a plain text file that defines the required "
 "and optional inputs for the extension. It must be named the same as the "
@@ -111,30 +77,39 @@ msgstr ""
 "додаткові джерела даних для розширення. Він повинен мати таку саму назву, як "
 "виконуваний файл розширення, але мати суфікс назви файла .conf."
 
-#. Tag: para
-#: ekos-extensions.docbook:34
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:27
+#, fuzzy
+#| msgid ""
+#| "It is mandatory that the configuration file contains a line starting with "
+#| "<emphasis role=\"bold\">minimum_kstars_version=n.n.n</emphasis> where n.n."
+#| "n is the lowest version of KStars that supports the extension &eg; 3.7.3"
 msgid ""
 "It is mandatory that the configuration file contains a line starting with "
-"<emphasis role=\"bold\">minimum_kstars_version=n.n.n</emphasis> where n.n.n "
-"is the lowest version of KStars that supports the extension &eg; 3.7.3"
+"**minimum_kstars_version=n.n.n** where n.n.n is the lowest version of KStars "
+"that supports the extension e.g. 3.7.3"
 msgstr ""
 "Файл налаштувань обов'язково повинен містити рядок, що починається з "
 "<emphasis role=\"bold\">minimum_kstars_version=n.n.n</emphasis>, де n.n.n є "
 "найнижчою версією KStars, у якій забезпечено підтримку роботи розширення, "
 "наприклад 3.7.3"
 
-#. Tag: para
-#: ekos-extensions.docbook:37
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:29
+#, fuzzy
+#| msgid ""
+#| "Optionally (and non-preferred) the configuration file may contain a line "
+#| "starting with <emphasis role=\"bold\">runDetached=true</emphasis>. If "
+#| "present this line makes the extension run independently from KStars. Once "
+#| "it has been started the extension can not pass status information back to "
+#| "Ekos. This should only be used by extensions that are required to "
+#| "continue to run after KStars has closed. The extension must also provide "
+#| "its own user interface."
 msgid ""
 "Optionally (and non-preferred) the configuration file may contain a line "
-"starting with <emphasis role=\"bold\">runDetached=true</emphasis>. If "
-"present this line makes the extension run independently from KStars. Once it "
-"has been started the extension can not pass status information back to Ekos. "
-"This should only be used by extensions that are required to continue to run "
-"after KStars has closed. The extension must also provide its own user "
-"interface."
+"starting with **runDetached=true**.  If present this line makes the "
+"extension run independently from KStars. Once it has been started the "
+"extension can not pass status information back to Ekos. This should only be "
+"used by extensions that are required to continue to run after KStars has "
+"closed.  The extension must also provide its own user interface."
 msgstr ""
 "Крім того (хоча це не є бажаним), у файлі налаштувань може міститися рядок, "
 "що починається з <emphasis role=\"bold\">runDetached=true</emphasis>. Якщо "
@@ -143,9 +118,7 @@ msgstr ""
 "користуватися, лише якщо розширення мають продовжувати роботу після закриття "
 "вікна KStars. Розширення має також надавати власний інтерфейс користувача."
 
-#. Tag: para
-#: ekos-extensions.docbook:40
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:31
 msgid ""
 "Additionally the configuration file can contain any other parameters that "
 "the extension author decides and free text."
@@ -153,9 +126,7 @@ msgstr ""
 "Крім того, файл налаштувань може містити будь-які інші параметри, які "
 "визначаються автором розширення, та довільний текст."
 
-#. Tag: para
-#: ekos-extensions.docbook:45
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:33
 msgid ""
 "The icon file, if present, must be named the same as the extension "
 "executable with the addition of the appropriate file name extension for the "
@@ -170,30 +141,42 @@ msgstr ""
 "використано у спадному списку вибору розширень. Якщо піктограму не надано, "
 "замість неї буде використано типову піктограму."
 
-#. Tag: para
-#: ekos-extensions.docbook:50
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:35
+#, fuzzy
+#| msgid ""
+#| "All files of the extension (executable, configuration, and optional icon) "
+#| "must be copied into the KStars writable data location /extensions &eg; ~/."
+#| "local/share/kstars/extensions"
 msgid ""
 "All files of the extension (executable, configuration, and optional icon) "
-"must be copied into the KStars writable data location /extensions &eg; ~/."
-"local/share/kstars/extensions"
+"must be copied into the KStars writable data location /extensions e.g. ``~/."
+"local/share/kstars/extensions``"
 msgstr ""
 "Усі файли розширення (виконуваний файл, налаштування та необов'язкова "
 "піктограма) має бути скопійовано до придатного до запису з KStars каталогу "
 "даних, підкаталог /extensions, наприклад ~/.local/share/kstars/extensions"
 
-#. Tag: para
-#: ekos-extensions.docbook:53
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:37
+#, fuzzy
+#| msgid ""
+#| "Extensions that are present, have a valid configuration file, and have a "
+#| "minimum KStars version no higher than the current installation will be "
+#| "detected when Ekos is started. If there are no valid extensions detected "
+#| "the extension UI element will not be displayed. The extension UI elements "
+#| "are a ComboBox showing the name and icon of each detected extension, and "
+#| "a start/stop button. If the extension fails to close within 10 seconds of "
+#| "the stop button being clicked, it becomes re-enabled as an abort button "
+#| "that will force close the extension. Only one extension can be used at a "
+#| "time."
 msgid ""
 "Extensions that are present, have a valid configuration file, and have a "
 "minimum KStars version no higher than the current installation will be "
-"detected when Ekos is started. If there are no valid extensions detected the "
-"extension UI element will not be displayed. The extension UI elements are a "
-"ComboBox showing the name and icon of each detected extension, and a start/"
-"stop button. If the extension fails to close within 10 seconds of the stop "
-"button being clicked, it becomes re-enabled as an abort button that will "
-"force close the extension. Only one extension can be used at a time."
+"detected when Ekos is started.  If there are no valid extensions detected "
+"the extension UI element will not be displayed. The extension UI elements "
+"are a ComboBox showing the name and icon of each detected extension, and a "
+"start/stop button. If the extension fails to close within 10 seconds of the "
+"stop button being clicked, it becomes re-enabled as an abort button that "
+"will force close the extension. Only one extension can be used at a time."
 msgstr ""
 "Наявні розширення, що мають коректний файл налаштувань та мають мінімальну "
 "версію KStars не вище поточної встановленої, буде виявлено під час запуску "
@@ -206,33 +189,30 @@ msgstr ""
 "завершить роботу розширення. Одночасно можна використовувати лише одне "
 "розширення."
 
-#. Tag: title
-#: ekos-extensions.docbook:58
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:42
 msgid "Development"
 msgstr "Розробка"
 
-#. Tag: para
-#: ekos-extensions.docbook:59
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:44
 msgid "The following describes additional points for developers of extensions."
 msgstr "Нижче наведено опис додаткових речей для розробників розширень."
 
-#. Tag: para
-#: ekos-extensions.docbook:64
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:46
+#, fuzzy
+#| msgid ""
+#| "Some extension sources including an example skeleton extension are "
+#| "available in the <ulink url=\"https://github.com/LuckyEddie47/"
+#| "kstars_extensions\">KStars Extension Github</ulink>"
 msgid ""
 "Some extension sources including an example skeleton extension are available "
-"in the <ulink url=\"https://github.com/LuckyEddie47/kstars_extensions"
-"\">KStars Extension Github</ulink>"
+"in the `KStars Extension Github <https://github.com/LuckyEddie47/"
+"kstars_extensions>`__"
 msgstr ""
 "Коди декількох розширень, зокрема приклад каркасу розширення, можна знайти у "
 "сховищі <ulink url=\"https://github.com/LuckyEddie47/kstars_extensions"
 "\">KStars Extension на Github</ulink>"
 
-#. Tag: para
-#: ekos-extensions.docbook:69
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:48
 msgid ""
 "Each extension must check for the existence and validity of its own "
 "configuration file. The minimum_kstars_version configuration file entry must "
@@ -244,24 +224,26 @@ msgstr ""
 "перевірено за внутрішнім еталоном для підтвердження тощо, що файл "
 "налаштувань відповідає вимогам розширення. Див. приклад каркасу розширення."
 
-#. Tag: para
-#: ekos-extensions.docbook:74
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:50
 msgid ""
 "The calling KStars version is passed to the extension as arg(1) in the "
 "launching QProcess call."
 msgstr ""
 "Версію KStars буде передано до розширення як arg(1) у виклику QProcess."
 
-#. Tag: para
-#: ekos-extensions.docbook:79
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:52
+#, fuzzy
+#| msgid ""
+#| "All interaction with KStars/Ekos/INDI should be via the DBus interface. "
+#| "See the skeleton example. Useful tools for interrogating, monitoring and "
+#| "understanding DBus include <ulink url=\"https://wiki.gnome.org/Apps/DFeet"
+#| "\">D-Feet</ulink> and <ulink url=\"https://gitlab.freedesktop.org/bustle/"
+#| "bustle\">Bustle</ulink>"
 msgid ""
 "All interaction with KStars/Ekos/INDI should be via the DBus interface. See "
 "the skeleton example. Useful tools for interrogating, monitoring and "
-"understanding DBus include <ulink url=\"https://wiki.gnome.org/Apps/DFeet"
-"\">D-Feet</ulink> and <ulink url=\"https://gitlab.freedesktop.org/bustle/"
-"bustle\">Bustle</ulink>"
+"understanding DBus include `D-Feet <https://wiki.gnome.org/Apps/DFeet>`__ "
+"and `Bustle <https://gitlab.freedesktop.org/bustle/bustle>`__"
 msgstr ""
 "Уся взаємодія з KStars/Ekos/INDI має відбуватися за допомогою інтерфейсу "
 "DBus. Див. приклад каркасу розширення. Корисними інструментами для вивчення, "
@@ -269,13 +251,21 @@ msgstr ""
 "Apps/DFeet\">D-Feet</ulink> та <ulink url=\"https://gitlab.freedesktop.org/"
 "bustle/bustle\">Bustle</ulink>"
 
-#. Tag: para
-#: ekos-extensions.docbook:82
-#, no-c-format
+#: ../../user_manual/ekos-extensions.rst:54
+#, fuzzy
+#| msgid ""
+#| "It may appear on initial investigation that using the Qt DBus Adaptors "
+#| "system would be much easier than direct use of the Qt DBus Interfaces/"
+#| "Messages and KStars does provide the required xml definitions. However "
+#| "currently there is heavy use of custom types, the definitions of which "
+#| "are combined with other information in the KStars sources. This results "
+#| "in a large set of files from KStars that require inclusion within an "
+#| "extension in order to make use of the Qt DBus Adaptors. Hopefully this "
+#| "will be addressed in the future."
 msgid ""
 "It may appear on initial investigation that using the Qt DBus Adaptors "
 "system would be much easier than direct use of the Qt DBus Interfaces/"
-"Messages and KStars does provide the required xml definitions. However "
+"Messages and KStars does provide the required xml definitions.  However "
 "currently there is heavy use of custom types, the definitions of which are "
 "combined with other information in the KStars sources. This results in a "
 "large set of files from KStars that require inclusion within an extension in "
@@ -289,3 +279,15 @@ msgstr ""
 "інформацією у джерелах KStars. Це призводить до появи великого набору файлів "
 "із KStars, які потребують включення до розширення, щоб використовувати "
 "Adaptors Qt DBus. Сподіваюся, це буде вирішено в майбутньому."
+
+#~ msgid "<title>Extensions</title>"
+#~ msgstr "<title>Розширення</title>"
+
+#~ msgid "Tools"
+#~ msgstr "Інструменти"
+
+#~ msgid "Ekos"
+#~ msgstr "Ekos"
+
+#~ msgid "<tertiary>Extensions</tertiary>"
+#~ msgstr "<tertiary>Розширення</tertiary>"
