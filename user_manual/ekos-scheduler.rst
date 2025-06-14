@@ -222,10 +222,14 @@ Other options
 ==============
 
             There are several other options to control how the Scheduler
-            behaves. These are found in the general KStars Settings
-            menu, shown below, in its Ekos tab and Scheduler sub-tab.
+            behaves. These are found in the Scheduler options menu, shown
+            below, which opens with the ``Options...`` button located in 
+            the lower right of the Scheduler.
 
-                  |Scheduler Settings|
+                  |Scheduler Offset Settings|
+                  |Scheduler Alignment Settings|
+                  |Scheduler Jobs Settings|
+                  |Scheduler Scripts Settings|
 
 .. _ekos-scheduler-remember-job-progress:
 
@@ -733,7 +737,10 @@ Mosaic Planner
             individually, as you would normal Scheduler jobs.
 
 .. |Ekos Scheduler Module| image:: /images/ekos_scheduler.png
-.. |Scheduler Settings| image:: /images/ekos_scheduler_settings.png
+.. |Scheduler Offset Settings| image:: /images/ekos_scheduler_offset_settings.png
+.. |Scheduler Alignment Settings| image:: /images/ekos_scheduler_alignment_settings.png
+.. |Scheduler Jobs Settings| image:: /images/ekos_scheduler_jobs_settings.png
+.. |Scheduler Scripts Settings| image:: /images/ekos_scheduler_scripts_settings.png
 .. |Capture Sequence Editor| image:: /images/ekos_capture_sequence_editor.png
 .. |Scheduler + Planner| image:: /images/scheduler_planner.png
 .. |Mosaic Planner| image:: /images/mosaic_planner.png
