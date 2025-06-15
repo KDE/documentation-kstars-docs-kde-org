@@ -44,7 +44,7 @@ Set all capture parameters as detailed below. Once set, you can capture a previe
 
   -  ``Custom Properties``: Set extended properties available in the camera to the job settings.
 
-  -  ``Calibration``: For Dark &s; Flat frames, you can set additional options explained in the :ref:`Calibration Frames section below  <ekos-capture-cal-frames>`.
+  -  ``Calibration``: For Dark & Flat frames, you can set additional options explained in the :ref:`Calibration Frames section below  <ekos-capture-cal-frames>`.
 
   -  ``Frame``: Specify the left (X), top (Y), width (W), and height (H) of the desired CCD frame. If you changed the frame dimensions, you can reset it to default values by clicking on the reset button.
 

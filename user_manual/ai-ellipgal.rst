@@ -67,7 +67,7 @@ Elliptical Galaxies
                globular cluster in the Milky Way!
 
             Blue compact dwarf galaxies (BCD's)
-               Small galaxies that are unusually blue. Thehave
+               Small galaxies that are unusually blue. They have
                photometric colors of B-V = 0.0 to 0.30 mag, which is
                typical for relatively young stars of *spectral type* A.
                This suggests that BCDs are currently actively forming
