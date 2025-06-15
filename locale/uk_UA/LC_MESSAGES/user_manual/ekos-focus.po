@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstars_ekos-focus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-13 01:57+0000\n"
-"PO-Revision-Date: 2025-06-13 18:52+0300\n"
+"POT-Creation-Date: 2025-06-14 01:58+0000\n"
+"PO-Revision-Date: 2025-06-14 21:57+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 23.04.3\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : "
-"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: ../../user_manual/ekos-focus.rst:3
 msgid "Focus"
@@ -33,11 +33,6 @@ msgid "|Ekos Focus|"
 msgstr "|Фокусування у Ekos|"
 
 #: ../../user_manual/ekos-focus.rst:12
-#| msgid ""
-#| "In order to focus an image, Ekos needs to establish a numerical method "
-#| "for gauging how *good* your focus is. It's easy when you look at an image "
-#| "and can see it as *unfocused*, as the human eye is very good at detecting "
-#| "that, but *how</emphasis> can Ekos possibly know that?"
 msgid ""
 "In order to focus an image, Ekos needs to establish a numerical method for "
 "gauging how *good* your focus is. It's easy when you look at an image and "
@@ -105,10 +100,6 @@ msgstr ""
 "лінійних однопрохідний алгоритм."
 
 #: ../../user_manual/ekos-focus.rst:22
-#| msgid ""
-#| "<emphasis role=\"bold\">Linear 1 Pass*: In the Linear 1 Pass algorithm, "
-#| "Ekos establishes a V-Curve and fits a curve to the data to find the focus "
-#| "solution. It then moves to the calculated minimum. Key features include:"
 msgid ""
 "**Linear 1 Pass**: In the Linear 1 Pass algorithm, Ekos establishes a V-"
 "Curve and fits a curve to the data to find the focus solution. It then moves "
@@ -157,17 +148,6 @@ msgstr ""
 "тієї самої позиції, цей алгоритм є найкращим з використаних."
 
 #: ../../user_manual/ekos-focus.rst:34
-#| msgid ""
-#| "<emphasis role=\"bold\">Linear*: In the Linear algorithm, Ekos steps "
-#| "outward from its starting point then moves inward taking regular "
-#| "datapoints through the point of optimum focus and then further inward, to "
-#| "draw a V-Curve. It then fits a quadratic curve to the datapoints and "
-#| "calculates the point of optimum focus. It then moves out again past the "
-#| "point of optimum focus, halves the stepsize and moves in again for a "
-#| "second pass. It looks to follow the curve from the first pass and find "
-#| "the minimum HFR. Due to randomness in the HFR measurements it uses the % "
-#| "tolerance to help decide when it has found a solution. Key features "
-#| "include:"
 msgid ""
 "**Linear**: In the Linear algorithm, Ekos steps outward from its starting "
 "point then moves inward taking regular datapoints through the point of "
@@ -215,11 +195,6 @@ msgstr ""
 "параметрами, зокрема розміром кроку та кількістю кроків."
 
 #: ../../user_manual/ekos-focus.rst:44
-#| msgid ""
-#| "If the focuser behaves in an inconsistent way, i.e. when commanded to go "
-#| "to position X, there is variability in the position it goes to, then this "
-#| "algorithm will be the best to use as it has some built in tolerance for "
-#| "this variability."
 msgid ""
 "If the focuser behaves in an inconsistent way, i.e.  when commanded to go to "
 "position X, there is variability in the position it goes to, then this "
@@ -232,26 +207,6 @@ msgstr ""
 "відхилень від позиції."
 
 #: ../../user_manual/ekos-focus.rst:46
-#| msgid ""
-#| "<emphasis role=\"bold\">Iterative*: In the Iterative algorithm, Ekos "
-#| "operates iteratively by moving in discrete steps, decided initially by "
-#| "the user-configurable step size and later by the slope of the V-Curve, to "
-#| "get closer to the optimal focus position where it then changes gears and "
-#| "performs smaller, finer moves to reach the optimal focus. The focus "
-#| "process stops when the measured HFR is within the configurable tolerance "
-#| "of the minimum recorded HFR in the process. In other words, whenever the "
-#| "process starts searching for a solution within a narrowly limited range, "
-#| "it checks if the current HFR is within % difference compared to the "
-#| "minimum HFR recorded, and if this condition is met then the Autofocus "
-#| "process is considered successful. The default value is set to 1% and is "
-#| "sufficient for most situations. The Step options specify the number of "
-#| "initial ticks the focuser has to move. If the image is severely out of "
-#| "focus, we set the step size high (i.e. greater than 250). On the other "
-#| "hand, if the focus is close to optimal focus, we set the step size to a "
-#| "more reasonable range (less than 50). It takes trial and error to find "
-#| "the best starting tick, but Ekos only uses that for the first focus "
-#| "motion, as all subsequent motions depend on the V-Curve slope "
-#| "calculations. Key features include:"
 msgid ""
 "**Iterative**: In the Iterative algorithm, Ekos operates iteratively by "
 "moving in discrete steps, decided initially by the user-configurable step "
@@ -316,9 +271,8 @@ msgstr ""
 "щодо визначеного мінімуму."
 
 #: ../../user_manual/ekos-focus.rst:54
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Polynomial*: In the Polynomial algorithm, the "
+#| "**Polynomial*: In the Polynomial algorithm, the "
 #| "process starts off in Iterative mode, but once we cross to the other side "
 #| "of the V-Curve (once HFR values start increasing again after decreasing "
 #| "for a while), then Ekos performs quadratic curve fitting to find a "
@@ -331,7 +285,7 @@ msgid ""
 "performs quadratic curve fitting to find a solution that predicts the "
 "minimum possible HFR position. Key features include:"
 msgstr ""
-"<emphasis role=\"bold\">Поліноміальний*: у межах поліноміального алгоритму, "
+"**Поліноміальний**: у межах поліноміального алгоритму, "
 "процедура розпочинається у режимі, подібному до ітеративного алгоритму, але "
 "при переході на інший бік V-кривої (тобто у ситуації, коли радіус "
 "половинного потоку після зменшення починає знову зростати), Ekos виконує "
@@ -350,10 +304,9 @@ msgid "Optical Train Group"
 msgstr "Група оптичного тракту"
 
 #: ../../user_manual/ekos-focus.rst:68
-#, fuzzy
 #| msgid "Optical Train Settings"
 msgid "|Optical Train Settings|"
-msgstr "Параметри оптичного тракту"
+msgstr "|Параметри оптичного тракту|"
 
 #: ../../user_manual/ekos-focus.rst:71
 msgid ""
@@ -366,7 +319,6 @@ msgstr ""
 "тракти. Група складається з таких елементів:"
 
 #: ../../user_manual/ekos-focus.rst:73
-#, fuzzy
 #| msgid ""
 #| "``Train``: The Optical Train currently in use by the Focus tab. Hover the "
 #| "mouse over this field for a more detailed description of the selected "
@@ -379,7 +331,6 @@ msgstr ""
 "вказівник миші на це поле, щоб отримати докладніший опис позначеного тракту."
 
 #: ../../user_manual/ekos-focus.rst:75
-#, fuzzy
 #| msgid ""
 #| "``Edit Button``: Brings up the Optical Train dialog to view and "
 #| "potentially change the optical trains."
@@ -415,7 +366,6 @@ msgstr ""
 "типових параметрів буде створено з нуля."
 
 #: ../../user_manual/ekos-focus.rst:81
-#, fuzzy
 #| msgid ""
 #| "It is recommended to use the <link linkend=\"focus-advisor\">Focus "
 #| "Advisor</link> tool on new Optical Trains to set parameters appropriately."
@@ -423,8 +373,8 @@ msgid ""
 "It is recommended to use the :ref:`Focus Advisor <ekos-focus-focus-advisor>` "
 "tool on new Optical Trains to set parameters appropriately."
 msgstr ""
-"Рекомендуємо скористатися інструментом <link linkend=\"focus-advisor\">порад "
-"з фокусування</link> для належного встановлення параметрів для нових "
+"Рекомендуємо скористатися інструментом :ref:`порад з фокусування <"
+"ekos-focus-focus-advisor>` для належного встановлення параметрів для нових "
 "оптичних трактів."
 
 #: ../../user_manual/ekos-focus.rst:86
@@ -432,18 +382,16 @@ msgid "Focuser Group"
 msgstr "Група засобів фокусування"
 
 #: ../../user_manual/ekos-focus.rst:89
-#, fuzzy
 #| msgid "Filter Settings"
 msgid "|Focuser Settings|"
-msgstr "Параметри фільтрів"
+msgstr "|Параметри засобу фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:92
-#, fuzzy
 #| msgid ""
 #| "All INDI-compatible focusers are supported. It is recommended to use "
-#| "<emphasis role=\"bold\">absolute* focusers for the best results since "
+#| "**absolute* focusers for the best results since "
 #| "their absolute position is known on power up. In INDI, the focuser *zero* "
-#| "position is when the drawtube is <emphasis role=\"bold\">fully "
+#| "position is when the drawtube is **fully "
 #| "retracted*. When focusing *outwards</emphasis>, the focuser position "
 #| "increases, while it decreases when focusing *inwards*. The following "
 #| "focuser types are supported:"
@@ -456,48 +404,43 @@ msgid ""
 "following focuser types are supported:"
 msgstr ""
 "Передбачено підтримку усіх сумісних із INDI засобів фокусування. "
-"Рекомендуємо користуватися <emphasis role=\"bold\">абсолютними* засобами "
+"Рекомендуємо користуватися **абсолютними** засобами "
 "фокусування для отримання найкращих результатів, оскільки їхня абсолютна "
-"позиція є відомою на час вмикання. У INDI, *нульовою</emphasis> позицією "
-"засобу фокусування вважається позиція, у якій тубус <emphasis "
-"role=\"bold\">повністю втягнено*. При фокусуванні *назовні* позиція засобу "
-"фокусування зростає, а при фокусуванні *всередину* — зменшується. "
-"Передбачено підтримку таких типів засобів фокусування:"
+"позиція є відомою на час вмикання. У INDI, *нульовою* позицією "
+"засобу фокусування вважається позиція, у якій тубус **повністю втягнено**."
+" При фокусуванні *назовні* позиція засобу фокусування "
+"зростає, а при фокусуванні *всередину* — зменшується. Передбачено підтримку "
+"таких типів засобів фокусування:"
 
 #: ../../user_manual/ekos-focus.rst:94
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Absolute*: Absolute Position Focusers such as "
+#| "**Absolute*: Absolute Position Focusers such as "
 #| "RoboFocus, MoonLite, ASI ZWO"
 msgid ""
 "**Absolute**: Absolute Position Focusers such as RoboFocus, MoonLite, ASI ZWO"
 msgstr ""
-"<emphasis role=\"bold\">Абсолютний*: засоби фокусування з абсолютною "
+"**Абсолютний**: засоби фокусування з абсолютною "
 "позицією, зокрема RoboFocus, MoonLite, ASI ZWO."
 
 #: ../../user_manual/ekos-focus.rst:96
-#, fuzzy
-#| msgid "<emphasis role=\"bold\">Relative*: Relative Position Focusers."
+#| msgid "**Relative*: Relative Position Focusers."
 msgid "**Relative**: Relative Position Focusers."
-msgstr ""
-"<emphasis role=\"bold\">Відносний*: прилади фокусування з відносною позицією."
+msgstr "**Відносний**: прилади фокусування з відносною позицією."
 
 #: ../../user_manual/ekos-focus.rst:98
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Time Based*: Time based focusers with no position "
+#| "**Time Based*: Time based focusers with no position "
 #| "feedback that adjust focus position by moving for a certain amount of "
 #| "time."
 msgid ""
 "**Time Based**: Time based focusers with no position feedback that adjust "
 "focus position by moving for a certain amount of time."
 msgstr ""
-"<emphasis role=\"bold\">На основі часу*: засновані на часу засоби "
+"**На основі часу**: засновані на часу засоби "
 "фокусування без зворотного зв'язку за позицією, які коригують позицію "
 "фокусування пересуванням на певний часовий крок."
 
 #: ../../user_manual/ekos-focus.rst:100
-#, fuzzy
 #| msgid ""
 #| "The ``Focuser`` field contains the focuser in the attached Optical Train."
 msgid ""
@@ -534,23 +477,21 @@ msgid "The Steps fields has 2 parts:"
 msgstr "Поля панелі «Кроки» мають дві частини:"
 
 #: ../../user_manual/ekos-focus.rst:106
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Left Hand Steps*: Current focuser position. This "
+#| "**Left Hand Steps*: Current focuser position. This "
 #| "is output only and is updated as the focuser moves to reflect the current "
 #| "position."
 msgid ""
 "**Left Hand Steps**: Current focuser position. This is output only and is "
 "updated as the focuser moves to reflect the current position."
 msgstr ""
-"<emphasis role=\"bold\">Ліва частина*: позиція поточного засобу фокусування. "
+"**Ліва частина**: позиція поточного засобу фокусування. "
 "Це лише виведені дані, вони оновлюються при пересуванні засобу фокусування "
 "для встановлення відповідності поточній позиції."
 
 #: ../../user_manual/ekos-focus.rst:108
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Right Hand Steps*: This is input and allows the "
+#| "**Right Hand Steps*: This is input and allows the "
 #| "user to enter a desired position. When the ``Goto`` button is pressed, "
 #| "the focuser is moved from its current position to the position indicated "
 #| "in this field."
@@ -559,12 +500,11 @@ msgid ""
 "position. When the ``Goto`` button is pressed, the focuser is moved from its "
 "current position to the position indicated in this field."
 msgstr ""
-"<emphasis role=\"bold\">Права частина*: це вхідні дані, тут користувач може "
+"**Права частина**: це вхідні дані, тут користувач може "
 "ввести бажану позицію. Якщо натиснуто кнопку ``Перейти``, засіб фокусування "
 "буде пересунуто з його поточної позиції до позиції, яку вказано у цьому полі."
 
 #: ../../user_manual/ekos-focus.rst:110
-#, fuzzy
 #| msgid ""
 #| "On startup, the Left Hand Steps will show the current focuser position. "
 #| "The Right Hand Steps field is defaulted from the Optical Train saved "
@@ -596,7 +536,6 @@ msgstr ""
 "для фокусування."
 
 #: ../../user_manual/ekos-focus.rst:112
-#, fuzzy
 #| msgid ""
 #| "The ``Goto Focus Position`` button moves the focuser to the position in "
 #| "the righthand Steps field."
@@ -608,7 +547,6 @@ msgstr ""
 "позицію, яку вказано у правому полі «Кроки»."
 
 #: ../../user_manual/ekos-focus.rst:114
-#, fuzzy
 #| msgid ""
 #| "The ``Stop Focuser Motion`` button stops the in-progress focuser motion."
 msgid ""
@@ -618,7 +556,6 @@ msgstr ""
 "засобу фокусування."
 
 #: ../../user_manual/ekos-focus.rst:116
-#, fuzzy
 #| msgid ""
 #| "The ``Auto Focus`` button starts an Autofocus run. The ``Stop`` button is "
 #| "used to stop the run."
@@ -644,8 +581,8 @@ msgid ""
 "until the Stop button is pressed."
 msgstr ""
 "За допомогою натискання кнопки ``Захопити зображення`` можна створити кадр "
-"на основі поточних параметрів у групі <link linkend=\"focus-ccd-filter-"
-"wheel\">Камера і барабан фільтрів</link>. Натискання кнопки ``Розпочати "
+"на основі поточних параметрів у групі <link linkend=\"focus-ccd-filter-wheel"
+"\">Камера і барабан фільтрів</link>. Натискання кнопки ``Розпочати "
 "кадрування`` призведе до повторного захоплення кадрів, аж до натискання "
 "кнопки ``Припинити``."
 
@@ -694,16 +631,14 @@ msgstr ""
 "на зірках уночі."
 
 #: ../../user_manual/ekos-focus.rst:127
-#, fuzzy
 #| msgid "Camera &amp; Filter Wheel Group"
 msgid "Camera & Filter Wheel Group"
 msgstr "Група «Камера і барабан з фільтрами»"
 
 #: ../../user_manual/ekos-focus.rst:130
-#, fuzzy
 #| msgid "Camera &amp; Filter Wheel Group"
 msgid "|Focus Camera & Filter Wheel Group|"
-msgstr "Група «Камера і барабан з фільтрами»"
+msgstr "|Група «Камера і барабан з фільтрами»|"
 
 #: ../../user_manual/ekos-focus.rst:133
 msgid ""
@@ -720,13 +655,11 @@ msgstr ""
 "використати."
 
 #: ../../user_manual/ekos-focus.rst:137
-#, fuzzy
 #| msgid "``Exp``: The exposure time in seconds."
 msgid "``Exp``: The exposure time in seconds."
 msgstr "``Експ``: тривалість експонування у секундах."
 
 #: ../../user_manual/ekos-focus.rst:139
-#, fuzzy
 #| msgid ""
 #| "The ``Toggle Full Screen`` button pops the window displaying the focus "
 #| "frame out to a separate window. Pressing it again returns it within the "
@@ -741,7 +674,6 @@ msgstr ""
 "кнопки поверне вас до фокусованого вікна."
 
 #: ../../user_manual/ekos-focus.rst:141
-#, fuzzy
 #| msgid ""
 #| "The ``Show in FITS Viewer`` button pops-up a separate FITS Viewer window "
 #| "to display the focus frame, in addition to the focus frame displayed "
@@ -756,13 +688,11 @@ msgstr ""
 "фокусування, яку показано у вікні фокусування."
 
 #: ../../user_manual/ekos-focus.rst:143
-#, fuzzy
 #| msgid "The ``Live Video`` button brings up the associated popup."
 msgid "The ``Live Video`` button brings up the associated popup."
 msgstr "Кнопка ``Інтерактивне відео`` відкриває відповідне контекстне вікно."
 
 #: ../../user_manual/ekos-focus.rst:145
-#, fuzzy
 #| msgid ""
 #| "The next row of controls allows Camera parameters to be set. Choose a "
 #| "value from the binning dropdown and then set either the camera gain or "
@@ -776,7 +706,6 @@ msgstr ""
 "підсилювати камеру чи скористатися ISO."
 
 #: ../../user_manual/ekos-focus.rst:147
-#, fuzzy
 #| msgid ""
 #| "``Binning``: Increasing the binning will change the image scale as well "
 #| "as resulting in brighter pixels. It is generally only worth binning above "
@@ -799,7 +728,6 @@ msgstr ""
 "певні, лишіть варіант 1x1."
 
 #: ../../user_manual/ekos-focus.rst:149
-#, fuzzy
 #| msgid ""
 #| "``Gain``: Set the Gain for the Camera being used to focus. The value "
 #| "needs to be high enough to give a clear star pattern but not so high as "
@@ -822,7 +750,6 @@ msgstr ""
 "вашої камери і почати коригування з нього."
 
 #: ../../user_manual/ekos-focus.rst:151
-#, fuzzy
 #| msgid ""
 #| "``ISO``: Set the ISO for the Camera being used to focus. Some "
 #| "experimentation will be required to find an optimum value."
@@ -843,7 +770,6 @@ msgstr ""
 "фільтрування, якщо таке є:"
 
 #: ../../user_manual/ekos-focus.rst:155
-#, fuzzy
 #| msgid ""
 #| "``TS``: Select the temperature source from the dropdown. Underneath are "
 #| "displayed the current temperature from the selected temperature source "
@@ -865,13 +791,11 @@ msgstr ""
 "після значної зміни температури, яка змінює точку фокусування телескопа."
 
 #: ../../user_manual/ekos-focus.rst:157
-#, fuzzy
 #| msgid "``Filter``: Select the filter to use."
 msgid "``Filter``: Select the filter to use."
 msgstr "``Фільтр``: вибрати фільтр, яким слід скористатися."
 
 #: ../../user_manual/ekos-focus.rst:159
-#, fuzzy
 #| msgid ""
 #| "To start focusing it will probably be easier to select the filter that "
 #| "allows the most light through, for example the Lum filter. Click the "
@@ -889,15 +813,13 @@ msgid ""
 msgstr ""
 "Щоб розпочати фокусування, ймовірно, варто вибрати фільтр, який пропускає "
 "найбільше світла, наприклад фільтр світності. Натисніть піктограму "
-"фільтрування <inlinemediaobject><imageobject><imagedata fileref=\"view-"
-"filter.png\" format=\"PNG\"/></imageobject></inlinemediaobject> для "
-"відкриття контекстного вікна <link linkend=\"focus-filter-"
-"settings\">Параметри фільтрування</link>. За її допомогою можна встановити "
-"значення параметрів окремого фільтра, які буде використано під час "
-"автоматичного фокусування."
+"фільтрування |image2| для відкриття контекстного вікна :ref:`Параметри"
+" фільтрування <ekos-focus-filter-settings>`. За її допомогою можна"
+" встановити значення "
+"параметрів окремого фільтра, які буде використано під час автоматичного "
+"фокусування."
 
 #: ../../user_manual/ekos-focus.rst:161
-#, fuzzy
 #| msgid "``Reset`` button will reset the focusing subframe to full frame."
 msgid "``Reset`` button will reset the focusing subframe to full frame."
 msgstr ""
@@ -909,10 +831,9 @@ msgid "Tools Group"
 msgstr "Група інструментів"
 
 #: ../../user_manual/ekos-focus.rst:169
-#, fuzzy
 #| msgid "Tools Group"
 msgid "|Focus Tools Group|"
-msgstr "Група інструментів"
+msgstr "|Група інструментів фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:172
 msgid "This section describes the focus tools that are currently available."
@@ -944,8 +865,8 @@ msgid ""
 "The ``CFZ`` button launches the :ref:`Critical Focus Zone <ekos-focus-cfz>` "
 "tool."
 msgstr ""
-"Кнопка ``КЗФ`` відкриває вікно інструмента <link linkend=\"focus-"
-"cfz\">Критична зона фокусування</link>."
+"Кнопка ``КЗФ`` відкриває вікно інструмента <link linkend=\"focus-cfz"
+"\">Критична зона фокусування</link>."
 
 #: ../../user_manual/ekos-focus.rst:178
 #, fuzzy
@@ -956,11 +877,10 @@ msgid ""
 "The ``Advisor`` button launches the :ref:`Focus Advisor <ekos-focus-focus-"
 "advisor>` tool."
 msgstr ""
-"Кнопка ``Радник`` відкриває вікно інструмента <link linkend=\"focus-"
-"advisor\">Радник з фокусування</link>."
+"Кнопка ``Радник`` відкриває вікно інструмента <link linkend=\"focus-advisor"
+"\">Радник з фокусування</link>."
 
 #: ../../user_manual/ekos-focus.rst:180
-#, fuzzy
 #| msgid ""
 #| "The ``Force AF`` checkbox can be used when a sequence is active either in "
 #| "Capture or the Scheduler. When checked, an Autofocus will be triggered at "
@@ -976,19 +896,16 @@ msgstr ""
 "автоматичне фокусування."
 
 #: ../../user_manual/ekos-focus.rst:185 ../../user_manual/ekos-focus.rst:2158
-#, fuzzy
 #| msgid "<title>Focus Options</title>"
 msgid "Focus Options"
-msgstr "<title>Параметри фокусування</title>"
+msgstr "Параметри фокусування"
 
 #: ../../user_manual/ekos-focus.rst:188
-#, fuzzy
 #| msgid "<title>Focus Options</title>"
 msgid "|Focus Options|"
-msgstr "<title>Параметри фокусування</title>"
+msgstr "|Параметри фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:191
-#, fuzzy
 #| msgid ""
 #| "Parameters to configure Focus are accessed by pressing the ``Options...`` "
 #| "button. This launches the Options dialog with three panes:"
@@ -1048,23 +965,20 @@ msgstr ""
 "використані налаштування для вибраного оптичного тракту."
 
 #: ../../user_manual/ekos-focus.rst:204 ../../user_manual/ekos-focus.rst:2161
-#, fuzzy
 #| msgid "Filter Settings"
 msgid "Focus Settings"
-msgstr "Параметри фільтрів"
+msgstr "Параметри фокусування"
 
 #: ../../user_manual/ekos-focus.rst:207
-#, fuzzy
 #| msgid "Filter Settings"
 msgid "|Focus Settings|"
-msgstr "Параметри фільтрів"
+msgstr "|Параметри фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:210
 msgid "General section parameters:"
 msgstr "Загальний розділ параметрів:"
 
 #: ../../user_manual/ekos-focus.rst:212
-#, fuzzy
 #| msgid ""
 #| "``Auto Select Star``: This setting is only relevant if ``Sub Frame`` is "
 #| "selected. In this case if ``Auto Select Star`` is selected then Ekos will "
@@ -1082,7 +996,6 @@ msgstr ""
 "доведеться вручну вибрати зірку за допомогою переглядача FITS."
 
 #: ../../user_manual/ekos-focus.rst:214
-#, fuzzy
 #| msgid ""
 #| "``Suspend Guiding``: Set this option to suspend guiding during an "
 #| "Autofocus run. The purpose of this is to prevent guiding from having "
@@ -1101,7 +1014,6 @@ msgstr ""
 "телескопом позаосьовим засобом з'єднання."
 
 #: ../../user_manual/ekos-focus.rst:216
-#, fuzzy
 #| msgid ""
 #| "``Dark Frame``: Check this option to perform dark-frame subtraction. This "
 #| "option can be useful in noisy images, where a pretaken dark is subtracted "
@@ -1126,7 +1038,6 @@ msgstr ""
 "виберіть пункт мапи дефектів."
 
 #: ../../user_manual/ekos-focus.rst:220
-#, fuzzy
 #| msgid ""
 #| "Dark frames are used by Focus, Alignment and Guiding. See the Dark "
 #| "Library feature within the <link linkend=\"ekos-capture\">Capture Module</"
@@ -1137,12 +1048,11 @@ msgid ""
 "how to setup Dark Frames."
 msgstr ""
 "Темні кадри використовують при фокусуванні, вирівнюванні та наведенні. Див. "
-"опис можливості бібліотеки темних кадрів у розділі щодо <link linkend=\"ekos-"
-"capture\">модуля захоплення</link>, щоб дізнатися більше про те, як "
+"опис можливості бібліотеки темних кадрів у розділі щодо :doc:`модуля"
+" захоплення <ekos-capture>`, щоб дізнатися більше про те, як "
 "налаштувати темні кадри."
 
 #: ../../user_manual/ekos-focus.rst:222
-#, fuzzy
 #| msgid ""
 #| "``Full Field``: Select to use the full field of the camera. In this mode, "
 #| "focus will automatically select multiple stars for use in an Autofocus "
@@ -1158,7 +1068,6 @@ msgstr ""
 "варіантом є ``Підкадр``."
 
 #: ../../user_manual/ekos-focus.rst:224
-#, fuzzy
 #| msgid ""
 #| "``Sub Frame``: Select to use a single star for the Autofocus process. The "
 #| "alternative to this is ``Full Field`` where multiple stars will be used "
@@ -1177,10 +1086,9 @@ msgstr ""
 "здійснено користувачем або Ekos."
 
 #: ../../user_manual/ekos-focus.rst:226
-#, fuzzy
 #| msgid ""
 #| "``Box``: Sets the box size used to enclose the focus star when using "
-#| "<emphasis role=\"bold\">Sub Frame*. Increase if you have very large "
+#| "**Sub Frame*. Increase if you have very large "
 #| "stars. For Bahtinov focus the box size can be increased even more to "
 #| "better enclose the Bahtinov diffraction pattern."
 msgid ""
@@ -1190,27 +1098,25 @@ msgid ""
 "pattern."
 msgstr ""
 "``Прямокутник``: виберіть розмір прямокутника для вибору зірки фокусування "
-"при використанні <emphasis role=\"bold\">підкадру</emphasis>. Збільште "
+"при використанні **підкадру**. Збільште "
 "значення, якщо зірки на знімку дуже великі. Для фокусування за Бахтіновим "
 "розмір прямокутника може бути додатково збільшено для кращого покриття "
 "шаблона дифракції Бахтінова."
 
 #: ../../user_manual/ekos-focus.rst:228
-#, fuzzy
 #| msgid ""
 #| "``Display Units``: Select the units for display on the Autofocus V-Curve "
-#| "when HFR or FWHM is selected. <emphasis role=\"bold\">Pixels* and "
-#| "<emphasis role=\"bold\">Arc Seconds* are supported."
+#| "when HFR or FWHM is selected. **Pixels* and "
+#| "**Arc Seconds* are supported."
 msgid ""
 "``Display Units``: Select the units for display on the Autofocus V-Curve "
 "when HFR or FWHM is selected.  **Pixels** and **Arc Seconds** are supported."
 msgstr ""
 "``Одиниці показу``: виберіть одиниці для показу на V-кривій автофокусування, "
-"якщо вибрано РПП або ПШПМ. Передбачено підтримку <emphasis "
-"role=\"bold\">пікселів* та <emphasis role=\"bold\">кутових секунд</emphasis>."
+"якщо вибрано РПП або ПШПМ. Передбачено підтримку **пікселів** та **кутових"
+" секунд**."
 
 #: ../../user_manual/ekos-focus.rst:230
-#, fuzzy
 #| msgid ""
 #| "``Guide Settle``: This option is used in conjunction with ``Suspend "
 #| "Guiding``. It allows any vibrations in the optical train to settle by "
@@ -1234,7 +1140,7 @@ msgstr "Розділ параметрів маскування:"
 #: ../../user_manual/ekos-focus.rst:234
 #, fuzzy
 #| msgid ""
-#| "These controls relate to <emphasis role=\"bold\">Masking Options</"
+#| "These controls relate to **Masking Options</"
 #| "emphasis> to be used when in ``Full Field`` mode. The effect of Masking "
 #| "Options can be seen in the <link linkend=\"focus-display\">FITS Viewer</"
 #| "link>."
@@ -1243,13 +1149,12 @@ msgid ""
 "Field`` mode. The effect of Masking Options can be seen in the :ref:`FITS "
 "Viewer <ekos-focus-focus-display>`."
 msgstr ""
-"Ці засоби керування пов'язано із <emphasis role=\"bold\">параметрами "
+"Ці засоби керування пов'язано із **параметрами "
 "маскування*, які буде використано у режимі ``Повне поле``. Результат "
-"застосування параметрів маскування можна переглянути у вікні <link "
-"linkend=\"focus-display\">переглядача FITS</link>/"
+"застосування параметрів маскування можна переглянути у вікні <link linkend="
+"\"focus-display\">переглядача FITS</link>/"
 
 #: ../../user_manual/ekos-focus.rst:236
-#, fuzzy
 #| msgid ""
 #| "``Use all stars for focusing``: Select this option if all stars of the "
 #| "field should be considered for focusing."
@@ -1261,7 +1166,6 @@ msgstr ""
 "фокусування слід враховувати усі зірки у полі."
 
 #: ../../user_manual/ekos-focus.rst:238
-#, fuzzy
 #| msgid ""
 #| "``Ring Mask``: This option provides two input fields that together define "
 #| "a doughnut over the FOV of the camera. Stars falling outside of the "
@@ -1292,7 +1196,6 @@ msgstr ""
 "вас немає зображення плоского поля на краях поля зору."
 
 #: ../../user_manual/ekos-focus.rst:240
-#, fuzzy
 #| msgid ""
 #| "``Mosaic Mask``: A 3x3 mosaic is composed with tiles from the image "
 #| "center, its corners and from the edges. This option is useful if you want "
@@ -1380,9 +1283,8 @@ msgid "Adaptive Focus Parameters:"
 msgstr "Параметри адаптивного фокусування:"
 
 #: ../../user_manual/ekos-focus.rst:254
-#, fuzzy
 #| msgid ""
-#| "The next set of controls relate to <emphasis role=\"bold\">Adaptive "
+#| "The next set of controls relate to **Adaptive "
 #| "Focus*. The idea here is to keep the telescope focused by adapting the "
 #| "focuser position based on changes in environmental conditions without "
 #| "having to perform a full Autofocus run. See the <link linkend=\"focus-"
@@ -1393,12 +1295,12 @@ msgid ""
 "in environmental conditions without having to perform a full Autofocus run. "
 "See the :ref:`Adaptive Focus <ekos-focus-adaptive>` section for more details."
 msgstr ""
-"Наступний набір засобів керування стосується <emphasis "
-"role=\"bold\">Адаптивного фокусування*. Ідея полягає у підтримання "
-"фокусування телескопа коригуванням позиції засобу фокусування на основі змін "
-"в умовах середовища без потреби у виконання повної процедури автоматичного "
-"фокусування. Див. <link linkend=\"focus-adaptive\">розділ щодо адаптивного "
-"фокусування</link>, щоб дізнатися більше."
+"Наступний набір засобів керування стосується **Адаптивного фокусування**."
+" Ідея полягає у підтримання фокусування "
+"телескопа коригуванням позиції засобу фокусування на основі змін в умовах "
+"середовища без потреби у виконання повної процедури автоматичного "
+"фокусування. Див. :ref:`розділ щодо адаптивного фокусування <"
+"ekos-focus-adaptive>`, щоб дізнатися більше."
 
 #: ../../user_manual/ekos-focus.rst:256
 msgid ""
@@ -1415,12 +1317,12 @@ msgstr ""
 #: ../../user_manual/ekos-focus.rst:258
 #, fuzzy
 #| msgid ""
-#| "In order to use <emphasis role=\"bold\">Adaptive Focus* it is necessary "
+#| "In order to use **Adaptive Focus* it is necessary "
 #| "to setup some data for your system. In particular you need to tell Ekos "
 #| "how many ticks (and in which direction) to move the focuser when the "
-#| "environmental conditions change. This is covered in the <link "
-#| "linkend=\"focus-filter-settings\">Filter Settings</link> popup. The popup "
-#| "is launched by clicking the filter icon "
+#| "environmental conditions change. This is covered in the <link linkend="
+#| "\"focus-filter-settings\">Filter Settings</link> popup. The popup is "
+#| "launched by clicking the filter icon "
 #| "<inlinemediaobject><imageobject><imagedata fileref=\"view-filter.png\" "
 #| "format=\"PNG\"/></imageobject></inlinemediaobject>."
 msgid ""
@@ -1430,7 +1332,7 @@ msgid ""
 "change. This is covered in the :ref:`Filter Settings <ekos-focus-filter-"
 "settings>` popup. The popup is launched by clicking the filter icon |image3|."
 msgstr ""
-"Щоб скористатися <emphasis role=\"bold\">адаптивним фокусуванням*, потрібно "
+"Щоб скористатися **адаптивним фокусуванням*, потрібно "
 "вказати певні дані для вашої системи. Зокрема, вам потрібно повідомити Ekos, "
 "на скільки поділок (і у якому напрямку) слід пересунути засіб фокусування "
 "при зміні умов середовища. Це заповнюється на контекстній панелі <link "
@@ -1444,24 +1346,21 @@ msgid "The following controls are available:"
 msgstr "Доступними є такі засоби керування:"
 
 #: ../../user_manual/ekos-focus.rst:262
-#, fuzzy
 #| msgid ""
-#| "``Adaptive Focus``: Select this option to activate <emphasis "
-#| "role=\"bold\">Adaptive Focus*."
+#| "``Adaptive Focus``: Select this option to activate <emphasis role=\"bold"
+#| "\">Adaptive Focus*."
 msgid "``Adaptive Focus``: Select this option to activate **Adaptive Focus**."
 msgstr ""
-"``Адаптивне фокусування``: виберіть цей варіант, щоб активувати <emphasis "
-"role=\"bold\">адаптивне фокусування*."
+"``Адаптивне фокусування``: виберіть цей варіант, щоб активувати **адаптивне"
+" фокусування**."
 
 #: ../../user_manual/ekos-focus.rst:264
-#, fuzzy
 #| msgid "``Min Move``: The minimum Adaptive Focus movement allowed."
 msgid "``Min Move``: The minimum Adaptive Focus movement allowed."
 msgstr ""
 "``Мін. рух``: мінімальний дозволений рух під час адаптивного фокусування."
 
 #: ../../user_manual/ekos-focus.rst:266
-#, fuzzy
 #| msgid ""
 #| "``Adapt Start Pos``: Check to allow Adaptive Focus to calculate the start "
 #| "position for an Autofocus run. The starting position is the last good "
@@ -1477,7 +1376,6 @@ msgstr ""
 "вибраного фільтра, адаптована до змін у навколишньому середовищі."
 
 #: ../../user_manual/ekos-focus.rst:268
-#, fuzzy
 #| msgid ""
 #| "For example, if the current focuser position is 1000, temperature = 4C, "
 #| "and if the Red filter is selected (last good focus position for Red is "
@@ -1496,7 +1394,7 @@ msgstr ""
 "червоного була 990 при 5C і Ekos налаштовано на пересування +3 ``поділки / "
 "°C``). Тоді, якщо адаптування початкової позиції вимкнено, автоматичне "
 "фокусування розпочнеться з 1000. Якщо адаптування початкової позиції "
-"увімкнено, автоматичне фокусування розпочнеться з 990 + (5 - 4) * 3 = 993."
+"увімкнено, автоматичне фокусування розпочнеться з 990 + (5 - 4) \\* 3 = 993."
 
 #: ../../user_manual/ekos-focus.rst:270
 msgid ""
@@ -1525,7 +1423,6 @@ msgstr ""
 "відповідного фільтра."
 
 #: ../../user_manual/ekos-focus.rst:274
-#, fuzzy
 #| msgid ""
 #| "``Max Total Move``: The maximum total focuser movement that Adaptive "
 #| "Focus is allowed in the observing session. The purpose of this is as a "
@@ -1550,7 +1447,6 @@ msgstr ""
 "змін фокусування під час застосування алгоритму адаптивного фокусування."
 
 #: ../../user_manual/ekos-focus.rst:276
-#, fuzzy
 #| msgid ""
 #| "If the Max Total Move is reached then ``Adaptive Focus`` is unchecked "
 #| "until manually re-checked by the user."
@@ -1563,23 +1459,20 @@ msgstr ""
 "позначено користувачем вручну."
 
 #: ../../user_manual/ekos-focus.rst:281 ../../user_manual/ekos-focus.rst:2166
-#, fuzzy
 #| msgid "Focus Process Parameters:"
 msgid "Focus Process"
-msgstr "Параметри процесу фокусування:"
+msgstr "Процедура фокусування"
 
 #: ../../user_manual/ekos-focus.rst:284
-#, fuzzy
 #| msgid "Focus Process Parameters:"
 msgid "|Focus Process|"
-msgstr "Параметри процесу фокусування:"
+msgstr "|Процедура фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:287
 msgid "Focus Process Parameters:"
 msgstr "Параметри процесу фокусування:"
 
 #: ../../user_manual/ekos-focus.rst:289
-#, fuzzy
 #| msgid ""
 #| "``Detection``: Select star detection algorithm. Each algorithm has its "
 #| "strengths and weaknesses. It is recommended to use SEP, unless you have a "
@@ -1594,55 +1487,50 @@ msgstr ""
 "є специфічним. Доступні такі параметри:"
 
 #: ../../user_manual/ekos-focus.rst:291
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">SEP*: Source Extraction and Photometry built in "
+#| "**SEP*: Source Extraction and Photometry built in "
 #| "library. This is the default value."
 msgid ""
 "**SEP**: Source Extraction and Photometry built in library. This is the "
 "default value."
 msgstr ""
-"<emphasis role=\"bold\">SEP*: вбудована бібліотека видобування початкових "
+"**SEP**: вбудована бібліотека видобування початкових "
 "даних і фотометрії (Source Extraction and Photometry). Це типове значення."
 
 #: ../../user_manual/ekos-focus.rst:293
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Centroid*: An extraction method based on "
+#| "**Centroid*: An extraction method based on "
 #| "estimating star mass around signal peaks."
 msgid ""
 "**Centroid**: An extraction method based on estimating star mass around "
 "signal peaks."
 msgstr ""
-"<emphasis role=\"bold\">Центр ваги*: метод видобування даних на основі "
+"**Центр ваги**: метод видобування даних на основі "
 "оцінки маси зірки навколо піків сигналів."
 
 #: ../../user_manual/ekos-focus.rst:295
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Gradient*: A single source extraction model based "
+#| "**Gradient*: A single source extraction model based "
 #| "on the Sobel filter."
 msgid ""
 "**Gradient**: A single source extraction model based on the Sobel filter."
 msgstr ""
-"<emphasis role=\"bold\">Градієнт*: модель видобування з єдиного джерела на "
+"**Градієнт**: модель видобування з єдиного джерела на "
 "основі фільтрування Собеля."
 
 #: ../../user_manual/ekos-focus.rst:297
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Threshold*: A single source detection algorithm "
+#| "**Threshold*: A single source detection algorithm "
 #| "based on pixel values."
 msgid ""
 "**Threshold**: A single source detection algorithm based on pixel values."
 msgstr ""
-"<emphasis role=\"bold\">Поріг*: алгоритм виявлено єдиного джерела на основі "
+"**Поріг**: алгоритм виявлено єдиного джерела на основі "
 "значень пікселів."
 
 #: ../../user_manual/ekos-focus.rst:299
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Bahtinov*: This detection method can be used when "
+#| "**Bahtinov*: This detection method can be used when "
 #| "using a Bahtinov mask for focusing. First take an image, then select the "
 #| "star to focus on. A new image will be taken and the diffraction pattern "
 #| "will be analysed. Three lines will be displayed on the diffraction "
@@ -1662,18 +1550,17 @@ msgid ""
 "indicator for the focus. The shorter the line, the better the image is in "
 "focus."
 msgstr ""
-"<emphasis role=\"bold\">Бахтінов*: цим методом виявлення можна скористатися, "
+"**Бахтінов**: цим методом виявлення можна скористатися, "
 "якщо для фокусування використано маску Бахтінова. Спочатку створіть знімок, "
 "потім виберіть зірку для фокусування. Програма створить новий знімок і "
 "проаналізує дифракційний шаблон. На дифракційному шаблоні буде показано три "
 "прямі, які вказуватимуть на те, наскільки добре було розпізнано шаблон, і "
 "наскільки фокусовано зображення. Якщо шаблон розпізнано не дуже добре, можна "
-"скоригувати значення параметра *К-ть рядків</emphasis>. Лінія із колами на "
+"скоригувати значення параметра *К-ть рядків*. Лінія із колами на "
 "кінцях є збільшеним індикатором для фокусування. Чим коротшою є лінія, тим "
 "фокусованішим є зображення."
 
 #: ../../user_manual/ekos-focus.rst:301
-#, fuzzy
 #| msgid ""
 #| "``SEP Profile``: If the star detection algorithm is set to *SEP*, then "
 #| "choose a parameter profile to use with the algorithm. The following are "
@@ -1687,40 +1574,36 @@ msgstr ""
 "профіль параметрів, яким слід скористатися в алгоритмі. Рекомендуємо таке:"
 
 #: ../../user_manual/ekos-focus.rst:303
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">1-Focus-Default:* for scopes that do not have a "
+#| "**1-Focus-Default:* for scopes that do not have a "
 #| "central obstruction such as a refractor."
 msgid ""
 "**1-Focus-Default:** for scopes that do not have a central obstruction such "
 "as a refractor."
 msgstr ""
-"<emphasis role=\"bold\">1-Focus-Default:* для телескопів без центральної "
+"**1-Focus-Default:** для телескопів без центральної "
 "перешкоди, зокрема рефракторів."
 
 #: ../../user_manual/ekos-focus.rst:305
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">1-Focus-Default-Donut:* for scopes that have a "
+#| "**1-Focus-Default-Donut:* for scopes that have a "
 #| "central obstruction such as a Newtonian, SCT, RASA, Ritchey-Cretien, etc."
 msgid ""
 "**1-Focus-Default-Donut:** for scopes that have a central obstruction such "
 "as a Newtonian, SCT, RASA, Ritchey-Cretien, etc."
 msgstr ""
-"<emphasis role=\"bold\">1-Focus-Default-Donut:* для телескопів із "
+"**1-Focus-Default-Donut:** для телескопів із "
 "центральною перешкодою, зокрема ньютонівських телескопів, телескопів SCT, "
 "RASA, Річі-Кретьєна тощо."
 
 #: ../../user_manual/ekos-focus.rst:307
-#, fuzzy
 #| msgid "``Algorithm``: Select the Autofocus process algorithm:"
 msgid "``Algorithm``: Select the Autofocus process algorithm:"
 msgstr "``Алгоритм``: виберіть алгоритм процедури автофокусування:"
 
 #: ../../user_manual/ekos-focus.rst:309
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Linear 1 Pass*: This is the recommended "
+#| "**Linear 1 Pass*: This is the recommended "
 #| "algorithm. In this algorithm, Ekos establishes a V-Curve and fits a curve "
 #| "to the data to find the focus solution. It then moves to the calculated "
 #| "solution."
@@ -1729,7 +1612,7 @@ msgid ""
 "Ekos establishes a V-Curve and fits a curve to the data to find the focus "
 "solution. It then moves to the calculated solution."
 msgstr ""
-"<emphasis role=\"bold\">Лінійний однопрохідний*: це рекомендований алгоритм. "
+"**Лінійний однопрохідний**: це рекомендований алгоритм. "
 "у межах лінійного однопрохідного алгоритму Ekos встановлює V-криву першого "
 "проходу і апроксимації для пошуку розв'язку фокусування. Далі, програма "
 "виконує фокусування за обчисленим розв'язком."
@@ -1758,17 +1641,15 @@ msgstr ""
 "кривої``."
 
 #: ../../user_manual/ekos-focus.rst:313
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Linear*: This algorithm builds a V-Curve with "
-#| "approximately <emphasis role=\"bold\">Out step Multiple</emphasis> steps "
+#| "**Linear*: This algorithm builds a V-Curve with "
+#| "approximately **Out step Multiple</emphasis> steps "
 #| "on each side of the minimum. Having built the V-Curve it then fits a "
 #| "quadratic equation to the curve (parabolic shape) and uses this to "
 #| "calculate the focuser position giving the minimum HFR. Having identified "
 #| "the minimum it then performs a 2nd pass halving the step size, recreating "
-#| "the curve from the 1st pass. It attempts to stop within <emphasis "
-#| "role=\"bold\">Tolerance* of the minimum HFR calculated during the 1st "
-#| "pass."
+#| "the curve from the 1st pass. It attempts to stop within <emphasis role="
+#| "\"bold\">Tolerance* of the minimum HFR calculated during the 1st pass."
 msgid ""
 "**Linear**: This algorithm builds a V-Curve with approximately **Out step "
 "Multiple** steps on each side of the minimum. Having built the V-Curve it "
@@ -1778,43 +1659,41 @@ msgid ""
 "the curve from the 1st pass. It attempts to stop within **Tolerance** of the "
 "minimum HFR calculated during the 1st pass."
 msgstr ""
-"<emphasis role=\"bold\">Лінійний*: у межах цього алгоритму програма будує V-"
-"криву із приблизною кількістю у <emphasis role=\"bold\">Коефіцієнт зовнішніх "
-"кроків* кроків на кожному боці від мінімуму. Після побудови V-кривої "
+"**Лінійний**: у межах цього алгоритму програма будує V-"
+"криву із приблизною кількістю у **Коефіцієнт зовнішніх "
+"кроків** кроків на кожному боці від мінімуму. Після побудови V-кривої "
 "виконується апроксимація кривої квадратичним рівнянням (параболічною "
 "формою), а результати апроксимації використовуються для обчислення позиції "
 "засобу фокусування, яка дає мінімальний РПП. Після визначення мінімуму "
 "програма виконує другий прохід із зменшеним удвічі кроком, повторно "
 "створюючи криву на основі даних першого проходу. Програма намагається "
-"утриматися у межах <emphasis role=\"bold\">допуску* щодо мінімального РПП, "
+"утриматися у межах **допуску** щодо мінімального РПП, "
 "який обчислено під час першого проходу."
 
 #: ../../user_manual/ekos-focus.rst:315
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Iterative*: Moves focuser by discreet steps "
+#| "**Iterative*: Moves focuser by discreet steps "
 #| "initially decided by the step size. Once a curve slope is calculated, "
 #| "further step sizes are calculated to reach an optimal solution. The "
-#| "algorithm stops when the measured HFR is within <emphasis "
-#| "role=\"bold\">Tolerance* of the minimum HFR recorded in the procedure."
+#| "algorithm stops when the measured HFR is within <emphasis role=\"bold"
+#| "\">Tolerance* of the minimum HFR recorded in the procedure."
 msgid ""
 "**Iterative**: Moves focuser by discreet steps initially decided by the step "
 "size.  Once a curve slope is calculated, further step sizes are calculated "
 "to reach an optimal solution. The algorithm stops when the measured HFR is "
 "within **Tolerance** of the minimum HFR recorded in the procedure."
 msgstr ""
-"<emphasis role=\"bold\">Ітеративний*: пересування засобу фокусування "
+"**Ітеративний**: пересування засобу фокусування "
 "кроками, розмір яких початково задається. Щойно буде визначено нахил кривої, "
 "програма визначить розмір кроку для досягнення оптимального розв’язку. "
 "Роботу алгоритму буде припинено, коли виміряне значення радіуса половинного "
-"потоку (HFR) перебуватиме у межах визначеного у межах<emphasis "
-"role=\"bold\">допуску* мінімального радіуса половинного потоку, який було "
-"зареєстровано під час виконання процедури."
+"потоку (HFR) перебуватиме у межах визначеного у межах **допуску**"
+" мінімального радіуса половинного потоку, який було зареєстровано "
+"під час виконання процедури."
 
 #: ../../user_manual/ekos-focus.rst:317
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Polynomial*: Starts with the iterative method. "
+#| "**Polynomial*: Starts with the iterative method. "
 #| "Upon crossing to the other side of the V-Curve, polynomial fitting "
 #| "coefficients along with possible minimum solution are calculated. This "
 #| "algorithm can be faster than a purely iterative approach given a good "
@@ -1825,21 +1704,19 @@ msgid ""
 "minimum solution are calculated. This algorithm can be faster than a purely "
 "iterative approach given a good data set."
 msgstr ""
-"<emphasis role=\"bold\">Поліноміальний*: починається з ітеративного методу. "
+"**Поліноміальний**: починається з ітеративного методу. "
 "Під час переходу на інший бік V-кривої обчислюються коефіцієнти полінома "
 "наближення та можливий мінімальний розв’язок. Цей алгоритм може працювати "
 "швидше за суто ітеративний підхід за якісного набору даних."
 
 #: ../../user_manual/ekos-focus.rst:319
-#, fuzzy
 #| msgid "``Curve Fit``: The type of curve to fit to the datapoints."
 msgid "``Curve Fit``: The type of curve to fit to the datapoints."
 msgstr "``Апроксимація кривої``: тип кривої для апроксимації точок даних."
 
 #: ../../user_manual/ekos-focus.rst:321
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Hyperbola*: Fits a Hyperbola using a non-linear "
+#| "**Hyperbola*: Fits a Hyperbola using a non-linear "
 #| "least squares algorithm supplied by GSL (GNU Science Library). See <link "
 #| "linkend=\"Levenberg-Marquardt\">Levenberg-Marquardt Solver</link> for "
 #| "more details."
@@ -1848,19 +1725,18 @@ msgid ""
 "supplied by GSL (GNU Science Library). See :ref:`Levenberg-Marquardt Solver "
 "<ekos-focus-levenberg-marquardt>` for more details."
 msgstr ""
-"<emphasis role=\"bold\">Гіпербола*: апроксимація гіперболою із використанням "
+"**Гіпербола*: апроксимація гіперболою із використанням "
 "нелінійного алгоритму найменших квадратів з GSL (GNU Science Library). Див. "
-"<link linkend=\"Levenberg-Marquardt\">розв'язувач Левенберга-Марквардта</"
-"link>, щоб дізнатися більше."
+":ref:`розв'язувач Левенберга-Марквардта<ekos-focus-levenberg-marquardt>`,"
+" щоб дізнатися більше."
 
 #: ../../user_manual/ekos-focus.rst:323
 msgid "This is the recommended option."
 msgstr "Це рекомендований варіант."
 
 #: ../../user_manual/ekos-focus.rst:325
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Parabola*: Fits a Parabola using a non-linear "
+#| "**Parabola*: Fits a Parabola using a non-linear "
 #| "least squares algorithm supplied by GSL (GNU Science Library). See <link "
 #| "linkend=\"Levenberg-Marquardt\">Levenberg-Marquardt Solver</link> for "
 #| "more details."
@@ -1869,15 +1745,14 @@ msgid ""
 "supplied by GSL (GNU Science Library). See :ref:`Levenberg-Marquardt Solver "
 "<ekos-focus-levenberg-marquardt>` for more details."
 msgstr ""
-"<emphasis role=\"bold\">Парабола*: апроксимація параболою із використанням "
-"нелінійного алгоритму найменших квадратів з GSL (GNU Science Library). Див. "
-"<link linkend=\"Levenberg-Marquardt\">розв'язувач Левенберга-Марквардта</"
-"link>, щоб дізнатися більше."
+"**Парабола*: апроксимація параболою із використанням "
+"нелінійного алгоритму найменших квадратів з GSL (GNU Science Library). Див."
+" :ref:`розв'язувач Левенберга-Марквардта <ekos-focus-levenberg-marquardt>`,"
+" щоб дізнатися більше."
 
 #: ../../user_manual/ekos-focus.rst:327
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Quadratic*: Uses a quadratic equation using a "
+#| "**Quadratic*: Uses a quadratic equation using a "
 #| "linear style least squares algorithm supplied by GSL (GNU Science "
 #| "Library). This is, in effect, a parabolic curve."
 msgid ""
@@ -1885,7 +1760,7 @@ msgid ""
 "algorithm supplied by GSL (GNU Science Library). This is, in effect, a "
 "parabolic curve."
 msgstr ""
-"<emphasis role=\"bold\">Квадратична*: використати квадратичне рівняння з "
+"**Квадратична**: використати квадратичне рівняння з "
 "використанням алгоритму методу найменших квадратів у лінійному стилі з GSL "
 "(GNU Science Library). У результаті буде отримано параболічну криву."
 
@@ -1894,7 +1769,6 @@ msgid "It is no longer recommended to use this curve."
 msgstr "Не рекомендуємо надалі використовувати цю криву."
 
 #: ../../user_manual/ekos-focus.rst:331
-#, fuzzy
 #| msgid ""
 #| "``Measure``: Select Measure to use in the focus process. The following "
 #| "are available:"
@@ -1906,9 +1780,8 @@ msgstr ""
 "фокусування. Доступні такі варіанти:"
 
 #: ../../user_manual/ekos-focus.rst:333
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">HFR*: Half Flux Radius (HFR) is the recommended "
+#| "**HFR*: Half Flux Radius (HFR) is the recommended "
 #| "measure. When a star is detected, Ekos will calculate the HFR for the "
 #| "star. This is the radius of an imaginary circle, centered on the star "
 #| "center, that encloses half the star's total flux."
@@ -1918,7 +1791,7 @@ msgid ""
 "an imaginary circle, centered on the star center, that encloses half the "
 "star's total flux."
 msgstr ""
-"<emphasis role=\"bold\">РПП*: радіус половинного потоку (HFR) є "
+"**РПП**: радіус половинного потоку (HFR) є "
 "рекомендованим вимірюванням. При виявленні зірки Ekos обчислить РПП для "
 "зірки. Це радіус уявного кола із центром у центрі зірки, у якому зосереджено "
 "половину загального потоку випромінювання зірки."
@@ -1928,9 +1801,8 @@ msgid "The point of best focus corresponds to the minimum HFR."
 msgstr "Точка найкращого фокусування відповідає мінімальному значенню РПП."
 
 #: ../../user_manual/ekos-focus.rst:337
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">HFR Adj*: This feature uses a brightness adjusted "
+#| "**HFR Adj*: This feature uses a brightness adjusted "
 #| "HFR calculation to take account of the fact that the HFR for brighter "
 #| "stars is larger than for smaller stars."
 msgid ""
@@ -1938,7 +1810,7 @@ msgid ""
 "account of the fact that the HFR for brighter stars is larger than for "
 "smaller stars."
 msgstr ""
-"<emphasis role=\"bold\">Кор. РПП*: це можливість, у якій використано "
+"**Кор. РПП**: це можливість, у якій використано "
 "обчислення корегованого на яскравість РПП для врахування того факту, що РПП "
 "яскравіших зірок є більшим за РПП менших зірок."
 
@@ -1955,7 +1827,6 @@ msgstr ""
 "змінює спосіб вимірювання."
 
 #: ../../user_manual/ekos-focus.rst:341
-#, fuzzy
 #| msgid ""
 #| "When using this Measure it is usual to get smaller error bars on the "
 #| "datapoints when ``Use Weights`` is selected."
@@ -1973,9 +1844,8 @@ msgstr ""
 "РПП."
 
 #: ../../user_manual/ekos-focus.rst:345
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">FWHM*: This feature fits a Gaussian surface to "
+#| "**FWHM*: This feature fits a Gaussian surface to "
 #| "each star and uses that to calculate the Full Width Half Maximum (FWHM) "
 #| "of the star. The FWHM is the width of an circle (or ellipse) centered on "
 #| "the star center reaching the edge of the star at half its maximum "
@@ -1986,7 +1856,7 @@ msgid ""
 "width of an circle (or ellipse) centered on the star center reaching the "
 "edge of the star at half its maximum intensity."
 msgstr ""
-"<emphasis role=\"bold\">ПШПМ*: це можливість, за використання якої буде "
+"**ПШПМ**: це можливість, за використання якої буде "
 "виконано апроксимацію гаусової поверхні для кожної зірки і використано цю "
 "апроксимацію для обчислення повної ширини половинного максимуму (ПШПМ) "
 "зірки. ПШПМ є шириною кола (або еліпса) із центром у центрі зірки, яке є "
@@ -2002,9 +1872,8 @@ msgid "Expect the FWHM to be approximately twice the HFR of a star."
 msgstr "ПШПМ приблизно удвічі перевищує РПП зірки."
 
 #: ../../user_manual/ekos-focus.rst:351
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\"># Stars*: This feature calculates the number of "
+#| "**# Stars*: This feature calculates the number of "
 #| "stars in the image and uses this number as the focus measure. The idea is "
 #| "that as you move nearer focus so more stars become detectable."
 msgid ""
@@ -2012,7 +1881,7 @@ msgid ""
 "uses this number as the focus measure. The idea is that as you move nearer "
 "focus so more stars become detectable."
 msgstr ""
-"<emphasis role=\"bold\">К-ть зірок*: це можливість, за використання якої "
+"**К-ть зірок**: це можливість, за використання якої "
 "буде обчислено кількість зірок на зображенні і використано цю кількість як "
 "міру фокусування. Ідея полягає у тому, що при пересуванні ближче до фокуса "
 "збільшується кількість виявлених зірок."
@@ -2030,9 +1899,8 @@ msgid "The point of best focus corresponds to a maximum number of stars."
 msgstr "Точка найкращого фокусування відповідає максимальній кількості зірок."
 
 #: ../../user_manual/ekos-focus.rst:357
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Fourier*: Fourier takes a Fourier transform of "
+#| "**Fourier*: Fourier takes a Fourier transform of "
 #| "the image and calculates the image power in frequency space. The "
 #| "assumption is that for an astronomical image of stars and background, the "
 #| "stars will be gaussians. Under a Fourier transform, a gaussian transforms "
@@ -2048,7 +1916,7 @@ msgid ""
 "versa. So, at focus, summing up the contents in frequency space, which is in "
 "effect a measure of power, will be a maximum."
 msgstr ""
-"<emphasis role=\"bold\">Фур'є*: виконує перетворення Фур'є зображення і "
+"**Фур'є**: виконує перетворення Фур'є зображення і "
 "обчислює потужність зображення у просторі частот. Припущення полягає у тому, "
 "що на астрономічному зображенні зірок і тла зірки будуть представлені "
 "гаусовими кривими. Після перетворення Фур'є гаусові криві перетворюються в "
@@ -2057,7 +1925,6 @@ msgstr ""
 "які, фактично, є мірою потужності, матимемо максимум."
 
 #: ../../user_manual/ekos-focus.rst:359
-#, fuzzy
 #| msgid ""
 #| "This follows the main idea suggested by Tan and Schulz in their paper: "
 #| "<ulink url=\"https://arxiv.org/pdf/2201.12466.pdf\">A Fourier method for "
@@ -2072,8 +1939,9 @@ msgid ""
 "Transforms that are not included within Ekos"
 msgstr ""
 "Тут використано основну ідею, яку запропоновано Tan і Schulz у їхній роботі "
-"<ulink url=\"https://arxiv.org/pdf/2201.12466.pdf\">A Fourier method for the "
-"determination of focus for telescopes with stars</ulink>. Будь ласка, "
+"`A Fourier method for the "
+"determination of focus for telescopes with stars <"
+"https://arxiv.org/pdf/2201.12466.pdf>`__. Будь ласка, "
 "зауважте, що у цій роботі внесено інші пропозиції щодо обробки, окрім ідеї "
 "щодо використання перетворення Фур'є, які не включено до Ekos"
 
@@ -2088,7 +1956,6 @@ msgstr ""
 "професійних телескопів."
 
 #: ../../user_manual/ekos-focus.rst:363
-#, fuzzy
 #| msgid ""
 #| "``PSF``: If ``Measure`` is set to FWHM, then the PSF widget can be "
 #| "selected for use in fitting a surface to the star. At present just "
@@ -2103,7 +1970,6 @@ msgstr ""
 "поточній версії передбачено підтримку лише гаусових кривих."
 
 #: ../../user_manual/ekos-focus.rst:365
-#, fuzzy
 #| msgid ""
 #| "``Use Weights``: This is only available with the Linear 1 Pass focus "
 #| "algorithm and Curve Fits of Hyperbola and Parabola. It requires Full "
@@ -2151,7 +2017,6 @@ msgid "It is recommended to check this option."
 msgstr "Рекомендуємо позначити цей пункт."
 
 #: ../../user_manual/ekos-focus.rst:371
-#, fuzzy
 #| msgid ""
 #| "See the <link linkend=\"Levenberg-Marquardt\">Levenberg-Marquardt Solver</"
 #| "link> for more details."
@@ -2159,11 +2024,10 @@ msgid ""
 "See the :ref:`Levenberg-Marquardt Solver <ekos-focus-levenberg-marquardt>` "
 "for more details."
 msgstr ""
-"Щоб дізнатися більше, зверніться до розділу <link linkend=\"Levenberg-"
-"Marquardt\">Розв'язувач Левенберга-Марквардта</link>."
+"Щоб дізнатися більше, зверніться до розділу :ref:`Розв'язувач"
+" Левенберга-Марквардта <ekos-focus-levenberg-marquardt>`."
 
 #: ../../user_manual/ekos-focus.rst:373
-#, fuzzy
 #| msgid ""
 #| "``R² Limit``: This is only available with the Linear 1 Pass focus "
 #| "algorithm and Curve Fits of Hyperbola and Parabola. As part of the Linear "
@@ -2190,11 +2054,12 @@ msgstr ""
 "``Обмеження R²``: це параметр, який є доступним лише при використанні "
 "лінійного однопрохідного алгоритму і апроксимацій кривих «Гіпербола» і "
 "«Парабола». У межах лінійного однопрохідного алгоритму буде обчислено "
-"степінь, до якого крива відповідає точкам даних або <link "
-"linkend=\"Coefficient_of_Determination\">коефіцієнта визначеності, R²</"
-"link>. Цей параметр надає змогу визначати мінімальне прийнятне значення R², "
-"яке буде порівняно із значенням, отриманим у процесі апроксимації кривої. "
-"Якщо мінімальне значення не було досягнуто, процедуру автофокусування буде "
+"степінь, до якого крива відповідає точкам даних або :ref:`коефіцієнта"
+" визначеності, R²</link>. Цей "
+"параметр надає змогу визначати мінімальне прийнятне значення R² <"
+"ekos-focus-coefficient-of-determination>`, яке буде "
+"порівняно із значенням, отриманим у процесі апроксимації кривої. Якщо "
+"мінімальне значення не було досягнуто, процедуру автофокусування буде "
 "перезапущено. Буде виконано один повторний запуск і, навіть якщо мінімальне "
 "R² не буде досягнуто удруге, запуск автофокусування все одно буде визнано "
 "успішним."
@@ -2208,7 +2073,6 @@ msgstr ""
 "добрими, зазвичай, бувають значення 0,8 або 0,9."
 
 #: ../../user_manual/ekos-focus.rst:377
-#, fuzzy
 #| msgid ""
 #| "``Refine Curve Fit``: This option is only available with the Linear 1 "
 #| "Pass focus algorithm and Curve Fits of Hyperbola and Parabola. If this "
@@ -2240,15 +2104,14 @@ msgstr ""
 "кривої гіперболою та параболою. Якщо позначено цей пункт, наприкінці обходу "
 "точок даних Ekos виконує апроксимацію кривої і вимірює R². Потім програма "
 "застосовує критерій Пірса на основі методології Гоулда для виявлення "
-"викидів. Див. <ulink url=\"https://en.wikipedia.org/wiki/"
-"Peirce%27s_criterion\">критерій Пірса</ulink>, щоб дізнатися більше, зокрема "
-"переглянути початкову роботу Пірса та роботу Гоулда, посилання на які є у "
-"розділі нотаток. Якщо за допомогою критерію Пірса буде виявлено 1 або "
-"декілька викидів, програма спробує виконати апроксимацію із вилученими "
-"викидами. Знову буде обчислено R² і порівняно з початковою апроксимацією "
-"кривої R². Якщо R² буде кращим, буде використано результати найсвіжішої "
-"обробки, якщо ж ні, буде використано початкову апроксимацію (з включенням "
-"викидів)."
+"викидів. Див. `критерій Пірса <https://en.wikipedia.org/wiki/Peirce"
+"%27s_criterion>`__, щоб дізнатися більше, зокрема переглянути "
+"початкову роботу Пірса та роботу Гоулда, посилання на які є у розділі "
+"нотаток. Якщо за допомогою критерію Пірса буде виявлено 1 або декілька "
+"викидів, програма спробує виконати апроксимацію із вилученими викидами. "
+"Знову буде обчислено R² і порівняно з початковою апроксимацією кривої R². "
+"Якщо R² буде кращим, буде використано результати найсвіжішої обробки, якщо ж "
+"ні, буде використано початкову апроксимацію (з включенням викидів)."
 
 #: ../../user_manual/ekos-focus.rst:379
 msgid ""
@@ -2256,7 +2119,6 @@ msgid ""
 msgstr "Викиди буде явно позначено на V-кривій із X через точку даних."
 
 #: ../../user_manual/ekos-focus.rst:383
-#, fuzzy
 #| msgid ""
 #| "``Average over``: Number of frames to capture at each datapoint. It is "
 #| "usually sensible to start with 1 but increasing this will result in an "
@@ -2271,7 +2133,6 @@ msgstr ""
 "використання процедури усереднення для вибраного вимірювання зірок."
 
 #: ../../user_manual/ekos-focus.rst:385
-#, fuzzy
 #| msgid ""
 #| "``Average HFR check``: Similar idea to ``Average Over`` but in this case "
 #| "it is the HFR Check datapoint that is averaged over the selected number "
@@ -2299,7 +2160,6 @@ msgstr ""
 "точках даних при виконання перевірки РПП."
 
 #: ../../user_manual/ekos-focus.rst:387
-#, fuzzy
 #| msgid ""
 #| "``Donut Buster``: The intention of Donut Buster is to improve focusing "
 #| "for telescopes with central obstructions that create donut shaped stars "
@@ -2316,7 +2176,6 @@ msgstr ""
 "тощо."
 
 #: ../../user_manual/ekos-focus.rst:389
-#, fuzzy
 #| msgid ""
 #| "``Donut Buster`` is only available for Linear 1 Pass, walks of Fixed and "
 #| "CFZ Shuffle, curves fits of Hyperbola and Parabola, and focus measures "
@@ -2331,7 +2190,6 @@ msgstr ""
 "або параболою і вимірами фокусування: РПП, РПП Сер. та ПШПМ."
 
 #: ../../user_manual/ekos-focus.rst:391
-#, fuzzy
 #| msgid ""
 #| "When ``Donut Buster`` is checked, intermittent curve fitting is suspended "
 #| "and is only activated at the end of the focus sweep. This allows donut "
@@ -2353,7 +2211,6 @@ msgstr ""
 "підсилення:"
 
 #: ../../user_manual/ekos-focus.rst:395
-#, fuzzy
 #| msgid ""
 #| "``Time Dilation x``: This feature scales the exposure time during "
 #| "Autofocus from the value entered in the ``Exposure`` field for the "
@@ -2382,7 +2239,7 @@ msgstr ""
 "експозиції. Наприклад, якщо фокусування налаштовано із експонуванням у 2 "
 "секунди і встановлено коефіцієнт масштабування часу 4, коли автофокусування "
 "відбуватиметься назовні для першої точки даних, буде використано "
-"експонування 2 секунди * 4 = 8 секунд. Для кожної наступної точки даних "
+"експонування 2 секунди \\* 4 = 8 секунд. Для кожної наступної точки даних "
 "експонування зменшуватиметься до 2 секунд в околі оптимального фокусування. "
 "При русі засобу фокусування експонування збільшуватиметься до 8 секунд для "
 "останньої точки даних."
@@ -2399,7 +2256,6 @@ msgstr ""
 "виявлення об'єктів посеред фонового шуму."
 
 #: ../../user_manual/ekos-focus.rst:399
-#, fuzzy
 #| msgid ""
 #| "``Outlier Rejection``: This is a factor to scale the aggressiveness of "
 #| "the outlier rejection algorithm when ``Refine Curve Fit`` is checked. The "
@@ -2417,7 +2273,6 @@ msgstr ""
 "процесі апроксимації кривої. Типовим є значення 0.2."
 
 #: ../../user_manual/ekos-focus.rst:401
-#, fuzzy
 #| msgid ""
 #| "``Scan for Start Position`` is only available for Linear 1 Pass, walks of "
 #| "Fixed and CFZ Shuffle, curves fits of Hyperbola and Parabola, and focus "
@@ -2444,7 +2299,6 @@ msgstr ""
 "Доступні такі додаткові пункти:"
 
 #: ../../user_manual/ekos-focus.rst:405
-#, fuzzy
 #| msgid ""
 #| "``Always On``: When checked Scan for Start Position is always run at the "
 #| "start of Autofocus. When unchecked, it is only run when Autofocus fails "
@@ -2460,7 +2314,6 @@ msgstr ""
 "невдачі і його було перезапущено."
 
 #: ../../user_manual/ekos-focus.rst:407
-#, fuzzy
 #| msgid ""
 #| "``Num Datapoints``: The number of datapoints to use in each scan. 5 is a "
 #| "good place to start."
@@ -2472,7 +2325,6 @@ msgstr ""
 "кожного сканування. Добрим початковим значенням є 5."
 
 #: ../../user_manual/ekos-focus.rst:409
-#, fuzzy
 #| msgid ""
 #| "``Initial Step size x``: A multiplicative factor to apply to the "
 #| "``Initial Step size`` for use in the Scan for Start Position. Default is "
@@ -2486,7 +2338,6 @@ msgstr ""
 "Типовим значенням є 1.0."
 
 #: ../../user_manual/ekos-focus.rst:411
-#, fuzzy
 #| msgid ""
 #| "If ``Detection`` is set to Threshold then the following additional field "
 #| "is available:"
@@ -2498,7 +2349,6 @@ msgstr ""
 "додаткове поле:"
 
 #: ../../user_manual/ekos-focus.rst:413
-#, fuzzy
 #| msgid ""
 #| "``Threshold``: This contains a percentage value used for star detection "
 #| "using the *Threshold* detection algorithm. Increase to restrict the "
@@ -2513,7 +2363,6 @@ msgstr ""
 "ядрами. Зменшіть, щоб захопити розмиті зірки."
 
 #: ../../user_manual/ekos-focus.rst:415
-#, fuzzy
 #| msgid ""
 #| "If ``Detection`` is set to Bahtinov then the following additional widgets "
 #| "are available:"
@@ -2525,7 +2374,6 @@ msgstr ""
 "такі пункти:"
 
 #: ../../user_manual/ekos-focus.rst:417
-#, fuzzy
 #| msgid ""
 #| "``Num. of rows``: The number of lines displayed on screen when using a "
 #| "Bahtinov mask."
@@ -2537,7 +2385,6 @@ msgstr ""
 "використанні маски Бахтінова."
 
 #: ../../user_manual/ekos-focus.rst:419
-#, fuzzy
 #| msgid ""
 #| "``Sigma``: The sigma of the gaussian blur applied to the image before "
 #| "applying Bahtinov edge detection."
@@ -2549,7 +2396,6 @@ msgstr ""
 "зображення до застосування виявлення країв Бахтінова."
 
 #: ../../user_manual/ekos-focus.rst:421
-#, fuzzy
 #| msgid ""
 #| "``Kernel Size``: The kernel size of the gaussian blur applied to the "
 #| "image before applying Bahtinov edge detection."
@@ -2561,7 +2407,6 @@ msgstr ""
 "зображення до застосування виявлення країв Бахтінова."
 
 #: ../../user_manual/ekos-focus.rst:423
-#, fuzzy
 #| msgid ""
 #| "If ``Algorithm`` is set to Linear or Iterative then the following "
 #| "additional widget is available:"
@@ -2573,7 +2418,6 @@ msgstr ""
 "віджет із такими параметрами:"
 
 #: ../../user_manual/ekos-focus.rst:425
-#, fuzzy
 #| msgid ""
 #| "``Tolerance``: The tolerance percentage value is used to help decide when "
 #| "the Autofocus process stops. During the Autofocus process, HFR values are "
@@ -2610,23 +2454,20 @@ msgstr ""
 "ймовірно, невдалого завершення спроби автоматичного фокусування."
 
 #: ../../user_manual/ekos-focus.rst:434 ../../user_manual/ekos-focus.rst:2168
-#, fuzzy
 #| msgid "Focus Mechanics Parameters:"
 msgid "Focus Mechanics"
-msgstr "Параметри механіки фокусування:"
+msgstr "Механіка фокусування"
 
 #: ../../user_manual/ekos-focus.rst:437
-#, fuzzy
 #| msgid "Focus Mechanics Parameters:"
 msgid "|Focus Mechanics|"
-msgstr "Параметри механіки фокусування:"
+msgstr "|Механіка фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:440
 msgid "Focus Mechanics Parameters:"
 msgstr "Параметри механіки фокусування:"
 
 #: ../../user_manual/ekos-focus.rst:442
-#, fuzzy
 #| msgid ""
 #| "``Walk``: This specifies the way Autofocus will \"walk\" inwards through "
 #| "its sweep to produce the V-Curve from which the focus solution will be "
@@ -2645,9 +2486,8 @@ msgid "The following are available:"
 msgstr "Доступні такі варіанти:"
 
 #: ../../user_manual/ekos-focus.rst:446
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Classic*: This is the recommended setting. The "
+#| "**Classic*: This is the recommended setting. The "
 #| "inward sweep follows a series of steps of equal size (``Initial Step "
 #| "Size``). The algorithm includes logic to determine when to stop that "
 #| "makes the exact number of steps unpredictable but it will be about 2 * "
@@ -2658,7 +2498,7 @@ msgid ""
 "includes logic to determine when to stop that makes the exact number of "
 "steps unpredictable but it will be about 2 \\* (``Out Step Multiple``) + 1."
 msgstr ""
-"<emphasis role=\"bold\">Класичний*: це рекомендований варіант. Прохід "
+"**Класичний**: це рекомендований варіант. Прохід "
 "всередину буде виконано шляхом послідовності кроків одного розміру "
 "(``Початковий розмір кроку``). До алгоритму включено логіку для визначення "
 "моменту зупинки, що робить точну кількість кроків непередбачуваною, але вона "
@@ -2688,9 +2528,8 @@ msgstr ""
 "автоматичного фокусування."
 
 #: ../../user_manual/ekos-focus.rst:452
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Fixed Steps*: This feature is available in the "
+#| "**Fixed Steps*: This feature is available in the "
 #| "Linear 1 Pass ``Algorithm``. It is quite similar to Classic but ``Fixed "
 #| "Steps`` is used to control the total number of steps taken."
 msgid ""
@@ -2698,7 +2537,7 @@ msgid ""
 "``Algorithm``. It is quite similar to Classic but ``Fixed Steps`` is used to "
 "control the total number of steps taken."
 msgstr ""
-"<emphasis role=\"bold\">Фіксовані кроки*: ця можливість доступна для "
+"**Фіксовані кроки**: ця можливість доступна для "
 "лінійного однопрохідного ``Алгоритму``. Він дуже подібний до класичного, але "
 "для керування загальною кількістю кроків буде використано ``Фіксовані "
 "кроки``."
@@ -2715,7 +2554,6 @@ msgstr ""
 "доведеться поблизу від точки фокусування."
 
 #: ../../user_manual/ekos-focus.rst:456
-#, fuzzy
 #| msgid ""
 #| "When selected, the ``Out Steps Multiple`` is replaced by ``Fixed Steps:``"
 msgid ""
@@ -2729,9 +2567,8 @@ msgid "|image4|"
 msgstr "|image4|"
 
 #: ../../user_manual/ekos-focus.rst:462
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">CFZ Shuffle*: This feature is available in the "
+#| "**CFZ Shuffle*: This feature is available in the "
 #| "Linear 1 Pass ``Algorithm``. It is a variation on Fixed Steps so the "
 #| "comments on that Walk are applicable here as well."
 msgid ""
@@ -2739,7 +2576,7 @@ msgid ""
 "``Algorithm``. It is a variation on Fixed Steps so the comments on that Walk "
 "are applicable here as well."
 msgstr ""
-"<emphasis role=\"bold\">Перемішування КЗФ*: ця можливість доступна для "
+"**Перемішування КЗФ**: ця можливість доступна для "
 "лінійного однопрохідного ``Алгоритму``. Це різновид «Фіксованих кроків», "
 "тому коментарі щодо цього варіанта чинні і тут."
 
@@ -2754,7 +2591,6 @@ msgstr ""
 "(КФЗ)) алгоритм робить кроки у половину вказаного розміру."
 
 #: ../../user_manual/ekos-focus.rst:466
-#, fuzzy
 #| msgid ""
 #| "``Focuser Settle``: The number of seconds to wait, after moving the "
 #| "focuser, before starting the next capture. The purpose is to stop any "
@@ -2771,7 +2607,6 @@ msgstr ""
 "тракті."
 
 #: ../../user_manual/ekos-focus.rst:468
-#, fuzzy
 #| msgid ""
 #| "``Initial Step size``: This sets the step size to be used by various "
 #| "focus algorithms. For absolute and relative focusers this is the number "
@@ -2787,7 +2622,6 @@ msgstr ""
 "— кількість мілісекунд."
 
 #: ../../user_manual/ekos-focus.rst:470
-#, fuzzy
 #| msgid ""
 #| "``Out Step Multiple``: Used by the Linear and Linear 1 Pass focus "
 #| "algorithms in the Classic walk, this parameter specifies the initial "
@@ -2804,10 +2638,6 @@ msgstr ""
 "процедури автофокусування."
 
 #: ../../user_manual/ekos-focus.rst:472
-#| msgid ""
-#| "``Number Steps``: Used by the Linear 1 Pass algorithm in the Fixed Steps "
-#| "and CFZ Shuffle walks, this parameter specifies the total number of steps "
-#| "the focuser takes to create the V-Curve in an Autofocus run."
 msgid ""
 "``Number Steps``: Used by the Linear 1 Pass algorithm in the Fixed Steps and "
 "CFZ Shuffle walks, this parameter specifies the total number of steps the "
@@ -2819,12 +2649,6 @@ msgstr ""
 "створення V-кривої під час процедури автофокусування."
 
 #: ../../user_manual/ekos-focus.rst:474
-#| msgid ""
-#| "``Max Travel``: Puts bounds on the amount of travel from the current "
-#| "focuser position that is permitted by the Autofocus algorithms. The "
-#| "purpose is to protect the focuser from travelling too far and potentially "
-#| "damaging itself. On the other hand, the value needs to be big enough to "
-#| "allow sufficient focuser motion to permit the auto focus runs to complete."
 msgid ""
 "``Max Travel``: Puts bounds on the amount of travel from the current focuser "
 "position that is permitted by the Autofocus algorithms. The purpose is to "
@@ -2840,9 +2664,6 @@ msgstr ""
 "фокусування і завершення процедури автоматичного фокусування."
 
 #: ../../user_manual/ekos-focus.rst:476
-#| msgid ""
-#| "``Max Step Size``: Used by the Iterative algorithm to limit the maximum "
-#| "step size that can be used."
 msgid ""
 "``Max Step Size``: Used by the Iterative algorithm to limit the maximum step "
 "size that can be used."
@@ -2855,15 +2676,14 @@ msgid ""
 "``Driver Backlash``: See the section on :ref:`Backlash <ekos-focus-focus-"
 "backlash>`."
 msgstr ""
+"``Люфт драйвера``: див. :ref:`розділ щодо люфтів <ekos-focus-focus-backlash"
+">`."
 
 #: ../../user_manual/ekos-focus.rst:480 ../../user_manual/ekos-focus.rst:490
 msgid "There are 2 schemes that can be used:"
 msgstr "Може бути використано 2 схеми:"
 
 #: ../../user_manual/ekos-focus.rst:482
-#| msgid ""
-#| "Set ``Driver Backlash`` to 0 to switch it off and deal with Backlash "
-#| "elsewhere."
 msgid ""
 "Set ``Driver Backlash`` to 0 to switch it off and deal with Backlash "
 "elsewhere."
@@ -2872,10 +2692,6 @@ msgstr ""
 "працювати усюди із значенням «Люфт»."
 
 #: ../../user_manual/ekos-focus.rst:484
-#| msgid ""
-#| "Set ``Driver Backlash`` &gt; 0 to use Driver Backlash to manage Backlash "
-#| "in the device driver. Note that this field is only editable if the device "
-#| "driver supports Backlash."
 msgid ""
 "Set ``Driver Backlash`` > 0 to use Driver Backlash to manage Backlash in the "
 "device driver. Note that this field is only editable if the device driver "
@@ -2900,11 +2716,10 @@ msgid ""
 "``AF Overscan``: See the section on :ref:`Backlash <ekos-focus-focus-"
 "backlash>`."
 msgstr ""
+"``Пересканування АФ``: див. :ref:`розділ щодо люфтів <"
+"ekos-focus-focus-backlash>`."
 
 #: ../../user_manual/ekos-focus.rst:492
-#| msgid ""
-#| "Set ``AF Overscan`` to 0 to switch it off and deal with Backlash "
-#| "elsewhere."
 msgid ""
 "Set ``AF Overscan`` to 0 to switch it off and deal with Backlash elsewhere."
 msgstr ""
@@ -2912,17 +2727,12 @@ msgstr ""
 "і працювати усюди із значенням «Люфт»."
 
 #: ../../user_manual/ekos-focus.rst:494
-#| msgid "Set ``AF Overscan`` &gt; 0 to have the Focus module manage Backlash."
 msgid "Set ``AF Overscan`` > 0 to have the Focus module manage Backlash."
 msgstr ""
 "Встановіть для параметра ``Пересканування АФ`` значення > 0, щоб люфтом "
 "керували значення з модуля «Фокус»."
 
 #: ../../user_manual/ekos-focus.rst:496
-#| msgid ""
-#| "``AF Overscan Delay``: Delay between the completion of the outward move "
-#| "of an Overscan, and the inward move. Generally most focusers work well "
-#| "with no delay."
 msgid ""
 "``AF Overscan Delay``: Delay between the completion of the outward move of "
 "an Overscan, and the inward move. Generally most focusers work well with no "
@@ -2933,12 +2743,6 @@ msgstr ""
 "фокусування добре працюють без затримки."
 
 #: ../../user_manual/ekos-focus.rst:498
-#| msgid ""
-#| "``Capture Timeout``: The amount of time in seconds to wait for a captured "
-#| "image to be received before declaring a timeout. This should only be "
-#| "triggered if there are problems with the camera during the Focus process "
-#| "so set this to a high enough value that it will not occur during normal "
-#| "operation."
 msgid ""
 "``Capture Timeout``: The amount of time in seconds to wait for a captured "
 "image to be received before declaring a timeout. This should only be "
@@ -2953,12 +2757,6 @@ msgstr ""
 "запобігти перевищенню у звичайних умовах."
 
 #: ../../user_manual/ekos-focus.rst:500
-#| msgid ""
-#| "``Motion Timeout``: The amount of time in seconds to wait for the focuser "
-#| "to move to the requested position before declaring a timeout. This should "
-#| "only be triggered if there are problems with the focuser during the Focus "
-#| "process so set this to a high enough value that it will not occur during "
-#| "normal operation."
 msgid ""
 "``Motion Timeout``: The amount of time in seconds to wait for the focuser to "
 "move to the requested position before declaring a timeout. This should only "
@@ -2985,12 +2783,6 @@ msgid "Focus CFZ Parameters:"
 msgstr "Параметри КЗФ фокусування:"
 
 #: ../../user_manual/ekos-focus.rst:513
-#| msgid ""
-#| "``Algorithm``: This specifies the Critical Focus Zone (CFZ) algorithm. "
-#| "The purpose of this is to calculate the CFZ for the equipment attached in "
-#| "the Optical Train. It is not necessary to use this functionality in order "
-#| "to successfully focus, but it provides useful information if correctly "
-#| "configured."
 msgid ""
 "``Algorithm``: This specifies the Critical Focus Zone (CFZ) algorithm. The "
 "purpose of this is to calculate the CFZ for the equipment attached in the "
@@ -3013,12 +2805,6 @@ msgstr ""
 "відомостей для вивчення цього питання."
 
 #: ../../user_manual/ekos-focus.rst:524
-#| msgid ""
-#| "The idea of the CFZ dialog is that it starts with data from the Optical "
-#| "Train used in the Focus tab and uses that to calculate the CFZ. The user "
-#| "can adjust parameters to do \"what-if\" scenarios to see how it affects "
-#| "the CFZ. Clicking the ``Reset to OT`` button resets any adjusted "
-#| "parameters to the Optical Train values."
 msgid ""
 "The idea of the CFZ dialog is that it starts with data from the Optical "
 "Train used in the Focus tab and uses that to calculate the CFZ. The user can "
@@ -3034,9 +2820,6 @@ msgstr ""
 "до значень з оптичного тракту."
 
 #: ../../user_manual/ekos-focus.rst:532
-#| msgid ""
-#| "If the ``Display`` box is checked then the CFZ is drawn on the V-Curve "
-#| "after Autofocus successfully completes."
 msgid ""
 "If the ``Display`` box is checked then the CFZ is drawn on the V-Curve after "
 "Autofocus successfully completes."
@@ -3049,13 +2832,6 @@ msgid "|image5|"
 msgstr "|image5|"
 
 #: ../../user_manual/ekos-focus.rst:539
-#| msgid ""
-#| "It is necessary to specify the ``Step Size`` parameter which specifies in "
-#| "microns how far one tick moves the focal plane. For refractors there is "
-#| "usually a 1-to-1 relationship between moving the focuser which moves the "
-#| "telescope draw-tube mechanism and the focal plane movement. For other "
-#| "types of telescope the relationship is likely to be more complex. Refer "
-#| "to details of your telescope / manufacturer for this information."
 msgid ""
 "It is necessary to specify the ``Step Size`` parameter which specifies in "
 "microns how far one tick moves the focal plane. For refractors there is "
@@ -3077,15 +2853,6 @@ msgid "The following algorithms are available:"
 msgstr "Доступні такі варіанти алгоритмів:"
 
 #: ../../user_manual/ekos-focus.rst:551
-#| msgid ""
-#| "<emphasis role=\"bold\">Classic*: This is the recommended setting. The "
-#| "equation used is displayed in the top right of the dialog and is the "
-#| "equation most commonly seen on the internet. The equation comes from a "
-#| "linear optics treatment using the Airy Disc and is acknowledged to have "
-#| "limitations. For this reason it includes a \"tolerance\" factor that can "
-#| "be adjusted by the user. For example, in the often quoted “In Perfect "
-#| "Focus” article by Don Goldman and Barry Megdal in Sky &amp; Telescope "
-#| "2010 they suggest setting t=1/3."
 msgid ""
 "**Classic**: This is the recommended setting. The equation used is displayed "
 "in the top right of the dialog and is the equation most commonly seen on the "
@@ -3104,11 +2871,6 @@ msgstr ""
 "опубліковано у «Sky & Telescope» у 2010 році, запропоновано значення t=1/3."
 
 #: ../../user_manual/ekos-focus.rst:563
-#| msgid ""
-#| "<emphasis role=\"bold\">Wavefront*: The equation used is displayed in the "
-#| "top right of the dialog. The equation comes from a wavefront approach to "
-#| "the CFZ. Again, it has limitations and again, for this reason it includes "
-#| "a \"tolerance\" factor that can be adjusted by the user."
 msgid ""
 "**Wavefront**: The equation used is displayed in the top right of the "
 "dialog. The equation comes from a wavefront approach to the CFZ. Again, it "
@@ -3125,27 +2887,23 @@ msgid "|image6|"
 msgstr "|image6|"
 
 #: ../../user_manual/ekos-focus.rst:574
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Gold*: This method is based on work done by Gold "
+#| "**Gold*: This method is based on work done by Gold "
 #| "Astro and presented <ulink url=\"https://www.goldastro.com/goldfocus/ncfz."
 #| "php\">here</ulink>."
 msgid ""
 "**Gold**: This method is based on work done by Gold Astro and presented "
 "`here <https://www.goldastro.com/goldfocus/ncfz.php>`__."
 msgstr ""
-"<emphasis role=\"bold\">Золотий*: цей метод засновано на роботі, яку "
-"виконано Gold Astro і представлено <ulink url=\"https://www.goldastro.com/"
-"goldfocus/ncfz.php\">тут</ulink>."
+"**Золотий*: цей метод засновано на роботі, яку "
+"виконано Gold Astro і представлено `тут <"
+"https://www.goldastro.com/goldfocus/ncfz.php>`__."
 
 #: ../../user_manual/ekos-focus.rst:579
 msgid "|image7|"
 msgstr "|image7|"
 
 #: ../../user_manual/ekos-focus.rst:582
-#| msgid ""
-#| "``Tolerance``: This is used by Classic and Wavefront algorithms and is a "
-#| "scaling factor between 0 and 1."
 msgid ""
 "``Tolerance``: This is used by Classic and Wavefront algorithms and is a "
 "scaling factor between 0 and 1."
@@ -3162,12 +2920,11 @@ msgid "For the Wavefront algorithm, some have suggested 1/3 or even 1/10."
 msgstr "Для алгоритму фронту хвилі пропонували значення 1/3 або навіть 1/10."
 
 #: ../../user_manual/ekos-focus.rst:591
-#, fuzzy
 #| msgid ""
 #| "``Tolerance (τ)``: This is used by the Gold algorithm and is a focus "
 #| "tolerance as a percentage of total seeing. The Gold website suggests 3-5% "
-#| "for a good focuser or 1-2% for a top quality focuser. See the <ulink "
-#| "url=\"https://www.goldastro.com/goldfocus/ncfz.php\">Gold Astro website</"
+#| "for a good focuser or 1-2% for a top quality focuser. See the <ulink url="
+#| "\"https://www.goldastro.com/goldfocus/ncfz.php\">Gold Astro website</"
 #| "ulink> for more details."
 msgid ""
 "``Tolerance (τ)``: This is used by the Gold algorithm and is a focus "
@@ -3178,13 +2935,10 @@ msgstr ""
 "``Допуск (τ)``: використано в алгоритмі «Золотий», він є допуском "
 "фокусування у відсотках загальної видимої області. Сайт Gold пропонує 3-5% "
 "для якісного засобу фокусування або 1-2% для дуже якісного засобу "
-"фокусування. Див. <ulink url=\"https://www.goldastro.com/goldfocus/ncfz."
-"php\">сайт Gold Astro</ulink>, щоб дізнатися більше."
+"фокусування. Див. `сайт Gold Astro <https://www.goldastro.com/goldfocus/ncfz."
+"php>`__, щоб дізнатися більше."
 
 #: ../../user_manual/ekos-focus.rst:598
-#| msgid ""
-#| "``Display``: Check this box to display the calculated CFZ on the V-Curve "
-#| "after a successful Autofocus run. It is displayed as a yellow moustache."
 msgid ""
 "``Display``: Check this box to display the calculated CFZ on the V-Curve "
 "after a successful Autofocus run. It is displayed as a yellow moustache."
@@ -3194,9 +2948,6 @@ msgstr ""
 "показано жовтим вусом."
 
 #: ../../user_manual/ekos-focus.rst:602
-#| msgid ""
-#| "``Reset to OT``: Press this button to reset any parameters to values "
-#| "defaulted from the currently connected Optical Train."
 msgid ""
 "``Reset to OT``: Press this button to reset any parameters to values "
 "defaulted from the currently connected Optical Train."
@@ -3205,11 +2956,10 @@ msgstr ""
 "значень, які є типовими для поточного з'єднаного оптичного тракту."
 
 #: ../../user_manual/ekos-focus.rst:606
-#, fuzzy
 #| msgid ""
 #| "``Wavelength (λ)``: This is the light wavelength to use. It is defaulted "
-#| "from the currently used filter. Remember to set this up in <link "
-#| "linkend=\"focus-filter-settings\">Filter Settings</link> for your filters."
+#| "from the currently used filter. Remember to set this up in <link linkend="
+#| "\"focus-filter-settings\">Filter Settings</link> for your filters."
 msgid ""
 "``Wavelength (λ)``: This is the light wavelength to use. It is defaulted "
 "from the currently used filter. Remember to set this up in :ref:`Filter "
@@ -3217,13 +2967,10 @@ msgid ""
 msgstr ""
 "``Довжина хвилі (λ)``: довжина хвилі світла, якою слід скористатися. Типове "
 "значення буде визначено поточним використаним фільтром. Не забудьте вказати "
-"значення у <link linkend=\"focus-filter-settings\">Параметрах фільтрів</"
-"link> для ваших фільтрів."
+"значення у :ref:`Параметрах фільтрів <ekos-focus-filter-settings>` для ваших"
+" фільтрів."
 
 #: ../../user_manual/ekos-focus.rst:612
-#| msgid ""
-#| "``Aperture (A)``: This is the aperture of the telescope in mm. It is "
-#| "defaulted from the currently connected Optical Train."
 msgid ""
 "``Aperture (A)``: This is the aperture of the telescope in mm. It is "
 "defaulted from the currently connected Optical Train."
@@ -3232,9 +2979,6 @@ msgstr ""
 "параметрів поточного з'єднаного оптичного тракту."
 
 #: ../../user_manual/ekos-focus.rst:616
-#| msgid ""
-#| "``Focal Ratio (f)``: This is the focal ratio of the telescope. It is "
-#| "defaulted from the currently connected Optical Train."
 msgid ""
 "``Focal Ratio (f)``: This is the focal ratio of the telescope. It is "
 "defaulted from the currently connected Optical Train."
@@ -3244,7 +2988,6 @@ msgstr ""
 "тракту."
 
 #: ../../user_manual/ekos-focus.rst:620
-#, fuzzy
 #| msgid ""
 #| "``FWHM (θ)``: This is used by the Gold Algorithm and is the total seeing. "
 #| "This is the combined contribution of the diffraction limit of your "
@@ -3261,19 +3004,15 @@ msgid ""
 msgstr ""
 "``ПШПМ (θ)``: використовується Золотим алгоритмом і є загальною видимостю. Є "
 "поєднанням внеску обмеження дифракції вашого телескопа і астрономічної "
-"видимості. <ulink url=\"https://www.goldastro.com/goldfocus/ncfz.php\">Сайт "
-"Gold Astro</ulink> описує те, як ви можете наблизити загальне значення, "
+"видимості. `Сайт Gold Astro <https://www.goldastro.com/goldfocus/ncfz.php"
+">`__ описує те, як ви можете наблизити загальне значення, "
 "щойно буде визначено значення для окремих внесків."
 
 #: ../../user_manual/ekos-focus.rst:628
-#| msgid "``CFZ``: This is calculated CFZ in microns and in ticks."
 msgid "``CFZ``: This is calculated CFZ in microns and in ticks."
 msgstr "``КЗФ``: обчислена КЗФ у мікронах і у поділках."
 
 #: ../../user_manual/ekos-focus.rst:630
-#| msgid ""
-#| "``Step Size``: This must be input by the user (as it cannot be calculated "
-#| "by Ekos). It relates how far 1 tick moves the focal plane in microns."
 msgid ""
 "``Step Size``: This must be input by the user (as it cannot be calculated by "
 "Ekos). It relates how far 1 tick moves the focal plane in microns."
@@ -3299,8 +3038,8 @@ msgstr ""
 msgid ""
 "Alternatively, you can measure how far the drawtube moves from end to end "
 "(be careful not to force the drawtube) with a set of calipers or a ruler. By "
-"subtracting the furthest \"in\" position (in ticks) from the furthest "
-"\"out\" position (in ticks) you have how many ticks moved the drawtube the "
+"subtracting the furthest \"in\" position (in ticks) from the furthest \"out"
+"\" position (in ticks) you have how many ticks moved the drawtube the "
 "distance you measured. From this you can calculate the distance in microns a "
 "single tick moves the drawtube."
 msgstr ""
@@ -3325,10 +3064,6 @@ msgstr ""
 "вище способом."
 
 #: ../../user_manual/ekos-focus.rst:657
-#| msgid ""
-#| "``CFZ Camera``: The pixel size of the camera attached via the Optical "
-#| "Train may have a limiting effect on the CFZ. So an equivalent CFZ for the "
-#| "attached camera is calculated assuming a Nyquist 2* limit."
 msgid ""
 "``CFZ Camera``: The pixel size of the camera attached via the Optical Train "
 "may have a limiting effect on the CFZ. So an equivalent CFZ for the attached "
@@ -3339,10 +3074,6 @@ msgstr ""
 "обчислюють, беручи до уваги обмеження Найквіста 2\\*."
 
 #: ../../user_manual/ekos-focus.rst:662
-#| msgid ""
-#| "``Final CFZ``: This is the larger of the CFZ calculated using the "
-#| "selected algorithm for the specified parameter and the ``CFZ Camera``. It "
-#| "is the display value and is, in effect, the CFZ of your equipment."
 msgid ""
 "``Final CFZ``: This is the larger of the CFZ calculated using the selected "
 "algorithm for the specified parameter and the ``CFZ Camera``. It is the "
@@ -3353,21 +3084,14 @@ msgstr ""
 "значення і отже, КЗФ вашого обладнання."
 
 #: ../../user_manual/ekos-focus.rst:670 ../../user_manual/ekos-focus.rst:2180
-#| msgid "<title>Focus Advisor</title>"
 msgid "Focus Advisor"
 msgstr "Радник з фокусування"
 
 #: ../../user_manual/ekos-focus.rst:673
-#| msgid "<title>Focus Advisor</title>"
 msgid "|Focus Advisor|"
 msgstr "|Радник з фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:676
-#| msgid ""
-#| "The Focus Advisor dialog is a feature to assist with setting up of focus "
-#| "parameters. To use, select the required options and press ``Run</"
-#| "guilabel>. This is currently an <emphasis role=\"bold\">experimental "
-#| "feature.*"
 msgid ""
 "The Focus Advisor dialog is a feature to assist with setting up of focus "
 "parameters. To use, select the required options and press Run. This is "
@@ -3423,12 +3147,6 @@ msgstr ""
 "використовуєте у модулі «Фокус»."
 
 #: ../../user_manual/ekos-focus.rst:702
-#| msgid ""
-#| "There are 4 checkboxes on display that by default are all checked. Some "
-#| "can be toggled off if required. For example, Update Parameters will reset "
-#| "most parameters to standard settings. Once run, it is not necessary to "
-#| "repeatedly run this option so the associated checkbox can be toggled off "
-#| "for subsequent runs."
 msgid ""
 "There are 4 checkboxes on display that by default are all checked. Some can "
 "be toggled off if required. For example, ``Update Parameters`` will reset "
@@ -3447,7 +3165,6 @@ msgid "The following buttons are available:"
 msgstr "Доступними є такі кнопки:"
 
 #: ../../user_manual/ekos-focus.rst:711
-#| msgid "``Help``: Press this button to launch the Focus Advisor Help dialog:"
 msgid ""
 "``Help``: Press this button to launch the ``Focus Advisor Help`` dialog:"
 msgstr ""
@@ -3455,12 +3172,10 @@ msgstr ""
 "користування радником з фокусування."
 
 #: ../../user_manual/ekos-focus.rst:715
-#| msgid "<phrase>Focus Advisor - Help</phrase>"
 msgid "|Focus Advisor - Help|"
 msgstr "|Радник з фокусування — довідка|"
 
 #: ../../user_manual/ekos-focus.rst:718
-#, fuzzy
 #| msgid ""
 #| "The Help dialog shows details of the current Optical Train at the top. "
 #| "Then comes a table comparison of the value of each Focus parameter in "
@@ -3476,17 +3191,13 @@ msgid ""
 msgstr ""
 "У верхній частині діалогового вікна довідки буде показано подробиці щодо "
 "поточного оптичного тракту. Далі буде показано таблицю порівняння для "
-"кожного з параметрів фокусування у <link linkend=\"focus-"
-"settings\">параметрах фокусування</link> програми з запропонованими радником "
-"з фокусування значеннями. Це надасть вам змогу переглянути, які оновлення "
-"буде виконано радником, якщо позначено пункт оновлення параметрів і запущено "
+"кожного з параметрів фокусування у :ref:`параметрах фокусування <"
+"ekos-focus-focus-settings>` програми з запропонованими радником з "
+"фокусування значеннями. Це надасть вам змогу переглянути, які оновлення буде "
+"виконано радником, якщо позначено пункт оновлення параметрів і запущено "
 "радник з фокусування."
 
 #: ../../user_manual/ekos-focus.rst:726
-#| msgid ""
-#| "The ``Show Only Changes`` checkbox determines whether all parameters are "
-#| "listed or only those that differ from the Focus Advisor recommendation. "
-#| "The ``Close`` button closes the Help dialog."
 msgid ""
 "The ``Show Only Changes`` checkbox determines whether all parameters are "
 "listed or only those that differ from the Focus Advisor recommendation. The "
@@ -3497,10 +3208,6 @@ msgstr ""
 "``Закрити`` закриває діалогове вікно довідки."
 
 #: ../../user_manual/ekos-focus.rst:731
-#| msgid ""
-#| "``Run``: Press this button to run Focus Advisor for the checked options. "
-#| "The V-Curve will be dynamically updated with progress, as will the Focus "
-#| "Advisor dialog."
 msgid ""
 "``Run``: Press this button to run Focus Advisor for the checked options. The "
 "V-Curve will be dynamically updated with progress, as will the ``Focus "
@@ -3511,9 +3218,6 @@ msgstr ""
 "процедури, так само, як і значення у вікні радника з фокусування."
 
 #: ../../user_manual/ekos-focus.rst:736
-#| msgid ""
-#| "``Stop``: Press this button to stop Focus Advisor. Note that the ``Stop`` "
-#| "button on the main Focus panel does the same thing."
 msgid ""
 "``Stop``: Press this button to stop Focus Advisor. Note that the ``Stop`` "
 "button on the main Focus panel does the same thing."
@@ -3523,7 +3227,6 @@ msgstr ""
 "виконує те саме завдання."
 
 #: ../../user_manual/ekos-focus.rst:740
-#| msgid "``Close``: Press this button to close the Focus Advisor dialog."
 msgid "``Close``: Press this button to close the ``Focus Advisor`` dialog."
 msgstr ""
 "``Закрити``: натисніть цю кнопку, щоб закрити діалогове вікно радника з "
@@ -3534,9 +3237,8 @@ msgid "The following checkbox options are available:"
 msgstr "Можна скористатися одним з таких пунктів варіантів:"
 
 #: ../../user_manual/ekos-focus.rst:745
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Update Parameters*: This sets the parameters in "
+#| "**Update Parameters*: This sets the parameters in "
 #| "<link linkend=\"focus-settings\">Focus Settings</link> to standard values "
 #| "that should enable Autofocus to successfully complete. Note that "
 #| "parameters are stored per Optical Train so it is a good idea to set this "
@@ -3552,9 +3254,10 @@ msgid ""
 "approach by running Autofocus. So these parameters can be better set by some "
 "other options below."
 msgstr ""
-"<emphasis role=\"bold\">Оновити параметри*: цей пункт встановлює стандартні "
-"значення параметрів у <link linkend=\"focus-settings\">параметрах "
-"фокусування</link>, які мають уможливити успішне завершення автоматичного "
+"**Оновити параметри**: цей пункт встановлює стандартні "
+"значення параметрів у :ref:`параметрах фокусування <"
+"ekos-focus-focus-settings>`, які мають уможливити успішне завершення"
+" автоматичного "
 "фокусування. Зауважте, що параметри зберігаються для кожного оптичного "
 "тракту окремо, тому на початку варто лишити цей пункт позначеним. Зауважте "
 "також, що типові значення деяких параметрів, наприклад розміру кроку, краще "
@@ -3572,10 +3275,6 @@ msgstr ""
 "тракту у фокусуванні."
 
 #: ../../user_manual/ekos-focus.rst:759
-#| msgid ""
-#| "A way to check whether parameters are set appropriately for Focus Advisor "
-#| "is to hit the ``Help `` button. See the Focus Advisor Help section for "
-#| "more details."
 msgid ""
 "A way to check whether parameters are set appropriately for Focus Advisor is "
 "to hit the Help button. See the Focus Advisor Help section for more details."
@@ -3585,11 +3284,6 @@ msgstr ""
 "щодо радника з фокусування."
 
 #: ../../user_manual/ekos-focus.rst:764
-#| msgid ""
-#| "Also note that subsequent Focus Advisor functions depend on certain "
-#| "parameters being selected, for example the Linear 1 Pass focus algorithm, "
-#| "so it is recommended to run Update Parameters at the start of using Focus "
-#| "Advisor."
 msgid ""
 "Also note that subsequent Focus Advisor functions depend on certain "
 "parameters being selected, for example the ``Linear 1 Pass`` focus "
@@ -3602,10 +3296,6 @@ msgstr ""
 "параметрів на початку використання радника з фокусування."
 
 #: ../../user_manual/ekos-focus.rst:770
-#| msgid ""
-#| "<emphasis role=\"bold\">Find Stars*: This function is designed to search "
-#| "the range of motion of the focuser to locate stars. If stars are already "
-#| "visible in subframes then there is no need to run this function."
 msgid ""
 "**Find Stars**: This function is designed to search the range of motion of "
 "the focuser to locate stars. If stars are already visible in subframes then "
@@ -3672,20 +3362,14 @@ msgstr ""
 "значення і дозвольте Focus Advisor спробувати його визначити."
 
 #: ../../user_manual/ekos-focus.rst:806
-#| msgid "Here is an example run of Find Stars:"
 msgid "Here is an example run of ``Find Stars``:"
 msgstr "Ось приклад запуску пошуку зірок:"
 
 #: ../../user_manual/ekos-focus.rst:809
-#| msgid "<phrase>Focus Advisor - Find Stars</phrase>"
 msgid "|Focus Advisor - Find Stars|"
 msgstr "|Радник з фокусування — пошук зірок|"
 
 #: ../../user_manual/ekos-focus.rst:812
-#| msgid ""
-#| "The results table in the Focus Advisor dialog shows a single line for "
-#| "Find Stars. In this case, Find Stars was started at position 70,000 and "
-#| "the Step Size was 250 (giving a Jump Size of 2,500)."
 msgid ""
 "The results table in the ``Focus Advisor`` dialog shows a single line for "
 "Find Stars. In this case, ``Find Stars`` was started at position 70,000 and "
@@ -3696,11 +3380,6 @@ msgstr ""
 "70000, а розміром кроку є 250 (що дає розмір переходу 2500)."
 
 #: ../../user_manual/ekos-focus.rst:817
-#| msgid ""
-#| "No stars were found at 70,000 (point 1 on the V-Curve) so an outward "
-#| "sweep started at 95,000 and moved in 2,500 jump by jump until 70,000 was "
-#| "reached (points 2-11) when the inward sweep started. Stars were first "
-#| "detected at 60,000 (point 15)."
 msgid ""
 "No stars were found at 70,000 (point 1 on the ``V-Curve``) so an outward "
 "sweep started at 95,000 and moved in 2,500 jump by jump until 70,000 was "
@@ -3723,13 +3402,6 @@ msgstr ""
 "зірок від 15000 (точка 33) до 60000 (точка 15) з центром у 37500."
 
 #: ../../user_manual/ekos-focus.rst:828
-#| msgid ""
-#| "<emphasis role=\"bold\">Coarse Adjustment (without Autofocus)*: This "
-#| "function is designed to provide coarse adjustment to the start position, "
-#| "Step Size and AF Overscan (or backlash) fields. The purpose is to provide "
-#| "\"good enough\" values for these parameters in order for the next stage, "
-#| "Fine Adjustment to work. An iterative process is used to home in on "
-#| "acceptable values."
 msgid ""
 "**Coarse Adjustment (without Autofocus)**: This function is designed to "
 "provide coarse adjustment to the start position, Step Size and AF Overscan "
@@ -3749,19 +3421,10 @@ msgid "Here is an example to describe how it works:"
 msgstr "Ось приклад опису того, як це працює:"
 
 #: ../../user_manual/ekos-focus.rst:839
-#| msgid "<phrase>Focus Advisor - Coarse Adjustment</phrase>"
 msgid "|Focus Advisor - Coarse Adjustment|"
 msgstr "|Радник з фокусування — грубе коригування|"
 
 #: ../../user_manual/ekos-focus.rst:842
-#| msgid ""
-#| "Coarse Adjustment was run from a starting position of 37,500 with a Step "
-#| "Size of 250 and AF Overscan of 0. This is recorded in Run 1 in the "
-#| "results table in the Focus Advisor dialog. The comment column says that "
-#| "the Max/Min Ratio = 0.9 which means that the \"Max HFR\" / \"Min HFR\" of "
-#| "the datapoints is 0.9 which is too low. So Focus Advisor starts Run 2 "
-#| "from position 38,875 with an increased Step Size of 803 and Overscan of "
-#| "250."
 msgid ""
 "``Coarse Adjustment`` was run from a starting position of 37,500 with a "
 "``Step Size`` of 250 and ``AF Overscan`` of 0. This is recorded in Run 1 in "
@@ -3779,20 +3442,12 @@ msgstr ""
 "розміром кроку у 803 і перескануванням 250."
 
 #: ../../user_manual/ekos-focus.rst:852
-#| msgid "Run 2 again had a Max/Min ratio too low, so Run 3 was started."
 msgid "Run 2 again had a ``Max/Min ratio`` too low, so Run 3 was started."
 msgstr ""
 "Другий запуск знову завершився надто низьким значенням співвідношення між "
 "максимальним і мінімальним значенням, тому алгоритм було запущено утретє."
 
 #: ../../user_manual/ekos-focus.rst:855
-#| msgid ""
-#| "Run 3 (which is shown in the V-Curve) started from 35548 with Step Size "
-#| "of 2544 and Overscan of 7477. This resulted in a Max/Min of 2.0 which is "
-#| "good enough at this stage. The datapoints form a V-Curve with no obvious "
-#| "uncorrected backlash (this would show as a flat spot on the right hand "
-#| "side of the curve if there was any). So the Coarse Adjustment completes "
-#| "after Run 3."
 msgid ""
 "Run 3 (which is shown in the V-Curve) started from 35548 with ``Step Size`` "
 "of 2544 and ``Overscan`` of 7477. This resulted in a ``Max/Min`` of 2.0 "
@@ -3808,13 +3463,6 @@ msgstr ""
 "сформувалося б плато). Отже, грубе коригування завершується після запуску 3."
 
 #: ../../user_manual/ekos-focus.rst:864
-#| msgid ""
-#| "<emphasis role=\"bold\">Fine Adjustment (with Autofocus)*: This function "
-#| "is designed to provide fine adjustment to the start position, Step Size "
-#| "and AF Overscan (or backlash) fields. Fine Adjustment runs Autofocus "
-#| "including curve fitting and analyses the result to determine whether or "
-#| "not it can be improved. If so, it adjusts parameters and re-runs. An "
-#| "iterative process is used to home in on parameter values."
 msgid ""
 "**Fine Adjustment (with Autofocus)**: This function is designed to provide "
 "fine adjustment to the start position, ``Step Size`` and ``AF Overscan`` (or "
@@ -3832,20 +3480,10 @@ msgstr ""
 "значень параметрів використовують ітеративну процедуру."
 
 #: ../../user_manual/ekos-focus.rst:876
-#| msgid "<phrase>Focus Advisor - Fine Adjustment</phrase>"
 msgid "|Focus Advisor - Fine Adjustment|"
 msgstr "|Радник з фокусування — тонке коригування|"
 
 #: ../../user_manual/ekos-focus.rst:879
-#| msgid ""
-#| "Fine Adjustment was run from a starting position of 35,548 with a Step "
-#| "Size of 2544 and AF Overscan of 7477. This is recorded in Run 1 in the "
-#| "results table in the Focus Advisor dialog. The comment column says that "
-#| "the Max/Min Ratio = 1.9 which means that the \"Max HFR\" / \"Min HFR\" of "
-#| "the datapoints is 1.9 which could be improved. So Focus Advisor starts "
-#| "Run 2 from position 38,092 with an increased Step Size of 4888 and "
-#| "Overscan of 3738. The Overscan value is reduced here to see if a smaller "
-#| "number would adequately compensate backlash."
 msgid ""
 "``Fine Adjustment`` was run from a starting position of 35,548 with a ``Step "
 "Size`` of 2544 and ``AF Overscan`` of 7477. This is recorded in Run 1 in the "
@@ -3900,12 +3538,6 @@ msgid "|Filter Queue|"
 msgstr "|Черга фільтрування|"
 
 #: ../../user_manual/ekos-focus.rst:913
-#| msgid ""
-#| "Click the filter icon <inlinemediaobject><imageobject><imagedata "
-#| "fileref=\"view-filter.png\" format=\"PNG\"/></imageobject> </"
-#| "inlinemediaobject> from either Capture or Focus to open the filter "
-#| "settings dialog. This popup allows the user to configure data associated "
-#| "with each filter, and used for various functions within the system."
 msgid ""
 "Click the filter icon |image8| from either Capture or Focus to open the "
 "filter settings dialog. This popup allows the user to configure data "
@@ -3925,12 +3557,6 @@ msgstr ""
 "Фокусування з різними фільтрами у Ekos можна виконати у три різних способи."
 
 #: ../../user_manual/ekos-focus.rst:921
-#| msgid ""
-#| "<emphasis role=\"bold\">Direct Autofocus*: When Capture changes to this "
-#| "filter it is possible to automatically refocus this filter. The exposure "
-#| "to use for the selected filter is taken from the ``Exposure`` field. This "
-#| "allows, for example, narrowband filters to use a longer exposure than "
-#| "broadband filters during Autofocus."
 msgid ""
 "**Direct Autofocus**: When Capture changes to this filter it is possible to "
 "automatically refocus this filter. The exposure to use for the selected "
@@ -3946,24 +3572,11 @@ msgstr ""
 "автоматичному фокусуванні."
 
 #: ../../user_manual/ekos-focus.rst:928
-#| msgid "Check ``Auto Focus`` to use the filter in this way."
 msgid "Check ``Auto Focus`` to use the filter in this way."
 msgstr ""
 "Позначте пункт ``Автофокусування``, щоб скористатися фільтром у цей спосіб."
 
 #: ../../user_manual/ekos-focus.rst:930
-#| msgid ""
-#| "<emphasis role=\"bold\">Autofocus on Lock Filter*: It is possible to "
-#| "specify a Lock filter to use when it is required to focus this filter. "
-#| "For example, if the Ha filter is used and an Autofocus run required, it "
-#| "is possible to run Autofocus using the Lum filter and then, when "
-#| "complete, adjust the focus position by an Offset value corresponding to "
-#| "the predetermined focus difference between the Lum and Ha filters (100 "
-#| "ticks in this example). This is useful when, for example, it is difficult "
-#| "to focus some filters directly without excessively long exposure times. "
-#| "Note that this locked filter approach may also be used in the <link "
-#| "linkend=\"ekos-align\">Alignment Module</link> whenever it performs a "
-#| "capture for astrometry."
 msgid ""
 "**Autofocus on Lock Filter**: It is possible to specify a Lock filter to use "
 "when it is required to focus this filter. For example, if the Ha filter is "
@@ -3989,10 +3602,6 @@ msgstr ""
 "вирівнювання <ekos-align>` при виконанні захоплення для астрометрії."
 
 #: ../../user_manual/ekos-focus.rst:945
-#| msgid ""
-#| "To use a filter in this way, check ``Auto Focus``, specify the ``Lock "
-#| "Filter`` to use and make sure that the Offsets for this filter and the "
-#| "``Lock Filter`` are set."
 msgid ""
 "To use a filter in this way, check ``Auto Focus``, specify the ``Lock "
 "Filter`` to use and make sure that the Offsets for this filter and the Lock "
@@ -4003,12 +3612,6 @@ msgstr ""
 "для цього фільтра встановлено «Зсуви» та позначено ``Зафіксувати фільтр``."
 
 #: ../../user_manual/ekos-focus.rst:949
-#| msgid ""
-#| "<emphasis role=\"bold\">Use Offsets*: It is possible to use filter "
-#| "offsets to adjust focus when swapping between filters, without running "
-#| "Autofocus. This requires some setup work ahead of time but has the "
-#| "advantage of reducing the number of Autofocus runs and therefore reducing "
-#| "the time spent autofocusing."
 msgid ""
 "**Use Offsets**: It is possible to use filter offsets to adjust focus when "
 "swapping between filters, without running Autofocus. This requires some "
@@ -4022,7 +3625,6 @@ msgstr ""
 "на автоматичне фокусування."
 
 #: ../../user_manual/ekos-focus.rst:956
-#, fuzzy
 #| msgid ""
 #| "In order to use this feature it is necessary to work out the relative "
 #| "focus position between all filters that you wish to use this "
@@ -4081,7 +3683,6 @@ msgstr ""
 "підкадрів із зеленим фільтром."
 
 #: ../../user_manual/ekos-focus.rst:979
-#, fuzzy
 #| msgid ""
 #| "To use a filter in this way, uncheck ``Auto Focus`` and make sure that "
 #| "the Offsets for this filter and all other filters that can precede this "
@@ -4097,12 +3698,11 @@ msgstr ""
 "послідовності."
 
 #: ../../user_manual/ekos-focus.rst:984
-#, fuzzy
 #| msgid ""
 #| "The Offsets can either be worked out by running Autofocus with different "
 #| "filters and manually calculating the relative offsets and entering them "
-#| "into the table or by using the <link linkend=\"build-filter-"
-#| "offsets\">Build Offsets</link> tool."
+#| "into the table or by using the <link linkend=\"build-filter-offsets"
+#| "\">Build Offsets</link> tool."
 msgid ""
 "The Offsets can either be worked out by running Autofocus with different "
 "filters and manually calculating the relative offsets and entering them into "
@@ -4111,21 +3711,18 @@ msgid ""
 msgstr ""
 "Зсуви можна визначити запускаючи автоматичне фокусування із різними "
 "фільтрами, вручну обчислюючи відносні зсуви і вводячи їх до таблиці або "
-"використовуючи інструмент <link linkend=\"build-filter-offsets\">Побудувати "
-"зсуви</link>."
+"використовуючи інструмент :ref:`Побудувати зсуви <ekos-focus-build-offsets>`."
 
 #: ../../user_manual/ekos-focus.rst:991
 msgid "Configure settings for each filter in the table:"
 msgstr "Параметри налаштувань для кожного фільтра у таблиці:"
 
 #: ../../user_manual/ekos-focus.rst:993
-#, fuzzy
 #| msgid "``Filter``: Filter Name."
 msgid "``Filter``: Filter Name."
 msgstr "``Фільтр``: назва фільтра."
 
 #: ../../user_manual/ekos-focus.rst:995
-#, fuzzy
 #| msgid ""
 #| "``Exposure``: Set exposure time (in seconds) to be used when performing "
 #| "Autofocus on this filter. By default, it is set to 1 second."
@@ -4138,7 +3735,6 @@ msgstr ""
 "тривалістю експонування є 1 секунда."
 
 #: ../../user_manual/ekos-focus.rst:999
-#, fuzzy
 #| msgid ""
 #| "``Offset``: Set relative offsets. Ekos will command a focus offset change "
 #| "if there is a difference between the current and target filter offsets. "
@@ -4163,7 +3759,6 @@ msgstr ""
 "фокусування назовні, а від'ємні — фокусування всередину."
 
 #: ../../user_manual/ekos-focus.rst:1008
-#, fuzzy
 #| msgid ""
 #| "``Auto Focus``: Check this option to perform AutoFocus whenever the "
 #| "filter is changed to this filter."
@@ -4176,7 +3771,6 @@ msgstr ""
 "ви редагуєте."
 
 #: ../../user_manual/ekos-focus.rst:1011
-#, fuzzy
 #| msgid ""
 #| "``Lock Filter``: Set which filter should be set and *locked* when "
 #| "performing autofocus for this filter. \"--\" indicates no Lock Filter. It "
@@ -4196,7 +3790,6 @@ msgstr ""
 "який зафіксовано на зеленому. Фільтр не можна фіксувати на самому собі."
 
 #: ../../user_manual/ekos-focus.rst:1018
-#, fuzzy
 #| msgid ""
 #| "``Last AF Solution``: The last successful Autofocus position. Under "
 #| "normal operation Ekos will automatically update this field."
@@ -4208,7 +3801,6 @@ msgstr ""
 "фокусування. За звичайних умов Ekos автоматично оновить вміст цього поля."
 
 #: ../../user_manual/ekos-focus.rst:1022
-#, fuzzy
 #| msgid ""
 #| "``Last AF Temp (°C)``: The temperature of the ``Last AF Solution``. Under "
 #| "normal operation Ekos will automatically update this field."
@@ -4220,7 +3812,6 @@ msgstr ""
 "звичайних умов Ekos автоматично оновить вміст цього поля."
 
 #: ../../user_manual/ekos-focus.rst:1026
-#, fuzzy
 #| msgid ""
 #| "``Last AF Alt (°Alt)``: The altitude of the ``Last AF Solution``. Under "
 #| "normal operation Ekos will automatically update this field."
@@ -4232,7 +3823,6 @@ msgstr ""
 "звичайних умов Ekos автоматично оновить вміст цього поля."
 
 #: ../../user_manual/ekos-focus.rst:1030
-#, fuzzy
 #| msgid ""
 #| "``Ticks / °C``: The number of ticks to move the focuser when the "
 #| "temperature changes by 1°C. For example, if focus moves out by 5 ticks "
@@ -4251,7 +3841,6 @@ msgstr ""
 "температура збільшується на 1°C, встановіть у цьому полі значення -5."
 
 #: ../../user_manual/ekos-focus.rst:1037
-#, fuzzy
 #| msgid ""
 #| "``Ticks / °Alt``: The number of ticks to move the focuser when the "
 #| "altitude changes by 1°Alt. For example, if focus moves out by 0.5 tick "
@@ -4271,7 +3860,6 @@ msgstr ""
 "значення -0.5."
 
 #: ../../user_manual/ekos-focus.rst:1044
-#, fuzzy
 #| msgid ""
 #| "``Wavelength``: The center of the passband of the filter in nanometers. "
 #| "This is used in some Critical Focus Zone (CFZ) calculations in Focus."
@@ -4292,7 +3880,6 @@ msgstr ""
 "засоби керування:"
 
 #: ../../user_manual/ekos-focus.rst:1051
-#, fuzzy
 #| msgid ""
 #| "``Build Offsets``: Press the ``Build Offsets`` button to launch the <link "
 #| "linkend=\"build-filter-offsets\">Build Offsets</link> popup."
@@ -4300,12 +3887,10 @@ msgid ""
 "``Build Offsets``: Press the ``Build Offsets`` button to launch the :ref:"
 "`Build Offsets <ekos-focus-build-offsets>` popup."
 msgstr ""
-"``Побудувати зсуви``: натисніть кнопку ``Побудувати зсуви</guibutton>, щоб "
-"відкрити контекстне вікно <link linkend=\"build-filter-offsets\">Побудувати "
-"зсуви</link>."
+"``Побудувати зсуви``: натисніть кнопку ``Побудувати зсуви``, щоб "
+"відкрити контекстне вікно :ref:`Побудувати зсуви <ekos-focus-build-offsets>`."
 
 #: ../../user_manual/ekos-focus.rst:1056
-#, fuzzy
 #| msgid ""
 #| "``Capture flats at the same focus as lights``: When checked, flats will "
 #| "be taken at the ``Last AF Solution`` focuser position."
@@ -4420,13 +4005,11 @@ msgid "Build Offsets"
 msgstr "Побудувати зсуви"
 
 #: ../../user_manual/ekos-focus.rst:1113
-#, fuzzy
 #| msgid "Build Offsets"
 msgid "|Build Filter Offsets|"
-msgstr "Побудувати зсуви"
+msgstr "|Побудова зсувів фільтрування|"
 
 #: ../../user_manual/ekos-focus.rst:1116
-#, fuzzy
 #| msgid ""
 #| "Click the ``Build Offsets`` button on the <link linkend=\"focus-filter-"
 #| "settings\">Filter Settings</link> popup to launch the Build Offsets tool. "
@@ -4438,14 +4021,13 @@ msgid ""
 "either be entered manually into the table in the Filter Settings popup or "
 "this tool can be used to assist in creating them."
 msgstr ""
-"Натисніть кнопку ``Побудувати зсуви`` на контекстній панелі <link "
-"linkend=\"focus-filter-settings\">Параметри фільтрування</link>, щоб "
-"запустити інструмент побудови зсувів. Зсуви фільтрів можна або ввести вручну "
-"у таблиці на контекстній панелі параметрів фільтрування, або можна "
-"скористатися цим інструментом для полегшення отримання цих значень."
+"Натисніть кнопку ``Побудувати зсуви`` на контекстній панелі :ref:`Параметри"
+" фільтрування <ekos-focus-filter-settings>`, щоб запустити "
+"інструмент побудови зсувів. Зсуви фільтрів можна або ввести вручну у таблиці "
+"на контекстній панелі параметрів фільтрування, або можна скористатися цим "
+"інструментом для полегшення отримання цих значень."
 
 #: ../../user_manual/ekos-focus.rst:1122
-#, fuzzy
 #| msgid ""
 #| "Note: This utility should not be run during an imaging session as it "
 #| "takes exclusive control of the Focus process whilst it is running."
@@ -4453,9 +4035,9 @@ msgid ""
 "*Note: This utility should not be run during an imaging session as it takes "
 "exclusive control of the Focus process whilst it is running.*"
 msgstr ""
-"Зауваження: не слід запускати цей інструмент під час сеансу створення "
+"*Зауваження: не слід запускати цей інструмент під час сеансу створення "
 "знімків, оскільки він отримує виключний доступ до процесу фокусування, доки "
-"виконує свою роботу."
+"виконує свою роботу.*"
 
 #: ../../user_manual/ekos-focus.rst:1126
 msgid ""
@@ -4469,7 +4051,6 @@ msgstr ""
 "наведеними нижче стовпчиками."
 
 #: ../../user_manual/ekos-focus.rst:1131
-#, fuzzy
 #| msgid ""
 #| "``Filter``: Filter Name. The first filter has an \"*\" after the filter "
 #| "name, \"Lum *\" in the above example. This means that Lum is the "
@@ -4483,24 +4064,22 @@ msgid ""
 "click another Filter Name to make that filter the reference filter."
 msgstr ""
 "``Фільтр``: назва фільтра. Після назви першого фільтра вказано «*», у "
-"наведеному вище прикладі — «Lum *». Це означає, що Lum є еталонним фільтром, "
+"наведеному вище прикладі — «Lum \\*». Це означає, що Lum є еталонним"
+" фільтром, "
 "щодо якого вимірюються зсуви для інших фільтрів. Двічі клацніть на іншій "
 "назві фільтра, щоб зробити цей фільтр еталонним."
 
 #: ../../user_manual/ekos-focus.rst:1138
-#, fuzzy
 #| msgid "``Offset``: The current offset."
 msgid "``Offset``: The current offset."
 msgstr "``Зсув``: поточний зсув."
 
 #: ../../user_manual/ekos-focus.rst:1140
-#, fuzzy
 #| msgid "``Lock Filter``: The current Lock filter."
 msgid "``Lock Filter``: The current Lock filter."
 msgstr "``Фіксований фільтр``: поточний фіксований фільтр."
 
 #: ../../user_manual/ekos-focus.rst:1142
-#, fuzzy
 #| msgid ""
 #| "``# Focus Runs``: The number of focus runs for this filter. The default "
 #| "is 5. To exclude a filter from the process set this field to zero. Note, "
@@ -4516,7 +4095,6 @@ msgstr ""
 "виконано принаймні один запуск."
 
 #: ../../user_manual/ekos-focus.rst:1147
-#, fuzzy
 #| msgid ""
 #| "When the ``# Focus Runs`` have been configured press the ``Run`` button "
 #| "to start the automated process."
@@ -4528,13 +4106,11 @@ msgstr ""
 "кнопку ``Запустити``, щоб розпочати автоматизований процес."
 
 #: ../../user_manual/ekos-focus.rst:1150
-#, fuzzy
 #| msgid "Press the ``Stop`` button to stop the process at any time."
 msgid "Press the ``Stop`` button to stop the process at any time."
 msgstr "Натисніть кнопку ``Зупинити``, щоб зупинити процес будь-якої миті."
 
 #: ../../user_manual/ekos-focus.rst:1152
-#, fuzzy
 #| msgid ""
 #| "Toggle the ``Adapt Focus`` checkbox at any point in the processing to "
 #| "switch between measured Autofocus results and results after Adaptive "
@@ -4549,9 +4125,10 @@ msgid ""
 msgstr ""
 "Перемкніть пункт ``Адаптивне фокусування`` будь-коли у процесі обробки, щоб "
 "перемкнути між виміряними результатами автофокусування і результатами після "
-"застосування коригування адаптивним фокусуванням. Див. розділ <link "
-"linkend=\"focus-adaptive\">Адаптивне фокусування</link>, щоб дізнатися "
-"більше про адаптивне фокусування."
+"застосування коригування адаптивним фокусуванням. Див. розділ"
+" :ref:`Адаптивне фокусування <ekos-focus-adaptive>`, щоб дізнатися більше"
+" про "
+"адаптивне фокусування."
 
 #: ../../user_manual/ekos-focus.rst:1158
 msgid ""
@@ -4572,7 +4149,6 @@ msgid "|image9|"
 msgstr "|image9|"
 
 #: ../../user_manual/ekos-focus.rst:1169
-#, fuzzy
 #| msgid ""
 #| "AF Run 1-5: The maximum ``# Focus Runs`` selected by the user is 5, so 5 "
 #| "columns have been created, 1 for each AF run solution."
@@ -4597,7 +4173,6 @@ msgstr ""
 "36743 = -12"
 
 #: ../../user_manual/ekos-focus.rst:1178
-#, fuzzy
 #| msgid ""
 #| "Save: Check to save the offset for this filter when the ``Save`` button "
 #| "is pressed. The default is to check these boxes but unchecking allows a "
@@ -4660,7 +4235,6 @@ msgstr ""
 "Після перегляду результатів користувач може натиснути одну з таких кнопок:"
 
 #: ../../user_manual/ekos-focus.rst:1206
-#, fuzzy
 #| msgid ""
 #| "Save: All filters where the ``Save`` checkbox is checked will have the "
 #| "New Offset value saved in Filter Offsets for use during the next imaging "
@@ -4674,13 +4248,13 @@ msgstr ""
 "сеансу створення знімків."
 
 #: ../../user_manual/ekos-focus.rst:1210
-msgid "Close: The Build Filter Offsets tool is closed without saving any data."
+msgid ""
+"Close: The Build Filter Offsets tool is closed without saving any data."
 msgstr ""
 "Закрити: закрити інструмент побудови зсувів для фільтрів без збереження "
 "даних."
 
 #: ../../user_manual/ekos-focus.rst:1213
-#, fuzzy
 #| msgid ""
 #| "If the ``Adapt Focus`` box is checked, the AF Runs are updated for "
 #| "Adaptive Focus. See the <link linkend=\"focus-adaptive\">Adaptive Focus</"
@@ -4700,8 +4274,8 @@ msgid ""
 "been run at the temperature and altitude of AF Run 1 on Lum."
 msgstr ""
 "Якщо позначено пункт ``Адаптивне фокусування``, запуски автофокусування буде "
-"оновлено для адаптивного фокусування. Див. розділ <link linkend=\"focus-"
-"adaptive\">Адаптивне фокусування</link>, щоб дізнатися більше про теорію "
+"оновлено для адаптивного фокусування. Див. розділ :ref:`Адаптивне"
+" фокусування <ekos-focus-adaptive>`, щоб дізнатися більше про теорію "
 "адаптивного фокусування. Перший запуск автоматичного фокусування (у цьому "
 "прикладі AF Run 1 для Lum) є основою для адаптацій. Отже, температуру і "
 "висоту для AF Run 1 для Lum буде використано як основу для усіх інших "
@@ -4780,7 +4354,6 @@ msgstr ""
 "ділянку неба."
 
 #: ../../user_manual/ekos-focus.rst:1262
-#, fuzzy
 #| msgid ""
 #| "Make sure your equipment is in thermal equilibrium before starting. "
 #| "Calculate roughly how long the utility will take which is the total "
@@ -4837,19 +4410,16 @@ msgstr ""
 "зберегти зсуви до параметрів фільтра і використання у майбутньому."
 
 #: ../../user_manual/ekos-focus.rst:1288 ../../user_manual/ekos-focus.rst:2203
-#, fuzzy
 #| msgid "<title>Focus Display</title>"
 msgid "Focus Display"
-msgstr "<title>Показ фокусування</title>"
+msgstr "Показ фокусування"
 
 #: ../../user_manual/ekos-focus.rst:1291
-#, fuzzy
 #| msgid "<title>Focus Display</title>"
 msgid "|Focus Display|"
-msgstr "<title>Показ фокусування</title>"
+msgstr "|Показ фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1294
-#, fuzzy
 #| msgid ""
 #| "The focus display, displays a FITS viewer window onto the frame taken "
 #| "during the focus process. If ``Ring Mask`` is selected, then the mask is "
@@ -4870,7 +4440,6 @@ msgstr ""
 "РПП (якщо для вимірювання не вибрано ПШПМ)."
 
 #: ../../user_manual/ekos-focus.rst:1301
-#, fuzzy
 #| msgid ""
 #| "If ``Mosaic Mask`` has been selected then the FITS viewer displays the "
 #| "mosaic 3x3 grid showing the center, edges and sides as configured in the "
@@ -4885,10 +4454,9 @@ msgstr ""
 "параметрах маски мозаїки."
 
 #: ../../user_manual/ekos-focus.rst:1306
-#, fuzzy
 #| msgid "<phrase>Focus Display Mosaic</phrase>"
 msgid "|Focus Display Mosaic|"
-msgstr "<phrase>Мозаїка на дисплеї фокусування</phrase>"
+msgstr "|Мозаїка на дисплеї фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1309
 msgid ""
@@ -4900,39 +4468,34 @@ msgstr ""
 
 #: ../../user_manual/ekos-focus.rst:1312
 msgid "``Zoom In`` and ``Zoom Out``."
-msgstr ""
+msgstr "``Збільшити`` і ``Зменшити``."
 
 #: ../../user_manual/ekos-focus.rst:1314
 msgid "``Default Zoom`` and ``Zoom to Fit``."
-msgstr ""
+msgstr "``Типовий масштаб`` і ``Підібрати за розмірами``."
 
 #: ../../user_manual/ekos-focus.rst:1316
-#| msgid "``Toggle Stretch``: Toggle screen stretch on or off."
 msgid "``Toggle Stretch``: Toggle screen stretch on or off."
 msgstr ""
 "``Увімкнути/Вимкнути розтягування``: увімкнути або вимкнути розтягування "
 "показу."
 
 #: ../../user_manual/ekos-focus.rst:1318
-#| msgid "``Toggle Crosshairs``: Toggle crosshairs on or off."
 msgid "``Toggle Crosshairs``: Toggle crosshairs on or off."
 msgstr "``Перехрестя``: увімкнути або вимкнути показ перехресть."
 
 #: ../../user_manual/ekos-focus.rst:1320
-#| msgid "``Toggle Gridlines``: Toggle pixel gridlines on or off."
 msgid "``Toggle Gridlines``: Toggle pixel gridlines on or off."
 msgstr ""
 "``Піксельні лінії сітки``: увімкнути або вимкнути показ піксельних ліній "
 "сітки."
 
 #: ../../user_manual/ekos-focus.rst:1322
-#, fuzzy
 #| msgid "``Toggle Stars``: Toggle star detection on or off."
 msgid "``Toggle Stars``: Toggle star detection on or off."
 msgstr "``Зірки``: увімкнути або вимкнути виявлення зірок."
 
 #: ../../user_manual/ekos-focus.rst:1324
-#| msgid "``View Star Profile``: Launches the View Star Profile dialog."
 msgid "``View Star Profile``: Launches the ``View Star Profile`` dialog."
 msgstr ""
 "``Переглянути профіль зірки``: відкриває діалогове вікно перегляду профілю "
@@ -4943,10 +4506,9 @@ msgid "V-Curve"
 msgstr "V-крива"
 
 #: ../../user_manual/ekos-focus.rst:1333
-#, fuzzy
 #| msgid "Focus V-Curve FWHM"
 msgid "|Focus V-Curve|"
-msgstr "V-крива фокусування для ПШПМ"
+msgstr "|V-крива фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1336
 msgid ""
@@ -4963,7 +4525,6 @@ msgstr ""
 "фокусування буде визначено встановленими параметрами."
 
 #: ../../user_manual/ekos-focus.rst:1343
-#, fuzzy
 #| msgid ""
 #| "For certain algorithms, Ekos will also draw a curve of best fit through "
 #| "the datapoints. If ``Use Weights`` is selected then error bars are "
@@ -4980,7 +4541,6 @@ msgstr ""
 "стандартному відхиленню у виміряному значенні."
 
 #: ../../user_manual/ekos-focus.rst:1348
-#, fuzzy
 #| msgid ""
 #| "The units of the y-axis depend on the selected focus Measure. For "
 #| "example, for HFR, the y-axis will either be in Pixels or Arc seconds "
@@ -4995,7 +4555,6 @@ msgstr ""
 "залежно від значення параметра ``Одиниці показу``."
 
 #: ../../user_manual/ekos-focus.rst:1352
-#, fuzzy
 #| msgid ""
 #| "If ``Refine Curve Fit`` is selected, Focus will check for and potentially "
 #| "exclude outlying datapoints. In this case datapoints 1, 5 and 7 were "
@@ -5014,7 +4573,6 @@ msgid "Under the V-Curve a number of parameters are displayed:"
 msgstr "Під V-кривою буде показано декілька параметрів:"
 
 #: ../../user_manual/ekos-focus.rst:1358
-#, fuzzy
 #| msgid ""
 #| "``HFR``: Displays the star HFR for the most recent datapoint if relevant."
 msgid ""
@@ -5023,7 +4581,6 @@ msgstr ""
 "``РПП``: показує РПП зірки для найновішої точки даних, якщо це застосовне."
 
 #: ../../user_manual/ekos-focus.rst:1361
-#, fuzzy
 #| msgid ""
 #| "``FWHM``: Displays the star FWHM for the most recent datapoint if "
 #| "relevant."
@@ -5033,7 +4590,6 @@ msgstr ""
 "``ПШПМ``: показує ПШПМ зірки для найновішої точки даних, якщо застосовне."
 
 #: ../../user_manual/ekos-focus.rst:1364
-#, fuzzy
 #| msgid "``Stars``: The number of stars used for the most recent datapoint."
 msgid "``Stars``: The number of stars used for the most recent datapoint."
 msgstr ""
@@ -5041,13 +4597,11 @@ msgstr ""
 "даних."
 
 #: ../../user_manual/ekos-focus.rst:1367
-#, fuzzy
 #| msgid "``Iteration``: The number of datapoints taken so far."
 msgid "``Iteration``: The number of datapoints taken so far."
 msgstr "``Ітерація``: кількість створених точок даних на поточний момент."
 
 #: ../../user_manual/ekos-focus.rst:1369
-#, fuzzy
 #| msgid ""
 #| "``Relative Profile...``: Invokes the <link linkend=\"focus-relative-"
 #| "profile\">Relative Profile</link> popup."
@@ -5055,11 +4609,10 @@ msgid ""
 "``Relative Profile...``: Invokes the :ref:`Relative Profile <ekos-focus-"
 "relative-profile>` popup."
 msgstr ""
-"``Відносний профіль…``: викликає контекстну панель <link linkend=\"focus-"
-"relative-profile\">Відносний профіль</link>."
+"``Відносний профіль…``: викликає контекстну панель :ref:`Відносний профіль <"
+"ekos-focus-relative-profile>`."
 
 #: ../../user_manual/ekos-focus.rst:1373
-#, fuzzy
 #| msgid ""
 #| "``Clear Data``: Resets the V-Curve graph by clearing the displayed data."
 msgid ""
@@ -5073,23 +4626,20 @@ msgid "Here is a V-Curve when Measure is set to HFR Adj:"
 msgstr "V-крива, якщо для пункту вимірювання встановлено коригування РПП:"
 
 #: ../../user_manual/ekos-focus.rst:1379
-#, fuzzy
 #| msgid "Focus V-Curve HFR Adj"
 msgid "|Focus V-Curve HFR Adj|"
-msgstr "Коригування V-кривої для РПП під час фокусування"
+msgstr "|Коригування V-кривої для РПП під час фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1382
 msgid "Here is a V-Curve when Measure is set to FWHM:"
 msgstr "V-крива, якщо для пункту вимірювання встановлено ПШПМ:"
 
 #: ../../user_manual/ekos-focus.rst:1385
-#, fuzzy
 #| msgid "Focus V-Curve FWHM"
 msgid "|Focus V-Curve FWHM|"
-msgstr "V-крива фокусування для ПШПМ"
+msgstr "|V-крива фокусування для ПШПМ|"
 
 #: ../../user_manual/ekos-focus.rst:1388
-#, fuzzy
 #| msgid ""
 #| "Here is a V-Curve when Measure is set to # Stars. In this case the "
 #| "Critical Focus Zone (CFZ) ``Display`` checkbox has been checked so the "
@@ -5104,20 +4654,18 @@ msgstr ""
 "тому також показано КЗФ:"
 
 #: ../../user_manual/ekos-focus.rst:1393
-#, fuzzy
 #| msgid "Focus V-Curve Num Stars"
 msgid "|Focus V-Curve Num Stars|"
-msgstr "V-крива фокусування для кількості зірок"
+msgstr "|V-крива фокусування для кількості зірок|"
 
 #: ../../user_manual/ekos-focus.rst:1396
 msgid "Here is a V-Curve when Measure is set to Fourier:"
 msgstr "V-крива, якщо для пункту вимірювання встановлено алгоритм Фур'є:"
 
 #: ../../user_manual/ekos-focus.rst:1399
-#, fuzzy
 #| msgid "Focus V-Curve Fourier"
 msgid "|Focus V-Curve Fourier|"
-msgstr "V-крива фокусування для алгоритму Фур'є"
+msgstr "|V-крива фокусування для алгоритму Фур'є|"
 
 #: ../../user_manual/ekos-focus.rst:1402
 msgid ""
@@ -5143,20 +4691,18 @@ msgstr ""
 "результат можна спостерігати на V-кривій."
 
 #: ../../user_manual/ekos-focus.rst:1414
-#, fuzzy
 #| msgid "Focus V-Curve Timeseries"
 msgid "|Focus V-Curve Timeseries|"
-msgstr "Часова послідовність V-кривої фокусування"
+msgstr "|Часова послідовність V-кривої фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1420
 msgid "Relative Profile"
 msgstr "Відносний профіль"
 
 #: ../../user_manual/ekos-focus.rst:1423
-#, fuzzy
 #| msgid "Relative Profile"
 msgid "|Focus Relative Profile|"
-msgstr "Відносний профіль"
+msgstr "|Відносний профіль фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1426
 msgid ""
@@ -5179,7 +4725,6 @@ msgid "How to Setup for an Autofocus Run"
 msgstr "Як налаштувати програму для виконання автофокусування"
 
 #: ../../user_manual/ekos-focus.rst:1440
-#, fuzzy
 #| msgid ""
 #| "The exact settings that work best for a given astronomical setup need to "
 #| "be worked out by the user using trial and error. A good place to start is "
@@ -5194,12 +4739,11 @@ msgid ""
 msgstr ""
 "Точні значення параметрів, які найкраще працюватимуть для певної "
 "конфігурації астрономічних параметрів слід визначити методом спроб і "
-"помилок. Почати можна із читання <link linkend=\"focus-advisor\">розділу "
-"щодо радника з фокусування</link>. Запустіть радник з фокусування і прийміть "
+"помилок. Почати можна із читання :ref:`розділу щодо радника з фокусування <"
+"ekos-focus-focus-advisor>`. Запустіть радник з фокусування і прийміть "
 "його рекомендації. Він використовує лінійний однопрохідний алгоритм:"
 
 #: ../../user_manual/ekos-focus.rst:1447
-#, fuzzy
 #| msgid ""
 #| "Setup Backlash. See the <link linkend=\"focus-backlash\">Backlash</link> "
 #| "section for more details."
@@ -5207,11 +4751,10 @@ msgid ""
 "Setup Backlash. See the :ref:`Backlash <ekos-focus-focus-backlash>` section "
 "for more details."
 msgstr ""
-"Налаштуйте люфт. Див. <link linkend=\"focus-backlash\">розділ щодо люфту</"
-"link>, щоб дізнатися більше."
+"Налаштуйте люфт. Див. :ref:`розділ щодо люфту <ekos-focus-focus-backlash>`,"
+" щоб дізнатися більше."
 
 #: ../../user_manual/ekos-focus.rst:1451
-#, fuzzy
 #| msgid ""
 #| "Initial Step Size. This is a critical parameter. You may have an idea "
 #| "from other people with a similar setup. If not you can try setting it "
@@ -5226,11 +4769,10 @@ msgstr ""
 "Початковий розмір кроку. Це критичний параметр. Значення можете запозичити у "
 "когось із подібним обладнанням. Якщо нічого знайти не вдається, ви можете "
 "спробувати визначити його на основі критичної зони фокусування (КФЗ) для "
-"вашого обладнання. Див. <link linkend=\"focus-cfz\">розділ щодо КЗФ</link>, "
-"щоб дізнатися більше."
+"вашого обладнання. Див. :ref:`розділ щодо КЗФ <ekos-focus-cfz>`, щоб"
+" дізнатися більше."
 
 #: ../../user_manual/ekos-focus.rst:1458
-#, fuzzy
 #| msgid ""
 #| "Start near to focus by manually finding focus. Use the ``Start Framing`` "
 #| "option and manually adjust the focus to get to approximate focus."
@@ -5257,10 +4799,9 @@ msgstr ""
 "Запустіть автоматичне фокусування.  Ось зразок V-кривої, яку буде отримано:"
 
 #: ../../user_manual/ekos-focus.rst:1469
-#, fuzzy
 #| msgid "<phrase>Good Focus Curve</phrase>"
 msgid "|Good Focus Curve|"
-msgstr "<phrase>Добра крива фокусування</phrase>"
+msgstr "|Добра крива фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1472
 msgid ""
@@ -5280,10 +4821,9 @@ msgstr ""
 "будуть дуже точними."
 
 #: ../../user_manual/ekos-focus.rst:1481
-#, fuzzy
 #| msgid "Focus V-Curve FWHM"
 msgid "|Bad Focus Curve|"
-msgstr "V-крива фокусування для ПШПМ"
+msgstr "|Погана крива фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1487
 msgid "Focuser Backlash"
@@ -5335,9 +4875,8 @@ msgid ""
 msgstr "При роботі з люфтом слід взяти до уваги декілька речей:"
 
 #: ../../user_manual/ekos-focus.rst:1511
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">No Backlash*: If you are fortunate enough to have "
+#| "**No Backlash*: If you are fortunate enough to have "
 #| "a setup with no backlash then it would make sense to set ``Driver "
 #| "Backlash`` and ``AF Overscan`` off (set to zero)."
 msgid ""
@@ -5345,14 +4884,13 @@ msgid ""
 "backlash then it would make sense to set ``Driver Backlash`` and ``AF "
 "Overscan`` off (set to zero)."
 msgstr ""
-"<emphasis role=\"bold\">Без люфту*: якщо вам поталанило мати конфігурацію "
+"**Без люфту**: якщо вам поталанило мати конфігурацію "
 "без люфту, має сенс встановити вимкнути ``Люфт драйвера`` і ``Пересканування "
 "АФ`` (встановити нульове значення)."
 
 #: ../../user_manual/ekos-focus.rst:1515
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Backlash Managed by Focuser*: If your focuser had "
+#| "**Backlash Managed by Focuser*: If your focuser had "
 #| "the ability to manage backlash itself then you can use this facility and "
 #| "turn ``Driver Backlash`` and ``AF Overscan`` off (set to zero). "
 #| "Alternatively, if it's possible, you could turn off the focuser's "
@@ -5365,17 +4903,16 @@ msgid ""
 "could turn off the focuser's backlash facility and use either the Device "
 "Driver or AF Overscan to manage backlash."
 msgstr ""
-"<emphasis role=\"bold\">Керування люфтом з боку засобу фокусування</"
-"emphasis>: якщо у вашому засобі фокусування передбачено можливість керування "
+"**Керування люфтом з боку засобу фокусування**: якщо у вашому засобі"
+" фокусування передбачено можливість керування "
 "люфтом, ви можете скористатися цим і вимкнути ``Люфт драйвера`` і "
 "``Пересканування АФ`` (встановити нульове значення). Крім того, якщо це "
 "можливо, ви можете вимкнути апаратну компенсацію люфту і скористатися "
 "драйвером пристрою або пересканування АФ для керування люфтом."
 
 #: ../../user_manual/ekos-focus.rst:1523
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">Backlash Managed by Device Driver*: If your "
+#| "**Backlash Managed by Device Driver*: If your "
 #| "device driver has the ability to manage backlash then you can use this "
 #| "facility and turn off ``AF Overscan`` (set to zero). Alternatively, you "
 #| "could turn off the device driver's backlash facility and set ``AF "
@@ -5386,14 +4923,13 @@ msgid ""
 "Overscan`` (set to zero). Alternatively, you could turn off the device "
 "driver's backlash facility and set ``AF Overscan``."
 msgstr ""
-"<emphasis role=\"bold\">Керування люфтом з боку драйвера пристрою</"
-"emphasis>: якщо у вашому драйвері пристрою передбачено можливість керування "
+"**Керування люфтом з боку драйвера пристрою**: якщо у вашому драйвері"
+" пристрою передбачено можливість керування "
 "люфтом, ви можете скористатися цим і вимкнути ``Пересканування АФ`` "
 "(встановити нульове значення. Крім того, ви можете вимкнути компенсацію "
 "люфту з боку драйвера і увімкнути ``Пересканування АФ``."
 
 #: ../../user_manual/ekos-focus.rst:1529
-#, fuzzy
 #| msgid ""
 #| "To know whether the device driver supports backlash, check the ``Driver "
 #| "Backlash`` field. If it is enabled and you can set values then the driver "
@@ -5412,9 +4948,8 @@ msgstr ""
 "люфтів."
 
 #: ../../user_manual/ekos-focus.rst:1535
-#, fuzzy
 #| msgid ""
-#| "<emphasis role=\"bold\">AF Overscan*: The Focus module can manage "
+#| "**AF Overscan*: The Focus module can manage "
 #| "Backlash itself by over scanning outward motions by the value in the ``AF "
 #| "Overscan`` field. For example, if ``AF Overscan`` is set to 40 then "
 #| "whenever Focus moves the focuser outwards, it does this as a 2-step "
@@ -5428,7 +4963,7 @@ msgid ""
 "focuser 40 ticks past where it wants to end up; secondly it moves back in by "
 "40 ticks."
 msgstr ""
-"<emphasis role=\"bold\">Пересканування АФ*: модуль фокусування містить "
+"**Пересканування АФ**: модуль фокусування містить "
 "вбудовані засоби керування люфтами: програма може збільшувати рухи назовні "
 "на значення у полі ``Пересканування АФ``. Наприклад, якщо для параметра "
 "``Пересканування АФ`` встановлено значення 40, кожного разу, коли модуль "
@@ -5437,7 +4972,6 @@ msgstr ""
 "завершення; а потім повернеться назад на 40 поділок."
 
 #: ../../user_manual/ekos-focus.rst:1543
-#, fuzzy
 #| msgid ""
 #| "The advantage of ``AF Overscan`` is that you do not need to know Backlash "
 #| "exactly, you just need to set the ``AF Overscan`` &gt;= backlash. So, for "
@@ -5450,12 +4984,11 @@ msgid ""
 "80."
 msgstr ""
 "Перевагою використання ``Пересканування АФ`` є те, що вам не потрібно знати "
-"люфт точно, вам достатньо вказати ``Пересканування АФ`` &gt;= люфт. Тому, "
+"люфт точно, вам достатньо вказати ``Пересканування АФ`` >= люфт. Тому, "
 "наприклад, якщо ви виміряли люфт у приблизно 60 поділок, ви можете "
 "встановити для параметра ``Пересканування АФ`` значення 80."
 
 #: ../../user_manual/ekos-focus.rst:1549
-#, fuzzy
 #| msgid ""
 #| "``AF Overscan`` is also useful where Backlash is not exactly predictable. "
 #| "For example, if Backlash measurements yield slightly different values, e."
@@ -5482,7 +5015,6 @@ msgstr ""
 "за правильне."
 
 #: ../../user_manual/ekos-focus.rst:1559
-#, fuzzy
 #| msgid ""
 #| "All focuser movements managed by Focus will have ``AF Overscan`` applied, "
 #| "including Step Out, Goto, Autofocus runs, Adaptive Focus movements, Adapt "
@@ -5499,16 +5031,14 @@ msgstr ""
 "знімків у тій самій позиції, що і освітлення."
 
 #: ../../user_manual/ekos-focus.rst:1568 ../../user_manual/ekos-focus.rst:2225
-#, fuzzy
 #| msgid "Adaptive Focus Parameters:"
 msgid "Adaptive Focus"
-msgstr "Параметри адаптивного фокусування:"
+msgstr "Адаптивне фокусування"
 
 #: ../../user_manual/ekos-focus.rst:1571
-#, fuzzy
 #| msgid "Adaptive Focus Parameters:"
 msgid "|Adaptive Focus|"
-msgstr "Параметри адаптивного фокусування:"
+msgstr "|Адаптивне фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1574
 msgid ""
@@ -5659,7 +5189,6 @@ msgstr ""
 "запрацює, визначити, чи покращаться результати, якщо додати ще і висоту."
 
 #: ../../user_manual/ekos-focus.rst:1650
-#, fuzzy
 #| msgid ""
 #| "The first step is to workout the ``Ticks / °C`` and/or ``Ticks / °Alt`` "
 #| "for your equipment. To do this there is an existing utility in Ekos "
@@ -5697,10 +5226,9 @@ msgid "Here is an example of a “autofocus-(datetime).txt” file:"
 msgstr "Ось приклад файла «autofocus-(дата-час).txt»:"
 
 #: ../../user_manual/ekos-focus.rst:1665
-#, fuzzy
 #| msgid "<phrase>Focus Autofocus Log</phrase>"
 msgid "|Focus Autofocus Log|"
-msgstr "<phrase>Журнал автофокусування</phrase>"
+msgstr "|Журнал автофокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1668
 msgid ""
@@ -5723,7 +5251,6 @@ msgstr ""
 "температури."
 
 #: ../../user_manual/ekos-focus.rst:1679
-#, fuzzy
 #| msgid ""
 #| "A way to get a value for ``Ticks / °C`` would be to take the data from "
 #| "the autofocus-(datetime).txt files from a few nights of observing into a "
@@ -5773,7 +5300,6 @@ msgstr ""
 "скоригувати стані дані фокусування так, щоб дані можна було порівнювати."
 
 #: ../../user_manual/ekos-focus.rst:1701
-#, fuzzy
 #| msgid ""
 #| "A simple approach is to start with a small amount of data, say 1 night "
 #| "and use this to calculate, say the Ticks / degree C. Run with this and "
@@ -5799,26 +5325,25 @@ msgid ""
 "configured for Focus where you can see how Focus position changes throughout "
 "the imaging session:"
 msgstr ""
-"Простий підхід полягає у тому, що слід розпочати з малого набору даних, "
-"скажімо, за одну ніч, і скористатися ними для обчислення, скажімо, значення "
-"кількості поділок на один градус Цельсія. Запустіть процедуру з отриманим "
-"значенням і коригуйте його, накопичуючи дані. Перевірити, наскільки "
-"ефективним є АФ, можна за допомогою засобу «Аналіз», переглянувши, як АФ "
-"змінював фокус протягом години. Якщо все вдало, зміна позиції засобу "
-"фокусування АФ після першої години використання збігатиметься із "
-"результатами автофокусування. Там, де будуть розбіжності, причиною буде "
-"випадковість результатів автофокусування і помилкове калібрування параметра "
-"``поділки / °C`` АФ. Виконуючи цю процедуру регулярно, ви дізнаєтеся більше "
-"про ваше обладнання і зможете скоригувати АФ. Нижче наведено знімок "
-"інструмента аналізу, який налаштовано для обробки даних фокусування. Ви "
-"можете бачити, як змінюється позиція фокусування протягом сеансу зйомки:"
+"Простий підхід полягає у тому, що слід розпочати з малого набору даних,"
+" скажімо, за одну ніч, і скористатися ними для обчислення, скажімо, значення"
+" кількості поділок на один градус Цельсія. Запустіть процедуру з отриманим"
+" значенням і коригуйте його, накопичуючи дані. Перевірити, наскільки"
+" ефективним є АФ, можна за допомогою засобу «Аналіз», переглянувши, як АФ"
+" змінював фокус протягом години. Якщо все вдало, зміна позиції засобу"
+" фокусування АФ після першої години використання збігатиметься із"
+" результатами автофокусування. Там, де будуть розбіжності, причиною буде"
+" випадковість результатів автофокусування і помилкове калібрування параметра"
+" ``поділки / °C`` АФ. Виконуючи цю процедуру регулярно, ви дізнаєтеся більше"
+" про ваше обладнання і зможете скоригувати АФ. Нижче наведено знімок"
+" інструмента аналізу, який налаштовано для обробки даних фокусування. Ви"
+" можете бачити, як змінюється позиція фокусування протягом сеансу зйомки:"
 
 #: ../../user_manual/ekos-focus.rst:1717
 msgid "|Focus Analyze|"
 msgstr "|Аналіз фокусування|"
 
 #: ../../user_manual/ekos-focus.rst:1720
-#, fuzzy
 #| msgid ""
 #| "Once you have your data you can configure it in the <link linkend=\"focus-"
 #| "filter-settings\">Filter Settings</link> popup. Then in Focus, switch on "
@@ -5835,16 +5360,15 @@ msgid ""
 "continue with the next Subframe."
 msgstr ""
 "Отримавши власні дані ви можете налаштувати програму за допомогою "
-"контекстної панелі <link linkend=\"focus-filter-settings\">Параметри "
-"фільтрування</link>. Потім у модулі «Фокус» увімкніть адаптивне фокусування "
-"на вкладці <link linkend=\"focus-settings\">Параметри фокусування</link>. "
+"контекстної панелі :ref:`Параметри фільтрування <ekos-focus-filter-settings"
+">`. Потім у модулі «Фокус» увімкніть адаптивне фокусування "
+"на вкладці :ref:`Параметри фокусування <ekos-focus-focus-settings>`. "
 "Після цього під час виконання послідовності зйомки Ekos після створення "
 "кожного підкадру кожного разу перевірятиме, чи слід адаптувати позицію "
 "фокусування. Якщо це так, модуль фокусування виконає адаптацію, а модуль "
 "захоплення зображень продовжить роботу із наступним підкадром."
 
 #: ../../user_manual/ekos-focus.rst:1729
-#, fuzzy
 #| msgid ""
 #| "The screenshot at the top of this section shows an example. ``Ticks / "
 #| "°C`` is set to 9. Autofocus ran and it solved at 36580 at 10C. Then a "
@@ -5879,7 +5403,6 @@ msgstr ""
 "повідомлення."
 
 #: ../../user_manual/ekos-focus.rst:1741
-#, fuzzy
 #| msgid ""
 #| "The Adaptive Focus concept has been built into the <link linkend=\"build-"
 #| "filter-offsets\">Build Offsets</link> tool."
@@ -5887,15 +5410,14 @@ msgid ""
 "The Adaptive Focus concept has been built into the :ref:`Build Offsets <ekos-"
 "focus-build-offsets>` tool."
 msgstr ""
-"Адаптивне фокусування вбудовано до засобу <link linkend=\"build-filter-"
-"offsets\">Побудувати зсуви</link>."
+"Адаптивне фокусування вбудовано до засобу :ref:`Побудувати зсуви <"
+"ekos-focus-build-offsets>`."
 
 #: ../../user_manual/ekos-focus.rst:1747
 msgid "Coefficient of Determination, R²"
 msgstr "Коефіцієнт визначеності, R²"
 
 #: ../../user_manual/ekos-focus.rst:1749
-#, fuzzy
 #| msgid ""
 #| "The Coefficient of Determination, or R², is calculated in order to give a "
 #| "measure of how well the fitted curve matches the datapoints. More "
@@ -5920,32 +5442,31 @@ msgid ""
 msgstr ""
 "Коефіцієнт визначеності, або R², обчислюється з метою отримати міру того, "
 "наскільки добре крива апроксимує точки даних. Докладніші відомості викладено "
-"<ulink url=\"https://en.wikipedia.org/wiki/"
-"Coefficient_of_determination\">тут</ulink>. Це можливість, яка доступна лише "
-"для лінійного однопрохідного алгоритму фокусування. Якщо коротко, R² приймає "
-"значення від 0 до 1, де 1 означає точну відповідність, де усі точки даних "
-"лежать на кривій, а 0 означає, що немає кореляції між точками даних і "
-"кривою. Користувачеві варто поекспериментувати з обладнанням, щоб отримати "
-"найкраще значення, але, типово, варто скористатися значенням, яке перевищує "
-"0,9, щоб отримати добру апроксимацію."
+"`тут <https://en.wikipedia.org/wiki/Coefficient_of_determination>`__. Це"
+" можливість, яка доступна лише для лінійного "
+"однопрохідного алгоритму фокусування. Якщо коротко, R² приймає значення від "
+"0 до 1, де 1 означає точну відповідність, де усі точки даних лежать на "
+"кривій, а 0 означає, що немає кореляції між точками даних і кривою. "
+"Користувачеві варто поекспериментувати з обладнанням, щоб отримати найкраще "
+"значення, але, типово, варто скористатися значенням, яке перевищує 0,9, щоб "
+"отримати добру апроксимацію."
 
 #: ../../user_manual/ekos-focus.rst:1761
-#, fuzzy
 #| msgid ""
-#| "There is an option to set an “R² Limit” in <link linkend=\"focus-"
-#| "settings\">Focus Settings</link> that is compared to the calculated R² "
-#| "after the auto focus run has completed. If the limit value has not been "
-#| "achieved, then the auto focus is rerun."
+#| "There is an option to set an “R² Limit” in <link linkend=\"focus-settings"
+#| "\">Focus Settings</link> that is compared to the calculated R² after the "
+#| "auto focus run has completed. If the limit value has not been achieved, "
+#| "then the auto focus is rerun."
 msgid ""
 "There is an option to set an “R² Limit” in :ref:`Focus Settings <ekos-focus-"
 "focus-settings>` that is compared to the calculated R² after the auto focus "
 "run has completed. If the limit value has not been achieved, then the auto "
 "focus is rerun."
 msgstr ""
-"Можна встановити значення «Обмеження R² у <link linkend=\"focus-"
-"settings\">параметрах фокусування</link>. Його буде порівняно із обчисленим "
-"R² після завершення автофокусування. Якщо значення обмеження не буде "
-"досягнуто, автоматичне фокусування буде перезапущено."
+"Можна встановити значення «Обмеження R² у :ref:`параметрах фокусування <"
+"ekos-focus-focus-settings>`. Його буде порівняно із обчисленим R² після "
+"завершення автофокусування. Якщо значення обмеження не буде досягнуто, "
+"автоматичне фокусування буде перезапущено."
 
 #: ../../user_manual/ekos-focus.rst:1767
 msgid ""
@@ -6001,7 +5522,6 @@ msgid "https://www.gnu.org/software/gsl/doc/html/nls.html"
 msgstr "https://www.gnu.org/software/gsl/doc/html/nls.html"
 
 #: ../../user_manual/ekos-focus.rst:1793
-#, fuzzy
 #| msgid ""
 #| "The Levenberg-Marquardt algorithm is a non-linear least-squares solver "
 #| "and thus suitable for many different equations. The basic idea is to "
@@ -6038,7 +5558,7 @@ msgstr ""
 "значення до квадрату і додає усі значення. Отримане значення слід "
 "мінімізувати. Назвемо це значення S. Розв'язувачу надається початкове "
 "припущення щодо параметрів, P. Розв'язувач обчислює S, коригує P і обчислює "
-"нове значення S1. Якщо S1 &lt; S, ми рухаємося у правильному напрямку. "
+"нове значення S1. Якщо S1 < S, ми рухаємося у правильному напрямку. "
 "Ітерації тривають, аж доки не буде виконано одну з таких умов:"
 
 #: ../../user_manual/ekos-focus.rst:1809
@@ -6083,16 +5603,14 @@ msgstr ""
 "гіперболічною кривою."
 
 #: ../../user_manual/ekos-focus.rst:1831 ../../user_manual/ekos-focus.rst:2231
-#, fuzzy
 #| msgid "<title>Aberration Inspector</title>"
 msgid "Aberration Inspector"
-msgstr "<title>Інспектор аберації</title>"
+msgstr "Інспектор аберації"
 
 #: ../../user_manual/ekos-focus.rst:1834
-#, fuzzy
 #| msgid "<title>Aberration Inspector</title>"
 msgid "|Aberration Inspector|"
-msgstr "<title>Інспектор аберації</title>"
+msgstr "|Інспектор аберації|"
 
 #: ../../user_manual/ekos-focus.rst:1837
 msgid ""
@@ -6104,7 +5622,6 @@ msgstr ""
 "пов'язаному оптичному тракті."
 
 #: ../../user_manual/ekos-focus.rst:1841
-#, fuzzy
 #| msgid ""
 #| "To run Aberration Inspector press the ``Aberration Inspector</guibutton> "
 #| "button. See <link linkend=\"focus-tools\">Focus Tools</link> for more "
@@ -6117,7 +5634,7 @@ msgid ""
 "work:"
 msgstr ""
 "Щоб запустити інспектор аберації, натисніть кнопку ``Інспектор аберації``. "
-"Див. <link linkend=\"focus-tools\">групу засобів фокусування</link>, щоб "
+"Див. :ref:`групу засобів фокусування <ekos-focus-tools-group>`, щоб "
 "дізнатися більше. Для того, щоб інспектор фокусування працював належним "
 "чином, а кнопка стала активною, має бути виконано такі умови:"
 
@@ -6134,7 +5651,6 @@ msgid "A mosaic mask must be applied."
 msgstr "Має бути застосовано мозаїчне маскування."
 
 #: ../../user_manual/ekos-focus.rst:1852
-#, fuzzy
 #| msgid ""
 #| "Focuser step size needs to be setup. It is the number of microns the "
 #| "focal plane moves for 1 focuser tick. This is setup in the CFZ dialog. "
@@ -6146,8 +5662,8 @@ msgid ""
 msgstr ""
 "Має бути налаштовано розмір кроку засобу фокусування. Крок вказують як "
 "кількість мікронів, на які фокальна площина пересувається за одну поділку "
-"засобу фокусування. Вказати її можна у вікні КЗФ. Див. <link linkend=\"focus-"
-"cfz\">розділ КЗФ</link>, щоб дізнатися більше."
+"засобу фокусування. Вказати її можна у вікні КЗФ. Див. :ref:`розділ КЗФ <"
+"ekos-focus-cfz>`, щоб дізнатися більше."
 
 #: ../../user_manual/ekos-focus.rst:1858
 msgid ""
@@ -6329,16 +5845,14 @@ msgstr ""
 "У наступних розділах описано розділи діалогового вікна інспектора аберації."
 
 #: ../../user_manual/ekos-focus.rst:1952 ../../user_manual/ekos-focus.rst:2233
-#, fuzzy
 #| msgid "<title>Aberration Inspector V-Curve</title>"
 msgid "Aberration Inspector V-Curve"
-msgstr "<title>V-крива інспектора аберації</title>"
+msgstr "V-крива інспектора аберації"
 
 #: ../../user_manual/ekos-focus.rst:1955
-#, fuzzy
 #| msgid "<title>Aberration Inspector V-Curve</title>"
 msgid "|Aberration Inspector V-Curve|"
-msgstr "<title>V-крива інспектора аберації</title>"
+msgstr "|V-крива інспектора аберації|"
 
 #: ../../user_manual/ekos-focus.rst:1958
 msgid ""
@@ -6349,7 +5863,6 @@ msgstr ""
 "V-криву. Засоби керування:"
 
 #: ../../user_manual/ekos-focus.rst:1961
-#, fuzzy
 #| msgid "``Tiles``: Three options are available:"
 msgid "``Tiles``: Three options are available:"
 msgstr "``Плитки``: можна скористатися одним з трьох варіантів:"
@@ -6369,7 +5882,6 @@ msgstr ""
 "Центр і внутрішній ромб: буде показано центр і 4 плитки у внутрішньому ромбі."
 
 #: ../../user_manual/ekos-focus.rst:1971
-#, fuzzy
 #| msgid "``Labels``: Checkbox toggles focus point labels on the V-Curve."
 msgid "``Labels``: Checkbox toggles focus point labels on the V-Curve."
 msgstr ""
@@ -6377,7 +5889,6 @@ msgstr ""
 "кривій."
 
 #: ../../user_manual/ekos-focus.rst:1974
-#, fuzzy
 #| msgid ""
 #| "``CFZ``: Checkbox toggles whether the CFZ moustache is displayed on the V-"
 #| "Curve."
@@ -6387,7 +5898,6 @@ msgid ""
 msgstr "``КЗФ``: цей пункт вмикає або вимикає показ вуса КЗФ на V-кривій."
 
 #: ../../user_manual/ekos-focus.rst:1977
-#, fuzzy
 #| msgid ""
 #| "``Optimise Tile Centres``: If unchecked, the geometrical centre of the "
 #| "tile is used; if checked, the centre of the tile is calculated as an "
@@ -6408,13 +5918,11 @@ msgstr ""
 "вплив це матиме, лише якщо кількість зірок на знімку є малою."
 
 #: ../../user_manual/ekos-focus.rst:1985
-#, fuzzy
 #| msgid "``Close``: Close the Aberration Inspector dialog."
 msgid "``Close``: Close the Aberration Inspector dialog."
 msgstr "``Закрити``: закрити вікно інспектора аберації."
 
 #: ../../user_manual/ekos-focus.rst:1987
-#, fuzzy
 #| msgid ""
 #| "The V-Curve is similar to the V-Curve on the main Focus tab, except each "
 #| "tile is represented by its own curve. The number of curves is determined "
@@ -6445,19 +5953,16 @@ msgstr ""
 "щодо кривої."
 
 #: ../../user_manual/ekos-focus.rst:2001 ../../user_manual/ekos-focus.rst:2235
-#, fuzzy
 #| msgid "<title>Aberration Inspector Table</title>"
 msgid "Aberration Inspector Table"
-msgstr "<title>Таблиця інспектора аберації</title>"
+msgstr "Таблиця інспектора аберації"
 
 #: ../../user_manual/ekos-focus.rst:2004
-#, fuzzy
 #| msgid "<title>Aberration Inspector Table</title>"
 msgid "|Aberration Inspector Table|"
-msgstr "<title>Таблиця інспектора аберації</title>"
+msgstr "|Таблиця інспектора аберації|"
 
 #: ../../user_manual/ekos-focus.rst:2007
-#, fuzzy
 #| msgid ""
 #| "The table displays information pertinent to each tile as selected by the "
 #| "``Tiles`` setting."
@@ -6469,7 +5974,6 @@ msgstr ""
 "допомогою параметра ``Плитки``."
 
 #: ../../user_manual/ekos-focus.rst:2010
-#, fuzzy
 #| msgid ""
 #| "A tooltip like graphic is displayed when the mouse is hovered over either "
 #| "of the leftmost 2 columns. The graphic displays a picture of the sensor "
@@ -6501,7 +6005,6 @@ msgid "The following columns are displayed:"
 msgstr "Буде показано такі стовпчики:"
 
 #: ../../user_manual/ekos-focus.rst:2022
-#, fuzzy
 #| msgid ""
 #| "``Tile``: The 1 or 2 character name of the tile, e.g. TL = Top Left, C = "
 #| "Centre, etc."
@@ -6513,13 +6016,11 @@ msgstr ""
 "(верхня ліва), C = Centre (центральна) тощо."
 
 #: ../../user_manual/ekos-focus.rst:2025
-#, fuzzy
 #| msgid "``Description``: Tile Description, e.g. Top Left, Centre, etc."
 msgid "``Description``: Tile Description, e.g. Top Left, Centre, etc."
 msgstr "``Опис``: опис плитки, наприклад, «верхня ліва», «центральна» тощо."
 
 #: ../../user_manual/ekos-focus.rst:2028
-#, fuzzy
 #| msgid ""
 #| "``Solution``: The focus solution. This matches the solution on the "
 #| "V_Curve."
@@ -6529,7 +6030,6 @@ msgstr ""
 "``Розв'язок``: розв'язок фокусування. Відповідає розв'язку на V-кривій."
 
 #: ../../user_manual/ekos-focus.rst:2031
-#, fuzzy
 #| msgid ""
 #| "``Delta (ticks)``: This is the delta of the solution for the current "
 #| "table row from the solution of the Centre tile. The Delta of the Centre "
@@ -6544,7 +6044,6 @@ msgstr ""
 "рядка, звичайно ж, дорівнюватиме нулю."
 
 #: ../../user_manual/ekos-focus.rst:2036
-#, fuzzy
 #| msgid ""
 #| "``Delta (μm)``: This is Delta (ticks) converted to microns using the step "
 #| "size in microns as specified in the CFZ Focus tab."
@@ -6556,7 +6055,6 @@ msgstr ""
 "розміру кроку у мікронах, який вказано на вкладці КЗФ фокусування."
 
 #: ../../user_manual/ekos-focus.rst:2040
-#, fuzzy
 #| msgid ""
 #| "``Num Stars``: This shows the min / max number of stars detected during "
 #| "the Autofocus run. Usually, the minimum number would be a far out of "
@@ -6574,19 +6072,18 @@ msgstr ""
 #: ../../user_manual/ekos-focus.rst:2046
 #, fuzzy
 #| msgid ""
-#| "``R²``: R-squared of the curve fit for this tile. See <link "
-#| "linkend=\"Coefficient_of_Determination\">Coefficient of Determination</"
-#| "link> for more details."
+#| "``R²``: R-squared of the curve fit for this tile. See <link linkend="
+#| "\"Coefficient_of_Determination\">Coefficient of Determination</link> for "
+#| "more details."
 msgid ""
 "``R²``: R-squared of the curve fit for this tile. See :ref:`Coefficient of "
 "Determination <ekos-focus-coefficient-of-determination>` for more details."
 msgstr ""
-"``R²``: R-квадрат апроксимації кривої для цієї плитки. Див. <link "
-"linkend=\"Coefficient_of_Determination\">Коефіцієнт визначеності</link>, щоб "
+"``R²``: R-квадрат апроксимації кривої для цієї плитки. Див. <link linkend="
+"\"Coefficient_of_Determination\">Коефіцієнт визначеності</link>, щоб "
 "дізнатися більше."
 
 #: ../../user_manual/ekos-focus.rst:2051
-#, fuzzy
 #| msgid ""
 #| "``Exclude``: Checkbox to include / exclude this tile in calculations. By "
 #| "default, if a tile has been curve fitted it will be included; if a tile "
@@ -6642,16 +6139,14 @@ msgstr ""
 "results\">результатів інспектора аберації</link>."
 
 #: ../../user_manual/ekos-focus.rst:2078 ../../user_manual/ekos-focus.rst:2237
-#, fuzzy
 #| msgid "<title>Aberration Inspector Results</title>"
 msgid "Aberration Inspector Results"
-msgstr "<title>Результати інспектора аберації</title>"
+msgstr "Результати інспектора аберації"
 
 #: ../../user_manual/ekos-focus.rst:2081
-#, fuzzy
 #| msgid "<title>Aberration Inspector Results</title>"
 msgid "|Aberration Inspector Results|"
-msgstr "<title>Результати інспектора аберації</title>"
+msgstr "|Результати інспектора аберації|"
 
 #: ../../user_manual/ekos-focus.rst:2084
 msgid ""
@@ -6662,7 +6157,6 @@ msgstr ""
 "показано у таблиці:"
 
 #: ../../user_manual/ekos-focus.rst:2086
-#, fuzzy
 #| msgid ""
 #| "``Backfocus Δ``: This is the value of the Backfocus delta. The nearer to "
 #| "perfect backfocus, the lower the backfocus delta. Note that the Backfocus "
@@ -6698,7 +6192,6 @@ msgstr ""
 "(телескопа), або відсунути його від нього."
 
 #: ../../user_manual/ekos-focus.rst:2090
-#, fuzzy
 #| msgid ""
 #| "``Left-Right Tilt``: Gives the Left to Right tilt in microns and as a "
 #| "percentage."
@@ -6710,7 +6203,6 @@ msgstr ""
 "відсотках."
 
 #: ../../user_manual/ekos-focus.rst:2092
-#, fuzzy
 #| msgid ""
 #| "``Top-Bottom Tilt``: Gives the Top to Bottom tilt in microns and as a "
 #| "percentage"
@@ -6720,7 +6212,6 @@ msgid ""
 msgstr "``Зсув вгору-вниз``: дає зсув вгору-вниз мікронах та у відсотках"
 
 #: ../../user_manual/ekos-focus.rst:2094
-#, fuzzy
 #| msgid "``Total Tilt``: The diagonal tilt in microns and as a percentage."
 msgid "``Total Tilt``: The diagonal tilt in microns and as a percentage."
 msgstr "``Загальний зсув``: діагональний зсув у мікронах і у відсотках."
@@ -6730,10 +6221,10 @@ msgid ""
 "The smaller the backfocus delta the nearer the sensor is to perfect "
 "backfocus. If the field flattner does not flatten the field all the way to "
 "the edges of the sensor then this will be visible by switching the Tiles "
-"option between \"Centre and outer corners\" and \"Centre and inner "
-"diamond\". If the backfocus delta results are consistent when the Tiles "
-"option is changed then this indicates that the field flattener is working to "
-"the corners of the sensor."
+"option between \"Centre and outer corners\" and \"Centre and inner diamond"
+"\". If the backfocus delta results are consistent when the Tiles option is "
+"changed then this indicates that the field flattener is working to the "
+"corners of the sensor."
 msgstr ""
 "Чим меншим є дельта зворотного фокусування, тим ближчим є датчик до "
 "ідеального зворотного фокусування. Якщо сплощувач поля не сплощує поле "
@@ -6779,27 +6270,25 @@ msgstr ""
 "одного з них окремо, перш ніж виправляти інший."
 
 #: ../../user_manual/ekos-focus.rst:2107 ../../user_manual/ekos-focus.rst:2239
-#, fuzzy
 #| msgid "<title>Aberration Inspector 3D Graphic</title>"
 msgid "Aberration Inspector 3D Graphic"
-msgstr "<title>Просторовий графік інспектора аберації</title>"
+msgstr "Просторовий графік інспектора аберації"
 
 #: ../../user_manual/ekos-focus.rst:2110
-#, fuzzy
 #| msgid "<title>Aberration Inspector 3D Graphic</title>"
 msgid "|Aberration Inspector 3D Graphic|"
-msgstr "<title>Просторовий графік інспектора аберації</title>"
+msgstr "|Просторовий графік інспектора аберації|"
 
 #: ../../user_manual/ekos-focus.rst:2113
 #, fuzzy
 #| msgid ""
-#| "The 3D graphic displays the sensor tilted as per the <link "
-#| "linkend=\"aberration-inspector-results\">Aberration Inspector Results</"
-#| "link>. To help visualise the Petzval surface (see <ulink url=\"https://en."
-#| "wikipedia.org/wiki/Petzval_field_curvature\">Petzval Field Curvature</"
-#| "ulink> for more details) of light coming out of the telescope and "
-#| "incident on the sensor the surface is also modelled. The higher the "
-#| "backfocus error, the more curved the Petzval surface."
+#| "The 3D graphic displays the sensor tilted as per the <link linkend="
+#| "\"aberration-inspector-results\">Aberration Inspector Results</link>. To "
+#| "help visualise the Petzval surface (see <ulink url=\"https://en.wikipedia."
+#| "org/wiki/Petzval_field_curvature\">Petzval Field Curvature</ulink> for "
+#| "more details) of light coming out of the telescope and incident on the "
+#| "sensor the surface is also modelled. The higher the backfocus error, the "
+#| "more curved the Petzval surface."
 msgid ""
 "The 3D graphic displays the sensor tilted as per the :ref:`Aberration "
 "Inspector Results <ekos-focus-aberration-inspector-results>`.  To help "
@@ -6809,13 +6298,13 @@ msgid ""
 "modelled.  The higher the backfocus error, the more curved the Petzval "
 "surface."
 msgstr ""
-"На просторовому графіку буде показано нахил датчика за <link "
-"linkend=\"aberration-inspector-results\">результатами інспектора аберації</"
-"link>. Для полегшення візуалізації поверхні Пецваля (див. <ulink "
-"url=\"https://en.wikipedia.org/wiki/Petzval_field_curvature\">кривина поля "
-"Пецваля</ulink>, щоб дізнатися більше) світла, що надходить з телескопа і "
-"падає на датчик, моделюють також поверхню. Чим вищою є похибка зворотного "
-"фокусування, тим викривленішою є поверхня Пецваля."
+"На просторовому графіку буде показано нахил датчика за <link linkend="
+"\"aberration-inspector-results\">результатами інспектора аберації</link>. "
+"Для полегшення візуалізації поверхні Пецваля (див. <ulink url=\"https://en."
+"wikipedia.org/wiki/Petzval_field_curvature\">кривина поля Пецваля</ulink>, "
+"щоб дізнатися більше) світла, що надходить з телескопа і падає на датчик, "
+"моделюють також поверхню. Чим вищою є похибка зворотного фокусування, тим "
+"викривленішою є поверхня Пецваля."
 
 #: ../../user_manual/ekos-focus.rst:2115
 msgid ""
@@ -6841,7 +6330,6 @@ msgid "The following options are available for the graphic:"
 msgstr "Для графіка передбачено такі пункти:"
 
 #: ../../user_manual/ekos-focus.rst:2121
-#, fuzzy
 #| msgid "``Selection``: The following options are available:"
 msgid "``Selection``: The following options are available:"
 msgstr "``Вибір``: можна вибрати один з таких варіантів:"
@@ -6860,25 +6348,22 @@ msgid "Slice: A 2D slice through the 3D graphic is displayed."
 msgstr "Зріз: буде показано плоский зріз просторового графіка."
 
 #: ../../user_manual/ekos-focus.rst:2129
-#, fuzzy
 #| msgid "``Theme``: A number of colour themes are available."
 msgid "``Theme``: A number of colour themes are available."
 msgstr "``Тема``: можна скористатися однією з декількох тем кольорів."
 
 #: ../../user_manual/ekos-focus.rst:2131
-#, fuzzy
 #| msgid "``Labels``: Checkbox to show / hide tile labels on the graphic."
 msgid "``Labels``: Checkbox to show / hide tile labels on the graphic."
-msgstr "``Мітки``: цей пункт вмикає або вимикає показ міток плитки на графіку."
+msgstr ""
+"``Мітки``: цей пункт вмикає або вимикає показ міток плитки на графіку."
 
 #: ../../user_manual/ekos-focus.rst:2134
-#, fuzzy
 #| msgid "``Sensor``: Checkbox to show / hide the sensor."
 msgid "``Sensor``: Checkbox to show / hide the sensor."
 msgstr "``Датчик``: пункт для показу або приховування датчика."
 
 #: ../../user_manual/ekos-focus.rst:2136
-#, fuzzy
 #| msgid ""
 #| "``Petzval Wire``: Checkbox to show / hide the Petzval surface as a "
 #| "graphic wire."
@@ -6890,20 +6375,12 @@ msgstr ""
 "у форматі графічної сітки."
 
 #: ../../user_manual/ekos-focus.rst:2139
-#| msgid "``Petzval Surface``: Checkbox to show / hide the Petzval surface."
 msgid "``Petzval Surface``: Checkbox to show / hide the Petzval surface."
 msgstr ""
 "``Поверхня Пецваля``: пункт для вмикання або вимикання показу поверхні "
 "Пецваля."
 
 #: ../../user_manual/ekos-focus.rst:2142
-#| msgid ""
-#| "``Sim Mode``: Checkbox to toggle Simulation Mode on / off. When off, the "
-#| "graphic displays the sensor and Petzval surface based on the calculated "
-#| "results of the Aberration Inspector run. When on, the sliders for "
-#| "Backfocus, Left-to-Right tilt and Top-to-Bottom tilt are activated, and "
-#| "these can be dragged by the user to adjust the graphic. Hover the mouse "
-#| "over each slider to see the tooltips describing what each slider does."
 msgid ""
 "``Sim Mode``: Checkbox to toggle Simulation Mode on / off. When off, the "
 "graphic displays the sensor and Petzval surface based on the calculated "
@@ -6938,46 +6415,48 @@ msgid ""
 "provides."
 msgstr ""
 "Просторовий графік не є критичним для користування інспектором аберації. Усі "
-"потрібні дані показано у розділах <link linkend=\"aberration-inspector-"
-"table\">Таблиця</link> і <link linkend=\"aberration-inspector-"
-"results\">Результати</link> діалогового вікна. Призначенням графіка є "
-"полегшення розуміння користувачем роботи інспектора аберації та орієнтації у "
-"даних, які надає інструмент."
+"потрібні дані показано у розділах <link linkend=\"aberration-inspector-table"
+"\">Таблиця</link> і <link linkend=\"aberration-inspector-results"
+"\">Результати</link> діалогового вікна. Призначенням графіка є полегшення "
+"розуміння користувачем роботи інспектора аберації та орієнтації у даних, які "
+"надає інструмент."
 
 #: ../../user_manual/ekos-focus.rst:2146
 msgid "Ekos Focus"
 msgstr "Фокусування у Ekos"
 
 #: ../../user_manual/ekos-focus.rst:2146
-msgid ".. image:: images/ekos_focus.png"
-msgstr ".. image:: images/ekos_focus.png"
+#| msgid ".. image:: images/ekos_focus.png"
+msgid ".. image:: /images/ekos_focus.png"
+msgstr ".. image:: /images/ekos_focus.png"
 
 #: ../../user_manual/ekos-focus.rst:2148
 msgid "Optical Train Settings"
 msgstr "Параметри оптичного тракту"
 
 #: ../../user_manual/ekos-focus.rst:2148
-msgid ".. image:: images/optical_train_group.png"
-msgstr ".. image:: images/optical_train_group.png"
+#| msgid ".. image:: images/optical_train_group.png"
+msgid ".. image:: /images/optical_train_group.png"
+msgstr ".. image:: /images/optical_train_group.png"
 
 #: ../../user_manual/ekos-focus.rst:2150
-#, fuzzy
 #| msgid "Filter Settings"
 msgid "Focuser Settings"
-msgstr "Параметри фільтрів"
+msgstr "Параметри засобу фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2150
-msgid ".. image:: images/focuser_group.png"
-msgstr ".. image:: images/focuser_group.png"
+#| msgid ".. image:: images/focuser_group.png"
+msgid ".. image:: /images/focuser_group.png"
+msgstr ".. image:: /images/focuser_group.png"
 
 #: ../../user_manual/ekos-focus.rst:2152
-#| msgid "Camera &amp; Filter Wheel Group"
 msgid "Focus Camera & Filter Wheel Group"
 msgstr "Група «Камера і барабан з фільтрами»"
 
 #: ../../user_manual/ekos-focus.rst:2152
-msgid ".. image:: images/focus_ccdfw_group.png"
-msgstr ".. image:: images/focus_ccdfw_group.png"
+#| msgid ".. image:: images/focus_ccdfw_group.png"
+msgid ".. image:: /images/focus_ccdfw_group.png"
+msgstr ".. image:: /images/focus_ccdfw_group.png"
 
 #: ../../user_manual/ekos-focus.rst:2154
 msgid "image2"
@@ -6985,296 +6464,322 @@ msgstr "image2"
 
 #: ../../user_manual/ekos-focus.rst:2154 ../../user_manual/ekos-focus.rst:2164
 #: ../../user_manual/ekos-focus.rst:2192
-msgid ".. image:: images/view-filter.png"
-msgstr ".. image:: images/view-filter.png"
+#| msgid ".. image:: images/view-filter.png"
+msgid ".. image:: /images/view-filter.png"
+msgstr ".. image:: /images/view-filter.png"
 
 #: ../../user_manual/ekos-focus.rst:2156
-#| msgid "Tools Group"
 msgid "Focus Tools Group"
 msgstr "Група інструментів фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2156
-msgid ".. image:: images/focus_tools_group.png"
-msgstr ".. image:: images/focus_tools_group.png"
+#| msgid ".. image:: images/focus_tools_group.png"
+msgid ".. image:: /images/focus_tools_group.png"
+msgstr ".. image:: /images/focus_tools_group.png"
 
 #: ../../user_manual/ekos-focus.rst:2158
-msgid ".. image:: images/focus_options.png"
-msgstr ".. image:: images/focus_options.png"
+#| msgid ".. image:: images/focus_options.png"
+msgid ".. image:: /images/focus_options.png"
+msgstr ".. image:: /images/focus_options.png"
 
 #: ../../user_manual/ekos-focus.rst:2161
-msgid ".. image:: images/focus_settings.png"
-msgstr ".. image:: images/focus_settings.png"
+#| msgid ".. image:: images/focus_settings.png"
+msgid ".. image:: /images/focus_settings.png"
+msgstr ".. image:: /images/focus_settings.png"
 
 #: ../../user_manual/ekos-focus.rst:2164
 msgid "image3"
 msgstr "image3"
 
 #: ../../user_manual/ekos-focus.rst:2166
-msgid ".. image:: images/focus_process.png"
-msgstr ".. image:: images/focus_process.png"
+#| msgid ".. image:: images/focus_process.png"
+msgid ".. image:: /images/focus_process.png"
+msgstr ".. image:: /images/focus_process.png"
 
 #: ../../user_manual/ekos-focus.rst:2168
-msgid ".. image:: images/focus_mechanics.png"
-msgstr ".. image:: images/focus_mechanics.png"
+#| msgid ".. image:: images/focus_mechanics.png"
+msgid ".. image:: /images/focus_mechanics.png"
+msgstr ".. image:: /images/focus_mechanics.png"
 
 #: ../../user_manual/ekos-focus.rst:2170
 msgid "image4"
 msgstr "image4"
 
 #: ../../user_manual/ekos-focus.rst:2170
-msgid ".. image:: images/focus_mechanics1.png"
-msgstr ".. image:: images/focus_mechanics1.png"
+#| msgid ".. image:: images/focus_mechanics1.png"
+msgid ".. image:: /images/focus_mechanics1.png"
+msgstr ".. image:: /images/focus_mechanics1.png"
 
 #: ../../user_manual/ekos-focus.rst:2172
-#| msgid "Focus CFZ Parameters:"
 msgid "Focus CFZ"
 msgstr "КЗФ фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2172
-msgid ".. image:: images/focus_cfz_classic.png"
-msgstr ".. image:: images/focus_cfz_classic.png"
+#| msgid ".. image:: images/focus_cfz_classic.png"
+msgid ".. image:: /images/focus_cfz_classic.png"
+msgstr ".. image:: /images/focus_cfz_classic.png"
 
 #: ../../user_manual/ekos-focus.rst:2174
 msgid "image5"
 msgstr "image5"
 
 #: ../../user_manual/ekos-focus.rst:2174
-msgid ".. image:: images/focus_cfz_moustache.png"
-msgstr ".. image:: images/focus_cfz_moustache.png"
+#| msgid ".. image:: images/focus_cfz_moustache.png"
+msgid ".. image:: /images/focus_cfz_moustache.png"
+msgstr ".. image:: /images/focus_cfz_moustache.png"
 
 #: ../../user_manual/ekos-focus.rst:2176
 msgid "image6"
 msgstr "image6"
 
 #: ../../user_manual/ekos-focus.rst:2176
-msgid ".. image:: images/focus_cfz_wavefront.png"
-msgstr ".. image:: images/focus_cfz_wavefront.png"
+#| msgid ".. image:: images/focus_cfz_wavefront.png"
+msgid ".. image:: /images/focus_cfz_wavefront.png"
+msgstr ".. image:: /images/focus_cfz_wavefront.png"
 
 #: ../../user_manual/ekos-focus.rst:2178
 msgid "image7"
 msgstr "image7"
 
 #: ../../user_manual/ekos-focus.rst:2178
-msgid ".. image:: images/focus_cfz_gold.png"
-msgstr ".. image:: images/focus_cfz_gold.png"
+#| msgid ".. image:: images/focus_cfz_gold.png"
+msgid ".. image:: /images/focus_cfz_gold.png"
+msgstr ".. image:: /images/focus_cfz_gold.png"
 
 #: ../../user_manual/ekos-focus.rst:2180
-msgid ".. image:: images/focus_advisor.png"
-msgstr ".. image:: images/focus_advisor.png"
+#| msgid ".. image:: images/focus_advisor.png"
+msgid ".. image:: /images/focus_advisor.png"
+msgstr ".. image:: /images/focus_advisor.png"
 
 #: ../../user_manual/ekos-focus.rst:2182
-#| msgid "<phrase>Focus Advisor - Help</phrase>"
 msgid "Focus Advisor - Help"
 msgstr "Радник з фокусування — довідка"
 
 #: ../../user_manual/ekos-focus.rst:2182
-msgid ".. image:: images/focus_advisor_help.png"
-msgstr ".. image:: images/focus_advisor_help.png"
+#| msgid ".. image:: images/focus_advisor_help.png"
+msgid ".. image:: /images/focus_advisor_help.png"
+msgstr ".. image:: /images/focus_advisor_help.png"
 
 #: ../../user_manual/ekos-focus.rst:2184
-#| msgid "<phrase>Focus Advisor - Find Stars</phrase>"
 msgid "Focus Advisor - Find Stars"
 msgstr "Радник з фокусування — пошук зірок"
 
 #: ../../user_manual/ekos-focus.rst:2184
-msgid ".. image:: images/focus_advisor_find_stars.png"
-msgstr ".. image:: images/focus_advisor_find_stars.png"
+#| msgid ".. image:: images/focus_advisor_find_stars.png"
+msgid ".. image:: /images/focus_advisor_find_stars.png"
+msgstr ".. image:: /images/focus_advisor_find_stars.png"
 
 #: ../../user_manual/ekos-focus.rst:2186
-#| msgid "<phrase>Focus Advisor - Coarse Adjustment</phrase>"
 msgid "Focus Advisor - Coarse Adjustment"
 msgstr "Радник з фокусування — грубе коригування"
 
 #: ../../user_manual/ekos-focus.rst:2186
-msgid ".. image:: images/focus_advisor_coarse_adj.png"
-msgstr ".. image:: images/focus_advisor_coarse_adj.png"
+#| msgid ".. image:: images/focus_advisor_coarse_adj.png"
+msgid ".. image:: /images/focus_advisor_coarse_adj.png"
+msgstr ".. image:: /images/focus_advisor_coarse_adj.png"
 
 #: ../../user_manual/ekos-focus.rst:2188
-#| msgid "<phrase>Focus Advisor - Fine Adjustment</phrase>"
 msgid "Focus Advisor - Fine Adjustment"
 msgstr "Радник з фокусування — тонке коригування"
 
 #: ../../user_manual/ekos-focus.rst:2188
-msgid ".. image:: images/focus_advisor_fine_adj.png"
-msgstr ".. image:: images/focus_advisor_fine_adj.png"
+#| msgid ".. image:: images/focus_advisor_fine_adj.png"
+msgid ".. image:: /images/focus_advisor_fine_adj.png"
+msgstr ".. image:: /images/focus_advisor_fine_adj.png"
 
 #: ../../user_manual/ekos-focus.rst:2190
 msgid "Filter Queue"
 msgstr "Черга фільтрування"
 
 #: ../../user_manual/ekos-focus.rst:2190
-msgid ".. image:: images/filter_settings.png"
-msgstr ".. image:: images/filter_settings.png"
+#| msgid ".. image:: images/filter_settings.png"
+msgid ".. image:: /images/filter_settings.png"
+msgstr ".. image:: /images/filter_settings.png"
 
 #: ../../user_manual/ekos-focus.rst:2192
 msgid "image8"
 msgstr "image8"
 
 #: ../../user_manual/ekos-focus.rst:2193
-#, fuzzy
 #| msgid "Build Offsets"
 msgid "Build Filter Offsets"
-msgstr "Побудувати зсуви"
+msgstr "Побудова зсувів фільтрування"
 
 #: ../../user_manual/ekos-focus.rst:2193
-msgid ".. image:: images/build_filter_offsets.png"
-msgstr ".. image:: images/build_filter_offsets.png"
+#| msgid ".. image:: images/build_filter_offsets.png"
+msgid ".. image:: /images/build_filter_offsets.png"
+msgstr ".. image:: /images/build_filter_offsets.png"
 
 #: ../../user_manual/ekos-focus.rst:2195
 msgid "image9"
 msgstr "image9"
 
 #: ../../user_manual/ekos-focus.rst:2195
-msgid ".. image:: images/build_filter_offsets2.png"
-msgstr ".. image:: images/build_filter_offsets2.png"
+#| msgid ".. image:: images/build_filter_offsets2.png"
+msgid ".. image:: /images/build_filter_offsets2.png"
+msgstr ".. image:: /images/build_filter_offsets2.png"
 
 #: ../../user_manual/ekos-focus.rst:2197
 msgid "image10"
 msgstr "image10"
 
 #: ../../user_manual/ekos-focus.rst:2197
-msgid ".. image:: images/build_filter_offsets3.png"
-msgstr ".. image:: images/build_filter_offsets3.png"
+#| msgid ".. image:: images/build_filter_offsets3.png"
+msgid ".. image:: /images/build_filter_offsets3.png"
+msgstr ".. image:: /images/build_filter_offsets3.png"
 
 #: ../../user_manual/ekos-focus.rst:2200
 msgid "image11"
 msgstr "image11"
 
 #: ../../user_manual/ekos-focus.rst:2200
-msgid ".. image:: images/build_filter_offsets4.png"
-msgstr ".. image:: images/build_filter_offsets4.png"
+#| msgid ".. image:: images/build_filter_offsets4.png"
+msgid ".. image:: /images/build_filter_offsets4.png"
+msgstr ".. image:: /images/build_filter_offsets4.png"
 
 #: ../../user_manual/ekos-focus.rst:2203
-msgid ".. image:: images/focus_display.png"
-msgstr ".. image:: images/focus_display.png"
+#| msgid ".. image:: images/focus_display.png"
+msgid ".. image:: /images/focus_display.png"
+msgstr ".. image:: /images/focus_display.png"
 
 #: ../../user_manual/ekos-focus.rst:2205
-#| msgid "<phrase>Focus Display Mosaic</phrase>"
 msgid "Focus Display Mosaic"
 msgstr "Мозаїка на дисплеї фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2205
-msgid ".. image:: images/focus_display_mosaic.png"
-msgstr ".. image:: images/focus_display_mosaic.png"
+#| msgid ".. image:: images/focus_display_mosaic.png"
+msgid ".. image:: /images/focus_display_mosaic.png"
+msgstr ".. image:: /images/focus_display_mosaic.png"
 
 #: ../../user_manual/ekos-focus.rst:2207
-#| msgid "Focus V-Curve FWHM"
 msgid "Focus V-Curve"
 msgstr "V-крива фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2207
-msgid ".. image:: images/focus_vcurve.png"
-msgstr ".. image:: images/focus_vcurve.png"
+#| msgid ".. image:: images/focus_vcurve.png"
+msgid ".. image:: /images/focus_vcurve.png"
+msgstr ".. image:: /images/focus_vcurve.png"
 
 #: ../../user_manual/ekos-focus.rst:2209
 msgid "Focus V-Curve HFR Adj"
 msgstr "Коригування V-кривої для РПП під час фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2209
-msgid ".. image:: images/focus_vcurve_hfradj.png"
-msgstr ".. image:: images/focus_vcurve_hfradj.png"
+#| msgid ".. image:: images/focus_vcurve_hfradj.png"
+msgid ".. image:: /images/focus_vcurve_hfradj.png"
+msgstr ".. image:: /images/focus_vcurve_hfradj.png"
 
 #: ../../user_manual/ekos-focus.rst:2211
 msgid "Focus V-Curve FWHM"
 msgstr "V-крива фокусування для ПШПМ"
 
 #: ../../user_manual/ekos-focus.rst:2211
-msgid ".. image:: images/focus_vcurve_fwhm.png"
-msgstr ".. image:: images/focus_vcurve_fwhm.png"
+#| msgid ".. image:: images/focus_vcurve_fwhm.png"
+msgid ".. image:: /images/focus_vcurve_fwhm.png"
+msgstr ".. image:: /images/focus_vcurve_fwhm.png"
 
 #: ../../user_manual/ekos-focus.rst:2213
 msgid "Focus V-Curve Num Stars"
 msgstr "V-крива фокусування для кількості зірок"
 
 #: ../../user_manual/ekos-focus.rst:2213
-msgid ".. image:: images/focus_vcurve_numstars.png"
-msgstr ".. image:: images/focus_vcurve_numstars.png"
+#| msgid ".. image:: images/focus_vcurve_numstars.png"
+msgid ".. image:: /images/focus_vcurve_numstars.png"
+msgstr ".. image:: /images/focus_vcurve_numstars.png"
 
 #: ../../user_manual/ekos-focus.rst:2215
 msgid "Focus V-Curve Fourier"
 msgstr "V-крива фокусування для алгоритму Фур'є"
 
 #: ../../user_manual/ekos-focus.rst:2215
-msgid ".. image:: images/focus_vcurve_fourier.png"
-msgstr ".. image:: images/focus_vcurve_fourier.png"
+#| msgid ".. image:: images/focus_vcurve_fourier.png"
+msgid ".. image:: /images/focus_vcurve_fourier.png"
+msgstr ".. image:: /images/focus_vcurve_fourier.png"
 
 #: ../../user_manual/ekos-focus.rst:2217
 msgid "Focus V-Curve Timeseries"
 msgstr "Часова послідовність V-кривої фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2217
-msgid ".. image:: images/focus_vcurve_timeseries.png"
-msgstr ".. image:: images/focus_vcurve_timeseries.png"
+#| msgid ".. image:: images/focus_vcurve_timeseries.png"
+msgid ".. image:: /images/focus_vcurve_timeseries.png"
+msgstr ".. image:: /images/focus_vcurve_timeseries.png"
 
 #: ../../user_manual/ekos-focus.rst:2219
-#, fuzzy
 #| msgid "Relative Profile"
 msgid "Focus Relative Profile"
-msgstr "Відносний профіль"
+msgstr "Відносний профіль фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2219
-msgid ".. image:: images/focus_relative_profile.png"
-msgstr ".. image:: images/focus_relative_profile.png"
+#| msgid ".. image:: images/focus_relative_profile.png"
+msgid ".. image:: /images/focus_relative_profile.png"
+msgstr ".. image:: /images/focus_relative_profile.png"
 
 #: ../../user_manual/ekos-focus.rst:2221
-#, fuzzy
 #| msgid "<phrase>Good Focus Curve</phrase>"
 msgid "Good Focus Curve"
-msgstr "<phrase>Добра крива фокусування</phrase>"
+msgstr "Добра крива фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2221
-msgid ".. image:: images/focus_good_focus.png"
-msgstr ".. image:: images/focus_good_focus.png"
+#| msgid ".. image:: images/focus_good_focus.png"
+msgid ".. image:: /images/focus_good_focus.png"
+msgstr ".. image:: /images/focus_good_focus.png"
 
 #: ../../user_manual/ekos-focus.rst:2223
-#, fuzzy
 #| msgid "Focus V-Curve FWHM"
 msgid "Bad Focus Curve"
-msgstr "V-крива фокусування для ПШПМ"
+msgstr "Погана крива фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2223
-msgid ".. image:: images/focus_bad_focus.png"
-msgstr ".. image:: images/focus_bad_focus.png"
+#| msgid ".. image:: images/focus_bad_focus.png"
+msgid ".. image:: /images/focus_bad_focus.png"
+msgstr ".. image:: /images/focus_bad_focus.png"
 
 #: ../../user_manual/ekos-focus.rst:2225
-msgid ".. image:: images/focus_adaptive_focus.png"
+#| msgid ".. image:: images/focus_adaptive_focus.png"
+msgid ".. image:: /images/focus_adaptive_focus.png"
 msgstr ".. image:: images/focus_adaptive_focus.png"
 
 #: ../../user_manual/ekos-focus.rst:2227
-#, fuzzy
 #| msgid "<phrase>Focus Autofocus Log</phrase>"
 msgid "Focus Autofocus Log"
-msgstr "<phrase>Журнал автофокусування</phrase>"
+msgstr "Журнал автофокусування"
 
 #: ../../user_manual/ekos-focus.rst:2227
-msgid ".. image:: images/focus_autofocus_log.png"
-msgstr ".. image:: images/focus_autofocus_log.png"
+#| msgid ".. image:: images/focus_autofocus_log.png"
+msgid ".. image:: /images/focus_autofocus_log.png"
+msgstr ".. image:: /images/focus_autofocus_log.png"
 
 #: ../../user_manual/ekos-focus.rst:2229
-#| msgid "<phrase>Focus Analyze</phrase>"
 msgid "Focus Analyze"
 msgstr "Аналіз фокусування"
 
 #: ../../user_manual/ekos-focus.rst:2229
-msgid ".. image:: images/focus_analyze.png"
-msgstr ".. image:: images/focus_analyze.png"
+#| msgid ".. image:: images/focus_analyze.png"
+msgid ".. image:: /images/focus_analyze.png"
+msgstr ".. image:: /images/focus_analyze.png"
 
 #: ../../user_manual/ekos-focus.rst:2231
-msgid ".. image:: images/aberration_inspector.png"
-msgstr ".. image:: images/aberration_inspector.png"
+#| msgid ".. image:: images/aberration_inspector.png"
+msgid ".. image:: /images/aberration_inspector.png"
+msgstr ".. image:: /images/aberration_inspector.png"
 
 #: ../../user_manual/ekos-focus.rst:2233
-msgid ".. image:: images/aberration_inspector_vcurve.png"
-msgstr ".. image:: images/aberration_inspector_vcurve.png"
+#| msgid ".. image:: images/aberration_inspector_vcurve.png"
+msgid ".. image:: /images/aberration_inspector_vcurve.png"
+msgstr ".. image:: /images/aberration_inspector_vcurve.png"
 
 #: ../../user_manual/ekos-focus.rst:2235
-msgid ".. image:: images/aberration_inspector_table.png"
-msgstr ".. image:: images/aberration_inspector_table.png"
+#| msgid ".. image:: images/aberration_inspector_table.png"
+msgid ".. image:: /images/aberration_inspector_table.png"
+msgstr ".. image:: /images/aberration_inspector_table.png"
 
 #: ../../user_manual/ekos-focus.rst:2237
-msgid ".. image:: images/aberration_inspector_results.png"
-msgstr ".. image:: images/aberration_inspector_results.png"
+#| msgid ".. image:: images/aberration_inspector_results.png"
+msgid ".. image:: /images/aberration_inspector_results.png"
+msgstr ".. image:: /images/aberration_inspector_results.png"
 
 #: ../../user_manual/ekos-focus.rst:2239
-msgid ".. image:: images/aberration_inspector_3dgraphic.png"
-msgstr ".. image:: images/aberration_inspector_3dgraphic.png"
+#| msgid ".. image:: images/aberration_inspector_3dgraphic.png"
+msgid ".. image:: /images/aberration_inspector_3dgraphic.png"
+msgstr ".. image:: /images/aberration_inspector_3dgraphic.png"
