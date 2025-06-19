@@ -408,7 +408,7 @@ Document.
 11. Relicensing
 ~~~~~~~~~~~~~~~
 
-"Massive Multiauthor Collaboration Siteâ"(or "MMC Siteâ" means any
+"Massive Multiauthor Collaboration Site" (or "MMC Site") means any
 World Wide Web server that publishes copyrightable works and also
 provides prominent facilities for anybody to edit those works.  A
 public wiki that anybody can edit is an example of such a server.  A

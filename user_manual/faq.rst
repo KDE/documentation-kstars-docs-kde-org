@@ -99,7 +99,7 @@ program's precision:
       constantly tugging on each other, perturbing the orbits slightly, and
       tidal effects also induce precessional wobbling.  In fact, recent
       analysis suggests that the planets' orbits may not even be stable in
-      the long term (:ref:` <ie>`, millions or billions of years).  As a rule of
+      the long term (i.e., millions or billions of years).  As a rule of
       thumb, you can expect the position of a planet to be accurate to a few
       arcseconds between the dates -2000 and 6000.
       Pluto is the exception to this; its position is perhaps ten times less
