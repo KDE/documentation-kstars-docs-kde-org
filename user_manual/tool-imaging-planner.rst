@@ -65,7 +65,7 @@ Setting up the Imaging Planner
                 replaced by whatever you want to call your horizon, and the other lines
                 have two floating point numbers for azimuth and altitude.
                 This format is likely similar or identical to the horizon file format
-                used by other imaging software.::
+                used by other imaging software::
 
                    # KStars Artificial Horizon export
                    #

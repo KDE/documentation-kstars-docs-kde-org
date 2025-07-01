@@ -96,7 +96,7 @@ View Menu
 ``View`` → ``Switch to Star Globe View`` / ``Switch to Horizontal View`` (**Space**)
  Toggle between the :ref:`Horizontal  <ai-skycoords-horizontal>` and :ref:`Equatorial  <ai-skycoords-equatorial>` :doc:`Coordinate Systems  <ai-skycoords>`.
 
-``View`` → ``Show Terrain`` (****Ctrl**** + ****Shift**** + ****T****)
+``View`` → ``Show Terrain`` (**Ctrl** + **Shift** + **T**)
   Toggle the :doc:`terrain image  <terrain>` visibility.
 
 ``View`` → ``Projection``

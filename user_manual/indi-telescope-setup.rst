@@ -36,7 +36,7 @@ performing the following steps:
 
     1. Set your geographical location. Open the ``Set Geographic
        Location`` window by selecting the ``Settings`` → ``Geographic...``
-       menu item, or by pressing the `Globe`` icon in the toolbar,
+       menu item, or by pressing the ``Globe`` icon in the toolbar,
        or by pressing **Ctrl**\ +\ **G**.
 
     2. Set your local time and date. You can change to any time
