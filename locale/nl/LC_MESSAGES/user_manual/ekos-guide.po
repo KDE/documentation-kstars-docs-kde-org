@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-14 01:58+0000\n"
-"PO-Revision-Date: 2025-07-17 14:01+0200\n"
+"PO-Revision-Date: 2025-07-18 16:29+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -413,6 +413,14 @@ msgid ""
 "second type of algorithm is the ``Guiding Algorithm`` used to compute the RA "
 "and DEC guide pulses that should be sent to your mount to correct that drift."
 msgstr ""
+"Er worden twee typen algoritmen gebruikt in de interne volger en u hebt de "
+"keuze welke variaties voor beiden te gebruiken. The eerste is het "
+"``Sterdetectie`` algoritme. De volger neemt afbeeldingen van de hemel en "
+"detecteert automatisch sterren in deze afbeeldingen. Eenmaal dit gedaan, kan "
+"het het de drift in RK en DEC van de opstelling bepalen uit zijn originele "
+"positie. Het tweede type algoritme is het ``Volgalgoritme`` gebruikt om de "
+"RK and DEC volgpulsen te berekenen die verzonden zouden moeten naar uw "
+"opstelling om die drift te corrigeren."
 
 #: ../../user_manual/ekos-guide.rst:224
 msgid ""
@@ -506,6 +514,8 @@ msgid ""
 "The main parameter choices you have are below. They are applicable to all "
 "the guiding algorithms."
 msgstr ""
+"De keuzes in de hoofdparameters die u hebt zijn onderstaand. Ze zijn van "
+"toepassing op alle volgalgoritmen."
 
 #: ../../user_manual/ekos-guide.rst:272
 msgid ""
@@ -526,6 +536,9 @@ msgid ""
 "Min error. This controls the minimum deviation (in arc-seconds) for which a "
 "correction will be made. Adjusting this can avoid chasing the seeing."
 msgstr ""
+"Min-fout. Dit bestuurt de minimale afwijking (in boogseconden) waarvoor een "
+"correctie gemaakt zal worden. Dit aanpassen kan het najagen van het zien "
+"vermijden."
 
 #: ../../user_manual/ekos-guide.rst:286
 msgid "Dithering"
@@ -536,21 +549,6 @@ msgid "|Dithering Settings|"
 msgstr "|Dithering Settings|"
 
 #: ../../user_manual/ekos-guide.rst:290
-#, fuzzy
-#| msgid ""
-#| "To enable automatic dithering between frames, make sure to check the "
-#| "<guilabel>Dither</guilabel> checkbox. By default, Ekos should dither "
-#| "(&ie; move) the guiding box by up to 3 pixels after every N frames "
-#| "captured in <link linkend=\"ekos-capture\">Ekos Capture Module</link>. "
-#| "The motion duration and direction are randomized. Since the guiding "
-#| "performance can oscillate immediately after dithering, you can set the "
-#| "appropriate <guilabel>Settle</guilabel> duration to wait after dither is "
-#| "complete before resuming the capture process. In rare cases where the "
-#| "dithering process can get stuck in an endless loop, set the appropriate "
-#| "<guilabel>Timeout</guilabel> to abort the process. But even if dithering "
-#| "fails, you can select whether this failure should terminate the "
-#| "autoguiding process or not. Toggle <guilabel>Abort Autoguide on failure</"
-#| "guilabel> to select the desired behavior."
 msgid ""
 "To enable automatic dithering between frames, make sure to check the "
 "``Dither`` checkbox. By default, Ekos should dither (i.e. move) the guiding "
@@ -565,17 +563,17 @@ msgid ""
 "Autoguide on failure`` to select the desired behavior."
 msgstr ""
 "Om automatisch ditheren van frames mogelijk te maken, moet u het "
-"keuzevakje<guilabel>Dither</guilabel> selecteren. Standaard moet Ekos het "
-"volgvakje tot aan 3 pixels toe ditheren (&ie; verplaatsen) na N frame die in "
-"de <link linkend=\"ekos-capture\">Ekos opnamemodule</link> wordt opgenomen. "
-"Bewegingsduur en richting zijn willekeurig. Omdat het volgen direct na "
-"ditheren wat kanoscilleren, kunt u de duur van het <guilabel>Settelen</"
-"guilabel> (tot rust komen) na het ditheren instellen, voordat met de opname "
-"verder wordt gegaan. Voor het zeldzame geval dat het ditherproces vastloopt, "
-"kan een <guilabel>Timeout</guilabel> worden ingesteld, waarna het proces "
-"wordt afgebroken. Maar zelfs als ditheren niet lukt, kunt u selecteren of "
-"dit het autovolgen moet doen stoppen, ja of nee. Zet met <guilabel>Autoguide "
-"afbreken na fout</guilabel> het gewenste gedrag aan of uit."
+"keuzevakje``Dither`` selecteren. Standaard moet Ekos het volgvakje tot aan 3 "
+"pixels toe ditheren (d.w.z. verplaatsen) na N frame die in de :doc:`Ekos "
+"opnamemodule  <ekos-capture>` wordt opgenomen. Bewegingsduur en richting "
+"zijn willekeurig. Omdat het volgen direct na ditheren wat kan oscilleren, "
+"kunt u de duur van het ``Settelen`` (tot rust komen) na het ditheren "
+"instellen, voordat met de opname verder wordt gegaan. Voor het zeldzame "
+"geval dat het ditherproces vastloopt, kan een <guilabel>Timeout</guilabel> "
+"worden ingesteld, waarna het proces wordt afgebroken. Maar zelfs als "
+"ditheren niet lukt, kunt u selecteren of dit het autovolgen moet doen "
+"stoppen, ja of nee. Zet met <guilabel>Autoguide afbreken na fout</guilabel> "
+"het gewenste gedrag aan of uit."
 
 #: ../../user_manual/ekos-guide.rst:305
 msgid ""
@@ -750,17 +748,6 @@ msgstr ""
 "selecteren."
 
 #: ../../user_manual/ekos-guide.rst:400
-#, fuzzy
-#| msgid ""
-#| "There are a few options you may wish to consider. <guilabel>Max MultiStar "
-#| "Ref Stars</guilabel> is the maximum number of reference stars the system "
-#| "can use. The main reason to limit this is computation cost, thought it is "
-#| "not a very expensive computation. 50 is a good choice. The setting "
-#| "<guilabel>Min MultiStar Star Detections</guilabel> tells the system to "
-#| "fallback to a single guide star if there are fewer than that many star "
-#| "detections. <guilabel>Invent Multi-Star Guide Star</guilabel> should be "
-#| "left checked, and <guilabel>Max MultiStar HFR</guilabel> is an old "
-#| "parameter that likely has little effect anymore."
 msgid ""
 "There are a few options you may wish to consider. Max MultiStar Ref Stars is "
 "the maximum number of reference stars the system can use. The main reason to "
@@ -771,28 +758,23 @@ msgid ""
 "checked, and Max MultiStar HFR is an old parameter that likely has little "
 "effect anymore."
 msgstr ""
-"Ere zijn een paar opties die u kunt overwegen. <guilabel>Max MultiStar Ref "
-"Stars</guilabel> is het maximale aantal referentie sterren die het systeem "
-"kan gebruiken. De hoofdreden om dit te beperken zijn de kosten van het "
-"berekenen, hoewel het geen erg dure berekeningen zijn. 50 is een goede "
-"keuze. De instelling <guilabel>Min MultiStar Star Detections</guilabel> "
-"vertelt het systeem om terug te vallen op een enkele volgster als er minder "
-"zijn dan die vele sterren detecties. <guilabel>Invent Multi-Star Guide Star</"
-"guilabel> zou geactiveerd gelaten moeten worden, en <guilabel>Max MultiStar "
-"HFR</guilabel> is een oude parameter die waarschijnlijk nog maar weinig "
-"effect meer heeft."
+"Er zijn een paar opties die u kunt overwegen. ``Max MultiStar Ref Stars`` is "
+"het maximale aantal referentie sterren die het systeem kan gebruiken. De "
+"hoofdreden om dit te beperken zijn de kosten van het berekenen, hoewel het "
+"geen erg dure berekeningen zijn. 50 is een goede keuze. De instelling ``Min "
+"MultiStar Star Detections`` vertelt het systeem om terug te vallen op een "
+"enkele volgster als er minder zijn dan die hoeveelheid detecties van "
+"sterren. ``Invent Multi-Star Guide Star`` zou geactiveerd gelaten moeten "
+"worden en ``Max MultiStar HFR`` is een oude parameter die waarschijnlijk nog "
+"maar weinig effect meer heeft."
 
 #: ../../user_manual/ekos-guide.rst:414 ../../user_manual/ekos-guide.rst:516
-#, fuzzy
-#| msgid "Guiding with MultiStar"
 msgid "Guiding with GPG"
-msgstr "Volgen met MultiStar"
+msgstr "Volgen met GPG"
 
 #: ../../user_manual/ekos-guide.rst:416
-#, fuzzy
-#| msgid "<title>Guiding with GPG</title>"
 msgid "|Guiding with GPG|"
-msgstr "<title>Volgen met GPG</title>"
+msgstr "|Guiding with GPG|"
 
 #: ../../user_manual/ekos-guide.rst:418
 msgid ""
@@ -805,20 +787,6 @@ msgstr ""
 "en voegt zijn voorspelde bijdrage toe aan elke volgpuls."
 
 #: ../../user_manual/ekos-guide.rst:423
-#, fuzzy
-#| msgid ""
-#| "The main settings to consider are Major Period and Estimate Period. If "
-#| "you know the worm period for your mount, perhaps by examining <ulink url="
-#| "\"https://github.com/OpenPHDGuiding/phd2/wiki/Mount-Worm-Period-Info"
-#| "\">this table</ulink>, then uncheck Estimate Period and enter your known "
-#| "Major Period. If not, then check Estimate Period. Intra-frame dark "
-#| "guiding can be used to \"spread out the GPG prediction. For instance, if "
-#| "you guide at 5s, you can set the dark guiding interval to 1s and its "
-#| "prediction is pulsed every second, but the guiding drift correction would "
-#| "be sent every 5s. In this way, it outputs the predicted corrections much "
-#| "faster than the guide camera exposure rate, effectively performing "
-#| "periodic error correction and allowing longer guide camera exposures. All "
-#| "the other parameters are best left to defaults."
 msgid ""
 "The main settings to consider are Major Period and Estimate Period. If you "
 "know the worm period for your mount, perhaps by examining `this table "
@@ -833,15 +801,15 @@ msgid ""
 "camera exposures. All the other parameters are best left to defaults."
 msgstr ""
 "De te overwegen hoofdinstellingen zijn Majeure periode en Geschatte periode. "
-"Als u de wormperiode voor uw opstelling weet, misschien door <ulink url="
-"\"https://github.com/OpenPHDGuiding/phd2/wiki/Mount-Worm-Period-Info\">deze "
-"tabel te bekijken</ulink>, maak de activering van Geschatte periode ongedaan "
-"en voer uw bekende Majeure periode in. Zo niet, activeer dan Geschatte "
-"periode. Intra-frame donker volgen kan gebruikt worden om \"de GPG "
-"voorspelling uit te spreiden. Bijvoorbeeld, als u volgt op 5s, kunt u het "
-"donkere volginterval instellen op 1s en zijn voorspelling wordt elke seconde "
-"gepulst, maar de driftcorrectie van volgen zou elke 5s worden verzonden. Op "
-"deze manier worden de voorspelde correcties veel sneller uitgestuurd dan de "
+"Als u de wormperiode voor uw opstelling weet, misschien door `deze tabel te "
+"bekijken <https://github.com/OpenPHDGuiding/phd2/wiki/Mount-Worm-Period-"
+"Info>`__, maak de activering van Geschatte periode ongedaan en voer uw "
+"bekende Majeure periode in. Zo niet, activeer dan Geschatte periode. Intra-"
+"frame donker volgen kan gebruikt worden om \"de GPG voorspelling uit te "
+"spreiden. Bijvoorbeeld, als u volgt op 5s, kunt u het donkere volginterval "
+"instellen op 1s en zijn voorspelling wordt elke seconde gepulst, maar de "
+"driftcorrectie van volgen zou elke 5s worden verzonden. Op deze manier "
+"worden de voorspelde correcties veel sneller uitgestuurd dan de "
 "belichtingssnelheid van de volgcamera, waarmee effectief periodieke "
 "foutcorrectie wordt uitgevoerd en langere belichting van volgcamera "
 "toegestaan. Alle andere parameters worden het beste op hun standaard gelaten."
@@ -851,22 +819,6 @@ msgid "Dark Frames"
 msgstr "Dark Frames"
 
 #: ../../user_manual/ekos-guide.rst:444
-#, fuzzy
-#| msgid ""
-#| "Dark frames can be helpful to reduce noise in your guide frames. If you "
-#| "choose to use this option, then it is recommended that you take dark "
-#| "frames before you begin your calibration or guiding procedure. To take a "
-#| "dark frame, check the <guilabel>Dark</guilabel> checkbox and then click "
-#| "<guibutton>Capture</guibutton>. For the first time this is performed, "
-#| "Ekos will ask you about your camera shutter. If your camera does not have "
-#| "a shutter, then Ekos will warn you anytime you take a dark frame to cover "
-#| "your camera/telescope before proceeding with the capture. On the other "
-#| "hand, if the camera already includes a shutter, then Ekos will directly "
-#| "proceed with taking the dark frame. All dark frames are automatically "
-#| "saved to Ekos Dark Frame Library. By default, the Dark Library keeps "
-#| "reusing dark frames for 30 days after which it will capture new dark "
-#| "frames. This value is configurable and can be adjusted in <link linkend="
-#| "\"ekos\">Ekos settings</link> in the &kstars; settings dialog."
 msgid ""
 "Dark frames can be helpful to reduce noise in your guide frames. If you "
 "choose to use this option, then it is recommended that you take dark frames "
@@ -885,23 +837,20 @@ msgstr ""
 "Dark frames kunnen handig zijn voor het reduceren van ruis in volgframes. "
 "Als u deze optie hebt gekozen, wordt het sterk aanbevolen dat u dark frames "
 "opneemt voordat u de procedure start voor calibratie en volgen. Kies het "
-"keuzevakje <guilabel>Dark</guilabel>, en klik daarna op <guibutton>Opnemen</"
-"guibutton>. De eerste keer vraagt Ekos u naar de sluiter van de camera. Als "
-"de camera geen sluiter heeft, vraagt Ekos u bij elke opname van een dark "
-"frame de opening van de camera/telescoop af te dekken, voor verder te gaan "
-"met opnemen. En anders, als de camera een sluiter heeft, gaat Ekos meteen "
-"verder met het opnemen van het dark frame. Alle dark frames worden "
-"automatisch opgeslagen in de bibliotheek voor dark frames van Ekos. "
-"Standaard worden de frames in deze bibliotheek 30 dagen gebruikt, voordat er "
-"nieuwe dark frames worden opgenomen. U kunt dit aantal wijzigen in de "
-"instellingendialoog <link linkend=\"ekos\">Ekos instellingen</link> van "
-"&kstars;"
+"keuzevakje ``Dark``, en klik daarna op ``Opnemen``. De eerste keer vraagt "
+"Ekos u naar de sluiter van de camera. Als de camera geen sluiter heeft, "
+"vraagt Ekos u bij elke opname van een dark frame de opening van de camera/"
+"telescoop af te dekken, voor verder te gaan met opnemen. En anders, als de "
+"camera een sluiter heeft, gaat Ekos meteen verder met het opnemen van het "
+"dark frame. Alle dark frames worden automatisch opgeslagen in de bibliotheek "
+"voor dark frames van Ekos. Standaard worden de frames in deze bibliotheek 30 "
+"dagen gebruikt, voordat er nieuwe dark frames worden opgenomen. U kunt dit "
+"aantal wijzigen in de instellingendialoog :doc:`Ekos instellingen  <ekos>` "
+"van KStars."
 
 #: ../../user_manual/ekos-guide.rst:461
-#, fuzzy
-#| msgid "<phrase>Ekos Dark frames library</phrase>"
 msgid "|Ekos Dark frames library|"
-msgstr "<phrase>Ekos Dark frames bibliotheek</phrase>"
+msgstr "|Ekos Dark frames library|"
 
 #: ../../user_manual/ekos-guide.rst:463
 msgid ""
@@ -925,21 +874,10 @@ msgstr ""
 "volgen, in plaats van de ingebouwde volger."
 
 #: ../../user_manual/ekos-guide.rst:475
-#, fuzzy
-#| msgid "<phrase>Ekos Guide PHD2 settings</phrase>"
 msgid "|Ekos Guide PHD2 settings|"
-msgstr "<phrase>Ekos volgen PHD2-instellingen</phrase>"
+msgstr "|Ekos Guide PHD2 settings|"
 
 #: ../../user_manual/ekos-guide.rst:477
-#, fuzzy
-#| msgid ""
-#| "If PHD2 is selected, the <guibutton>Connect</guibutton> and "
-#| "<guibutton>Disconnect</guibutton> buttons are enabled to allow you to "
-#| "establish a connection with the PHD2 server. You can control PHD2 "
-#| "exposure and DEC guide settings. When clicking <guibutton>Guide</"
-#| "guibutton>, PHD2 should perform all the required actions to start the "
-#| "guiding process. PHD2 <emphasis role=\"bold\">must</emphasis> be started "
-#| "and configured <emphasis>before</emphasis> Ekos."
 msgid ""
 "If PHD2 is selected, the ``Connect`` and ``Disconnect`` buttons are enabled "
 "to allow you to establish a connection with the PHD2 server. You can control "
@@ -947,25 +885,13 @@ msgid ""
 "perform all the required actions to start the guiding process. PHD2 **must** "
 "be started and configured *before* Ekos."
 msgstr ""
-"Als PHD2 wordt geselecteerd, kunt u met de knoppen <guibutton>Verbinden</"
-"guibutton> en <guibutton>Loskoppelen</guibutton> de verbinding regelen met "
-"de PHD2-server. U kunt de PHD2-belichtingstijd en dec-volginstellingen "
-"regelen. Als u op <guibutton>Volgen</guibutton> klikt, moet PHD2 alle "
-"vereiste acties doen voor het starten van het volgproces. PHD2 <emphasis "
-"role=\"bold\">moet</emphasis> worden gestart en ingesteld  <emphasis>vóór</"
-"emphasis> Ekos."
+"Als PHD2 wordt geselecteerd, kunt u met de knoppen ``Verbinden`` en "
+"``Loskoppelen`` de verbinding regelen met de PHD2-server. U kunt de PHD2-"
+"belichtingstijd en dec-volginstellingen regelen. Als u op ``Volgen`` klikt, "
+"moet PHD2 alle vereiste acties doen voor het starten van het volgproces. "
+"PHD2 **moet** worden gestart en ingesteld  *vóór* Ekos."
 
 #: ../../user_manual/ekos-guide.rst:484
-#, fuzzy
-#| msgid ""
-#| "After launching PHD2, select your INDI equipment and set their options. "
-#| "From Ekos, connect to PHD2 by clicking the <guibutton>Connect</guibutton> "
-#| "button. On startup, Ekos will attempt to automatically connect to PHD2. "
-#| "Once the connection is established, you may begin the guiding immediately "
-#| "by click on the <guibutton>Guide</guibutton> button. PHD2 performs "
-#| "calibration if necessary. If dithering is selected, PHD2 is commanded to "
-#| "dither given the offset pixels indicated, and once guiding is settled and "
-#| "stable, the capture process in Ekos resumes."
 msgid ""
 "After launching PHD2, select your INDI equipment and set their options. From "
 "Ekos, connect to PHD2 by clicking the ``Connect`` button. On startup, Ekos "
@@ -977,27 +903,18 @@ msgid ""
 msgstr ""
 "Na het starten van PHD2, selecteert u uw IND-apparatuur, en stelt u de "
 "opties daarvan in. Vanuit Ekos maakt u verbinding met PHD2 door te klikken "
-"op de knop <guibutton>Verbinden</guibutton>. Bij het opstarten probeert Ekos "
-"automatisch te verbinden met PHD2. Is die verbinding tot stand gebracht, dan "
-"kunt direct beginnen met volgen door te klikken op de knop "
-"<guibutton>Volgen</guibutton>. Indien nodig doet PHD2 de calibratie. Als "
-"ditheren geselecteerd is, krijgt PHD2 de opdracht te ditheren, met de "
-"opgegeven pixels, en zodra het volgen stabiel is en rustig, wordt in Ekos de "
-"opname weer hervat."
+"op de knop ``Verbinden``. Bij het opstarten probeert Ekos automatisch te "
+"verbinden met PHD2. Is die verbinding tot stand gebracht, dan kunt direct "
+"beginnen met volgen door te klikken op de knop ``Volgen``. Indien nodig doet "
+"PHD2 de calibratie. Als ditheren geselecteerd is, krijgt PHD2 de opdracht te "
+"ditheren, met de opgegeven pixels, en zodra het volgen stabiel is en rustig, "
+"wordt in Ekos de opname weer hervat."
 
 #: ../../user_manual/ekos-guide.rst:497
 msgid "Guiding Logs"
 msgstr "Log van volgen"
 
 #: ../../user_manual/ekos-guide.rst:499
-#, fuzzy
-#| msgid ""
-#| "Ekos' internal guider saves a CSV guide log in PHD2 format data that can "
-#| "be useful for analysis of the mount's performance. In Linux this is "
-#| "stored under <filename>~/.local/share/kstars/guidelogs/</filename>. This "
-#| "log is only available when using Ekos' internal guider. It should be "
-#| "compatible with <ulink url=\"https://openphdguiding.org/phd2-log-viewer/"
-#| "\">PHD2's guide log viewer</ulink>."
 msgid ""
 "Ekos' internal guider saves a CSV guide log in PHD2 format data that can be "
 "useful for analysis of the mount's performance. In Linux this is stored "
@@ -1007,84 +924,70 @@ msgid ""
 msgstr ""
 "De interne volger van Ekos slaat een CSV volglogbestand op in PHD2 format "
 "die van pas kunnen komen voor de analyse van de prestaties van de "
-"opstelling. In Linux wordt deze opgeslagen onder <filename>~/.local/share/"
-"kstars/guidelogs/</filename>.  Deze log is alleen beschikbaar als de "
-"ingebouwde volger van Ekos wordt gebruikt. Het zou compatibel moeten zijn "
-"met <ulink url=\"https://openphdguiding.org/phd2-log-viewer/\">volglogviewer "
-"van PHD2</ulink>."
+"opstelling. In Linux wordt deze opgeslagen onder ``~/.local/share/kstars/"
+"guidelogs/``.  Deze log is alleen beschikbaar als de ingebouwde volger van "
+"Ekos wordt gebruikt. Het zou compatibel moeten zijn met `volglogviewer van "
+"PHD2 <https://openphdguiding.org/phd2-log-viewer/>`__."
 
 #: ../../user_manual/ekos-guide.rst:507
-#, fuzzy
-#| msgid "<phrase>Ekos Guide Module</phrase>"
 msgid "Ekos Guide Module"
-msgstr "<phrase>Ekos Volgmodule</phrase>"
+msgstr "Ekos volgenmodule"
 
 #: ../../user_manual/ekos-guide.rst:507
 msgid ".. image:: /images/ekos_guide.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_guide.png"
 
 #: ../../user_manual/ekos-guide.rst:508
-#, fuzzy
-#| msgid "<phrase>Ekos Profile Guider Selection</phrase>"
 msgid "Ekos Profile Guider Selection"
-msgstr "<phrase>Selectie van profielvolger van Ekos</phrase>"
+msgstr "Ekos selectie van profielvolger"
 
 #: ../../user_manual/ekos-guide.rst:508
 msgid ".. image:: /images/ekos_profile_guide.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_profile_guide.png"
 
 #: ../../user_manual/ekos-guide.rst:509
-#, fuzzy
-#| msgid "<phrase>Ekos Guider Optical Train</phrase>"
 msgid "Ekos Guider Optical Train"
-msgstr "<phrase>Optische trein van volger van Ekos</phrase>"
+msgstr "Ekos Volger van optische trein"
 
 #: ../../user_manual/ekos-guide.rst:509
 msgid ".. image:: /images/ekos_guide_optical_train.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_guide_optical_train.png"
 
 #: ../../user_manual/ekos-guide.rst:510
-#, fuzzy
-#| msgid "Calibration"
 msgid "Calibration Settings"
 msgstr "Calibratie instellingen"
 
 #: ../../user_manual/ekos-guide.rst:510
 msgid ".. image:: /images/guide_calibration_settings.png"
-msgstr ""
+msgstr ".. image:: /images/guide_calibration_settings.png"
 
 #: ../../user_manual/ekos-guide.rst:511
-#, fuzzy
-#| msgid "Guiding"
 msgid "Guide Settings"
-msgstr "Volgen"
+msgstr "Volgerinstellingen"
 
 #: ../../user_manual/ekos-guide.rst:511
 msgid ".. image:: /images/guide_guide_settings.png"
-msgstr ""
+msgstr ".. image:: /images/guide_guide_settings.png"
 
 #: ../../user_manual/ekos-guide.rst:512
-#, fuzzy
-#| msgid "<phrase>Dithering Settings</phrase>"
 msgid "Dithering Settings"
-msgstr "<phrase>Instellingen voor ditheren</phrase>"
+msgstr "Ditheringinstellingen"
 
 #: ../../user_manual/ekos-guide.rst:512
 msgid ".. image:: /images/ekos_guide_dithering_settings.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_guide_dithering_settings.png"
 
 #: ../../user_manual/ekos-guide.rst:513
 msgid ".. image:: /images/guide_drift_graphics.png"
-msgstr ""
+msgstr ".. image:: /images/guide_drift_graphics.png"
 
 #: ../../user_manual/ekos-guide.rst:514
-#, fuzzy
 msgid "image2"
-msgstr "Afbeelding"
+msgstr "image2"
 
 #: ../../user_manual/ekos-guide.rst:514
 msgid ".. image:: /images/add-circle.png"
-msgstr ""
+msgstr ".. image:: /images/add-circle.png"
 
 #: ../../user_manual/ekos-guide.rst:515
 msgid "Guiding with MultiStar"
@@ -1092,31 +995,27 @@ msgstr "Volgen met MultiStar"
 
 #: ../../user_manual/ekos-guide.rst:515
 msgid ".. image:: /images/ekos_guide_multistar_settings.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_guide_multistar_settings.png"
 
 #: ../../user_manual/ekos-guide.rst:516
 msgid ".. image:: /images/ekos_guide_gpg_settings.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_guide_gpg_settings.png"
 
 #: ../../user_manual/ekos-guide.rst:517
-#, fuzzy
-#| msgid "<phrase>Ekos Dark frames library</phrase>"
 msgid "Ekos Dark frames library"
-msgstr "<phrase>Ekos Dark frames bibliotheek</phrase>"
+msgstr "Ekos Dark frames bibliotheek"
 
 #: ../../user_manual/ekos-guide.rst:517
 msgid ".. image:: /images/dark_library.png"
-msgstr ""
+msgstr ".. image:: /images/dark_library.png"
 
 #: ../../user_manual/ekos-guide.rst:518
-#, fuzzy
-#| msgid "<phrase>Ekos Guide PHD2 settings</phrase>"
 msgid "Ekos Guide PHD2 settings"
-msgstr "<phrase>Ekos volgen PHD2-instellingen</phrase>"
+msgstr "Ekos volgen PHD2-instellingen"
 
 #: ../../user_manual/ekos-guide.rst:518
 msgid ".. image:: /images/ekos_guide_phd2.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_guide_phd2.png"
 
 #~ msgid "<title>Guide</title>"
 #~ msgstr "<title>Volgen</title>"
