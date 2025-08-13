@@ -30,6 +30,7 @@ Chapter 6. FITS Viewer
    fitsviewer-main-controls
    fits-viewer-features
    fits-viewer-solver
+   fits-viewer-livestacker
    fits-viewer-embedded
    fits-viewer-3d-star-profile
 
