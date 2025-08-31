@@ -1,19 +1,20 @@
 #
 # SPDX-FileCopyrightText: 2023, 2025 Paolo Zamponi <feus73@gmail.com>
 # Vincenzo Reale <smart2128vr@gmail.com>, 2022.
+# SPDX-FileCopyrightText: 2025 Valter Mura <valtermura@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-14 01:58+0000\n"
-"PO-Revision-Date: 2025-06-10 17:09+0200\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2025-08-24 22:51+0200\n"
+"Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.08.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../../user_manual/ekos-align.rst:3
@@ -43,6 +44,20 @@ msgid ""
 "catalog of millions of stars.  Once the coordinates are determined, the true "
 "pointing of the telescope is known."
 msgstr ""
+"Il modulo di allineamento di Ekos abilita GOTO estremamente precisi ed è in "
+"grado di misurare e correggere gli errori dell'allineamento polare. Ciò è "
+"possibile grazie alla tecnologia di risoluzione astrometrica di terze parti. "
+"Il software di risoluzione astrometrica principale utilizzato è il pacchetto "
+"StellarSolver, che utilizza i risolutori astrometry.net, ASTAP e Watney sia "
+"fuori linea, sia in linea. Ekos parte con l'acquisizione di un'immagine di "
+"un campo stellare, dandola in pasto al risolutore prescelto (vedi, per es., "
+"`astrometry.net <https://astrometry.net>`__, `StellarSolver <https://github."
+"com/rlancaste/stellarsolver>`__ o `ASTAP <https://www.hnsky.org/astap>`__), "
+"e ottiene indietro le coordinate centrali (AR, DEC), la scala e "
+"l'orientazione dell'immagine. Il risolutore esegue sostanzialmente il "
+"riconoscimento di uno schema rispetto a un catalogo di milioni di stelle.  "
+"Una volta determinate le coordinate, si conosce il vero puntamento del "
+"telescopio."
 
 #: ../../user_manual/ekos-align.rst:14
 msgid ""
@@ -54,8 +69,8 @@ msgid ""
 msgstr ""
 "Spesso c'è una discrepanza tra il punto in cui il telescopio pensa di "
 "guardare e quello a cui sta realmente puntando. L'entità di questa "
-"discrepanza può variare da alcuni arcominuti a un paio di gradi, ma Ekos la "
-"può correggere; questo sia sincronizzandosi con le nuove coordinate, sia "
+"discrepanza può variare da alcuni minuti d'arco a un paio di gradi, ma Ekos "
+"la può correggere; questo sia sincronizzandosi con le nuove coordinate, sia "
 "ruotando la montatura sul bersaglio desiderato che era stato originariamente "
 "richiesto."
 
@@ -71,11 +86,6 @@ msgid ""
 msgstr ""
 
 #: ../../user_manual/ekos-align.rst:18
-#, fuzzy
-#| msgid ""
-#| "At a minimum, you need a CCD/Webcam and a telescope that supports Slew "
-#| "&amp; Sync commands. Most popular commercial telescope nowadays support "
-#| "such commands."
 msgid ""
 "At a minimum, you need a CCD/Webcam and a telescope that supports Slew & "
 "Sync commands. Most popular commercial telescope nowadays support such "
@@ -90,14 +100,6 @@ msgid "Typical use"
 msgstr "Utilizzo tipico"
 
 #: ../../user_manual/ekos-align.rst:25
-#, fuzzy
-#| msgid ""
-#| "Using Ekos Alignment Module, aligning your mount using the controller's "
-#| "1, 2, or 3 star alignment is <emphasis>not</emphasis> strictly necessary, "
-#| "though for some mounts it is recommended to perform a rough 1 or 2 star "
-#| "alignment before using Ekos alignment module. If you are using EQMod, you "
-#| "can start using Ekos alignment module right away. A typical workflow for "
-#| "GOTO alignment involves the following steps:"
 msgid ""
 "Using Ekos Alignment Module, aligning your mount using the controller's 1, "
 "2, or 3 star alignment is *not* strictly necessary, though for some mounts "
@@ -106,13 +108,13 @@ msgid ""
 "module right away. A typical workflow for GOTO alignment involves the "
 "following steps:"
 msgstr ""
-"Se usi il modulo di allineamento di Ekos <emphasis>non</emphasis> è "
-"strettamente necessario allineare la tua montatura usando l'allineamento a "
-"1, 2 o a 3 stelle del controllore, anche se per alcune montature è "
-"raccomandabile eseguire un allineamento grezzo a 1 o a 2 stelle prima di di "
-"usare il modulo di allineamento di Ekos. Se stai usando EQMod puoi invece "
-"iniziare subito ad utilizzarlo. Un flusso di lavoro tipico per "
-"l'allineamento GOTO coinvolge i seguenti passaggi:"
+"Se usi il modulo di allineamento di Ekos *non* è strettamente necessario "
+"allineare la tua montatura usando l'allineamento a 1, 2 o a 3 stelle del "
+"controllore, anche se per alcune montature è raccomandabile eseguire un "
+"allineamento grezzo a 1 o a 2 stelle prima di di usare il modulo di "
+"allineamento di Ekos. Se stai usando EQMod puoi invece iniziare subito ad "
+"utilizzarlo. Un flusso di lavoro tipico per l'allineamento GOTO coinvolge i "
+"seguenti passaggi:"
 
 #: ../../user_manual/ekos-align.rst:27
 msgid "Start KStars and Ekos and connect to INDI."
@@ -131,24 +133,16 @@ msgid ""
 msgstr ""
 
 #: ../../user_manual/ekos-align.rst:33
-#, fuzzy
-#| msgid ""
-#| "Select <guilabel>Slew to Target</guilabel> in the <guilabel>Solver "
-#| "Action</guilabel> on the Align page."
 msgid "Select ``Slew to Target`` in the ``Solver Action`` on the Align page."
 msgstr ""
-"Seleziona<guilabel>Ruota verso il soggetto</guilabel> in <guilabel>Azione "
-"del risolutore</guilabel> nella pagina Allinea."
+"Seleziona ``Ruota verso il soggetto`` in ``Azione del risolutore`` nella "
+"pagina Allinea."
 
 #: ../../user_manual/ekos-align.rst:35
-#, fuzzy
-#| msgid ""
-#| "After slew is complete, click <guibutton>Capture &amp; Solve</guibutton> "
-#| "on the Align page."
 msgid "After slew is complete, click ``Capture & Solve`` on the Align page."
 msgstr ""
-"Una volta completata la rotazione fai clic su <guibutton>Cattura e risolvi</"
-"guibutton> nella pagina Allinea."
+"Una volta completata la rotazione fai clic su ``Acquisisci e risolvi`` nella "
+"pagina Allinea."
 
 #: ../../user_manual/ekos-align.rst:37
 msgid ""
@@ -445,7 +439,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-align.rst:136
 msgid "Plate-Solving Parameters"
-msgstr "Parametri per la risoluzione delle lastre"
+msgstr "Parametri per la risoluzione astrometrica"
 
 #: ../../user_manual/ekos-align.rst:138
 msgid "These plate-solving parameters mostly relate to computation resources."
@@ -499,26 +493,14 @@ msgid "|Astrometry.net Indexes Download|"
 msgstr "|Astrometry.net Indexes Download|"
 
 #: ../../user_manual/ekos-align.rst:160
-#, fuzzy
-#| msgid ""
-#| "Automatic download is only available for Ekos users on &Linux; &amp; "
-#| "&MacOS;. For &Windows; users, please download ANSVR solver."
 msgid ""
 "Automatic download is only available for Ekos users on Linux® & Mac® OS. For "
 "Windows® users, please download ANSVR solver."
 msgstr ""
-"Lo scaricamento automatico è disponibile per gli utenti di Ekos in &Linux; e "
-"&MacOS;; quelli di &Windows; devono invece scaricare un risolutore ANSVR."
+"Lo scaricamento automatico è disponibile per gli utenti di Ekos in Linux® e "
+"MacOS®; quelli di Windows® devono invece scaricare un risolutore ANSVR."
 
 #: ../../user_manual/ekos-align.rst:162
-#, fuzzy
-#| msgid ""
-#| "To access the download page, click the <guibutton>Options</guibutton> "
-#| "button in the <link linkend=\"ekos-align\">Align module</link> and then "
-#| "select <guilabel>Astrometry Index Files</guilabel> tab. The page displays "
-#| "the current FOV of your current setup and below it a list of available "
-#| "and installed index files. Three icons are used to designate the "
-#| "importance of index files given your current setup as follows:"
 msgid ""
 "To access the download page, click the ``Options`` button in the :doc:`Align "
 "module <ekos-align>` and then select ``Astrometry`` Index Files tab. The "
@@ -527,12 +509,11 @@ msgid ""
 "importance of index files given your current setup as follows:"
 msgstr ""
 "Per accedere alla pagina degli scaricamenti fai clic sul pulsante "
-"<guibutton>Opzioni</guibutton> nel <link linkend=\"ekos-align\">modulo di "
-"allineamento</link>, quindi seleziona la scheda <guilabel>File indice di "
-"Astrometry</guilabel>. La pagina mostra il CDV delle tue impostazioni "
-"correnti e sotto ad esso un elenco di file indice disponibili e installati. "
-"Vengono usate tre icone per designare l'importanza dei file indice della tua "
-"attuale configurazione, come segue:"
+"``Opzioni`` nel :doc:`modulo Allinea <ekos-align>`, quindi seleziona la "
+"scheda ``File indice di Astrometry``. La pagina mostra il CDV delle tue "
+"impostazioni correnti e sotto ad esso un elenco di file indice disponibili e "
+"installati. Vengono usate tre icone per designare l'importanza dei file "
+"indice della tua attuale configurazione, come segue:"
 
 #: ../../user_manual/ekos-align.rst:164
 msgid "|image2| Required"
@@ -547,16 +528,6 @@ msgid "|image4| Optional"
 msgstr "Facoltativo |image4|"
 
 #: ../../user_manual/ekos-align.rst:170
-#, fuzzy
-#| msgid ""
-#| "You must download all the required files, and if you have plenty of hard "
-#| "drive space left, you can also download the recommended indexes. If an "
-#| "index file is installed, the checkmark shall be checked, otherwise check "
-#| "it to download the relevant index file. Please only download one file at "
-#| "a time, especially for larger files. You might be prompted to enter the "
-#| "administrator password (default in StellarMate is <userinput>smate</"
-#| "userinput>) to install the files. Once you installed all the required "
-#| "files, you can begin using the offline astrometry.net solver immediately."
 msgid ""
 "You must download all the required files, and if you have plenty of hard "
 "drive space left, you can also download the recommended indexes. If an index "
@@ -572,25 +543,15 @@ msgstr ""
 "la casella è spuntata, diversamente spuntala per scaricare il file indice "
 "pertinente. È consigliabile scaricare un solo file per volta, specialmente "
 "se è grosso. Potrebbe esserti richiesto l'inserimento la password di "
-"amministratore (quella predefinita in StellarMate è <userinput>smate</"
-"userinput>) per installare i file. Una volta installati puoi subito iniziare "
-"ad usare il risolutore astrometry.net non in linea."
+"amministratore (quella predefinita in StellarMate è **``smate``**) per "
+"installare i file. Una volta installati puoi subito iniziare ad usare il "
+"risolutore astrometry.net non in linea."
 
 #: ../../user_manual/ekos-align.rst:175
 msgid "Manual Download"
 msgstr "Scaricamento manuale"
 
 #: ../../user_manual/ekos-align.rst:177
-#, fuzzy
-#| msgid ""
-#| "You need to <ulink url=\"http://data.astrometry.net\">download</ulink> "
-#| "and install the necessary index files suitable for your telescope+CCD "
-#| "field of view (FOV). You need to install index files covering 100% to 10% "
-#| "of your FOV. For example, if your FOV is 60 arcminutes, you need to "
-#| "install index files covering skymarks from 6 arcminutes (10%) to 60 "
-#| "arcminutes (100%). There are many online tools to calculate FOVs, such as "
-#| "<ulink url=\"http://starizona.com/acb/ccd/calc_pixel.aspx\">Starizona "
-#| "Field of View Calculator</ulink>."
 msgid ""
 "You need to `download <http://data.astrometry.net>`__ and install the "
 "necessary index files suitable for your telescope+CCD field of view (FOV). "
@@ -600,18 +561,17 @@ msgid ""
 "many online tools to calculate FOVs, such as `Starizona Field of View "
 "Calculator <http://starizona.com/acb/ccd/calc_pixel.aspx>`__."
 msgstr ""
-"Devi <ulink url=\"http://data.astrometry.net\">scaricare</ulink> ed "
-"installare i file indice necessari che si adattano al campo di vista (CDV) "
-"del tuo telescopio insieme al CCD. Devi installare i file indice che coprono "
-"dal 100% al 10% del tuo CDV; ad esempio, se questo è 60 arcominuti ti "
-"servono quelli che vanno da 6 (il 10%) a 60 (il 100%). Ci sono molti "
-"strumenti su Internet per calcolare il CDV, ad esempio <ulink url=\"http://"
-"starizona.com/acb/ccd/calc_pixel.aspx\">il calcolatore di campo di vista "
-"Starizona.</ulink>"
+"Devi `scaricare <http://data.astrometry.net>`__ e installare i file indice "
+"necessari che si adattano al campo di vista (CDV) del tuo telescopio insieme "
+"al CCD. Devi installare i file indice che coprono dal 100% al 10% del tuo "
+"CDV; ad esempio, se questo è 60 minuti d'arco ti servono quelli che vanno da "
+"6 (il 10%) a 60 (il 100%). Ci sono molti strumenti su Internet per calcolare "
+"il CDV, ad esempio `il calcolatore di campo di vista Starizona <http://"
+"starizona.com/acb/ccd/calc_pixel.aspx>`__."
 
 #: ../../user_manual/ekos-align.rst:179
 msgid "**Table 5.1. Index Files**"
-msgstr ""
+msgstr "**Tabella  5.1. File indice**"
 
 #: ../../user_manual/ekos-align.rst:183
 msgid "Index Filename"
@@ -638,6 +598,8 @@ msgid ""
 "`astrometry-data-4208-4 219 <http://data.astrometry .net/debian/astrometry-"
 "data -4208-4219_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-data-4208-4 219 <http://data.astrometry .net/debian/astrometry-"
+"data -4208-4219_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:190
 msgid "index-4218.fits"
@@ -740,6 +702,8 @@ msgid ""
 "`astrometry-d ata-4207 <http://data.astro metry.net/debian/astrometry -"
 "data-4207_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4207 <http://data.astro metry.net/debian/astrometry -"
+"data-4207_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:217
 msgid "index-4206-*.fits"
@@ -754,6 +718,8 @@ msgid ""
 "`astrometry-d ata-4206 <http://data.astro metry.net/debian/astrometry -"
 "data-4206_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4206 <http://data.astro metry.net/debian/astrometry -"
+"data-4206_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:222
 msgid "index-4205-*.fits"
@@ -768,6 +734,8 @@ msgid ""
 "`astrometry-d ata-4205 <http://data.astro metry.net/debian/astrometry -"
 "data-4205_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4205 <http://data.astro metry.net/debian/astrometry -"
+"data-4205_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:227
 msgid "index-4204-*.fits"
@@ -782,6 +750,8 @@ msgid ""
 "`astrometry-d ata-4204 <http://data.astro metry.net/debian/astrometry -"
 "data-4204_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4204 <http://data.astro metry.net/debian/astrometry -"
+"data-4204_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:232
 msgid "index-4203-*.fits"
@@ -796,6 +766,8 @@ msgid ""
 "`astrometry-d ata-4203 <http://data.astro metry.net/debian/astrometry -"
 "data-4203_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4203 <http://data.astro metry.net/debian/astrometry -"
+"data-4203_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:237
 msgid "index-4202-*.fits"
@@ -810,6 +782,8 @@ msgid ""
 "`astrometry-d ata-4202 <http://data.astro metry.net/debian/astrometry -"
 "data-4202_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4202 <http://data.astro metry.net/debian/astrometry -"
+"data-4202_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:242
 msgid "index-4201-*.fits"
@@ -820,15 +794,6 @@ msgid "2.8 - 4.0"
 msgstr "2.8 - 4.0"
 
 #: ../../user_manual/ekos-align.rst:242
-#, fuzzy
-#| msgid ""
-#| "<ulink url=\"http://data.astrometry.net/debian/astrometry-"
-#| "data-4201-1_0.45_all.deb\">astrometry-data-4201-1</ulink> <ulink url="
-#| "\"http://data.astrometry.net/debian/astrometry-data-4201-2_0.45_all.deb"
-#| "\">astrometry-data-4201-2</ulink> <ulink url=\"http://data.astrometry.net/"
-#| "debian/astrometry-data-4201-3_0.45_all.deb\">astrometry-data-4201-3</"
-#| "ulink> <ulink url=\"http://data.astrometry.net/debian/astrometry-"
-#| "data-4201-4_0.45_all.deb\">astrometry-data-4201-4</ulink>"
 msgid ""
 "`astrometry-data- 4201-1 <http://data.astrome try.net/debian/astrometry-d "
 "ata-4201-1_0.45_all.deb>`__ `astrometry-data- 4201-2 <http://data.astrome "
@@ -837,13 +802,12 @@ msgid ""
 "deb>`__ `astrometry-data- 4201-4 <http://data.astrome try.net/debian/"
 "astrometry-d ata-4201-4_0.45_all.deb>`__"
 msgstr ""
-"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
-"data-4201-1_0.45_all.deb\">astrometry-data-4201-1</ulink> <ulink url="
-"\"http://data.astrometry.net/debian/astrometry-data-4201-2_0.45_all.deb"
-"\">astrometry-data-4201-2</ulink> <ulink url=\"http://data.astrometry.net/"
-"debian/astrometry-data-4201-3_0.45_all.deb\">astrometry-data-4201-3</ulink> "
-"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
-"data-4201-4_0.45_all.deb\">astrometry-data-4201-4</ulink>"
+"`astrometry-data- 4201-1 <http://data.astrome try.net/debian/astrometry-d "
+"ata-4201-1_0.45_all.deb>`__ `astrometry-data- 4201-2 <http://data.astrome "
+"try.net/debian/astrometry-d ata-4201-2_0.45_all.deb>`__ `astrometry-data- "
+"4201-3 <http://data.astrome try.net/debian/astrometry-d ata-4201-3_0.45_all."
+"deb>`__ `astrometry-data- 4201-4 <http://data.astrome try.net/debian/"
+"astrometry-d ata-4201-4_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:259
 msgid "index-4200-*.fits"
@@ -854,15 +818,6 @@ msgid "2.0 - 2.8"
 msgstr "2.0 - 2.8"
 
 #: ../../user_manual/ekos-align.rst:259
-#, fuzzy
-#| msgid ""
-#| "<ulink url=\"http://data.astrometry.net/debian/astrometry-"
-#| "data-4200-1_0.45_all.deb\">astrometry-data-4200-1</ulink> <ulink url="
-#| "\"http://data.astrometry.net/debian/astrometry-data-4200-2_0.45_all.deb"
-#| "\">astrometry-data-4200-2</ulink> <ulink url=\"http://data.astrometry.net/"
-#| "debian/astrometry-data-4200-3_0.45_all.deb\">astrometry-data-4200-3</"
-#| "ulink> <ulink url=\"http://data.astrometry.net/debian/astrometry-"
-#| "data-4200-4_0.45_all.deb\">astrometry-data-4200-4</ulink>"
 msgid ""
 "`astrometry-data- 4200-1 <http://data.astrome try.net/debian/astrometry-d "
 "ata-4200-1_0.45_all.deb>`__ `astrometry-data- 4200-2 <http://data.astrome "
@@ -871,13 +826,12 @@ msgid ""
 "deb>`__ `astrometry-data- 4200-4 <http://data.astrome try.net/debian/"
 "astrometry-d ata-4200-4_0.45_all.deb>`__"
 msgstr ""
-"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
-"data-4200-1_0.45_all.deb\">astrometry-data-4200-1</ulink> <ulink url="
-"\"http://data.astrometry.net/debian/astrometry-data-4200-2_0.45_all.deb"
-"\">astrometry-data-4200-2</ulink> <ulink url=\"http://data.astrometry.net/"
-"debian/astrometry-data-4200-3_0.45_all.deb\">astrometry-data-4200-3</ulink> "
-"<ulink url=\"http://data.astrometry.net/debian/astrometry-"
-"data-4200-4_0.45_all.deb\">astrometry-data-4200-4</ulink>"
+"`astrometry-data- 4200-1 <http://data.astrome try.net/debian/astrometry-d "
+"ata-4200-1_0.45_all.deb>`__ `astrometry-data- 4200-2 <http://data.astrome "
+"try.net/debian/astrometry-d ata-4200-2_0.45_all.deb>`__ `astrometry-data- "
+"4200-3 <http://data.astrome try.net/debian/astrometry-d ata-4200-3_0.45_all."
+"deb>`__ `astrometry-data- 4200-4 <http://data.astrome try.net/debian/"
+"astrometry-d ata-4200-4_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:277
 msgid ""
@@ -896,42 +850,28 @@ msgid "**sudo dpkg -i astrometry-data-*.deb**"
 msgstr "**sudo dpkg -i astrometry-data-*.deb**"
 
 #: ../../user_manual/ekos-align.rst:281
-#, fuzzy
-#| msgid ""
-#| "On the other hand, if you downloaded the FITS index files directly, copy "
-#| "them to <filename role=\"directory\">/usr/share/astrometry</filename> "
-#| "directory."
 msgid ""
 "On the other hand, if you downloaded the FITS index files directly, copy "
 "them to ``/usr/share/astrometry`` directory."
 msgstr ""
 "D'altra parte, se hai scaricato direttamente i file di indice FITS puoi "
-"copiarli nella cartella <filename role=\"directory\">/usr/share/astrometry</"
-"filename>."
+"copiarli nella cartella ``/usr/share/astrometry``."
 
 #: ../../user_manual/ekos-align.rst:285
-#, fuzzy
-#| msgid ""
-#| "It is recommended to use a download manager as such <ulink url=\"https://"
-#| "addons.mozilla.org/en-US/firefox/addon/downthemall/\">DownThemAll!</"
-#| "ulink> for &firefox; to download the Debian packages as browsers' built-"
-#| "in download manager may have problems with download large packages."
 msgid ""
 "It is recommended to use a download manager as such `DownThemAll! <https://"
 "addons.mozilla.org/en-US/firefox/addon/downthemall/>`__ for Firefox to "
 "download the Debian packages as browsers' built-in download manager may have "
 "problems with download large packages."
 msgstr ""
-"È raccomandabile usare un gestore di scaricamenti come <ulink url=\"https://"
-"addons.mozilla.org/en-US/firefox/addon/downthemall/\">DownThemAll!</ulink> "
-"per &firefox; per scaricare i pacchetti di Debian, perché quello integrato "
-"nel browser potrebbe avere dei problemi a scaricare di molti pacchetti."
+"È consigliato usare un gestore di scaricamenti come `DownThemAll! <https://"
+"addons.mozilla.org/en-US/firefox/addon/downthemall/>`__ per Firefox per "
+"scaricare i pacchetti di Debian, perché quello integrato nel browser "
+"potrebbe avere dei problemi a scaricare di molti pacchetti."
 
 #: ../../user_manual/ekos-align.rst:290
-#, fuzzy
-#| msgid "Get astrometry.net"
 msgid "Optionally get astrometry.net"
-msgstr "Ottieni astrometry.net"
+msgstr "Ottieni opzionalmente astrometry.net"
 
 #: ../../user_manual/ekos-align.rst:292
 msgid ""
@@ -940,16 +880,6 @@ msgid ""
 msgstr ""
 
 #: ../../user_manual/ekos-align.rst:296
-#, fuzzy
-#| msgid ""
-#| "Astrometry.net is already shipped with StellarMate so there is no need to "
-#| "install it. Index files from 16 arcminutes and above (4206 to 4019) are "
-#| "included with StellarMate. For any additional index files, you need to "
-#| "install them as necessary. To use Astrometry in StellarMate from a remote "
-#| "Ekos on &Linux;/&Windows;/&MacOS;, make sure to select "
-#| "<guimenuitem>Remote</guimenuitem> option in Ekos Alignment Module. "
-#| "Furthermore, make sure that the <guimenuitem>Astrometry</guimenuitem> "
-#| "driver is selected in your equipment profile."
 msgid ""
 "Astrometry.net is already shipped with StellarMate so there is no need to "
 "install it. Index files from 16 arcminutes and above (4206 to 4019) are "
@@ -960,12 +890,12 @@ msgid ""
 "is selected in your equipment profile."
 msgstr ""
 "Astrometry.net è già fornito con StellarMate, quindi non devi installarlo. I "
-"file indice da 16 arcominuti in su 4206 to 4019) sono inclusi in "
+"file indice da 16 minuti d'arco in su (da 4206 a 4019) sono inclusi in "
 "StellarMate; devi installare ogni altro file se necessario. Per usare "
-"Astrometry in StellarMate da un Ekos remoto su &Linux;/&Windows;/&MacOS; "
-"assicurati di selezionare l'opzione <guimenuitem>Remoto</guimenuitem> nel "
-"modulo di allineamento di Ekos e che sia selezionato il driver "
-"<guimenuitem>Astrometry</guimenuitem> nel profilo del tuo equipaggiamento."
+"Astrometry in StellarMate da un Ekos remoto su sistema operativo Linux®/"
+"Windows®/Mac®, assicurati di selezionare l'opzione ``Remoto`` nel modulo di "
+"allineamento di Ekos e che sia selezionato il driver ``Astrometry`` nel "
+"profilo del tuo equipaggiamento."
 
 #: ../../user_manual/ekos-align.rst:298
 msgid "|Ekos Remote Astrometry|"
@@ -976,32 +906,18 @@ msgid "Windows®"
 msgstr "Windows®"
 
 #: ../../user_manual/ekos-align.rst:302
-#, fuzzy
-#| msgid ""
-#| "To use astrometry.net under &Windows;, you need to download and install "
-#| "the <ulink url=\"https://adgsoftware.com/ansvr/\">ANSVR Local Astrometry."
-#| "net solver</ulink>. The ANSVR mimics the astrometry.net online server on "
-#| "your local computer; thus the internet not required for any astrometry "
-#| "queries."
 msgid ""
 "To use astrometry.net under Windows®, you need to download and install the "
 "`ANSVR Local Astrometry.net solver <https://adgsoftware.com/ansvr/>`__. The "
 "ANSVR mimics the astrometry.net online server on your local computer; thus "
 "the internet not required for any astrometry queries."
 msgstr ""
-"Per usare astrometry.net in &Windows; devi scaricare ed installare il <ulink "
-"url=\"http://adgsoftware.com/ansvr/\">il risolutore locale Astrometry.net "
-"ANSVR</ulink>. L'ANSVR imita il server in linea astrometry.net sul tuo "
-"computer locale, perciò non è richiesto Internet per qualsiasi "
-"interrogazione di astrometria."
+"Per usare astrometry.net in Windows® devi scaricare e installare il "
+"`risolutore locale Astrometry.net ANSVR <https://adgsoftware.com/ansvr/>`__. "
+"L'ANSVR imita il server in linea astrometry.net sul tuo computer locale, "
+"perciò non è richiesto Internet per qualsiasi interrogazione di astrometria."
 
 #: ../../user_manual/ekos-align.rst:304
-#, fuzzy
-#| msgid ""
-#| "After installing the ANSVR server and downloading the appropriate index "
-#| "files for your setup, make sure ANSVR server is up and running and then "
-#| "go to Ekos Alignment options where you can simply change the "
-#| "<guilabel>API URL</guilabel> to use the ANSVR server as illustrated below:"
 msgid ""
 "After installing the ANSVR server and downloading the appropriate index "
 "files for your setup, make sure ANSVR server is up and running and then go "
@@ -1010,41 +926,25 @@ msgid ""
 msgstr ""
 "Una volta installato il server ANSVR ed aver scaricato i file di indice "
 "appropriati per l'installazione, assicurati che esso sia in esecuzione. Vai "
-"quindi nelle opzioni di allineamento di Ekos, dove puoi cambiare "
-"l'<guilabel>URL dell'API</guilabel> per usare il server ANSVR, come "
-"illustrato qui sotto:"
+"quindi nelle opzioni di allineamento di Ekos, dove puoi cambiare l'``URL "
+"dell'API`` per usare il server ANSVR, come illustrato qui sotto:"
 
 #: ../../user_manual/ekos-align.rst:306
 msgid "|ANSVR Parameters|"
 msgstr "|ANSVR Parameters|"
 
 #: ../../user_manual/ekos-align.rst:308
-#, fuzzy
-#| msgid ""
-#| "In Ekos Align module, you must set the solver type to "
-#| "<guimenuitem>Online</guimenuitem> so that it uses the local ANSVR server "
-#| "for all astrometry queries. Then you can use the align module as you "
-#| "would normally do."
 msgid ""
 "In Ekos Align module, you must set the solver type to ``Online`` so that it "
 "uses the local ANSVR server for all astrometry queries. Then you can use the "
 "align module as you would normally do."
 msgstr ""
-"Nel modulo di allineamento di Ekos devi impostare il risolutore a "
-"<guimenuitem>In linea</guimenuitem>, cosicché usi il risolutore ANSVR locale "
-"per tutte le interrogazioni astrometriche. Puoi ora usare il modulo di "
-"allineamento come faresti normalmente."
+"Nel modulo di allineamento di Ekos devi impostare il risolutore a ``In "
+"linea``, cosicché usi il risolutore ANSVR locale per tutte le interrogazioni "
+"astrometriche. Puoi ora usare il modulo di allineamento come faresti "
+"normalmente."
 
 #: ../../user_manual/ekos-align.rst:310
-#, fuzzy
-#| msgid ""
-#| "Remember as indicated above that StellarMate <emphasis>already</emphasis> "
-#| "includes astrometry.net. Therefore, if you would like to use StellarMate "
-#| "remotely to solve your images, simply change solver type to "
-#| "<guimenuitem>Remote</guimenuitem> and ensure that your equipment profile "
-#| "includes <emphasis role=\"bold\">Astrometry</emphasis> driver which can "
-#| "be selected under the <guilabel>Auxiliary</guilabel> dropdown. This is "
-#| "applicable to all operating systems and not just &Windows;."
 msgid ""
 "Remember as indicated above that StellarMate *already* includes astrometry."
 "net. Therefore, if you would like to use StellarMate remotely to solve your "
@@ -1053,29 +953,24 @@ msgid ""
 "the ``Auxiliary`` dropdown.  This is applicable to all operating systems and "
 "not just Windows®."
 msgstr ""
-"Ricordati, come era indicato qui sopra, che StellarMate include "
-"<emphasis>già</emphasis> astrometry.net. Quindi, se vuoi usare StellarMate "
-"da remoto per risolvere le tue immagini, cambia semplicemente il tipo di "
-"risolutore in <guimenuitem>Remoto</guimenuitem> ed assicurati che il tuo "
-"profilo per l'equipaggiamento includa i driver di <emphasis role=\"bold"
-"\">Astrometry</emphasis>, che possono essere selezionati nell'elenco a "
-"comparsa <guilabel>Ausiliario</guilabel>. Questo si applica a tutti i "
-"sistemi operativi, non solo a &Windows;."
+"Ricordati, come era indicato qui sopra, che StellarMate include *già* "
+"astrometry.net. Quindi, se vuoi usare StellarMate da remoto per risolvere le "
+"tue immagini, cambia semplicemente il tipo di risolutore in ``Remoto`` e "
+"assicurati che il tuo profilo per l'equipaggiamento includa i driver di "
+"**Astrometry**, che possono essere selezionati nell'elenco a comparsa "
+"``Ausiliario``. Questo si applica a tutti i sistemi operativi, non solo a "
+"Windows®."
 
 #: ../../user_manual/ekos-align.rst:313
 msgid "Mac® OS"
 msgstr "Mac® OS"
 
 #: ../../user_manual/ekos-align.rst:313
-#, fuzzy
-#| msgid ""
-#| "Astrometry.net is already included with &kstars; for &MacOS;, so no need "
-#| "to install it."
 msgid ""
 "Astrometry.net is already included with KStars for Mac® OS, so no need to "
 "install it."
 msgstr ""
-"Astrometry.net è già incluso in &kstars; per &MacOS;, quindi non c'è bisogno "
+"Astrometry.net è già incluso in KStars per Mac® OS, quindi non c'è bisogno "
 "di installarlo."
 
 #: ../../user_manual/ekos-align.rst:316
@@ -1109,6 +1004,13 @@ msgid ""
 "possible to Polaris. It is not necessary to perform 2 or 3 star alignments, "
 "but it can be useful for some mount types. Make sure your camera is focused."
 msgstr ""
+"Il modulo di allineamento di Ekos offre più funzioni per aiutarti a ottenere "
+"dei GOTO accurati. Parti con la tua montatura nella posizione iniziale, con "
+"il tubo del telescopio che guarda direttamente verso il polo celeste; gli "
+"utenti dell'emisfero settentrionale dovranno puntarlo il più vicino "
+"possibile alla Stella Polare. Non è necessario eseguire 2 o 3 allineamenti, "
+"ma può essere utile per alcuni tipi di montatura. Assicurati che la "
+"fotocamera sia a fuoco."
 
 #: ../../user_manual/ekos-align.rst:327
 msgid ""
@@ -1133,15 +1035,11 @@ msgid ""
 msgstr ""
 
 #: ../../user_manual/ekos-align.rst:331
-#, fuzzy
-#| msgid ""
-#| "<guilabel>Load &amp; Slew</guilabel>: Load a FITS or JPEG file, solve it, "
-#| "and then slew to it."
 msgid ""
 "``Load & Slew``: Load a FITS or JPEG file, solve it, and then slew to it."
 msgstr ""
-"<guilabel>Carica e ruota</guilabel>: carica un file FITS o un JPEG, "
-"risolvilo e poi ruota ad esso."
+"``Carica e ruota``: carica un file FITS o un JPEG, risolvilo e poi ruota ad "
+"esso."
 
 #: ../../user_manual/ekos-align.rst:335
 msgid ""
@@ -1165,6 +1063,10 @@ msgid ""
 "You can explore astrometry.net options that are passed to the astrometry.net "
 "solver each time an image is captured:"
 msgstr ""
+"Seleziona il CCD e il telescopio desiderato prima di iniziare il processo di "
+"allineamento. Puoi esplorare le opzioni di astrometry.net che vengono "
+"passate al risolutore di astrometry.net ogni volta che viene acquisita "
+"un'immagine:"
 
 #: ../../user_manual/ekos-align.rst:344
 msgid ""
@@ -1289,6 +1191,9 @@ msgid ""
 "captured and solved. If you choose manual, you will need to slew the mount "
 "by roughly the angle chosen."
 msgstr ""
+"Lo strumento funziona acquisendo e risolvendo tre immagini: dopo ogni "
+"acquisizione la montatura ruota di un valore fisso e viene acquisita e "
+"risolta un'altra immagine."
 
 #: ../../user_manual/ekos-align.rst:381
 msgid "|Polar Alignment Assistant|"
@@ -1309,10 +1214,8 @@ msgid ""
 msgstr ""
 
 #: ../../user_manual/ekos-align.rst:390
-#, fuzzy
-#| msgid "<title>Polar Alignment Assistant</title>"
 msgid "|Polar Alignment Assistant, Plate Solve Workflow 1|"
-msgstr "<title>Assistente per l'allineamento polare</title>"
+msgstr "|Polar Alignment Assistant, Plate Solve Workflow 1|"
 
 #: ../../user_manual/ekos-align.rst:392
 msgid ""
@@ -1343,10 +1246,8 @@ msgid ""
 msgstr ""
 
 #: ../../user_manual/ekos-align.rst:398
-#, fuzzy
-#| msgid "<title>Polar Alignment Assistant</title>"
 msgid "|Polar Alignment Assistant, Plate Solve Workflow 2|"
-msgstr "<title>Assistente per l'allineamento polare</title>"
+msgstr "|Polar Alignment Assistant, Plate Solve Workflow 2|"
 
 #: ../../user_manual/ekos-align.rst:400
 msgid ""
@@ -1356,10 +1257,8 @@ msgid ""
 msgstr ""
 
 #: ../../user_manual/ekos-align.rst:402
-#, fuzzy
-#| msgid "<title>Polar Alignment Assistant</title>"
 msgid "|Polar Alignment Assistant, Plate Solve Workflow 3|"
-msgstr "<title>Assistente per l'allineamento polare</title>"
+msgstr "|Polar Alignment Assistant, Plate Solve Workflow 3|"
 
 #: ../../user_manual/ekos-align.rst:407
 msgid "Move Star Correction Scheme"
@@ -1395,8 +1294,6 @@ msgid "Ekos Align Module"
 msgstr "Modulo di allineamento Ekos"
 
 #: ../../user_manual/ekos-align.rst:413
-#, fuzzy
-#| msgid ".. image:: /images/ekos_astrometry.png"
 msgid ".. image:: /images/ekos_astrometry.png"
 msgstr ".. image:: /images/ekos_astrometry.png"
 
@@ -1405,20 +1302,14 @@ msgid "StellarSolver Options"
 msgstr "Opzioni di StellarSolver"
 
 #: ../../user_manual/ekos-align.rst:414
-#, fuzzy
-#| msgid ".. image:: /images/ekos_stellarsolver_options.png"
 msgid ".. image:: /images/ekos_stellarsolver_options.png"
 msgstr ".. image:: /images/ekos_stellarsolver_options.png"
 
 #: ../../user_manual/ekos-align.rst:415
-#, fuzzy
-#| msgid "<phrase>Astrometry.net Indexes Download</phrase>"
 msgid "StellarSolver External Programs"
-msgstr "<phrase>Scaricamento indici Astrometry.net</phrase>"
+msgstr "Programmi esterni StellarSolver"
 
 #: ../../user_manual/ekos-align.rst:415
-#, fuzzy
-#| msgid ".. image:: /images/ekos_stellarsolver_external.png"
 msgid ".. image:: /images/ekos_stellarsolver_external.png"
 msgstr ".. image:: /images/ekos_stellarsolver_external.png"
 
@@ -1427,8 +1318,6 @@ msgid "StellarSolver Scale and Position"
 msgstr "Scala e posizione di StellarSolver"
 
 #: ../../user_manual/ekos-align.rst:416
-#, fuzzy
-#| msgid ".. image:: /images/ekos_stellarsolver_scale.png"
 msgid ".. image:: /images/ekos_stellarsolver_scale.png"
 msgstr ".. image:: /images/ekos_stellarsolver_scale.png"
 
@@ -1437,8 +1326,6 @@ msgid "StellarSolver Profiles"
 msgstr "Profili di StellarSolver"
 
 #: ../../user_manual/ekos-align.rst:417
-#, fuzzy
-#| msgid ".. image:: /images/ekos_stellarsolver_profiles.png"
 msgid ".. image:: /images/ekos_stellarsolver_profiles.png"
 msgstr ".. image:: /images/ekos_stellarsolver_profiles.png"
 
@@ -1447,8 +1334,6 @@ msgid "Astrometry.net Indexes Download"
 msgstr "Scaricamento indici di Astrometry.net"
 
 #: ../../user_manual/ekos-align.rst:418
-#, fuzzy
-#| msgid ".. image:: /images/astrometry_indexes_settings.png"
 msgid ".. image:: /images/astrometry_indexes_settings.png"
 msgstr ".. image:: /images/astrometry_indexes_settings.png"
 
@@ -1457,8 +1342,6 @@ msgid "image2"
 msgstr "Immagine2"
 
 #: ../../user_manual/ekos-align.rst:419
-#, fuzzy
-#| msgid ".. image:: /images/security-high.png"
 msgid ".. image:: /images/security-high.png"
 msgstr ".. image:: /images/security-high.png"
 
@@ -1467,8 +1350,6 @@ msgid "image3"
 msgstr "Immagine3"
 
 #: ../../user_manual/ekos-align.rst:420
-#, fuzzy
-#| msgid ".. image:: /images/security-medium.png"
 msgid ".. image:: /images/security-medium.png"
 msgstr ".. image:: /images/security-medium.png"
 
@@ -1477,8 +1358,6 @@ msgid "image4"
 msgstr "Immagine4"
 
 #: ../../user_manual/ekos-align.rst:421
-#, fuzzy
-#| msgid ".. image:: /images/security-low.png"
 msgid ".. image:: /images/security-low.png"
 msgstr ".. image:: /images/security-low.png"
 
@@ -1487,8 +1366,6 @@ msgid "Ekos Remote Astrometry"
 msgstr "Astrometry remoto di Ekos"
 
 #: ../../user_manual/ekos-align.rst:422
-#, fuzzy
-#| msgid ".. image:: /images/ekos_remote_astrometry.png"
 msgid ".. image:: /images/ekos_remote_astrometry.png"
 msgstr ".. image:: /images/ekos_remote_astrometry.png"
 
@@ -1497,14 +1374,10 @@ msgid "ANSVR Parameters"
 msgstr "Parametri per ANSVR"
 
 #: ../../user_manual/ekos-align.rst:423
-#, fuzzy
-#| msgid ".. image:: /images/astrometry_windows_ansvr.png"
 msgid ".. image:: /images/astrometry_windows_ansvr.png"
 msgstr ".. image:: /images/astrometry_windows_ansvr.png"
 
 #: ../../user_manual/ekos-align.rst:424
-#, fuzzy
-#| msgid ".. image:: /images/alignment_polaris.png"
 msgid ".. image:: /images/alignment_polaris.png"
 msgstr ".. image:: /images/alignment_polaris.png"
 
@@ -1513,44 +1386,36 @@ msgid "Polar Alignment Assistant"
 msgstr "Assistente per l'allineamento polare"
 
 #: ../../user_manual/ekos-align.rst:425
-#, fuzzy
-#| msgid ".. image:: /images/polar_assistant_main2.png"
 msgid ".. image:: /images/polar_assistant_main2.png"
 msgstr ".. image:: /images/polar_assistant_main2.png"
 
 #: ../../user_manual/ekos-align.rst:426
-#, fuzzy
-#| msgid "<title>Polar Alignment Assistant</title>"
 msgid "Polar Alignment Assistant, Plate Solve Workflow 1"
-msgstr "<title>Assistente per l'allineamento polare</title>"
+msgstr ""
+"Assistente per l'allineamento polare, risoluzione astrometrica flusso di "
+"lavoro 1"
 
 #: ../../user_manual/ekos-align.rst:426
-#, fuzzy
-#| msgid ".. image:: /images/polar_assistant_ps1.png"
 msgid ".. image:: /images/polar_assistant_ps1.png"
 msgstr ".. image:: /images/polar_assistant_ps1.png"
 
 #: ../../user_manual/ekos-align.rst:427
-#, fuzzy
-#| msgid "<title>Polar Alignment Assistant</title>"
 msgid "Polar Alignment Assistant, Plate Solve Workflow 2"
-msgstr "<title>Assistente per l'allineamento polare</title>"
+msgstr ""
+"Assistente per l'allineamento polare, risoluzione astrometrica flusso di "
+"lavoro 2"
 
 #: ../../user_manual/ekos-align.rst:427
-#, fuzzy
-#| msgid ".. image:: /images/polar_assistant_ps2.png"
 msgid ".. image:: /images/polar_assistant_ps2.png"
 msgstr ".. image:: /images/polar_assistant_ps2.png"
 
 #: ../../user_manual/ekos-align.rst:428
-#, fuzzy
-#| msgid "<title>Polar Alignment Assistant</title>"
 msgid "Polar Alignment Assistant, Plate Solve Workflow 3"
-msgstr "<title>Assistente per l'allineamento polare</title>"
+msgstr ""
+"Assistente per l'allineamento polare, risoluzione astrometrica flusso di "
+"lavoro 3"
 
 #: ../../user_manual/ekos-align.rst:428
-#, fuzzy
-#| msgid ".. image:: /images/polar_assistant_ps3.png"
 msgid ".. image:: /images/polar_assistant_ps3.png"
 msgstr ".. image:: /images/polar_assistant_ps3.png"
 
