@@ -1,0 +1,797 @@
+# Copyright (C) licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
+# This file is distributed under the same license as the KStars Handbook package.
+#
+# SPDX-FileCopyrightText: 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: KStars Handbook 3.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-21 02:02+0000\n"
+"PO-Revision-Date: 2025-09-21 19:09+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.08.0\n"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:3
+#: ../../user_manual/fits-viewer-livestacker.rst:322
+msgid "FITS Viewer Live Stacker"
+msgstr "FITS-visningens realtidsstapling"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:5
+msgid "|FITS Viewer Live Stacker|"
+msgstr "|FITS-visningens realtidsstapling|"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:7
+msgid ""
+"The FITS Viewer Live Stacker (Live Stacker) is used to stack and display "
+"subframes. It monitors a directory so can be used to stack the existing "
+"contents of the directory and / or to add new subframes as they are taken "
+"during a live session."
+msgstr ""
+"FITS-visningens realtidsstapling (Realtidsstapling) används för att stapla "
+"och visa delbildrutor. Den övervakar en katalog så att den kan användas för "
+"att stapla befintligt innehåll i katalogen och/eller lägga till nya "
+"delbildrutor allt eftersom de tas under en realtidssession."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:12
+msgid ""
+"Multiple Live Stackers can be run to monitor different directories. These "
+"Live Stackers can be run as separate FitsViewer windows or as multiple tabs "
+"within a single FitsViewer tab. In addition, it is possible to run Live "
+"Stacker as a standalone process which is still under the control of KStars "
+"(so it is stopped when KStars itself is stopped) but has its own process "
+"space within the operating system."
+msgstr ""
+"Mer än en realtidsstapling kan köras för att övervaka olika kataloger. "
+"Realtidsstaplingarna kan köras som separata FITS-visningsfönster eller som "
+"flera flikar inom en FITS-visningsflik. Dessutom är det möjligt att köra "
+"realtidsstapling som en fristående process som fortfarande kontrolleras av "
+"Kstars (så den stoppas när Kstars själv stoppas) men har sitt eget "
+"processutrymme inom operativsystemet."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:19
+msgid ""
+"Live Stacker follows the FitsViewer architectural approach of displaying the "
+"result (in this case the stacked image) and allowing existing functionality "
+"such as rotation, object highlighting, histogram manipulation, etc. to be "
+"run on the image. The stacked image can be saved by the user using the "
+"existing Save functionality."
+msgstr ""
+"Realtidsstapling följer FITS-visningens arkitektur och visar resultatet (i "
+"detta fall den staplade bilden) och tillåter att befintliga funktioner som "
+"rotation, objektmarkering, manipulation med histogram etc. utförs med "
+"bilden. Den staplade bilden kan sparas av användaren med hjälp av den "
+"befintliga funktionen för att spara."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:25
+msgid ""
+"Live Stacker only operates on .fits files. They can be either mono or color."
+msgstr ""
+"Realtidsstapling arbetar bara med .fits-filer. De kan antingen vara "
+"svartvita eller i färg."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:28
+msgid ""
+"Dark and Flat master files may optionally be specified to improve image "
+"quality."
+msgstr ""
+"Mörka och plana huvudfiler kan valfritt anges för att förbättra "
+"bildkvaliteten."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:31
+msgid "Following is a description of the UI widgets:"
+msgstr ""
+"Det följande är en beskrivning av det grafiska användargränssnittets "
+"komponenter:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:33
+msgid ""
+"Stack Directory: This is the directory that Live Stacker will watch. Any "
+"files in the directory will be stacked when the Live Stacking process is "
+"started, and as new files (subs) are added to the directory these will be "
+"added to the existing stack."
+msgstr ""
+"Staplingskatalog: Det är katalogen som realtidsstapling övervakar. Alla "
+"filer i katalogen staplas när realtidsstaplingsprocessen startas, och när "
+"nya filer (delar) läggs till i katalogen läggs de att till i den befintliga "
+"stapeln."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:38
+msgid ""
+"Stack Directory Button: Launches a directory dialog box to choose a "
+"directory."
+msgstr ""
+"Knappen Staplingskatalog: Öppnar en katalogdialogruta där en katalog kan "
+"väljas."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:41
+msgid ""
+"Proc / Fail / Total: Output statistics of the number of subs Processed "
+"successfully, Failed and the Total. The Total is the number of subs in the "
+"directory."
+msgstr ""
+"Behandlade / Misslyckade / Totalt: Visar statistik över antalet delar som "
+"behandlats, misslyckades och totalt. Totalantalet är antalet delar i "
+"katalogen."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:45
+msgid ""
+"Start Button: Runs the stacking proecess on any subs in Stack Directory and "
+"watches the directory for new subs. Press this button at any time to re-"
+"stack and watch the Stack Directory. The button changes to Cancel when an "
+"initial stack is running."
+msgstr ""
+"Startknapp: Kör staplingsprocessen för alla delar i staplingskatalogen och "
+"övervakar katalogen för nya delar. Tryck på knappen när som helst för att "
+"stapla om och övervaka staplingskatalogen. Knappen ändras till Avbryt när en "
+"initial stapling körs."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:50
+msgid ""
+"SNR Av / Min / Max: Output statistics of the subs processed so far. Average "
+"SNR / Minimum SNR / Maximum SNR."
+msgstr ""
+"Signal-brus medel / min / max: Utdatastatistik för de hittills bearbetade "
+"delarna. Medelvärde av signal-brusförhållande / minimalt signal-"
+"brusförhållande / maximalt signal-brusförhållande."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:53
+msgid ""
+"Memory Widget: Displays the amount of memory the current process is using as "
+"a percentage of the available memory. Try to keep memory usage in the Green "
+"(<50% of available) rather than Amber (<70%) or Red (>=70%). Double click "
+"the widget to hide text and just display the progress bar."
+msgstr ""
+"Minneskomponent: Visar mängden minne som den aktuella processen använder som "
+"en procentandel av det tillgängliga minnet. Försök att hålla "
+"minnesanvändningen i det gröna (<50 % av tillgängligt) snarare än det gula "
+"(<70 %) eller det röda (>=70 %). Dubbelklicka på komponenten för att dölja "
+"text och bara visa förloppsraden."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:59
+msgid "Image SNR: This is the SNR of the stacked image at that time."
+msgstr ""
+"Bildens signal-brusförhållande: Det är den staplade bildens signal-"
+"brusförhållande vid tillfället."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:61
+msgid ""
+"Save Settings Button. This saves the configuration of the Live Stacker to "
+"disk."
+msgstr ""
+"Knappen Spara inställningar. Den sparar realtidsstaplingens inställning på "
+"disken.."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:64
+msgid "Calibration Settings:"
+msgstr "Kalibreringsinställningar:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:66
+msgid ""
+"Master Dark: Blank or pathname to a Master Dark .fits file to be used to "
+"calibrate subs."
+msgstr ""
+"Mörk huvudbild: Tomt eller namn på sökvägen till en .fits mörk huvudbild att "
+"använda för att kalibrera delar."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:69
+msgid ""
+"Master Dark Button: Launches a file picker dialog box to choose a Master "
+"Dark."
+msgstr ""
+"Knappen Mörk huvudbild: Startar en filväljardialogruta för att välja en mörk "
+"huvudbild."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:72
+msgid ""
+"Master Flat: Blank or pathname to a Master Flat .fits file to be used to "
+"calibrate subs."
+msgstr ""
+"Plan huvudbild: Tomt eller namn på sökvägen till en fits plan huvudbild att "
+"använda för att kalibrera delar."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:75
+msgid ""
+"Master Flat Button: Launches a file picker dialog box to choose a Master "
+"Flat."
+msgstr ""
+"Knappen Plan huvudbild: Startar en filväljardialogruta för att välja en plan "
+"huvudbild."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:78
+msgid "Alignment Settings:"
+msgstr "Inriktningsinställningar:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:80
+msgid ""
+"Master Sub: Blank or pathname to the sub to be used to align all other subs "
+"to. If blank, the first sub is used as alignment master."
+msgstr ""
+"Huvuddel: Tomt eller namn på sökväg till delbilden att använda för "
+"inriktning av alla andra delbilder. Om tomt används den första delen som "
+"huvudbild för inriktning."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:83
+msgid ""
+"Master Sub Button: Launches a file picker dialog box to choose the alignment "
+"master sub."
+msgstr ""
+"Knappen Huvuddel: Startar en filväljardialogruta för att välja en huvuddelen "
+"för inriktning."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:86
+msgid "Method: Plate Solve. Use plate solving as the method of aligning subs."
+msgstr ""
+"Metod: Lösning av astrobilder. Använd lösning av astrobilder som metod för "
+"inriktning av delar."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:89
+msgid "Stacking Settings:"
+msgstr "Staplingsinställningar:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:91
+msgid ""
+"In Memory Subs. This specifies the maximum number of subs that will be held "
+"in-memory at any one time and specifies the number of subs that cause a "
+"transition from initial stack to running stack."
+msgstr ""
+"Delbilder i minne: Anger det maximala antalet delar som lagras i minnet "
+"samtidigt och anger antalet delar som orsakar en övergång från initial "
+"stapel till körande stapel."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:95
+msgid ""
+"The stacking process will accumulate this number of subs (if available) "
+"before stacking them and will continue in batches of this number before "
+"stacking. If the number of subs available is less than this then the "
+"stacking process runs in order to display the stacked image to the user."
+msgstr ""
+"Staplingsprocessen ackumulerar så många delar (om tillgängliga) innan de "
+"staplas och fortsätter i omgångar av det antalet innan stapling. Om antalet "
+"tillgängliga delar är mindre än det körs staplingsprocessen för att visa den "
+"staplade bilden för användaren."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:101
+msgid ""
+"Once this number of subs is reached, the initial stacking phase completes "
+"and intermediate results are then held in order to more rapidly add new, "
+"incoming subs to the stack."
+msgstr ""
+"När det antalet delar har uppnåtts avslutas den initiala staplingsfasen och "
+"mellanliggande resultat lagras sedan för att snabbare kunna lägga till nya, "
+"inkommande delar på stapeln."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:105
+msgid ""
+"Set this number low to be more efficient with memory usage. However, if you "
+"use sigma clipping (or winsorized sigma clipping) setting this too low can "
+"compromise results."
+msgstr ""
+"Ställ in värde lågt för att använda minnet mer effektivt. Om sigmaklippning "
+"(eller Winsoriserad sigmaklippning) används kan det dock försämra resultaten "
+"om det ställs in för lågt."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:109
+msgid ""
+"Downscale: Options of None, 2x2, 3x3 and 4x4 are available. This options "
+"downscales the subs by the selected factor. For example, if 2x2 is selected "
+"than each group of 2x2 pixels is averaged to a single value per color, "
+"reducing both the image width and height by a factor of 2. So the number of "
+"pixels in each sub is reduced by a factor of 4 which will significantly "
+"speed up processing"
+msgstr ""
+"Skala ner: Alternativen Ingen, 2 x 2, 3 x 3 och 4 x 4 är tillgängliga. "
+"Alternativet skalar ner delarna med den valda faktorn. Om till exempel 2 x 2 "
+"väljs, beräknas varje grupp med 2 x 2 bildpunkter till ett enda värde per "
+"färg, vilket minskar både bildens bredd och höjd med en faktor 2. Så antalet "
+"bildpunkter i varje del minskas med en faktor 4, vilket avsevärt snabbar upp "
+"bearbetningen."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:116
+msgid "Rejection Method:"
+msgstr "Avvisningsmetod:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:118
+msgid "None: No pixels are rejected."
+msgstr "Inga: Inga bildpunkter avvisas."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:120
+msgid ""
+"Sigma Clipping: Sigma Clipping is applied to the first \"In Memory Subs\" to "
+"be processed. Once accumulated, a pixel stack is build for each pixel in the "
+"subs that contains the value of the pixel across all subs. The median and "
+"standard deviation of pixel values is calculated any values lying outside "
+"the thresholds of Low Sigma and High Sigma are excluded as outliers. The "
+"inliers are then used to calculate the stacked image. As new subs arrive "
+"they are checked against the saved pixel statistics to determine whether "
+"they are inliers or outliers and are processed accordingly."
+msgstr ""
+"Sigmaklippning: Sigmaklippning tillämpas på de första \"minnesdelarna\" som "
+"ska bearbetas. När de har ackumulerats byggs en bildpunktsstapel för varje "
+"bildpunkt i delarna som innehåller bildpunktens värde över alla delar. "
+"Median- och standardavvikelsen för bildpunktsvärdena beräknas, alla värden "
+"som ligger utanför tröskelvärdena för låg sigma och hög sigma exkluderas som "
+"extremvärden. De inre värdena används sedan för att beräkna den staplade "
+"bilden. När nya delar anländer kontrolleras de mot den sparade "
+"bildpunktsstatistiken för att avgöra om de är inre värden eller extremvärden "
+"och bearbetas därefter."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:130
+msgid ""
+"Winsorized SC: Similar to Sigma Clipping except where outliers are excluded "
+"in Sigma Clipping, they are set to Low Sigma / High Sigma and included in "
+"the calculation."
+msgstr ""
+"Winsoriserad SK: Liknar Sigmaklippning förutom där extremvärden exkluderas i "
+"Sigmaklippning, ställs de in till Låg sigma / Hög sigma och inkluderas i "
+"beräkningen."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:134
+msgid "Frame Weighting:"
+msgstr "Bildviktning:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:136
+msgid "Equal: All subs are given an equal weight (=1.0)"
+msgstr "Lika: Alla delar ges en likadan vikt (= 1,0)"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:138
+msgid ""
+"HFR: Subs are weighted by 1 / (Av HFR). So the better the sub, the lower the "
+"HFR and the higher the weighting."
+msgstr ""
+"HFR: Delarna viktas med 1 / (HFR-medelvärde). Så ju bättre delen är, desto "
+"lägre HFR och desto högre viktning."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:141
+msgid ""
+"Num Stars: Subs are weighted by Num Stars. So the better the sub, the higher "
+"than number of stars detected and the higher the weighting."
+msgstr ""
+"Antal stjärnor: Delarna viktas efter antal stjärnor. Så ju bättre delarna "
+"är, desto fler stjärnor upptäcks och desto högre viktning."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:145
+msgid ""
+"Low Sigma. This is the number of Standard Deviations on the low side of the "
+"median to clip pixels out. Used by the Sigma Clipping and Winsor SC "
+"Rejection Methods."
+msgstr ""
+"Låg sigma. Det är antalet standardavvikelser på den lägre sidan av medianen "
+"för att klippa bildpunkter. Används av avvikelsemetoderna Sigmaklippning och "
+"Winsor SK."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:149
+msgid ""
+"High Sigma. This is the number of Standard Deviations on the high side of "
+"the median to clip pixels out. Used by the Sigma Clipping and Winsor SC "
+"Rejection Methods."
+msgstr ""
+"Hög sigma. Det är antalet standardavvikelser på den högre sidan av medianen "
+"för att klippa bildpunkter. Används av avvikelsemetoderna Sigmaklippning och "
+"Winsor SK."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:153
+msgid ""
+"Winsor Cutoff. This is the number of Standard Deviations away from the "
+"median to use as cutoff to adjust outlying values before running Sigma "
+"Clipping."
+msgstr ""
+"Winsorgränsvärde: Det är antalet standardavvikelser från medianen som ska "
+"användas som gränsvärde för att justera extremvärden innan Sigmaklippning "
+"utförs."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:157
+msgid "Post Processing Settings:"
+msgstr "Efterbehandlingsinställningar:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:159
+msgid ""
+"These settings are applied to the stacked image to improve its appearance. "
+"There are 3 tools: Deconvolution, Denoising and Sharpening. Typically the "
+"parameters to use must be found through experimentation by the user. By "
+"changing values and hitting the Reprocess Button, the user can adjust values "
+"and rerun the Post Processing without re-running the stacking process."
+msgstr ""
+"Inställningarna tillämpas på den staplade bilden för att förbättra dess "
+"utseende. Det finns tre verktyg: Avfaltning, Brusreducering och Skärpa. "
+"Vanligtvis måste användaren finna de parametrar som ska användas genom "
+"experiment. Genom att ändra värden och trycka på knappen Behandla om kan "
+"användaren justera värden och köra om efterbehandlingen utan att köra om "
+"staplingsprocessen."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:165
+msgid "Deconvolution Settings:"
+msgstr "Avfaltningsinställningar:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:167
+msgid ""
+"Wiener Deconvolution can be applied to the image. The PSF sigma to use must "
+"be specified along with an amount."
+msgstr ""
+"Wiener-avfaltning kan tillämpas på bilden. PSF-sigma som ska användas måste "
+"anges tillsammans med ett värde."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:170
+msgid ""
+"Deconv Amount: This is the amount of the Deconvolved image to blend with the "
+"original stacked image. The range is between 0 (no deconvolution) to 1 (use "
+"only the deconvolved image). Set to 0 to disable Deconvolution."
+msgstr ""
+"Avfaltningsvärde: Det är mängden av den avfaltade bilden som ska blandas med "
+"den ursprungliga staplade bilden. Intervallet är mellan 0 (ingen avfaltning) "
+"och 1 (använd endast den avfaltade bilden). Ställ in till 0 för att "
+"inaktivera avfaltning."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:174
+msgid "PSF Sigma. The PSF Sigma to use in the deconvolution process."
+msgstr "PSF-sigma. PSF-sigma att använda i avfaltningsprocessen."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:176
+msgid "Denoising Settings:"
+msgstr "Brusreduceringsinställningar:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:178
+msgid ""
+"Denoise Amount: The amount of denoising to apply. Higher values denoise "
+"more. Set to 0 to disable denoising."
+msgstr ""
+"Brusreduceringsvärde: Värdet på brusreducering som ska tillämpas. Högre "
+"värden minskar bruset mer. Ställ in till 0 för att inaktivera brusreducering."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:181
+msgid "Sharpening Settings:"
+msgstr "Skärpningsinställningar:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:183
+msgid "A basic Unsharp Mask sharpening algorithm is used."
+msgstr "En grundläggande skärpningsalgoritm Oskarp mask används."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:185
+msgid ""
+"Sharpen Amount: The amount of sharpening to apply. Higher values denoise "
+"more. Set to 0 to disable sharpenoing."
+msgstr ""
+"Skärpningsvärde: Värdet på skärpning som ska tillämpas. Högre värden minskar "
+"bruset mer. Ställ in till 0 för att inaktivera skärpning."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:188
+msgid ""
+"Sharpen Kernal. The size of the kernal used for sharpening in pixels "
+"(usually 5 or 7 works well). Choose an odd integer."
+msgstr ""
+"Skärpningskärna. Storleken på kärnan som används för skärpning i bildpunkter "
+"(vanligtvis fungerar 5 eller 7 bra). Välj ett udda heltal."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:191
+msgid "Sharpen Sigma. The sigma used in the sharpening process."
+msgstr "Skärpningssigma. Sigma som används av skärpningsprocessen."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:193
+msgid "Reprocess:"
+msgstr "Behandla om"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:195
+msgid ""
+"Reprocess Button. Pressing this button reruns the Post Processing "
+"functionality (Deconvolution, Denoising and Sharpening) on the stacked image "
+"using the current values of the Post Processing settings. This means that on "
+"a stacked image the user can adjust settings and re-run, adjust again and re-"
+"run, etc."
+msgstr ""
+"Knappen Behandla om. Genom att trycka på knappen körs "
+"efterbehandlingsfunktionen (avfaltning, brusreducering och skärpa) igen för "
+"den staplade bilden med de aktuella värdena för "
+"efterbehandlingsinställningarna. Det betyder att användaren kan justera "
+"inställningarna för en staplad bild och köra om, justera igen och köra om, "
+"etc."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:203
+msgid "Here are some suggestions for using Live Stacker for the first time:"
+msgstr ""
+"Här är några förslag för att använda realtidsstapling för första gången:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:205
+msgid ""
+"Start in daylight on your imaging computer / setup with some subs you have "
+"already taken during a previous imaging session. If you have say 30 subs "
+"this will be enough to see how Live Stacker performs."
+msgstr ""
+"Börja i dagsljus på bilddatorn / uppsättningen med några delbilder som redan "
+"har tagits under en tidigare bildsession. Om det finns omkring 30 delbilder "
+"räcker det för att se hur realtidsstaplingen presterar."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:209
+msgid ""
+"Select the directory of the subs, and press Start. The default parameters "
+"should be relatively memory efficient but may need tweaking."
+msgstr ""
+"Välj katalogen för delfilerna och tryck på Start. Standardparametrarna bör "
+"vara relativt minneseffektiva men kan behöva justeras."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:212
+msgid ""
+"See how the Memory Widget performs; you want to keep memory usage Green or "
+"at worst Amber intermittently. If you are having issues with performance "
+"and / or memory usage then here are the things to speed things up (start at "
+"the top and work down the list):"
+msgstr ""
+"Se hur minneskomponenten presterar. Man vill hålla minnesanvändningen grön "
+"eller i värsta fall intermittent gul. Om det uppstår problem med prestanda "
+"och/eller minnesanvändning är här några saker som kan påskynda det hela "
+"(börja överst och arbeta neråt i listan):"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:217
+msgid ""
+"Downscale: Usually 2x2 is enough to significantly increase performance with "
+"mono subs. Color subs may need more downscaling."
+msgstr ""
+"Skala ner:  Vanligtvis räcker 2 x 2 för att avsevärt öka prestandan med "
+"svartvita delar. Delar i färg kan behöva mer nedskalning."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:220
+msgid ""
+"In Memory Subs: Decrease this number. It will then hold less subs in memory "
+"at the same time. Note that for Sigma Clipping and Winsorised SC this will "
+"potentially compromise image quality."
+msgstr ""
+"Delbilder i minne: Minska antalet. Det lagrar då färre delbilder i minnet "
+"samtidigt. Observera att för Sigmaklippning och Winsoriserad SK kan det "
+"potentiellt försämra bildkvaliteten."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:224
+msgid ""
+"Calibration Files: Adding a dark and or a flat master will improve image "
+"quality, potentially significantly, but at the cost of extra processing."
+msgstr ""
+"Kalibreringsfiler: Att lägga till en mörk och/eller en plan huvudbild "
+"förbättrar bildkvaliteten, potentiellt avsevärt, men på bekostnad av extra "
+"bearbetning."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:227
+msgid ""
+"Frame Weighting: Equal is the most efficient option. Num Stars requires an "
+"extra step during Plate Solving so will always be slower. HFR requires the "
+"same extra step as Num Stars but also need more computation so is the "
+"slowest option. HFR and Num Stars should, however, yield a better result "
+"than Equal weighting."
+msgstr ""
+"Bildviktning: Lika är det mest effektiva alternativet. Antal stjärnor kräver "
+"ett extra steg under lösning av astrobilder så det är alltid långsammare. "
+"HFR kräver samma extra steg som Antal stjärnor men kräver också mer "
+"beräkning så det är det långsammaste alternativet. HFR och Antal stjärnor "
+"bör dock ge ett bättre resultat än viktningen Lika."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:233
+msgid ""
+"Rejection Method: None is much more efficient than the other options (at the "
+"cost of a potentially better result)."
+msgstr ""
+"Avvisningsmetod: Ingen är mycket effektivare än de andra alternativen (till "
+"bekostnad av ett potentiellt bättre resultat)."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:236
+msgid ""
+"You can rerun the stacking process from scratch by just pressing Start, so "
+"its easy to adjust parameters and rerun."
+msgstr ""
+"Det går att köra om staplingsprocessen från början genom att helt enkelt "
+"trycka på Start, så det är enkelt att justera parametrar och köra om."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:239
+msgid ""
+"Its recommended to switch off Post Processing during early stages and come "
+"back to it later (see below). To do this make sure the Deconv Amount, "
+"Denoise Amount and Sharpen Amount are all set to 0."
+msgstr ""
+"Det rekommenderas att stänga av efterbehandlingen i tidiga skeden och "
+"återkomma till den senare (se nedan). För att göra det, se till att "
+"Avfaltningsvärde, Brusreduceringsvärde och Skärpningsvärde alla är inställda "
+"till 0."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:243
+msgid ""
+"When you have a configuration you are happy with press Save Settings and "
+"this will be the default configuration for subsequent settings."
+msgstr ""
+"När du har en inställning som du är nöjd med, tryck på Spara inställningar "
+"så blir det standardinställningen för efterföljande användning."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:249
+msgid ""
+"When you have the settings for stacking sorted out for your equipment you "
+"may wish to try the Post Processing options. Note that the settings you "
+"choose will be applied every time Live Stacker displays a stack, e.g. when a "
+"new sub is added to the stack. For this reason when you are setting up the "
+"stack it is advisable to turn off Post Processing and then when stacking has "
+"finished, to experiment with it."
+msgstr ""
+"När inställningarna för stapling är avklarade för utrustningen kan "
+"alternativen för efterbehandling provas. Observera att de inställningar som "
+"väljs används varje gång realtidsstapling visar en stapel, t.ex. när en ny "
+"delstapel läggs till i stapeln. Av den anledningen är det lämpligt att "
+"stänga av efterbehandlingen när stapeln ställs in och sedan experimentera "
+"med den när staplingen är klar."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:255
+msgid ""
+"To experiment, set one of the options and press Reprocess. You can then "
+"adjust the parameter and press Reprocess again until you have the optimum "
+"settings."
+msgstr ""
+"För att experimentera, ställ in ett av alternativen och tryck på Behandla "
+"om. Sedan kan parametern justeras och Behandla om användas igen tills de "
+"optimala inställningarna har uppnåtts."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:261
+msgid ""
+"Its possible to run more than 1 Live Stacker to monitor multiple "
+"directories. This would be useful if you are imaging multiple targets or "
+"filters and want to keep an eye on everything without having to reset the "
+"Live Stacker to a new directory periodically."
+msgstr ""
+"Det är möjligt att köra mer än en realtidsstapling för att övervaka flera "
+"kataloger. Det skulle vara användbart om flera mål eller filter avbildas och "
+"man vill hålla ett öga på allt utan att behöva återställa realtidsstaplingen "
+"till en ny katalog regelbundet."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:265
+msgid ""
+"Live Stacker is started by selecting \"Live Stacker...\" from the KStars "
+"Skymap. Selecting \"Live Stacker...\" a second time will launch another Live "
+"Stacker. Depending on how FITS Viewer is configured will determine whether "
+"multiple Live Stacker windows are started (\"Single Window Capture\" "
+"unchecked) or whether multiple tabs within a single Live Stacker window are "
+"started (\"Single Window Capture\" checked)."
+msgstr ""
+"Realtidsstapling startas genom att välja \"Realtidsstapling...\" från Kstars "
+"himmelskarta. Om \"Realtidsstapling...\" väljs en andra gång startas en "
+"annan realtidsstapling. Beroende på hur FITS-visningen är inställd bestäms "
+"om flera fönster med realtidsstapling startas (\"Tagna i ett enda fönster\" "
+"avmarkerat) eller om flera flikar inom ett enda fönster med realtidsstapling "
+"startas (\"Tagna i ett enda fönster\" markerat)."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:271
+msgid "|FITS Viewer Live Stacker Options|"
+msgstr "|FITS-visningens alternativ för realtidsstapling|"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:273
+msgid ""
+"By default the tab name for Live Stacker is \"(n) DirectoryPath\" where n is "
+"the number of subs in DirectoryPath. Right click on tabname to change the "
+"name to whatever you like. This is particularly useful when runing multiple "
+"instances of Live Stacker as separate tabs."
+msgstr ""
+"Normalt är fliknamnet för realtidsstapling \"(n) katalogsökväg\" där n är "
+"antalet delar i katalogsökvägen. Högerklicka på fliknamnet för att ändra "
+"namnet till vad som helst. Det är särskilt användbart när flera instanser av "
+"realtidsstapling körs som separata flikar."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:278
+msgid ""
+"The \"Live Stacker own process\" option allows Live Stacker to be started as "
+"a separate process. When \"Live Stacker own process\" is unchecked, Live "
+"Stacker resides in the KStars / Ekos process space. The advantage of running "
+"Live Stacker as its own process is that if it crashes it will not disturb "
+"other KStars / Ekos functionality."
+msgstr ""
+"Alternativet \"Realtidsstapling egen process\" gör att realtidsstapling kan "
+"startas som en separat process. När \"Realtidsstapling egen process\" inte "
+"är markerat, finns realtidsstapling i Kstars/Ekos processutrymme. Fördelen "
+"med att köra realtidsstapling som en egen process är att om den kraschar "
+"kommer den inte att störa annan funktionalitet i KStars/Ekos."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:286
+msgid ""
+"Live Stacker is integrated into FITSViewer. This means that existing "
+"FITSViewer functionality can be applied to stacked images displayed in Live "
+"Stacker. For example:"
+msgstr ""
+"Realtidsstapling är integrerad i FITS-visningen. Det betyder att befintlig "
+"funktionalitet i FITS-visningen kan användas för staplade bilder som visas i "
+"realtidsstaplingen. Till exempel:"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:289
+msgid "Saving image stacks to disk."
+msgstr "Spara bildstaplar på disken."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:290
+msgid "Re-opening a saved stacked image."
+msgstr "Öppna en sparad staplad bild igen."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:291
+msgid "Using blink functionality alongside stacking."
+msgstr "Använda blinkningsfunktionalitet tillsammans med stapling."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:292
+msgid "Zooming in / out."
+msgstr "Zooma in och ut."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:293
+msgid "Rotating the image"
+msgstr "Rotera bilden"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:294
+msgid "Marking stars / highlighting clipped stars"
+msgstr "Markering av stjärnor / färgläggning av klippning"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:295
+msgid ""
+"Plate solving the stacked image, although by default the stacking process "
+"will have already plate solved it."
+msgstr ""
+"Lösning av astrobilder för den staplade bilden, även om staplingsprocessen "
+"normalt redan har lösning av astrobilder."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:297
+msgid "Stretch / Histogram adjustments"
+msgstr "Sträckning / histogramjusteringar"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:298
+msgid "Viewing image statistics / FITS Header keywords"
+msgstr "Visa bildstatistik / FITS-huvudnyckelord"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:299
+msgid "Viewing Catalog objects (e.g. Simbad objects)"
+msgstr "Visa katalogobjekt (t.ex. Simbad-objekt)"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:304
+msgid ""
+"The pre-requisites for Live Stacker are that KStars is built with WCS, "
+"CFITIO and OpenCV. If any of these components is not present, the Live "
+"Stacker menu item in the SkyMap will not be visible and Live Stacker will be "
+"disabled."
+msgstr ""
+"Förutsättningarna för realtidsstapling är att Kstars är byggt med WCS, "
+"CFITIO och OpenCV. Om någon av komponenter inte finns, syns inte "
+"menyalternativet Realtidsstapling i himmelskartan och Realtidsstapling "
+"inaktiveras."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:308
+msgid ""
+"Subframes need to have WCS FITS Keywords. These are added by the Indi driver "
+"when WCS is enabled. Also, on the FITS options tab in Ekos, AutoWCS should "
+"be enabled."
+msgstr ""
+"Delbilder måste ha FITS-nyckelord för världskoordinatdata. De läggs till av "
+"Indi-drivrutinen när världskoordinatdata är aktiverat. Automatiskt "
+"världskoordinatsystem bör också vara aktiverat under fliken FITS-alternativ "
+"i Ekos."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:311
+msgid ""
+"Live Stacker makes use of KStars internal Plate Solving so it is crucial "
+"that this is setup to work correctly. Plate Solving in KStars is flexible "
+"and functions like Align and Guide have their own Plate Solving SEP "
+"profiles. Live Stacker uses the FITSViewer Plate Solving functionality and "
+"default profile, so this is the profile to check if you have issues. Go to "
+"the Plate Solve tab in FITSViewer and see which default SEP profile you are "
+"using. Choose a different one if that works for you. Make sure you can "
+"reliably plate solve subframes with your chosen SEP profile. See the Fits "
+"Viewer Solver section of this manual for more information."
+msgstr ""
+"Realtidsstapling använder Kstars interna lösning av astrobilder, så det är "
+"avgörande att den är inställd att fungera korrekt. Lösning av astrobilder i "
+"Kstars är flexibel och funktioner som Inriktning och Guidning har sina egna "
+"SEP-profiler. Realtidsstapling använder FITS-visningens funktion för lösning "
+"av astrobilder och standardprofilen, så det är profilen att undersöka vid "
+"problem. Gå till fliken Analys av astrobilder i FITS-visningen och se vilken "
+"SEP-profil som används. Välj en annan om det fungerar. Se till att det går "
+"att lösa delbilder tillförlitligt med den valda SEP-profilen. Se avsnittet "
+"om FITS-visningens lösningsverktyg i handboken för mer information."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:322
+msgid ".. image:: /images/fitsviewer-livestacker.png"
+msgstr ".. image:: /images/fitsviewer-livestacker.png"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:323
+msgid "FITS Viewer Live Stacker Options"
+msgstr "FITS-visningens alternativ för realtidsstapling"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:323
+msgid ".. image:: /images/fitsviewer-livestacker-options.png"
+msgstr ".. image:: /images/fitsviewer-livestacker-options.png"
