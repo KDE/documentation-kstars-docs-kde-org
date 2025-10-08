@@ -28,6 +28,9 @@ FITS Viewer Live Stacker
          Dark and Flat master files may optionally be specified to improve image
          quality.
 
+         Each section of the Live Stacker input / output widgets are enclosed within a
+         minimize widget that allows the block to be either expanded or minimized.
+
          Following is a description of the UI widgets:
 
             -  Stack Directory: This is the directory that Live Stacker will watch.
@@ -42,10 +45,15 @@ FITS Viewer Live Stacker
                Processed successfully, Failed and the Total. The Total is the
                number of subs in the directory.
 
-            -  Start Button: Runs the stacking proecess on any subs in Stack
-               Directory and watches the directory for new subs. Press this
-               button at any time to re-stack and watch the Stack Directory. The
-               button changes to Cancel when an initial stack is running.
+            -  Start Button: This button has 3 states:
+               - "Start": Pressing the button runs the stacking process on any subs in Stack
+                 Directory and watches the directory for new subs. Button text changes
+                 to "Stop".
+               - "Stop": Pressing the button stops watching the directory and cancels
+                 any in-flight stacking operation. Button text changes to "Cancelling...".
+               - "Cancelling...": Button cannot be pressed. When the cancel operation
+                 completes, the button text resets to "Start" and the user can start
+                 another stacking process.
 
             -  SNR Av / Min / Max: Output statistics of the subs processed so
                far. Average SNR / Minimum SNR / Maximum SNR.
@@ -118,7 +126,7 @@ FITS Viewer Live Stacker
                 -  None: No pixels are rejected.
 
                 -  Sigma Clipping: Sigma Clipping is applied to the first "In Memory
-                   Subs" to be processed. Once accumulated, a pixel stack is build for
+                   Subs" to be processed. Once accumulated, a pixel stack is built for
                    each pixel in the subs that contains the value of the pixel across
                    all subs. The median and standard deviation of pixel values is
                    calculated any values lying outside the thresholds of Low Sigma and
@@ -156,6 +164,11 @@ FITS Viewer Live Stacker
 
             Post Processing Settings:
 
+            Post processing options can be turned on / off with the associated minimize
+            widget checkbox. The system temporarily turns off post processing during the
+            initial stacking phase to speed up processing. Thereafter, control is with the
+            user.
+
             These settings are applied to the stacked image to improve its appearance.
             There are 3 tools: Deconvolution, Denoising and Sharpening. Typically the
             parameters to use must be found through experimentation by the user. By changing
@@ -183,7 +196,7 @@ FITS Viewer Live Stacker
             A basic Unsharp Mask sharpening algorithm is used.
 
             -  Sharpen Amount: The amount of sharpening to apply. Higher values denoise more.
-               Set to 0 to disable sharpenoing.
+               Set to 0 to disable sharpening.
 
             -  Sharpen Kernal. The size of the kernal used for sharpening in pixels (usually
                5 or 7 works well). Choose an odd integer.
@@ -226,7 +239,7 @@ FITS Viewer Live Stacker
 
                 -  Frame Weighting: Equal is the most efficient option. Num Stars requires an extra
                    step during Plate Solving so will always be slower. HFR requires the same
-                   extra step as Num Stars but also need more computation so is the slowest
+                   extra step as Num Stars but also needs more computation so is the slowest
                    option. HFR and Num Stars should, however, yield a better result than Equal
                    weighting.
 
@@ -236,7 +249,7 @@ FITS Viewer Live Stacker
             -  You can rerun the stacking process from scratch by just pressing Start, so its easy
                to adjust parameters and rerun.
 
-            -  Its recommended to switch off Post Processing during early stages and come back to
+            -  It's recommended to switch off Post Processing during early stages and come back to
                it later (see below). To do this make sure the Deconv Amount, Denoise Amount and
                Sharpen Amount are all set to 0.
 
@@ -258,7 +271,7 @@ FITS Viewer Live Stacker
          Running Live Stackers
          =====================
 
-         Its possible to run more than 1 Live Stacker to monitor multiple directories. This would
+         It's possible to run more than 1 Live Stacker to monitor multiple directories. This would
          be useful if you are imaging multiple targets or filters and want to keep an eye on
          everything without having to reset the Live Stacker to a new directory periodically.
 
