@@ -3,7 +3,7 @@
 #
 # Lisiane Sztoltz <lisiane@conectiva.com.br>, 2002, 2003.
 # Antonio Sergio de Mello e Souza <asergioz@bol.com.br>, 2004.
-# Marcus Gama <marcus_gama@uol.com.br>, 2004.
+# SPDX-FileCopyrightText: 2004, 2025 Marcus Gama <marcus_gama@uol.com.br>
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2008, 2009.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2011, 2012, 2014.
 # Marcus Gama <marcus.gama@gmail.com>, 2011.
@@ -13,27 +13,23 @@ msgstr ""
 "Project-Id-Version: kstars_config\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-14 01:58+0000\n"
-"PO-Revision-Date: 2019-05-12 16:26-0300\n"
-"Last-Translator: Bianca Oliveira <kbiancasol@gmail.com>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"PO-Revision-Date: 2025-10-09 12:54-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: ../../user_manual/imageOverlays.rst:3
-#, fuzzy
-#| msgid "<title>Catalogs</title>"
 msgid "Image Overlays"
-msgstr "<title>Catálogos</title>"
+msgstr "Sobreposições de imagem"
 
 #: ../../user_manual/imageOverlays.rst:5
-#, fuzzy
-#| msgid "<phrase>Configure &kstars; Window</phrase>"
 msgid "|Image Overlays on SkyMap|"
-msgstr "<phrase>Janela configurar o &kstars;</phrase>"
+msgstr "|Image Overlays on SkyMap|"
 
 #: ../../user_manual/imageOverlays.rst:7
 msgid ""
@@ -43,12 +39,16 @@ msgid ""
 "configured properly, these personal images can be displayed almost perfectly "
 "aligned with other objects in the sky."
 msgstr ""
+"Sobreposições de imagens são imagens personalizadas (normalmente ``.jpg``) "
+"que são renderizadas no mapa celeste sobre estrelas e outros itens do mapa "
+"celeste, mas abaixo do terreno. Essas imagens são adicionadas por você, o "
+"usuário, como uma espécie de catálogo pessoal do céu. Se configuradas "
+"corretamente, essas imagens personalizadas podem ser exibidas quase "
+"perfeitamente alinhadas com outros objetos no céu."
 
 #: ../../user_manual/imageOverlays.rst:14
-#, fuzzy
-#| msgid "<phrase>Configure &kstars; Window</phrase>"
 msgid "|Image Overlays Window|"
-msgstr "<phrase>Janela configurar o &kstars;</phrase>"
+msgstr "|Image Overlays Window|"
 
 #: ../../user_manual/imageOverlays.rst:16
 msgid ""
@@ -57,6 +57,10 @@ msgid ""
 "the start of this section shows the skymap with image overlays enabled and "
 "some image overlays loaded."
 msgstr ""
+"A página ``Sobreposições de Imagens`` permite configurar se as sobreposições "
+"de imagens serão exibidas no mapa celeste e ajuda a adicioná-las ao sistema. "
+"A imagem no início desta seção mostra o mapa celeste com sobreposições de "
+"imagens habilitadas e algumas sobreposições de imagens carregadas."
 
 #: ../../user_manual/imageOverlays.rst:22
 msgid ""
@@ -72,6 +76,18 @@ msgid ""
 "restart KStars. To remove overlays, remove them from the directory and click "
 "the refresh button or restart KStars."
 msgstr ""
+"Cada vez que é inicializado, o KStars procura novas imagens de sobreposição "
+"em uma pasta especial, paralela à pasta de logs, chamada ``imageOverlays``. "
+"No Linux, ela pode ser encontrado em ``~/.local/share/kstars/"
+"imageOverlays``. O local exato do seu sistema pode ser encontrado clicando "
+"no botão ``Pasta de sobreposições`` próximo ao topo da página de "
+"configuração ``Sobreposições de imagens`` mostrada no topo desta seção. Para "
+"começar, adicione suas imagens a essa pasta. O ideal é que, por questões de "
+"desempenho, esses arquivos não sejam muito grandes, mas provavelmente "
+"imagens com larguras de 1000 ou 2000 devem ser suficientes. Para adicionar "
+"imagens adicionais no futuro, adicione-as à mesma pasta e clique no botão de "
+"atualização ou reinicie o KStars. Para remover sobreposições, remova-as da "
+"pasta e clique no botão de atualização ou reinicie o KStars."
 
 #: ../../user_manual/imageOverlays.rst:36
 msgid ""
@@ -84,6 +100,14 @@ msgid ""
 "status to ``OK`` you need to plate-solve the images or add the required "
 "information manually--see below."
 msgstr ""
+"Inicie o KStars assim que tiver imagens na pasta ``imageOverlays``. Se você "
+"então acessar a página de configuração de ``Sobreposições de imagem``, "
+"deverá ver os novos arquivos listados na tabela. As novas imagens exibirão "
+"seu status como ``Não processado``. Somente imagens com status ``OK`` serão "
+"exibidas no mapa celeste. Isso ocorre porque o KStars precisa saber a "
+"localização, o tamanho e a orientação do céu para essas imagens antes de "
+"poder exibi-las. Para alterar o status para ``OK``, você precisa resolver as "
+"imagens ou adicionar as informações necessárias manualmente -- veja abaixo."
 
 #: ../../user_manual/imageOverlays.rst:46
 msgid ""
@@ -105,6 +129,24 @@ msgid ""
 "click ``Solve``). It is possible that if you select several images, a few of "
 "them will not be successfully solved."
 msgstr ""
+"Para preparar suas imagens para exibição, você precisa resolver as imagens "
+"em placas (apenas uma vez). Para isso, encontre uma imagem na tabela, clique "
+"em seu nome de arquivo e, em seguida, clique em ``Resolver`` abaixo da "
+"tabela. O rótulo do botão ``Resolver`` deve mudar para ``Cancelar`` durante "
+"a resolução e, quando concluída com sucesso, os parâmetros resolvidos são "
+"exibidos na tabela e o status é alterado para ``OK``. As informações de uma "
+"resolução de placa bem-sucedida são armazenadas no banco de dados do usuário "
+"para que a resolução não precise ser repetida. A imagem resolvida deve, a "
+"partir de então, aparecer em sua posição correta no mapa celeste. Você pode "
+"resolver várias imagens em placas em uma única operação clicando no nome do "
+"arquivo da primeira imagem, mantendo pressionada a tecla **Shift** e "
+"clicando em outro nome de arquivo. Todos os arquivos de imagem entre os "
+"nomes de arquivo devem ser selecionados. Ao clicar em ``Resolver``, você "
+"tentará resolver todas elas. No entanto, o KStars não tentará resolver "
+"imagens com status ``OK``, ele ignorará essas imagens. (Se desejar resolver "
+"novamente as imagens com status ``OK``, altere manualmente o status delas "
+"para ``Não processado`` e clique em ``Resolver``). É possível que, se você "
+"selecionar várias imagens, algumas delas não sejam resolvidas com sucesso."
 
 #: ../../user_manual/imageOverlays.rst:67
 msgid ""
@@ -121,6 +163,19 @@ msgid ""
 "be edited in Ekos' ``Align`` tab). Finally, you can adjust the solver's "
 "``Timeout`` in seconds."
 msgstr ""
+"A resolução de placas dessas imagens pode, às vezes, ser difícil. Isso "
+"ocorre porque, neste ponto, o sistema não tem informações sobre a escala ou "
+"posição a ser observada e, portanto, é uma resolução às cegas. Para aumentar "
+"suas chances de sucesso, você pode inserir uma posição aproximada ``AR/DEC`` "
+"do centro do céu nas colunas AR e DEC para a linha que está tentando "
+"resolver. Você também pode adicionar uma escala de imagem, em segundos de "
+"arco por pixel. Você pode adicionar uma escala padrão à direita do botão "
+"``Resolver`` na caixa ``Padrão a-s/px`` para que todas as tentativas de "
+"resolução usem essa escala por padrão. Você também pode adicionar uma escala "
+"diretamente na tabela-linha-coluna, o que substituiria o padrão. Você pode "
+"escolher qual perfil do StellarSolver o solucionador usará (esses perfis "
+"podem ser editados na aba ``Alinhar`` do Ekos). Por fim, você pode ajustar o "
+"``Tempo limite`` do solucionador em segundos."
 
 #: ../../user_manual/imageOverlays.rst:82
 msgid ""
@@ -131,6 +186,13 @@ msgid ""
 "you can then change the status to ``OK`` and KStars will save these values "
 "to the user database as if they had been automatically solved."
 msgstr ""
+"Se você tiver imagens problemáticas que não forem resolvidas, ainda poderá "
+"exibi-las inserindo manualmente os valores (que o solucionador não "
+"encontrou) na tabela. São eles: AR, DEC, segundo de arco por pixel, ângulo "
+"de orientação e configurações de leste para a direita (ou oeste para a "
+"direita). Depois de fazer isso, você pode alterar o status para ``OK`` e o "
+"KStars salvará esses valores no banco de dados do usuário como se tivessem "
+"sido resolvidos automaticamente."
 
 #: ../../user_manual/imageOverlays.rst:91
 msgid ""
@@ -139,6 +201,10 @@ msgid ""
 "this feature--that is, toggles whether any image overlays are display on the "
 "SkyMap or not."
 msgstr ""
+"Há mais alguns controles na página de configurações ``Sobreposições de "
+"imagem``. A caixa de seleção ``Mostrar sobreposições de imagem`` na parte "
+"superior da página ativa ou desativa este recurso, ou seja, alterna se "
+"alguma sobreposição de imagem será exibida no mapa celeste ou não."
 
 #: ../../user_manual/imageOverlays.rst:96
 msgid ""
@@ -150,6 +216,13 @@ msgid ""
 "the memory footprint and cpu usage of this feature. It would be more "
 "efficient to add image files with the desired image width."
 msgstr ""
+"A caixa de rotação ``Dimensão máxima da imagem`` permite variar a dimensão "
+"máxima usada para imagens. Ou seja, se você colocar imagens com, por "
+"exemplo, 5000 pixels de largura na pasta ``imageOverlays``, mas o valor "
+"desta caixa de entrada for 1000, as imagens de 5000 pixels serão lidas, mas "
+"em seguida, reduzidas para 1000 pixels de largura antes da exibição. Isso é "
+"feito para reduzir o consumo de memória e o uso da CPU deste recurso. Seria "
+"mais eficiente adicionar arquivos de imagem com a largura de imagem desejada."
 
 #: ../../user_manual/imageOverlays.rst:106
 msgid ""
@@ -160,26 +233,29 @@ msgid ""
 "is OK. At that point you can move from one image to the next with ``Up`` and "
 "``Down`` arrow keyboard commands."
 msgstr ""
+"A caixa de seleção ``Centralizar mapa celeste ao selecionar`` permite "
+"navegar facilmente até as imagens de sobreposição sem manipular diretamente "
+"o mapa celeste. Com isso habilitado, você seleciona uma linha na tabela de "
+"sobreposição (ou seja, clicando no campo nome do arquivo) e o mapa celeste é "
+"movido para essa imagem se o status da imagem for OK. Nesse ponto, você pode "
+"mover de uma imagem para a próxima com os comandos de teclado ``Para cima`` "
+"e ``Para baixo``."
 
 #: ../../user_manual/imageOverlays.rst:114
-#, fuzzy
-#| msgid "<phrase>Configure &kstars; Window</phrase>"
 msgid "Image Overlays on SkyMap"
-msgstr "<phrase>Janela configurar o &kstars;</phrase>"
+msgstr "Image Overlays on SkyMap"
 
 #: ../../user_manual/imageOverlays.rst:114
 msgid ".. image:: /images/imageOverlays2.png"
-msgstr ""
+msgstr ".. image:: /images/imageOverlays2.png"
 
 #: ../../user_manual/imageOverlays.rst:115
-#, fuzzy
-#| msgid "<phrase>Configure &kstars; Window</phrase>"
 msgid "Image Overlays Window"
-msgstr "<phrase>Janela configurar o &kstars;</phrase>"
+msgstr "Image Overlays Window"
 
 #: ../../user_manual/imageOverlays.rst:115
 msgid ".. image:: /images/imageOverlays1.png"
-msgstr ""
+msgstr ".. image:: /images/imageOverlays1.png"
 
 #~ msgid "Configuring &kstars;"
 #~ msgstr "Configurando o &kstars;"
