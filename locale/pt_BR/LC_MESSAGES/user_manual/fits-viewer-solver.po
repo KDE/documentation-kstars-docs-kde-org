@@ -4,35 +4,31 @@
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2008, 2009.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2011, 2015.
-# Marcus Gama <marcus.gama@gmail.com>, 2011.
+# SPDX-FileCopyrightText: 2011, 2025 Marcus Gama <marcus.gama@gmail.com>
 # Bianca Oliveira <kbiancasol@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: kstars_fitsviewer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-14 01:58+0000\n"
-"PO-Revision-Date: 2019-05-07 09:40-0300\n"
-"Last-Translator: Bianca Oliveira <kbiancasol@gmail.com>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"PO-Revision-Date: 2025-10-10 12:09-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: ../../user_manual/fits-viewer-solver.rst:3
 #: ../../user_manual/fits-viewer-solver.rst:92
-#, fuzzy
-#| msgid "FITS Viewer Tool"
 msgid "FITS Viewer Solver"
-msgstr "Ferramenta visualizador FITS"
+msgstr "Resolvedor do visualizador FITS"
 
 #: ../../user_manual/fits-viewer-solver.rst:5
-#, fuzzy
-#| msgid "FITS Viewer Tool"
 msgid "|FITS Viewer Solver|"
-msgstr "Ferramenta visualizador FITS"
+msgstr "|FITS Viewer Solver|"
 
 #: ../../user_manual/fits-viewer-solver.rst:7
 msgid ""
@@ -44,12 +40,21 @@ msgid ""
 "displayed can be generally useful. The controls and displays are described "
 "below."
 msgstr ""
+"O Resolvedor do visualizador FITS é usado para resolver a placa da imagem "
+"carregada na aba do Visualizador FITS. Ele funciona apenas com o "
+"StellarSolver interno. Você obtém as coordenadas AR e DEC para o centro da "
+"imagem, a escala da imagem, o ângulo de rotação e o número de estrelas "
+"detectadas na imagem. Seu principal caso de uso é a depuração de problemas "
+"de resolução de placas no Ekos, embora as informações exibidas possam ser "
+"úteis em geral. Os controles e exibições são descritos abaixo."
 
 #: ../../user_manual/fits-viewer-solver.rst:16
 msgid ""
 "Solve Button. Pressing this button starts plate solving. When the system is "
 "plate solving, the button becomes an abort button."
 msgstr ""
+"Botão Resolver. Pressionar este botão inicia a resolução de placas. Quando o "
+"sistema está resolvendo placas, o botão se torna um botão de cancelar."
 
 #: ../../user_manual/fits-viewer-solver.rst:20
 msgid ""
@@ -60,6 +65,12 @@ msgid ""
 "successfully completes, it replaces the value in the box with solution's "
 "scale."
 msgstr ""
+"Escala: Marcar a caixa de seleção para usar escala restringe o solucionador "
+"a usar aproximadamente a escala de pixel ou imagem fornecida. A escala é "
+"inserida na caixa e as unidades para a escala podem ser escolhidas entre "
+"largura da imagem em graus, largura da imagem em minutos de arco e segundos "
+"de arco por pixel. Quando uma solução é concluída com sucesso, ela substitui "
+"o valor na caixa pela escala da solução."
 
 #: ../../user_manual/fits-viewer-solver.rst:28
 msgid ""
@@ -71,12 +82,23 @@ msgid ""
 "DEC boxes with solution's coordinates. In addition it fills in the Angle "
 "field with the solutions angle value in degrees."
 msgstr ""
+"Posição: Marcar a caixa de seleção para usar posição restringe o "
+"solucionador a pesquisar próximo às coordenadas AR e DEC fornecidas. A "
+"extensão da pesquisa é fornecida pelo usuário na caixa de raio em graus. "
+"Observe que AR é inserido em horas-minutos-segundos, por exemplo, 13h, e DEC "
+"é inserido em graus-minutos-segundos, por exemplo, 85. Quando uma resolução "
+"é concluída com sucesso, ela substitui o valor nas caixas AR e DEC pelas "
+"coordenadas da solução. Além disso, ela preenche o campo Ângulo com o valor "
+"do ângulo da solução em graus."
 
 #: ../../user_manual/fits-viewer-solver.rst:39
 msgid ""
 "Use SkyMap Position: There is a button just below the Use Position checkbox "
 "that fills in RA and DEC boxes with the current center of the SkyMap display."
 msgstr ""
+"Usar posição do mapa celeste: Há um botão logo abaixo da caixa de seleção "
+"para usar posição que preenche as caixas AR e DEC com o centro atual da "
+"exibição do mapa celeste."
 
 #: ../../user_manual/fits-viewer-solver.rst:43
 msgid ""
@@ -84,6 +106,9 @@ msgid ""
 "used in the Ekos Align module, should be used for plate solving. This is "
 "further discussed below."
 msgstr ""
+"Perfil: O menu Perfil seleciona qual predefinição do StellarSolver, entre "
+"aquelas usadas no módulo de alinhamento do Ekos, deve ser usada para a "
+"resolução de placas. Isso será discutido com mais detalhes abaixo."
 
 #: ../../user_manual/fits-viewer-solver.rst:48
 msgid ""
@@ -91,6 +116,9 @@ msgid ""
 "the time taken to solve. The solution values for RA, DEC, Scale and Angle "
 "are displayed in those boxes above."
 msgstr ""
+"Solução: A seção Solução exibirá o número de estrelas encontradas e o tempo "
+"necessário para a solução. Os valores da solução para AR, DEC, Escala e "
+"Ângulo são exibidos nas caixas acima."
 
 #: ../../user_manual/fits-viewer-solver.rst:53
 msgid ""
@@ -98,33 +126,41 @@ msgid ""
 "activated above the image display, then the detected stars are circled in "
 "red."
 msgstr ""
+"Imagem: Para qualquer imagem onde estrelas foram detectadas, se o botão "
+"Marcar Estrelas estiver ativado acima da exibição da imagem, as estrelas "
+"detectadas serão circuladas em vermelho."
 
 #: ../../user_manual/fits-viewer-solver.rst:57
-#, fuzzy
-#| msgid "<phrase>FITS Settings</phrase>"
 msgid "|FITS Viewer Mark Stars Button|"
-msgstr "<phrase>Configurações FITS</phrase>"
+msgstr "|FITS Viewer Mark Stars Button|"
 
 #: ../../user_manual/fits-viewer-solver.rst:59
 msgid "Using this tool the user can try and debug solving issues as follows."
 msgstr ""
+"Usando esta ferramenta, o usuário pode tentar depurar e resolver problemas "
+"da seguinte forma."
 
 #: ../../user_manual/fits-viewer-solver.rst:62
 msgid ""
 "He/she might have the KStars -> Settings -> Developer -> :doc:`Save Failed "
 "Align Images checkbox <developer>` enabled."
 msgstr ""
+"Ele/ela pode ter a opção KStars -> Configurações -> Desenvolvedor -> :doc:"
+"`Falha ao salvar caixa de seleção de alinhar imagens <developer>` habilitada."
 
 #: ../../user_manual/fits-viewer-solver.rst:66
 msgid ""
 "Then a difficult image (for whom alignment failed) :doc:`could be located "
 "<developer>` and loaded into the fitsviewer."
 msgstr ""
+"Então, uma imagem difícil (para a qual o alinhamento falhou) :doc:`poderia "
+"ser localizada <developer>` e carregada no visualizador FITS."
 
 #: ../../user_manual/fits-viewer-solver.rst:70
 msgid ""
 "The image could be inspected to see if there were obvious visual issues."
 msgstr ""
+"A imagem pode ser inspecionada para verificar se há problemas visuais óbvios."
 
 #: ../../user_manual/fits-viewer-solver.rst:73
 msgid ""
@@ -132,12 +168,19 @@ msgid ""
 "detected, and the user could then decide if it is a star detection issue and "
 "experiment with adjusting the profile or star-detection parameters."
 msgstr ""
+"Clicar em Resolver nesta ferramenta para aquela imagem mostraria quantas "
+"estrelas foram detectadas, e o usuário poderia então decidir se é um "
+"problema de detecção de estrelas e experimentar o ajuste do perfil ou dos "
+"parâmetros de detecção de estrelas."
 
 #: ../../user_manual/fits-viewer-solver.rst:78
 msgid ""
 "The user could manually upload the image to astrometry.net to get scale and "
 "position values (or just see if it is a problematic image)."
 msgstr ""
+"O usuário pode carregar manualmente a imagem no astrometry.net para obter "
+"valores de escala e posição (ou apenas verificar se é uma imagem "
+"problemática)."
 
 #: ../../user_manual/fits-viewer-solver.rst:82
 msgid ""
@@ -145,6 +188,10 @@ msgid ""
 "values for those constraints (or disabling them) to see if those were the "
 "problem, or adjust the parameters in the align profile being used."
 msgstr ""
+"O usuário pode experimentar Usar Posição e Usar Escala, usando valores "
+"precisos para essas restrições (ou desativando-as) para ver se elas eram o "
+"problema, ou ajustar os parâmetros no perfil de alinhamento que está sendo "
+"usado."
 
 #: ../../user_manual/fits-viewer-solver.rst:87
 msgid ""
@@ -153,20 +200,22 @@ msgid ""
 "right Options profile is selected, and click the pencil to view or edit that "
 "profile."
 msgstr ""
+"Para inspecionar ou modificar o perfil, o usuário deve abrir a aba de "
+"alinhamento no Ekos, ir ao menu Opções, selecionar a aba Opções do "
+"StellarSolver, certificar-se de que o perfil Opções correto esteja "
+"selecionado e clicar no lápis para visualizar ou editar esse perfil."
 
 #: ../../user_manual/fits-viewer-solver.rst:92
 msgid ".. image:: /images/fitsviewer-solver.png"
-msgstr ""
+msgstr ".. image:: /images/fitsviewer-solver.png"
 
 #: ../../user_manual/fits-viewer-solver.rst:93
-#, fuzzy
-#| msgid "<phrase>FITS Settings</phrase>"
 msgid "FITS Viewer Mark Stars Button"
-msgstr "<phrase>Configurações FITS</phrase>"
+msgstr "FITS Viewer Mark Stars Button"
 
 #: ../../user_manual/fits-viewer-solver.rst:93
 msgid ".. image:: /images/fitsviewer-mark-stars.png"
-msgstr ""
+msgstr ".. image:: /images/fitsviewer-mark-stars.png"
 
 #, fuzzy
 #~| msgid "<acronym>FITS</acronym> Viewer Tool"
