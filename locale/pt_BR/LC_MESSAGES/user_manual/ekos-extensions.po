@@ -1,0 +1,231 @@
+# Copyright (C) licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
+# This file is distributed under the same license as the KStars Handbook package.
+#
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: KStars Handbook 3.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-09 00:05+0200\n"
+"PO-Revision-Date: 2025-10-18 08:55-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 25.08.2\n"
+
+#: ../../user_manual/ekos-extensions.rst:3
+msgid "Extensions"
+msgstr "Extensões"
+
+#: ../../user_manual/ekos-extensions.rst:8
+msgid "Introduction"
+msgstr "Introdução"
+
+#: ../../user_manual/ekos-extensions.rst:10
+msgid ""
+"Extensions are small programs that can be added to interact with Kstars/Ekos/"
+"INDI in order to provide extra functions and features."
+msgstr ""
+"Extensões são pequenos programas que podem ser adicionados para interagir "
+"com Kstars/Ekos/INDI a fim de fornecer funções e recursos extras."
+
+#: ../../user_manual/ekos-extensions.rst:14
+msgid ""
+"Extensions are separate from Kstars/Ekos/INDI. They are not provided as part "
+"of this software. Only a means to call them is provided for convenience. "
+"Make sure that you understand the requirements and risks of using an "
+"extension."
+msgstr ""
+"As extensões são independentes do Kstars/Ekos/INDI. Elas não são fornecidas "
+"como parte deste software. Para sua conveniência, apenas um meio de contatá-"
+"las é fornecido. Certifique-se de compreender os requisitos e riscos do uso "
+"de uma extensão."
+
+#: ../../user_manual/ekos-extensions.rst:19
+msgid "Requirements"
+msgstr "Requisitos"
+
+#: ../../user_manual/ekos-extensions.rst:21
+msgid ""
+"Each extension must consist of at least 2 files, with an optional third icon "
+"file."
+msgstr ""
+"Cada extensão deve consistir em pelo menos 2 arquivos, com um terceiro "
+"arquivo de ícone opcional."
+
+#: ../../user_manual/ekos-extensions.rst:23
+msgid ""
+"The program file. This is any executable file that will run on the users "
+"system. The user under which KStars is running must have execute permission "
+"on this file."
+msgstr ""
+"O arquivo de programa. Este é qualquer arquivo executável que será executado "
+"no sistema do usuário. O usuário sob o qual o KStars está sendo executado "
+"deve ter permissão de execução neste arquivo."
+
+#: ../../user_manual/ekos-extensions.rst:25
+msgid ""
+"The configuration file. This is a plain text file that defines the required "
+"and optional inputs for the extension. It must be named the same as the "
+"extension executable with the addition of a .conf file name extension."
+msgstr ""
+"O arquivo de configuração. Este é um arquivo de texto simples que define as "
+"entradas obrigatórias e opcionais para a extensão. Ele deve ter o mesmo nome "
+"do executável da extensão, com a adição da extensão de nome de arquivo .conf."
+
+#: ../../user_manual/ekos-extensions.rst:27
+msgid ""
+"It is mandatory that the configuration file contains a line starting with "
+"**minimum_kstars_version=n.n.n** where n.n.n is the lowest version of KStars "
+"that supports the extension e.g. 3.7.3"
+msgstr ""
+"É obrigatório que o arquivo de configuração contenha uma linha começando com "
+"**minimum_kstars_version=n.n.n** onde n.n.n é a versão mais baixa do KStars "
+"que suporta a extensão, por exemplo, 3.7.3"
+
+#: ../../user_manual/ekos-extensions.rst:29
+msgid ""
+"Optionally (and non-preferred) the configuration file may contain a line "
+"starting with **runDetached=true**.  If present this line makes the "
+"extension run independently from KStars. Once it has been started the "
+"extension can not pass status information back to Ekos. This should only be "
+"used by extensions that are required to continue to run after KStars has "
+"closed.  The extension must also provide its own user interface."
+msgstr ""
+"Opcionalmente (e não preferencialmente), o arquivo de configuração pode "
+"conter uma linha que comece com **runDetached=true**. Se presente, esta "
+"linha faz com que a extensão seja executada independentemente do KStars. Uma "
+"vez iniciada, a extensão não consegue passar informações de status de volta "
+"para o Ekos. Isso deve ser usado apenas por extensões que precisam continuar "
+"em execução após o encerramento do KStars. A extensão também deve fornecer "
+"sua própria interface de usuário."
+
+#: ../../user_manual/ekos-extensions.rst:31
+msgid ""
+"Additionally the configuration file can contain any other parameters that "
+"the extension author decides and free text."
+msgstr ""
+"Além disso, o arquivo de configuração pode conter quaisquer outros "
+"parâmetros que o autor da extensão decidir e texto livre."
+
+#: ../../user_manual/ekos-extensions.rst:33
+msgid ""
+"The icon file, if present, must be named the same as the extension "
+"executable with the addition of the appropriate file name extension for the "
+"image format, .jpg, .bmp, .gif, .png and .svg are supported. If provided "
+"this icon will be used in the extension selection ComboBox. If an icon is "
+"not provided a default icon will be used instead."
+msgstr ""
+"O arquivo de ícone, se presente, deve ter o mesmo nome do executável da "
+"extensão, com a adição da extensão de nome de arquivo apropriada para o "
+"formato da imagem. .jpg, .bmp, .gif, .png e .svg são suportados. Se "
+"fornecido, este ícone será usado na caixa de combinação de seleção de "
+"extensão. Se um ícone não for fornecido, um ícone padrão será usado em seu "
+"lugar."
+
+#: ../../user_manual/ekos-extensions.rst:35
+msgid ""
+"All files of the extension (executable, configuration, and optional icon) "
+"must be copied into the KStars writable data location /extensions e.g. ``~/."
+"local/share/kstars/extensions``"
+msgstr ""
+"Todos os arquivos da extensão (executável, configuração e ícone opcional) "
+"devem ser copiados para o local de dados graváveis ​​do KStars /extensions, "
+"por exemplo ``~/.local/share/kstars/extensions``"
+
+#: ../../user_manual/ekos-extensions.rst:37
+msgid ""
+"Extensions that are present, have a valid configuration file, and have a "
+"minimum KStars version no higher than the current installation will be "
+"detected when Ekos is started.  If there are no valid extensions detected "
+"the extension UI element will not be displayed. The extension UI elements "
+"are a ComboBox showing the name and icon of each detected extension, and a "
+"start/stop button. If the extension fails to close within 10 seconds of the "
+"stop button being clicked, it becomes re-enabled as an abort button that "
+"will force close the extension. Only one extension can be used at a time."
+msgstr ""
+"Extensões presentes, com um arquivo de configuração válido e com uma versão "
+"mínima do KStars não superior à instalação atual, serão detectadas quando o "
+"Ekos for iniciado. Se nenhuma extensão válida for detectada, o elemento da "
+"interface do usuário da extensão não será exibido. Os elementos da interface "
+"do usuário da extensão são uma caixa de combinação que mostra o nome e o "
+"ícone de cada extensão detectada e um botão iniciar/parar. Se a extensão não "
+"fechar em até 10 segundos após o clique no botão parar, ele será reativado "
+"como um botão de cancelar, forçando o fechamento da extensão. Apenas uma "
+"extensão pode ser usada por vez."
+
+#: ../../user_manual/ekos-extensions.rst:42
+msgid "Development"
+msgstr "Desenvolvimento"
+
+#: ../../user_manual/ekos-extensions.rst:44
+msgid "The following describes additional points for developers of extensions."
+msgstr ""
+"A seguir, descrevemos alguns pontos adicionais para desenvolvedores de "
+"extensões."
+
+#: ../../user_manual/ekos-extensions.rst:46
+msgid ""
+"Some extension sources including an example skeleton extension are available "
+"in the `KStars Extension Github <https://github.com/LuckyEddie47/"
+"kstars_extensions>`__"
+msgstr ""
+"Algumas fontes de extensão, incluindo um exemplo de esqueleto de extensão, "
+"estão disponíveis no `KStars Extension Github <https://github.com/"
+"LuckyEddie47/kstars_extensions>`__"
+
+#: ../../user_manual/ekos-extensions.rst:48
+msgid ""
+"Each extension must check for the existence and validity of its own "
+"configuration file. The minimum_kstars_version configuration file entry must "
+"be checked against an internal reference to confirm that the configuration "
+"file matches the extension requirements. See the skeleton example."
+msgstr ""
+"Cada extensão deve verificar a existência e a validade do seu próprio "
+"arquivo de configuração. A entrada minimum_kstars_version do arquivo de "
+"configuração deve ser verificada em relação a uma referência interna para "
+"confirmar se o arquivo de configuração atende aos requisitos da extensão. "
+"Veja o exemplo do esqueleto."
+
+#: ../../user_manual/ekos-extensions.rst:50
+msgid ""
+"The calling KStars version is passed to the extension as arg(1) in the "
+"launching QProcess call."
+msgstr ""
+"A versão de chamada do KStars é passada para a extensão como arg(1) na "
+"chamada de inicialização do QProcess."
+
+#: ../../user_manual/ekos-extensions.rst:52
+msgid ""
+"All interaction with KStars/Ekos/INDI should be via the DBus interface. See "
+"the skeleton example. Useful tools for interrogating, monitoring and "
+"understanding DBus include `D-Feet <https://wiki.gnome.org/Apps/DFeet>`__ "
+"and `Bustle <https://gitlab.freedesktop.org/bustle/bustle>`__"
+msgstr ""
+"Toda a interação com KStars/Ekos/INDI deve ser feita por meio da interface "
+"DBus. Veja o exemplo de esqueleto. Ferramentas úteis para interrogar, "
+"monitorar e entender o DBus incluem `D-Feet <https://wiki.gnome.org/Apps/"
+"DFeet>`__ e `Bustle <https://gitlab.freedesktop.org/bustle/bustle>`__"
+
+#: ../../user_manual/ekos-extensions.rst:54
+msgid ""
+"It may appear on initial investigation that using the Qt DBus Adaptors "
+"system would be much easier than direct use of the Qt DBus Interfaces/"
+"Messages and KStars does provide the required xml definitions.  However "
+"currently there is heavy use of custom types, the definitions of which are "
+"combined with other information in the KStars sources. This results in a "
+"large set of files from KStars that require inclusion within an extension in "
+"order to make use of the Qt DBus Adaptors. Hopefully this will be addressed "
+"in the future."
+msgstr ""
+"À primeira vista, pode parecer que usar o sistema Qt DBus Adaptors seria "
+"muito mais fácil do que usar diretamente as Interfaces/Mensagens Qt DBus, e "
+"o KStars fornece as definições XML necessárias. No entanto, atualmente, há "
+"um uso intenso de tipos personalizados, cujas definições são combinadas com "
+"outras informações nos códigos-fonte do KStars. Isso resulta em um grande "
+"conjunto de arquivos do KStars que precisam ser incluídos em uma extensão "
+"para usar os Qt DBus Adaptors. Esperamos que isso seja resolvido no futuro."
