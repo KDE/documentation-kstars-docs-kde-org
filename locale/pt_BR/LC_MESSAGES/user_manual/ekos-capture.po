@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-16 01:56+0000\n"
-"PO-Revision-Date: 2025-10-20 13:23-0300\n"
+"PO-Revision-Date: 2025-10-21 09:31-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -903,6 +903,15 @@ msgid ""
 "quantum efficiency, and sensor pixel size. At this time, the KStars "
 "implementation lacks those features.)"
 msgstr ""
+"A calculadora de exposição é uma implementação de um processo de cálculo "
+"apresentado pelo Dr. Robin Glover em 2019. Este processo de cálculo busca "
+"estabelecer um tempo de subexposição que considera duas fontes de ruído em "
+"uma imagem: ruído de leitura da câmera e ruído do brilho do céu de fundo "
+"(poluição luminosa). Os efeitos do ruído térmico da câmera nas imagens não "
+"são considerados neste cálculo. (Observação: Desde sua apresentação em 2019, "
+"o Dr. Glover aprimorou seu processo de cálculo para incorporar os efeitos da "
+"eficiência quântica do sensor e do tamanho do pixel do sensor. Atualmente, a "
+"implementação do KStars não possui esses recursos.)"
 
 #: ../../user_manual/ekos-capture.rst:250
 msgid ""
@@ -912,6 +921,10 @@ msgid ""
 "of light pollution rise to levels which would overwhelm the signal from the "
 "target."
 msgstr ""
+"O conceito no cálculo do Dr. Glover é fornecer uma exposição suficientemente "
+"longa para que os efeitos do ruído de leitura da câmera sejam sobrepujados "
+"pelo sinal vindo do alvo, mas não uma exposição tão longa que os efeitos da "
+"poluição luminosa aumentem a níveis que sobrecarreguem o sinal do alvo."
 
 #: ../../user_manual/ekos-capture.rst:252
 msgid ""
@@ -924,6 +937,15 @@ msgid ""
 "guiding performance, changes in weather conditions which may disrupt seeing "
 "conditions, intrusions from air traffic or passing satellites."
 msgstr ""
+"A implementação deste processo não considera a intensidade (magnitude ou "
+"fluxo) do alvo pretendido, nem outros fatores que podem levar um "
+"astrofotógrafo a escolher um tempo de subexposição alternativo. Esses outros "
+"fatores podem incluir: os requisitos de armazenamento e o tempo de pós-"
+"processamento prolongado para um grande número de exposições curtas, os "
+"impactos de fatores externos que podem ocorrer em exposições muito longas, "
+"como desempenho de rastreamento/orientação, mudanças nas condições "
+"climáticas que podem prejudicar as condições de visibilidade, intrusões de "
+"tráfego aéreo ou satélites em passagem."
 
 #: ../../user_manual/ekos-capture.rst:254
 msgid ""
@@ -938,16 +960,30 @@ msgid ""
 "poor guiding. Choices made for values of certain inputs to the exposure "
 "calculator will vary depending upon which imaging approach is being employed."
 msgstr ""
+"As abordagens para geração de imagens podem variar bastante na seleção dos "
+"tempos de exposição e no número de subexposições usadas para integração. Uma "
+"abordagem bem aceita para geração de imagens de objetos do céu profundo "
+"utiliza exposições longas, requer boa orientação, condições de visibilidade "
+"de boas a excelentes e normalmente empregaria filtragem para reduzir os "
+"efeitos da poluição luminosa. No outro extremo, estão abordagens como as "
+"técnicas de geração de imagens speckle (comumente chamadas de \"imagem da "
+"sorte\"), que utilizam de centenas a milhares de exposições extremamente "
+"curtas na tentativa de eliminar os efeitos da poluição luminosa, más "
+"condições de visibilidade e orientação inadequada. As escolhas feitas para "
+"os valores de certas entradas na calculadora de exposição variarão "
+"dependendo da abordagem de geração de imagens que está sendo empregada."
 
 #: ../../user_manual/ekos-capture.rst:256
 msgid "Exposure Calculator Inputs"
-msgstr ""
+msgstr "Entradas da calculadora de exposição"
 
 #: ../../user_manual/ekos-capture.rst:258
 msgid ""
 "``Sky Quality``: The Sky Quality selector sets the measurement of the "
 "magnitude per square arc-second of the background sky."
 msgstr ""
+"``Qualidade do céu``: O seletor de qualidade do céu define a medição da "
+"magnitude por segundo de arco quadrado do céu de fundo."
 
 #: ../../user_manual/ekos-capture.rst:260
 msgid ""
@@ -960,6 +996,15 @@ msgid ""
 "Brightness <https://en.wikipedia.org/wiki/Sky_brightness>`__ `Wikipedia "
 "Light Pollution <https://en.wikipedia.org/wiki/Light_pollution>`__"
 msgstr ""
+"O intervalo para a qualidade do céu varia de 22, para os céus mais escuros, "
+"a 16, para os céus mais brilhantes (mais poluídos por luz). A escala de "
+"magnitude não é linear; é uma escala logarítmica baseada na raiz quinta de "
+"100. Portanto, 5 passos na escala representam uma mudança no brilho por um "
+"fator de 100. (Uma qualidade do céu de 17 é 100 vezes mais brilhante que uma "
+"qualidade do céu de 22. Cada passo inteiro na escala representa uma mudança "
+"por um fator de aproximadamente 2,512.) `Brilho do Céu na Wikipédia <https://"
+"en.wikipedia.org/wiki/Sky_brightness>`__ `Poluição Luminosa na Wikipédia "
+"<https://en.wikipedia.org/wiki/Light_pollution>`__"
 
 #: ../../user_manual/ekos-capture.rst:262
 msgid ""
@@ -969,6 +1014,11 @@ msgid ""
 "impact Sky Quality, as humidity or cloud cover can reflect and scatter any "
 "source of light through the atmosphere"
 msgstr ""
+"Toda a luz espalhada no céu de fundo é considerada poluição luminosa, "
+"independentemente de sua fonte, portanto, os efeitos do luar devem ser "
+"considerados poluição luminosa \"natural\". Mas as condições climáticas "
+"também podem impactar a qualidade do céu, pois a umidade ou a cobertura de "
+"nuvens podem refletir e dispersar qualquer fonte de luz pela atmosfera."
 
 #: ../../user_manual/ekos-capture.rst:264
 msgid ""
@@ -983,6 +1033,16 @@ msgid ""
 "should only be considered as a “best case scenario” for a cloudless night "
 "during a new moon."
 msgstr ""
+"Um `Sky Quality Meter (SQM) <https://en.wikipedia.org/wiki/"
+"Sky_quality_meter>`__ pode fornecer a leitura mais precisa da qualidade do "
+"céu se usado durante uma sessão de imagens, mas um valor estimado a partir "
+"de pesquisas de qualidade do céu também pode ser encontrado na web em sites "
+"como `www.lightpollutionmap.info <https://www.lightpollutionmap.info/>`__ ou "
+"`www.clearoutside.com <https://clearoutside.com/>`__. Mas essas fontes "
+"online para estimativas de poluição luminosa geralmente não levam em "
+"consideração os efeitos do luar ou as condições climáticas locais. Portanto, "
+"os valores de sites sobre poluição luminosa devem ser considerados apenas "
+"como o \"melhor cenário\" para uma noite sem nuvens durante a lua nova."
 
 #: ../../user_manual/ekos-capture.rst:266
 msgid ""
@@ -997,6 +1057,17 @@ msgid ""
 "full moon, (moon age 12.4, and KStars moon magnitude = -12). The SQM reading "
 "at zenith showed a measured SQM value of 15.95."
 msgstr ""
+"Se um valor de mapa de poluição luminosa for usado como valor de entrada de "
+"SQM, mas a imagem for realizada com uma lua parcial, então uma diminuição na "
+"entrada do valor de SQM deve ser aplicada na calculadora. O luar pode ser "
+"opressivo; em um local onde um mapa de poluição luminosa mostrou um valor de "
+"SQM de 19,63. Uma leitura de SQM foi feita em uma noite com crescente "
+"crescente, pouco antes da meia-lua (idade da lua 5,4 e magnitude da lua "
+"KStars = -10). A leitura de SQM no zênite mostrou que o céu estava muito "
+"mais brilhante, com valor medido de 18,48. Uma leitura feita em uma noite "
+"com gibosa crescente, pouco antes da lua cheia (idade da lua 12,4 e "
+"magnitude da lua KStars = -12). A leitura de SQM no zênite mostrou um valor "
+"de SQM medido de 15,95."
 
 #: ../../user_manual/ekos-capture.rst:268
 msgid ""
@@ -1008,6 +1079,14 @@ msgid ""
 "from a location with very little light pollution (a high Sky Quality value) "
 "may result in an sub-exposure time of several hours."
 msgstr ""
+"O valor da qualidade do céu tem um impacto drástico na exposição calculada "
+"devido à escala logarítmica envolvida. Uma imagem tirada de um local com "
+"forte poluição luminosa (um valor baixo de qualidade do céu), especialmente "
+"quando a filtragem não é aplicada, pode resultar em um tempo de exposição "
+"muito curto para evitar que a poluição luminosa sobrecarregue o sinal alvo. "
+"Uma imagem tirada de um local com muito pouca poluição luminosa (um valor "
+"alto de qualidade do céu) pode resultar em um tempo de subexposição de "
+"várias horas."
 
 #: ../../user_manual/ekos-capture.rst:270
 msgid ""
@@ -1015,6 +1094,8 @@ msgid ""
 "optical train, which is needed for the evaluation of light gathering "
 "capability."
 msgstr ""
+"``Razão focal``: O seletor de razão focal define o valor do trem óptico, "
+"necessário para a avaliação da capacidade de coleta de luz."
 
 #: ../../user_manual/ekos-capture.rst:272
 msgid ""
@@ -1024,6 +1105,12 @@ msgid ""
 "longer focal ratio. So the exposure calculation will be reduced when a lower "
 "focal ratio is used, and increased when a higher focal ratio is used."
 msgstr ""
+"O valor da razão focal da óptica tem um efeito direto no cálculo da "
+"exposição. Uma razão focal menor é considerada uma \"ótica mais rápida\", "
+"pois possui maior capacidade de captação de luz do que uma óptica com uma "
+"razão focal maior. Portanto, o cálculo da exposição será reduzido quando uma "
+"razão focal menor for utilizada e aumentado quando uma razão focal maior for "
+"utilizada."
 
 #: ../../user_manual/ekos-capture.rst:274
 msgid ""
@@ -1031,6 +1118,8 @@ msgid ""
 "focal ratio to compensate for the efficiency or for obstructions in the "
 "optic."
 msgstr ""
+"O usuário pode considerar fazer um pequeno ajuste no valor de entrada da "
+"razão focal para compensar a eficiência ou obstruções na óptica."
 
 #: ../../user_manual/ekos-capture.rst:276
 msgid ""
@@ -1042,24 +1131,37 @@ msgid ""
 "generally considered to have an efficiency of about 94%, a reflector is "
 "generally considered to have an efficiency of about 78%."
 msgstr ""
+"Por exemplo, duas ópticas com a mesma razão focal, um refrator (sem "
+"obstrução) e um refletor (com uma obstrução de espelho secundário) seriam "
+"tratadas como ópticas equivalentes nos cálculos. Uma maneira de um usuário "
+"compensar isso seria fazer um ajuste no valor de entrada da razão focal para "
+"compensar a eficiência da óptica. Um refrator é geralmente considerado como "
+"tendo uma eficiência de cerca de 94%, um refletor é geralmente considerado "
+"como tendo uma eficiência de cerca de 78%."
 
 #: ../../user_manual/ekos-capture.rst:278
 msgid ""
 "An effective / adjusted focal ratio value for a refractor = Optic Focal "
 "Ratio / 0.94"
 msgstr ""
+"Um valor de razão focal efetiva/ajustada para um refrator = razão focal "
+"óptica / 0,94"
 
 #: ../../user_manual/ekos-capture.rst:280
 msgid ""
 "An effective / adjusted focal ratio value for a reflector = Optic Focal "
 "Ratio / 0.78"
 msgstr ""
+"Um valor de razão focal efetiva/ajustada para um refletor = razão focal "
+"óptica / 0,78"
 
 #: ../../user_manual/ekos-capture.rst:282
 msgid ""
 "These adjustments slightly increase the focal ratio, and therefore slightly "
 "reduce the computed light gathering capability considered in the calculation."
 msgstr ""
+"Esses ajustes aumentam ligeiramente a razão focal e, portanto, reduzem "
+"ligeiramente a capacidade de coleta de luz computada considerada no cálculo."
 
 #: ../../user_manual/ekos-capture.rst:284
 msgid ""
@@ -1070,6 +1172,12 @@ msgid ""
 "The value ranges from 300, for imaging without any filter, down to 2.8 for "
 "an extreme narrow-band filter."
 msgstr ""
+"``Largura de banda do filtro``: O seletor para ``Largura de banda do "
+"filtro`` define o valor da largura de banda (em nanômetros) e deve ser "
+"reduzido do valor padrão de 300 quando um filtro é incluído no trem óptico. "
+"A inclusão de filtros no trem óptico afetará significativamente o cálculo da "
+"exposição. O valor varia de 300, para imagens sem filtro, a 2,8 para um "
+"filtro de banda extremamente estreita."
 
 #: ../../user_manual/ekos-capture.rst:286
 msgid ""
@@ -1082,6 +1190,16 @@ msgid ""
 "or filters specifically designed for use on nebulae may be more difficult to "
 "determine as their transmission profiles can be far more complex."
 msgstr ""
+"Os filtros geralmente se enquadram em duas categorias: banda única ou "
+"multibanda. A largura de banda de um filtro de banda única deve ser "
+"relativamente fácil de determinar ou estimar. Geralmente, considera-se que "
+"um filtro Vermelho, Verde ou Azul tenha uma largura de banda de 100 "
+"nanômetros. A documentação de filtros de banda estreita frequentemente "
+"indica a largura de banda (geralmente na faixa de 3 a 12 nm). Mas a largura "
+"de banda de filtros astronômicos multibanda, como filtros de poluição "
+"luminosa, ou filtros projetados especificamente para uso em nebulosas, pode "
+"ser mais difícil de determinar, pois seus perfis de transmissão podem ser "
+"muito mais complexos."
 
 #: ../../user_manual/ekos-capture.rst:288
 msgid ""
@@ -1092,6 +1210,13 @@ msgid ""
 "efficiency is only 92%, then a value of 92 might better represent this "
 "filter, and result in a slightly more accurate exposure calculation."
 msgstr ""
+"Mesmo dentro das faixas que os filtros devem passar, eles não são 100% "
+"eficientes. Portanto, um usuário da calculadora pode querer reduzir "
+"ligeiramente o valor da largura de banda do filtro para compensar isso. "
+"Exemplo: se um filtro for presumido com uma largura de banda de 100 nm, mas "
+"sua eficiência de transmissão for de apenas 92%, um valor de 92 pode "
+"representar melhor esse filtro e resultar em um cálculo de exposição um "
+"pouco mais preciso."
 
 #: ../../user_manual/ekos-capture.rst:290
 msgid ""
@@ -1102,6 +1227,12 @@ msgid ""
 "filter, (for example a 3 nanometer bandwidth), will produce the longest "
 "exposure time."
 msgstr ""
+"O valor da largura de banda do filtro tem um efeito inverso no cálculo da "
+"exposição. Uma exposição não filtrada usaria o valor máximo de 300 para a "
+"largura de banda do filtro (representando o espectro visível de 300 "
+"nanômetros) e produzirá o menor cálculo de tempo de exposição. Um filtro de "
+"banda extremamente estreita (por exemplo, uma largura de banda de 3 "
+"nanômetros) produzirá o maior tempo de exposição."
 
 #: ../../user_manual/ekos-capture.rst:292
 msgid ""
@@ -1111,6 +1242,11 @@ msgid ""
 "values of the pixels and converting these measurements into digital values. "
 "Read noise is not effected by the length of an exposure."
 msgstr ""
+"``Câmera``: O cálculo da exposição requer um valor para o ruído de leitura "
+"da câmera. O ruído de leitura da câmera é um ruído eletrônico que ocorre ao "
+"finalizar uma exposição, enquanto a câmera mede os valores de tensão "
+"analógica dos pixels e converte essas medições em valores digitais. O ruído "
+"de leitura não é afetado pela duração de uma exposição."
 
 #: ../../user_manual/ekos-capture.rst:294
 msgid ""
@@ -1122,6 +1258,15 @@ msgid ""
 "A CMOS sensor does have a variable gain (or ISO value), and changes to that "
 "setting usually result in a change to the read noise."
 msgstr ""
+"Os sensores de câmera são de dois tipos: \"Dispositivo de Carga Acoplada"
+"\" (CCD, sigla em inglês) ou \"Semicondutor Complementar de Óxido Metálico"
+"\" (CMOS, sigla em inglês). Para o cálculo da exposição, a principal "
+"diferença entre esses tipos de sensores é que os sensores CCD não possuem "
+"uma configuração de ganho variável que impactaria o ruído de leitura; "
+"portanto, um sensor CCD terá um único valor constante para seu ruído de "
+"leitura. Um sensor CMOS possui um ganho variável (ou valor ISO), e "
+"alterações nessa configuração geralmente resultam em uma alteração no ruído "
+"de leitura."
 
 #: ../../user_manual/ekos-capture.rst:296
 msgid ""
@@ -1135,6 +1280,15 @@ msgid ""
 "dedicated astrophotography cameras, most of these cameras are using CMOS "
 "sensors."
 msgstr ""
+"A calculadora de exposição depende da seleção de um arquivo de dados da "
+"câmera para que possa acessar um valor de ruído de leitura apropriado para "
+"uso no cálculo. O menu suspenso de seleção de câmera permite que o usuário "
+"selecione um arquivo de dados de câmera apropriado. Para uma câmera CCD, o "
+"arquivo conterá apenas um único valor de ruído de leitura, mas para uma "
+"câmera CMOS, o arquivo inclui uma tabela (ou algumas tabelas) de valores que "
+"relacionam o ganho ou o valor ISO a um valor de ruído de leitura. Não se "
+"confunda com o \"CCD\" aparecendo nos nomes de muitas câmeras dedicadas à "
+"astrofotografia; a maioria dessas câmeras utiliza sensores CMOS."
 
 #: ../../user_manual/ekos-capture.rst:298
 msgid ""
@@ -1148,6 +1302,16 @@ msgid ""
 "such a tool can be used to create a customized camera data file for use with "
 "the KStars exposure calculator."
 msgstr ""
+"Os arquivos de dados da câmera fornecidos no KStars contêm valores que são "
+"transcritos da documentação técnica do fabricante. No entanto, os valores "
+"reais de ruído de leitura de uma câmera podem variar dos dados publicados; "
+"portanto, um usuário pode optar por utilizar uma ferramenta que determine os "
+"valores de ruído de leitura para sua câmera específica. O Dr. Glover fornece "
+"uma ferramenta de análise de sensores em seu produto SharpCap, baseado em MS-"
+"Windows, `SharpCap Sensor Analysis <https://www.sharpcap.co.uk/sharpcap/"
+"features/sensor-analysis>`__. Os dados específicos de tal ferramenta podem "
+"ser usados ​​para criar um arquivo de dados de câmera personalizado para uso "
+"com a calculadora de exposição do KStars."
 
 #: ../../user_manual/ekos-capture.rst:300
 msgid ""
@@ -1158,6 +1322,13 @@ msgid ""
 "enabled, and allow the user to select the read mode table that would "
 "correspond to the mode in which the camera will be operated for imaging."
 msgstr ""
+"``Modo de leitura``: Algumas câmeras fabricadas pela QHY têm a capacidade de "
+"funcionar em vários modos. Esses modos alteram os valores de ruído de "
+"leitura, de modo que os arquivos de dados da câmera para essas câmeras "
+"incluem várias tabelas de ruído de leitura. Ao usar uma dessas câmeras "
+"multimodo, o menu suspenso do modo de leitura será habilitado e permitirá "
+"que o usuário selecione a tabela de modos de leitura que corresponde ao modo "
+"em que a câmera será operada para geração de imagens."
 
 #: ../../user_manual/ekos-capture.rst:302
 msgid ""
@@ -1168,6 +1339,13 @@ msgid ""
 "possible gain or ISO values. In the case of CCD based cameras, the graph "
 "will be a simple bar, because the read noise of a CCD sensor is invariable."
 msgstr ""
+"``Gráfico de tempo de exposição``: A calculadora apresentará um gráfico dos "
+"tempos de exposição potenciais determinados a partir das entradas. No caso "
+"de câmeras baseadas em CMOS, este gráfico se assemelhará aos dados de ruído "
+"de leitura subjacentes da câmera, mas será transformado em um tempo de "
+"exposição ao longo da faixa de valores de ganho ou ISO possíveis. No caso de "
+"câmeras baseadas em CCD, o gráfico será uma barra simples, pois o ruído de "
+"leitura de um sensor CCD é invariável."
 
 #: ../../user_manual/ekos-capture.rst:304
 msgid ""
@@ -1178,6 +1356,12 @@ msgid ""
 "along the exposure time graph to show how the selected gain value will "
 "effect the calculated exposure time."
 msgstr ""
+"``Seleção de Ganho/ISO``: Para câmeras com sensores CMOS, um valor de ganho "
+"ou ISO pode ser selecionado. Um controle de ganho aparecerá para câmeras que "
+"permitem a seleção de ganho e um menu suspenso de seleção de ISO aparecerá "
+"para câmeras DSLR. Ajustar o valor de ganho/ISO moverá um indicador de "
+"seleção lateralmente ao longo do gráfico de tempo de exposição para mostrar "
+"como o valor de ganho selecionado afetará o tempo de exposição calculado."
 
 #: ../../user_manual/ekos-capture.rst:306
 msgid ""
@@ -1188,6 +1372,13 @@ msgid ""
 "be highest when gain / ISO values are lowest. A greater full well capacity "
 "provides a greater dynamic range in the image."
 msgstr ""
+"Câmeras baseadas em CMOS tendem a apresentar alto ruído de leitura em "
+"valores baixos de ganho/ISO, e o ruído de leitura diminui à medida que o "
+"valor de ganho/ISO aumenta. Portanto, um usuário pode ficar tentado a "
+"selecionar um valor de ganho maior na tentativa de reduzir a quantidade de "
+"ruído de leitura. Mas a capacidade total da câmera normalmente será maior "
+"quando os valores de ganho/ISO forem mais baixos. Uma capacidade total maior "
+"proporciona uma faixa dinâmica maior na imagem."
 
 #: ../../user_manual/ekos-capture.rst:308
 msgid ""
@@ -1200,6 +1391,14 @@ msgid ""
 "prioritize a low read noise in the sub-exposures, and will likely need to "
 "select a high gain/ISO value."
 msgstr ""
+"A seleção de um valor de ganho/ISO dependeria da técnica de imagem "
+"empregada. Quando uma exposição longa é desejada (como na imagem DSO \"típica"
+"\"), um valor baixo de ganho/ISO geralmente seria preferível para obter uma "
+"faixa dinâmica maior na imagem. Mas se uma técnica de speckle ('imagem de "
+"sorte') estiver sendo usada, os tempos de exposição seriam tão baixos que a "
+"redução do ruído de leitura se tornaria crítica. Nesse caso, o usuário "
+"provavelmente priorizaria um baixo ruído de leitura nas subexposições e "
+"provavelmente precisaria selecionar um valor alto de ganho/ISO."
 
 #: ../../user_manual/ekos-capture.rst:310
 msgid ""
@@ -1217,28 +1416,46 @@ msgid ""
 "noise may be at a slightly higher or lower gain value, so it is recommended "
 "to avoid selecting a gain value that is at a step in read noise."
 msgstr ""
+"Algumas câmeras podem apresentar uma curva progressiva suave no ruído de "
+"leitura ao longo da faixa de valores de ganho, enquanto outras câmeras podem "
+"apresentar degraus muito pronunciados (e outras anomalias) em seu ruído de "
+"leitura. Esses degraus pronunciados geralmente são o resultado da "
+"alternância eletrônica de modo dentro da câmera. Nos casos em que o gráfico "
+"mostra um degrau pronunciado, o usuário pode desejar selecionar um valor de "
+"ganho que esteja na parte inferior desse degrau. Isso pode proporcionar um "
+"ruído de leitura reduzido e resultar em uma exposição mais curta sem perda "
+"significativa na faixa dinâmica, quando comparado a uma imagem capturada com "
+"uma seleção de ganho que esteja no topo desse degrau. Mas é necessário "
+"cuidado ao selecionar um ganho próximo a um \"degrau\" no gráfico. Algumas "
+"postagens em fóruns indicam que os dados de ruído de leitura fornecidos pela "
+"documentação do fabricante podem não ser exatos. A \"alternância\" real no "
+"ruído de leitura pode estar em um valor de ganho ligeiramente maior ou "
+"menor, portanto, é recomendável evitar selecionar um valor de ganho que "
+"esteja em um degrau no ruído de leitura."
 
 #: ../../user_manual/ekos-capture.rst:312
 msgid ""
 "When using data from camera manufacturer documentation, avoid selecting a "
 "gain near a step"
 msgstr ""
+"Ao usar dados da documentação do fabricante da câmera, evite selecionar um "
+"ganho próximo a um passo"
 
 #: ../../user_manual/ekos-capture.rst:314
 msgid "|Avoid selecting gain near a step|"
-msgstr ""
+msgstr "|Avoid selecting gain near a step|"
 
 #: ../../user_manual/ekos-capture.rst:317
 msgid "step"
-msgstr ""
+msgstr "passo"
 
 #: ../../user_manual/ekos-capture.rst:319
 msgid "Instead, shift the gain selection away from the"
-msgstr ""
+msgstr "Em vez disso, desloque a seleção de ganho para longe do"
 
 #: ../../user_manual/ekos-capture.rst:319
 msgid "|Shift gain away from such steps|"
-msgstr ""
+msgstr "|Shift gain away from such steps|"
 
 #: ../../user_manual/ekos-capture.rst:321
 msgid ""
@@ -1248,6 +1465,11 @@ msgid ""
 "Glover had recommended using a value of 5%, but lowering it to 2% when the "
 "computed exposure time is considered to be too short."
 msgstr ""
+"``Aumento de ruído %``: O seletor ``'Aumento de ruído %'`` controla um fator "
+"usado na equação do Dr. Glover. Este valor alterará o equilíbrio relativo "
+"entre as duas fontes de ruído na subexposição. Como regra geral, o Dr. "
+"Glover recomendou usar um valor de 5%, mas reduzi-lo para 2% quando o tempo "
+"de exposição calculado for considerado muito curto."
 
 #: ../../user_manual/ekos-capture.rst:323
 msgid ""
@@ -1261,6 +1483,15 @@ msgid ""
 "pollution, (and more target signal), into the exposure. This effectively "
 "reduces the relative impact of read-noise."
 msgstr ""
+"A perspectiva do \"aumento\" é um aumento relativo no ruído de leitura em "
+"comparação com o ruído da poluição luminosa. Pode parecer contraintuitivo, "
+"mas aumentar o valor de 'Aumento de ruído %' reduzirá o tempo de exposição, "
+"reduzindo o ruído da poluição luminosa (e reduzindo o sinal alvo), portanto "
+"o 'aumento' significa um aumento relativo no efeito do ruído de leitura em "
+"comparação com o ruído da poluição. Reduzir o valor de 'Aumento de Ruído %' "
+"aumentará o tempo de exposição e permitirá a entrada de mais ruído da "
+"poluição luminosa (e mais sinal alvo) na exposição. Isso efetivamente reduz "
+"o impacto relativo do ruído de leitura."
 
 #: ../../user_manual/ekos-capture.rst:325
 msgid ""
@@ -1275,6 +1506,17 @@ msgid ""
 "quality. Forcing an exposure time up to long exposure might cause the "
 "exposure to have excessive noise from light pollution."
 msgstr ""
+"Nesta implementação da calculadora, o valor para 'Aumento de ruído %' pode "
+"ser definido em uma faixa muito ampla para permitir ao usuário uma faixa "
+"maior para experimentação. Mas o usuário deve reconhecer que grandes "
+"alterações neste valor podem ter consequências indesejadas. Forçar um tempo "
+"de exposição para baixo pode fazer com que a exposição carregue uma carga "
+"relativamente pesada de ruído de leitura e reduziria a qualidade da "
+"subexposição (a relação entre tempo de exposição e ruído total cairá). Como "
+"resultado, um número significativamente maior de exposições para integração "
+"seria necessário para atingir um nível aceitável de qualidade. Forçar um "
+"tempo de exposição para uma exposição longa pode fazer com que a exposição "
+"tenha ruído excessivo de poluição luminosa."
 
 #: ../../user_manual/ekos-capture.rst:327
 msgid ""
@@ -1286,32 +1528,45 @@ msgid ""
 "'noise increase %' to reduce the time of the sub-exposure down to the "
 "durations demanded by this technique."
 msgstr ""
+"O valor selecionado para o \"aumento de ruído %\" também depende da técnica "
+"de imagem empregada. Quando uma técnica de speckle ('imagem da sorte') é "
+"empregada, o usuário provavelmente precisará forçar o tempo de exposição "
+"para uma duração extremamente curta (exposições abaixo de um segundo são "
+"padrão com esta técnica). Portanto, o usuário pode precisar aumentar "
+"drasticamente o valor de \"aumento de ruído %\" para reduzir o tempo da "
+"subexposição para as durações exigidas por esta técnica."
 
 #: ../../user_manual/ekos-capture.rst:329
 msgid "Exposure Calculator Results"
-msgstr ""
+msgstr "Resultados da calculadora de exposição"
 
 #: ../../user_manual/ekos-capture.rst:331
 msgid "``Exposure Time (sec)``: The calculated duration of an exposure."
-msgstr ""
+msgstr "``Tempo de exposição (seg)``: A duração calculada de uma exposição."
 
 #: ../../user_manual/ekos-capture.rst:333
 msgid ""
 "``Pollution Electrons``: The calculated number of light pollution electrons "
 "per pixel impacting the exposure."
 msgstr ""
+"``Elétrons de poluição``: O número calculado de elétrons de poluição "
+"luminosa por pixel que impactam a exposição."
 
 #: ../../user_manual/ekos-capture.rst:335
 msgid ""
 "``Shot Noise``: The calculated noise from light pollution impacting the "
 "exposure."
 msgstr ""
+"``Ruído de disparo``: O ruído calculado da poluição luminosa que impacta a "
+"exposição."
 
 #: ../../user_manual/ekos-capture.rst:337
 msgid ""
 "``Total Noise``: The calculated noise from both light pollution and image "
 "sensor read noise impacting the exposure."
 msgstr ""
+"``Ruído total``: O ruído calculado tanto da poluição luminosa quanto do "
+"ruído de leitura do sensor de imagem que impacta a exposição."
 
 #: ../../user_manual/ekos-capture.rst:341
 msgid ""
@@ -1323,10 +1578,19 @@ msgid ""
 "but a disproportionately higher number of short sub-exposures will be needed "
 "for integration to achieve an image of a desired quality."
 msgstr ""
+"**Reconhecer a relação entre o tempo de exposição e o ruído total**: A "
+"relação entre o tempo de exposição e o ruído total da exposição pode ser "
+"considerada uma medida de uma qualidade potencial para a exposição. "
+"Exposições curtas conterão uma grande quantidade de ruído em relação ao seu "
+"tempo de exposição, portanto, uma exposição mais curta tenderia a ser de "
+"qualidade relativamente inferior. Exposições curtas ainda podem ser viáveis, "
+"mas um número desproporcionalmente maior de subexposições curtas será "
+"necessário para a integração, a fim de obter uma imagem com a qualidade "
+"desejada."
 
 #: ../../user_manual/ekos-capture.rst:344
 msgid "Stacking / Image Integration Information"
-msgstr ""
+msgstr "Informações sobre empilhamento/integração de imagens"
 
 #: ../../user_manual/ekos-capture.rst:346
 msgid ""
@@ -1338,6 +1602,14 @@ msgid ""
 "the first few sub-exposures are integrated, but this curve has diminishing "
 "returns as the number of sub-exposures being integrated is increased."
 msgstr ""
+"O valor do empilhamento de imagens reside no fato de que, à medida que as "
+"imagens são empilhadas, o acúmulo do tempo de exposição e dos dados que "
+"representam o sinal alvo aumenta proporcionalmente com o número adicional de "
+"imagens sendo integradas, mas o aumento do ruído é desproporcionalmente "
+"menor. Como resultado, a qualidade das imagens integradas pode ser vista "
+"como uma curva que começa com um bom \"rendimento\" quando as primeiras "
+"subexposições são integradas, mas essa curva apresenta retornos decrescentes "
+"à medida que o número de subexposições sendo integradas aumenta."
 
 #: ../../user_manual/ekos-capture.rst:348
 msgid ""
@@ -1354,12 +1626,26 @@ msgid ""
 "images from all targets because a signal strength (magnitude or flux) is not "
 "part of this calculation."
 msgstr ""
+"Idealmente, uma relação sinal-ruído (SNR) desejada seria usada para medir o "
+"nível de qualidade de uma imagem, mas a calculadora de exposição não possui "
+"a capacidade de reconhecer a intensidade do sinal de um alvo de imagem "
+"pretendido, portanto, não pode calcular uma relação sinal-ruído estimada. "
+"Portanto, o nível de qualidade a ser especificado no cálculo de empilhamento "
+"é o tempo de integração em segundos dividido pelo ruído calculado na imagem "
+"integrada (uma \"Relação Tempo/Ruído\"). Para fins do cálculo, a \"Relação "
+"Tempo/Ruído\" pode ser considerada como um análogo parcial de uma relação "
+"sinal-ruído. Mas o usuário deve reconhecer que uma relação tempo-ruído "
+"especificada não é uma medida absoluta da qualidade de todas as imagens "
+"integradas de todos os alvos, pois a intensidade do sinal (magnitude ou "
+"fluxo) não faz parte deste cálculo."
 
 #: ../../user_manual/ekos-capture.rst:350
 msgid ""
 "``Table``: A table provides details for stacking based upon the number of "
 "hours planned for imaging."
 msgstr ""
+"``Tabela``: Uma tabela fornece detalhes para empilhamento com base no número "
+"de horas planejadas para geração de imagens."
 
 #: ../../user_manual/ekos-capture.rst:352
 msgid ""
@@ -1371,12 +1657,22 @@ msgid ""
 "additional time will be consumed in the imaging process, which is not "
 "included in this time calculation."
 msgstr ""
+"A tabela fornece uma referência rápida para encontrar o número aproximado de "
+"subexposições que podem ser concluídas para um determinado número de horas "
+"em uma sessão de geração de imagens. No entanto, algumas funções que "
+"consomem tempo não estão incluídas neste cálculo de tempo. Por exemplo, "
+"câmeras baseadas em USB normalmente levam algum tempo para a transmissão de "
+"dados ou, se o usuário tiver selecionado o pontilhamento automático, será "
+"consumido tempo adicional no processo de geração de imagens, o que não está "
+"incluído neste cálculo de tempo."
 
 #: ../../user_manual/ekos-capture.rst:354
 msgid ""
 "The far right column of the table shows the calculated time/noise ratio of "
 "the integrated (stacked) image that would be produced."
 msgstr ""
+"A coluna mais à direita da tabela mostra a relação tempo/ruído calculada da "
+"imagem integrada (empilhada) que seria produzida."
 
 #: ../../user_manual/ekos-capture.rst:356
 msgid ""
@@ -1387,6 +1683,13 @@ msgid ""
 "recompute the quantity of sub-exposures required for the integrated image to "
 "achieve that specified time/noise ratio."
 msgstr ""
+"``Gráfico``: Um gráfico interativo permite ao usuário visualizar a mudança "
+"relativa na qualidade potencial de imagens integradas com diferentes "
+"contagens de subexposições aplicadas no empilhamento de imagens. Este "
+"gráfico pode ser navegado através do ajuste do valor da relação tempo/ruído; "
+"o ajuste deste valor irá recalcular a quantidade de subexposições "
+"necessárias para que a imagem integrada alcance a relação tempo/ruído "
+"especificada."
 
 #: ../../user_manual/ekos-capture.rst:358
 msgid ""
@@ -1400,6 +1703,15 @@ msgid ""
 "quality that will result from the addition or subtraction of a single sub-"
 "exposure."
 msgstr ""
+"Ao selecionar uma relação tempo/ruído para o cálculo da contagem de "
+"exposições empilhadas, o usuário pode considerar a alteração incremental na "
+"qualidade potencial da imagem a partir de uma subexposição adicional. Para "
+"ajudar o usuário a avaliar o valor de aumentar o número de subexposições "
+"para integração, a ferramenta inclui um cálculo da inclinação para o ponto "
+"selecionado na curva tempo/ruído (a interface do usuário usa um símbolo "
+"delta para apresentar esse valor). Esse valor delta representa a alteração "
+"na qualidade potencial que resultará da adição ou subtração de uma única "
+"subexposição."
 
 #: ../../user_manual/ekos-capture.rst:360
 msgid ""
@@ -1411,6 +1723,13 @@ msgid ""
 "will fall, indicating that there is less to be gained from adding more sub-"
 "exposures."
 msgstr ""
+"Como esperado, na extremidade inferior das contagens de exposição (quando um "
+"valor baixo para a relação tempo/ruído é inserido), o valor delta será "
+"relativamente alto, portanto, a adição de uma imagem proporcionará uma "
+"melhoria relativamente grande à imagem integrada. Mas, à medida que o "
+"usuário aumenta o valor da relação tempo/ruído, mais imagens serão incluídas "
+"para integração, e o valor delta cairá, indicando que há menos a ser ganho "
+"com a adição de mais subexposições."
 
 #: ../../user_manual/ekos-capture.rst:362
 msgid ""
@@ -1422,6 +1741,13 @@ msgid ""
 "of time for imaging and processing, and limitations of storage capacity for "
 "the images."
 msgstr ""
+"O valor padrão para a relação tempo/ruído é definido como 80. Este valor não "
+"deve ser interpretado de forma alguma como um valor ideal; ele foi "
+"simplesmente escolhido como um valor médio. O usuário deve considerar alguns "
+"fatores ao ajustar o valor da relação tempo/ruído: 1) a intensidade do "
+"objeto alvo, 2) a relação tempo/ruído da subexposição calculada, 3) as "
+"limitações de tempo para geração de imagens e processamento, e as limitações "
+"de capacidade de armazenamento para as imagens."
 
 #: ../../user_manual/ekos-capture.rst:364
 msgid ""
@@ -1432,6 +1758,12 @@ msgid ""
 "target (example, Thor’s Helmet, magnitude 11), might require a higher time/"
 "noise ratio to compensate for the relatively weak target signal."
 msgstr ""
+"Para um alvo forte (por exemplo, a Nebulosa de Órion com magnitude 4), seria "
+"fornecido um sinal relativamente forte. Nesse alvo, o valor da relação tempo/"
+"ruído pode ser reduzido e o cálculo das subexposições ainda pode produzir "
+"uma imagem com uma relação sinal/ruído muito boa. Um alvo muito mais fraco "
+"(por exemplo, o Capacete de Thor, magnitude 11) pode exigir uma relação "
+"tempo/ruído maior para compensar o sinal relativamente fraco do alvo."
 
 #: ../../user_manual/ekos-capture.rst:366
 msgid ""
@@ -1452,6 +1784,24 @@ msgid ""
 "raising the time-noise ratio will greatly improve the potential quality of "
 "the integrated image."
 msgstr ""
+"Dependendo das diversas entradas e condições de imagem, a qualidade "
+"potencial de uma subexposição pode variar bastante. Em céus de baixa "
+"qualidade, com pouca ou nenhuma filtragem, o tempo de subexposição calculado "
+"será naturalmente curto para evitar um ruído excessivo causado pela poluição "
+"luminosa, e o tempo de exposição em relação ao ruído calculado será baixo "
+"(uma baixa relação tempo/ruído). Para obter uma imagem integrada de alta "
+"qualidade a partir de subexposições com baixa relação tempo/ruído, podem ser "
+"necessárias milhares de subexposições. Se o usuário estiver preocupado com o "
+"tempo de geração de imagens e processamento ou com a capacidade de "
+"armazenamento, uma relação tempo/ruído maior seria necessária para reduzir a "
+"quantidade de subexposições. Por outro lado, quando as condições de entrada "
+"resultam em uma subexposição com um longo tempo de exposição em relação ao "
+"ruído calculado (como na geração de imagens de banda estreita), o resultado "
+"pode ser uma subexposição com uma relação tempo/ruído muito alta. Nesses "
+"casos, o valor padrão de 80 pode resultar em pouquíssimas subexposições para "
+"a integração. Mas o valor delta será bastante alto, indicando que aumentar a "
+"relação tempo-ruído melhorará significativamente a qualidade potencial da "
+"imagem integrada."
 
 #: ../../user_manual/ekos-capture.rst:368
 msgid ""
@@ -1463,6 +1813,14 @@ msgid ""
 "disproportionately higher number of short exposures are needed to achieve a "
 "given time/noise ratio in an integrated image."
 msgstr ""
+"Parte do valor de usar uma relação tempo/ruído como entrada para o cálculo "
+"do número necessário de subexposições reside no fato de que ela tende a "
+"compensar as diferenças no ruído relativo para subexposições de diferentes "
+"durações. Uma subexposição mais curta teria uma relação tempo/ruído menor, "
+"portanto, teria menos capacidade de aprimorar uma imagem integrada. "
+"Portanto, um número desproporcionalmente maior de exposições curtas é "
+"necessário para atingir uma determinada relação tempo/ruído em uma imagem "
+"integrada."
 
 #: ../../user_manual/ekos-capture.rst:370
 msgid ""
@@ -1477,6 +1835,16 @@ msgid ""
 "demand the default time/noise ratio of 80 for integration in both of these "
 "cases."
 msgstr ""
+"Como exemplo, considere o cálculo do número de subexposições necessárias "
+"quando dois tempos de subexposição foram comparados: uma subexposição de 300 "
+"segundos versus uma subexposição de 30 segundos. A subexposição de 300 "
+"segundos teve um ruído calculado de 22,1, resultando em uma relação tempo/"
+"ruído de subexposição de 13,6. Quando a '% de aumento de ruído' é aumentada "
+"para forçar o tempo de exposição para 30 segundos, vemos um ruído calculado "
+"de 9,47, resultando em uma relação tempo/ruído de subexposição muito menor, "
+"de 3,2. A exposição de 300 segundos tem qualidade potencial "
+"significativamente maior do que a exposição de 30 segundos. Exigiremos a "
+"relação tempo/ruído padrão de 80 para integração em ambos os casos."
 
 #: ../../user_manual/ekos-capture.rst:372
 msgid ""
@@ -1484,10 +1852,13 @@ msgid ""
 "exposures are required to achieve a time/noise ratio of 80. So a total "
 "integration time of 2.83 hours is required."
 msgstr ""
+"Para uma integração usando subexposições de 300 segundos, descobrimos que 34 "
+"subexposições são necessárias para atingir uma relação tempo/ruído de 80. "
+"Portanto, é necessário um tempo total de integração de 2,83 horas."
 
 #: ../../user_manual/ekos-capture.rst:374
 msgid "|300 Second sub-exposure|"
-msgstr ""
+msgstr "|300 Second sub-exposure|"
 
 #: ../../user_manual/ekos-capture.rst:376
 msgid ""
@@ -1496,167 +1867,172 @@ msgid ""
 "integration time of 5.31 hours is required with these shorter exposures to "
 "achieve the same time/noise ratio in the integrated image."
 msgstr ""
+"Para uma integração usando subexposições de 30 segundos, descobrimos que 637 "
+"subexposições seriam necessárias para atingir uma relação tempo/ruído de 80. "
+"Portanto, um tempo de integração total de 5,31 horas é necessário com essas "
+"exposições mais curtas para atingir a mesma relação tempo/ruído na imagem "
+"integrada."
 
 #: ../../user_manual/ekos-capture.rst:378
 msgid "|30 Second sub-exposure|"
-msgstr ""
+msgstr "|30 Second sub-exposure|"
 
 #: ../../user_manual/ekos-capture.rst:383
 msgid "Video Tutorials"
-msgstr ""
+msgstr "Tutoriais em vídeo"
 
 #: ../../user_manual/ekos-capture.rst:388
 msgid "Capture (`<https://youtu.be/Gz07j7VPnpc>`__)"
-msgstr ""
+msgstr "Captura (`<https://youtu.be/Gz07j7VPnpc>`__)"
 
 #: ../../user_manual/ekos-capture.rst:393
 msgid "Filter Wheels (`<https://youtu.be/yfz9_UJIvLY>`__)"
-msgstr ""
+msgstr "Roda de filtro (`<https://youtu.be/yfz9_UJIvLY>`__)"
 
 #: ../../user_manual/ekos-capture.rst:395
 msgid "Ekos Capture"
-msgstr ""
+msgstr "Ekos Capture"
 
 #: ../../user_manual/ekos-capture.rst:395
 msgid ".. image:: /images/ekos_capture.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_capture.png"
 
 #: ../../user_manual/ekos-capture.rst:396
 msgid ".. image:: /images/capture_settings.png"
-msgstr ""
+msgstr ".. image:: /images/capture_settings.png"
 
 #: ../../user_manual/ekos-capture.rst:397
 msgid ".. image:: /images/file_settings.png"
-msgstr ""
+msgstr ".. image:: /images/file_settings.png"
 
 #: ../../user_manual/ekos-capture.rst:398
 msgid ".. image:: /images/limit_settings.png"
-msgstr ""
+msgstr ".. image:: /images/limit_settings.png"
 
 #: ../../user_manual/ekos-capture.rst:399
 msgid "image2"
-msgstr ""
+msgstr "image2"
 
 #: ../../user_manual/ekos-capture.rst:399
 #: ../../user_manual/ekos-capture.rst:405
 msgid ".. image:: /images/list-add.png"
-msgstr ""
+msgstr ".. image:: /images/list-add.png"
 
 #: ../../user_manual/ekos-capture.rst:400
 msgid ".. image:: /images/sequence_settings.png"
-msgstr ""
+msgstr ".. image:: /images/sequence_settings.png"
 
 #: ../../user_manual/ekos-capture.rst:401
 msgid "image3"
-msgstr ""
+msgstr "image3"
 
 #: ../../user_manual/ekos-capture.rst:401
 msgid ".. image:: /images/media-playback-start.png"
-msgstr ""
+msgstr ".. image:: /images/media-playback-start.png"
 
 #: ../../user_manual/ekos-capture.rst:402
 msgid "image4"
-msgstr ""
+msgstr "image4"
 
 #: ../../user_manual/ekos-capture.rst:402
 msgid ".. image:: /images/media-playback-pause.png"
-msgstr ""
+msgstr ".. image:: /images/media-playback-pause.png"
 
 #: ../../user_manual/ekos-capture.rst:403
 msgid "image5"
-msgstr ""
+msgstr "image5"
 
 #: ../../user_manual/ekos-capture.rst:403
 msgid ".. image:: /images/view-refresh.png"
-msgstr ""
+msgstr ".. image:: /images/view-refresh.png"
 
 #: ../../user_manual/ekos-capture.rst:404
 msgid "image6"
-msgstr ""
+msgstr "image6"
 
 #: ../../user_manual/ekos-capture.rst:404
 msgid ".. image:: /images/document-open.png"
-msgstr ""
+msgstr ".. image:: /images/document-open.png"
 
 #: ../../user_manual/ekos-capture.rst:405
 msgid "image7"
-msgstr ""
+msgstr "image7"
 
 #: ../../user_manual/ekos-capture.rst:406
 msgid "image8"
-msgstr ""
+msgstr "image8"
 
 #: ../../user_manual/ekos-capture.rst:406
 msgid ".. image:: /images/dialog-ok-apply.png"
-msgstr ""
+msgstr ".. image:: /images/dialog-ok-apply.png"
 
 #: ../../user_manual/ekos-capture.rst:407
 msgid "image9"
-msgstr ""
+msgstr "image9"
 
 #: ../../user_manual/ekos-capture.rst:407
 msgid ".. image:: /images/ekos_live_overlay.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_live_overlay.png"
 
 #: ../../user_manual/ekos-capture.rst:408
 msgid "image10"
-msgstr ""
+msgstr "image10"
 
 #: ../../user_manual/ekos-capture.rst:408
 msgid ".. image:: /images/ekos_live_overlay_options.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_live_overlay_options.png"
 
 #: ../../user_manual/ekos-capture.rst:409
 msgid ".. image:: /images/ekos_rotator_settings.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_rotator_settings.png"
 
 #: ../../user_manual/ekos-capture.rst:410
 msgid "Calibration settings"
-msgstr ""
+msgstr "Calibration settings"
 
 #: ../../user_manual/ekos-capture.rst:410
 msgid ".. image:: /images/calibration_settings.png"
-msgstr ""
+msgstr ".. image:: /images/calibration_settings.png"
 
 #: ../../user_manual/ekos-capture.rst:411
 msgid "Exposure calculator"
-msgstr ""
+msgstr "Exposure calculator"
 
 #: ../../user_manual/ekos-capture.rst:411
 msgid ".. image:: /images/exposure-calculator.png"
-msgstr ""
+msgstr ".. image:: /images/exposure-calculator.png"
 
 #: ../../user_manual/ekos-capture.rst:412
 msgid "Avoid selecting gain near a step"
-msgstr ""
+msgstr "Avoid selecting gain near a step"
 
 #: ../../user_manual/ekos-capture.rst:412
 msgid ".. image:: /images/exposurecalculation_gain_at_step-avoid.png"
-msgstr ""
+msgstr ".. image:: /images/exposurecalculation_gain_at_step-avoid.png"
 
 #: ../../user_manual/ekos-capture.rst:413
 msgid "Shift gain away from such steps"
-msgstr ""
+msgstr "Shift gain away from such steps"
 
 #: ../../user_manual/ekos-capture.rst:413
 msgid ".. image:: /images/exposurecalculation_gain_at_step-shift.png"
-msgstr ""
+msgstr ".. image:: /images/exposurecalculation_gain_at_step-shift.png"
 
 #: ../../user_manual/ekos-capture.rst:414
 msgid "300 Second sub-exposure"
-msgstr ""
+msgstr "300 Second sub-exposure"
 
 #: ../../user_manual/ekos-capture.rst:414
 msgid ".. image:: /images/exposurecalculation-example_subexp300.png"
-msgstr ""
+msgstr ".. image:: /images/exposurecalculation-example_subexp300.png"
 
 #: ../../user_manual/ekos-capture.rst:415
 msgid "30 Second sub-exposure"
-msgstr ""
+msgstr "30 Second sub-exposure"
 
 #: ../../user_manual/ekos-capture.rst:415
 msgid ".. image:: /images/exposurecalculation-example_subexp30.png"
-msgstr ""
+msgstr ".. image:: /images/exposurecalculation-example_subexp30.png"
 
 #~ msgid "Tools"
 #~ msgstr "Ferramentas"
