@@ -52,7 +52,7 @@ Setting up the Imaging Planner
               * If you are running KStars 3.7.6 or later, the only required Imaging Planner
                 download is the Imaging Planner catalog (see image). It should say
                 ``Catalog 2...`` or later.
-                   |Imaging Planner Catalog Download|
+                |Imaging Planner Catalog Download|
               * If you are running earlier versions, it's recommended to also
                 download the ``NGC/IC``, ``Open NGC``, ``Abell``, ``Sharpless``, ``Hickson``,
                 and ``Lynds`` catalogs to greatly speed up the time it takes the
@@ -91,6 +91,7 @@ Setting up the Imaging Planner
               * If you need a catalog or aren't using the most recent catalog (e.g. the 770-object Catalog2)
                 that was uploaded in the ``Download Extra Data`` section above,
                 then find and click ``Load Catalog`` on the right side of the Imaging Planner.
+
                  * It should bring up an ``Open file`` menu starting with a folder where you should
                    be able to find Imaging Planner catalogs. Currently the latest catalog is in a
                    folder called ImagingPlanner-catalog2.
@@ -103,6 +104,7 @@ Setting up the Imaging Planner
                  * These long delays should only happen the first time you run the Imaging Planner tool.
                    You will see a note near the top that keeps updating, saying things
                    like ``13/66 adding Arp 240``.
+                   
               * If you have a catalog, or you've completed loading one, the Imaging Planner is ready for use.
               * Subsequent startups should be much faster, with your choices remembered.
          #. **Using the Imaging Planner**
