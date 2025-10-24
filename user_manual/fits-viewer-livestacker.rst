@@ -4,8 +4,8 @@ FITS Viewer Live Stacker
 
        |FITS Viewer Live Stacker|
 
-The FITS Viewer Live Stacker (Live Stacker) is used to stack
-and display subframes. It monitors a directory so can be used to stack
+The FITS Viewer Live Stacker (Live Stacker) stacks and displays
+subframes. It monitors a directory so can be used to stack
 the existing contents of the directory and / or to add new subframes
 as they are taken during a live session.
 
