@@ -94,3 +94,4 @@ Core Developers/Contributors (Alphabetical)
   * Thomas Kabelmann
 
   * Wolfgang Reissenberger
+
