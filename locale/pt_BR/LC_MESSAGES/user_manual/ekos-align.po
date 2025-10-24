@@ -1,31 +1,32 @@
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2019.
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-06-14 01:58+0000\n"
-"PO-Revision-Date: 2019-11-25 18:13-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"PO-Revision-Date: 2025-10-22 12:17-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.08.2\n"
+"X-Generator: Lokalize 25.08.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../../user_manual/ekos-align.rst:3
 msgid "Align"
-msgstr ""
+msgstr "Alinhar"
 
 #: ../../user_manual/ekos-align.rst:8
 msgid "Introduction"
-msgstr ""
+msgstr "Introdução"
 
 #: ../../user_manual/ekos-align.rst:10
 msgid "|Ekos Align Module|"
-msgstr ""
+msgstr "|Ekos Align Module|"
 
 #: ../../user_manual/ekos-align.rst:12
 msgid ""
@@ -42,6 +43,19 @@ msgid ""
 "catalog of millions of stars.  Once the coordinates are determined, the true "
 "pointing of the telescope is known."
 msgstr ""
+"O módulo de alinhamento do Ekos permite GOTOs altamente precisos e pode "
+"medir e corrigir erros de alinhamento polar. Isso é possível graças à "
+"tecnologia de resolução de placas de terceiros. O principal software de "
+"resolução de placas utilizado é o pacote StellarSolver, que utiliza os "
+"solucionadores offline (e online) astrometry.net, ASTAP e Watney. O Ekos "
+"começa capturando uma imagem de um campo estelar, alimentando essa imagem "
+"para o solucionador escolhido (por exemplo, veja `astrometry.net <https://"
+"astrometry.net>`__, `StellarSolver <https://github.com/rlancaste/"
+"stellarsolver>`__ ou `ASTAP <https://www.hnsky.org/astap>`__), e obtém em "
+"retorno as coordenadas centrais (AR, DEC), escala e orientação da imagem. O "
+"solucionador essencialmente realiza o reconhecimento de padrões em um "
+"catálogo de milhões de estrelas. Uma vez determinadas as coordenadas, o "
+"verdadeiro apontamento do telescópio é conhecido."
 
 #: ../../user_manual/ekos-align.rst:14
 msgid ""
@@ -51,6 +65,11 @@ msgid ""
 "discrepancy by syncing to the new coordinates, and then slewing the mount to "
 "the desired target originally requested."
 msgstr ""
+"Frequentemente, há uma discrepância entre onde o telescópio pensa estar "
+"visando e para onde realmente está apontando. A magnitude dessa discrepância "
+"pode variar de alguns minutos de arco a alguns graus. O Ekos pode corrigir a "
+"discrepância sincronizando com as novas coordenadas e, em seguida, girando a "
+"montagem para o alvo desejado originalmente solicitado."
 
 #: ../../user_manual/ekos-align.rst:16
 msgid ""
@@ -62,6 +81,14 @@ msgid ""
 "for Northern Hemisphere) but can work well taken from anywhere, usually "
 "starting near the meridian and slewing either East or West."
 msgstr ""
+"O Ekos também fornece uma ferramenta assistente de alinhamento polar para "
+"corrigir erros de alinhamento polar. Ela captura três imagens, alternando "
+"entre elas, e calcula o deslocamento entre o eixo de montagem e o eixo "
+"polar. Ela retorna ao usuário os ajustes de altitude e azimute necessários "
+"para alinhar esses eixos. Essas imagens são normalmente capturadas perto do "
+"polo celeste (próximo à Polaris para o Hemisfério Norte), mas podem "
+"funcionar bem quando capturadas de qualquer lugar, geralmente começando "
+"perto do meridiano e alternando para leste ou oeste."
 
 #: ../../user_manual/ekos-align.rst:18
 msgid ""
@@ -69,10 +96,13 @@ msgid ""
 "Sync commands. Most popular commercial telescope nowadays support such "
 "commands."
 msgstr ""
+"No mínimo, você precisa de um CCD/Webcam e um telescópio que suporte os "
+"comandos de giro e sincronização. A maioria dos telescópios comerciais "
+"populares atualmente suporta esses comandos."
 
 #: ../../user_manual/ekos-align.rst:23
 msgid "Typical use"
-msgstr ""
+msgstr "Uso típico"
 
 #: ../../user_manual/ekos-align.rst:25
 msgid ""
@@ -83,30 +113,45 @@ msgid ""
 "module right away. A typical workflow for GOTO alignment involves the "
 "following steps:"
 msgstr ""
+"Usando o módulo de alinhamento do Ekos, alinhar sua montagem usando o "
+"alinhamento de 1, 2 ou 3 estrelas do controlador *não* é estritamente "
+"necessário, embora para algumas montagens seja recomendado realizar um "
+"alinhamento aproximado de 1 ou 2 estrelas antes de usar o módulo de "
+"alinhamento do Ekos. Se você estiver usando o EQMod, pode começar a usar o "
+"módulo de alinhamento do Ekos imediatamente. Um fluxo de trabalho típico "
+"para alinhamento GOTO envolve as seguintes etapas:"
 
 #: ../../user_manual/ekos-align.rst:27
 msgid "Start KStars and Ekos and connect to INDI."
-msgstr ""
+msgstr "Inicie o KStars e o Ekos e conecte-se ao INDI."
 
 #: ../../user_manual/ekos-align.rst:29
 msgid ""
 "Unpark your mount from its home position (usually the NCP for equatorial "
 "mounts)."
 msgstr ""
+"Desbloqueie sua montagem de sua posição inicial (geralmente o NCP para "
+"montagens equatoriais)."
 
 #: ../../user_manual/ekos-align.rst:31
 msgid ""
 "Slew to a nearby bright star using the slew telescope command in the SkyMap "
 "using the ``Slew the telescope to the mouse-pointer position`` command."
 msgstr ""
+"Gire para uma estrela brilhante próxima usando o comando ``Gire o telescópio "
+"para a posição do ponteiro do mouse``."
 
 #: ../../user_manual/ekos-align.rst:33
 msgid "Select ``Slew to Target`` in the ``Solver Action`` on the Align page."
 msgstr ""
+"Selecione ``Girar para o alvo`` em ``Ação do solucionador`` na página "
+"Alinhar."
 
 #: ../../user_manual/ekos-align.rst:35
 msgid "After slew is complete, click ``Capture & Solve`` on the Align page."
 msgstr ""
+"Após a conclusão do giro, clique em ``Capturar e Resolver`` na página "
+"Alinhar."
 
 #: ../../user_manual/ekos-align.rst:37
 msgid ""
@@ -119,34 +164,50 @@ msgid ""
 "within the desired error tolerance, otherwise it will repeat the Slew/"
 "Capture/Solve/Sync process until it is within tolerance."
 msgstr ""
+"O módulo de alinhamento capturará uma imagem e tentará resolvê-la. Se o "
+"solucionador for bem-sucedido, o Ekos enviará um comando de sincronização "
+"para a montagem e, em seguida, realizará o movimento de rotação para a "
+"estrela. Os resultados são exibidos na aba ``Resultados da solução``, "
+"juntamente com um diagrama de alvo que mostra o deslocamento das coordenadas "
+"do telescópio relatadas (ou seja, para onde o telescópio *pensa* que está "
+"olhando em comparação com sua posição real no céu, conforme determinado pelo "
+"solucionador). O módulo será interrompido se estiver dentro da tolerância de "
+"erro desejada; caso contrário, repetirá o processo de Movimento/Captura/"
+"Resolução/Sincronização até que esteja dentro da tolerância."
 
 #: ../../user_manual/ekos-align.rst:39
 msgid ""
 "Each time the solver is executed and returns successful results, Ekos can "
 "run on the following actions:"
 msgstr ""
+"Cada vez que o solucionador é executado e retorna resultados bem-sucedidos, "
+"o Ekos pode executar as seguintes ações:"
 
 #: ../../user_manual/ekos-align.rst:41
 msgid "``Sync``: Syncs the telescope coordinates to the solution coordinates."
 msgstr ""
+"``Sincronizar``: Sincroniza as coordenadas do telescópio com as coordenadas "
+"da solução."
 
 #: ../../user_manual/ekos-align.rst:43
 msgid ""
 "``Slew to Target``: Syncs the telescope coordinates to the solution "
 "coordinates and then slew to the target."
 msgstr ""
+"``Girar para o alvo``: Sincroniza as coordenadas do telescópio com as "
+"coordenadas da solução e então gira para o alvo."
 
 #: ../../user_manual/ekos-align.rst:45
 msgid "``Nothing``: Just solve the image and display the solution coordinates."
-msgstr ""
+msgstr "``Nada``: Apenas resolve a imagem e exibe as coordenadas da solução."
 
 #: ../../user_manual/ekos-align.rst:50
 msgid "Configure StellarSolver Options"
-msgstr ""
+msgstr "Configurar opções do StellarSolver"
 
 #: ../../user_manual/ekos-align.rst:52
 msgid "|StellarSolver Options|"
-msgstr ""
+msgstr "|StellarSolver Options|"
 
 #: ../../user_manual/ekos-align.rst:54
 msgid ""
@@ -161,6 +222,17 @@ msgid ""
 "solve because of all the data transfer required. For ``Options Profile``, "
 "start with the ``1-Default`` profile."
 msgstr ""
+"Para usar os solucionadores, você deve primeiro configurar as opções do "
+"StellarSolver. A página acima é exibida ao clicar no botão ``Opções`` no "
+"canto inferior direito da página de alinhamento e, em seguida, selecionar a "
+"aba ``Opções do StellarSolver``. Comece com o ``Método integrado para "
+"extração de fonte do solucionador`` para que cada solucionador use seu "
+"código de extração de estrelas preferido. ``Para o método de resolução``, "
+"recomendamos escolher ``Resolvedor interno`` para usar a cópia do código "
+"Astrometry.net do StellarSolver, ou escolha ``ASTAP local`` se preferir. O "
+"solucionador de astrometria online é preciso, mas pode levar muito tempo "
+"para resolver devido a toda a transferência de dados necessária. Para o "
+"``Perfil de opções``, comece com o perfil ``1-Padrão``."
 
 #: ../../user_manual/ekos-align.rst:56
 msgid ""
@@ -171,14 +243,21 @@ msgid ""
 "telescope to slew there. It is highly recommended to keep this option on. "
 "``Overlay`` overlays captured images unto the sky map of KStars."
 msgstr ""
+"Existem duas outras opções secundárias. ``WCS`` ou Sistema de Coordenadas "
+"Mundiais é um sistema para incorporar informações de coordenadas equatoriais "
+"na imagem. Ao visualizar uma imagem resolvida, você pode passar o mouse "
+"sobre ela e visualizar a coordenada de cada pixel. Você também pode clicar "
+"em qualquer lugar da imagem e comandar o telescópio para se mover até lá. É "
+"altamente recomendável manter esta opção ativada. ``Sobrepor`` sobrepõe as "
+"imagens capturadas no mapa celeste do KStars."
 
 #: ../../user_manual/ekos-align.rst:61
 msgid "Configure StellarSolver External Programs"
-msgstr ""
+msgstr "Configurar programas externos do StellarSolver"
 
 #: ../../user_manual/ekos-align.rst:63
 msgid "|StellarSolver External Programs|"
-msgstr ""
+msgstr "|StellarSolver External Programs|"
 
 #: ../../user_manual/ekos-align.rst:65
 msgid ""
@@ -186,6 +265,9 @@ msgid ""
 "``Solving Method``. If you choose ``Internal Solver``, then it is not "
 "necessary."
 msgstr ""
+"Isso só é necessário se você escolher um dos programas externos para o seu "
+"``Método de resolução``. Se você escolher ``Solucionador interno``, não será "
+"necessário."
 
 #: ../../user_manual/ekos-align.rst:67
 msgid ""
@@ -193,20 +275,25 @@ msgid ""
 "The top menu item ``select to load one of the default sets`` usually "
 "configures the boxes correctly."
 msgstr ""
+"Você precisará certificar-se de que os caminhos estejam corretos para o "
+"solucionador escolhido. O item do menu superior ``selecione para carregar um "
+"dos conjuntos padrão`` geralmente configura as caixas corretamente."
 
 #: ../../user_manual/ekos-align.rst:72
 msgid "Configure StellarSolver Scale and Position"
-msgstr ""
+msgstr "Configurar escala e posição do StellarSolver"
 
 #: ../../user_manual/ekos-align.rst:74
 msgid "|StellarSolver Scale and Position|"
-msgstr ""
+msgstr "|StellarSolver Scale and Position|"
 
 #: ../../user_manual/ekos-align.rst:76
 msgid ""
 "This page tells Ekos whether you want to constrain your plate-solving search "
 "by scale or position."
 msgstr ""
+"Esta página informa ao Ekos se você deseja restringir sua busca de resolução "
+"de placas por escala ou posição."
 
 #: ../../user_manual/ekos-align.rst:78
 msgid ""
@@ -222,6 +309,19 @@ msgid ""
 "automatically fill the scale box with the scale found in the most-recent "
 "successful solve."
 msgstr ""
+"A escala pode ser a largura da imagem em graus (``dw``), a largura da imagem "
+"em minutos de arco (``aw``) ou a largura do pixel em segundos de arco "
+"(``app``). Todas devem funcionar, mas segundos de arco por pixel são "
+"recomendados. Normalmente, você deseja usar essa restrição para uma "
+"resolução mais rápida, portanto, recomendamos que você marque esta caixa. O "
+"sistema não exige que a escala esteja exatamente correta — ele permite "
+"desvios de 10 a 20%. No entanto, frequentemente, problemas relacionados à "
+"resolução são devidos ao uso de uma escala imprecisa. Portanto, se você "
+"tiver problemas com a resolução de placas, convém desmarcar ``Usar escala`` "
+"até que esses problemas sejam resolvidos. Isso provavelmente resultará em "
+"tempos de resolução mais longos. ``Atualização automática`` preencherá "
+"automaticamente a caixa de escala com a escala encontrada na resolução bem-"
+"sucedida mais recente."
 
 #: ../../user_manual/ekos-align.rst:80
 msgid ""
@@ -241,20 +341,39 @@ msgid ""
 "slew will update the position to the position where the telescope thinks it "
 "is pointing after the slew."
 msgstr ""
+"As posições AR e DEC são geralmente preenchidas a partir da posição que o "
+"telescópio pensa estar apontando. Naturalmente, o sistema não requer uma "
+"restrição posicional exata — afinal, o objetivo da resolução de placas é "
+"encontrar essa posição. A distância máxima em graus da posição especificada "
+"até a posição real é dada pelo campo ``Raio``. A resolução de placas falhará "
+"se a posição especificada estiver mais distante. Normalmente, você deseja "
+"habilitar ``Usar posição`` para uma resolução mais rápida, portanto, "
+"recomendamos que você marque esta caixa. No entanto, frequentemente, "
+"problemas relacionados à resolução são devidos ao uso de uma estimativa "
+"posicional ruim (por exemplo, o telescópio está significativamente "
+"desalinhado). Portanto, se você tiver problemas com a resolução de placas, "
+"convém desmarcar ``Usar posição`` até que esses problemas sejam resolvidos. "
+"Como mencionado, isso resultará em tempos de resolução mais longos. "
+"``Atualização automática`` preencherá a caixa de posição com a posição "
+"encontrada na resolução bem-sucedida mais recente. No entanto, uma "
+"inclinação atualizará a posição para onde o telescópio pensa que está "
+"apontando após a inclinação."
 
 #: ../../user_manual/ekos-align.rst:85
 msgid "Configure StellarSolver Profiles"
-msgstr ""
+msgstr "Configurar perfis do StellarSolver"
 
 #: ../../user_manual/ekos-align.rst:87
 msgid "|StellarSolver Profiles|"
-msgstr ""
+msgstr "|StellarSolver Profiles|"
 
 #: ../../user_manual/ekos-align.rst:89
 msgid ""
 "This applies if you are using the (recommended) ``Internal Solver`` "
 "``Solving Method``."
 msgstr ""
+"Isso se aplica se você estiver usando o ``Solucionador interno`` "
+"(recomendado) ``Método de resolução``."
 
 #: ../../user_manual/ekos-align.rst:91
 msgid ""
@@ -265,6 +384,12 @@ msgid ""
 "other possible profiles such as ``Large Scale Solving``, ``Small Scale "
 "Solving``, and ``Single Thread Solving``."
 msgstr ""
+"Você pode escolher um Perfil ``Opções`` na aba ``Opções do StellarSolver``. "
+"Perfis são simplesmente coleções de parâmetros para configurar o desempenho "
+"do sistema de extração de estrelas e resolução de placas dentro do "
+"StellarSolver. O perfil ``1-Default`` é o recomendado para começar. Existem "
+"alguns outros perfis possíveis, como ``Resolução em grande escala``, "
+"``Resolução em pequena escala`` e ``Resolução de thread única``."
 
 #: ../../user_manual/ekos-align.rst:93
 msgid ""
@@ -272,6 +397,9 @@ msgid ""
 "There are many parameters, most of which you need not change to solve "
 "issues. There are 3 types of parameters."
 msgstr ""
+"Na aba ``Editor de perfil de opções de alinhamento``, você pode visualizar e "
+"editar perfis. Há muitos parâmetros, a maioria dos quais você não precisa "
+"alterar para resolver problemas. Existem 3 tipos de parâmetros."
 
 #: ../../user_manual/ekos-align.rst:95
 msgid ""
@@ -280,6 +408,10 @@ msgid ""
 "are star extraction parameters--that is those that help find stars in your "
 "image."
 msgstr ""
+"A seção superior denominada parâmetros do ``Sextractor`` (com títulos de "
+"coluna ``Parâmetros de extração``, ``Parâmetros de desmistura`` e "
+"``Parâmetros de fotometria``) são parâmetros de extração de estrelas — ou "
+"seja, aqueles que ajudam a encontrar estrelas na sua imagem."
 
 #: ../../user_manual/ekos-align.rst:97
 msgid ""
@@ -288,28 +420,39 @@ msgid ""
 "solver (when aligning or polar-aligning), or to autofocus or the internal "
 "guider (when just a list of stars is needed)."
 msgstr ""
+"A segunda seção, denominada ``Parâmetros de filtragem de estrelas``, filtra/"
+"reduz o número de estrelas extraídas antes de enviar a lista para o "
+"solucionador de placas (ao alinhar ou alinhar polarmente), ou para o foco "
+"automático ou para o guia interno (quando apenas uma lista de estrelas é "
+"necessária)."
 
 #: ../../user_manual/ekos-align.rst:99
 msgid ""
 "The third section labelled ``Astrometry Parameters`` adjusts the performance "
 "of plate solving."
 msgstr ""
+"A terceira seção, denominada ``Parâmetros de astrometria``, ajusta o "
+"desempenho da resolução de placas."
 
 #: ../../user_manual/ekos-align.rst:101
 msgid ""
 "All the input fields have tooltips that are displayed if you hover your "
 "mouse over the input box."
 msgstr ""
+"Todos os campos de entrada têm dicas que são exibidas se você passar o mouse "
+"sobre a caixa de entrada."
 
 #: ../../user_manual/ekos-align.rst:103
 msgid ""
 "You can make changes to the values and save the profile if you like, or "
 "restore the profile's original values."
 msgstr ""
+"Você pode fazer alterações nos valores e salvar o perfil, se desejar, ou "
+"restaurar os valores originais do perfil."
 
 #: ../../user_manual/ekos-align.rst:108
 msgid "Star-Extraction Parameters"
-msgstr ""
+msgstr "Parâmetros de extração de estrelas"
 
 #: ../../user_manual/ekos-align.rst:110
 msgid ""
@@ -319,6 +462,11 @@ msgid ""
 "adjusting. However, it's probably best not to get into the weeds of "
 "modifying most of these values."
 msgstr ""
+"Os títulos das colunas são links para o manual do Sextractor, que é a "
+"principal fonte para esses parâmetros. Consulte esses links para encontrar "
+"detalhes sobre todos os parâmetros. Abordaremos alguns dos parâmetros que "
+"você pode considerar ajustar. No entanto, provavelmente é melhor não entrar "
+"em detalhes sobre modificar a maioria desses valores."
 
 #: ../../user_manual/ekos-align.rst:112
 msgid ""
@@ -330,6 +478,13 @@ msgid ""
 "to be detected as stars. Higher values will reduce the number of stars "
 "detected."
 msgstr ""
+"``Thresh Multiple`` e ``Thresh Offset`` referem-se à sensibilidade do "
+"sistema aos valores de pixel. O nível do fundo é multiplicado por ``Thresh "
+"Multiple`` e, em seguida, ``Thresh Offset`` é adicionado a esse valor. Se o "
+"valor de um pixel exceder o resultado, ele poderá ser usado para detectar "
+"uma estrela. Portanto, valores menores (especialmente para múltiplos) podem "
+"fazer com que até mesmo pixels fracos sejam detectados como estrelas. "
+"Valores maiores reduzirão o número de estrelas detectadas."
 
 #: ../../user_manual/ekos-align.rst:114
 msgid ""
@@ -339,6 +494,12 @@ msgid ""
 "you are not detecting desired smaller real stars, perhaps your ``Min Area`` "
 "is too high."
 msgstr ""
+"``Área mínima`` é a área mínima para detecção de estrelas — a área é "
+"expressa em pixels quadrados, onde todos os pixels têm valores de pixel "
+"acima do limite. Se você estiver detectando pequenos picos de ruído como "
+"estrelas, pode ser necessário aumentar esse valor. Se você não estiver "
+"detectando estrelas reais menores desejadas, talvez sua ``Área mínima`` "
+"esteja muito alta."
 
 #: ../../user_manual/ekos-align.rst:116
 msgid ""
@@ -346,10 +507,13 @@ msgid ""
 "pixels. The image is smoothed by this amount before star detection is "
 "initiated."
 msgstr ""
+"``Conv FWHM`` deve ser ajustado para aproximadamente a visibilidade da sua "
+"área em pixels. A imagem é suavizada por esse valor antes que a detecção de "
+"estrelas seja iniciada."
 
 #: ../../user_manual/ekos-align.rst:121
 msgid "Star-Filtering Parameters"
-msgstr ""
+msgstr "Parâmetros de filtragem de estrelas"
 
 #: ../../user_manual/ekos-align.rst:123
 msgid ""
@@ -359,6 +523,12 @@ msgid ""
 "for these parameters disable the filter. However, once again it's probably "
 "best not to get into the weeds of modifying most of these values."
 msgstr ""
+"Essa filtragem é feita principalmente por uma questão de velocidade, bem "
+"como para remover estrelas recortadas ou objetos muito elípticos, que podem "
+"ser galáxias. Abordaremos alguns dos parâmetros que você pode considerar "
+"ajustar. Valores zero para esses parâmetros desabilitam o filtro. No "
+"entanto, mais uma vez, provavelmente é melhor não se aprofundar na "
+"modificação da maioria desses valores."
 
 #: ../../user_manual/ekos-align.rst:125
 msgid ""
@@ -373,18 +543,34 @@ msgid ""
 "operation. An initial list of 1000 stars and a few hundred returned stars "
 "should be sufficient for most applications."
 msgstr ""
+"``Initial Keep`` e ``Stars Keep #`` referem-se ao número de estrelas "
+"retornadas pelo sistema. O sistema executará inicialmente seu algoritmo de "
+"detecção e encontrará um número de detecções possíveis. Ele filtrará essa "
+"lista, mantendo apenas as estrelas mais brilhantes do ``Initial Keep``. Em "
+"seguida, executará o restante da filtragem, incluindo o cálculo da RMF de "
+"todas essas estrelas e, por fim, retornará apenas uma lista de estrelas do "
+"``Stars Keep #``. Nenhum dos usos (alinhamento, foco automático, guia) do "
+"StellarSolver requer milhares de estrelas para poder realizar seu trabalho, "
+"e quanto mais estrelas forem processadas, mais lenta será a operação. Uma "
+"lista inicial de 1000 estrelas e algumas centenas de estrelas retornadas "
+"deve ser suficiente para a maioria das aplicações."
 
 #: ../../user_manual/ekos-align.rst:127
 msgid ""
 "``Max Size`` and ``Min Size`` filter stars by their sizes (pixel diameters), "
 "and are similar in usage to ``Min Area`` above."
 msgstr ""
+"``Tamanho máximo`` e ``Tamanho mínimo`` filtram estrelas por seus tamanhos "
+"(diâmetros de pixel) e são semelhantes em uso à ``Área mínima`` acima."
 
 #: ../../user_manual/ekos-align.rst:129
 msgid ""
 "``Max Ellipse`` specifies how elliptical a star can be before being removed. "
 "2 would mean the larger axis could be twice as large as the smaller axis."
 msgstr ""
+"``Elipse máxima`` especifica o quão elíptica uma estrela pode ser antes de "
+"ser removida. 2 significaria que o eixo maior poderia ser duas vezes maior "
+"que o eixo menor."
 
 #: ../../user_manual/ekos-align.rst:131
 msgid ""
@@ -392,36 +578,48 @@ msgid ""
 "stars from consideration. ``Sat Limit`` removes stars whose pixel values "
 "exceed that percentage of the maximum pixel value--to remove saturated stars."
 msgstr ""
+"``Cortar mais brilhante`` e ``Cortar mais escuro`` removem as estrelas X% "
+"mais brilhantes ou mais escuras da consideração. ``Limite de satélite`` "
+"remove estrelas cujos valores de pixel excedem essa porcentagem do valor "
+"máximo de pixel — para remover estrelas saturadas."
 
 #: ../../user_manual/ekos-align.rst:136
 msgid "Plate-Solving Parameters"
-msgstr ""
+msgstr "Parâmetros de resolução de placas"
 
 #: ../../user_manual/ekos-align.rst:138
 msgid "These plate-solving parameters mostly relate to computation resources."
 msgstr ""
+"Esses parâmetros de resolução de placas estão relacionados principalmente "
+"aos recursos de computação."
 
 #: ../../user_manual/ekos-align.rst:140
 msgid ""
 "``Search Radius`` is the distance from the position estimate in degrees that "
 "may be searched if ``Use Position`` is checked."
 msgstr ""
+"``Raio de pesquisa`` é a distância da estimativa de posição em graus que "
+"pode ser pesquisada se ``Usar posição`` estiver marcado."
 
 #: ../../user_manual/ekos-align.rst:142
 msgid ""
 "``Maximum Time`` is the maximum number of seconds that the plate-solving "
 "will run before it times out."
 msgstr ""
+"``Tempo máximo`` é o número máximo de segundos que a resolução de placas "
+"será executada antes de atingir o tempo limite."
 
 #: ../../user_manual/ekos-align.rst:147
 msgid "Download Index Files"
-msgstr ""
+msgstr "Baixar arquivos de índice"
 
 #: ../../user_manual/ekos-align.rst:149
 msgid ""
 "Index files are required if you choose the ``Internal Solver`` or ``Local "
 "Astrometry`` ``Solving Method``."
 msgstr ""
+"Arquivos de índice são necessários se você escolher o ``Solucionador "
+"interno`` ou o ``Método de resolução`` da ``Astrometria local``."
 
 #: ../../user_manual/ekos-align.rst:151
 msgid ""
@@ -432,20 +630,30 @@ msgid ""
 "methods to fetch the necessary index files: The new download support in "
 "Align module, and the old manual way."
 msgstr ""
+"Para solucionadores offline (e remotos), os arquivos de índice são "
+"necessários para o funcionamento do solucionador. A coleção completa de "
+"arquivos de índice é enorme (mais de 30 GB), mas você só precisa baixar o "
+"necessário para a configuração do seu equipamento. Os arquivos de índice são "
+"classificados pelo campo de visão (CDV) que abrangem. Existem dois métodos "
+"para obter os arquivos de índice necessários: o novo suporte para download "
+"no módulo de alinhamento e o antigo método manual."
 
 #: ../../user_manual/ekos-align.rst:156
 msgid "Automatic Download"
-msgstr ""
+msgstr "Download automático"
 
 #: ../../user_manual/ekos-align.rst:158
 msgid "|Astrometry.net Indexes Download|"
-msgstr ""
+msgstr "|Astrometry.net Indexes Download|"
 
 #: ../../user_manual/ekos-align.rst:160
 msgid ""
 "Automatic download is only available for Ekos users on Linux® & Mac® OS. For "
 "Windows® users, please download ANSVR solver."
 msgstr ""
+"O download automático está disponível apenas para usuários do Ekos nos "
+"sistemas operacionais Linux® e Mac®. Para usuários do Windows®, baixe o "
+"solucionador ANSVR."
 
 #: ../../user_manual/ekos-align.rst:162
 msgid ""
@@ -455,18 +663,24 @@ msgid ""
 "available and installed index files. Three icons are used to designate the "
 "importance of index files given your current setup as follows:"
 msgstr ""
+"Para acessar a página de download, clique no botão ``Opções`` no módulo :doc:"
+"`Alinhar <ekos-align>` e selecione a aba ``Arquivos de índice`` de "
+"``Astrometria``. A página exibe o campo de visão atual da sua configuração "
+"atual e, abaixo dele, uma lista de arquivos de índice disponíveis e "
+"instalados. Três ícones são usados ​​para designar a importância dos arquivos "
+"de índice para a sua configuração atual, conforme a seguir:"
 
 #: ../../user_manual/ekos-align.rst:164
 msgid "|image2| Required"
-msgstr ""
+msgstr "|image2| Necessário"
 
 #: ../../user_manual/ekos-align.rst:166
 msgid "|image3| Recommended"
-msgstr ""
+msgstr "|image3| Recomendado"
 
 #: ../../user_manual/ekos-align.rst:168
 msgid "|image4| Optional"
-msgstr ""
+msgstr "|image4| Opcional"
 
 #: ../../user_manual/ekos-align.rst:170
 msgid ""
@@ -479,10 +693,19 @@ msgid ""
 "the files. Once you installed all the required files, you can begin using "
 "the offline astrometry.net solver immediately."
 msgstr ""
+"Você deve baixar todos os arquivos necessários e, se tiver bastante espaço "
+"disponível no disco rígido, também poderá baixar os índices recomendados. Se "
+"um arquivo de índice estiver instalado, a marca de seleção deverá ser "
+"marcada; caso contrário, marque-a para baixar o arquivo de índice relevante. "
+"Baixe apenas um arquivo por vez, especialmente para arquivos maiores. Você "
+"poderá ser solicitado a inserir a senha de administrador (o padrão no "
+"StellarMate é **``smate``**) para instalar os arquivos. Após instalar todos "
+"os arquivos necessários, você poderá começar a usar o solucionador offline "
+"do astrometry.net imediatamente."
 
 #: ../../user_manual/ekos-align.rst:175
 msgid "Manual Download"
-msgstr ""
+msgstr "Download manual"
 
 #: ../../user_manual/ekos-align.rst:177
 msgid ""
@@ -494,216 +717,238 @@ msgid ""
 "many online tools to calculate FOVs, such as `Starizona Field of View "
 "Calculator <http://starizona.com/acb/ccd/calc_pixel.aspx>`__."
 msgstr ""
+"Você precisa `baixar <http://data.astrometry.net>`__ e instalar os arquivos "
+"de índice necessários, adequados ao campo de visão (CDV) do seu telescópio + "
+"CCD. Você precisa instalar arquivos de índice cobrindo de 100% a 10% do seu "
+"CDV. Por exemplo, se o seu CDV for de 60 minutos de arco, você precisa "
+"instalar arquivos de índice cobrindo marcas celestes de 6 minutos de arco "
+"(10%) a 60 minutos de arco (100%). Existem muitas ferramentas online para "
+"calcular CDVs, como a `Calculadora de campo de visão Starizona <http://"
+"starizona.com/acb/ccd/calc_pixel.aspx>`__."
 
 #: ../../user_manual/ekos-align.rst:179
 msgid "**Table 5.1. Index Files**"
-msgstr ""
+msgstr "**Tabela 5.1. Arquivos de índice**"
 
 #: ../../user_manual/ekos-align.rst:183
 msgid "Index Filename"
-msgstr ""
+msgstr "Nome do arquivo de índice"
 
 #: ../../user_manual/ekos-align.rst:183
 msgid "FOV (arcminutes)"
-msgstr ""
+msgstr "CDV (minutos de arco)"
 
 #: ../../user_manual/ekos-align.rst:183
 msgid "Debian Package"
-msgstr ""
+msgstr "Pacote Debian"
 
 #: ../../user_manual/ekos-align.rst:185
 msgid "index-4219.fits"
-msgstr ""
+msgstr "index-4219.fits"
 
 #: ../../user_manual/ekos-align.rst:185
 msgid "1400 - 2000"
-msgstr ""
+msgstr "1400 - 2000"
 
 #: ../../user_manual/ekos-align.rst:185
 msgid ""
 "`astrometry-data-4208-4 219 <http://data.astrometry .net/debian/astrometry-"
 "data -4208-4219_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-data-4208-4 219 <http://data.astrometry .net/debian/astrometry-"
+"data -4208-4219_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:190
 msgid "index-4218.fits"
-msgstr ""
+msgstr "index-4218.fits"
 
 #: ../../user_manual/ekos-align.rst:190
 msgid "1000 - 1400"
-msgstr ""
+msgstr "1000 - 1400"
 
 #: ../../user_manual/ekos-align.rst:192
 msgid "index-4217.fits"
-msgstr ""
+msgstr "index-4217.fits"
 
 #: ../../user_manual/ekos-align.rst:192
 msgid "680 - 1000"
-msgstr ""
+msgstr "680 - 1000"
 
 #: ../../user_manual/ekos-align.rst:194
 msgid "index-4216.fits"
-msgstr ""
+msgstr "index-4216.fits"
 
 #: ../../user_manual/ekos-align.rst:194
 msgid "480 - 680"
-msgstr ""
+msgstr "480 - 680"
 
 #: ../../user_manual/ekos-align.rst:196
 msgid "index-4215.fits"
-msgstr ""
+msgstr "index-4215.fits"
 
 #: ../../user_manual/ekos-align.rst:196
 msgid "340 - 480"
-msgstr ""
+msgstr "340 - 480"
 
 #: ../../user_manual/ekos-align.rst:198
 msgid "index-4214.fits"
-msgstr ""
+msgstr "index-4214.fits"
 
 #: ../../user_manual/ekos-align.rst:198
 msgid "240 - 340"
-msgstr ""
+msgstr "240 - 340"
 
 #: ../../user_manual/ekos-align.rst:200
 msgid "index-4213.fits"
-msgstr ""
+msgstr "index-4213.fits"
 
 #: ../../user_manual/ekos-align.rst:200
 msgid "170 - 240"
-msgstr ""
+msgstr "170 - 240"
 
 #: ../../user_manual/ekos-align.rst:202
 msgid "index-4212.fits"
-msgstr ""
+msgstr "index-4212.fits"
 
 #: ../../user_manual/ekos-align.rst:202
 msgid "120 - 170"
-msgstr ""
+msgstr "120 - 170"
 
 #: ../../user_manual/ekos-align.rst:204
 msgid "index-4211.fits"
-msgstr ""
+msgstr "index-4211.fits"
 
 #: ../../user_manual/ekos-align.rst:204
 msgid "85 - 120"
-msgstr ""
+msgstr "85 - 120"
 
 #: ../../user_manual/ekos-align.rst:206
 msgid "index-4210.fits"
-msgstr ""
+msgstr "index-4210.fits"
 
 #: ../../user_manual/ekos-align.rst:206
 msgid "60 - 85"
-msgstr ""
+msgstr "60 - 85"
 
 #: ../../user_manual/ekos-align.rst:208
 msgid "index-4209.fits"
-msgstr ""
+msgstr "index-4209.fits"
 
 #: ../../user_manual/ekos-align.rst:208
 msgid "42 - 60"
-msgstr ""
+msgstr "42 - 60"
 
 #: ../../user_manual/ekos-align.rst:210
 msgid "index-4208.fits"
-msgstr ""
+msgstr "index-4208.fits"
 
 #: ../../user_manual/ekos-align.rst:210
 msgid "30 - 42"
-msgstr ""
+msgstr "30 - 42"
 
 #: ../../user_manual/ekos-align.rst:212
 msgid "index-4207-*.fits"
-msgstr ""
+msgstr "index-4207-*.fits"
 
 #: ../../user_manual/ekos-align.rst:212
 msgid "22 - 30"
-msgstr ""
+msgstr "22 - 30"
 
 #: ../../user_manual/ekos-align.rst:212
 msgid ""
 "`astrometry-d ata-4207 <http://data.astro metry.net/debian/astrometry -"
 "data-4207_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4207 <http://data.astro metry.net/debian/astrometry -"
+"data-4207_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:217
 msgid "index-4206-*.fits"
-msgstr ""
+msgstr "index-4206-*.fits"
 
 #: ../../user_manual/ekos-align.rst:217
 msgid "16 - 22"
-msgstr ""
+msgstr "16 - 22"
 
 #: ../../user_manual/ekos-align.rst:217
 msgid ""
 "`astrometry-d ata-4206 <http://data.astro metry.net/debian/astrometry -"
 "data-4206_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4206 <http://data.astro metry.net/debian/astrometry -"
+"data-4206_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:222
 msgid "index-4205-*.fits"
-msgstr ""
+msgstr "index-4205-*.fits"
 
 #: ../../user_manual/ekos-align.rst:222
 msgid "11 - 16"
-msgstr ""
+msgstr "11 - 16"
 
 #: ../../user_manual/ekos-align.rst:222
 msgid ""
 "`astrometry-d ata-4205 <http://data.astro metry.net/debian/astrometry -"
 "data-4205_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4205 <http://data.astro metry.net/debian/astrometry -"
+"data-4205_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:227
 msgid "index-4204-*.fits"
-msgstr ""
+msgstr "index-4204-*.fits"
 
 #: ../../user_manual/ekos-align.rst:227
 msgid "8 - 11"
-msgstr ""
+msgstr "8 - 11"
 
 #: ../../user_manual/ekos-align.rst:227
 msgid ""
 "`astrometry-d ata-4204 <http://data.astro metry.net/debian/astrometry -"
 "data-4204_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4204 <http://data.astro metry.net/debian/astrometry -"
+"data-4204_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:232
 msgid "index-4203-*.fits"
-msgstr ""
+msgstr "index-4203-*.fits"
 
 #: ../../user_manual/ekos-align.rst:232
 msgid "5.6 - 8.0"
-msgstr ""
+msgstr "5.6 - 8.0"
 
 #: ../../user_manual/ekos-align.rst:232
 msgid ""
 "`astrometry-d ata-4203 <http://data.astro metry.net/debian/astrometry -"
 "data-4203_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4203 <http://data.astro metry.net/debian/astrometry -"
+"data-4203_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:237
 msgid "index-4202-*.fits"
-msgstr ""
+msgstr "index-4202-*.fits"
 
 #: ../../user_manual/ekos-align.rst:237
 msgid "4.0 - 5.6"
-msgstr ""
+msgstr "4.0 - 5.6"
 
 #: ../../user_manual/ekos-align.rst:237
 msgid ""
 "`astrometry-d ata-4202 <http://data.astro metry.net/debian/astrometry -"
 "data-4202_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-d ata-4202 <http://data.astro metry.net/debian/astrometry -"
+"data-4202_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:242
 msgid "index-4201-*.fits"
-msgstr ""
+msgstr "index-4201-*.fits"
 
 #: ../../user_manual/ekos-align.rst:242
 msgid "2.8 - 4.0"
-msgstr ""
+msgstr "2.8 - 4.0"
 
 #: ../../user_manual/ekos-align.rst:242
 msgid ""
@@ -714,14 +959,20 @@ msgid ""
 "deb>`__ `astrometry-data- 4201-4 <http://data.astrome try.net/debian/"
 "astrometry-d ata-4201-4_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-data- 4201-1 <http://data.astrome try.net/debian/astrometry-d "
+"ata-4201-1_0.45_all.deb>`__ `astrometry-data- 4201-2 <http://data.astrome "
+"try.net/debian/astrometry-d ata-4201-2_0.45_all.deb>`__ `astrometry-data- "
+"4201-3 <http://data.astrome try.net/debian/astrometry-d ata-4201-3_0.45_all."
+"deb>`__ `astrometry-data- 4201-4 <http://data.astrome try.net/debian/"
+"astrometry-d ata-4201-4_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:259
 msgid "index-4200-*.fits"
-msgstr ""
+msgstr "index-4200-*.fits"
 
 #: ../../user_manual/ekos-align.rst:259
 msgid "2.0 - 2.8"
-msgstr ""
+msgstr "2.0 - 2.8"
 
 #: ../../user_manual/ekos-align.rst:259
 msgid ""
@@ -732,6 +983,12 @@ msgid ""
 "deb>`__ `astrometry-data- 4200-4 <http://data.astrome try.net/debian/"
 "astrometry-d ata-4200-4_0.45_all.deb>`__"
 msgstr ""
+"`astrometry-data- 4200-1 <http://data.astrome try.net/debian/astrometry-d "
+"ata-4200-1_0.45_all.deb>`__ `astrometry-data- 4200-2 <http://data.astrome "
+"try.net/debian/astrometry-d ata-4200-2_0.45_all.deb>`__ `astrometry-data- "
+"4200-3 <http://data.astrome try.net/debian/astrometry-d ata-4200-3_0.45_all."
+"deb>`__ `astrometry-data- 4200-4 <http://data.astrome try.net/debian/"
+"astrometry-d ata-4200-4_0.45_all.deb>`__"
 
 #: ../../user_manual/ekos-align.rst:277
 msgid ""
@@ -740,16 +997,22 @@ msgid ""
 "you can install them from your favorite package manager, or via the "
 "following command:"
 msgstr ""
+"Os pacotes Debian são adequados para qualquer distribuição baseada em Debian "
+"(Ubuntu, Mint, etc.). Se você baixou os pacotes Debian acima para o seu "
+"intervalo de CDV, você pode instalá-los a partir do seu gerenciador de "
+"pacotes favorito ou através do seguinte comando:"
 
 #: ../../user_manual/ekos-align.rst:279
 msgid "**sudo dpkg -i astrometry-data-*.deb**"
-msgstr ""
+msgstr "**sudo dpkg -i astrometry-data-*.deb**"
 
 #: ../../user_manual/ekos-align.rst:281
 msgid ""
 "On the other hand, if you downloaded the FITS index files directly, copy "
 "them to ``/usr/share/astrometry`` directory."
 msgstr ""
+"Por outro lado, se você baixou os arquivos de índice FITS diretamente, copie-"
+"os para o diretório ``/usr/share/astrometry``."
 
 #: ../../user_manual/ekos-align.rst:285
 msgid ""
@@ -758,16 +1021,22 @@ msgid ""
 "download the Debian packages as browsers' built-in download manager may have "
 "problems with download large packages."
 msgstr ""
+"É recomendável usar um gerenciador de downloads como o `DownThemAll! "
+"<https://addons.mozilla.org/en-US/firefox/addon/downthemall/>`__ para o "
+"Firefox para baixar os pacotes Debian, pois o gerenciador de downloads "
+"integrado do navegador pode ter problemas para baixar pacotes grandes."
 
 #: ../../user_manual/ekos-align.rst:290
 msgid "Optionally get astrometry.net"
-msgstr ""
+msgstr "Opcionalmente use o astrometry.net"
 
 #: ../../user_manual/ekos-align.rst:292
 msgid ""
 "This is only required if you choose the ``Local Astrometry`` option for "
 "``Source Extraction Method`` which is no longer recommended."
 msgstr ""
+"Isso só é necessário se você escolher a opção ``Astrometria local`` para "
+"``Método de extração de fonte``, que não é mais recomendada."
 
 #: ../../user_manual/ekos-align.rst:296
 msgid ""
@@ -779,14 +1048,22 @@ msgid ""
 "Ekos Alignment Module. Furthermore, make sure that the ``Astrometry`` driver "
 "is selected in your equipment profile."
 msgstr ""
+"O Astrometry.net já vem com o StellarMate, portanto, não há necessidade de "
+"instalá-lo. Arquivos de índice de 16 minutos de arco ou mais (4206 a 4019) "
+"estão incluídos no StellarMate. Para quaisquer arquivos de índice "
+"adicionais, você precisa instalá-los conforme necessário. Para usar o "
+"Astrometry no StellarMate a partir de um Ekos remoto no Linux®/Windows®/Mac® "
+"OS, certifique-se de selecionar a opção ``Remoto`` no módulo de alinhamento "
+"do Ekos. Além disso, certifique-se de que o driver ``Astrometry`` esteja "
+"selecionado no perfil do seu equipamento."
 
 #: ../../user_manual/ekos-align.rst:298
 msgid "|Ekos Remote Astrometry|"
-msgstr ""
+msgstr "|Ekos Remote Astrometry|"
 
 #: ../../user_manual/ekos-align.rst:300
 msgid "Windows®"
-msgstr ""
+msgstr "Windows®"
 
 #: ../../user_manual/ekos-align.rst:302
 msgid ""
@@ -795,6 +1072,10 @@ msgid ""
 "ANSVR mimics the astrometry.net online server on your local computer; thus "
 "the internet not required for any astrometry queries."
 msgstr ""
+"Para usar o astrometry.net no Windows®, você precisa baixar e instalar o "
+"solucionador ANSVR Local Astrometry.net <https://adgsoftware.com/ansvr/>. O "
+"ANSVR imita o servidor online do astrometry.net no seu computador local; "
+"portanto, a internet não é necessária para nenhuma consulta de astrometria."
 
 #: ../../user_manual/ekos-align.rst:304
 msgid ""
@@ -803,10 +1084,15 @@ msgid ""
 "to Ekos Alignment options where you can simply change the ``API URL`` to use "
 "the ANSVR server as illustrated below:"
 msgstr ""
+"Após instalar o servidor ANSVR e baixar os arquivos de índice apropriados "
+"para sua configuração, certifique-se de que o servidor ANSVR esteja "
+"instalado e funcionando e, em seguida, acesse as opções de alinhamento do "
+"Ekos, onde você pode simplesmente alterar a ``URL da API`` para usar o "
+"servidor ANSVR, conforme ilustrado abaixo:"
 
 #: ../../user_manual/ekos-align.rst:306
 msgid "|ANSVR Parameters|"
-msgstr ""
+msgstr "|ANSVR Parameters|"
 
 #: ../../user_manual/ekos-align.rst:308
 msgid ""
@@ -814,6 +1100,10 @@ msgid ""
 "uses the local ANSVR server for all astrometry queries. Then you can use the "
 "align module as you would normally do."
 msgstr ""
+"No módulo de alinhamento do Ekos, você deve definir o tipo de solucionador "
+"como ``Online`` para que ele use o servidor ANSVR local para todas as "
+"consultas de astrometria. Então você poderá usar o módulo como faria "
+"normalmente."
 
 #: ../../user_manual/ekos-align.rst:310
 msgid ""
@@ -824,16 +1114,24 @@ msgid ""
 "the ``Auxiliary`` dropdown.  This is applicable to all operating systems and "
 "not just Windows®."
 msgstr ""
+"Lembre-se, como indicado acima, de que o StellarMate *já* inclui astrometria."
+"net. Portanto, se desejar usar o StellarMate remotamente para resolver suas "
+"imagens, basta alterar o tipo de solucionador para ``Remoto`` e garantir que "
+"o perfil do seu equipamento inclua o driver **Astrometria**, que pode ser "
+"selecionado no menu suspenso ``Auxiliar``. Isso se aplica a todos os "
+"sistemas operacionais, não apenas ao Windows®."
 
 #: ../../user_manual/ekos-align.rst:313
 msgid "Mac® OS"
-msgstr ""
+msgstr "Mac® OS"
 
 #: ../../user_manual/ekos-align.rst:313
 msgid ""
 "Astrometry.net is already included with KStars for Mac® OS, so no need to "
 "install it."
 msgstr ""
+"O Astrometry.net já está incluído no KStars para Mac® OS, portanto não é "
+"necessário instalá-lo."
 
 #: ../../user_manual/ekos-align.rst:316
 msgid ""
@@ -841,18 +1139,21 @@ msgid ""
 "astrometry is not installed, then you can install it by running the "
 "following command under Ubuntu™:"
 msgstr ""
+"O Astrometry.net já está incluído na versão de teste do KStars. Mas se o "
+"Astrometry não estiver instalado, você pode instalá-lo executando o seguinte "
+"comando no Ubuntu™:"
 
 #: ../../user_manual/ekos-align.rst:318
 msgid "Linux®"
-msgstr ""
+msgstr "Linux®"
 
 #: ../../user_manual/ekos-align.rst:318
 msgid "**sudo apt-get install astrometry.net**"
-msgstr ""
+msgstr "**sudo apt-get install astrometry.net**"
 
 #: ../../user_manual/ekos-align.rst:323
 msgid "How to Use?"
-msgstr ""
+msgstr "Como usar?"
 
 #: ../../user_manual/ekos-align.rst:325
 msgid ""
@@ -863,12 +1164,22 @@ msgid ""
 "possible to Polaris. It is not necessary to perform 2 or 3 star alignments, "
 "but it can be useful for some mount types. Make sure your camera is focused."
 msgstr ""
+"O módulo de alinhamento do Ekos oferece diversas funções para auxiliar na "
+"obtenção de GOTOs precisos. Para algumas montagens, é útil iniciar a sessão "
+"com a montagem na posição inicial, com o tubo do telescópio voltado "
+"diretamente para o polo celeste. Para usuários no Hemisfério Norte, aponte o "
+"telescópio o mais próximo possível da Estrela Polar. Não é necessário "
+"realizar alinhamentos de 2 ou 3 estrelas, mas pode ser útil para alguns "
+"tipos de montagem. Certifique-se de que sua câmera esteja focada."
 
 #: ../../user_manual/ekos-align.rst:327
 msgid ""
 "At the top left of the Align page you can find two solver commands, and two "
 "actions to take given the solver solution."
 msgstr ""
+"No canto superior esquerdo da página de alinhar, você pode encontrar dois "
+"comandos do solucionador e duas ações a serem executadas de acordo com a "
+"solução do solucionador."
 
 #: ../../user_manual/ekos-align.rst:329
 msgid ""
@@ -885,11 +1196,26 @@ msgid ""
 "actual position falls below the accuracy thresholds (30 arcseconds by "
 "default)."
 msgstr ""
+"``Capturar e Resolver``: Captura uma imagem e determina exatamente para onde "
+"no céu o telescópio está apontando. Os resultados da astrometria incluem as "
+"coordenadas equatoriais (AR e DEC) do centro da imagem capturada, a escala "
+"de pixels e a rotação do campo. Dependendo das configurações da ação do "
+"solucionador, os resultados podem ser usados ​​para sincronizar a montagem ou "
+"sincronizar e, em seguida, girar para o local de destino. Por exemplo, "
+"suponha que você girou a montagem para Vega e, em seguida, usou *Capturar e "
+"Resolver*. Se a localização real do telescópio for diferente de Vega, ele "
+"será primeiro sincronizado com a coordenada resolvida e, em seguida, o Ekos "
+"comandará a montagem para girar para Vega. Após a conclusão do giro, o "
+"módulo de alinhamento repetirá o processo de captura e resolução novamente "
+"até que o erro entre a posição relatada e a posição real fique abaixo dos "
+"limites de precisão (30 segundos de arco por padrão)."
 
 #: ../../user_manual/ekos-align.rst:331
 msgid ""
 "``Load & Slew``: Load a FITS or JPEG file, solve it, and then slew to it."
 msgstr ""
+"``Carregar e girar``: Carrega um arquivo FITS ou JPEG, resolva-o e então "
+"gire para ele."
 
 #: ../../user_manual/ekos-align.rst:335
 msgid ""
@@ -898,10 +1224,15 @@ msgid ""
 "celestial pole before solving the first image. Solving very close to the "
 "poles will make your mount pointing worse, so avoid it."
 msgstr ""
+"**Nunca** resolve uma imagem no polo celeste ou próximo a ele (a menos que a "
+"ferramenta de assistente de alinhamento polar do Ekos seja usada). Gira pelo "
+"menos 20 graus para longe do polo celeste antes de resolver a primeira "
+"imagem. Resolver muito perto dos polos piorará o posicionamento da sua "
+"montagem, portanto, evite isso."
 
 #: ../../user_manual/ekos-align.rst:340
 msgid "Alignment Settings"
-msgstr ""
+msgstr "Configurações de alinhamento"
 
 #: ../../user_manual/ekos-align.rst:342
 msgid ""
@@ -909,6 +1240,9 @@ msgid ""
 "You can explore astrometry.net options that are passed to the astrometry.net "
 "solver each time an image is captured:"
 msgstr ""
+"Antes de iniciar o processo de alinhamento, selecione o trem óptico "
+"desejado. Você pode explorar as opções do astrometry.net que são passadas "
+"para o solucionador do astrometry.net sempre que uma imagem é capturada:"
 
 #: ../../user_manual/ekos-align.rst:344
 msgid ""
@@ -917,40 +1251,51 @@ msgid ""
 "this many arc-seconds, then the system will continue to capture, solve and "
 "slew until the solved position is close enough to the target position."
 msgstr ""
+"``Precisão``: Diferença aceitável entre a posição alvo desejada e as "
+"coordenadas resolvidas a partir da imagem capturada. Se a diferença exceder "
+"esse número de segundos de arco, o sistema continuará capturando, resolvendo "
+"e inclinando até que a posição resolvida esteja próxima o suficiente da "
+"posição alvo."
 
 #: ../../user_manual/ekos-align.rst:346
 msgid ""
 "``Train``: Select the Optical Train which will be used to capture the image "
 "to be aligned. It is also used to compute the image scale."
 msgstr ""
+"``Trem``: Seleciona o trem óptico que será usado para capturar a imagem a "
+"ser alinhada. Também é usado para calcular a escala da imagem."
 
 #: ../../user_manual/ekos-align.rst:348
 msgid "``Exposure``: Exposure duration in seconds."
-msgstr ""
+msgstr "``Exposição``: Duração da exposição em segundos."
 
 #: ../../user_manual/ekos-align.rst:350
 msgid "``Bin``: The binning of the image before solving."
-msgstr ""
+msgstr "``Bin``: O binning da imagem antes da resolução."
 
 #: ../../user_manual/ekos-align.rst:352
 msgid "``Gain/ISO``: The camera gain or ISO."
-msgstr ""
+msgstr "``Ganho/ISO``: O ganho da câmera ou ISO."
 
 #: ../../user_manual/ekos-align.rst:354
 msgid ""
 "``Filter/Use Current``: The filter to use when capturing the image. ``Use "
 "Current`` uses whatever filter is currently active."
 msgstr ""
+"``Filtro/Usar atual``: O filtro a ser usado ao capturar a imagem. ``Usar "
+"atual`` usa qualquer filtro que esteja ativo no momento."
 
 #: ../../user_manual/ekos-align.rst:356
 msgid ""
 "``Dark``: Whether to use the dark-image subtraction scheme before analyzing "
 "the captured image."
 msgstr ""
+"``Escuro``: Se deve ou não usar o esquema de subtração de imagem escura "
+"antes de analisar a imagem capturada."
 
 #: ../../user_manual/ekos-align.rst:361 ../../user_manual/ekos-align.rst:424
 msgid "Polar Alignment"
-msgstr ""
+msgstr "Alinhamento Polar"
 
 #: ../../user_manual/ekos-align.rst:363
 msgid ""
@@ -962,6 +1307,14 @@ msgid ""
 "around the sky, from the moment they rise at the eastern horizon, all the "
 "way up across the median, and westward until they set."
 msgstr ""
+"Ao montar uma Montagem Equatorial Alemã (GEM, sigla em inglês) para obtenção "
+"de imagens, um aspecto crítico da captura de imagens de longa exposição é "
+"garantir o alinhamento polar adequado. Uma montagem GEM possui dois eixos: "
+"eixo de Ascensão Reta (AR) e eixo de Declinação (DE). Idealmente, o eixo de "
+"AR deve estar alinhado com o eixo polar da esfera celeste. A função de uma "
+"montagem é rastrear o movimento das estrelas no céu, desde o momento em que "
+"nascem no horizonte leste, passando pela mediana e em direção ao oeste até o "
+"poente."
 
 #: ../../user_manual/ekos-align.rst:369
 msgid ""
@@ -977,10 +1330,22 @@ msgid ""
 "keep the source photons hitting the same pixels. Otherwise, we might end up "
 "with an image plagued with various trail artifacts."
 msgstr ""
+"Em imagens de longa exposição, uma câmera é acoplada ao telescópio, onde o "
+"sensor de imagem captura os fótons incidentes de uma área específica do céu. "
+"Os fótons incidentes precisam atingir o mesmo local da foto repetidamente se "
+"quisermos obter uma imagem clara e nítida. É claro que os fótons reais não "
+"se comportam dessa maneira: a óptica, a atmosfera e a qualidade da visão "
+"dispersam e refratam os fótons de uma forma ou de outra. Além disso, os "
+"fótons não chegam uniformemente, mas seguem uma distribuição de Poisson. "
+"Para fontes pontuais, como estrelas, uma função de dispersão pontual "
+"descreve como os fótons são distribuídos espacialmente pelos pixels. No "
+"entanto, a ideia *geral* é que queremos manter os fótons da fonte atingindo "
+"os mesmos pixels. Caso contrário, podemos acabar com uma imagem repleta de "
+"vários artefatos de rastro."
 
 #: ../../user_manual/ekos-align.rst:371
 msgid "|Polar Alignment|"
-msgstr ""
+msgstr "|Polar Alignment|"
 
 #: ../../user_manual/ekos-align.rst:373
 msgid ""
@@ -992,6 +1357,14 @@ msgid ""
 "factor. If properly aligned, some mounts can track an object for a few "
 "minutes with the only deviation of 1-2 arcsec RMS."
 msgstr ""
+"Como as montagens não são perfeitas, elas não conseguem rastrear "
+"perfeitamente um objeto enquanto ele transita pelo céu. Isso pode ser devido "
+"a diversos fatores, um dos quais é o desalinhamento do eixo de Ascensão Reta "
+"da montagem em relação ao eixo do polo celeste. O alinhamento polar remove "
+"uma das maiores fontes de erros de rastreamento na montagem, mas outras "
+"fontes de erro ainda desempenham um papel. Se alinhadas corretamente, "
+"algumas montagens podem rastrear um objeto por alguns minutos com um desvio "
+"de apenas 1-2 segundos de arco RMS."
 
 #: ../../user_manual/ekos-align.rst:375
 msgid ""
@@ -1004,6 +1377,15 @@ msgid ""
 "get the mount polar aligned to reduce any residual errors as it spans across "
 "the sky."
 msgstr ""
+"No entanto, a menos que você tenha uma montagem de última geração, "
+"provavelmente desejará usar um autoguia para manter a mesma estrela fixada "
+"na mesma posição ao longo do tempo. Apesar de tudo isso, se o eixo da "
+"montagem não estiver alinhado corretamente com o polo celeste, mesmo uma "
+"montagem mecanicamente perfeita perderia o rastreamento com o tempo. Os "
+"erros de rastreamento são proporcionais à magnitude do desalinhamento. "
+"Portanto, é muito importante para imagens de longa exposição alinhar o polo "
+"da montagem para reduzir quaisquer erros residuais à medida que ela se "
+"estende pelo céu."
 
 #: ../../user_manual/ekos-align.rst:377
 msgid ""
@@ -1017,6 +1399,15 @@ msgid ""
 "two slews, the mount slew speed, and whether the mount will be slewing "
 "automatically (recommended) or manually."
 msgstr ""
+"Antes de iniciar o processo, aponte a montagem o mais próximo possível do "
+"polo celeste com os contrapesos abaixados. Se você mora no Hemisfério Norte, "
+"aponte-a o mais próximo possível de Polaris. Se Polaris não estiver visível "
+"(por exemplo, bloqueada por árvores ou edifícios), você pode apontar para "
+"outro lugar, de preferência próximo ao Meridiano. Certifique-se de que haja "
+"pelo menos 30-60 graus de céu visíveis em um arco a leste ou oeste do "
+"Meridiano a partir da posição escolhida. Selecione a direção do céu livre, o "
+"número de graus para cada um dos dois giros, a velocidade de giro da "
+"montagem e se a montagem girará automaticamente (recomendado) ou manualmente."
 
 #: ../../user_manual/ekos-align.rst:379
 msgid ""
@@ -1025,14 +1416,18 @@ msgid ""
 "captured and solved. If you choose manual, you will need to slew the mount "
 "by roughly the angle chosen."
 msgstr ""
+"A ferramenta funciona capturando e resolvendo três imagens. Após capturar "
+"cada uma, a montagem gira na quantidade fixa que você inseriu e outra imagem "
+"é capturada e resolvida. Se você escolher o modo manual, precisará girar a "
+"montagem aproximadamente no ângulo escolhido."
 
 #: ../../user_manual/ekos-align.rst:381
 msgid "|Polar Alignment Assistant|"
-msgstr ""
+msgstr "|Polar Alignment Assistant|"
 
 #: ../../user_manual/ekos-align.rst:386
 msgid "Plate Solve Correction Scheme"
-msgstr ""
+msgstr "Esquema de correção de resolução de placas"
 
 #: ../../user_manual/ekos-align.rst:388
 msgid ""
@@ -1043,16 +1438,25 @@ msgid ""
 "azimuth error of almost 15' and that the axis needs to be moved to the right "
 "(as viewed from behind the telescope)."
 msgstr ""
+"As imagens abaixo mostram o fluxo de trabalho quando a técnica de correção "
+"*Solução da placa* é utilizada. A imagem abaixo mostra uma tela após as 3 "
+"imagens de medição serem capturadas e resolvidas. Ela mostra um erro de "
+"quase 18' em altitude e que o eixo da montagem precisa ser movido para cima. "
+"Da mesma forma, ela mostra um erro de azimute de quase 15' e que o eixo "
+"precisa ser movido para a direita (visto por trás do telescópio)."
 
 #: ../../user_manual/ekos-align.rst:390
 msgid "|Polar Alignment Assistant, Plate Solve Workflow 1|"
-msgstr ""
+msgstr "|Polar Alignment Assistant, Plate Solve Workflow 1|"
 
 #: ../../user_manual/ekos-align.rst:392
 msgid ""
 "If your error is low enough (e.g. less than an arc-minute) then you don't "
 "need to make any adjustments.  Simply press stop and you're done."
 msgstr ""
+"Se o seu erro for baixo o suficiente (por exemplo, menos de um minuto de "
+"arco), você não precisará fazer nenhum ajuste. Basta pressionar \"parar\" e "
+"pronto."
 
 #: ../../user_manual/ekos-align.rst:394
 msgid ""
@@ -1064,6 +1468,13 @@ msgid ""
 "using 2s in this example. Then press the ``Refresh`` button to begin the "
 "correction process."
 msgstr ""
+"Se você for fazer correções no eixo da sua montagem, deverá selecionar a "
+"abordagem de ajuste (estamos usando a resolução de placa neste exemplo) e a "
+"frequência com que o sistema deve recapturar as imagens para remensurar o "
+"erro de alinhamento polar. O intervalo de atualização deve ser frequente, "
+"mas não faz sentido torná-lo mais rápido do que sua CPU consegue capturar e "
+"resolver as imagens. Estamos usando 2s neste exemplo. Em seguida, pressione "
+"o botão ``Atualizar`` para iniciar o processo de correção."
 
 #: ../../user_manual/ekos-align.rst:396
 msgid ""
@@ -1075,10 +1486,17 @@ msgid ""
 "the original 3 captures, and the *Updated Error* row which shows the current "
 "error estimate."
 msgstr ""
+"O sistema capturará imagens e reestimará o erro de alinhamento polar após "
+"cada imagem. Você pode tentar reduzir o erro ajustando os botões de correção "
+"de Altitude e Azimute na sua montagem. A imagem abaixo mostra a tela após o "
+"erro de altitude ter sido quase zerado. Veja a diferença entre a linha *Erro "
+"medido*, que mostra o erro medido originalmente após as 3 capturas "
+"originais, e a linha *Erro atualizado*, que mostra a estimativa de erro "
+"atual."
 
 #: ../../user_manual/ekos-align.rst:398
 msgid "|Polar Alignment Assistant, Plate Solve Workflow 2|"
-msgstr ""
+msgstr "|Polar Alignment Assistant, Plate Solve Workflow 2|"
 
 #: ../../user_manual/ekos-align.rst:400
 msgid ""
@@ -1086,14 +1504,17 @@ msgid ""
 "error is very low and the process is done. The user should press the stop "
 "button."
 msgstr ""
+"Abaixo, o usuário também ajustou o Azimute para reduzir ainda mais o erro. "
+"Agora, o erro está muito baixo e o processo está concluído. O usuário deve "
+"pressionar o botão parar."
 
 #: ../../user_manual/ekos-align.rst:402
 msgid "|Polar Alignment Assistant, Plate Solve Workflow 3|"
-msgstr ""
+msgstr "|Polar Alignment Assistant, Plate Solve Workflow 3|"
 
 #: ../../user_manual/ekos-align.rst:407
 msgid "Move Star Correction Scheme"
-msgstr ""
+msgstr "Esquema de correção de movimento estelar"
 
 #: ../../user_manual/ekos-align.rst:409
 msgid ""
@@ -1108,6 +1529,18 @@ msgid ""
 "along the green side of the triangle. Once the star is moved to the green/"
 "violet vertex, the mount is polar aligned, and the user can click *stop*."
 msgstr ""
+"Também temos esquemas alternativos para corrigir o alinhamento polar. Duas "
+"variações são *Mover estrela e Erro de cálculo* e *Mover estrela*. Ao "
+"selecionar este esquema, o sistema posiciona um triângulo amarelo/verde/"
+"violeta na tela. O triângulo pode ser movido clicando próximo a uma estrela, "
+"e o canto amarelo/violeta é movido para essa estrela. Neste esquema, o "
+"usuário corrige o alinhamento polar ajustando primeiro o botão de azimute da "
+"montagem para que a estrela selecionada se mova ao longo do lado amarelo do "
+"triângulo. Assim que a estrela estiver próxima do próximo vértice, o botão "
+"de azimute deve ser ajustado para que a estrela se mova ao longo do lado "
+"verde do triângulo. Assim que a estrela for movida para o vértice verde/"
+"violeta, a montagem estará alinhada polarmente e o usuário poderá clicar em "
+"*parar*."
 
 #: ../../user_manual/ekos-align.rst:411
 msgid ""
@@ -1119,130 +1552,138 @@ msgid ""
 "the final target. An example of using this technique is shown in this video: "
 "https://www.youtube.com/watch?v=iOp7hrxw0oU"
 msgstr ""
+"A diferença entre *Mover estrela e Erro de cálculo* e *Mover estrela* é que, "
+"no primeiro, o sistema tenta rastrear a estrela selecionada pelo usuário e "
+"coloca um círculo ao redor dela. Nesse esquema, ele também tenta atualizar a "
+"linha *Erro atualizado*. Se o rastreamento da estrela não for confiável, "
+"simplesmente ignore-o ou use o esquema *Mover estrela* e mova a estrela "
+"visualmente até que ela esteja próxima do alvo final. Um exemplo do uso "
+"dessa técnica é mostrado neste vídeo: https://www.youtube.com/watch?"
+"v=iOp7hrxw0oU"
 
 #: ../../user_manual/ekos-align.rst:413
 msgid "Ekos Align Module"
-msgstr ""
+msgstr "Ekos Align Module"
 
 #: ../../user_manual/ekos-align.rst:413
 msgid ".. image:: /images/ekos_astrometry.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_astrometry.png"
 
 #: ../../user_manual/ekos-align.rst:414
 msgid "StellarSolver Options"
-msgstr ""
+msgstr "StellarSolver Options"
 
 #: ../../user_manual/ekos-align.rst:414
 msgid ".. image:: /images/ekos_stellarsolver_options.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_stellarsolver_options.png"
 
 #: ../../user_manual/ekos-align.rst:415
 msgid "StellarSolver External Programs"
-msgstr ""
+msgstr "StellarSolver External Programs"
 
 #: ../../user_manual/ekos-align.rst:415
 msgid ".. image:: /images/ekos_stellarsolver_external.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_stellarsolver_external.png"
 
 #: ../../user_manual/ekos-align.rst:416
 msgid "StellarSolver Scale and Position"
-msgstr ""
+msgstr "StellarSolver Scale and Position"
 
 #: ../../user_manual/ekos-align.rst:416
 msgid ".. image:: /images/ekos_stellarsolver_scale.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_stellarsolver_scale.png"
 
 #: ../../user_manual/ekos-align.rst:417
 msgid "StellarSolver Profiles"
-msgstr ""
+msgstr "StellarSolver Profiles"
 
 #: ../../user_manual/ekos-align.rst:417
 msgid ".. image:: /images/ekos_stellarsolver_profiles.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_stellarsolver_profiles.png"
 
 #: ../../user_manual/ekos-align.rst:418
 msgid "Astrometry.net Indexes Download"
-msgstr ""
+msgstr "Astrometry.net Indexes Download"
 
 #: ../../user_manual/ekos-align.rst:418
 msgid ".. image:: /images/astrometry_indexes_settings.png"
-msgstr ""
+msgstr ".. image:: /images/astrometry_indexes_settings.png"
 
 #: ../../user_manual/ekos-align.rst:419
 msgid "image2"
-msgstr ""
+msgstr "image2"
 
 #: ../../user_manual/ekos-align.rst:419
 msgid ".. image:: /images/security-high.png"
-msgstr ""
+msgstr ".. image:: /images/security-high.png"
 
 #: ../../user_manual/ekos-align.rst:420
 msgid "image3"
-msgstr ""
+msgstr "image3"
 
 #: ../../user_manual/ekos-align.rst:420
 msgid ".. image:: /images/security-medium.png"
-msgstr ""
+msgstr ".. image:: /images/security-medium.png"
 
 #: ../../user_manual/ekos-align.rst:421
 msgid "image4"
-msgstr ""
+msgstr "image4"
 
 #: ../../user_manual/ekos-align.rst:421
 msgid ".. image:: /images/security-low.png"
-msgstr ""
+msgstr ".. image:: /images/security-low.png"
 
 #: ../../user_manual/ekos-align.rst:422
 msgid "Ekos Remote Astrometry"
-msgstr ""
+msgstr "Ekos Remote Astrometry"
 
 #: ../../user_manual/ekos-align.rst:422
 msgid ".. image:: /images/ekos_remote_astrometry.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_remote_astrometry.png"
 
 #: ../../user_manual/ekos-align.rst:423
 msgid "ANSVR Parameters"
-msgstr ""
+msgstr "ANSVR Parameters"
 
 #: ../../user_manual/ekos-align.rst:423
 msgid ".. image:: /images/astrometry_windows_ansvr.png"
-msgstr ""
+msgstr ".. image:: /images/astrometry_windows_ansvr.png"
 
 #: ../../user_manual/ekos-align.rst:424
 msgid ".. image:: /images/alignment_polaris.png"
-msgstr ""
+msgstr ".. image:: /images/alignment_polaris.png"
 
 #: ../../user_manual/ekos-align.rst:425
 msgid "Polar Alignment Assistant"
-msgstr ""
+msgstr "Polar Alignment Assistant"
 
 #: ../../user_manual/ekos-align.rst:425
 msgid ".. image:: /images/polar_assistant_main2.png"
-msgstr ""
+msgstr ".. image:: /images/polar_assistant_main2.png"
 
 #: ../../user_manual/ekos-align.rst:426
 msgid "Polar Alignment Assistant, Plate Solve Workflow 1"
-msgstr ""
+msgstr "Polar Alignment Assistant, Plate Solve Workflow 1"
 
 #: ../../user_manual/ekos-align.rst:426
 msgid ".. image:: /images/polar_assistant_ps1.png"
-msgstr ""
+msgstr ".. image:: /images/polar_assistant_ps1.png"
 
 #: ../../user_manual/ekos-align.rst:427
 msgid "Polar Alignment Assistant, Plate Solve Workflow 2"
-msgstr ""
+msgstr "Polar Alignment Assistant, Plate Solve Workflow 2"
 
 #: ../../user_manual/ekos-align.rst:427
 msgid ".. image:: /images/polar_assistant_ps2.png"
-msgstr ""
+msgstr ".. image:: /images/polar_assistant_ps2.png"
 
 #: ../../user_manual/ekos-align.rst:428
 msgid "Polar Alignment Assistant, Plate Solve Workflow 3"
-msgstr ""
+msgstr "Polar Alignment Assistant, Plate Solve Workflow 3"
 
 #: ../../user_manual/ekos-align.rst:428
 msgid ".. image:: /images/polar_assistant_ps3.png"
-msgstr ""
+msgstr ".. image:: /images/polar_assistant_ps3.png"
 
 #~ msgid "Tools"
 #~ msgstr "Ferramentas"
