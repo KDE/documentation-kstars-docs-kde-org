@@ -71,7 +71,7 @@ Features:
     ekos-guide
     ekos-align
     ekos-scheduler
+    ekos-scheduler-taskqueue
     ekos-analyze
     ekos-extensions
     ekos-tutorials
-

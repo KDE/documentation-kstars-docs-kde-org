@@ -534,6 +534,34 @@ Weather Monitoring
 .. _ekos-scheduler-startup-shutdown-scripts:
 
 Startup & Shutdown Scripts
+
+            .. note::
+
+               **NEW: Task Queue System**
+               
+               KStars now includes a modern :doc:`Task Queue System <ekos-scheduler-taskqueue>` 
+               that provides a powerful, template-based alternative to traditional startup 
+               and shutdown scripts. The Task Queue offers:
+               
+               - Visual interface for building automation sequences
+               - Pre-built templates for common operations
+               - Built-in error handling and retry logic
+               - Real-time progress monitoring
+               - Device-aware task execution
+               
+               For new observatories or those looking to modernize their automation, 
+               we recommend exploring the Task Queue system. See the complete 
+               :doc:`Task Queue documentation <ekos-scheduler-taskqueue>` for details.
+
+            Due to the uniqueness of each observatory, Ekos enables the
+            user to select startup and shutdown scripts. The scripts
+            take care of any necessary procedures that must take place
+            on startup and shutdown stages. On startup, Ekos executes
+            the startup scripts and only proceeds to the remainder of
+            the startup procedure (unpark dome/unpark mount) if the
+            script completes successfully. Conversely, the shutdown
+            procedure begins with parking the mount & dome before
+            executing the shutdown script as the final procedure.
 ===========================
 
             Due to the uniqueness of each observatory, Ekos enables the
