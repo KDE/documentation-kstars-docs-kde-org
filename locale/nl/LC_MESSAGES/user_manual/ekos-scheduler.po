@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-15 01:58+0000\n"
+"POT-Creation-Date: 2025-11-06 16:30+0000\n"
 "PO-Revision-Date: 2025-07-06 18:42+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -630,7 +630,7 @@ msgstr ""
 "biedt de planner een hulpmiddel genaamd de bewerker van opnamereeksen."
 
 #: ../../user_manual/ekos-scheduler.rst:350
-#: ../../user_manual/ekos-scheduler.rst:744
+#: ../../user_manual/ekos-scheduler.rst:772
 msgid "Capture Sequence Editor"
 msgstr "Bewerker van opnamereeks"
 
@@ -951,11 +951,52 @@ msgstr ""
 "**Alert**: Weercondities zijn schadelijk voor de veiligheid van het "
 "waarneemstation, en die moet zo snel mogelijk worden afgesloten."
 
-#: ../../user_manual/ekos-scheduler.rst:537
+#: ../../user_manual/ekos-scheduler.rst:536
 msgid "Startup & Shutdown Scripts"
 msgstr "Scripts voor Opstarten & Afsluiten"
 
-#: ../../user_manual/ekos-scheduler.rst:539
+#: ../../user_manual/ekos-scheduler.rst:540
+msgid "**NEW: Task Queue System**"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:542
+msgid ""
+"KStars now includes a modern :doc:`Task Queue System <ekos-scheduler-"
+"taskqueue>` that provides a powerful, template-based alternative to "
+"traditional startup and shutdown scripts. The Task Queue offers:"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:546
+msgid "Visual interface for building automation sequences"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:547
+msgid "Pre-built templates for common operations"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:548
+msgid "Built-in error handling and retry logic"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:549
+#, fuzzy
+#| msgid "Weather Monitoring"
+msgid "Real-time progress monitoring"
+msgstr "Weer monitoren"
+
+#: ../../user_manual/ekos-scheduler.rst:550
+msgid "Device-aware task execution"
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:552
+msgid ""
+"For new observatories or those looking to modernize their automation, we "
+"recommend exploring the Task Queue system. See the complete :doc:`Task Queue "
+"documentation <ekos-scheduler-taskqueue>` for details."
+msgstr ""
+
+#: ../../user_manual/ekos-scheduler.rst:556
+#: ../../user_manual/ekos-scheduler.rst:567
 msgid ""
 "Due to the uniqueness of each observatory, Ekos enables the user to select "
 "startup and shutdown scripts. The scripts take care of any necessary "
@@ -973,7 +1014,7 @@ msgstr ""
 "de afsluitprocedure met het parkeren van opstelling & en koepel, voordat "
 "tenslotte de uitvoerscript wordt uitgevoerd."
 
-#: ../../user_manual/ekos-scheduler.rst:549
+#: ../../user_manual/ekos-scheduler.rst:577
 msgid ""
 "Startup and shutdown scripts can be written any language that can be "
 "executed on the local machine. It must return 0 to report success, any other "
@@ -987,7 +1028,7 @@ msgstr ""
 "van een script gaat ook naar het logvenster van Ekos. Hier volgt een "
 "voorbeeld-demo van een opstartscript in Python:"
 
-#: ../../user_manual/ekos-scheduler.rst:556
+#: ../../user_manual/ekos-scheduler.rst:584
 msgid ""
 "#!/usr/bin/env python\n"
 "# -*- coding: utf-8 -*-\n"
@@ -1033,7 +1074,7 @@ msgstr ""
 "\n"
 "exit(0)"
 
-#: ../../user_manual/ekos-scheduler.rst:581
+#: ../../user_manual/ekos-scheduler.rst:609
 msgid ""
 "The startup and shutdown scripts must be *executable* in order for Ekos to "
 "invoke them (e.g. use **``chmod +x startup_script.py``** to mark the script "
@@ -1053,16 +1094,16 @@ msgstr ""
 "beëindigd. Met Plasma-berichten kan de gebruiker hoorbare alarmen en e-"
 "mailberichten instellen voor de diverse gebeurtenissen in de planner."
 
-#: ../../user_manual/ekos-scheduler.rst:595
-#: ../../user_manual/ekos-scheduler.rst:746
+#: ../../user_manual/ekos-scheduler.rst:623
+#: ../../user_manual/ekos-scheduler.rst:774
 msgid "Mosaic Planner"
 msgstr "Mozaïekplanner"
 
-#: ../../user_manual/ekos-scheduler.rst:597
+#: ../../user_manual/ekos-scheduler.rst:625
 msgid "|Mosaic Planner|"
 msgstr "|Mosaic Planner|"
 
-#: ../../user_manual/ekos-scheduler.rst:599
+#: ../../user_manual/ekos-scheduler.rst:627
 msgid ""
 "Hubble-like super wide field images of `galaxies <http://darkskyart.com/?"
 "page_id=96>`__ and nebulae are truly awe-inspiring, and while it takes great "
@@ -1084,7 +1125,7 @@ msgstr ""
 "opnames maken van sterren, door kleinere afbeeldingen te combineren in een "
 "enkele grootse mozaïek."
 
-#: ../../user_manual/ekos-scheduler.rst:611
+#: ../../user_manual/ekos-scheduler.rst:639
 msgid ""
 "We are often limited by our camera+telescope Field of View (FOV). By "
 "increasing FOV by means of a focal reducer or a shorter tube, we gain a "
@@ -1103,7 +1144,7 @@ msgstr ""
 "aantal kleinere afbeeldingen tot een super mozaïekbeeld aan elkaar te "
 "*plakken*. Dit kan op twee manieren:"
 
-#: ../../user_manual/ekos-scheduler.rst:621
+#: ../../user_manual/ekos-scheduler.rst:649
 msgid ""
 "Capture multiple images spanning the target with some overlap between "
 "images. The overlap is necessary to enable the processing software from "
@@ -1113,13 +1154,13 @@ msgstr ""
 "De overlap is nodig voor de software die de sub-afbeeldingen met elkaar "
 "uitlijnt en aan elkaar verbindt."
 
-#: ../../user_manual/ekos-scheduler.rst:626
+#: ../../user_manual/ekos-scheduler.rst:654
 msgid "Process the images and *stitch* them into a super mosaic image."
 msgstr ""
 "Bewerk de afbeeldingen en *plak* ze aan elkaar tot een super mozaïek "
 "afbeelding."
 
-#: ../../user_manual/ekos-scheduler.rst:629
+#: ../../user_manual/ekos-scheduler.rst:657
 msgid ""
 "The 2nd step is handled by image processing applications such as `PixInsight "
 "<https://pixinsight.com>`__, among others, and will not be the topic of "
@@ -1141,7 +1182,7 @@ msgstr ""
 "de logistiek van het maken van veel opnames met verschillende filters en "
 "calibratie-frames over een groot gebied van de hemel, veel eenvoudiger."
 
-#: ../../user_manual/ekos-scheduler.rst:641
+#: ../../user_manual/ekos-scheduler.rst:669
 msgid ""
 "The ``Mosaic Planner`` in the Ekos Scheduler will create multiple Scheduler "
 "jobs based on a central target. To toggle the planner, click on the ``Mosaic "
@@ -1157,7 +1198,7 @@ msgstr ""
 "hemelkaart. Aanbevolen is het inschakelen van HiPS overlay voor de beste "
 "ervaring. De planner is opgebouwd uit vier stadia:"
 
-#: ../../user_manual/ekos-scheduler.rst:649
+#: ../../user_manual/ekos-scheduler.rst:677
 msgid ""
 "**Confirm Equipment**: Ekos attempts to load equipment settings from INDI. "
 "If unsuccessful, you need to enter your equipment settings including your "
@@ -1169,11 +1210,11 @@ msgstr ""
 "brandpuntsafstand van de telescoop naast breedte, hoogte en pixelafmetingen. "
 "De instellingen worden opgeslagen voor toekomstige sessies."
 
-#: ../../user_manual/ekos-scheduler.rst:656
+#: ../../user_manual/ekos-scheduler.rst:684
 msgid "|Confirm Equipment|"
 msgstr "|Confirm Equipment|"
 
-#: ../../user_manual/ekos-scheduler.rst:658
+#: ../../user_manual/ekos-scheduler.rst:686
 msgid ""
 "**Adjust Grid**: Select the mosaic panel dimension and overlap percentage. "
 "The Mosaic Panel is updated accordingly on the sky map. Adjust the Position "
@@ -1198,11 +1239,11 @@ msgstr ""
 "dekken``. Het mozaïekpaneel kan gecentreerd worden in de hemelkaart door te "
 "klikken op de knop ``Opnieuw centreren``."
 
-#: ../../user_manual/ekos-scheduler.rst:672
+#: ../../user_manual/ekos-scheduler.rst:700
 msgid "|Select Grid|"
 msgstr "|Select Grid|"
 
-#: ../../user_manual/ekos-scheduler.rst:674
+#: ../../user_manual/ekos-scheduler.rst:702
 msgid ""
 "A large overlap will make frame stitching easier during post-processing, but "
 "it requires more panes to cover the desired extent. However, if you already "
@@ -1227,7 +1268,7 @@ msgstr ""
 "controle over de signaal-ruisverhouding en biedt u om de context naar uw "
 "doel te leveren tijdens het leveren van een relatief laag aantal opnamen."
 
-#: ../../user_manual/ekos-scheduler.rst:690
+#: ../../user_manual/ekos-scheduler.rst:718
 msgid ""
 "The large number drawn in the corner of each grid pane represents the order "
 "in which panes will be captured. The default S-shaped choice (west-east then "
@@ -1255,11 +1296,11 @@ msgstr ""
 "Gebruik ``de overlap`` om te verzekeren dat panelen de gewenste "
 "uitbreidingen van het frame juist dekken."
 
-#: ../../user_manual/ekos-scheduler.rst:707
+#: ../../user_manual/ekos-scheduler.rst:735
 msgid "|Scheduler Mosaic Tool - Large rotation|"
 msgstr "|Scheduler Mosaic Tool - Large rotation|"
 
-#: ../../user_manual/ekos-scheduler.rst:709
+#: ../../user_manual/ekos-scheduler.rst:737
 msgid ""
 "**Adjust Grid**: Adjust Grid center by manually entering the J2000 center or "
 "by dragging the center of the mosaic on the sky map."
@@ -1268,11 +1309,11 @@ msgstr ""
 "centrum in te voeren of door het centrum van het mozaïek op de hemelkaart te "
 "slepen."
 
-#: ../../user_manual/ekos-scheduler.rst:713
+#: ../../user_manual/ekos-scheduler.rst:741
 msgid "|Adjust Grid|"
 msgstr "|Adjust Grid|"
 
-#: ../../user_manual/ekos-scheduler.rst:715
+#: ../../user_manual/ekos-scheduler.rst:743
 msgid ""
 "**Create Jobs**: The final step is to select the sequence file and directory "
 "to store the images. Target field may be automatically filled but may be "
@@ -1295,7 +1336,7 @@ msgstr ""
 "tweede job dat zal overslaan. Wanneer de derde job wordt uitgevoerd, dan "
 "wordt opnieuw uitlijnen gedaan enzovoort."
 
-#: ../../user_manual/ekos-scheduler.rst:728
+#: ../../user_manual/ekos-scheduler.rst:756
 msgid ""
 "If you want the different mosaic tile jobs to alternate, then fill in the "
 "group name with an identifier that all the tile jobs will share, and select "
@@ -1305,11 +1346,11 @@ msgstr ""
 "de groepsnaam een identifier die alle taken in de mozaïekvelden zullen delen "
 "en selecteer een herhalende voorwaarde voor gereed."
 
-#: ../../user_manual/ekos-scheduler.rst:733
+#: ../../user_manual/ekos-scheduler.rst:761
 msgid "|Create Jobs|"
 msgstr "|Create Jobs|"
 
-#: ../../user_manual/ekos-scheduler.rst:735
+#: ../../user_manual/ekos-scheduler.rst:763
 msgid ""
 "Click ``Create Jobs`` to generate mosaic scheduler jobs and add them to the "
 "schedule queue. You can further edit the jobs individually, as you would "
@@ -1319,99 +1360,99 @@ msgstr ""
 "voegen aan de wachtrij. U kunt de taken verder individueel bewerken, zoals u "
 "met normale plantaken zou doen."
 
-#: ../../user_manual/ekos-scheduler.rst:739
+#: ../../user_manual/ekos-scheduler.rst:767
 msgid "Ekos Scheduler Module"
 msgstr "Plannermodule van Ekos"
 
-#: ../../user_manual/ekos-scheduler.rst:739
+#: ../../user_manual/ekos-scheduler.rst:767
 msgid ".. image:: /images/ekos_scheduler.png"
 msgstr ".. image:: /images/ekos_scheduler.png"
 
-#: ../../user_manual/ekos-scheduler.rst:740
+#: ../../user_manual/ekos-scheduler.rst:768
 msgid "Scheduler Offset Settings"
 msgstr "Offsetinstellingen van de planner"
 
-#: ../../user_manual/ekos-scheduler.rst:740
+#: ../../user_manual/ekos-scheduler.rst:768
 msgid ".. image:: /images/ekos_scheduler_offset_settings.png"
 msgstr " "
 
-#: ../../user_manual/ekos-scheduler.rst:741
+#: ../../user_manual/ekos-scheduler.rst:769
 msgid "Scheduler Alignment Settings"
 msgstr "Uitlijninstellingen van de planner"
 
-#: ../../user_manual/ekos-scheduler.rst:741
+#: ../../user_manual/ekos-scheduler.rst:769
 msgid ".. image:: /images/ekos_scheduler_alignment_settings.png"
 msgstr " "
 
-#: ../../user_manual/ekos-scheduler.rst:742
+#: ../../user_manual/ekos-scheduler.rst:770
 msgid "Scheduler Jobs Settings"
 msgstr "Taakinstellingen van de planner"
 
-#: ../../user_manual/ekos-scheduler.rst:742
+#: ../../user_manual/ekos-scheduler.rst:770
 msgid ".. image:: /images/ekos_scheduler_jobs_settings.png"
 msgstr " "
 
-#: ../../user_manual/ekos-scheduler.rst:743
+#: ../../user_manual/ekos-scheduler.rst:771
 msgid "Scheduler Scripts Settings"
 msgstr "Scriptinstellingen van de planner"
 
-#: ../../user_manual/ekos-scheduler.rst:743
+#: ../../user_manual/ekos-scheduler.rst:771
 msgid ".. image:: /images/ekos_scheduler_scripts_settings.png"
 msgstr " "
 
-#: ../../user_manual/ekos-scheduler.rst:744
+#: ../../user_manual/ekos-scheduler.rst:772
 msgid ".. image:: /images/ekos_capture_sequence_editor.png"
 msgstr " "
 
-#: ../../user_manual/ekos-scheduler.rst:745
+#: ../../user_manual/ekos-scheduler.rst:773
 msgid "Scheduler + Planner"
 msgstr "Planner"
 
-#: ../../user_manual/ekos-scheduler.rst:745
+#: ../../user_manual/ekos-scheduler.rst:773
 msgid ".. image:: /images/scheduler_planner.png"
 msgstr ".. image:: /images/scheduler_planner.png"
 
-#: ../../user_manual/ekos-scheduler.rst:746
+#: ../../user_manual/ekos-scheduler.rst:774
 msgid ".. image:: /images/mosaic_planner.png"
 msgstr ".. image:: /images/mosaic_planner.png"
 
-#: ../../user_manual/ekos-scheduler.rst:747
+#: ../../user_manual/ekos-scheduler.rst:775
 msgid "Confirm Equipment"
 msgstr "Apparatuur bevestigen"
 
-#: ../../user_manual/ekos-scheduler.rst:747
+#: ../../user_manual/ekos-scheduler.rst:775
 msgid ".. image:: /images/mosaic_confirm_equipment.png"
 msgstr ".. image:: /images/mosaic_confirm_equipment.png"
 
-#: ../../user_manual/ekos-scheduler.rst:748
+#: ../../user_manual/ekos-scheduler.rst:776
 msgid "Select Grid"
 msgstr "Raster selecteren"
 
-#: ../../user_manual/ekos-scheduler.rst:748
+#: ../../user_manual/ekos-scheduler.rst:776
 msgid ".. image:: /images/mosaic_select_grid.png"
 msgstr ".. image:: /images/mosaic_select_grid.png"
 
-#: ../../user_manual/ekos-scheduler.rst:749
+#: ../../user_manual/ekos-scheduler.rst:777
 msgid "Scheduler Mosaic Tool - Large rotation"
 msgstr "Planner van Mozaïekhulpmiddel - Grote draaiing"
 
-#: ../../user_manual/ekos-scheduler.rst:749
+#: ../../user_manual/ekos-scheduler.rst:777
 msgid ".. image:: /images/mosaic_close_pole.png"
 msgstr ".. image:: /images/mosaic_close_pole.png"
 
-#: ../../user_manual/ekos-scheduler.rst:750
+#: ../../user_manual/ekos-scheduler.rst:778
 msgid "Adjust Grid"
 msgstr "Raster aanpassen"
 
-#: ../../user_manual/ekos-scheduler.rst:750
+#: ../../user_manual/ekos-scheduler.rst:778
 msgid ".. image:: /images/mosaic_adjust_grid.png"
 msgstr ".. image:: /images/mosaic_adjust_grid.png"
 
-#: ../../user_manual/ekos-scheduler.rst:751
+#: ../../user_manual/ekos-scheduler.rst:779
 msgid "Create Jobs"
 msgstr "Taken aanmaken"
 
-#: ../../user_manual/ekos-scheduler.rst:751
+#: ../../user_manual/ekos-scheduler.rst:779
 msgid ".. image:: /images/mosaic_create_jobs.png"
 msgstr ".. image:: /images/mosaic_create_jobs.png"
 
