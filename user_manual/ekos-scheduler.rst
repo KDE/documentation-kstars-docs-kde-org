@@ -229,7 +229,7 @@ Other options
                   |Scheduler Offset Settings|
                   |Scheduler Alignment Settings|
                   |Scheduler Jobs Settings|
-                  |Scheduler Scripts Settings|
+                  |Scheduler Scripts Settings|                  
 
 .. _ekos-scheduler-remember-job-progress:
 
@@ -531,6 +531,155 @@ Weather Monitoring
                   observatory safety and shutdown must be initiated as
                   soon as possible.
 
+               |Scheduler Weather Settings|
+
+            The weather driver can be configured in two ways:
+
+               1. **Part of the equipment profile** - The weather driver starts with the observatory equipment
+               2. **Standalone driver** - The weather driver runs independently on a separate INDI server
+
+            **Important:** If no standalone weather driver is configured, the scheduler cannot check weather 
+            conditions before starting the observatory. This means the observatory may start in unsafe 
+            conditions. While the equipment profile's weather driver will activate after startup and 
+            immediately trigger a shutdown if conditions are unsafe, this start-stop cycle is inefficient 
+            and potentially harmful to equipment.
+
+            **Best practice:** Configure a standalone weather driver. When present, it always takes 
+            precedence over any weather driver in the equipment profile for determining observatory safety. 
+            This allows the scheduler to verify conditions are safe *before* starting up the observatory.
+
+Weather Alert Response
+-------------------------
+
+            When weather conditions deteriorate to Alert status during operations,
+            the scheduler initiates a protective "soft shutdown" procedure. Unlike
+            a complete shutdown where all systems are stopped, a soft shutdown
+            preserves the Ekos and INDI connections while protecting your equipment,
+            allowing for quick resumption when conditions improve.
+
+            **Soft Shutdown Sequence:**
+
+            When a weather alert is detected:
+
+               1. A configurable delay period (default: 10 seconds) prevents
+                  reaction to momentary sensor issues
+
+               2. If the alert persists, the current scheduler job is aborted
+                  (marked ABORTED, not ERROR, so it can restart later)
+
+               3. The Pre-Shutdown Queue executes to protect equipment
+                  (typically closes dust caps, parks mount, closes dome)
+
+               4. Ekos and INDI remain running for faster recovery
+
+               5. The scheduler enters a grace period to wait for weather improvement
+
+.. _ekos-scheduler-weather-grace-period:
+
+Weather Grace Period
+---------------------
+
+            The grace period is a configurable waiting time during which the
+            scheduler monitors weather conditions. If weather improves during
+            this period, operations automatically resume. If the grace period
+            expires with alert conditions still present, the job is marked
+            as ERROR and will not restart.
+
+            **During the Grace Period:**
+
+               -  Equipment remains protected (mount parked, dome closed)
+               -  Ekos and INDI connections are maintained
+               -  Weather status is continuously monitored
+               -  If weather improves to Ok, operations resume automatically
+               -  If period expires with Alert status, the job fails
+
+            **Configuration:**
+
+            In the Scheduler Weather Settings:
+
+               -  **Weather Shutdown Delay**: Seconds to wait after alert
+                  detection before initiating shutdown (default: 10). This
+                  prevents false alarms from brief sensor glitches.
+
+               -  **Weather Grace Period**: Minutes to wait for weather
+                  improvement. Choose based on your local weather patterns—longer
+                  grace periods work well if alerts are typically brief.
+
+.. _ekos-scheduler-weather-recovery:
+
+Automatic Weather Recovery
+-----------------------------
+
+            When weather improves during the grace period, the scheduler
+            automatically resumes operations:
+
+               1. Weather status changes from Alert to Ok
+
+               2. The Post-Startup Queue executes to reverse protective actions
+                  (opens dome, unparks mount, opens dust caps)
+
+               3. The scheduler resumes normal operation
+
+               4. The aborted job can restart if its constraints are still met
+
+            **Queue Usage During Weather Events:**
+
+            Weather events use specific startup and shutdown queues:
+
+               -  **During Weather Shutdown**: Only Pre-Shutdown Queue executes
+                  (runs before stopping Ekos). Post-Shutdown Queue is skipped
+                  since Ekos remains running.
+
+               -  **During Weather Recovery**: Only Post-Startup Queue executes
+                  (runs after devices ready). Pre-Startup Queue is skipped
+                  since Ekos never stopped.
+
+            Your Pre-Shutdown and Post-Startup queues should work together
+            symmetrically—the Post-Startup queue should reverse exactly what
+            the Pre-Shutdown queue did.
+
+            **Example Queue Design:**
+
+            Pre-Shutdown Queue:
+               - Close dust cap
+               - Park mount
+               - Close dome shutter
+
+            Post-Startup Queue:
+               - Open dome shutter
+               - Unpark mount
+               - Open dust cap
+
+.. _ekos-scheduler-weather-best-practices:
+
+Weather Monitoring Best Practices
+-----------------------------------
+
+            For reliable weather protection:
+
+               1. **Design Symmetric Queues**: Ensure Pre-Shutdown and
+                  Post-Startup queues mirror each other exactly.
+
+               2. **Set Appropriate Delays**: Configure Weather Shutdown
+                  Delay long enough to avoid false alarms but short enough
+                  to protect equipment promptly (10-30 seconds recommended).
+
+               3. **Choose Grace Period Wisely**: Base the grace period on
+                  local weather patterns. For areas with brief passing clouds
+                  or showers, 30-60 minutes allows resumption without
+                  abandoning the night.
+
+               4. **Test Your Setup**: Manually test weather shutdown and
+                  recovery before unattended operations.
+
+               5. **Monitor Connection Stability**: Ensure reliable weather
+                  station connectivity. The scheduler attempts reconnection
+                  if connection is lost.
+
+               6. **Use Standalone Weather Monitoring**: Configure a standalone
+                  weather device in scheduler settings to monitor conditions
+                  even before starting equipment, preventing unsafe startups.
+
 .. _ekos-scheduler-startup-shutdown-scripts:
 
 Startup & Shutdown Scripts
@@ -769,6 +918,7 @@ Mosaic Planner
 .. |Scheduler Alignment Settings| image:: /images/ekos_scheduler_alignment_settings.png
 .. |Scheduler Jobs Settings| image:: /images/ekos_scheduler_jobs_settings.png
 .. |Scheduler Scripts Settings| image:: /images/ekos_scheduler_scripts_settings.png
+.. |Scheduler Weather Settings| image:: /images/ekos_scheduler_weather_settings.png
 .. |Capture Sequence Editor| image:: /images/ekos_capture_sequence_editor.png
 .. |Scheduler + Planner| image:: /images/scheduler_planner.png
 .. |Mosaic Planner| image:: /images/mosaic_planner.png
