@@ -1,0 +1,1730 @@
+# Copyright (C) licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
+# This file is distributed under the same license as the KStars Handbook package.
+#
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: KStars Handbook 3.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-06 16:30+0000\n"
+"PO-Revision-Date: 2025-11-07 10:44-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 25.08.2\n"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:3
+msgid "Task Queue System"
+msgstr "Sistema de fila de tarefas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:7
+msgid "Table of Contents"
+msgstr "Índice"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:11
+msgid ""
+"The Task Queue System is a modern, flexible automation framework that "
+"replaces traditional startup and shutdown scripts with a template-based, "
+"configurable task execution system. It provides a visual interface for "
+"building sequences of automated operations that can control your observatory "
+"equipment through INDI. It is accessible from Ekos Scheduler."
+msgstr ""
+"O sistema de filas de tarefas é uma estrutura de automação moderna e "
+"flexível que substitui os scripts tradicionais de inicialização e "
+"desligamento por um sistema de execução de tarefas configurável e baseado em "
+"modelos. Ele fornece uma interface visual para a criação de sequências de "
+"operações automatizadas que podem controlar os equipamentos do seu "
+"observatório por meio do INDI. O acesso é feito pelo agendador do Ekos."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:14
+msgid "|Task Queue|"
+msgstr "|Task Queue|"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:17
+msgid "Key Benefits"
+msgstr "Principais vantagens"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:19
+msgid ""
+"The Task Queue system offers several advantages over traditional scripting:"
+msgstr ""
+"O sistema de fila de tarefas oferece diversas vantagens em relação à "
+"programação tradicional:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:21
+msgid ""
+"**Visual Management**: Build and monitor task sequences through an intuitive "
+"graphical interface"
+msgstr ""
+"**Gerenciamento visual**: Crie e monitore sequências de tarefas por meio de "
+"uma interface gráfica intuitiva"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:22
+msgid ""
+"**Reusability**: Use pre-built templates for common operations without "
+"writing code"
+msgstr ""
+"**Reutilização**: Utilize modelos pré-construídos para operações comuns sem "
+"precisar escrever código"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:23
+msgid ""
+"**Error Handling**: Built-in retry logic and configurable failure responses"
+msgstr ""
+"**Tratamento de erros**: Lógica de repetição integrada e respostas a falhas "
+"configuráveis"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:24
+msgid ""
+"**Device Compatibility**: Automatic matching of templates to available "
+"devices"
+msgstr ""
+"**Compatibilidade de dispositivos**: Correspondência automática de modelos "
+"com os dispositivos disponíveis"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:25
+msgid ""
+"**Progress Monitoring**: Real-time status updates and detailed execution logs"
+msgstr ""
+"**Monitoramento do progresso**: Atualizações de status em tempo real e "
+"registros de execução detalhados"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:26
+msgid ""
+"**Collections**: Pre-defined task sets for startup, shutdown, and other "
+"common scenarios"
+msgstr ""
+"**Coleções**: Conjuntos de tarefas predefinidas para inicialização, "
+"desligamento e outros cenários comuns"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:27
+msgid ""
+"**Flexibility**: Combine templates or create custom variations without "
+"programming"
+msgstr ""
+"**Flexibilidade**: Combine modelos ou crie variações personalizadas sem "
+"programação"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:30
+msgid "When to Use Task Queue"
+msgstr "Quando usar as filas de tarefas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:32
+msgid "The Task Queue system is ideal for:"
+msgstr "O sistema de fila de tarefas é ideal para:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:34
+msgid "Observatory startup and shutdown procedures"
+msgstr "Procedimentos de inicialização e desligamento do observatório"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:35
+msgid "Equipment warm-up and cool-down sequences"
+msgstr "Sequências de aquecimento e resfriamento do equipamento"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:36
+msgid "Between-job operations (e.g., parking mount between scheduler jobs)"
+msgstr ""
+"Operações entre tarefas (por exemplo, bloqueio da montagem entre tarefas do "
+"agendador)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:37
+msgid "Weather response automation"
+msgstr "Automação da resposta a variações climáticas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:38
+msgid "Any repetitive equipment control tasks"
+msgstr "Quaisquer tarefas repetitivas de controle de equipamento"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:40
+msgid ""
+"You can still use traditional shell scripts when needed through the SCRIPT "
+"action type, combining the flexibility of scripting with the structure of "
+"the Task Queue."
+msgstr ""
+"Você ainda pode usar scripts de shell tradicionais quando necessário por "
+"meio do tipo de ação SCRIPT, combinando a flexibilidade da criação de "
+"scripts com a estrutura da fila de tarefas."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:42
+msgid "Key Concepts"
+msgstr "Conceitos chave"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:45
+msgid "Understanding Templates and Tasks"
+msgstr "Compreendendo os modelos e as tarefas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:47
+msgid "The Task Queue system is built around two fundamental concepts:"
+msgstr ""
+"O sistema de fila de tarefas é construído em torno de dois conceitos "
+"fundamentais:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:50
+msgid ""
+"Templates are reusable blueprints that define what a task should do. They "
+"specify:"
+msgstr ""
+"Os modelos são projetos reutilizáveis ​​que definem o que uma tarefa deve "
+"fazer. Eles especificam:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:52
+msgid "The sequence of actions to execute"
+msgstr "A sequência de ações a serem executadas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:53
+msgid "Configurable parameters (with defaults and constraints)"
+msgstr "Parâmetros configuráveis ​​(com valores padrão e restrições)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:54
+msgid "Which INDI device interfaces are supported"
+msgstr "Quais interfaces de dispositivo INDI são suportadas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:55
+msgid "Category and description for organization"
+msgstr "Categoria e descrição da organização"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:57
+msgid "Templates come in two types:"
+msgstr "Modelos vêm em dois tipos:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:59
+msgid ""
+"**System Templates**: Pre-built templates provided with KStars for common "
+"operations (park mount, enable cooling, etc.)"
+msgstr ""
+"**Modelos de sistema**: Modelos pré-configurados fornecidos com o KStars "
+"para operações comuns (bloqueio da montagem, ativação do resfriamento, etc.)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:60
+msgid "**Templates**"
+msgstr "**Modelos**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:60
+msgid ""
+"**User Templates**: Custom templates you create by selecting a device and "
+"specifying which property to set or evaluate, along with the target values "
+"and conditions"
+msgstr ""
+"**Modelos de usuário**: Modelos personalizados que você cria selecionando um "
+"dispositivo e especificando qual propriedade definir ou avaliar, juntamente "
+"com os valores e condições de destino"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:63
+msgid ""
+"Tasks are specific instances created from templates. When you add a template "
+"to the queue, you create a task by:"
+msgstr ""
+"As tarefas são instâncias específicas criadas a partir de modelos. Ao "
+"adicionar um modelo à fila, você cria uma tarefa da seguinte forma:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:65
+msgid "Selecting which device to use (e.g., which mount or camera)"
+msgstr ""
+"Selecionando qual dispositivo usar (por exemplo, qual montagem ou câmera)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:66
+msgid "Setting parameter values (timeouts, target temperatures, etc.)"
+msgstr ""
+"Definindo os valores de parâmetros (tempos limite, temperaturas alvo, etc.)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:67
+msgid "Optionally scheduling when it should run"
+msgstr "Opcionalmente, é possível agendar quando o programa deve ser executado"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:69
+msgid "**Tasks**"
+msgstr "**Tarefas**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:69
+msgid ""
+"Each task in the queue has its own runtime state, tracking its progress and "
+"any errors."
+msgstr ""
+"Cada tarefa na fila possui seu próprio estado de execução, rastreando seu "
+"progresso e quaisquer erros."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:71
+msgid "|Task Queue Template|"
+msgstr "|Task Queue Template|"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:74
+msgid "Understanding Actions"
+msgstr "Compreendendo as ações"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:76
+msgid ""
+"Each task is composed of one or more **actions** that execute sequentially. "
+"The Task Queue system supports five action types:"
+msgstr ""
+"Cada tarefa é composta por uma ou mais **ações** que são executadas "
+"sequencialmente. O sistema de fila de tarefas suporta cinco tipos de ações:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:79
+msgid "**SET Action**"
+msgstr "**Ação SET**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:79
+msgid ""
+"Sets an INDI property to a specific value. For example, setting a switch to "
+"ON, changing a number property, or updating text. The action can optionally "
+"wait for the property state to become OK before completing."
+msgstr ""
+"Define uma propriedade INDI para um valor específico. Por exemplo, ativar um "
+"interruptor, alterar uma propriedade numérica ou atualizar um texto. A ação "
+"pode, opcionalmente, aguardar até que o estado da propriedade se torne OK "
+"antes de ser concluída."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:82
+msgid "**EVALUATE Action**"
+msgstr "**Ação EVALUATE**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:82
+msgid ""
+"Waits for a condition to be met by polling an INDI property. Useful for "
+"waiting until equipment reaches a target state (e.g., temperature "
+"stabilized, mount parked, dome opened). Supports various condition types "
+"(equals, greater than, within range, etc.)."
+msgstr ""
+"Aguarda que uma condição seja atendida consultando uma propriedade INDI. "
+"Útil para aguardar até que o equipamento atinja um estado desejado (por "
+"exemplo, temperatura estabilizada, montagem bloqueada, cúpula aberta). "
+"Suporta vários tipos de condição (igual a, maior que, dentro do intervalo, "
+"etc.)."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:85
+msgid "**DELAY Action**"
+msgstr "**Ação DELAY**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:85
+msgid ""
+"Pauses execution for a specified duration. Useful for allowing equipment to "
+"settle, rate-limiting operations, or adding time-based spacing between "
+"actions."
+msgstr ""
+"Interrompe a execução por um período especificado. Útil para permitir que o "
+"equipamento se estabilize, limitar a taxa de operações ou adicionar um "
+"intervalo de tempo entre as ações."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:88
+msgid "**START Action**"
+msgstr "**Ação START**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:88
+msgid ""
+"Controls when a task begins execution. Can be set to start immediately "
+"(ASAP) or at a scheduled date/time. Useful for time-based automation."
+msgstr ""
+"Controla quando uma tarefa começa a ser executada. Pode ser configurado para "
+"iniciar imediatamente (o mais rápido possível) ou em uma data/hora agendada. "
+"Útil para automação baseada em tempo."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:91
+msgid "**SCRIPT Action**"
+msgstr "**Ação SCRIPT**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:91
+msgid ""
+"Executes an external script or program. This allows integration of custom "
+"logic or operations not directly supported by INDI properties. The action "
+"monitors the script's exit code and captures stdout/stderr for logging."
+msgstr ""
+"Executa um script ou programa externo. Isso permite a integração de lógica "
+"ou operações personalizadas que não são diretamente suportadas pelas "
+"propriedades INDI. A ação monitora o código de saída do script e captura "
+"stdout/stderr para registro."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:94
+msgid "Action Configuration"
+msgstr "Configuração da ação"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:96
+msgid "All actions support common configuration options:"
+msgstr "Todas as ações suportam opções de configuração comuns:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:98
+msgid "**Timeout**: Maximum time to wait for action completion (in seconds)"
+msgstr ""
+"**Tempo limite**: Tempo máximo de espera para a conclusão da ação (em "
+"segundos)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:99
+msgid "**Retries**: Number of retry attempts if the action fails"
+msgstr "**Tentativas**: Número de tentativas caso a ação falhe"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:100
+msgid "**Failure Action**: What to do if the action fails after all retries:"
+msgstr ""
+"**Ação em caso de falha**: O que fazer se a ação falhar após todas as "
+"tentativas:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:102
+msgid ""
+"**ABORT_QUEUE**: Stop the entire queue (default for critical operations)"
+msgstr ""
+"**ABORT_QUEUE**: Interrompe toda a fila (padrão para operações críticas)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:103
+msgid "**CONTINUE**: Log the error but continue to the next action"
+msgstr "**CONTINUE**: Registra o erro, mas continua para a próxima ação"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:104
+msgid ""
+"**SKIP_TO_NEXT_TASK**: Skip remaining actions in current task and move to "
+"the next task"
+msgstr ""
+"**SKIP_TO_NEXT_TASK**: Ignora as ações restantes na tarefa atual e passa "
+"para a próxima tarefa"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:107
+msgid "Understanding Collections"
+msgstr "Compreendendo coleções"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:109
+msgid ""
+"**Collections** are pre-defined sets of tasks designed for common scenarios. "
+"They provide quick-start solutions without requiring you to build queues "
+"from scratch."
+msgstr ""
+"**Coleções** são conjuntos predefinidos de tarefas, concebidos para cenários "
+"comuns. Elas oferecem soluções de inicialização rápida, sem a necessidade de "
+"criar filas do zero."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:111
+msgid "The system provides two collections:"
+msgstr "O sistema oferece duas coleções:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:113
+msgid ""
+"**Observatory Startup**: Unparks dome, unparks mount, and opens dust cap (if "
+"applicable)"
+msgstr ""
+"**Inicialização do Observatório**: Desbloqueio da cúpula, desbloqueio da "
+"montagem e abertura a tampa anti-poeira (se aplicável)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:114
+msgid ""
+"**Observatory Shutdown**: Parks mount, parks dome, and closes dust cap (if "
+"applicable)"
+msgstr ""
+"**Desligamento do Observatório**: Bloqueio da montagem, bloqueio da cúpula e "
+"fechamento da tampa anti-poeira (se aplicável)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:116
+msgid ""
+"Collections are loaded as complete queues, ready to execute. You can load a "
+"collection and then customize it by adding, removing, or reordering tasks."
+msgstr ""
+"As coleções são carregadas como filas completas, prontas para execução. Você "
+"pode carregar uma coleção e personalizá-la adicionando, removendo ou "
+"reordenando tarefas."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:118
+msgid "|Task Queue Collection|"
+msgstr "|Task Queue Collection|"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:121
+msgid "Device Interface Matching"
+msgstr "Correspondência de interface de dispositivo"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:123
+msgid ""
+"Templates specify which INDI device interfaces they support (e.g., "
+"Telescope, CCD, Dome, Weather). When you add a template to the queue, the "
+"system automatically presents only compatible devices."
+msgstr ""
+"Os modelos especificam quais interfaces de dispositivos INDI eles suportam "
+"(por exemplo, Telescópio, CCD, Cúpula, Meteorologia). Ao adicionar um modelo "
+"à fila, o sistema apresenta automaticamente apenas os dispositivos "
+"compatíveis."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:125
+msgid ""
+"For example: - A \"Park Mount\" template requires the Telescope interface - "
+"A \"Set Cooling\" template requires the CCD interface - A \"Set Dome Azimuth"
+"\" template requires the Dome interface"
+msgstr ""
+"Por exemplo: - Um modelo de \"Bloqueio de montagem\" requer a interface do "
+"Telescópio - Um modelo para \"Configurar resfriamento\" requer a interface "
+"do CCD - Um modelo para \"Configurar azimute da cúpula\" requer a interface "
+"da cúpula"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:130
+msgid ""
+"This ensures you cannot accidentally assign incompatible devices to tasks."
+msgstr ""
+"Isso garante que você não poderá atribuir acidentalmente dispositivos "
+"incompatíveis às tarefas."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:132
+msgid "Getting Started"
+msgstr "Primeiros passos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:135
+msgid "Quick Start: Loading a Collection"
+msgstr "Início rápido: Carregando uma coleção"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:137
+msgid ""
+"The fastest way to start using the Task Queue is to load a pre-built "
+"collection:"
+msgstr ""
+"A maneira mais rápida de começar a usar a fila de tarefas é carregar uma "
+"coleção pré-construída:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:139
+msgid "Open the **Ekos Scheduler** module"
+msgstr "Abra o módulo **Agendador Ekos**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:140
+msgid ""
+"Click the **Task Queue** or **Collections** button (location depends on UI "
+"integration)"
+msgstr ""
+"Clique no botão **Fila de tarefas** ou **Coleções** (a localização depende "
+"da integração da interface do usuário)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:141
+msgid "In the Collections dialog, browse available collections:"
+msgstr "Na janela de coleções, navegue pelas coleções disponíveis:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:143
+msgid "**Observatory Startup**: Complete startup sequence for your equipment"
+msgstr ""
+"**Inicialização do Observatório**: Sequência completa de inicialização do "
+"seu equipamento"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:144
+msgid "**Observatory Shutdown**: Safe shutdown procedures"
+msgstr "**Desligamento do Observatório**: Procedimentos de desligamento seguro"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:145
+msgid "**Emergency Shutdown**: Fast shutdown for weather alerts"
+msgstr ""
+"**Desligamento de emergência**: Desligamento rápido em caso de alertas "
+"meteorológicos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:146
+msgid "**Camera Cooling**: Controlled camera temperature management"
+msgstr ""
+"**Resfriamento da câmera**: Gerenciamento controlado da temperatura da câmera"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:148
+msgid "Select a collection and click **Load**"
+msgstr "Selecione uma coleção e clique em **Carregar**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:149
+msgid "The Queue Viewer will display all tasks in the collection"
+msgstr "O visualizador de filas exibirá todas as tarefas na coleção"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:150
+msgid ""
+"Review the tasks and customize if needed (see :ref:`taskqueue-building-"
+"queues`)"
+msgstr ""
+"Revise as tarefas e personalize-as, se necessário (consulte :ref:`taskqueue-"
+"building-queues`)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:151
+msgid "Click **Start** to execute the queue"
+msgstr "Clique em **Iniciar** para executar a fila"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:154
+msgid "Adding Tasks from Templates"
+msgstr "Adicionando tarefas a partir dos modelos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:156
+msgid "To add a task to your queue:"
+msgstr "Para adicionar uma tarefa à sua fila:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:158
+msgid "Click the **Add from Template** button in the Queue Viewer"
+msgstr ""
+"Clique no botão **Adicionar a partir de um modelo** no visualizador de filas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:159
+msgid ""
+"The Template Library opens, showing available templates organized by "
+"category:"
+msgstr ""
+"A biblioteca de modelos é aberta, exibindo os modelos disponíveis "
+"organizados por categoria:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:161
+msgid "**Mount**: Park, unpark."
+msgstr "**Montagem**: Bloqueio, desbloqueio."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:162
+msgid "**Camera**: Cooling, warming."
+msgstr "**Câmera**: Resfriamento, aquecimento."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:163
+msgid "**Dome**: Park, unpark"
+msgstr "**Cúpula**: Bloqueio, desbloqueio"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:164
+msgid "**Dust Cap**: Park, unpark"
+msgstr "**Tampa anti-poeira**: Bloqueio, desbloqueio"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:166
+msgid "Browse or search for the desired template"
+msgstr "Navegue ou pesquise o modelo desejado"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:167
+msgid "Select a template to preview its description and parameters"
+msgstr "Selecione um modelo para visualizar sua descrição e parâmetros"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:168
+msgid "Click **Add to Queue** or double-click the template"
+msgstr "Clique em **Adicionar à fila** ou clique duas vezes no modelo"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:171
+msgid "Selecting the Device"
+msgstr "Selecionando o dispositivo"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:173
+msgid ""
+"After selecting a template, you'll be prompted to choose which device to use:"
+msgstr ""
+"Após selecionar um modelo, você será solicitado a escolher qual dispositivo "
+"usar:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:175
+msgid "The **Device Selection** dialog appears"
+msgstr "A janela de **Seleção de dispositivo** é exibida"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:176
+msgid "Only compatible devices are shown (based on interface matching)"
+msgstr ""
+"Somente dispositivos compatíveis são exibidos (com base na correspondência "
+"de interface)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:177
+msgid "Select the device from the list"
+msgstr "Selecione um dispositivo na lista"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:178
+msgid "Click **OK**"
+msgstr "Clique **OK**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:180
+msgid ""
+"For example, if you selected a \"Park Mount\" template, you'll see only "
+"telescope devices. If you have multiple mounts connected, choose which one "
+"this task should control."
+msgstr ""
+"Por exemplo, se você selecionou um modelo \"Bloqueio de montagem\", verá "
+"apenas dispositivos de telescópio. Se você tiver várias montagens "
+"conectadas, escolha qual delas esta tarefa deve controlar."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:182
+msgid "|Task Queue Select Device|"
+msgstr "|Task Queue Select Device|"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:185
+msgid "Customizing Parameters"
+msgstr "Personalizando parâmetros"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:187
+msgid "After device selection, the **Parameter Customization** dialog opens:"
+msgstr ""
+"Após a seleção do dispositivo, a janela de **Personalização de parâmetros** "
+"é aberta:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:189
+msgid "Review the available parameters for this template"
+msgstr "Revise os parâmetros disponíveis para este modelo"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:190
+msgid "Each parameter shows:"
+msgstr "Cada parâmetro mostra:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:192
+msgid "**Name**: Parameter identifier"
+msgstr "**Nome**: Identificador do parâmetro"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:193
+msgid "**Description**: What this parameter controls"
+msgstr "**Descrição**: O que este parâmetro controla"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:194
+msgid "**Default Value**: Pre-set value from the template"
+msgstr "**Valor padrão**: Valor predefinido do modelo"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:195
+msgid "**Constraints**: Min/max values or allowed options"
+msgstr "**Restrições**: Valores mínimo/máximo ou opções permitidas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:196
+msgid "**Unit**: Measurement unit (seconds, degrees, °C, etc.)"
+msgstr "**Unidade**: Unidade de medida (segundos, graus, °C, etc.)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:198
+msgid "Modify parameters as needed:"
+msgstr "Modifique os parâmetros conforme necessário:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:200
+msgid "Timeouts: Adjust based on your equipment's response time"
+msgstr ""
+"Tempo limite: Ajuste de acordo com o tempo de resposta do seu equipamento"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:201
+msgid "Target values: Set specific temperatures, positions, etc."
+msgstr "Valores alvo: Defina temperaturas, posições, etc. específicas."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:202
+msgid "Retry counts: Increase for unreliable connections"
+msgstr "Número de tentativas: Aumente para conexões não confiáveis"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:204
+msgid "Click **OK** to add the configured task to the queue"
+msgstr "Clique em **OK** para adicionar a tarefa configurada à fila"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:206
+msgid "|Task Queue Customize Parameters|"
+msgstr "|Task Queue Customize Parameters|"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:208
+msgid "Common parameters you'll encounter:"
+msgstr "Parâmetros comuns que você encontrará:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:210
+msgid "**timeout**: Maximum seconds to wait (default: 30-60s)"
+msgstr "**timeout**: Número máximo de segundos a aguardar (padrão: 30-60s)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:211
+msgid "**retries**: Number of retry attempts (default: 2)"
+msgstr "**retries**: Número de tentativas (padrão: 2)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:212
+msgid "**target_temp**: Target temperature for cameras (°C)"
+msgstr "**target_temp**: Temperatura alvo para câmeras (°C)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:213
+msgid "**settle_time**: Delay to allow equipment stabilization (seconds)"
+msgstr ""
+"**settle_time**: Atraso para permitir a estabilização do equipamento "
+"(segundos)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:216
+msgid "Managing Queue Items"
+msgstr "Gerenciando itens da fila"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:218
+msgid "Once tasks are in the queue, you can manage them:"
+msgstr "Depois que as tarefas estiverem na fila, você poderá gerenciá-las:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:221
+msgid "Select a task in the queue table"
+msgstr "Selecione uma tarefa na tabela de filas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:222
+msgid "Click **Move Up** or **Move Down** to change execution order"
+msgstr ""
+"Clique em **Mover para cima** ou **Mover para baixo** para alterar a ordem "
+"de execução"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:223
+msgid "**Reordering Tasks**"
+msgstr "**Reordenando tarefas**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:223
+msgid "Tasks execute from top to bottom"
+msgstr "As tarefas são executadas de cima para baixo"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:226
+msgid "Select one or more tasks"
+msgstr "Selecione um ou mais tarefas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:227
+msgid "**Removing Tasks**"
+msgstr "**Removendo tarefas**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:227
+msgid "Click **Remove** to delete them from the queue"
+msgstr "Clique em **Remover** para excluí-las da fila"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:230
+msgid "Double-click a task to view/edit its parameters"
+msgstr "Clique duas vezes em uma tarefa para visualizar/editar seus parâmetros"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:231
+msgid "Modify device assignment or parameter values"
+msgstr "Modifique a atribuição do dispositivo ou os valores dos parâmetros"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:232
+msgid "**Editing Tasks**"
+msgstr "**Editando tarefas**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:232
+msgid "Changes take effect immediately"
+msgstr "As alterações entram em vigor imediatamente"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:235
+msgid "Click **Clear** to remove all tasks"
+msgstr "Clique em **Limpar** para remover todas as tarefas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:236
+msgid "**Clearing the Queue**"
+msgstr "**Limpando a fila**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:236
+msgid "Useful when starting fresh or loading a different collection"
+msgstr "Útil ao começar do zero ou ao carregar uma coleção diferente"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:238
+msgid "Queue Execution"
+msgstr "Execução da fila"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:241
+msgid "Running the Queue"
+msgstr "Executando a fila"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:243
+msgid "Once your queue is built, you can execute it:"
+msgstr "Depois de criar sua fila, você poderá executá-la:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:245
+msgid "Review all tasks in the queue to ensure correct order"
+msgstr "Revise todas as tarefas na fila para garantir a ordem correta"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:246
+msgid "Click the **Start** button in the Queue Viewer"
+msgstr "Clique no botão **Iniciar** no visualizador de filas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:247
+msgid "The queue begins executing tasks sequentially from top to bottom"
+msgstr "A fila começa a executar as tarefas sequencialmente de cima para baixo"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:248
+msgid "Monitor progress in real-time through the status indicators"
+msgstr "Acompanhe o progresso em tempo real por meio dos indicadores de status"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:250
+msgid "**Queue Controls:**"
+msgstr "**Controles da fila:**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:252
+msgid "**Start**: Begin queue execution (only available when queue is idle)"
+msgstr ""
+"**Iniciar**: Iniciar a execução da fila (disponível apenas quando a fila "
+"estiver ociosa)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:253
+msgid "**Pause**: Temporarily halt execution (current action completes first)"
+msgstr ""
+"**Pausar**: Interrompe temporariamente a execução (a ação atual é concluída "
+"primeiro)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:254
+msgid "**Resume**: Continue a paused queue"
+msgstr "**Retomar**: Continuar uma fila pausada"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:255
+msgid "**Stop**: Gracefully stop the queue (allows current task to finish)"
+msgstr ""
+"**Parar**: Interrompe a fila de forma controlada (permite que a tarefa atual "
+"seja concluída)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:256
+msgid ""
+"**Abort**: Immediately terminate execution (may leave equipment in "
+"intermediate state)"
+msgstr ""
+"**Cancelar**: Interrompe imediatamente a execução (pode deixar o equipamento "
+"em estado intermediário)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:258
+msgid "|Task Queue Running|"
+msgstr "|Task Queue Running|"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:261
+msgid "Understanding Status Indicators"
+msgstr "Compreendendo os indicadores de estado"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:263
+msgid "Each task and action displays a status indicator:"
+msgstr "Cada tarefa e ação exibe um indicador de estado:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:265
+msgid "**Task Status:**"
+msgstr "**Estado da tarefa:**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:267
+msgid "**PENDING** (Gray): Task waiting to execute"
+msgstr "**PENDENTE** (Cinza): Tarefa aguardando execução"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:268
+msgid ""
+"**SCHEDULED** (Blue): Task scheduled for future time (START action with "
+"datetime)"
+msgstr ""
+"**AGENDADA** (Azul): Tarefa agendada para um horário futuro (ação INICIAR "
+"com data e hora)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:269
+msgid "**RUNNING** (Yellow/Orange): Task currently executing"
+msgstr "**EM EXECUÇÃO** (Amarelo/Laranja): Tarefa em execução no momento"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:270
+msgid "**COMPLETED** (Green): Task finished successfully"
+msgstr "**CONCLUÍDA** (Verde): Tarefa finalizada com sucesso"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:271
+msgid "**FAILED** (Red): Task failed after all retries"
+msgstr "**FALHOU** (Vermelho): A tarefa falhou após todas as tentativas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:272
+msgid "**ABORTED** (Red): Task manually stopped"
+msgstr "**CANCELADA** (Vermelho): Tarefa interrompida manualmente"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:273
+msgid "**SKIPPED** (Gray): Task skipped due to conditions"
+msgstr "**IGNORADA** (Cinza): Tarefa ignorada devido às condições"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:275
+msgid "**Action Status:**"
+msgstr "**Estado da ação:**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:277
+msgid "**PENDING**: Action not yet started"
+msgstr "**PENDENTE**: Ação ainda não iniciada"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:278
+msgid "**RUNNING**: Action currently executing"
+msgstr "**EM EXECUÇÃO**: Ação em andamento"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:279
+msgid "**COMPLETED**: Action finished successfully"
+msgstr "**CONCLUÍDA**: Ação finalizada com sucesso"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:280
+msgid "**FAILED**: Action failed after retries"
+msgstr "**FALHOU**: A ação falhou após todas as tentativas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:281
+msgid "**ABORTED**: Action manually aborted"
+msgstr "**CANCELADA**: Ação cancelada manualmente"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:284
+msgid "Progress Monitoring"
+msgstr "Monitoramento do progresso"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:286
+msgid "The Queue Viewer provides multiple ways to monitor execution:"
+msgstr ""
+"O visualizador de filas oferece várias maneiras de monitorar a execução:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:289
+msgid "Each task row shows:"
+msgstr "Cada linha de tarefa mostra:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:291
+msgid "Current status icon and text"
+msgstr "Ícone e texto do estado atual"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:292
+msgid "Device being controlled"
+msgstr "Dispositivo sendo controlado"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:293
+msgid "Progress percentage"
+msgstr "Porcentagem do progresso"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:294
+msgid "**Queue Table**"
+msgstr "**Tabela da fila**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:294
+msgid "Current action being executed"
+msgstr "Ação atual em execução"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:297
+msgid "Bottom of the window displays:"
+msgstr "Na parte inferior da janela são exibidos:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:299
+msgid "Overall queue status (IDLE, RUNNING, PAUSED, COMPLETED, ABORTED)"
+msgstr ""
+"Estado geral da fila (OCIOSA, EM EXECUÇÃO, PAUSADA, CONCLUÍDA, CANCELADA)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:300
+msgid "Progress bar showing completion percentage"
+msgstr "Barra de progresso mostrando a porcentagem de conclusão"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:301
+msgid "**Status Bar**"
+msgstr "**Barra de status**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:301
+msgid "Statistics: X of Y tasks completed, Z failed"
+msgstr "Estatísticas: X de Y tarefas concluídas, Z falhas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:304
+msgid "Detailed execution log shows:"
+msgstr "O registro detalhado da execução mostra:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:306
+msgid "Timestamp for each event"
+msgstr "Registro de data e hora para cada evento"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:307
+msgid "Action start/completion messages"
+msgstr "Mensagens de início/conclusão de ação"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:308
+msgid "Property changes and INDI communications"
+msgstr "Alterações de propriedade e comunicações INDI"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:309
+msgid "Error messages and retry attempts"
+msgstr "Mensagens de erro e tentativas de repetição"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:310
+msgid "**Log Panel**"
+msgstr "**Painel de registro**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:310
+msgid "Script output (for SCRIPT actions)"
+msgstr "Saída do script (para ações de SCRIPT)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:313
+msgid "Expand a task in the table to see:"
+msgstr "Expanda uma tarefa na tabela para ver:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:315
+msgid "List of all actions in the task"
+msgstr "Lista de todas as ações na tarefa"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:316
+msgid "Status of each action"
+msgstr "Estado de cada ação"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:317
+msgid "Current values being set or evaluated"
+msgstr "Valores atuais que estão sendo definidos ou avaliados"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:318
+msgid "**Action Details**"
+msgstr "**Detalhes da ação**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:318
+msgid "Timeout countdown for long-running actions"
+msgstr "Contagem regressiva de tempo limite para ações de longa duração"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:321
+msgid "Error Handling and Recovery"
+msgstr "Tratamento e recuperação de erros"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:323
+msgid "The Task Queue system includes robust error handling:"
+msgstr "O sistema de fila de tarefas inclui um tratamento de erros robusto:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:326
+msgid "When an action fails:"
+msgstr "Quando uma ação falha:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:328
+msgid "The error is logged with details"
+msgstr "O erro foi registrado com detalhes"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:329
+msgid "The system waits briefly (configurable delay)"
+msgstr "O sistema aguarda brevemente (atraso configurável)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:330
+msgid "The action is retried up to the configured retry count"
+msgstr "A ação é repetida até atingir o número de tentativas configurado"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:331
+msgid "**Automatic Retries**"
+msgstr "**Tentativas automáticas**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:331
+msgid "If all retries fail, the failure action is executed"
+msgstr "Se todas as tentativas falharem, a ação de falha será executada"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:334
+msgid "Based on the action's failure configuration:"
+msgstr "Com base na configuração de falha da ação:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:337
+msgid "Stops the entire queue immediately"
+msgstr "Interrompe imediatamente toda a fila"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:338
+msgid "Allows safe intervention before continuing"
+msgstr "Permite uma intervenção segura antes de prosseguir"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:339
+msgid "**ABORT_QUEUE** (Default for critical operations)"
+msgstr "**ABORT_QUEUE** (Padrão para operações críticas)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:339
+msgid "Used for: Mount parking, emergency shutdowns, critical safety checks"
+msgstr ""
+"Utilizado para: bloqueio de montagem, desligamentos de emergência, "
+"verificações críticas de segurança"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:342
+msgid "Logs the error"
+msgstr "Registra o erro"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:343
+msgid "Proceeds to the next action in the task"
+msgstr "Prossegue para a próxima ação na tarefa"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:344
+msgid "**CONTINUE** (For non-critical operations)"
+msgstr "**CONTINUE** (Para operações não críticas)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:344
+msgid "Used for: Optional optimizations, best-effort operations"
+msgstr "Utilizado para: Otimizações opcionais, operações de melhor esforço"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:347
+msgid "Skips remaining actions in the current task"
+msgstr "Ignora as ações restantes na tarefa atual"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:348
+msgid "Continues with the next task in the queue"
+msgstr "Continua com a próxima tarefa na fila"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:349
+msgid "**Failure Actions**"
+msgstr "**Ações em caso de falha**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:349
+msgid "**SKIP_TO_NEXT_TASK**"
+msgstr "**SKIP_TO_NEXT_TASK**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:349
+msgid "Used for: When task prerequisites fail but other tasks can still run"
+msgstr ""
+"Utilizado para: Quando os pré-requisitos de uma tarefa falham, mas outras "
+"tarefas ainda podem ser executadas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:352
+msgid "During execution, you can:"
+msgstr "Durante a execução, você pode:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:354
+msgid "Pause the queue to investigate issues"
+msgstr "Pausar a fila para investigar problemas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:355
+msgid "Abort a problematic action"
+msgstr "Cancelar uma ação problemática"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:356
+msgid "Remove or reorder pending tasks"
+msgstr "Remover ou reordenar tarefas pendentes"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:357
+msgid "**Manual Intervention**"
+msgstr "**Intervenção manual**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:357
+msgid "Resume execution after making corrections"
+msgstr "Retomar a execução após efetuar as correções"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:360
+msgid ""
+"Many actions check if their operation is already complete before executing:"
+msgstr ""
+"Muitas ações verificam se sua operação já foi concluída antes de serem "
+"executadas:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:362
+msgid "Mount already parked? Skip parking action"
+msgstr "A montagem já está bloqueada? Ignore a ação de bloqueio"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:363
+msgid "Temperature already at target? Skip cooling action"
+msgstr ""
+"A temperatura já atingiu o valor desejado? Ignore a ação de resfriamento"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:364
+msgid "Property already has desired value? Skip set action"
+msgstr "A propriedade já possui o valor desejado? Ignore a ação de definir"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:366
+msgid "**Idempotency**"
+msgstr "**Idempotência**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:366
+msgid "This prevents unnecessary operations and supports queue re-runs."
+msgstr ""
+"Isso evita operações desnecessárias e permite a repetição de processos na "
+"fila."
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:369
+msgid "Queue Persistence"
+msgstr "Persistência da fila"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:372
+msgid "Save and Load Queues"
+msgstr "Salvar e carregar filas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:374
+msgid "You can save queues for later use:"
+msgstr "Você pode salvar filas para uso posterior:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:377
+msgid "Build or load a queue"
+msgstr "Criar ou carregar uma fila"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:378
+msgid "Click **Save Queue** button"
+msgstr "Clique no botão **Salvar fila**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:379
+msgid "Choose a filename (*.json extension)"
+msgstr "Escolha um nome de arquivo (extensão *.json)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:380
+msgid "**Saving a Queue:**"
+msgstr "**Salvando uma fila:**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:380
+msgid "The queue file contains all tasks and their configurations"
+msgstr "O arquivo de fila contém todas as tarefas e suas configurações"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:383
+msgid "Click **Load Queue** button"
+msgstr "Clique no botão **Carregar fila**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:384
+msgid "Select a saved queue file"
+msgstr "Selecione um arquivo de fila salvo"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:385
+msgid "The queue replaces any existing tasks"
+msgstr "A fila substitui quaisquer tarefas existentes"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:386
+msgid "**Loading a Queue:**"
+msgstr "**Carregando uma fila:**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:386
+msgid "Review and start when ready"
+msgstr "Revise e comece quando estiver pronto"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:389
+msgid "Queue files are JSON-based and include:"
+msgstr "Os arquivos de fila são baseados em JSON e incluem:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:391
+msgid "Task definitions with device assignments"
+msgstr "Definições de tarefas com atribuições de dispositivos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:392
+msgid "Parameter values for each task"
+msgstr "Valores dos parâmetros para cada tarefa"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:393
+msgid "Task order and scheduling information"
+msgstr "Informações sobre a ordem e agendamento de tarefas"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:394
+msgid "**Queue File Format**"
+msgstr "**Formato do arquivo de fila**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:394
+msgid "Metadata (creation date, description)"
+msgstr "Metadados (data de criação, descrição)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:396
+msgid "Common Use Cases"
+msgstr "Casos de uso comum"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:399
+msgid "Observatory Startup Sequence"
+msgstr "Sequência de inicialização do observatório"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:401
+msgid "A typical startup sequence prepares all equipment for imaging:"
+msgstr ""
+"Uma sequência de inicialização típica prepara todo o equipamento para a "
+"aquisição de imagens:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:403
+msgid "**Example Startup Queue:**"
+msgstr "**Exemplo de fila de inicialização:**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:405
+msgid "**Unpark Dome** (if applicable)"
+msgstr "**Desbloquear a cúpula** (se aplicável)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:407
+msgid "Template: \"Dome - Unpark\""
+msgstr "Modelo: \"Cúpula - Desbloquear\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:408
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:485
+msgid "Device: Your dome controller"
+msgstr "Dispositivo: Seu controlador de cúpula"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:409
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:479
+msgid "Timeout: 60 seconds"
+msgstr "Tempo limite: 60 segundos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:410
+msgid "Failure Action: ABORT_QUEUE (cannot proceed without dome access)"
+msgstr ""
+"Ação em caso de falha: ABORT_QUEUE (não é possível prosseguir sem acesso à "
+"cúpula)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:412
+msgid "**Unpark Mount**"
+msgstr "**Desbloquear montagem**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:414
+msgid "Template: \"Mount - Unpark\""
+msgstr "Modelo: \"Montagem - Desbloquear\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:415
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:422
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:478
+msgid "Device: Your telescope mount"
+msgstr "Dispositivo: Sua montagem de telescópio"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:416
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:494
+msgid "Timeout: 30 seconds"
+msgstr "Tempo limite: 30 segundos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:417
+msgid "Failure Action: ABORT_QUEUE (critical for all operations)"
+msgstr "Ação em caso de falha: ABORT_QUEUE (crítica para todas as operações)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:419
+msgid "**Enable Mount Tracking**"
+msgstr "**Ativar rastreamento da montagem**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:421
+msgid "Template: \"Mount - Enable Tracking\""
+msgstr "Modelo: \"Montagem - Ativar rastreamento\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:423
+msgid "Timeout: 10 seconds"
+msgstr "Tempo limite: 10 segundos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:424
+msgid "Failure Action: CONTINUE (can enable later if needed)"
+msgstr ""
+"Ação em caso de falha: CONTINUE (pode ser ativada posteriormente, se "
+"necessário)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:426
+msgid "**Enable Camera Cooling**"
+msgstr "**Ativar resfriamento da câmera**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:428
+msgid "Template: \"Camera - Set Cooling\""
+msgstr "Modelo: \"Câmera - Definir resfriamento\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:429
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:439
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:462
+msgid "Device: Your CCD camera"
+msgstr "Dispositivo: Sua câmera CCD"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:430
+msgid ""
+"Parameters: - target_temp: -15°C (adjust for your camera) - ramp_rate: 2°C/"
+"minute (prevents thermal shock)"
+msgstr ""
+"Parâmetros: - target_temp: -15°C (ajuste de acordo com a sua câmera) - "
+"ramp_rate: 2°C/minuto (evita choque térmico)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:433
+msgid "Timeout: 600 seconds (10 minutes for cooling)"
+msgstr "Tempo limite: 600 segundos (10 minutos para resfriamento)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:434
+msgid "Failure Action: CONTINUE (can image without optimal cooling)"
+msgstr ""
+"Ação em caso de falha: CONTINUE (é possível obter imagens sem resfriamento "
+"ideal)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:436
+msgid "**Wait for Temperature Stabilization**"
+msgstr "**Esperar a estabilização da temperatura**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:438
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:548
+msgid "Template: \"Camera - Wait for Temperature\""
+msgstr "Modelo: \"Câmera - Esperar pela temperatura\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:440
+msgid "Parameters: - tolerance: ±1°C - settle_time: 60 seconds"
+msgstr "Parâmetros: - tolerance: ±1°C - settle_time: 60 segundos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:443
+msgid "Timeout: 300 seconds"
+msgstr "Tempo limite: 300 segundos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:444
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:473
+msgid "Failure Action: CONTINUE"
+msgstr "Ação em caso de falha: CONTINUE"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:446
+msgid "**Turn On Flat Panel** (if applicable)"
+msgstr "**Ligar tela plana** (se aplicável)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:448
+msgid "Template: \"Flat Panel - Enable\""
+msgstr "Modelo: \"Tela plana - Ativar\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:449
+msgid "Device: Your flat panel"
+msgstr "Dispositivo: Sua tela plana"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:450
+msgid "Failure Action: CONTINUE (optional equipment)"
+msgstr "Ação em caso de falha: CONTINUE (equipamento opcional)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:453
+msgid "Observatory Shutdown Sequence"
+msgstr "Sequência de desligamento do observatório"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:455
+msgid "A safe shutdown sequence protects equipment and conserves power:"
+msgstr ""
+"Uma sequência de desligamento seguro protege o equipamento e conserva "
+"energia:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:457
+msgid "**Example Shutdown Queue:**"
+msgstr "**Exemplo de fila de desligamento:**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:459
+msgid "**Disable Camera Cooling** (Gradual warm-up)"
+msgstr "**Desativar o resfriamento da câmera** (aquecimento gradual)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:461
+msgid "Template: \"Camera - Disable Cooling\""
+msgstr "Modelo: \"Câmera - Desativar resfriamento\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:463
+msgid ""
+"Parameters: - ramp_rate: 1°C/minute (slow warm-up prevents condensation)"
+msgstr ""
+"Parâmetros: - ramp_rate: 1°C/minuto (o aquecimento lento evita a condensação)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:465
+msgid "Failure Action: CONTINUE (important but not critical)"
+msgstr "Ação em caso de falha: CONTINUE (importante, mas não crítica)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:467
+msgid "**Wait for Camera Warm-up**"
+msgstr "**Esperar o aquecimento da câmera**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:469
+msgid "Template: \"Camera - Wait for Ambient Temperature\""
+msgstr "Modelo: \"Câmera - Esperar pela temperatura ambiente\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:470
+msgid "Parameters: - target: ambient + 2°C - timeout: 900 seconds (15 minutes)"
+msgstr ""
+"Parâmetros: - target: ambiente + 2°C - timeout: 900 segundos (15 minutos)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:475
+msgid "**Park Mount**"
+msgstr "**Bloquear a montagem**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:477
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:531
+msgid "Template: \"Mount - Park\""
+msgstr "Modelo: \"Montagem - Bloquear\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:480
+msgid "Failure Action: ABORT_QUEUE (critical for safety)"
+msgstr "Ação em caso de falha: ABORT_QUEUE (crítica para segurança)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:482
+msgid "**Park Dome** (if applicable)"
+msgstr "**Bloquear a cúpula** (se aplicável)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:484
+msgid "Template: \"Dome - Park\""
+msgstr "Modelo: \"Cúpula - Bloquear\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:486
+msgid "Timeout: 120 seconds"
+msgstr "Tempo limite: 120 segundos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:487
+msgid "Failure Action: ABORT_QUEUE (critical for protection)"
+msgstr "Ação em caso de falha: ABORT_QUEUE (crítica para proteção)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:489
+msgid "**Turn Off Equipment Power** (via script)"
+msgstr "**Desligar a alimentação do equipamento** (via script)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:491
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:577
+msgid "Template: \"Script - Execute\""
+msgstr "Modelo: \"Script - Executar\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:492
+msgid "Parameters: - script_path: /path/to/power_off.sh"
+msgstr "Parâmetros: - script_path: /caminho/para/power_off.sh"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:495
+msgid "Failure Action: CONTINUE (log error for manual intervention)"
+msgstr ""
+"Ação em caso de falha: CONTINUE (registrar erro para intervenção manual)"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:497
+msgid "Migration from Scripts"
+msgstr "Migração a partir de scripts"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:500
+msgid "Understanding the Transition"
+msgstr "Compreendendo a transição"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:502
+msgid ""
+"The Task Queue system replaces traditional startup/shutdown shell scripts "
+"with a more structured approach:"
+msgstr ""
+"O sistema de fila de tarefas substitui os scripts tradicionais de "
+"inicialização/desligamento do shell por uma abordagem mais estruturada:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:505
+msgid "Manually written bash/python scripts"
+msgstr "Scripts bash/python escritos manualmente"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:506
+msgid "Execute commands sequentially"
+msgstr "Executa comandos sequencialmente"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:507
+msgid "Limited error handling"
+msgstr "Tratamento de erros limitado"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:508
+msgid "No visual feedback during execution"
+msgstr "Sem feedback visual durante a execução"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:509
+msgid "**Traditional Scripts:**"
+msgstr "**Scripts tradicionais:**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:509
+msgid "Difficult to modify without coding knowledge"
+msgstr "Difícil de modificar sem conhecimento de programação"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:512
+msgid "Template-based task composition"
+msgstr "Composição de tarefas baseada em modelos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:513
+msgid "Visual building and monitoring"
+msgstr "Construção e monitoramento visual"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:514
+msgid "Built-in retry and error handling"
+msgstr "Repetição e tratamento de erros integrados"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:515
+msgid "Progress tracking and status updates"
+msgstr "Acompanhamento do progresso e atualizações de status"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:516
+msgid "**Task Queue System:**"
+msgstr "**Sistema de fila de tarefas:**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:516
+msgid "Modifiable through GUI"
+msgstr "Modificável através da interface gráfica do usuário"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:519
+msgid "Converting Script Operations"
+msgstr "Operações de conversão de script"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:521
+msgid "Common script operations can be converted to Task Queue actions:"
+msgstr ""
+"Operações de script comuns podem ser convertidas em ações da fila de tarefas:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:523
+msgid "**INDI Property Changes**"
+msgstr "**Alterações de propriedade INDI**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:526
+msgid "indi_setprop \"Telescope.TELESCOPE_PARK.PARK=On\""
+msgstr "indi_setprop \"Telescope.TELESCOPE_PARK.PARK=On\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:528
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:545
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:561
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:574
+msgid "Old Script:"
+msgstr "Script antigo:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:532
+msgid "Action Type: SET"
+msgstr "Tipo de ação: SET"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:533
+msgid "Device: Telescope"
+msgstr "Dispositivo: Telescópio"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:534
+msgid "Property: TELESCOPE_PARK"
+msgstr "Propriedade: TELESCOPE_PARK"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:535
+msgid "Element: PARK"
+msgstr "Elemento: PARK"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:536
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:554
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:567
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:580
+msgid "New Task Queue:"
+msgstr "Nova fila de tarefas:"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:536
+msgid "Value: On"
+msgstr "Valor: Ligado"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:538
+msgid "**Conditional Waits**"
+msgstr "**Esperas condicionais**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:541
+msgid ""
+"while [ $(indi_getprop \"CCD.CCD_TEMPERATURE.CCD_TEMPERATURE_VALUE\") -gt "
+"-10 ]; do\n"
+"    sleep 5\n"
+"done"
+msgstr ""
+"while [ $(indi_getprop \"CCD.CCD_TEMPERATURE.CCD_TEMPERATURE_VALUE\") -gt "
+"-10 ]; do\n"
+"    sleep 5\n"
+"done"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:549
+msgid "Action Type: EVALUATE"
+msgstr "Tipo de ação: EVALUATE"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:550
+msgid "Device: CCD"
+msgstr "Dispositivo: CCD"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:551
+msgid "Property: CCD_TEMPERATURE.CCD_TEMPERATURE_VALUE"
+msgstr "Propriedade: CCD_TEMPERATURE.CCD_TEMPERATURE_VALUE"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:552
+msgid "Condition: LESS_THAN"
+msgstr "Condição: LESS_THAN"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:553
+msgid "Target: -10"
+msgstr "Alvo: -10"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:554
+msgid "Poll Interval: 5 seconds"
+msgstr "Intervalo de votação: 5 segundos"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:556
+msgid "**Time Delays**"
+msgstr "**Atrasos**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:559
+msgid "sleep 60"
+msgstr "sleep 60"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:564
+msgid "Template: \"Delay\""
+msgstr "Modelo: \"Atraso\""
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:565
+msgid "Action Type: DELAY"
+msgstr "Tipo de ação: DELAY"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:566
+msgid "Duration: 60"
+msgstr "Duração: 60"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:567
+msgid "Unit: SECONDS"
+msgstr "Unidade: SEGUNDOS"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:569
+msgid "**External Scripts**"
+msgstr "**Scripts externos**"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:572
+msgid "/usr/local/bin/dome_control.sh open"
+msgstr "/usr/local/bin/dome_control.sh open"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:578
+msgid "Action Type: SCRIPT"
+msgstr "Tipo de ação: SCRIPT"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:579
+msgid "Script Path: /usr/local/bin/dome_control.sh"
+msgstr "Caminho do script: /usr/local/bin/dome_control.sh"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:580
+msgid "Arguments: open"
+msgstr "Argumentos: open"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:582
+msgid "Task Queue"
+msgstr "Task Queue"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:582
+msgid ".. image:: /images/task-queue.png"
+msgstr ".. image:: /images/task-queue.png"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:583
+msgid "Task Queue Template"
+msgstr "Task Queue Template"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:583
+msgid ".. image:: /images/task-queue-template.png"
+msgstr ".. image:: /images/task-queue-template.png"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:584
+msgid "Task Queue Collection"
+msgstr "Task Queue Collection"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:584
+msgid ".. image:: /images/task-queue-collection.png"
+msgstr ".. image:: /images/task-queue-collection.png"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:585
+msgid "Task Queue Select Device"
+msgstr "Task Queue Select Device"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:585
+msgid ".. image:: /images/task-queue-select-device.png"
+msgstr ".. image:: /images/task-queue-select-device.png"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:586
+msgid "Task Queue Customize Parameters"
+msgstr "Task Queue Customize Parameters"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:586
+msgid ".. image:: /images/task-queue-customize-parameters.png"
+msgstr ".. image:: /images/task-queue-customize-parameters.png"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:587
+msgid "Task Queue Running"
+msgstr "Task Queue Running"
+
+#: ../../user_manual/ekos-scheduler-taskqueue.rst:587
+msgid ".. image:: /images/task-queue-running.png"
+msgstr ".. image:: /images/task-queue-running.png"
