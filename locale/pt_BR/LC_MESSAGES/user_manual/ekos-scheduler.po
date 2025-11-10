@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-08 01:59+0000\n"
-"PO-Revision-Date: 2025-11-07 08:41-0300\n"
+"PO-Revision-Date: 2025-11-08 06:54-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -967,26 +967,28 @@ msgstr ""
 "observatório e o desligamento deve ser iniciado o mais rápido possível."
 
 #: ../../user_manual/ekos-scheduler.rst:534
-#, fuzzy
-#| msgid "Scheduler Offset Settings"
 msgid "|Scheduler Weather Settings|"
-msgstr "Scheduler Offset Settings"
+msgstr "|Scheduler Weather Settings|"
 
 #: ../../user_manual/ekos-scheduler.rst:536
 msgid "The weather driver can be configured in two ways:"
-msgstr ""
+msgstr "O controlador meteorológico pode ser configurado de duas maneiras:"
 
 #: ../../user_manual/ekos-scheduler.rst:538
 msgid ""
 "**Part of the equipment profile** - The weather driver starts with the "
 "observatory equipment"
 msgstr ""
+"**Parte do perfil do equipamento** - O controlador meteorológico é iniciado "
+"junto com o equipamento de observatório"
 
 #: ../../user_manual/ekos-scheduler.rst:539
 msgid ""
 "**Standalone driver** - The weather driver runs independently on a separate "
 "INDI server"
 msgstr ""
+"**Driver independente** - O controlador meteorológico clima é executado "
+"independentemente em um servidor INDI separado"
 
 #: ../../user_manual/ekos-scheduler.rst:541
 msgid ""
@@ -997,6 +999,13 @@ msgid ""
 "a shutdown if conditions are unsafe, this start-stop cycle is inefficient "
 "and potentially harmful to equipment."
 msgstr ""
+"**Importante:** Se nenhum driver meteorológico independente estiver "
+"configurado, o agendador não poderá verificar as condições meteorológicas "
+"antes de iniciar o observatório. Isso significa que o observatório poderá "
+"iniciar em condições inseguras. Embora o driver meteorológico do perfil do "
+"equipamento seja ativado após a inicialização e acione imediatamente um "
+"desligamento se as condições forem inseguras, esse ciclo de inicialização e "
+"parada é ineficiente e potencialmente prejudicial ao equipamento."
 
 #: ../../user_manual/ekos-scheduler.rst:547
 msgid ""
@@ -1005,10 +1014,15 @@ msgid ""
 "determining observatory safety. This allows the scheduler to verify "
 "conditions are safe *before* starting up the observatory."
 msgstr ""
+"**Melhor prática:** Configure um driver meteorológico independente. Quando "
+"presente, ele sempre terá precedência sobre qualquer driver meteorológico no "
+"perfil do equipamento para determinar a segurança do observatório. Isso "
+"permite que o planejador verifique se as condições são seguras *antes* de "
+"iniciar o observatório."
 
 #: ../../user_manual/ekos-scheduler.rst:552
 msgid "Weather Alert Response"
-msgstr ""
+msgstr "Resposta a alertas meteorológicos"
 
 #: ../../user_manual/ekos-scheduler.rst:554
 msgid ""
@@ -1018,44 +1032,59 @@ msgid ""
 "the Ekos and INDI connections while protecting your equipment, allowing for "
 "quick resumption when conditions improve."
 msgstr ""
+"Quando as condições meteorológicas se deterioram a ponto de entrarem em "
+"estado de alerta durante as operações, o agendador inicia um procedimento de "
+"\"desligamento suave\" de proteção. Ao contrário de um desligamento "
+"completo, onde todos os sistemas são interrompidos, um desligamento suave "
+"preserva as conexões Ekos e INDI, protegendo seu equipamento e permitindo "
+"uma retomada rápida quando as condições melhorarem."
 
 #: ../../user_manual/ekos-scheduler.rst:560
 msgid "**Soft Shutdown Sequence:**"
-msgstr ""
+msgstr "**Sequência de desligamento suave:**"
 
 #: ../../user_manual/ekos-scheduler.rst:562
 msgid "When a weather alert is detected:"
-msgstr ""
+msgstr "Quando um alerta meteorológico é detectado:"
 
 #: ../../user_manual/ekos-scheduler.rst:564
 msgid ""
 "A configurable delay period (default: 10 seconds) prevents reaction to "
 "momentary sensor issues"
 msgstr ""
+"Um período de atraso configurável (padrão: 10 segundos) evita a reação a "
+"problemas momentâneos do sensor"
 
 #: ../../user_manual/ekos-scheduler.rst:567
 msgid ""
 "If the alert persists, the current scheduler job is aborted (marked ABORTED, "
 "not ERROR, so it can restart later)"
 msgstr ""
+"Se o alerta persistir, a tarefa agendada atual será cancelada (marcada como "
+"CANCELADA, e não como ERRO, para que possa ser reiniciada posteriormente)."
 
 #: ../../user_manual/ekos-scheduler.rst:570
 msgid ""
 "The Pre-Shutdown Queue executes to protect equipment (typically closes dust "
 "caps, parks mount, closes dome)"
 msgstr ""
+"A fila de pré-desligamento é executada para proteger o equipamento "
+"(normalmente fecha as tampas anti-poeira, bloqueia a montagem, fecha a "
+"cúpula)"
 
 #: ../../user_manual/ekos-scheduler.rst:573
 msgid "Ekos and INDI remain running for faster recovery"
-msgstr ""
+msgstr "Ekos e INDI continuam em operação para uma recuperação mais rápida"
 
 #: ../../user_manual/ekos-scheduler.rst:575
 msgid "The scheduler enters a grace period to wait for weather improvement"
 msgstr ""
+"O sistema de agendamento entra em um período de tolerância para aguardar a "
+"melhora das condições climáticas"
 
 #: ../../user_manual/ekos-scheduler.rst:580
 msgid "Weather Grace Period"
-msgstr ""
+msgstr "Período de tolerância das condições climáticas"
 
 #: ../../user_manual/ekos-scheduler.rst:582
 msgid ""
@@ -1064,40 +1093,45 @@ msgid ""
 "operations automatically resume. If the grace period expires with alert "
 "conditions still present, the job is marked as ERROR and will not restart."
 msgstr ""
+"O período de tolerância é um tempo de espera configurável durante o qual o "
+"agendador monitora as condições climáticas. Se o tempo melhorar durante esse "
+"período, as operações são retomadas automaticamente. Se o período de "
+"tolerância expirar com as condições de alerta ainda presentes, a tarefa é "
+"marcada como ERRO e não será reiniciada."
 
 #: ../../user_manual/ekos-scheduler.rst:588
 msgid "**During the Grace Period:**"
-msgstr ""
+msgstr "**Durante o período de tolerância:**"
 
 #: ../../user_manual/ekos-scheduler.rst:590
 msgid "Equipment remains protected (mount parked, dome closed)"
-msgstr ""
+msgstr "O equipamento permanece protegido (montagem bloqueada, cúpula fechada)"
 
 #: ../../user_manual/ekos-scheduler.rst:591
 msgid "Ekos and INDI connections are maintained"
-msgstr ""
+msgstr "As conexões Ekos e INDI são mantidas"
 
 #: ../../user_manual/ekos-scheduler.rst:592
 msgid "Weather status is continuously monitored"
-msgstr ""
+msgstr "As condições meteorológicas são monitoradas continuamente"
 
 #: ../../user_manual/ekos-scheduler.rst:593
 msgid "If weather improves to Ok, operations resume automatically"
 msgstr ""
+"Se as condições meteorológicas melhorarem, as operações serão retomadas "
+"automaticamente"
 
 #: ../../user_manual/ekos-scheduler.rst:594
 msgid "If period expires with Alert status, the job fails"
-msgstr ""
+msgstr "Se o período expirar com o status de Alerta, o trabalho falhará"
 
 #: ../../user_manual/ekos-scheduler.rst:596
 msgid "**Configuration:**"
-msgstr ""
+msgstr "**Configuração:**"
 
 #: ../../user_manual/ekos-scheduler.rst:598
-#, fuzzy
-#| msgid "Scheduler Offset Settings"
 msgid "In the Scheduler Weather Settings:"
-msgstr "Scheduler Offset Settings"
+msgstr "Nas configurações de clima do agendador:"
 
 #: ../../user_manual/ekos-scheduler.rst:600
 msgid ""
@@ -1105,6 +1139,9 @@ msgid ""
 "initiating shutdown (default: 10). This prevents false alarms from brief "
 "sensor glitches."
 msgstr ""
+"**Atraso no desligamento por condições climáticas**: Segundos a aguardar "
+"após a detecção de um alerta antes de iniciar o desligamento (padrão: 10). "
+"Isso evita alarmes falsos causados ​​por breves falhas nos sensores."
 
 #: ../../user_manual/ekos-scheduler.rst:604
 msgid ""
@@ -1112,54 +1149,72 @@ msgid ""
 "based on your local weather patterns—longer grace periods work well if "
 "alerts are typically brief."
 msgstr ""
+"**Período de tolerância de condições climáticas**: Minutos de espera para a "
+"melhora das condições climáticas. Escolha com base nos padrões climáticos "
+"locais — períodos de tolerância mais longos são ideais se os alertas "
+"costumam ser breves."
 
 #: ../../user_manual/ekos-scheduler.rst:611
 msgid "Automatic Weather Recovery"
-msgstr ""
+msgstr "Recuperação automática de condições meteorológicas"
 
 #: ../../user_manual/ekos-scheduler.rst:613
 msgid ""
 "When weather improves during the grace period, the scheduler automatically "
 "resumes operations:"
 msgstr ""
+"Quando o tempo melhorar durante o período de tolerância, o agendador "
+"retomará automaticamente as operações:"
 
 #: ../../user_manual/ekos-scheduler.rst:616
 msgid "Weather status changes from Alert to Ok"
-msgstr ""
+msgstr "A situação meteorológica mudou de \"Alerta\" para \"OK\""
 
 #: ../../user_manual/ekos-scheduler.rst:618
 msgid ""
 "The Post-Startup Queue executes to reverse protective actions (opens dome, "
 "unparks mount, opens dust caps)"
 msgstr ""
+"A fila pós-inicialização é executada para reverter as ações de proteção "
+"(abre a cúpula, desbloqueia a montagem, abre as tampas anti-poeira)"
 
 #: ../../user_manual/ekos-scheduler.rst:621
 msgid "The scheduler resumes normal operation"
-msgstr ""
+msgstr "O agendador retoma a operação normal"
 
 #: ../../user_manual/ekos-scheduler.rst:623
 msgid "The aborted job can restart if its constraints are still met"
 msgstr ""
+"A tarefa cancelada pode ser reiniciada se suas restrições ainda forem "
+"atendidas"
 
 #: ../../user_manual/ekos-scheduler.rst:625
 msgid "**Queue Usage During Weather Events:**"
-msgstr ""
+msgstr "**Uso da fila durante eventos climáticos:**"
 
 #: ../../user_manual/ekos-scheduler.rst:627
 msgid "Weather events use specific startup and shutdown queues:"
 msgstr ""
+"Os eventos meteorológicos utilizam filas específicas de inicialização e "
+"encerramento:"
 
 #: ../../user_manual/ekos-scheduler.rst:629
 msgid ""
 "**During Weather Shutdown**: Only Pre-Shutdown Queue executes (runs before "
 "stopping Ekos). Post-Shutdown Queue is skipped since Ekos remains running."
 msgstr ""
+"**Durante o desligamento devido ao clima**: Somente a fila de pré-"
+"desligamento é executada (executa antes da parada do Ekos). A fila de pós-"
+"desligamento é ignorada, pois o Ekos permanece em execução."
 
 #: ../../user_manual/ekos-scheduler.rst:633
 msgid ""
 "**During Weather Recovery**: Only Post-Startup Queue executes (runs after "
 "devices ready). Pre-Startup Queue is skipped since Ekos never stopped."
 msgstr ""
+"**Durante a recuperação de condições climáticas adversas**: Somente a fila "
+"pós-inicialização é executada (executada após os dispositivos estarem "
+"prontos). A fila pré-inicialização é ignorada, pois o Ekos nunca parou."
 
 #: ../../user_manual/ekos-scheduler.rst:637
 msgid ""
@@ -1167,64 +1222,61 @@ msgid ""
 "the Post-Startup queue should reverse exactly what the Pre-Shutdown queue "
 "did."
 msgstr ""
+"Suas filas de pré-desligamento e pós-inicialização devem funcionar juntas "
+"simetricamente — a fila de pós-inicialização deve reverter exatamente o que "
+"a fila de pré-desligamento fez."
 
 #: ../../user_manual/ekos-scheduler.rst:641
 msgid "**Example Queue Design:**"
-msgstr ""
+msgstr "**Exemplo de projeto de fila:**"
 
 #: ../../user_manual/ekos-scheduler.rst:644
 msgid "Close dust cap"
-msgstr ""
+msgstr "Fechar tampa anti-poeira"
 
 #: ../../user_manual/ekos-scheduler.rst:645
-#, fuzzy
-#| msgid "Unparking mount"
 msgid "Park mount"
-msgstr "Desbloquear a montagem"
+msgstr "Bloquear montagem"
 
 #: ../../user_manual/ekos-scheduler.rst:646
 msgid "Pre-Shutdown Queue:"
-msgstr ""
+msgstr "Fila de pré-desligamento:"
 
 #: ../../user_manual/ekos-scheduler.rst:646
 msgid "Close dome shutter"
-msgstr ""
+msgstr "Fechar obturador da cúpula"
 
 #: ../../user_manual/ekos-scheduler.rst:649
 msgid "Open dome shutter"
-msgstr ""
+msgstr "Abrir obturador da cúpula"
 
 #: ../../user_manual/ekos-scheduler.rst:650
-#, fuzzy
-#| msgid "Unparking mount"
 msgid "Unpark mount"
-msgstr "Desbloquear a montagem"
+msgstr "Desbloquear montagem"
 
 #: ../../user_manual/ekos-scheduler.rst:651
-#, fuzzy
-#| msgid "Startup Procedure"
 msgid "Post-Startup Queue:"
-msgstr "Procedimento de inicialização"
+msgstr "Fila de pós-inicialização:"
 
 #: ../../user_manual/ekos-scheduler.rst:651
 msgid "Open dust cap"
-msgstr ""
+msgstr "Abrir tampa anti-poeira"
 
 #: ../../user_manual/ekos-scheduler.rst:656
-#, fuzzy
-#| msgid "Weather Monitoring"
 msgid "Weather Monitoring Best Practices"
-msgstr "Monitoramento climático"
+msgstr "Melhores práticas para monitoramento meteorológico"
 
 #: ../../user_manual/ekos-scheduler.rst:658
 msgid "For reliable weather protection:"
-msgstr ""
+msgstr "Para uma proteção confiável contra intempéries:"
 
 #: ../../user_manual/ekos-scheduler.rst:660
 msgid ""
 "**Design Symmetric Queues**: Ensure Pre-Shutdown and Post-Startup queues "
 "mirror each other exactly."
 msgstr ""
+"**Projete filas simétricas**: Garanta que as filas de pré-desligamento e pós-"
+"inicialização sejam exatamente iguais."
 
 #: ../../user_manual/ekos-scheduler.rst:663
 msgid ""
@@ -1232,6 +1284,10 @@ msgid ""
 "avoid false alarms but short enough to protect equipment promptly (10-30 "
 "seconds recommended)."
 msgstr ""
+"**Defina os atrasos apropriados**: Configure o atraso de desligamento por "
+"condições climáticas com duração suficiente para evitar alarmes falsos, mas "
+"curto o bastante para proteger o equipamento prontamente (recomenda-se de 10 "
+"a 30 segundos)."
 
 #: ../../user_manual/ekos-scheduler.rst:667
 msgid ""
@@ -1239,18 +1295,27 @@ msgid ""
 "patterns. For areas with brief passing clouds or showers, 30-60 minutes "
 "allows resumption without abandoning the night."
 msgstr ""
+"**Escolha o período de tolerância com sabedoria**: Baseie o período de "
+"tolerância nos padrões climáticos locais. Para áreas com breves períodos de "
+"nuvens ou chuvas passageiras, 30 a 60 minutos permitem a retomada sem a "
+"necessidade de abandonar a noite."
 
 #: ../../user_manual/ekos-scheduler.rst:672
 msgid ""
 "**Test Your Setup**: Manually test weather shutdown and recovery before "
 "unattended operations."
 msgstr ""
+"**Teste sua configuração**: Teste manualmente o desligamento e a recuperação "
+"devido às condições climáticas antes de operações sem supervisão."
 
 #: ../../user_manual/ekos-scheduler.rst:675
 msgid ""
 "**Monitor Connection Stability**: Ensure reliable weather station "
 "connectivity. The scheduler attempts reconnection if connection is lost."
 msgstr ""
+"**Monitore a estabilidade da conexão**: Garanta uma conectividade confiável "
+"com a estação meteorológica. O agendador deve tentar restabelecer a conexão "
+"caso ela seja perdida."
 
 #: ../../user_manual/ekos-scheduler.rst:679
 msgid ""
@@ -1258,6 +1323,10 @@ msgid ""
 "in scheduler settings to monitor conditions even before starting equipment, "
 "preventing unsafe startups."
 msgstr ""
+"**Use o monitoramento meteorológico independente**: Configure um dispositivo "
+"meteorológico independente nas configurações do agendador para monitorar as "
+"condições antes mesmo de iniciar o equipamento, evitando inicializações "
+"inseguras."
 
 #: ../../user_manual/ekos-scheduler.rst:685
 msgid "Startup & Shutdown Scripts"
@@ -1718,16 +1787,12 @@ msgid ".. image:: /images/ekos_scheduler_scripts_settings.png"
 msgstr ".. image:: /images/ekos_scheduler_scripts_settings.png"
 
 #: ../../user_manual/ekos-scheduler.rst:921
-#, fuzzy
-#| msgid "Scheduler Offset Settings"
 msgid "Scheduler Weather Settings"
-msgstr "Scheduler Offset Settings"
+msgstr "Scheduler Weather Settings"
 
 #: ../../user_manual/ekos-scheduler.rst:921
-#, fuzzy
-#| msgid ".. image:: /images/ekos_scheduler_offset_settings.png"
 msgid ".. image:: /images/ekos_scheduler_weather_settings.png"
-msgstr ".. image:: /images/ekos_scheduler_offset_settings.png"
+msgstr ".. image:: /images/ekos_scheduler_weather_settings.png"
 
 #: ../../user_manual/ekos-scheduler.rst:922
 msgid ".. image:: /images/ekos_capture_sequence_editor.png"
