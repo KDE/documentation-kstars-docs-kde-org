@@ -533,19 +533,22 @@ Weather Monitoring
 
                |Scheduler Weather Settings|
 
-            The weather driver can be configured in two ways:
+            Weather monitoring can be configured in two ways:
 
-               1. **Part of the equipment profile** - The weather driver starts with the observatory equipment
-               2. **Standalone driver** - The weather driver runs independently on a separate INDI server
+               1. **Part of the equipment profile** - A weather driver starts with the observatory equipment
+               2. **Standalone INDI Safety Monitor** - An INDI Safety Monitor driver runs independently on a separate INDI server
 
-            **Important:** If no standalone weather driver is configured, the scheduler cannot check weather 
+            **Important:** If no standalone safety monitor is configured, the scheduler cannot check safety 
             conditions before starting the observatory. This means the observatory may start in unsafe 
             conditions. While the equipment profile's weather driver will activate after startup and 
             immediately trigger a shutdown if conditions are unsafe, this start-stop cycle is inefficient 
             and potentially harmful to equipment.
 
-            **Best practice:** Configure a standalone weather driver. When present, it always takes 
+            **Best practice:** Configure a standalone INDI Safety Monitor. When present, it always takes 
             precedence over any weather driver in the equipment profile for determining observatory safety. 
+            The monitor can be configured to listen to any number of Weather or Auxiliary drivers (like UPS)
+            that can pose a safety risk to the operation of the observatory. Any INDI driver implemented the
+            INDI Standard Property SAFETY_STATUS can be added to the Safety Monitor driver.
             This allows the scheduler to verify conditions are safe *before* starting up the observatory.
 
 Weather Alert Response
