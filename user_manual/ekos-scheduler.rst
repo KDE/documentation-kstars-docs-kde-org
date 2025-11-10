@@ -547,7 +547,7 @@ Weather Monitoring
             **Best practice:** Configure a standalone INDI Safety Monitor. When present, it always takes 
             precedence over any weather driver in the equipment profile for determining observatory safety. 
             The monitor can be configured to listen to any number of Weather or Auxiliary drivers (like UPS)
-            that can pose a safety risk to the operation of the observatory. Any INDI driver implemented the
+            that can pose a safety risk to the operation of the observatory. Any INDI driver implementing the
             INDI Standard Property SAFETY_STATUS can be added to the Safety Monitor driver.
             This allows the scheduler to verify conditions are safe *before* starting up the observatory.
 
