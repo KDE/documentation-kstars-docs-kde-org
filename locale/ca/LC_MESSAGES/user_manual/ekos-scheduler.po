@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-08 01:59+0000\n"
+"POT-Creation-Date: 2025-11-11 02:16+0000\n"
 "PO-Revision-Date: 2025-11-08 21:11+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -644,7 +644,7 @@ msgstr ""
 "anomenada Editor de seqüències de captura."
 
 #: ../../user_manual/ekos-scheduler.rst:350
-#: ../../user_manual/ekos-scheduler.rst:922
+#: ../../user_manual/ekos-scheduler.rst:925
 msgid "Capture Sequence Editor"
 msgstr "Editor de seqüències de captura"
 
@@ -979,29 +979,47 @@ msgid "|Scheduler Weather Settings|"
 msgstr "|Scheduler Weather Settings|"
 
 #: ../../user_manual/ekos-scheduler.rst:536
-msgid "The weather driver can be configured in two ways:"
+#, fuzzy
+#| msgid "The weather driver can be configured in two ways:"
+msgid "Weather monitoring can be configured in two ways:"
 msgstr "El controlador meteorològic es pot configurar de dues maneres:"
 
 #: ../../user_manual/ekos-scheduler.rst:538
+#, fuzzy
+#| msgid ""
+#| "**Part of the equipment profile** - The weather driver starts with the "
+#| "observatory equipment"
 msgid ""
-"**Part of the equipment profile** - The weather driver starts with the "
+"**Part of the equipment profile** - A weather driver starts with the "
 "observatory equipment"
 msgstr ""
 "**Part del perfil de l'equip**: el controlador meteorològic comença amb "
 "l'equip de l'observatori"
 
 #: ../../user_manual/ekos-scheduler.rst:539
+#, fuzzy
+#| msgid ""
+#| "**Standalone driver** - The weather driver runs independently on a "
+#| "separate INDI server"
 msgid ""
-"**Standalone driver** - The weather driver runs independently on a separate "
-"INDI server"
+"**Standalone INDI Safety Monitor** - An INDI Safety Monitor driver runs "
+"independently on a separate INDI server"
 msgstr ""
 "**Controlador autònom**: el controlador meteorològic s'executa "
 "independentment en un servidor INDI separat"
 
 #: ../../user_manual/ekos-scheduler.rst:541
+#, fuzzy
+#| msgid ""
+#| "**Important:** If no standalone weather driver is configured, the "
+#| "scheduler cannot check weather conditions before starting the "
+#| "observatory. This means the observatory may start in unsafe conditions. "
+#| "While the equipment profile's weather driver will activate after startup "
+#| "and immediately trigger a shutdown if conditions are unsafe, this start-"
+#| "stop cycle is inefficient and potentially harmful to equipment."
 msgid ""
-"**Important:** If no standalone weather driver is configured, the scheduler "
-"cannot check weather conditions before starting the observatory. This means "
+"**Important:** If no standalone safety monitor is configured, the scheduler "
+"cannot check safety conditions before starting the observatory. This means "
 "the observatory may start in unsafe conditions. While the equipment "
 "profile's weather driver will activate after startup and immediately trigger "
 "a shutdown if conditions are unsafe, this start-stop cycle is inefficient "
@@ -1016,11 +1034,21 @@ msgstr ""
 "potencialment perjudicial per a l'equip."
 
 #: ../../user_manual/ekos-scheduler.rst:547
+#, fuzzy
+#| msgid ""
+#| "**Best practice:** Configure a standalone weather driver. When present, "
+#| "it always takes precedence over any weather driver in the equipment "
+#| "profile for determining observatory safety. This allows the scheduler to "
+#| "verify conditions are safe *before* starting up the observatory."
 msgid ""
-"**Best practice:** Configure a standalone weather driver. When present, it "
-"always takes precedence over any weather driver in the equipment profile for "
-"determining observatory safety. This allows the scheduler to verify "
-"conditions are safe *before* starting up the observatory."
+"**Best practice:** Configure a standalone INDI Safety Monitor. When present, "
+"it always takes precedence over any weather driver in the equipment profile "
+"for determining observatory safety. The monitor can be configured to listen "
+"to any number of Weather or Auxiliary drivers (like UPS) that can pose a "
+"safety risk to the operation of the observatory. Any INDI driver "
+"implementing the INDI Standard Property SAFETY_STATUS can be added to the "
+"Safety Monitor driver. This allows the scheduler to verify conditions are "
+"safe *before* starting up the observatory."
 msgstr ""
 "**Millor pràctica:** Configureu un controlador meteorològic autònom. Quan "
 "està present, sempre té prioritat sobre qualsevol controlador meteorològic "
@@ -1028,11 +1056,11 @@ msgstr ""
 "permet al programador verificar que les condicions són segures *abans* "
 "d'iniciar l'observatori."
 
-#: ../../user_manual/ekos-scheduler.rst:552
+#: ../../user_manual/ekos-scheduler.rst:555
 msgid "Weather Alert Response"
 msgstr "Resposta d'alerta meteorològica"
 
-#: ../../user_manual/ekos-scheduler.rst:554
+#: ../../user_manual/ekos-scheduler.rst:557
 msgid ""
 "When weather conditions deteriorate to Alert status during operations, the "
 "scheduler initiates a protective \"soft shutdown\" procedure. Unlike a "
@@ -1046,15 +1074,15 @@ msgstr ""
 "aturats, una aturada suau manté les connexions Ekos i INDI mentre protegeix "
 "l'equip, permetent una represa ràpida quan les condicions milloren."
 
-#: ../../user_manual/ekos-scheduler.rst:560
+#: ../../user_manual/ekos-scheduler.rst:563
 msgid "**Soft Shutdown Sequence:**"
 msgstr "**Seqüència d'apagat suau:**"
 
-#: ../../user_manual/ekos-scheduler.rst:562
+#: ../../user_manual/ekos-scheduler.rst:565
 msgid "When a weather alert is detected:"
 msgstr "Quan es detecta una alerta meteorològica:"
 
-#: ../../user_manual/ekos-scheduler.rst:564
+#: ../../user_manual/ekos-scheduler.rst:567
 msgid ""
 "A configurable delay period (default: 10 seconds) prevents reaction to "
 "momentary sensor issues"
@@ -1062,7 +1090,7 @@ msgstr ""
 "Un període de retard configurable (predeterminat: 10 segons) impedeix la "
 "reacció a problemes momentanis del sensor"
 
-#: ../../user_manual/ekos-scheduler.rst:567
+#: ../../user_manual/ekos-scheduler.rst:570
 msgid ""
 "If the alert persists, the current scheduler job is aborted (marked ABORTED, "
 "not ERROR, so it can restart later)"
@@ -1070,7 +1098,7 @@ msgstr ""
 "Si l'alerta persisteix, s'interromp la tasca actual del programador (marcada "
 "INTERROMPUDA, no ERROR, de manera que es pot reiniciar més tard)"
 
-#: ../../user_manual/ekos-scheduler.rst:570
+#: ../../user_manual/ekos-scheduler.rst:573
 msgid ""
 "The Pre-Shutdown Queue executes to protect equipment (typically closes dust "
 "caps, parks mount, closes dome)"
@@ -1078,21 +1106,21 @@ msgstr ""
 "La cua prèvia de tancament s'executa per protegir l'equip (normalment tanca "
 "els taps per la pols, aparca la muntura, tanca la cúpula)"
 
-#: ../../user_manual/ekos-scheduler.rst:573
+#: ../../user_manual/ekos-scheduler.rst:576
 msgid "Ekos and INDI remain running for faster recovery"
 msgstr "L'Ekos i l'INDI segueixen funcionant per a una recuperació més ràpida"
 
-#: ../../user_manual/ekos-scheduler.rst:575
+#: ../../user_manual/ekos-scheduler.rst:578
 msgid "The scheduler enters a grace period to wait for weather improvement"
 msgstr ""
 "El programador entra en un període de gràcia per a esperar la millora de la "
 "meteorologia"
 
-#: ../../user_manual/ekos-scheduler.rst:580
+#: ../../user_manual/ekos-scheduler.rst:583
 msgid "Weather Grace Period"
 msgstr "Període de gràcia meteorològic"
 
-#: ../../user_manual/ekos-scheduler.rst:582
+#: ../../user_manual/ekos-scheduler.rst:585
 msgid ""
 "The grace period is a configurable waiting time during which the scheduler "
 "monitors weather conditions. If weather improves during this period, "
@@ -1105,41 +1133,41 @@ msgstr ""
 "el període de gràcia expira amb les condicions d'alerta encara presents, el "
 "treball es marca com a ERROR i no es reiniciarà."
 
-#: ../../user_manual/ekos-scheduler.rst:588
+#: ../../user_manual/ekos-scheduler.rst:591
 msgid "**During the Grace Period:**"
 msgstr "**Durant el període de gràcia:**"
 
-#: ../../user_manual/ekos-scheduler.rst:590
+#: ../../user_manual/ekos-scheduler.rst:593
 msgid "Equipment remains protected (mount parked, dome closed)"
 msgstr "L'equip resta protegit (muntura aparcada, cúpula tancada)"
 
-#: ../../user_manual/ekos-scheduler.rst:591
+#: ../../user_manual/ekos-scheduler.rst:594
 msgid "Ekos and INDI connections are maintained"
 msgstr "Es mantenen les connexions Ekos i INDI"
 
-#: ../../user_manual/ekos-scheduler.rst:592
+#: ../../user_manual/ekos-scheduler.rst:595
 msgid "Weather status is continuously monitored"
 msgstr "L'estat de la meteorologia es controla contínuament"
 
-#: ../../user_manual/ekos-scheduler.rst:593
+#: ../../user_manual/ekos-scheduler.rst:596
 msgid "If weather improves to Ok, operations resume automatically"
 msgstr ""
 "Si la meteorologia millora a correcta, les operacions es reprenen "
 "automàticament"
 
-#: ../../user_manual/ekos-scheduler.rst:594
+#: ../../user_manual/ekos-scheduler.rst:597
 msgid "If period expires with Alert status, the job fails"
 msgstr "Si el període expira amb l'estat d'alerta, la tasca falla"
 
-#: ../../user_manual/ekos-scheduler.rst:596
+#: ../../user_manual/ekos-scheduler.rst:599
 msgid "**Configuration:**"
 msgstr "**Configuració:**"
 
-#: ../../user_manual/ekos-scheduler.rst:598
+#: ../../user_manual/ekos-scheduler.rst:601
 msgid "In the Scheduler Weather Settings:"
 msgstr "A la configuració meteorològica del programador:"
 
-#: ../../user_manual/ekos-scheduler.rst:600
+#: ../../user_manual/ekos-scheduler.rst:603
 msgid ""
 "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
 "initiating shutdown (default: 10). This prevents false alarms from brief "
@@ -1149,7 +1177,7 @@ msgstr ""
 "detecció d'alerta abans d'iniciar el tancament (predeterminat: 10). Això "
 "evita falses alarmes de breus errors de sensor."
 
-#: ../../user_manual/ekos-scheduler.rst:604
+#: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
 "**Weather Grace Period**: Minutes to wait for weather improvement. Choose "
 "based on your local weather patterns—longer grace periods work well if "
@@ -1160,11 +1188,11 @@ msgstr ""
 "períodes de gràcia més llargs funcionen bé si les alertes són normalment "
 "breus."
 
-#: ../../user_manual/ekos-scheduler.rst:611
+#: ../../user_manual/ekos-scheduler.rst:614
 msgid "Automatic Weather Recovery"
 msgstr "Recuperació automàtica de la meteorologia"
 
-#: ../../user_manual/ekos-scheduler.rst:613
+#: ../../user_manual/ekos-scheduler.rst:616
 msgid ""
 "When weather improves during the grace period, the scheduler automatically "
 "resumes operations:"
@@ -1172,11 +1200,11 @@ msgstr ""
 "Quan la meteorologia millora durant el període de gràcia, el programador "
 "reprèn automàticament les operacions:"
 
-#: ../../user_manual/ekos-scheduler.rst:616
+#: ../../user_manual/ekos-scheduler.rst:619
 msgid "Weather status changes from Alert to Ok"
 msgstr "Canvis d'estat meteorològic des d'Alerta a Correcte"
 
-#: ../../user_manual/ekos-scheduler.rst:618
+#: ../../user_manual/ekos-scheduler.rst:621
 msgid ""
 "The Post-Startup Queue executes to reverse protective actions (opens dome, "
 "unparks mount, opens dust caps)"
@@ -1184,27 +1212,27 @@ msgstr ""
 "La cua posterior d'inici s'executa per a invertir accions de protecció (obre "
 "la cúpula, desaparca la muntura, obre els taps per la pols)"
 
-#: ../../user_manual/ekos-scheduler.rst:621
+#: ../../user_manual/ekos-scheduler.rst:624
 msgid "The scheduler resumes normal operation"
 msgstr "El programador reprèn l'operació normal"
 
-#: ../../user_manual/ekos-scheduler.rst:623
+#: ../../user_manual/ekos-scheduler.rst:626
 msgid "The aborted job can restart if its constraints are still met"
 msgstr ""
 "La tasca interrompuda pot reiniciar-se si les seves restriccions encara es "
 "compleixen"
 
-#: ../../user_manual/ekos-scheduler.rst:625
+#: ../../user_manual/ekos-scheduler.rst:628
 msgid "**Queue Usage During Weather Events:**"
 msgstr "**Ús de la cua durant els esdeveniments meteorològics:**"
 
-#: ../../user_manual/ekos-scheduler.rst:627
+#: ../../user_manual/ekos-scheduler.rst:630
 msgid "Weather events use specific startup and shutdown queues:"
 msgstr ""
 "Els esdeveniments meteorològics utilitzen cues d'inici i tancament "
 "específiques:"
 
-#: ../../user_manual/ekos-scheduler.rst:629
+#: ../../user_manual/ekos-scheduler.rst:632
 msgid ""
 "**During Weather Shutdown**: Only Pre-Shutdown Queue executes (runs before "
 "stopping Ekos). Post-Shutdown Queue is skipped since Ekos remains running."
@@ -1213,7 +1241,7 @@ msgstr ""
 "tancament (executa abans d'aturar l'Ekos). S'omet la cua posterior de "
 "tancament perquè l'Ekos continua funcionant."
 
-#: ../../user_manual/ekos-scheduler.rst:633
+#: ../../user_manual/ekos-scheduler.rst:636
 msgid ""
 "**During Weather Recovery**: Only Post-Startup Queue executes (runs after "
 "devices ready). Pre-Startup Queue is skipped since Ekos never stopped."
@@ -1222,7 +1250,7 @@ msgstr ""
 "d'inici (s'executa després que els dispositius estiguin preparats). S'omet "
 "la cua prèvia d'inici perquè l'Ekos no s'ha aturat en cap moment."
 
-#: ../../user_manual/ekos-scheduler.rst:637
+#: ../../user_manual/ekos-scheduler.rst:640
 msgid ""
 "Your Pre-Shutdown and Post-Startup queues should work together symmetrically—"
 "the Post-Startup queue should reverse exactly what the Pre-Shutdown queue "
@@ -1232,51 +1260,51 @@ msgstr ""
 "juntes simètricament; la cua posterior d'inici hauria de revertir exactament "
 "el que va fer la cua prèvia d'apagada."
 
-#: ../../user_manual/ekos-scheduler.rst:641
+#: ../../user_manual/ekos-scheduler.rst:644
 msgid "**Example Queue Design:**"
 msgstr "**Exemple de disseny de cua:**"
 
-#: ../../user_manual/ekos-scheduler.rst:644
+#: ../../user_manual/ekos-scheduler.rst:647
 msgid "Close dust cap"
 msgstr "Tanca la tapa per la pols"
 
-#: ../../user_manual/ekos-scheduler.rst:645
+#: ../../user_manual/ekos-scheduler.rst:648
 msgid "Park mount"
 msgstr "Aparca la muntura"
 
-#: ../../user_manual/ekos-scheduler.rst:646
+#: ../../user_manual/ekos-scheduler.rst:649
 msgid "Pre-Shutdown Queue:"
 msgstr "Cua prèvia de tancament:"
 
-#: ../../user_manual/ekos-scheduler.rst:646
+#: ../../user_manual/ekos-scheduler.rst:649
 msgid "Close dome shutter"
 msgstr "Tanca l'obturador de la cúpula"
 
-#: ../../user_manual/ekos-scheduler.rst:649
+#: ../../user_manual/ekos-scheduler.rst:652
 msgid "Open dome shutter"
 msgstr "Obre l'obturador de la cúpula"
 
-#: ../../user_manual/ekos-scheduler.rst:650
+#: ../../user_manual/ekos-scheduler.rst:653
 msgid "Unpark mount"
 msgstr "Desaparca la muntura"
 
-#: ../../user_manual/ekos-scheduler.rst:651
+#: ../../user_manual/ekos-scheduler.rst:654
 msgid "Post-Startup Queue:"
 msgstr "Cua posterior d'inici:"
 
-#: ../../user_manual/ekos-scheduler.rst:651
+#: ../../user_manual/ekos-scheduler.rst:654
 msgid "Open dust cap"
 msgstr "Obre la tapa per la pols"
 
-#: ../../user_manual/ekos-scheduler.rst:656
+#: ../../user_manual/ekos-scheduler.rst:659
 msgid "Weather Monitoring Best Practices"
 msgstr "Millors pràctiques de monitoratge de la meteorologia"
 
-#: ../../user_manual/ekos-scheduler.rst:658
+#: ../../user_manual/ekos-scheduler.rst:661
 msgid "For reliable weather protection:"
 msgstr "Per a una protecció meteorològica fiable:"
 
-#: ../../user_manual/ekos-scheduler.rst:660
+#: ../../user_manual/ekos-scheduler.rst:663
 msgid ""
 "**Design Symmetric Queues**: Ensure Pre-Shutdown and Post-Startup queues "
 "mirror each other exactly."
@@ -1284,7 +1312,7 @@ msgstr ""
 "**Cues de disseny simètric**: Assegureu-vos que les cues prèvies de "
 "tancament i posterior d'inici s'emmirallin exactament."
 
-#: ../../user_manual/ekos-scheduler.rst:663
+#: ../../user_manual/ekos-scheduler.rst:666
 msgid ""
 "**Set Appropriate Delays**: Configure Weather Shutdown Delay long enough to "
 "avoid false alarms but short enough to protect equipment promptly (10-30 "
@@ -1294,7 +1322,7 @@ msgstr ""
 "meteorològic amb prou temps per evitar falses alarmes però prou curt per "
 "protegir l'equip ràpidament (recomanats 10-30 segons)."
 
-#: ../../user_manual/ekos-scheduler.rst:667
+#: ../../user_manual/ekos-scheduler.rst:670
 msgid ""
 "**Choose Grace Period Wisely**: Base the grace period on local weather "
 "patterns. For areas with brief passing clouds or showers, 30-60 minutes "
@@ -1304,7 +1332,7 @@ msgstr ""
 "en els patrons meteorològics locals. Per a zones amb núvols breus o pluges, "
 "30-60 minuts permet reprendre sense abandonar la nit."
 
-#: ../../user_manual/ekos-scheduler.rst:672
+#: ../../user_manual/ekos-scheduler.rst:675
 msgid ""
 "**Test Your Setup**: Manually test weather shutdown and recovery before "
 "unattended operations."
@@ -1312,7 +1340,7 @@ msgstr ""
 "**Proveu la vostra configuració**: Proveu manualment el tancament "
 "meteorològic i la recuperació de les operacions no ateses abans."
 
-#: ../../user_manual/ekos-scheduler.rst:675
+#: ../../user_manual/ekos-scheduler.rst:678
 msgid ""
 "**Monitor Connection Stability**: Ensure reliable weather station "
 "connectivity. The scheduler attempts reconnection if connection is lost."
@@ -1321,7 +1349,7 @@ msgstr ""
 "connectivitat fiable de l'estació meteorològica. El programador intenta "
 "tornar a connectar si es perd la connexió."
 
-#: ../../user_manual/ekos-scheduler.rst:679
+#: ../../user_manual/ekos-scheduler.rst:682
 msgid ""
 "**Use Standalone Weather Monitoring**: Configure a standalone weather device "
 "in scheduler settings to monitor conditions even before starting equipment, "
@@ -1331,15 +1359,15 @@ msgstr ""
 "meteorològic autònom a la configuració del programador per a controlar les "
 "condicions fins i tot abans d'iniciar l'equip, evitant inicis insegurs."
 
-#: ../../user_manual/ekos-scheduler.rst:685
+#: ../../user_manual/ekos-scheduler.rst:688
 msgid "Startup & Shutdown Scripts"
 msgstr "Scripts durant l'inici i tancament"
 
-#: ../../user_manual/ekos-scheduler.rst:689
+#: ../../user_manual/ekos-scheduler.rst:692
 msgid "**NEW: Task Queue System**"
 msgstr "**NOU: Sistema de cua de tasques**"
 
-#: ../../user_manual/ekos-scheduler.rst:691
+#: ../../user_manual/ekos-scheduler.rst:694
 msgid ""
 "KStars now includes a modern :doc:`Task Queue System <ekos-scheduler-"
 "taskqueue>` that provides a powerful, template-based alternative to "
@@ -1350,27 +1378,27 @@ msgstr ""
 "plantilles als scripts d'inici i tancament tradicionals. La cua de tasques "
 "ofereix:"
 
-#: ../../user_manual/ekos-scheduler.rst:695
+#: ../../user_manual/ekos-scheduler.rst:698
 msgid "Visual interface for building automation sequences"
 msgstr "Una interfície visual per construir seqüències d'automatització"
 
-#: ../../user_manual/ekos-scheduler.rst:696
+#: ../../user_manual/ekos-scheduler.rst:699
 msgid "Pre-built templates for common operations"
 msgstr "Plantilles preconstruïdes per a operacions habituals"
 
-#: ../../user_manual/ekos-scheduler.rst:697
+#: ../../user_manual/ekos-scheduler.rst:700
 msgid "Built-in error handling and retry logic"
 msgstr "Gestió integrada d'errors i lògica de reintent"
 
-#: ../../user_manual/ekos-scheduler.rst:698
+#: ../../user_manual/ekos-scheduler.rst:701
 msgid "Real-time progress monitoring"
 msgstr "Control del progrés en temps real"
 
-#: ../../user_manual/ekos-scheduler.rst:699
+#: ../../user_manual/ekos-scheduler.rst:702
 msgid "Device-aware task execution"
 msgstr "Execució de tasques segons els dispositius"
 
-#: ../../user_manual/ekos-scheduler.rst:701
+#: ../../user_manual/ekos-scheduler.rst:704
 msgid ""
 "For new observatories or those looking to modernize their automation, we "
 "recommend exploring the Task Queue system. See the complete :doc:`Task Queue "
@@ -1381,8 +1409,8 @@ msgstr ""
 "detalls a la :doc:`Documentació de la cua de tasques <ekos-scheduler-"
 "taskqueue>`."
 
-#: ../../user_manual/ekos-scheduler.rst:705
-#: ../../user_manual/ekos-scheduler.rst:716
+#: ../../user_manual/ekos-scheduler.rst:708
+#: ../../user_manual/ekos-scheduler.rst:719
 msgid ""
 "Due to the uniqueness of each observatory, Ekos enables the user to select "
 "startup and shutdown scripts. The scripts take care of any necessary "
@@ -1401,7 +1429,7 @@ msgstr ""
 "tancament començarà amb l'aparcament de la muntura i la cúpula abans "
 "d'executar l'script de tancament com a procediment final."
 
-#: ../../user_manual/ekos-scheduler.rst:726
+#: ../../user_manual/ekos-scheduler.rst:729
 msgid ""
 "Startup and shutdown scripts can be written any language that can be "
 "executed on the local machine. It must return 0 to report success, any other "
@@ -1416,7 +1444,7 @@ msgstr ""
 "registre de l'Ekos. El següent és un script d'inici de demostració escrit en "
 "Python:"
 
-#: ../../user_manual/ekos-scheduler.rst:733
+#: ../../user_manual/ekos-scheduler.rst:736
 msgid ""
 "#!/usr/bin/env python\n"
 "# -*- coding: utf-8 -*-\n"
@@ -1462,7 +1490,7 @@ msgstr ""
 "\n"
 "exit(0)"
 
-#: ../../user_manual/ekos-scheduler.rst:758
+#: ../../user_manual/ekos-scheduler.rst:761
 msgid ""
 "The startup and shutdown scripts must be *executable* in order for Ekos to "
 "invoke them (e.g. use **``chmod +x startup_script.py``** to mark the script "
@@ -1483,17 +1511,17 @@ msgstr ""
 "configurar alarmes audibles i notificacions per correu electrònic per als "
 "diferents esdeveniments del programador."
 
-#: ../../user_manual/ekos-scheduler.rst:772
-#: ../../user_manual/ekos-scheduler.rst:924
+#: ../../user_manual/ekos-scheduler.rst:775
+#: ../../user_manual/ekos-scheduler.rst:927
 msgid "Mosaic Planner"
 msgstr "Planificador de mosaics"
 
-#: ../../user_manual/ekos-scheduler.rst:774
+#: ../../user_manual/ekos-scheduler.rst:777
 msgid "|Mosaic Planner|"
 msgstr "|Mosaic Planner|"
 
 # skip-rule: t-acc_obe
-#: ../../user_manual/ekos-scheduler.rst:776
+#: ../../user_manual/ekos-scheduler.rst:779
 msgid ""
 "Hubble-like super wide field images of `galaxies <http://darkskyart.com/?"
 "page_id=96>`__ and nebulae are truly awe-inspiring, and while it takes great "
@@ -1515,7 +1543,7 @@ msgstr ""
 "amb un camp de gran abast combinant imatges més petites en un mosaic únic i "
 "gran."
 
-#: ../../user_manual/ekos-scheduler.rst:788
+#: ../../user_manual/ekos-scheduler.rst:791
 msgid ""
 "We are often limited by our camera+telescope Field of View (FOV). By "
 "increasing FOV by means of a focal reducer or a shorter tube, we gain a "
@@ -1534,7 +1562,7 @@ msgstr ""
 "petites. Hi ha dos passos principals per a aconseguir una superimatge en "
 "mosaic:"
 
-#: ../../user_manual/ekos-scheduler.rst:798
+#: ../../user_manual/ekos-scheduler.rst:801
 msgid ""
 "Capture multiple images spanning the target with some overlap between "
 "images. The overlap is necessary to enable the processing software from "
@@ -1544,12 +1572,12 @@ msgstr ""
 "entre les imatges. La superposició és necessària per a permetre que el "
 "programari de processament alineï i uneixi les subimatges."
 
-#: ../../user_manual/ekos-scheduler.rst:803
+#: ../../user_manual/ekos-scheduler.rst:806
 msgid "Process the images and *stitch* them into a super mosaic image."
 msgstr "Processeu les imatges i *enganxeu-les* en una superimatge en mosaic."
 
 # skip-rule: t-acc_obe
-#: ../../user_manual/ekos-scheduler.rst:806
+#: ../../user_manual/ekos-scheduler.rst:809
 msgid ""
 "The 2nd step is handled by image processing applications such as `PixInsight "
 "<https://pixinsight.com>`__, among others, and will not be the topic of "
@@ -1571,7 +1599,7 @@ msgstr ""
 "enormement la logística de capturar moltes imatges amb filtres i calibratges "
 "diferents de l'enquadrat en una àmplia àrea del cel."
 
-#: ../../user_manual/ekos-scheduler.rst:818
+#: ../../user_manual/ekos-scheduler.rst:821
 msgid ""
 "The ``Mosaic Planner`` in the Ekos Scheduler will create multiple Scheduler "
 "jobs based on a central target. To toggle the planner, click on the ``Mosaic "
@@ -1588,7 +1616,7 @@ msgstr ""
 "al mapa celeste. Es recomana activar la superposició HiPS per a una "
 "experiència millor. El programador està format per quatre etapes:"
 
-#: ../../user_manual/ekos-scheduler.rst:826
+#: ../../user_manual/ekos-scheduler.rst:829
 msgid ""
 "**Confirm Equipment**: Ekos attempts to load equipment settings from INDI. "
 "If unsuccessful, you need to enter your equipment settings including your "
@@ -1601,11 +1629,11 @@ msgstr ""
 "l'amplada, l'alçada i els píxels de la càmera. Els paràmetres es desen per a "
 "sessions futures."
 
-#: ../../user_manual/ekos-scheduler.rst:833
+#: ../../user_manual/ekos-scheduler.rst:836
 msgid "|Confirm Equipment|"
 msgstr "|Confirm Equipment|"
 
-#: ../../user_manual/ekos-scheduler.rst:835
+#: ../../user_manual/ekos-scheduler.rst:838
 msgid ""
 "**Adjust Grid**: Select the mosaic panel dimension and overlap percentage. "
 "The Mosaic Panel is updated accordingly on the sky map. Adjust the Position "
@@ -1630,11 +1658,11 @@ msgstr ""
 "tessel·les, feu clic al botó ``Cobertura del CDV``. El plafó del mosaic es "
 "pot centrar en el mapa celeste fent clic al botó ``Torna a centrar``."
 
-#: ../../user_manual/ekos-scheduler.rst:849
+#: ../../user_manual/ekos-scheduler.rst:852
 msgid "|Select Grid|"
 msgstr "|Select Grid|"
 
-#: ../../user_manual/ekos-scheduler.rst:851
+#: ../../user_manual/ekos-scheduler.rst:854
 msgid ""
 "A large overlap will make frame stitching easier during post-processing, but "
 "it requires more panes to cover the desired extent. However, if you already "
@@ -1660,7 +1688,7 @@ msgstr ""
 "control sobre la relació senyal a soroll i permet proporcionar context al "
 "vostre objectiu mentre s'exposen un nombre relativament baix de captures."
 
-#: ../../user_manual/ekos-scheduler.rst:867
+#: ../../user_manual/ekos-scheduler.rst:870
 msgid ""
 "The large number drawn in the corner of each grid pane represents the order "
 "in which panes will be captured. The default S-shaped choice (west-east then "
@@ -1688,11 +1716,11 @@ msgstr ""
 "Utilitzeu la ``Superposició`` per a assegurar-vos que les subfinestres "
 "cobreixin correctament l'extensió desitjada del fotograma."
 
-#: ../../user_manual/ekos-scheduler.rst:884
+#: ../../user_manual/ekos-scheduler.rst:887
 msgid "|Scheduler Mosaic Tool - Large rotation|"
 msgstr "|Scheduler Mosaic Tool - Large rotation|"
 
-#: ../../user_manual/ekos-scheduler.rst:886
+#: ../../user_manual/ekos-scheduler.rst:889
 msgid ""
 "**Adjust Grid**: Adjust Grid center by manually entering the J2000 center or "
 "by dragging the center of the mosaic on the sky map."
@@ -1701,11 +1729,11 @@ msgstr ""
 "manualment el centre J2000 o arrossegant el centre del mosaic en el mapa "
 "celeste."
 
-#: ../../user_manual/ekos-scheduler.rst:890
+#: ../../user_manual/ekos-scheduler.rst:893
 msgid "|Adjust Grid|"
 msgstr "|Adjust Grid|"
 
-#: ../../user_manual/ekos-scheduler.rst:892
+#: ../../user_manual/ekos-scheduler.rst:895
 msgid ""
 "**Create Jobs**: The final step is to select the sequence file and directory "
 "to store the images. Target field may be automatically filled but may be "
@@ -1729,7 +1757,7 @@ msgstr ""
 "s'executa la tercera tasca, l'alineació es torna a realitzar i així "
 "successivament."
 
-#: ../../user_manual/ekos-scheduler.rst:905
+#: ../../user_manual/ekos-scheduler.rst:908
 msgid ""
 "If you want the different mosaic tile jobs to alternate, then fill in the "
 "group name with an identifier that all the tile jobs will share, and select "
@@ -1739,11 +1767,11 @@ msgstr ""
 "empleneu el nom del grup amb un identificador que compartiran totes les "
 "tasques de mosaic i seleccioneu una condició de compleció repetida."
 
-#: ../../user_manual/ekos-scheduler.rst:910
+#: ../../user_manual/ekos-scheduler.rst:913
 msgid "|Create Jobs|"
 msgstr "|Create Jobs|"
 
-#: ../../user_manual/ekos-scheduler.rst:912
+#: ../../user_manual/ekos-scheduler.rst:915
 msgid ""
 "Click ``Create Jobs`` to generate mosaic scheduler jobs and add them to the "
 "schedule queue. You can further edit the jobs individually, as you would "
@@ -1753,106 +1781,106 @@ msgstr ""
 "mosaic i afegir-les a la cua del programador. Podeu editar les tasques "
 "individualment, com a les tasques normals del programador."
 
-#: ../../user_manual/ekos-scheduler.rst:916
+#: ../../user_manual/ekos-scheduler.rst:919
 msgid "Ekos Scheduler Module"
 msgstr "Mòdul del programador de l'Ekos"
 
-#: ../../user_manual/ekos-scheduler.rst:916
+#: ../../user_manual/ekos-scheduler.rst:919
 msgid ".. image:: /images/ekos_scheduler.png"
 msgstr ".. image:: /images/ekos_scheduler.png"
 
-#: ../../user_manual/ekos-scheduler.rst:917
+#: ../../user_manual/ekos-scheduler.rst:920
 msgid "Scheduler Offset Settings"
 msgstr "Configuració de desplaçament del programador"
 
-#: ../../user_manual/ekos-scheduler.rst:917
+#: ../../user_manual/ekos-scheduler.rst:920
 msgid ".. image:: /images/ekos_scheduler_offset_settings.png"
 msgstr ".. image:: /images/ekos_scheduler_offset_settings.png"
 
-#: ../../user_manual/ekos-scheduler.rst:918
+#: ../../user_manual/ekos-scheduler.rst:921
 msgid "Scheduler Alignment Settings"
 msgstr "Configuració de l'alineació del programador"
 
-#: ../../user_manual/ekos-scheduler.rst:918
+#: ../../user_manual/ekos-scheduler.rst:921
 msgid ".. image:: /images/ekos_scheduler_alignment_settings.png"
 msgstr ".. image:: /images/ekos_scheduler_alignment_settings.png"
 
-#: ../../user_manual/ekos-scheduler.rst:919
+#: ../../user_manual/ekos-scheduler.rst:922
 msgid "Scheduler Jobs Settings"
 msgstr "Configuració de tasques del programador"
 
-#: ../../user_manual/ekos-scheduler.rst:919
+#: ../../user_manual/ekos-scheduler.rst:922
 msgid ".. image:: /images/ekos_scheduler_jobs_settings.png"
 msgstr ".. image:: /images/ekos_scheduler_jobs_settings.png"
 
-#: ../../user_manual/ekos-scheduler.rst:920
+#: ../../user_manual/ekos-scheduler.rst:923
 msgid "Scheduler Scripts Settings"
 msgstr "Configuració de scripts del programador"
 
-#: ../../user_manual/ekos-scheduler.rst:920
+#: ../../user_manual/ekos-scheduler.rst:923
 msgid ".. image:: /images/ekos_scheduler_scripts_settings.png"
 msgstr ".. image:: /images/ekos_scheduler_scripts_settings.png"
 
-#: ../../user_manual/ekos-scheduler.rst:921
+#: ../../user_manual/ekos-scheduler.rst:924
 msgid "Scheduler Weather Settings"
 msgstr "Configuració meteorològica del programador"
 
-#: ../../user_manual/ekos-scheduler.rst:921
+#: ../../user_manual/ekos-scheduler.rst:924
 msgid ".. image:: /images/ekos_scheduler_weather_settings.png"
 msgstr ".. image:: /images/ekos_scheduler_weather_settings.png"
 
-#: ../../user_manual/ekos-scheduler.rst:922
+#: ../../user_manual/ekos-scheduler.rst:925
 msgid ".. image:: /images/ekos_capture_sequence_editor.png"
 msgstr ".. image:: /images/ekos_capture_sequence_editor.png"
 
-#: ../../user_manual/ekos-scheduler.rst:923
+#: ../../user_manual/ekos-scheduler.rst:926
 msgid "Scheduler + Planner"
 msgstr "Programador + Planificador"
 
-#: ../../user_manual/ekos-scheduler.rst:923
+#: ../../user_manual/ekos-scheduler.rst:926
 msgid ".. image:: /images/scheduler_planner.png"
 msgstr ".. image:: /images/scheduler_planner.png"
 
-#: ../../user_manual/ekos-scheduler.rst:924
+#: ../../user_manual/ekos-scheduler.rst:927
 msgid ".. image:: /images/mosaic_planner.png"
 msgstr ".. image:: /images/mosaic_planner.png"
 
-#: ../../user_manual/ekos-scheduler.rst:925
+#: ../../user_manual/ekos-scheduler.rst:928
 msgid "Confirm Equipment"
 msgstr "Confirma l'equip"
 
-#: ../../user_manual/ekos-scheduler.rst:925
+#: ../../user_manual/ekos-scheduler.rst:928
 msgid ".. image:: /images/mosaic_confirm_equipment.png"
 msgstr ".. image:: /images/mosaic_confirm_equipment.png"
 
-#: ../../user_manual/ekos-scheduler.rst:926
+#: ../../user_manual/ekos-scheduler.rst:929
 msgid "Select Grid"
 msgstr "Selecció de la quadrícula"
 
-#: ../../user_manual/ekos-scheduler.rst:926
+#: ../../user_manual/ekos-scheduler.rst:929
 msgid ".. image:: /images/mosaic_select_grid.png"
 msgstr ".. image:: /images/mosaic_select_grid.png"
 
-#: ../../user_manual/ekos-scheduler.rst:927
+#: ../../user_manual/ekos-scheduler.rst:930
 msgid "Scheduler Mosaic Tool - Large rotation"
 msgstr "Eina de mosaic del programador - Rotació gran"
 
-#: ../../user_manual/ekos-scheduler.rst:927
+#: ../../user_manual/ekos-scheduler.rst:930
 msgid ".. image:: /images/mosaic_close_pole.png"
 msgstr ".. image:: /images/mosaic_close_pole.png"
 
-#: ../../user_manual/ekos-scheduler.rst:928
+#: ../../user_manual/ekos-scheduler.rst:931
 msgid "Adjust Grid"
 msgstr "Ajusta la quadrícula"
 
-#: ../../user_manual/ekos-scheduler.rst:928
+#: ../../user_manual/ekos-scheduler.rst:931
 msgid ".. image:: /images/mosaic_adjust_grid.png"
 msgstr ".. image:: /images/mosaic_adjust_grid.png"
 
-#: ../../user_manual/ekos-scheduler.rst:929
+#: ../../user_manual/ekos-scheduler.rst:932
 msgid "Create Jobs"
 msgstr "Crea tasques"
 
-#: ../../user_manual/ekos-scheduler.rst:929
+#: ../../user_manual/ekos-scheduler.rst:932
 msgid ".. image:: /images/mosaic_create_jobs.png"
 msgstr ".. image:: /images/mosaic_create_jobs.png"
