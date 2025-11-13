@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-11 02:16+0000\n"
-"PO-Revision-Date: 2025-11-09 17:43+0100\n"
+"PO-Revision-Date: 2025-11-11 11:25+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -939,43 +939,25 @@ msgid "|Scheduler Weather Settings|"
 msgstr "|Scheduler Weather Settings|"
 
 #: ../../user_manual/ekos-scheduler.rst:536
-#, fuzzy
-#| msgid "The weather driver can be configured in two ways:"
 msgid "Weather monitoring can be configured in two ways:"
 msgstr "Vremenski gonilnik je mogoče konfigurirati na dva načina:"
 
 #: ../../user_manual/ekos-scheduler.rst:538
-#, fuzzy
-#| msgid ""
-#| "**Part of the equipment profile** - The weather driver starts with the "
-#| "observatory equipment"
 msgid ""
 "**Part of the equipment profile** - A weather driver starts with the "
 "observatory equipment"
 msgstr ""
-"**Del profila opreme** - Vremenski gonilnik se zažene z opremo opazovalnice"
+"**Del profila opreme** - Vremenski gonilnik se zažene z opremo observatorija"
 
 #: ../../user_manual/ekos-scheduler.rst:539
-#, fuzzy
-#| msgid ""
-#| "**Standalone driver** - The weather driver runs independently on a "
-#| "separate INDI server"
 msgid ""
 "**Standalone INDI Safety Monitor** - An INDI Safety Monitor driver runs "
 "independently on a separate INDI server"
 msgstr ""
-"**Samostojni gonilnik** - Vremenski gonilnik deluje neodvisno na ločenem "
-"strežniku INDI"
+"**Samostojni varnostni monitor INDI** – Gonilnik varnostnega monitorja INDI "
+"deluje neodvisno na ločenem strežniku INDI"
 
 #: ../../user_manual/ekos-scheduler.rst:541
-#, fuzzy
-#| msgid ""
-#| "**Important:** If no standalone weather driver is configured, the "
-#| "scheduler cannot check weather conditions before starting the "
-#| "observatory. This means the observatory may start in unsafe conditions. "
-#| "While the equipment profile's weather driver will activate after startup "
-#| "and immediately trigger a shutdown if conditions are unsafe, this start-"
-#| "stop cycle is inefficient and potentially harmful to equipment."
 msgid ""
 "**Important:** If no standalone safety monitor is configured, the scheduler "
 "cannot check safety conditions before starting the observatory. This means "
@@ -984,20 +966,14 @@ msgid ""
 "a shutdown if conditions are unsafe, this start-stop cycle is inefficient "
 "and potentially harmful to equipment."
 msgstr ""
-"**Pomembno:** Če ni konfiguriran noben samostojni vremenski gonilnik, "
-"razporejevalnik ne more preveriti vremenskih razmer pred zagonom "
-"opazovalnice. To pomeni, da se opazovalnica lahko zažene v nevarnih pogojih. "
-"Čeprav se bo vremenski gonilnik profila opreme aktiviral po zagonu in takoj "
-"sprožil zaustavitev, če pogoji niso varni, je ta cikel zagona in zaustavitve "
-"neučinkovit in potencialno škodljiv za opremo."
+"**Pomembno:** Če samostojni varnostni monitor ni konfiguriran, "
+"razporejevalnik ne more preveriti varnostnih pogojev pred zagonom "
+"observatorija. To pomeni, da se observatorij lahko zažene v nevarnih "
+"pogojih. Čeprav se bo vremenski gonilnik profila opreme aktiviral po zagonu "
+"in takoj sprožil zaustavitev, če pogoji niso varni, je ta cikel zagona in "
+"zaustavitve neučinkovit in potencialno škodljiv za opremo."
 
 #: ../../user_manual/ekos-scheduler.rst:547
-#, fuzzy
-#| msgid ""
-#| "**Best practice:** Configure a standalone weather driver. When present, "
-#| "it always takes precedence over any weather driver in the equipment "
-#| "profile for determining observatory safety. This allows the scheduler to "
-#| "verify conditions are safe *before* starting up the observatory."
 msgid ""
 "**Best practice:** Configure a standalone INDI Safety Monitor. When present, "
 "it always takes precedence over any weather driver in the equipment profile "
@@ -1008,10 +984,14 @@ msgid ""
 "Safety Monitor driver. This allows the scheduler to verify conditions are "
 "safe *before* starting up the observatory."
 msgstr ""
-"**Najboljša praksa:** Konfigurirajte samostojni vremenski gonilnik. Ko je "
-"prisoten, ima vedno prednost pred katerim koli vremenskim gonilnikom v "
-"profilu opreme za določanje varnosti observatorija. To omogoča "
-"razporejevalniku, da preveri, ali so pogoji varni *pred* zagonom "
+"**Najboljša praksa:** Konfigurirajte samostojni varnostni monitor INDI. Ko "
+"je prisoten, ima vedno prednost pred katerim koli vremenskim gonilnikom v "
+"profilu opreme za določanje varnosti observatorija. Monitor je mogoče "
+"konfigurirati tako, da posluša poljubno število vremenskih ali pomožnih "
+"gonilnikov (kot je UPS), ki lahko predstavljajo varnostno tveganje za "
+"delovanje observatorija. Gonilniku varnostnega monitorja je mogoče dodati "
+"kateri koli gonilnik INDI, ki izvaja lastnost standarda INDI SAFETY_STATUS. "
+"To omogoča razporejevalniku, da preveri, ali so pogoji varni *pred* zagonom "
 "observatorija."
 
 #: ../../user_manual/ekos-scheduler.rst:555
@@ -1112,7 +1092,7 @@ msgstr "Če se vreme izboljša, se delovanje samodejno nadaljuje"
 
 #: ../../user_manual/ekos-scheduler.rst:597
 msgid "If period expires with Alert status, the job fails"
-msgstr "Če obdobje poteče s statusom Opozorilo, opravilo ne uspe."
+msgstr "Če obdobje poteče s statusom Opozorilo, opravilo ne uspe"
 
 #: ../../user_manual/ekos-scheduler.rst:599
 msgid "**Configuration:**"
@@ -1144,7 +1124,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-scheduler.rst:614
 msgid "Automatic Weather Recovery"
-msgstr "Samodejna obnova po vremenskih razmerrah."
+msgstr "Samodejna obnova po vremenskih razmerah"
 
 #: ../../user_manual/ekos-scheduler.rst:616
 msgid ""
