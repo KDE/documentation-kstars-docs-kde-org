@@ -23,7 +23,7 @@ Introduction to the Script Builder
 
             Before explaining how to use the Script Builder, I provide a
             very brief introduction to all of the GUI components; for
-            more infomation, use the "What's This?" function.
+            more information, use the "What's This?" function.
 
                   |Script Builder Tool|
 

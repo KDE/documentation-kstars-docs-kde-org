@@ -201,7 +201,7 @@ Following is a description of the UI widgets:
     -  Sharpen Amount: The amount of sharpening to apply. Higher values denoise more.
        Set to 0 to disable sharpening.
 
-    -  Sharpen Kernal. The size of the kernal used for sharpening in pixels (usually
+    -  Sharpen Kernel. The size of the kernel used for sharpening in pixels (usually
        5 or 7 works well). Choose an odd integer.
 
     -  Sharpen Sigma. The sigma used in the sharpening process.

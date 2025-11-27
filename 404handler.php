@@ -84,7 +84,7 @@ function determine_appropriate_language( $request, $browser_languages, $supporte
             // Ukrainian
             $language = "uk_UA";
         } else {
-            // Browsers use dashes to seperate language variants
+            // Browsers use dashes to separate language variants
             // But KDE translation systems use underscores for this so ensure we are consistent here
             $language = str_replace("-", "_", $language);
         }

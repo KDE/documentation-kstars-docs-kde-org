@@ -27,7 +27,7 @@ Features:
 
 -  Completely `automated scheduler <https://www.youtube.com/watch?v=85L3J_iiXZ4>`__ to control all your observatory equipment, select the best targets for imaging given current conditions and constraints, monitor weather conditions, and capture your data while you are away!
 
--  *Smart* Dark Library: All your dark frames with different binning/temperature/frame settings are saved for future use. Ekos re-uses dark frames intelligently without taking unnecessary captures. You can configure how long you want to reuse all the dark frames.
+-  *Smart* Dark Library: All your dark frames with different binning/temperature/frame settings are saved for future use. Ekos reuses dark frames intelligently without taking unnecessary captures. You can configure how long you want to reuse all the dark frames.
 
 -  Define multiple driver profiles for local and remote setups. Switch among them easily.
 

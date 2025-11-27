@@ -8,7 +8,7 @@ Magnitude Scale
          classified the brightnesses of visible stars in the sky on a
          scale from 1 to 6. He called the very brightest stars in the
          sky “first magnitude”, and the very faintest stars he could see
-         “sixth magnitude”. Amazingly, two and a half millenia later,
+         “sixth magnitude”. Amazingly, two and a half millennia later,
          Hipparchus's classification scheme is still widely used by
          astronomers, although it has since been modernized and
          quantified.
