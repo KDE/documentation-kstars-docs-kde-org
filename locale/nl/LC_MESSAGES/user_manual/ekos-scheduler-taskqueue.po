@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2025-11-07 14:12+0100\n"
+"PO-Revision-Date: 2025-11-28 11:36+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:3
 msgid "Task Queue System"
@@ -33,10 +33,16 @@ msgid ""
 "building sequences of automated operations that can control your observatory "
 "equipment through INDI. It is accessible from Ekos Scheduler."
 msgstr ""
+"Het wachtrijsysteem voor taken is een modern, flexibel framework voor "
+"automatiserings dat traditionele opstart- en afsluitscripts vervangt met een "
+"op sjablonen gebaseerd, te configureren systeem voor het uitvoeren van "
+"taken. Het levert een visueel interface voor het bouwen van sequenties van "
+"geautomatiseerde bewerkingen die uw apparatuur in het observatorium kunnen "
+"besturen via INDI. Het is toegankelijk vanuit de Ekos-planner."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:14
 msgid "|Task Queue|"
-msgstr ""
+msgstr "|Wachtrij voor taken|"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:17
 msgid "Key Benefits"
@@ -1138,7 +1144,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:412
 msgid "**Unpark Mount**"
-msgstr ""
+msgstr "**Opstelling uit parkeerstand halen**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:414
 msgid "Template: \"Mount - Unpark\""
@@ -1284,7 +1290,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:475
 msgid "**Park Mount**"
-msgstr ""
+msgstr "**Opstelling parkeren**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:477
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:531
@@ -1384,65 +1390,67 @@ msgstr ""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:516
 msgid "**Task Queue System:**"
-msgstr ""
+msgstr "**Wachtrijsysteem voor taken**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:516
 msgid "Modifiable through GUI"
-msgstr ""
+msgstr "Te wijzigen via GUI"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:519
 msgid "Converting Script Operations"
-msgstr ""
+msgstr "Bewerkingen via script converteren"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:521
 msgid "Common script operations can be converted to Task Queue actions:"
 msgstr ""
+"Algemene bewerkingen via scripts kunnen geconverteerd worden naar acties in "
+"wachtrij voor taken:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:523
 msgid "**INDI Property Changes**"
-msgstr ""
+msgstr "**Eigenschappenwijzigingen van INDI**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:526
 msgid "indi_setprop \"Telescope.TELESCOPE_PARK.PARK=On\""
-msgstr ""
+msgstr "indi_setprop \"Telescope.TELESCOPE_PARK.PARK=On\""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:528
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:545
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:561
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:574
 msgid "Old Script:"
-msgstr ""
+msgstr "Oude script:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:532
 msgid "Action Type: SET"
-msgstr ""
+msgstr "Type actie: SET"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:533
 msgid "Device: Telescope"
-msgstr ""
+msgstr "Apparaat: Telescoop"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:534
 msgid "Property: TELESCOPE_PARK"
-msgstr ""
+msgstr "Eigenschap: TELESCOPE_PARK"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:535
 msgid "Element: PARK"
-msgstr ""
+msgstr "Element: PARK"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:536
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:554
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:567
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:580
 msgid "New Task Queue:"
-msgstr ""
+msgstr "Nieuwe wachtrij voor taken:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:536
 msgid "Value: On"
-msgstr ""
+msgstr "Waarde: aan"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:538
 msgid "**Conditional Waits**"
-msgstr ""
+msgstr "**Voorwaardelijke wachten**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:541
 msgid ""
@@ -1451,22 +1459,26 @@ msgid ""
 "    sleep 5\n"
 "done"
 msgstr ""
+"while [ $(indi_getprop \"CCD.CCD_TEMPERATURE.CCD_TEMPERATURE_VALUE\") -gt "
+"-10 ]; do\n"
+"    sleep 5\n"
+"done"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:549
 msgid "Action Type: EVALUATE"
-msgstr ""
+msgstr "Type actie: EVALUATE"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:550
 msgid "Device: CCD"
-msgstr ""
+msgstr "Apparaat: CCD"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:551
 msgid "Property: CCD_TEMPERATURE.CCD_TEMPERATURE_VALUE"
-msgstr ""
+msgstr "Eigenschap: CCD_TEMPERATURE.CCD_TEMPERATURE_VALUE"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:552
 msgid "Condition: LESS_THAN"
-msgstr ""
+msgstr "Conditie: LESS_THAN"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:553
 msgid "Target: -10"
@@ -1474,11 +1486,11 @@ msgstr "Doel: -10"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:554
 msgid "Poll Interval: 5 seconds"
-msgstr ""
+msgstr "Interval voor afvragen: 5 seconden"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:556
 msgid "**Time Delays**"
-msgstr ""
+msgstr "**Tijd vertraging**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:559
 msgid "sleep 60"
