@@ -41,6 +41,11 @@ Following is a description of the UI widgets:
     -  Stack Directory Button: Launches a directory dialog box to choose
        a directory.
 
+    -  Multi-Channel (down arrow) button: Toggles between a single channel (either mono
+       or color) subs and multi-channel. Multi-channel allows the user to combine
+       mono subs into a color image. In this mode Red, Green and Blue must be specified
+       and optionally Luminance can be added.
+
     -  Proc / Fail / Total: Output statistics of the number of subs
        Processed successfully, Failed and the Total. The Total is the
        number of subs in the directory.
@@ -58,6 +63,12 @@ Following is a description of the UI widgets:
           completes, the button text resets to "Start" and the user can start
           another stacking process.
 
+    -  Live Stacker Monitor button: Launches the Live Stacker Monitor window. See the
+       section on Live Stacker Monitor for more details.
+
+    -  Calc SNR: Switch to turn on or off calculation of SNR for each sub and the stacked
+       image. Usually useful to turn on, but if performance is key this can be toggled off.
+
     -  SNR Av / Min / Max: Output statistics of the subs processed so
        far. Average SNR / Minimum SNR / Maximum SNR.
 
@@ -72,7 +83,14 @@ Following is a description of the UI widgets:
     -  Save Settings Button. This saves the configuration of the Live
        Stacker to disk.
 
+    -  Help button: Launches web documentation for Live Stacker.
+
     Calibration Settings:
+
+    This section changes depending on whether single channel or multi-channel mode is selected.
+    In single channel mode there is 1 dark and 1 flat associated with the stack dir. In
+    multi-channel mode there is a dark and flat associated with each of the 4 stack dirs: Red,
+    Green, Blue and Luminance.
 
     -  Master Dark: Blank or pathname to a Master Dark .fits file to be
        used to calibrate subs.
@@ -124,9 +142,9 @@ Following is a description of the UI widgets:
        of 2. So the number of pixels in each sub is reduced by a factor of
        4 which will significantly speed up processing
 
-    -  Rejection Method:
+    -  Method:
 
-        -  None: No pixels are rejected.
+        -  Average: Frames are averaged (mean). No pixels are rejected.
 
         -  Sigma Clipping: Sigma Clipping is applied to the first "In Memory
            Subs" to be processed. Once accumulated, a pixel stack is built for
@@ -142,6 +160,13 @@ Following is a description of the UI widgets:
            excluded in Sigma Clipping, they are set to Low Sigma / High Sigma
            and included in the calculation.
 
+        -  ImageMM: The ImageMM stacking method based on this paper:
+           https://iopscience.iop.org/article/10.3847/1538-3881/adfb72
+           Basically this can be thought of as a combination of stacking and deconvolution. The method
+           looks to determine the most likely deconvolved stacked image that would have created the set of
+           observed subs. It uses an iterative approach and is extremely resource intensive.
+           This is an experimental approach at this time.
+
     -  Frame Weighting:
 
         -  Equal: All subs are given an equal weight (=1.0)
@@ -153,17 +178,31 @@ Following is a description of the UI widgets:
            the higher than number of stars detected and the higher the
            weighting.
 
-    -  Low Sigma. This is the number of Standard Deviations on the low side of
-       the median to clip pixels out. Used by the Sigma Clipping and Winsor SC
-       Rejection Methods.
+    -  Low Sigma (Sigma Clipping and Winsor SC Methods). This is the number of Standard
+       Deviations on the low side of the median to clip pixels out.
 
-    -  High Sigma. This is the number of Standard Deviations on the high side of
-       the median to clip pixels out. Used by the Sigma Clipping and Winsor SC
-       Rejection Methods.
+    -  High Sigma (Sigma Clipping and Winsor SC Methods). This is the number of Standard
+       Deviations on the high side of the median to clip pixels out.
 
-    -  Winsor Cutoff. This is the number of Standard Deviations away from the
-       median to use as cutoff to adjust outlying values before running Sigma
-       Clipping.
+    -  Winsor Cutoff (Winsor SC Method). This is the number of Standard Deviations away from
+       the median to use as cutoff to adjust outlying values before running Sigma Clipping.
+
+    -  Iteration (ImageMM). This specifies the maximum number of iterations the
+       algorithm will attempt. Increase the number for more accurate performance but at the
+       expense of performance.
+
+    -  Kappa (ImageMM). Clamps iterative updates in the range 1/kappa to kappa. So kappa=1 means no update
+       for the iteration. Increase kappa for bigger updates but if you see signs of over
+       "deconvolving" the image then reduce kappa.
+
+    -  Alpha (ImageMM). Damping between iterations by blending alpha * this iteration with
+       (1 - alpha) * last iteration.
+
+    -  Sigma Scale (ImageMM). Reduce calculated image sigma by this scale factor. Reduce if you
+       see ringing artifacts.
+
+    -  PSF Update (ImageMM). Update PSF every nth iteration. Set to zero to disable. Updating
+       too frequently can lead to artifacts. This is quite computationally intensive.
 
     Post Processing Settings:
 
@@ -271,6 +310,64 @@ when stacking has finished, to experiment with it.
 To experiment, set one of the options and press Reprocess. You can then adjust the parameter
 and press Reprocess again until you have the optimum settings.
 
+Live Stacker Monitor
+====================
+
+Pressing the Live Stacker Monitor button launches the Live Stacker Monitor window. The purpose
+of the Monitor is to display more infomation at the subframe level about the subs being stacked.
+
+        |FITS Viewer Live Stacker Monitor|
+
+The Monitor displays a grid with 1 row for each sub in the directory / directories selected. The
+columns are configurable: right click on the column header to display a menu of columns that
+may be selected or deselected, or double click a column header to remove a column. In addition,
+the column order may be changed by clicking dragging a column header to a new location.
+
+Single clicking a column sorts the grid on that column and toggles between an ascending sort and
+a descending sort.
+
+The alignment master sub has a yellow background. If a sub fails to process it has a pink
+background. The "Highlighting" checkbox will also highlight cell changes as updates are processed.
+
+Tooltips on the column headers explain what each column represents but in summary the columns
+represent the stacking workflow with relevant information from each step:
+1. Miscellanous columns: ID, pathname, filename, channel(s) and overall status.
+2. Loading: displays timings and status of the load step and SNR of the sub.
+3. Plate Solving: displays timings, status, average HFR, number of stars.
+4. Stack Waiting: displays timings, status of a sub once loaded before the next stacking step.
+5. Calibration: displays timings, status. Note that calibration is optional.
+6. Alignment: displays timings, status and x, y and rotation of the sub to align with the master.
+7. Stacking: displays timings, status and stacking weight.
+
+A good way to use the Monitor is to select columns that are relevant to you and order by the ID
+column so most recent subs are at the top.
+
+Single Channel vs Multi-Channel Mode
+====================================
+
+Live Stacker starts in single channel mode. This allows a single stack of either mono or color
+subs.
+
+It is also possible to create color images from individual stacks of mono images. To do this,
+activate multi-channel mode by expanding the stack directory dropdown toggle (see the red box
+below) which will then display input directories for Red, Green, Blue and Luminance.
+
+        |FITS Viewer Live Stacker MultiChannel|
+
+Live Stacker will then stack files in each of the directories and then watch the directories for
+new files. If an RGB stack is required, fill in Red, Green and Blue (and leave Luminance blank).
+Live Stacker will then process a stack for each channel, apply a "linear fit" between channels,
+and combine into a color image for display.
+
+Optionally, a Luminance channel can be added to produce an LRGB image. In this mode, the
+RGB channels are combined with the Luminance channel to produce a single color image.
+
+Narrowband filter stacks can be combined into color images: SHO, HOO, etc.
+
+If less than 3 stacks are available, for example whilst doing an HOO image, fill in the same
+directory to the appropriate channels. E.g. for an HOO image set Red to the Hydrogen directory and
+Green and Blue to the Oxygen directory.
+
 Running Live Stackers
 =====================
 
@@ -336,4 +433,6 @@ manual for more information.
 
 
 .. |FITS Viewer Live Stacker| image:: /images/fitsviewer-livestacker.png
+.. |FITS Viewer Live Stacker Monitor| image:: /images/fitsviewer-livestacker-monitor.png
+.. |FITS Viewer Live Stacker MultiChannel| image:: /images/fitsviewer-livestacker-mchan.png
 .. |FITS Viewer Live Stacker Options| image:: /images/fitsviewer-livestacker-options.png
