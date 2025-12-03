@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-27 14:59+0000\n"
+"POT-Creation-Date: 2025-12-02 01:59+0000\n"
 "PO-Revision-Date: 2025-11-28 09:41+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Lokalize 23.04.3\n"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:3
-#: ../../user_manual/fits-viewer-livestacker.rst:338
+#: ../../user_manual/fits-viewer-livestacker.rst:435
 msgid "FITS Viewer Live Stacker"
 msgstr "Інтерактивне стосування у переглядачі FITS"
 
@@ -119,6 +119,14 @@ msgstr "Кнопка каталогу стосу: відкриває вікно 
 
 #: ../../user_manual/fits-viewer-livestacker.rst:44
 msgid ""
+"Multi-Channel (down arrow) button: Toggles between a single channel (either "
+"mono or color) subs and multi-channel. Multi-channel allows the user to "
+"combine mono subs into a color image. In this mode Red, Green and Blue must "
+"be specified and optionally Luminance can be added."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:49
+msgid ""
 "Proc / Fail / Total: Output statistics of the number of subs Processed "
 "successfully, Failed and the Total. The Total is the number of subs in the "
 "directory."
@@ -127,11 +135,11 @@ msgstr ""
 "успішно оброблено, не вдалося обробити і загальної кількості. Загальною "
 "вважається кількість підкадрів у каталозі."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:48
+#: ../../user_manual/fits-viewer-livestacker.rst:53
 msgid "Start Button: This button has 3 states:"
 msgstr "Кнопка запуску: для цієї кнопки передбачено три стани:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:50
+#: ../../user_manual/fits-viewer-livestacker.rst:55
 msgid ""
 "\"Start\": Pressing the button runs the stacking process on any subs in "
 "Stack Directory and watches the directory for new subs. Button text changes "
@@ -141,7 +149,7 @@ msgstr ""
 "усіх підкадрів у  каталозі стосу вмикає режим стеження за появою нових "
 "підкадрів у каталозі. Текст на кнопці при цьому змінюється на «Зупинити»."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:54
+#: ../../user_manual/fits-viewer-livestacker.rst:59
 msgid ""
 "\"Stop\": Pressing the button stops watching the directory and cancels any "
 "in-flight stacking operation. Button text changes to \"Cancelling...\"."
@@ -150,7 +158,7 @@ msgstr ""
 "скасовує усі дії зі стосування. При цьому текст на кнопці буде змінено на "
 "«Скасування…»"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:57
+#: ../../user_manual/fits-viewer-livestacker.rst:62
 msgid ""
 "\"Cancelling...\": Button cannot be pressed. When the cancel operation "
 "completes, the button text resets to \"Start\" and the user can start "
@@ -160,7 +168,20 @@ msgstr ""
 "скасовування текст на кнопці зміниться на «Почати», а користувач зможе "
 "розпочати наступну процедуру стосування."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:61
+#: ../../user_manual/fits-viewer-livestacker.rst:66
+msgid ""
+"Live Stacker Monitor button: Launches the Live Stacker Monitor window. See "
+"the section on Live Stacker Monitor for more details."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:69
+msgid ""
+"Calc SNR: Switch to turn on or off calculation of SNR for each sub and the "
+"stacked image. Usually useful to turn on, but if performance is key this can "
+"be toggled off."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:72
 msgid ""
 "SNR Av / Min / Max: Output statistics of the subs processed so far. Average "
 "SNR / Minimum SNR / Maximum SNR."
@@ -168,7 +189,7 @@ msgstr ""
 "Сер / Мін / Макс: вивести статистику щодо оброблених підкадрів. Середнє "
 "ССШ / Мінімальне ССШ / Максимальне ССШ."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:64
+#: ../../user_manual/fits-viewer-livestacker.rst:75
 msgid ""
 "Memory Widget: Displays the amount of memory the current process is using as "
 "a percentage of the available memory. Try to keep memory usage in the Green "
@@ -181,13 +202,13 @@ msgstr ""
 "червоному (>=70%). Двічі клацніть на віджеті, щоб приховати текст і "
 "переглядати лише індикатор виконання."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:70
+#: ../../user_manual/fits-viewer-livestacker.rst:81
 msgid "Image SNR: This is the SNR of the stacked image at that time."
 msgstr ""
 "ССШ зображення: це співвідношення сигнал-шум для поточного зображення у "
 "стосі."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:72
+#: ../../user_manual/fits-viewer-livestacker.rst:83
 msgid ""
 "Save Settings Button. This saves the configuration of the Live Stacker to "
 "disk."
@@ -195,11 +216,24 @@ msgstr ""
 "Кнопка «Зберегти параметри». Зберігає налаштування засобу інтерактивного "
 "стосування на диск."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:75
+#: ../../user_manual/fits-viewer-livestacker.rst:86
+msgid "Help button: Launches web documentation for Live Stacker."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:88
 msgid "Calibration Settings:"
 msgstr "Параметри калібрування:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:77
+#: ../../user_manual/fits-viewer-livestacker.rst:90
+msgid ""
+"This section changes depending on whether single channel or multi-channel "
+"mode is selected. In single channel mode there is 1 dark and 1 flat "
+"associated with the stack dir. In multi-channel mode there is a dark and "
+"flat associated with each of the 4 stack dirs: Red, Green, Blue and "
+"Luminance."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:95
 msgid ""
 "Master Dark: Blank or pathname to a Master Dark .fits file to be used to "
 "calibrate subs."
@@ -207,14 +241,14 @@ msgstr ""
 "Основний темний: порожнє значення або шлях до файла .fits основного темного "
 "кадру, за допомогою якого слід калібрувати підкадри."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:80
+#: ../../user_manual/fits-viewer-livestacker.rst:98
 msgid ""
 "Master Dark Button: Launches a file picker dialog box to choose a Master "
 "Dark."
 msgstr ""
 "Кнопка «Основний темний»: відкриває вікно вибору основного темного кадру."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:83
+#: ../../user_manual/fits-viewer-livestacker.rst:101
 msgid ""
 "Master Flat: Blank or pathname to a Master Flat .fits file to be used to "
 "calibrate subs."
@@ -222,7 +256,7 @@ msgstr ""
 "Основний плоский: порожнє значення або шлях до файла fits основного кадру "
 "плоского поля, за допомогою якого слід калібрувати підкадри."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:86
+#: ../../user_manual/fits-viewer-livestacker.rst:104
 msgid ""
 "Master Flat Button: Launches a file picker dialog box to choose a Master "
 "Flat."
@@ -230,11 +264,11 @@ msgstr ""
 "Кнопка «Основний плоский»: відкриває вікно вибору основного кадру плоского "
 "поля."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:89
+#: ../../user_manual/fits-viewer-livestacker.rst:107
 msgid "Alignment Settings:"
 msgstr "Параметри вирівнювання:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:91
+#: ../../user_manual/fits-viewer-livestacker.rst:109
 msgid ""
 "Master Sub: Blank or pathname to the sub to be used to align all other subs "
 "to. If blank, the first sub is used as alignment master."
@@ -243,7 +277,7 @@ msgstr ""
 "вирівняно усі інші підкадри. Якщо не вказано, основним кадром для "
 "вирівнювання вважатиметься перший підкадр."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:94
+#: ../../user_manual/fits-viewer-livestacker.rst:112
 msgid ""
 "Master Sub Button: Launches a file picker dialog box to choose the alignment "
 "master sub."
@@ -251,17 +285,17 @@ msgstr ""
 "Кнопка «Основний підкадр»: відкриває вікно вибору основного підкадру для "
 "вирівнюванн."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:97
+#: ../../user_manual/fits-viewer-livestacker.rst:115
 msgid "Method: Plate Solve. Use plate solving as the method of aligning subs."
 msgstr ""
 "Метод: розв'язання зображень. Скористатися розв'язанням зображень як методом "
 "вирівнювання підкадрів."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:100
+#: ../../user_manual/fits-viewer-livestacker.rst:118
 msgid "Stacking Settings:"
 msgstr "Параметри стосування:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:102
+#: ../../user_manual/fits-viewer-livestacker.rst:120
 msgid ""
 "In Memory Subs. This specifies the maximum number of subs that will be held "
 "in-memory at any one time and specifies the number of subs that cause a "
@@ -271,7 +305,7 @@ msgstr ""
 "зберігатимуться у пам'яті, і визначає кількість підкадрів, досягнення якої "
 "спричинятиме перехід від початкового стосу до динамічного стосу."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:106
+#: ../../user_manual/fits-viewer-livestacker.rst:124
 msgid ""
 "The stacking process will accumulate this number of subs (if available) "
 "before stacking them and will continue in batches of this number before "
@@ -284,7 +318,7 @@ msgstr ""
 "кількість, то буде запущено процес стосування для показу стосованого "
 "зображення користувачеві."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:112
+#: ../../user_manual/fits-viewer-livestacker.rst:130
 msgid ""
 "Once this number of subs is reached, the initial stacking phase completes "
 "and intermediate results are then held in order to more rapidly add new, "
@@ -294,7 +328,7 @@ msgstr ""
 "стосування, а проміжні результати зберігаються для швидшого додавання нових "
 "підкадрів до стосу."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:116
+#: ../../user_manual/fits-viewer-livestacker.rst:134
 msgid ""
 "Set this number low to be more efficient with memory usage. However, if you "
 "use sigma clipping (or winsorized sigma clipping) setting this too low can "
@@ -304,7 +338,7 @@ msgstr ""
 "Однак, якщо ви використовуєте сигма-обрізання (або вінзоровське сигма-"
 "обрізання), встановлення занадто низького значення може погіршити результати."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:120
+#: ../../user_manual/fits-viewer-livestacker.rst:138
 msgid ""
 "Downscale: Options of None, 2x2, 3x3 and 4x4 are available. This options "
 "downscales the subs by the selected factor. For example, if 2x2 is selected "
@@ -320,15 +354,15 @@ msgstr ""
 "зображення в 2 рази. Таким чином, кількість пікселів у кожній підгрупі "
 "зменшується в 4 рази, що значно пришвидшить обробку."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:127
-msgid "Rejection Method:"
-msgstr "Спосіб відкидання:"
+#: ../../user_manual/fits-viewer-livestacker.rst:145
+msgid "Method:"
+msgstr ""
 
-#: ../../user_manual/fits-viewer-livestacker.rst:129
-msgid "None: No pixels are rejected."
-msgstr "Жодного: не буде відкинуто жодного пікселя."
+#: ../../user_manual/fits-viewer-livestacker.rst:147
+msgid "Average: Frames are averaged (mean). No pixels are rejected."
+msgstr ""
 
-#: ../../user_manual/fits-viewer-livestacker.rst:131
+#: ../../user_manual/fits-viewer-livestacker.rst:149
 msgid ""
 "Sigma Clipping: Sigma Clipping is applied to the first \"In Memory Subs\" to "
 "be processed. Once accumulated, a pixel stack is built for each pixel in the "
@@ -349,7 +383,7 @@ msgstr ""
 "перевіряються зі збереженою статистикою пікселів, щоб визначити, чи є вони "
 "вхідними чи викидами, і обробляються відповідно."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:141
+#: ../../user_manual/fits-viewer-livestacker.rst:159
 msgid ""
 "Winsorized SC: Similar to Sigma Clipping except where outliers are excluded "
 "in Sigma Clipping, they are set to Low Sigma / High Sigma and included in "
@@ -359,15 +393,25 @@ msgstr ""
 "обрізанні викиди буде виключено, а тут їх буде замінено на значення зі "
 "зниженням на сигму або підвищенням на сигму і включено до обчислень."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:145
+#: ../../user_manual/fits-viewer-livestacker.rst:163
+msgid ""
+"ImageMM: The ImageMM stacking method based on this paper: https://iopscience."
+"iop.org/article/10.3847/1538-3881/adfb72 Basically this can be thought of as "
+"a combination of stacking and deconvolution. The method looks to determine "
+"the most likely deconvolved stacked image that would have created the set of "
+"observed subs. It uses an iterative approach and is extremely resource "
+"intensive. This is an experimental approach at this time."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:170
 msgid "Frame Weighting:"
 msgstr "Зважування кадрів:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:147
+#: ../../user_manual/fits-viewer-livestacker.rst:172
 msgid "Equal: All subs are given an equal weight (=1.0)"
 msgstr "Рівномірна: усім підкадрам надаватиметься рівна вага (=1.0)"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:149
+#: ../../user_manual/fits-viewer-livestacker.rst:174
 msgid ""
 "HFR: Subs are weighted by 1 / (Av HFR). So the better the sub, the lower the "
 "HFR and the higher the weighting."
@@ -375,7 +419,7 @@ msgstr ""
 "РПП: підкадри зважують за 1 / (Сер. РПП). Тому, чим якіснішим є підкадр, тим "
 "нижчим є РПП і вищою вага."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:152
+#: ../../user_manual/fits-viewer-livestacker.rst:177
 msgid ""
 "Num Stars: Subs are weighted by Num Stars. So the better the sub, the higher "
 "than number of stars detected and the higher the weighting."
@@ -384,41 +428,87 @@ msgstr ""
 "є підкадр, тим більше буде виявлено на ньому зірок і тим вищою буде його "
 "вага."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:156
+#: ../../user_manual/fits-viewer-livestacker.rst:181
+#, fuzzy
+#| msgid ""
+#| "Low Sigma. This is the number of Standard Deviations on the low side of "
+#| "the median to clip pixels out. Used by the Sigma Clipping and Winsor SC "
+#| "Rejection Methods."
 msgid ""
-"Low Sigma. This is the number of Standard Deviations on the low side of the "
-"median to clip pixels out. Used by the Sigma Clipping and Winsor SC "
-"Rejection Methods."
+"Low Sigma (Sigma Clipping and Winsor SC Methods). This is the number of "
+"Standard Deviations on the low side of the median to clip pixels out."
 msgstr ""
 "Нижня σ. Це значення стандартного відхилення на нижньому боці від медіани "
 "для обрізання пікселів. Використовується у способах відкидання сигма-"
 "обрізання і вінзоризованого SC."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:160
+#: ../../user_manual/fits-viewer-livestacker.rst:184
+#, fuzzy
+#| msgid ""
+#| "High Sigma. This is the number of Standard Deviations on the high side of "
+#| "the median to clip pixels out. Used by the Sigma Clipping and Winsor SC "
+#| "Rejection Methods."
 msgid ""
-"High Sigma. This is the number of Standard Deviations on the high side of "
-"the median to clip pixels out. Used by the Sigma Clipping and Winsor SC "
-"Rejection Methods."
+"High Sigma (Sigma Clipping and Winsor SC Methods). This is the number of "
+"Standard Deviations on the high side of the median to clip pixels out."
 msgstr ""
 "Верхня σ. Це значення стандартного відхилення на верхньому боці від медіани "
 "для обрізання пікселів. Використовується у способах відкидання сигма-"
 "обрізання і вінзоризованого SC."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:164
+#: ../../user_manual/fits-viewer-livestacker.rst:187
+#, fuzzy
+#| msgid ""
+#| "Winsor Cutoff. This is the number of Standard Deviations away from the "
+#| "median to use as cutoff to adjust outlying values before running Sigma "
+#| "Clipping."
 msgid ""
-"Winsor Cutoff. This is the number of Standard Deviations away from the "
-"median to use as cutoff to adjust outlying values before running Sigma "
-"Clipping."
+"Winsor Cutoff (Winsor SC Method). This is the number of Standard Deviations "
+"away from the median to use as cutoff to adjust outlying values before "
+"running Sigma Clipping."
 msgstr ""
 "Обрізання Вінзора. Це значення стандартного відхилення від медіани, яке буде "
 "використано як обрізання для коригування значень-викидів до виконання сигма-"
 "обрізання."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:168
+#: ../../user_manual/fits-viewer-livestacker.rst:190
+msgid ""
+"Iteration (ImageMM). This specifies the maximum number of iterations the "
+"algorithm will attempt. Increase the number for more accurate performance "
+"but at the expense of performance."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:194
+msgid ""
+"Kappa (ImageMM). Clamps iterative updates in the range 1/kappa to kappa. So "
+"kappa=1 means no update for the iteration. Increase kappa for bigger updates "
+"but if you see signs of over \"deconvolving\" the image then reduce kappa."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:198
+msgid ""
+"Alpha (ImageMM). Damping between iterations by blending alpha * this "
+"iteration with (1 - alpha) * last iteration."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:201
+msgid ""
+"Sigma Scale (ImageMM). Reduce calculated image sigma by this scale factor. "
+"Reduce if you see ringing artifacts."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:204
+msgid ""
+"PSF Update (ImageMM). Update PSF every nth iteration. Set to zero to "
+"disable. Updating too frequently can lead to artifacts. This is quite "
+"computationally intensive."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:207
 msgid "Post Processing Settings:"
 msgstr "Параметри остаточної обробки:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:170
+#: ../../user_manual/fits-viewer-livestacker.rst:209
 msgid ""
 "Post processing options can be turned on / off with the associated minimize "
 "widget checkbox. The system temporarily turns off post processing during the "
@@ -430,7 +520,7 @@ msgstr ""
 "під час початкової фази стосування для пришвидшення обробки. По завершенні "
 "початкової фази керування переходить до користувача."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:175
+#: ../../user_manual/fits-viewer-livestacker.rst:214
 msgid ""
 "These settings are applied to the stacked image to improve its appearance. "
 "There are 3 tools: Deconvolution, Denoising and Sharpening. Typically the "
@@ -445,11 +535,11 @@ msgstr ""
 "«Повторити обробку», користувач може налаштувати значення та повторно "
 "запустити остаточну обробку без повторного запуску процесу об'єднання."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:181
+#: ../../user_manual/fits-viewer-livestacker.rst:220
 msgid "Deconvolution Settings:"
 msgstr "Параметри розгортання:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:183
+#: ../../user_manual/fits-viewer-livestacker.rst:222
 msgid ""
 "Wiener Deconvolution can be applied to the image. The PSF sigma to use must "
 "be specified along with an amount."
@@ -457,7 +547,7 @@ msgstr ""
 "До зображення може бути застосовано розгортання Вінера. Для цього слід "
 "вказати разом із величиною значення σ PSF."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:186
+#: ../../user_manual/fits-viewer-livestacker.rst:225
 msgid ""
 "Deconv Amount: This is the amount of the Deconvolved image to blend with the "
 "original stacked image. The range is between 0 (no deconvolution) to 1 (use "
@@ -468,17 +558,17 @@ msgstr ""
 "розгортання) до 1 (використати лише розгорнуте зображення). Встановіть "
 "значення 0, щоб вимкнути розгортання."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:190
+#: ../../user_manual/fits-viewer-livestacker.rst:229
 msgid "PSF Sigma. The PSF Sigma to use in the deconvolution process."
 msgstr ""
 "σ PSF. σ функції розсіювання точки, яку слід використати у процедурі "
 "розгортки."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:192
+#: ../../user_manual/fits-viewer-livestacker.rst:231
 msgid "Denoising Settings:"
 msgstr "Параметри усування шуму:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:194
+#: ../../user_manual/fits-viewer-livestacker.rst:233
 msgid ""
 "Denoise Amount: The amount of denoising to apply. Higher values denoise "
 "more. Set to 0 to disable denoising."
@@ -487,17 +577,17 @@ msgstr ""
 "вищим буде значення, тим більшим буде усування шуму. Встановіть значення 0, "
 "щоб вимкнути усування шуму."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:197
+#: ../../user_manual/fits-viewer-livestacker.rst:236
 msgid "Sharpening Settings:"
 msgstr "Параметри збільшення різкості:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:199
+#: ../../user_manual/fits-viewer-livestacker.rst:238
 msgid "A basic Unsharp Mask sharpening algorithm is used."
 msgstr ""
 "Використано базовий алгоритм збільшення різкості із маскуванням зменшення "
 "різкості."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:201
+#: ../../user_manual/fits-viewer-livestacker.rst:240
 msgid ""
 "Sharpen Amount: The amount of sharpening to apply. Higher values denoise "
 "more. Set to 0 to disable sharpening."
@@ -506,7 +596,7 @@ msgstr ""
 "застосувати. Чим вищим буде значення, тим більшим буде збільшення різкості. "
 "Встановіть значення 0, щоб вимкнути збільшення різкості."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:204
+#: ../../user_manual/fits-viewer-livestacker.rst:243
 msgid ""
 "Sharpen Kernel. The size of the kernel used for sharpening in pixels "
 "(usually 5 or 7 works well). Choose an odd integer."
@@ -515,17 +605,17 @@ msgstr ""
 "різкості у пікселях (зазвичай, добрими варіантами є 5 або 7). Виберіть "
 "непарне ціле значення."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:207
+#: ../../user_manual/fits-viewer-livestacker.rst:246
 msgid "Sharpen Sigma. The sigma used in the sharpening process."
 msgstr ""
 "σ збільшення різкості. Стандартне відхилення, яке буде використано у процесі "
 "збільшення різкості."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:209
+#: ../../user_manual/fits-viewer-livestacker.rst:248
 msgid "Reprocess:"
 msgstr "Переобробка:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:211
+#: ../../user_manual/fits-viewer-livestacker.rst:250
 msgid ""
 "Reprocess Button. Pressing this button reruns the Post Processing "
 "functionality (Deconvolution, Denoising and Sharpening) on the stacked image "
@@ -540,17 +630,17 @@ msgstr ""
 "параметри та повторно запустити, налаштувати ще раз та повторно запустити "
 "тощо."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:217
+#: ../../user_manual/fits-viewer-livestacker.rst:256
 msgid "Using Live Stacker for the First Time"
 msgstr "Використання засобу інтерактивного стосування уперше"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:219
+#: ../../user_manual/fits-viewer-livestacker.rst:258
 msgid "Here are some suggestions for using Live Stacker for the first time:"
 msgstr ""
 "Ось декілька пропозицій щодо використання засобу інтерактивного стосування "
 "уперше:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:221
+#: ../../user_manual/fits-viewer-livestacker.rst:260
 msgid ""
 "Start in daylight on your imaging computer / setup with some subs you have "
 "already taken during a previous imaging session. If you have say 30 subs "
@@ -561,7 +651,7 @@ msgstr ""
 "сеансу обробки зображень. Якщо у вас, скажімо, 30 підкадрів, цього буде "
 "достатньо, щоб побачити, як працює засіб інтерактивного стосування."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:225
+#: ../../user_manual/fits-viewer-livestacker.rst:264
 msgid ""
 "Select the directory of the subs, and press Start. The default parameters "
 "should be relatively memory efficient but may need tweaking."
@@ -570,7 +660,7 @@ msgstr ""
 "мають бути відносно ефективними щодо використання пам’яті, але можуть "
 "потребувати коригування."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:228
+#: ../../user_manual/fits-viewer-livestacker.rst:267
 msgid ""
 "See how the Memory Widget performs; you want to keep memory usage Green or "
 "at worst Amber intermittently. If you are having issues with performance "
@@ -582,7 +672,7 @@ msgstr ""
 "продуктивністю та/або використанням пам’яті, ось що можна зробити, щоб "
 "пришвидшити його роботу (почніть згори та рухайтеся вниз за списком):"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:233
+#: ../../user_manual/fits-viewer-livestacker.rst:272
 msgid ""
 "Downscale: Usually 2x2 is enough to significantly increase performance with "
 "mono subs. Color subs may need more downscaling."
@@ -591,7 +681,7 @@ msgstr ""
 "швидкодії для монохроматичних підкадрів. Для кольорових підкадрів може "
 "знадобитися потужніше зменшення масштабу."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:236
+#: ../../user_manual/fits-viewer-livestacker.rst:275
 msgid ""
 "In Memory Subs: Decrease this number. It will then hold less subs in memory "
 "at the same time. Note that for Sigma Clipping and Winsorised SC this will "
@@ -602,7 +692,7 @@ msgstr ""
 "вінзоризованого SC це потеційно може призвести до погіршення якості "
 "зображення."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:240
+#: ../../user_manual/fits-viewer-livestacker.rst:279
 msgid ""
 "Calibration Files: Adding a dark and or a flat master will improve image "
 "quality, potentially significantly, but at the cost of extra processing."
@@ -611,7 +701,7 @@ msgstr ""
 "удосконалить якість зображення, можливо, значно, але за рахунок додаткової "
 "обробки."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:243
+#: ../../user_manual/fits-viewer-livestacker.rst:282
 msgid ""
 "Frame Weighting: Equal is the most efficient option. Num Stars requires an "
 "extra step during Plate Solving so will always be slower. HFR requires the "
@@ -626,7 +716,7 @@ msgstr ""
 "найповільнішим варіантом. Однак РПП та «Кількість зірок» повинні давати "
 "кращий результат, ніж «Рівномірна»."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:249
+#: ../../user_manual/fits-viewer-livestacker.rst:288
 msgid ""
 "Rejection Method: None is much more efficient than the other options (at the "
 "cost of a potentially better result)."
@@ -634,7 +724,7 @@ msgstr ""
 "Спосіб відкидання: «Немає» є набагато ефективнішим за інші варіанти (за "
 "рахунок потенційно кращого результату)."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:252
+#: ../../user_manual/fits-viewer-livestacker.rst:291
 msgid ""
 "You can rerun the stacking process from scratch by just pressing Start, so "
 "its easy to adjust parameters and rerun."
@@ -643,7 +733,7 @@ msgstr ""
 "кнопки «Почати», отже, просто скоригуйте параметри і виконайте повторну "
 "обробку."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:255
+#: ../../user_manual/fits-viewer-livestacker.rst:294
 msgid ""
 "It's recommended to switch off Post Processing during early stages and come "
 "back to it later (see below). To do this make sure the Deconv Amount, "
@@ -654,7 +744,7 @@ msgstr ""
 "«Величина розгортання», «Величина усування шуму» та «Величина збільшення "
 "різкості» встановлено на 0."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:259
+#: ../../user_manual/fits-viewer-livestacker.rst:298
 msgid ""
 "When you have a configuration you are happy with press Save Settings and "
 "this will be the default configuration for subsequent settings."
@@ -662,11 +752,11 @@ msgstr ""
 "Якщо налаштування вас влаштовують, натисніть кнопку «Зберегти параметри, і "
 "налаштування стануть типовим для наступних сеансів обробки."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:263
+#: ../../user_manual/fits-viewer-livestacker.rst:302
 msgid "Post Processing"
 msgstr "Остаточна обробка"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:265
+#: ../../user_manual/fits-viewer-livestacker.rst:304
 msgid ""
 "When you have the settings for stacking sorted out for your equipment you "
 "may wish to try the Post Processing options. Note that the settings you "
@@ -682,7 +772,7 @@ msgstr ""
 "цієї причини під час налаштування стосу рекомендуємо вимкнути остаточну "
 "обробку, а потім, після завершення стосування, поекспериментувати з нею."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:271
+#: ../../user_manual/fits-viewer-livestacker.rst:310
 msgid ""
 "To experiment, set one of the options and press Reprocess. You can then "
 "adjust the parameter and press Reprocess again until you have the optimum "
@@ -692,11 +782,130 @@ msgstr ""
 "«Переобробити». Потім ви можете налаштувати параметр і знову натиснути "
 "«Переобробити», доки не отримаєте оптимальні налаштування."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:275
+#: ../../user_manual/fits-viewer-livestacker.rst:314
+msgid "Live Stacker Monitor"
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:316
+msgid ""
+"Pressing the Live Stacker Monitor button launches the Live Stacker Monitor "
+"window. The purpose of the Monitor is to display more infomation at the "
+"subframe level about the subs being stacked."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:319
+#, fuzzy
+#| msgid "|FITS Viewer Live Stacker|"
+msgid "|FITS Viewer Live Stacker Monitor|"
+msgstr "|Інтерактивне стосування у переглядачі FITS|"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:321
+msgid ""
+"The Monitor displays a grid with 1 row for each sub in the directory / "
+"directories selected. The columns are configurable: right click on the "
+"column header to display a menu of columns that may be selected or "
+"deselected, or double click a column header to remove a column. In addition, "
+"the column order may be changed by clicking dragging a column header to a "
+"new location."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:326
+msgid ""
+"Single clicking a column sorts the grid on that column and toggles between "
+"an ascending sort and a descending sort."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:329
+msgid ""
+"The alignment master sub has a yellow background. If a sub fails to process "
+"it has a pink background. The \"Highlighting\" checkbox will also highlight "
+"cell changes as updates are processed."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:332
+msgid ""
+"Tooltips on the column headers explain what each column represents but in "
+"summary the columns represent the stacking workflow with relevant "
+"information from each step: 1. Miscellanous columns: ID, pathname, filename, "
+"channel(s) and overall status. 2. Loading: displays timings and status of "
+"the load step and SNR of the sub. 3. Plate Solving: displays timings, "
+"status, average HFR, number of stars. 4. Stack Waiting: displays timings, "
+"status of a sub once loaded before the next stacking step. 5. Calibration: "
+"displays timings, status. Note that calibration is optional. 6. Alignment: "
+"displays timings, status and x, y and rotation of the sub to align with the "
+"master. 7. Stacking: displays timings, status and stacking weight."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:342
+msgid ""
+"A good way to use the Monitor is to select columns that are relevant to you "
+"and order by the ID column so most recent subs are at the top."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:346
+msgid "Single Channel vs Multi-Channel Mode"
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:348
+#, fuzzy
+#| msgid ""
+#| "Live Stacker only operates on .fits files. They can be either mono or "
+#| "color."
+msgid ""
+"Live Stacker starts in single channel mode. This allows a single stack of "
+"either mono or color subs."
+msgstr ""
+"Засіб стосування працює лише з файлами .fits. Такі файли можуть бути "
+"монохромними або кольоровими."
+
+#: ../../user_manual/fits-viewer-livestacker.rst:351
+msgid ""
+"It is also possible to create color images from individual stacks of mono "
+"images. To do this, activate multi-channel mode by expanding the stack "
+"directory dropdown toggle (see the red box below) which will then display "
+"input directories for Red, Green, Blue and Luminance."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:355
+#, fuzzy
+#| msgid "|FITS Viewer Live Stacker Options|"
+msgid "|FITS Viewer Live Stacker MultiChannel|"
+msgstr "|Параметри інтерактивного стосування у переглядачі FITS|"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:357
+msgid ""
+"Live Stacker will then stack files in each of the directories and then watch "
+"the directories for new files. If an RGB stack is required, fill in Red, "
+"Green and Blue (and leave Luminance blank). Live Stacker will then process a "
+"stack for each channel, apply a \"linear fit\" between channels, and combine "
+"into a color image for display."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:362
+msgid ""
+"Optionally, a Luminance channel can be added to produce an LRGB image. In "
+"this mode, the RGB channels are combined with the Luminance channel to "
+"produce a single color image."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:365
+msgid ""
+"Narrowband filter stacks can be combined into color images: SHO, HOO, etc."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:367
+msgid ""
+"If less than 3 stacks are available, for example whilst doing an HOO image, "
+"fill in the same directory to the appropriate channels. E.g. for an HOO "
+"image set Red to the Hydrogen directory and Green and Blue to the Oxygen "
+"directory."
+msgstr ""
+
+#: ../../user_manual/fits-viewer-livestacker.rst:372
 msgid "Running Live Stackers"
 msgstr "Робота з декількома інтерактивними стосуваннями"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:277
+#: ../../user_manual/fits-viewer-livestacker.rst:374
 msgid ""
 "It's possible to run more than 1 Live Stacker to monitor multiple "
 "directories. This would be useful if you are imaging multiple targets or "
@@ -708,7 +917,7 @@ msgstr ""
 "цільових об'єктів або фільтрів і хочете стежити за всім, не скидаючи "
 "періодично засіб інтерактивного стосування до нового каталогу."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:281
+#: ../../user_manual/fits-viewer-livestacker.rst:378
 msgid ""
 "Live Stacker is started by selecting \"Live Stacker...\" from the KStars "
 "Skymap. Selecting \"Live Stacker...\" a second time will launch another Live "
@@ -725,11 +934,11 @@ msgstr ""
 "позначено), або буде запущено кілька вкладок в одному вікні засобу "
 "інтерактивного стосування (позначено пункт «Захоплення одного вікна»)."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:287
+#: ../../user_manual/fits-viewer-livestacker.rst:384
 msgid "|FITS Viewer Live Stacker Options|"
 msgstr "|Параметри інтерактивного стосування у переглядачі FITS|"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:289
+#: ../../user_manual/fits-viewer-livestacker.rst:386
 msgid ""
 "By default the tab name for Live Stacker is \"(n) DirectoryPath\" where n is "
 "the number of subs in DirectoryPath. Right click on tabname to change the "
@@ -742,7 +951,7 @@ msgstr ""
 "особливо корисно, коли кілька екземплярів інтерактивного стосування "
 "запускаються як окремі вкладки."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:294
+#: ../../user_manual/fits-viewer-livestacker.rst:391
 msgid ""
 "The \"Live Stacker own process\" option allows Live Stacker to be started as "
 "a separate process. When \"Live Stacker own process\" is unchecked, Live "
@@ -758,13 +967,13 @@ msgstr ""
 "аварійного завершення він не порушить роботу інших функціональних "
 "можливостей KStars / Ekos."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:300
+#: ../../user_manual/fits-viewer-livestacker.rst:397
 msgid "Using FITS Viewer functionality with Live Stacker"
 msgstr ""
 "Користування можливостями переглядача FITS у поєднанні із інтерактивним "
 "стосуванням"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:302
+#: ../../user_manual/fits-viewer-livestacker.rst:399
 msgid ""
 "Live Stacker is integrated into FITSViewer. This means that existing "
 "FITSViewer functionality can be applied to stacked images displayed in Live "
@@ -774,32 +983,32 @@ msgstr ""
 "наявні можливості переглядача FITS можна застосувати до стосованих "
 "зображень, які показано у вікні інтерактивного стосування. Приклади:"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:305
+#: ../../user_manual/fits-viewer-livestacker.rst:402
 msgid "Saving image stacks to disk."
 msgstr "Збереження стосів зображень на диску."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:306
+#: ../../user_manual/fits-viewer-livestacker.rst:403
 msgid "Re-opening a saved stacked image."
 msgstr "Повторне відкриття збереженого стосу зображень."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:307
+#: ../../user_manual/fits-viewer-livestacker.rst:404
 msgid "Using blink functionality alongside stacking."
 msgstr ""
 "Використання функціональних можливостей блимання паралельно до стосування."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:308
+#: ../../user_manual/fits-viewer-livestacker.rst:405
 msgid "Zooming in / out."
 msgstr "Збільшення/Зменшення."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:309
+#: ../../user_manual/fits-viewer-livestacker.rst:406
 msgid "Rotating the image"
 msgstr "Обертання зображення"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:310
+#: ../../user_manual/fits-viewer-livestacker.rst:407
 msgid "Marking stars / highlighting clipped stars"
 msgstr "Позначення зірок або підсвічування обрізаних зірок"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:311
+#: ../../user_manual/fits-viewer-livestacker.rst:408
 msgid ""
 "Plate solving the stacked image, although by default the stacking process "
 "will have already plate solved it."
@@ -807,23 +1016,23 @@ msgstr ""
 "Прив'язання кадру стосованого зображення, хоча, типово, у процесі стосування "
 "кадр вже має бути прив'язано."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:313
+#: ../../user_manual/fits-viewer-livestacker.rst:410
 msgid "Stretch / Histogram adjustments"
 msgstr "Розтягування / Коригування гістограми"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:314
+#: ../../user_manual/fits-viewer-livestacker.rst:411
 msgid "Viewing image statistics / FITS Header keywords"
 msgstr "Перегляд статистики зображення / ключових слів заголовка FITS"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:315
+#: ../../user_manual/fits-viewer-livestacker.rst:412
 msgid "Viewing Catalog objects (e.g. Simbad objects)"
 msgstr "Перегляд об'єктів каталогу (наприклад об'єктів Simbad)"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:318
+#: ../../user_manual/fits-viewer-livestacker.rst:415
 msgid "Trouble Shooting Issues"
 msgstr "Вирішення проблем"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:320
+#: ../../user_manual/fits-viewer-livestacker.rst:417
 msgid ""
 "The pre-requisites for Live Stacker are that KStars is built with WCS, "
 "CFITIO and OpenCV. If any of these components is not present, the Live "
@@ -835,7 +1044,7 @@ msgstr ""
 "пункт меню інтерактивного стосування на карті неба не буде видимим, а "
 "інтерактивне стосування буде вимкнено."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:324
+#: ../../user_manual/fits-viewer-livestacker.rst:421
 msgid ""
 "Subframes need to have WCS FITS Keywords. These are added by the Indi driver "
 "when WCS is enabled. Also, on the FITS options tab in Ekos, AutoWCS should "
@@ -845,7 +1054,7 @@ msgstr ""
 "Indi, якщо увімкнено WCS. Також на вкладці параметрів FITS в Ekos має бути "
 "увімкнено AutoWCS."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:327
+#: ../../user_manual/fits-viewer-livestacker.rst:424
 msgid ""
 "Live Stacker makes use of KStars internal Plate Solving so it is crucial "
 "that this is setup to work correctly. Plate Solving in KStars is flexible "
@@ -869,17 +1078,47 @@ msgstr ""
 "виконувати розв'язання кадрів за допомогою вибраного вами профілю SEP. Див. "
 "розділ «Розв'язувач переглядача FITS» цього підручника, щоб дізнатися більше."
 
-#: ../../user_manual/fits-viewer-livestacker.rst:338
+#: ../../user_manual/fits-viewer-livestacker.rst:435
 msgid ".. image:: /images/fitsviewer-livestacker.png"
 msgstr ".. image:: /images/fitsviewer-livestacker.png"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:339
+#: ../../user_manual/fits-viewer-livestacker.rst:436
+#, fuzzy
+#| msgid "FITS Viewer Live Stacker"
+msgid "FITS Viewer Live Stacker Monitor"
+msgstr "Інтерактивне стосування у переглядачі FITS"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:436
+#, fuzzy
+#| msgid ".. image:: /images/fitsviewer-livestacker-options.png"
+msgid ".. image:: /images/fitsviewer-livestacker-monitor.png"
+msgstr ".. image:: /images/fitsviewer-livestacker-options.png"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:437
+#, fuzzy
+#| msgid "FITS Viewer Live Stacker Options"
+msgid "FITS Viewer Live Stacker MultiChannel"
+msgstr "Параметри інтерактивного стосування у переглядачі FITS"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:437
+#, fuzzy
+#| msgid ".. image:: /images/fitsviewer-livestacker.png"
+msgid ".. image:: /images/fitsviewer-livestacker-mchan.png"
+msgstr ".. image:: /images/fitsviewer-livestacker.png"
+
+#: ../../user_manual/fits-viewer-livestacker.rst:438
 msgid "FITS Viewer Live Stacker Options"
 msgstr "Параметри інтерактивного стосування у переглядачі FITS"
 
-#: ../../user_manual/fits-viewer-livestacker.rst:339
+#: ../../user_manual/fits-viewer-livestacker.rst:438
 msgid ".. image:: /images/fitsviewer-livestacker-options.png"
 msgstr ".. image:: /images/fitsviewer-livestacker-options.png"
+
+#~ msgid "Rejection Method:"
+#~ msgstr "Спосіб відкидання:"
+
+#~ msgid "None: No pixels are rejected."
+#~ msgstr "Жодного: не буде відкинуто жодного пікселя."
 
 #~ msgid ""
 #~ "Start Button: This button has 3 states: - \"Start\": Pressing the button "
