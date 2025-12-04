@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-02 01:59+0000\n"
-"PO-Revision-Date: 2025-11-28 09:41+0200\n"
+"PO-Revision-Date: 2025-12-02 21:10+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -124,6 +124,12 @@ msgid ""
 "combine mono subs into a color image. In this mode Red, Green and Blue must "
 "be specified and optionally Luminance can be added."
 msgstr ""
+"Кнопка «Багатоканальний» (стрілка вниз): перемикає програму між "
+"одноканальними (однокольоровими або кольоровими) підкадрами та "
+"багатоканальним режимом. Багатоканальний режим надає змогу користувачеві "
+"поєднувати однокольорові підкадри у кольорове зображення. У цьому режимі "
+"необхідно вказати червоний, зелений та синій кольори, а також за потреби "
+"можна додати яскравість."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:49
 msgid ""
@@ -173,6 +179,9 @@ msgid ""
 "Live Stacker Monitor button: Launches the Live Stacker Monitor window. See "
 "the section on Live Stacker Monitor for more details."
 msgstr ""
+"Кнопка монітора інтерактивного стосування: відкриває вікно монітора "
+"інтерактивного стосування. Докладніший опис наведено у розділі щодо монітора "
+"інтерактивного стосування."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:69
 msgid ""
@@ -180,6 +189,10 @@ msgid ""
 "stacked image. Usually useful to turn on, but if performance is key this can "
 "be toggled off."
 msgstr ""
+"Обчислення ССШ: перемикач для вмикання або вимикання обчислення "
+"співвідношення сигнал-шум для кожного підкадру і стосованого зображення. "
+"Зазвичай, корисно вмикати, але якщо ключовою є швидкодія, варто вимкнути "
+"таке обчислення."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:72
 msgid ""
@@ -219,6 +232,8 @@ msgstr ""
 #: ../../user_manual/fits-viewer-livestacker.rst:86
 msgid "Help button: Launches web documentation for Live Stacker."
 msgstr ""
+"Кнопка «Довідка»: відкриває сторінку документації до інтерактивного засобу "
+"стосування в інтернеті."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:88
 msgid "Calibration Settings:"
@@ -232,6 +247,12 @@ msgid ""
 "flat associated with each of the 4 stack dirs: Red, Green, Blue and "
 "Luminance."
 msgstr ""
+"Вміст цього розділу залежить від того, вибрано одноканальний чи "
+"багатоканальний режим. В одноканальному режимі з каталогом стосу буде "
+"пов'язано 1 канал темних знімків і 1 канал знімків плоского поля. У "
+"багатоканальному режимі з кожним з 4 каталогів стосу буде пов'язано канали "
+"темного знімка та знімка плоского поля: червоний, зелений, синій та "
+"яскравість."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:95
 msgid ""
@@ -356,11 +377,13 @@ msgstr ""
 
 #: ../../user_manual/fits-viewer-livestacker.rst:145
 msgid "Method:"
-msgstr ""
+msgstr "Метод:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:147
 msgid "Average: Frames are averaged (mean). No pixels are rejected."
 msgstr ""
+"Середнє значення: кадри усереднено (середнє арифметичне). Не буде відкинуто "
+"жодного пікселя."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:149
 msgid ""
@@ -402,6 +425,12 @@ msgid ""
 "observed subs. It uses an iterative approach and is extremely resource "
 "intensive. This is an experimental approach at this time."
 msgstr ""
+"ImageMM: метод стосування ImageMM на основі цієї статті: https://iopscience."
+"iop.org/article/10.3847/1538-3881/adfb72. По суті, це можна розглядати як "
+"комбінацію стосування та розгортки. Метод спрямований на визначення "
+"найімовірнішого розгорнутого стосованого зображення, яке б створило набір "
+"спостережуваних підзображень. Він використовує ітеративний підхід і є "
+"надзвичайно ресурсомістким. У поточній версії це експериментальний підхід."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:170
 msgid "Frame Weighting:"
@@ -429,47 +458,30 @@ msgstr ""
 "вага."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:181
-#, fuzzy
-#| msgid ""
-#| "Low Sigma. This is the number of Standard Deviations on the low side of "
-#| "the median to clip pixels out. Used by the Sigma Clipping and Winsor SC "
-#| "Rejection Methods."
 msgid ""
 "Low Sigma (Sigma Clipping and Winsor SC Methods). This is the number of "
 "Standard Deviations on the low side of the median to clip pixels out."
 msgstr ""
-"Нижня σ. Це значення стандартного відхилення на нижньому боці від медіани "
-"для обрізання пікселів. Використовується у способах відкидання сигма-"
-"обрізання і вінзоризованого SC."
+"Нижня σ (методи сигма-обрізання та SC Вінзора). Це значення стандартного "
+"відхилення на нижньому боці від медіани для обрізання пікселів."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:184
-#, fuzzy
-#| msgid ""
-#| "High Sigma. This is the number of Standard Deviations on the high side of "
-#| "the median to clip pixels out. Used by the Sigma Clipping and Winsor SC "
-#| "Rejection Methods."
 msgid ""
 "High Sigma (Sigma Clipping and Winsor SC Methods). This is the number of "
 "Standard Deviations on the high side of the median to clip pixels out."
 msgstr ""
-"Верхня σ. Це значення стандартного відхилення на верхньому боці від медіани "
-"для обрізання пікселів. Використовується у способах відкидання сигма-"
-"обрізання і вінзоризованого SC."
+"Верхня σ (методи сигма-обрізання та SC Вінзора). Це значення стандартного "
+"відхилення на верхньому боці від медіани для обрізання пікселів."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:187
-#, fuzzy
-#| msgid ""
-#| "Winsor Cutoff. This is the number of Standard Deviations away from the "
-#| "median to use as cutoff to adjust outlying values before running Sigma "
-#| "Clipping."
 msgid ""
 "Winsor Cutoff (Winsor SC Method). This is the number of Standard Deviations "
 "away from the median to use as cutoff to adjust outlying values before "
 "running Sigma Clipping."
 msgstr ""
-"Обрізання Вінзора. Це значення стандартного відхилення від медіани, яке буде "
-"використано як обрізання для коригування значень-викидів до виконання сигма-"
-"обрізання."
+"Обрізання Вінзора (метод SC Вінзора). Це значення стандартного відхилення "
+"від медіани, яке буде використано як обрізання для коригування значень-"
+"викидів до виконання сигма-обрізання."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:190
 msgid ""
@@ -477,6 +489,9 @@ msgid ""
 "algorithm will attempt. Increase the number for more accurate performance "
 "but at the expense of performance."
 msgstr ""
+"Ітерації (ImageMM). Задає максимальне значення кількості ітерацій, які може "
+"бути використано під час роботи алгоритму. Збільште це значення для "
+"підвищення точності за рахунок зменшення швидкодії."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:194
 msgid ""
@@ -484,18 +499,26 @@ msgid ""
 "kappa=1 means no update for the iteration. Increase kappa for bigger updates "
 "but if you see signs of over \"deconvolving\" the image then reduce kappa."
 msgstr ""
+"Каппа (ImageMM). Обмежує ітераційні оновлення в діапазоні від 1/каппа до "
+"каппа. Отже, каппа=1 вимикає оновлення для ітерації. Збільште каппу для "
+"збільшення оновлення, але якщо ви бачите ознаки надмірного «розгортання» "
+"зображення, зменште каппу."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:198
 msgid ""
 "Alpha (ImageMM). Damping between iterations by blending alpha * this "
 "iteration with (1 - alpha) * last iteration."
 msgstr ""
+"Альфа (ImageMM). Затухання між ітераціями шляхом змішування альфа * ця "
+"ітерація з (1 - альфа) * ​​остання ітерація."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:201
 msgid ""
 "Sigma Scale (ImageMM). Reduce calculated image sigma by this scale factor. "
 "Reduce if you see ringing artifacts."
 msgstr ""
+"Масштаб сигма (ImageMM). Зменшити сигму розрахованого зображення на цей "
+"коефіцієнт масштабування. Зменште, якщо бачите кільцеві дефекти."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:204
 msgid ""
@@ -503,6 +526,9 @@ msgid ""
 "disable. Updating too frequently can lead to artifacts. This is quite "
 "computationally intensive."
 msgstr ""
+"Оновлення ФРТ (ImageMM). Оновлювати функцію розсіювання точки (ФРТ) кожну n-"
+"ту ітерацію. Встановіть нульове значення, що вимкнути. Надто часте оновлення "
+"може призвести до появи дефектів зображення. Є доволі обчислювально важким."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:207
 msgid "Post Processing Settings:"
@@ -784,7 +810,7 @@ msgstr ""
 
 #: ../../user_manual/fits-viewer-livestacker.rst:314
 msgid "Live Stacker Monitor"
-msgstr ""
+msgstr "Монітор інтерактивного стосування"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:316
 msgid ""
@@ -792,12 +818,13 @@ msgid ""
 "window. The purpose of the Monitor is to display more infomation at the "
 "subframe level about the subs being stacked."
 msgstr ""
+"Натискання кнопки «Монітор інтерактивного стосування» відкриває вікно "
+"«Монітор інтерактивного стосування». Мета монітора — показувати більше "
+"відомостей на рівні підкадру про підкадри, які входять до стосу."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:319
-#, fuzzy
-#| msgid "|FITS Viewer Live Stacker|"
 msgid "|FITS Viewer Live Stacker Monitor|"
-msgstr "|Інтерактивне стосування у переглядачі FITS|"
+msgstr "|Монітор інтерактивного стосування у переглядачі FITS|"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:321
 msgid ""
@@ -808,12 +835,22 @@ msgid ""
 "the column order may be changed by clicking dragging a column header to a "
 "new location."
 msgstr ""
+"На моніторі буде показано таблицю з 1 рядком для кожного підкаталогу у "
+"вибраному каталозі/каталогах. Стовпці можна налаштувати: клацніть правою "
+"кнопкою миші на заголовку стовпця, щоб відкрити меню стовпців, у якому можна "
+"позначити пункти потрібних стовпчиків або скасувати позначення. Крім того, "
+"можна двічі клацнути на заголовку стовпця, щоб вилучити стовпець. Також "
+"можна змінити порядок стовпців, перетягнувши заголовок стовпця у бажане "
+"місце."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:326
 msgid ""
 "Single clicking a column sorts the grid on that column and toggles between "
 "an ascending sort and a descending sort."
 msgstr ""
+"Одинарним клацанням на стовпчику можна упорядкувати таблицю за даними у "
+"цьому стовпчику і перемкнути порядок з порядку за зростанням на порядок за "
+"спаданням і навпаки."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:329
 msgid ""
@@ -821,6 +858,9 @@ msgid ""
 "it has a pink background. The \"Highlighting\" checkbox will also highlight "
 "cell changes as updates are processed."
 msgstr ""
+"Основний підкадр вирівнювання буде позначено жовтим тлом. Якщо підкадр не "
+"вдасться обробити, його буде позначено рожевим тлом. Прапорець За допомогою "
+"позначки «Підсвічування» можна підсвітити зміни комірок при обробці оновлень."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:332
 msgid ""
@@ -835,28 +875,40 @@ msgid ""
 "displays timings, status and x, y and rotation of the sub to align with the "
 "master. 7. Stacking: displays timings, status and stacking weight."
 msgstr ""
+"Підказки в заголовках стовпців пояснюють, що являє собою кожен стовпець, але "
+"загалом стовпці відтворюють робочий процес стосування з відповідними "
+"відомостями щодо кожного кроку: 1. Різні стовпці: ідентифікатор, шлях, назва "
+"файла, канали та загальний стан. 2. Завантаження: показує часові параметри "
+"та стан кроку завантаження та співвідношення сигнал/шум (ССШ) підкадру. 3. "
+"Розв'язання кадру: показує часові параметри, стан, середній РПП, кількість "
+"зірок. 4. Очікування стосу: показує часові параметри, стан перетворювача "
+"після завантаження перед наступним кроком стосування. 5. Калібрування: "
+"показує часові параметри, стан. Зверніть увагу, що калібрування є "
+"необов'язковим. 6. Вирівнювання: показує часові параметри, стан, а також x, "
+"y та обертання підкадру для вирівнювання з головним кадром. 7. Стосування: "
+"показує часові параметри, стан та вагу стосування."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:342
 msgid ""
 "A good way to use the Monitor is to select columns that are relevant to you "
 "and order by the ID column so most recent subs are at the top."
 msgstr ""
+"Добрий спосіб використання монітора – вибрати стовпці, які є важливими для "
+"вас, і впорядкувати їх за стовпцем ідентифікатора, щоб найновіші підкадри "
+"були вгорі."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:346
 msgid "Single Channel vs Multi-Channel Mode"
-msgstr ""
+msgstr "Одноканальний і багато канальний режими"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:348
-#, fuzzy
-#| msgid ""
-#| "Live Stacker only operates on .fits files. They can be either mono or "
-#| "color."
 msgid ""
 "Live Stacker starts in single channel mode. This allows a single stack of "
 "either mono or color subs."
 msgstr ""
-"Засіб стосування працює лише з файлами .fits. Такі файли можуть бути "
-"монохромними або кольоровими."
+"Засіб інтерактивного стосування запускається в одноканальному режимі. Це "
+"уможливлює використання єдиного стосу однокольорових або кольорових "
+"підкадрів."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:351
 msgid ""
@@ -865,12 +917,14 @@ msgid ""
 "directory dropdown toggle (see the red box below) which will then display "
 "input directories for Red, Green, Blue and Luminance."
 msgstr ""
+"Також можна створювати кольорові зображення з окремих стосів однокольорових "
+"зображень. Для цього активуйте багатоканальний режим, розгорнувши спадний "
+"список каталогів стосу (див. червоне поле нижче), у якому буде показано "
+"вхідні каталоги для червоного, зеленого, синього кольорів та яскравості."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:355
-#, fuzzy
-#| msgid "|FITS Viewer Live Stacker Options|"
 msgid "|FITS Viewer Live Stacker MultiChannel|"
-msgstr "|Параметри інтерактивного стосування у переглядачі FITS|"
+msgstr "|Багатоканальний засіб інтерактивного стосування у переглядачі FITS|"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:357
 msgid ""
@@ -880,6 +934,12 @@ msgid ""
 "stack for each channel, apply a \"linear fit\" between channels, and combine "
 "into a color image for display."
 msgstr ""
+"Засіб інтерактивного стосування складе файли у кожному з каталогів, а потім "
+"буде стежити за каталогами щодо наявності нових файлів. Якщо потрібен RGB-"
+"стек, заповніть поля червоного, зеленого та синього (і залиште поле "
+"яскравості порожнім). Засіб інтерактивного стосування стос для кожного "
+"каналу, застосує «лінійне наближення» між каналами та об'єднає їх у "
+"кольорове зображення для показу."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:362
 msgid ""
@@ -887,11 +947,16 @@ msgid ""
 "this mode, the RGB channels are combined with the Luminance channel to "
 "produce a single color image."
 msgstr ""
+"Якщо хочеться, для створення LRGB-зображення можна додати канал яскравості. "
+"У цьому режимі RGB-канали поєднуються з каналом яскравості для створення "
+"однокольорового зображення."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:365
 msgid ""
 "Narrowband filter stacks can be combined into color images: SHO, HOO, etc."
 msgstr ""
+"Стоси із вузькосмуговим фільтруванням може бути поєднано у кольорові "
+"зображення: SHO, HOO тощо."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:367
 msgid ""
@@ -900,6 +965,10 @@ msgid ""
 "image set Red to the Hydrogen directory and Green and Blue to the Oxygen "
 "directory."
 msgstr ""
+"Якщо доступні менше за 3 стоси, наприклад, під час створення зображення HOO, "
+"заповніть каталоги для відповідних каналів. Наприклад, для зображення HOO "
+"встановіть каталог червоного кольору на каталог Hydrogen, а зеленого і "
+"синього — на каталог Oxygen."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:372
 msgid "Running Live Stackers"
@@ -1083,28 +1152,20 @@ msgid ".. image:: /images/fitsviewer-livestacker.png"
 msgstr ".. image:: /images/fitsviewer-livestacker.png"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:436
-#, fuzzy
-#| msgid "FITS Viewer Live Stacker"
 msgid "FITS Viewer Live Stacker Monitor"
-msgstr "Інтерактивне стосування у переглядачі FITS"
+msgstr "Монітор інтерактивного стосування у переглядачі FITS"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:436
-#, fuzzy
-#| msgid ".. image:: /images/fitsviewer-livestacker-options.png"
 msgid ".. image:: /images/fitsviewer-livestacker-monitor.png"
-msgstr ".. image:: /images/fitsviewer-livestacker-options.png"
+msgstr ".. image:: /images/fitsviewer-livestacker-monitor.png"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:437
-#, fuzzy
-#| msgid "FITS Viewer Live Stacker Options"
 msgid "FITS Viewer Live Stacker MultiChannel"
-msgstr "Параметри інтерактивного стосування у переглядачі FITS"
+msgstr "Багатоканальний засіб інтерактивного стосування у переглядачі FITS"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:437
-#, fuzzy
-#| msgid ".. image:: /images/fitsviewer-livestacker.png"
 msgid ".. image:: /images/fitsviewer-livestacker-mchan.png"
-msgstr ".. image:: /images/fitsviewer-livestacker.png"
+msgstr ".. image:: /images/fitsviewer-livestacker-mchan.png"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:438
 msgid "FITS Viewer Live Stacker Options"
