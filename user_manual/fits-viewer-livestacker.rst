@@ -237,7 +237,7 @@ Following is a description of the UI widgets:
 
     A basic Unsharp Mask sharpening algorithm is used.
 
-    -  Sharpen Amount: The amount of sharpening to apply. Higher values denoise more.
+    -  Sharpen Amount: The amount of sharpening to apply. Higher values sharpen more.
        Set to 0 to disable sharpening.
 
     -  Sharpen Kernel. The size of the kernel used for sharpening in pixels (usually
@@ -314,7 +314,7 @@ Live Stacker Monitor
 ====================
 
 Pressing the Live Stacker Monitor button launches the Live Stacker Monitor window. The purpose
-of the Monitor is to display more infomation at the subframe level about the subs being stacked.
+of the Monitor is to display more information at the subframe level about the subs being stacked.
 
         |FITS Viewer Live Stacker Monitor|
 
@@ -331,7 +331,7 @@ background. The "Highlighting" checkbox will also highlight cell changes as upda
 
 Tooltips on the column headers explain what each column represents but in summary the columns
 represent the stacking workflow with relevant information from each step:
-1. Miscellanous columns: ID, pathname, filename, channel(s) and overall status.
+1. Miscellaneous columns: ID, pathname, filename, channel(s) and overall status.
 2. Loading: displays timings and status of the load step and SNR of the sub.
 3. Plate Solving: displays timings, status, average HFR, number of stars.
 4. Stack Waiting: displays timings, status of a sub once loaded before the next stacking step.
