@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2025-11-13 18:28+0100\n"
+"PO-Revision-Date: 2025-12-13 13:00+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -764,11 +764,11 @@ msgstr "Besturing ventilatie en licht"
 
 #: ../../user_manual/ekos-scheduler.rst:426
 msgid "Unparking dome"
-msgstr "Uitparkeren koepel"
+msgstr "Koepel ontgrendelen"
 
 #: ../../user_manual/ekos-scheduler.rst:428
 msgid "Unparking mount"
-msgstr "Uitparkeren opstelling"
+msgstr "Opstelling ontgrendelen"
 
 #: ../../user_manual/ekos-scheduler.rst:430
 msgid "etc."
@@ -880,7 +880,7 @@ msgid ""
 msgstr ""
 "Zodra de plannertaak met succes is voltooid, selecteert de planner de "
 "volgende plannertaak. Indien er geen taak gepland kan worden wordt de "
-"opstelling geparkeerd, totdat de volgende taak uitgevoerd kan worden. "
+"opstelling vergrendeld, totdat de volgende taak uitgevoerd kan worden. "
 "Verder, indien de volgende taak nog niet aan de beurt is gedurende een door "
 "de gebruiker instelbare tijd, voert de planner een afsluitprocedure uit als "
 "*voorzorg*, om hulpbronnen te besparen en voert de opstartprocedure weer "
@@ -985,6 +985,13 @@ msgid ""
 "a shutdown if conditions are unsafe, this start-stop cycle is inefficient "
 "and potentially harmful to equipment."
 msgstr ""
+"**Belangrijk:** Als er geen aparte veiligheidsmonitor is geconfigureerd, kan "
+"de planner de veiligheidsomstandigheden niet controleren voordat het "
+"observatorium wordt gestart. Dit betekent dat het observatorium mogelijk "
+"onder onveilige omstandigheden start. Hoewel het weerstuurprogramma van het "
+"apparatuurprofiel na het opstarten wordt geactiveerd en onmiddellijk een "
+"uitschakeling in gang zet als de omstandigheden onveilig zijn, is deze start-"
+"stopcyclus inefficiënt en potentieel schadelijk voor de apparatuur."
 
 #: ../../user_manual/ekos-scheduler.rst:547
 msgid ""
@@ -997,10 +1004,20 @@ msgid ""
 "Safety Monitor driver. This allows the scheduler to verify conditions are "
 "safe *before* starting up the observatory."
 msgstr ""
+"**Beste praktijk:** Configureer een alleenstaande INDI-veiligheidsmonitor. "
+"Indien aanwezig, heeft deze altijd voorrang op elk weerstuurprogramma in het "
+"apparatuurprofiel bij het bepalen van de veiligheid van het observatorium. "
+"De monitor kan worden geconfigureerd om te luisteren naar een willekeurig "
+"aantal weer- of hulpstuurprogramma's (zoals UPS) die een veiligheidsrisico "
+"kunnen vormen voor de werking van het observatorium. Elk INDI-stuurprogramma "
+"die de INDI-standaardeigenschap SAFETY_STATUS implementeert, kan worden "
+"toegevoegd aan het veiligheidsmonitor-stuurprogramma. Hierdoor kan de "
+"planner controleren of de omstandigheden veilig zijn *voordat* het "
+"observatorium wordt opgestart."
 
 #: ../../user_manual/ekos-scheduler.rst:555
 msgid "Weather Alert Response"
-msgstr ""
+msgstr "Antwoord op weerwaarschuwingen"
 
 #: ../../user_manual/ekos-scheduler.rst:557
 msgid ""
@@ -1010,44 +1027,59 @@ msgid ""
 "the Ekos and INDI connections while protecting your equipment, allowing for "
 "quick resumption when conditions improve."
 msgstr ""
+"Wanneer de weersomstandigheden tijdens de werkzaamheden verslechteren tot "
+"een alarmstatus, start de planner een beschermende \"zachte afsluit\"-"
+"procedure. In tegenstelling tot een volledige uitschakeling waarbij alle "
+"systemen worden gestopt, behoudt een zachte afsluiting de Ekos- en INDI-"
+"verbindingen en beschermt uw apparatuur, waardoor een snelle hervatting "
+"mogelijk is zodra de omstandigheden verbeteren."
 
 #: ../../user_manual/ekos-scheduler.rst:563
 msgid "**Soft Shutdown Sequence:**"
-msgstr ""
+msgstr "**Sequentie van zachte afsluiting:**"
 
 #: ../../user_manual/ekos-scheduler.rst:565
 msgid "When a weather alert is detected:"
-msgstr ""
+msgstr "Wanneer een weerwaarschuwing wordt gedetecteerd:"
 
 #: ../../user_manual/ekos-scheduler.rst:567
 msgid ""
 "A configurable delay period (default: 10 seconds) prevents reaction to "
 "momentary sensor issues"
 msgstr ""
+"Een instelbare vertragingsperiode (standaard: 10 seconden) voorkomt reactie "
+"op kortstondige problemen met de sensor."
 
 #: ../../user_manual/ekos-scheduler.rst:570
 msgid ""
 "If the alert persists, the current scheduler job is aborted (marked ABORTED, "
 "not ERROR, so it can restart later)"
 msgstr ""
+"Als de waarschuwing aanhoudt, wordt de huidige planner-taak afgebroken "
+"(gemarkeerd als AFGEBROKEN, niet als FOUT, zodat deze later opnieuw kan "
+"worden gestart)."
 
 #: ../../user_manual/ekos-scheduler.rst:573
 msgid ""
 "The Pre-Shutdown Queue executes to protect equipment (typically closes dust "
 "caps, parks mount, closes dome)"
 msgstr ""
+"De wachtrij vóór afsluiten wordt uitgevoerd om apparatuur te beschermen "
+"(meestal sluit dit de stofkappen, vergrendeld de opstelling en sluit de "
+"koepel)."
 
 #: ../../user_manual/ekos-scheduler.rst:576
 msgid "Ekos and INDI remain running for faster recovery"
-msgstr ""
+msgstr "Ekos en INDI blijven in bedrijf voor een sneller herstel"
 
 #: ../../user_manual/ekos-scheduler.rst:578
 msgid "The scheduler enters a grace period to wait for weather improvement"
 msgstr ""
+"De planner voert een respijtperiode in om te wachten tot het weer verbetert."
 
 #: ../../user_manual/ekos-scheduler.rst:583
 msgid "Weather Grace Period"
-msgstr ""
+msgstr "Weerrespijtperiode"
 
 #: ../../user_manual/ekos-scheduler.rst:585
 msgid ""
@@ -1056,30 +1088,36 @@ msgid ""
 "operations automatically resume. If the grace period expires with alert "
 "conditions still present, the job is marked as ERROR and will not restart."
 msgstr ""
+"De respijtperiode is een instelbare wachttijd waarin de planner de "
+"weersomstandigheden controleert. Als het weer tijdens deze periode "
+"verbetert, worden de werkzaamheden automatisch hervat. Als de respijtperiode "
+"afloopt terwijl er nog steeds waarschuwingen van kracht zijn, wordt de taak "
+"gemarkeerd als FOUT en wordt deze niet opnieuw gestart."
 
 #: ../../user_manual/ekos-scheduler.rst:591
 msgid "**During the Grace Period:**"
-msgstr ""
+msgstr "**Tijdens de respijtperiode:**"
 
 #: ../../user_manual/ekos-scheduler.rst:593
 msgid "Equipment remains protected (mount parked, dome closed)"
 msgstr ""
+"De apparatuur blijft beschermd (opstelling vergrendeld, koepel gesloten)."
 
 #: ../../user_manual/ekos-scheduler.rst:594
 msgid "Ekos and INDI connections are maintained"
-msgstr ""
+msgstr "De verbindingen met Ekos en INDI blijven behouden."
 
 #: ../../user_manual/ekos-scheduler.rst:595
 msgid "Weather status is continuously monitored"
-msgstr ""
+msgstr "De weersomstandigheden worden continu gemonitord"
 
 #: ../../user_manual/ekos-scheduler.rst:596
 msgid "If weather improves to Ok, operations resume automatically"
-msgstr ""
+msgstr "Als het weer verbetert, worden de werkzaamheden automatisch hervat"
 
 #: ../../user_manual/ekos-scheduler.rst:597
 msgid "If period expires with Alert status, the job fails"
-msgstr ""
+msgstr "Als de periode afloopt met de status 'Waarschuwing', mislukt de taak."
 
 #: ../../user_manual/ekos-scheduler.rst:599
 msgid "**Configuration:**"
@@ -1095,6 +1133,10 @@ msgid ""
 "initiating shutdown (default: 10). This prevents false alarms from brief "
 "sensor glitches."
 msgstr ""
+"**Uitschakelvertraging bij weersomstandigheden**: aantal seconden dat "
+"gewacht moet worden na detectie van een waarschuwing voordat de "
+"uitschakeling wordt gestart (standaard: 10). Dit voorkomt valse "
+"waarschuwingen door korte storingen in de sensor."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
@@ -1102,54 +1144,72 @@ msgid ""
 "based on your local weather patterns—longer grace periods work well if "
 "alerts are typically brief."
 msgstr ""
+"**Weerwaarschuwingsperiode**: Minuten om te wachten tot het weer verbetert. "
+"Kies op basis van uw lokale weerpatronen – langere wachttijden werken goed "
+"als weerwaarschuwingen doorgaans kortdurend zijn."
 
 #: ../../user_manual/ekos-scheduler.rst:614
 msgid "Automatic Weather Recovery"
-msgstr ""
+msgstr "Automatisch weerherstel"
 
 #: ../../user_manual/ekos-scheduler.rst:616
 msgid ""
 "When weather improves during the grace period, the scheduler automatically "
 "resumes operations:"
 msgstr ""
+"Als het weer tijdens de respijtperiode verbetert, hervat de planner "
+"automatisch de werkzaamheden:"
 
 #: ../../user_manual/ekos-scheduler.rst:619
 msgid "Weather status changes from Alert to Ok"
-msgstr ""
+msgstr "De weerstatus verandert van Waarschuwing naar Ok"
 
 #: ../../user_manual/ekos-scheduler.rst:621
 msgid ""
 "The Post-Startup Queue executes to reverse protective actions (opens dome, "
 "unparks mount, opens dust caps)"
 msgstr ""
+"De wachtrij ná opstarten voert de beveiligingsacties uit (opent de koepel, "
+"ontgrendelt de opstelling, opent de stofkappen)."
 
 #: ../../user_manual/ekos-scheduler.rst:624
 msgid "The scheduler resumes normal operation"
-msgstr ""
+msgstr "De planner hervat de normale werking"
 
 #: ../../user_manual/ekos-scheduler.rst:626
 msgid "The aborted job can restart if its constraints are still met"
 msgstr ""
+"De afgebroken taak kan opnieuw worden gestart als nog steeds aan de "
+"randvoorwaarden is voldaan"
 
 #: ../../user_manual/ekos-scheduler.rst:628
 msgid "**Queue Usage During Weather Events:**"
-msgstr ""
+msgstr "**Wachtrijgebruik tijdens weersomstandigheden:**"
 
 #: ../../user_manual/ekos-scheduler.rst:630
 msgid "Weather events use specific startup and shutdown queues:"
 msgstr ""
+"Weergebeurtenissen maken gebruik van specifieke opstart- en "
+"afsluitwachtrijen:"
 
 #: ../../user_manual/ekos-scheduler.rst:632
 msgid ""
 "**During Weather Shutdown**: Only Pre-Shutdown Queue executes (runs before "
 "stopping Ekos). Post-Shutdown Queue is skipped since Ekos remains running."
 msgstr ""
+"**Tijdens een weersafhankelijke uitschakeling**: alleen de wachtrij vóór "
+"afsluiten wordt uitgevoerd (deze wordt uitgevoerd voordat Ekos wordt "
+"gestopt). De wachtrij ná afsluiten wordt overgeslagen, omdat Ekos actief "
+"blijft."
 
 #: ../../user_manual/ekos-scheduler.rst:636
 msgid ""
 "**During Weather Recovery**: Only Post-Startup Queue executes (runs after "
 "devices ready). Pre-Startup Queue is skipped since Ekos never stopped."
 msgstr ""
+"**Tijdens herstel na weersomstandigheden**: alleen de wachtrij ná afsluiten "
+"wordt uitgevoerd (wordt uitgevoerd nadat de apparaten gereed zijn). De "
+"wachtrij vóór opstarten wordt overgeslagen omdat Ekos nooit is gestopt."
 
 #: ../../user_manual/ekos-scheduler.rst:640
 msgid ""
@@ -1157,34 +1217,37 @@ msgid ""
 "the Post-Startup queue should reverse exactly what the Pre-Shutdown queue "
 "did."
 msgstr ""
+"Uw wachtrijen voor vóór afsluiten en ná opstarten moeten symmetrisch "
+"samenwerken-de wachtrij ná opstarten moet precies het omgekeerde doen van "
+"wat de wachtrij vóór afsluiten deed."
 
 #: ../../user_manual/ekos-scheduler.rst:644
 msgid "**Example Queue Design:**"
-msgstr ""
+msgstr "**Voorbeeld ontwerp wachtrij:**"
 
 #: ../../user_manual/ekos-scheduler.rst:647
 msgid "Close dust cap"
-msgstr ""
+msgstr "Stofkap sluiten"
 
 #: ../../user_manual/ekos-scheduler.rst:648
 msgid "Park mount"
-msgstr "Opstelling parkeren"
+msgstr "Opstelling vergrendelen"
 
 #: ../../user_manual/ekos-scheduler.rst:649
 msgid "Pre-Shutdown Queue:"
-msgstr ""
+msgstr "Wachtrij vóór afsluiten:"
 
 #: ../../user_manual/ekos-scheduler.rst:649
 msgid "Close dome shutter"
-msgstr ""
+msgstr "Koepel sluiten"
 
 #: ../../user_manual/ekos-scheduler.rst:652
 msgid "Open dome shutter"
-msgstr ""
+msgstr "Koepel openen"
 
 #: ../../user_manual/ekos-scheduler.rst:653
 msgid "Unpark mount"
-msgstr "Opstelling uit parkeerstand halen"
+msgstr "Opstelling ontgrendelen"
 
 #: ../../user_manual/ekos-scheduler.rst:654
 msgid "Post-Startup Queue:"
@@ -1192,7 +1255,7 @@ msgstr "Wachtrij ná opstarten:"
 
 #: ../../user_manual/ekos-scheduler.rst:654
 msgid "Open dust cap"
-msgstr ""
+msgstr "Stofkap openen"
 
 #: ../../user_manual/ekos-scheduler.rst:659
 msgid "Weather Monitoring Best Practices"
@@ -1200,13 +1263,15 @@ msgstr "Beste praktijken van weer monitoren"
 
 #: ../../user_manual/ekos-scheduler.rst:661
 msgid "For reliable weather protection:"
-msgstr ""
+msgstr "Voor betrouwbare bescherming tegen weer:"
 
 #: ../../user_manual/ekos-scheduler.rst:663
 msgid ""
 "**Design Symmetric Queues**: Ensure Pre-Shutdown and Post-Startup queues "
 "mirror each other exactly."
 msgstr ""
+"**Ontwerp symmetrische wachtrijen**: zorg ervoor dat de wachtrijen vóór "
+"afsluiten en ná opstarten exact hetzelfde zijn."
 
 #: ../../user_manual/ekos-scheduler.rst:666
 msgid ""
@@ -1214,6 +1279,9 @@ msgid ""
 "avoid false alarms but short enough to protect equipment promptly (10-30 "
 "seconds recommended)."
 msgstr ""
+"**Stel de juiste vertragingen in**: configureer de uitschakelvertraging bij "
+"slecht weer lang genoeg om valse alarmen te voorkomen, maar kort genoeg om "
+"de apparatuur snel te beschermen (10-30 seconden aanbevolen)."
 
 #: ../../user_manual/ekos-scheduler.rst:670
 msgid ""
@@ -1221,18 +1289,27 @@ msgid ""
 "patterns. For areas with brief passing clouds or showers, 30-60 minutes "
 "allows resumption without abandoning the night."
 msgstr ""
+"**Kies de respijtperiode verstandig**: baseer de respijtperiode op de lokale "
+"weersomstandigheden. In gebieden met kortstondige bewolking of buien is "
+"30-60 minuten voldoende om de nachtelijke activiteiten te hervatten zonder "
+"ze te hoeven afbreken."
 
 #: ../../user_manual/ekos-scheduler.rst:675
 msgid ""
 "**Test Your Setup**: Manually test weather shutdown and recovery before "
 "unattended operations."
 msgstr ""
+"**Test uw opzet**: test handmatig de automatische uitschakeling en herstart "
+"na weersinvloeden voordat u de installatie onbeheerd uitvoert."
 
 #: ../../user_manual/ekos-scheduler.rst:678
 msgid ""
 "**Monitor Connection Stability**: Ensure reliable weather station "
 "connectivity. The scheduler attempts reconnection if connection is lost."
 msgstr ""
+"**Bewaking van de verbindingsstabiliteit**: zorg voor een betrouwbare "
+"verbinding met het weerstation. De planner probeert opnieuw verbinding te "
+"maken als de verbinding verloren gaat."
 
 #: ../../user_manual/ekos-scheduler.rst:682
 msgid ""
@@ -1240,6 +1317,10 @@ msgid ""
 "in scheduler settings to monitor conditions even before starting equipment, "
 "preventing unsafe startups."
 msgstr ""
+"**Gebruik alleenstaande weermonitoring**: configureer een alleenstaand "
+"weerapparaat in de planningsinstellingen om de omstandigheden te bewaken, "
+"zelfs voordat de apparatuur wordt gestart, waardoor onveilige "
+"opstartmomenten worden voorkomen."
 
 #: ../../user_manual/ekos-scheduler.rst:688
 msgid "Startup & Shutdown Scripts"
@@ -1255,18 +1336,21 @@ msgid ""
 "taskqueue>` that provides a powerful, template-based alternative to "
 "traditional startup and shutdown scripts. The Task Queue offers:"
 msgstr ""
+"KStars bevat nu een modern :doc:`Wachtrijsysteem <ekos-scheduler-taskqueue>` "
+"dat een krachtig, op sjablonen gebaseerd alternatief biedt voor traditionele "
+"opstart- en afsluitscripts. De Wachtrij biedt:"
 
 #: ../../user_manual/ekos-scheduler.rst:698
 msgid "Visual interface for building automation sequences"
-msgstr ""
+msgstr "Visueel interface voor het bouwen van automatiseringssequenties"
 
 #: ../../user_manual/ekos-scheduler.rst:699
 msgid "Pre-built templates for common operations"
-msgstr ""
+msgstr "Voorgeprogrammeerde sjablonen voor veelvoorkomende bewerkingen"
 
 #: ../../user_manual/ekos-scheduler.rst:700
 msgid "Built-in error handling and retry logic"
-msgstr ""
+msgstr "Ingebouwde foutafhandeling en logica voor opnieuw proberen"
 
 #: ../../user_manual/ekos-scheduler.rst:701
 msgid "Real-time progress monitoring"
@@ -1282,6 +1366,9 @@ msgid ""
 "recommend exploring the Task Queue system. See the complete :doc:`Task Queue "
 "documentation <ekos-scheduler-taskqueue>` for details."
 msgstr ""
+"Voor nieuwe observatoria of observatoria die hun automatisering willen "
+"moderniseren, raden we aan om het Wachtrijsysteem te verkennen. Zie de "
+"volledige documentatie van Wachtrij voor meer informatie."
 
 #: ../../user_manual/ekos-scheduler.rst:708
 #: ../../user_manual/ekos-scheduler.rst:719
@@ -1297,10 +1384,10 @@ msgstr ""
 "Omdat elk waarneemstation uniek is, maakt Ekos het mogelijk scripts te maken "
 "voor het opstarten en het afsluiten. In de scripts staan alle nodige "
 "procedures hiervoor. Bij het opstarten voert Ekos de opstartscripts uit en "
-"gaat alleen verder met de rest van de opstartprocedure (ontparkeren van "
+"gaat alleen verder met de rest van de opstartprocedure (ontgrendelen van "
 "koepel en opstelling), als dit met succes wordt voltooid. Omgekeerd, begint "
-"de afsluitprocedure met het parkeren van opstelling & en koepel, voordat "
-"tenslotte de uitvoerscript wordt uitgevoerd."
+"de afsluitprocedure met het vergrendelen van opstelling en koepel, voordat "
+"tenslotte het uitvoerscript wordt uitgevoerd."
 
 #: ../../user_manual/ekos-scheduler.rst:729
 msgid ""

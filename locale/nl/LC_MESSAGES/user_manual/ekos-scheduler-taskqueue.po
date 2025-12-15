@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2025-12-12 12:19+0100\n"
+"PO-Revision-Date: 2025-12-13 13:14+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -172,29 +172,32 @@ msgstr ""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:52
 msgid "The sequence of actions to execute"
-msgstr ""
+msgstr "De sequentie van uit te voeren acties"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:53
 msgid "Configurable parameters (with defaults and constraints)"
-msgstr ""
+msgstr "Instelbare parameters (met standaarden en beperkingen)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:54
 msgid "Which INDI device interfaces are supported"
-msgstr ""
+msgstr "Welke INDI-apparaatinterfaces worden ondersteund"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:55
 msgid "Category and description for organization"
-msgstr ""
+msgstr "Categorie en beschrijving voor organisatie"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:57
 msgid "Templates come in two types:"
-msgstr ""
+msgstr "Sjablonen komen in twee typen:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:59
 msgid ""
 "**System Templates**: Pre-built templates provided with KStars for common "
 "operations (park mount, enable cooling, etc.)"
 msgstr ""
+"**Systeemsjablonen**: voorgeprogrammeerde templates die bij KStars worden "
+"geleverd voor veelvoorkomende handelingen (opstelling vergrendelen, koeling "
+"inschakelen, enz.)."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:60
 msgid "**Templates**"
@@ -206,24 +209,30 @@ msgid ""
 "specifying which property to set or evaluate, along with the target values "
 "and conditions"
 msgstr ""
+"**Gebruikerssjablonen**: aangepaste sjablonen die u maakt door een apparaat "
+"te selecteren en op te geven welke eigenschap moet worden ingesteld of "
+"geëvalueerd, samen met de doelwaarden en voorwaarden."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:63
 msgid ""
 "Tasks are specific instances created from templates. When you add a template "
 "to the queue, you create a task by:"
 msgstr ""
+"Taken zijn specifieke exemplaren die zijn gemaakt op basis van sjablonen. "
+"Wanneer u een sjabloon aan de wachtrij toevoegt, maakt u een taak aan door:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:65
 msgid "Selecting which device to use (e.g., which mount or camera)"
 msgstr ""
+"Het kiezen van het te gebruiken apparaat (bijv. welke opstelling of camera)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:66
 msgid "Setting parameter values (timeouts, target temperatures, etc.)"
-msgstr ""
+msgstr "Parameterwaarden instellen (time-outs, streeftemperaturen, enz.)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:67
 msgid "Optionally scheduling when it should run"
-msgstr ""
+msgstr "Optioneel kunt u plannen wanneer het moet worden uitgevoerd"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:69
 msgid "**Tasks**"
@@ -234,24 +243,28 @@ msgid ""
 "Each task in the queue has its own runtime state, tracking its progress and "
 "any errors."
 msgstr ""
+"Elke taak in de wachtrij heeft zijn eigen uitvoeringsstatus, die de "
+"voortgang en eventuele fouten bijhoudt."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:71
 msgid "|Task Queue Template|"
-msgstr ""
+msgstr "|Wachtrij voor taken|"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:74
 msgid "Understanding Actions"
-msgstr ""
+msgstr "Acties begrijpen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:76
 msgid ""
 "Each task is composed of one or more **actions** that execute sequentially. "
 "The Task Queue system supports five action types:"
 msgstr ""
+"Elke taak bestaat uit een of meer **acties** die sequentieel worden "
+"uitgevoerd. Het takenwachtrijsysteem ondersteunt vijf typen acties:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:79
 msgid "**SET Action**"
-msgstr ""
+msgstr "**SET actie**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:79
 msgid ""
@@ -259,10 +272,14 @@ msgid ""
 "ON, changing a number property, or updating text. The action can optionally "
 "wait for the property state to become OK before completing."
 msgstr ""
+"Stelt een INDI-eigenschap in op een specifieke waarde. Bijvoorbeeld het "
+"aanschakelen van een schakelaar, het wijzigen van een numerieke eigenschap "
+"of het bijwerken van een tekst. De actie kan optioneel wachten tot de status "
+"van de eigenschap OK is voordat deze wordt voltooid."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:82
 msgid "**EVALUATE Action**"
-msgstr ""
+msgstr "**EVALUATE actie**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:82
 msgid ""
@@ -271,10 +288,15 @@ msgid ""
 "stabilized, mount parked, dome opened). Supports various condition types "
 "(equals, greater than, within range, etc.)."
 msgstr ""
+"Wacht tot aan een voorwaarde is voldaan door een INDI-eigenschap te "
+"bevragen. Handig om te wachten tot apparatuur een gewenste status bereikt "
+"(bijv. temperatuur gestabiliseerd, opstelling vergrendeld, koepel geopend). "
+"Ondersteunt verschillende voorwaardetypen (gelijk aan, groter dan, binnen "
+"bereik, enz.)."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:85
 msgid "**DELAY Action**"
-msgstr ""
+msgstr "**DELAY actie**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:85
 msgid ""
@@ -282,20 +304,26 @@ msgid ""
 "settle, rate-limiting operations, or adding time-based spacing between "
 "actions."
 msgstr ""
+"Pauzeert de uitvoering gedurende een bepaalde tijd. Handig om apparatuur te "
+"laten stabiliseren, bewerkingen te beperken of tijdsinterval tussen acties "
+"in te bouwen."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:88
 msgid "**START Action**"
-msgstr ""
+msgstr "**START actie**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:88
 msgid ""
 "Controls when a task begins execution. Can be set to start immediately "
 "(ASAP) or at a scheduled date/time. Useful for time-based automation."
 msgstr ""
+"Hiermee wordt bepaald wanneer een taak begint met uitvoeren. Kan worden "
+"ingesteld om direct te starten (zo snel mogelijk) of op een geplande datum/"
+"tijd. Handig voor tijdsgebonden automatisering."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:91
 msgid "**SCRIPT Action**"
-msgstr ""
+msgstr "**SCRIPT actie**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:91
 msgid ""
@@ -1558,7 +1586,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:582
 msgid "Task Queue"
-msgstr ""
+msgstr "Wachtrij voor taken"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:582
 msgid ".. image:: /images/task-queue.png"
