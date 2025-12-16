@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2025-12-13 13:14+0100\n"
+"PO-Revision-Date: 2025-12-14 15:29+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -331,45 +331,58 @@ msgid ""
 "logic or operations not directly supported by INDI properties. The action "
 "monitors the script's exit code and captures stdout/stderr for logging."
 msgstr ""
+"Voert een extern script of programma uit. Dit maakt de integratie mogelijk "
+"van aangepaste logica of bewerkingen die niet direct worden ondersteund door "
+"INDI-eigenschappen. De actie bewaakt de exitcode van het script en legt "
+"stdout/stderr vast voor logboekregistratie."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:94
 msgid "Action Configuration"
-msgstr ""
+msgstr "Configuratie van actie"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:96
 msgid "All actions support common configuration options:"
-msgstr ""
+msgstr "Alle acties ondersteunen algemene configuratie-opties:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:98
 msgid "**Timeout**: Maximum time to wait for action completion (in seconds)"
 msgstr ""
+"**Time-out**: maximale wachttijd voor het voltooien van een actie (in "
+"seconden)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:99
 msgid "**Retries**: Number of retry attempts if the action fails"
 msgstr ""
+"**Opnieuw proberen**: aantal pogingen om de actie opnieuw uit te voeren als "
+"deze mislukt."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:100
 msgid "**Failure Action**: What to do if the action fails after all retries:"
 msgstr ""
+"**Actie bij mislukking**: wat te doen als de actie na alle pogingen mislukt:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:102
 msgid ""
 "**ABORT_QUEUE**: Stop the entire queue (default for critical operations)"
 msgstr ""
+"**ABORT_QUEUE**: stop de volledige wachtrij (standaard voor kritieke "
+"bewerkingen)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:103
 msgid "**CONTINUE**: Log the error but continue to the next action"
-msgstr ""
+msgstr "**CONTINUE**: registreer de fout, maar ga verder met de volgende actie"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:104
 msgid ""
 "**SKIP_TO_NEXT_TASK**: Skip remaining actions in current task and move to "
 "the next task"
 msgstr ""
+"**SKIP_TO_NEXT_TASK**: Sla de overblijvende acties over in de huidige taak "
+"en ga naar de volgende taak"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:107
 msgid "Understanding Collections"
-msgstr ""
+msgstr "Verzamelingen begrijpen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:109
 msgid ""
@@ -377,36 +390,46 @@ msgid ""
 "They provide quick-start solutions without requiring you to build queues "
 "from scratch."
 msgstr ""
+"**Verzamelingen** zijn vooraf gedefinieerde sets taken, ontworpen voor "
+"veelvoorkomende scenario's. Ze bieden snelle oplossingen zonder dat u "
+"wachtrijen helemaal zelf hoeft op te bouwen."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:111
 msgid "The system provides two collections:"
-msgstr ""
+msgstr "Het systeem levert twee verzamelingen:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:113
 msgid ""
 "**Observatory Startup**: Unparks dome, unparks mount, and opens dust cap (if "
 "applicable)"
 msgstr ""
+"**Opstartprocedure observatorium**: ontgrendel de koepel, ontgrendel de "
+"opstelling en open de stofkap (indien van toepassing)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:114
 msgid ""
 "**Observatory Shutdown**: Parks mount, parks dome, and closes dust cap (if "
 "applicable)"
 msgstr ""
+"**Afsluiting van het observatorium**: vergrendel de opstelling, vergrendel "
+"de koepel en sluit de stofkap (indien van toepassing)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:116
 msgid ""
 "Collections are loaded as complete queues, ready to execute. You can load a "
 "collection and then customize it by adding, removing, or reordering tasks."
 msgstr ""
+"Verzamelingen worden geladen als complete wachtrijen, klaar om te worden "
+"uitgevoerd. U kunt een verzameling laden en deze vervolgens aanpassen door "
+"taken toe te voegen, te verwijderen of de volgorde ervan te wijzigen."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:118
 msgid "|Task Queue Collection|"
-msgstr ""
+msgstr "|Takenwachtrijverzameling|"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:121
 msgid "Device Interface Matching"
-msgstr ""
+msgstr "Apparaatinterface komt overeen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:123
 msgid ""
@@ -414,6 +437,9 @@ msgid ""
 "Telescope, CCD, Dome, Weather). When you add a template to the queue, the "
 "system automatically presents only compatible devices."
 msgstr ""
+"Sjablonen specificeren welke INDI-apparaatinterfaces ze ondersteunen (bijv. "
+"Telescoop, CCD, Koepel, Weer). Wanneer u een sjabloon aan de wachtrij "
+"toevoegt, toont het systeem automatisch alleen compatibele apparaten."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:125
 msgid ""
@@ -421,11 +447,16 @@ msgid ""
 "A \"Set Cooling\" template requires the CCD interface - A \"Set Dome Azimuth"
 "\" template requires the Dome interface"
 msgstr ""
+"Bijvoorbeeld: - een sjabloon \"Opstelling vergrendelen\" vereist het "
+"Telescope-interface - een sjabloon \"Koeling aanzetten\" vereist het CCD-"
+"interface - een sjabloon \"Koepelazimut\" vereist het Koepel-interface"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:130
 msgid ""
 "This ensures you cannot accidentally assign incompatible devices to tasks."
 msgstr ""
+"Dit zorgt ervoor dat u niet per ongeluk incompatibele apparaten aan taken "
+"kunt toewijzen."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:132
 msgid "Getting Started"
@@ -433,132 +464,149 @@ msgstr "Hoe te beginnen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:135
 msgid "Quick Start: Loading a Collection"
-msgstr ""
+msgstr "Snelstart: een verzameling laden"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:137
 msgid ""
 "The fastest way to start using the Task Queue is to load a pre-built "
 "collection:"
 msgstr ""
+"De snelste manier om de takenwachtrij te gaan gebruiken, is door een vooraf "
+"samengestelde verzameling te laden:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:139
 msgid "Open the **Ekos Scheduler** module"
-msgstr ""
+msgstr "De module **Ekos-planner** openen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:140
 msgid ""
 "Click the **Task Queue** or **Collections** button (location depends on UI "
 "integration)"
 msgstr ""
+"Klik op de knop **Takenwachtrij** of **Verzamelingen** (de locatie is "
+"afhankelijk van de UI-integratie)."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:141
 msgid "In the Collections dialog, browse available collections:"
 msgstr ""
+"In het dialoogvenster Verzamelingen kunt u de beschikbare verzamelingen "
+"bekijken:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:143
 msgid "**Observatory Startup**: Complete startup sequence for your equipment"
 msgstr ""
+"**Opstartprocedure observatorium**: volledige opstartprocedure voor uw "
+"apparatuur"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:144
 msgid "**Observatory Shutdown**: Safe shutdown procedures"
-msgstr ""
+msgstr "**Afsluiten van het observatorium**: veilige afsluitprocedures"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:145
 msgid "**Emergency Shutdown**: Fast shutdown for weather alerts"
-msgstr ""
+msgstr "**Nooduitschakeling**: snelle afschakeling bij weerswaarschuwingen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:146
 msgid "**Camera Cooling**: Controlled camera temperature management"
-msgstr ""
+msgstr "**Camerakoeling**: gecontroleerd temperatuurbeheer van de camera"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:148
 msgid "Select a collection and click **Load**"
-msgstr ""
+msgstr "Selecteer een verzadiging en klik op **Laden**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:149
 msgid "The Queue Viewer will display all tasks in the collection"
-msgstr ""
+msgstr "De wachtrijviewer toont alle taken in de verzameling"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:150
 msgid ""
 "Review the tasks and customize if needed (see :ref:`taskqueue-building-"
 "queues`)"
 msgstr ""
+"Bekijk de taken en pas ze indien nodig aan (zie :ref:`taskqueue-building-"
+"queues`)."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:151
 msgid "Click **Start** to execute the queue"
-msgstr ""
+msgstr "Klik op **Start** om de wachtrij uit te voeren"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:154
 msgid "Adding Tasks from Templates"
-msgstr ""
+msgstr "Taken toevoegen vanuit sjablonen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:156
 msgid "To add a task to your queue:"
-msgstr ""
+msgstr "Om een ​​taak aan uw wachtrij toe te voegen:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:158
 msgid "Click the **Add from Template** button in the Queue Viewer"
-msgstr ""
+msgstr "Klik op de knop **Toevoegen vanuit sjabloon** in de wachtrijviewer"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:159
 msgid ""
 "The Template Library opens, showing available templates organized by "
 "category:"
 msgstr ""
+"De sjabloonbibliotheek wordt geopend en toont beschikbare sjablonen, "
+"georganiseerd per categorie:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:161
 msgid "**Mount**: Park, unpark."
-msgstr ""
+msgstr "**Opstelling**: vergrendelen, ontgrendelen."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:162
 msgid "**Camera**: Cooling, warming."
-msgstr ""
+msgstr "**Camera**: Koeling, verwarming."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:163
 msgid "**Dome**: Park, unpark"
-msgstr ""
+msgstr "**Koepel**: vergrendelen, ontgrendelen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:164
 msgid "**Dust Cap**: Park, unpark"
-msgstr ""
+msgstr "**Stofkap**: vergrendelen, ontgrendelen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:166
 msgid "Browse or search for the desired template"
-msgstr ""
+msgstr "Blader of zoek naar het gewenste sjabloon"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:167
 msgid "Select a template to preview its description and parameters"
 msgstr ""
+"Selecteer een sjabloon om de beschrijving en parameters ervan te bekijken"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:168
 msgid "Click **Add to Queue** or double-click the template"
-msgstr ""
+msgstr "Klik op **Toevoegen aan wachtrij** of dubbelklik op het sjabloon"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:171
 msgid "Selecting the Device"
-msgstr ""
+msgstr "Het apparaat selecteren"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:173
 msgid ""
 "After selecting a template, you'll be prompted to choose which device to use:"
 msgstr ""
+"Nadat het selecteren van een sjabloon, wordt u gevraagd welk apparaat u wilt "
+"gebruiken:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:175
 msgid "The **Device Selection** dialog appears"
-msgstr ""
+msgstr "Het dialoogvenster **Apparaatselectie** verschijnt"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:176
 msgid "Only compatible devices are shown (based on interface matching)"
 msgstr ""
+"Alleen compatibele apparaten worden getoond (op basis van interface-"
+"overeenkomst)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:177
 msgid "Select the device from the list"
-msgstr ""
+msgstr "Selecteer het apparaat uit de lijst"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:178
 msgid "Click **OK**"
-msgstr ""
+msgstr "Klik op **OK**"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:180
 msgid ""
@@ -566,102 +614,109 @@ msgid ""
 "telescope devices. If you have multiple mounts connected, choose which one "
 "this task should control."
 msgstr ""
+"Als u bijvoorbeeld de sjabloon 'Opstelling vergrendelen' hebt geselecteerd, "
+"ziet u alleen telescoopapparaten. Als u meerdere opstellingen hebt "
+"aangesloten, kiest u welke deze taak moet aansturen."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:182
 msgid "|Task Queue Select Device|"
-msgstr ""
+msgstr "|Takenwachtrij selecteer apparaat|"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:185
 msgid "Customizing Parameters"
-msgstr ""
+msgstr "Parameters aanpassen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:187
 msgid "After device selection, the **Parameter Customization** dialog opens:"
 msgstr ""
+"Na het selecteren van het apparaat wordt het dialoogvenster "
+"**Parameteraanpassing** geopend:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:189
 msgid "Review the available parameters for this template"
-msgstr ""
+msgstr "Bekijk de beschikbare parameters voor dit sjabloon"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:190
 msgid "Each parameter shows:"
-msgstr ""
+msgstr "Elke parameter toont:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:192
 msgid "**Name**: Parameter identifier"
-msgstr ""
+msgstr "**Naam**: parameter-identifier"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:193
 msgid "**Description**: What this parameter controls"
-msgstr ""
+msgstr "**Beschrijving**: wat deze parameter bestuurt"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:194
 msgid "**Default Value**: Pre-set value from the template"
-msgstr ""
+msgstr "**Standaardwaarde**: vooraf ingestelde waarde uit het sjabloon"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:195
 msgid "**Constraints**: Min/max values or allowed options"
-msgstr ""
+msgstr "**Beperkingen**: Minimale/maximale waarden of toegestane opties"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:196
 msgid "**Unit**: Measurement unit (seconds, degrees, °C, etc.)"
-msgstr ""
+msgstr "**Eenheid**: meeteenheid (seconden, graden, °C, enz.)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:198
 msgid "Modify parameters as needed:"
-msgstr ""
+msgstr "Pas de parameters naar behoefte aan:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:200
 msgid "Timeouts: Adjust based on your equipment's response time"
-msgstr ""
+msgstr "Time-outs: pas deze aan op basis van de reactietijd van uw apparatuur"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:201
 msgid "Target values: Set specific temperatures, positions, etc."
-msgstr ""
+msgstr "Doelwaarden: stel specifieke temperaturen, posities, enz. in"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:202
 msgid "Retry counts: Increase for unreliable connections"
-msgstr ""
+msgstr "Aantal herhaalpogingen: verhoogd voor onbetrouwbare verbindingen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:204
 msgid "Click **OK** to add the configured task to the queue"
 msgstr ""
+"Klik op **OK** om de geconfigureerde taak aan de wachtrij toe te voegen"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:206
 msgid "|Task Queue Customize Parameters|"
-msgstr ""
+msgstr "|Takenwachtrij aangepaste parameters|"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:208
 msgid "Common parameters you'll encounter:"
-msgstr ""
+msgstr "Veelvoorkomende parameters die u zult tegenkomen:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:210
 msgid "**timeout**: Maximum seconds to wait (default: 30-60s)"
-msgstr ""
+msgstr "**time-out**: Maximale wachttijd in seconden (standaard: 30-60s)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:211
 msgid "**retries**: Number of retry attempts (default: 2)"
-msgstr ""
+msgstr "**herhalingspogingen**: aantal herhalingspogingen (standaard: 2)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:212
 msgid "**target_temp**: Target temperature for cameras (°C)"
-msgstr ""
+msgstr "**doel_temp**: doeltemperatuur voor camera's (°C)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:213
 msgid "**settle_time**: Delay to allow equipment stabilization (seconds)"
 msgstr ""
+"**insteltijd**: vertraging om de apparatuur te laten stabiliseren (seconden)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:216
 msgid "Managing Queue Items"
-msgstr ""
+msgstr "Wachtrij-items beheren"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:218
 msgid "Once tasks are in the queue, you can manage them:"
-msgstr ""
+msgstr "Zodra taken in de wachtrij staan, kunt u ze beheren:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:221
 msgid "Select a task in the queue table"
-msgstr ""
+msgstr "Selecteer een taak in de wachtrijtabel"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:222
 msgid "Click **Move Up** or **Move Down** to change execution order"
