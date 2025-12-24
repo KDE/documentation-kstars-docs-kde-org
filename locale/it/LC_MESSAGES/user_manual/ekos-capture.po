@@ -6,14 +6,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2025-11-30 19:26+0100\n"
+"PO-Revision-Date: 2025-12-20 20:42+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../../user_manual/ekos-capture.rst:3
@@ -455,6 +455,9 @@ msgid ""
 "a limit is exceeded, Ekos shall command the appropriate action to remedy the "
 "situation as explained below."
 msgstr ""
+"Le impostazioni di limiti si applicano a tutte le immagini nella coda della "
+"sequenza. Quando si supera un limite, Ekos comanda l'azione appropriata per "
+"correggere la situazione, come spiegato di seguito."
 
 #: ../../user_manual/ekos-capture.rst:135
 msgid ""
@@ -464,6 +467,11 @@ msgid ""
 "It will automatically resume the exposure sequence again once the guiding "
 "deviation goes below this limit."
 msgstr ""
+"``Deviazione della guida``: se attivata, forza un limite di deviazione "
+"massima consentita per l'esposizione, se è utilizzata la guida automatica. "
+"Se la deviazione della guida eccede questo limite in secondi d'arco, "
+"interrompe la sequenza di esposizione. Riprende automaticamente la sequenza "
+"di esposizione una volta che la deviazione scende sotto questo limite."
 
 #: ../../user_manual/ekos-capture.rst:137
 msgid ""
@@ -476,6 +484,15 @@ msgid ""
 "operation is completed successfully, the sequence queue resumes, otherwise, "
 "the job is aborted."
 msgstr ""
+"``Messa a fuoco automatica se HFR >``: se la messa a fuoco automatica è "
+"abilitata nel :doc:`modulo della messa a fuoco <ekos-focus>` e almeno "
+"un'operazione di messa a fuoco automatica è stata completata correttamente, "
+"puoi impostare il valore massimo di HFR accettabile. Se questa opzione è "
+"abilitata quindi tra esposizioni consecutive, il valore HFR viene "
+"ricalcolato e, se per caso eccede il valore massimo di HFR accettabile, "
+"allora parte automaticamente un'operazione di messa a fuoco automatica. Se "
+"l'operazione di messa a fuoco automatica è completata correttamente, la coda "
+"della sequenza riparte, diversamente l'operazione viene interrotta."
 
 #: ../../user_manual/ekos-capture.rst:139
 msgid ""
@@ -488,6 +505,16 @@ msgid ""
 "`the alignment <ekos-align>` was used) and resumes guiding (if it was "
 "started before) and then resumes the capture process automatically."
 msgstr ""
+"``Inversione del meridiano``: se supportata dalla montatura, imposta il "
+"limite di angolo orario (in ore) prima che venga comandata una `inversione "
+"di meridiano <https://astronomy.mdodd.com/gem_movement.html>`__. Per "
+"esempio, se imposti la durata della inversione di meridiano a 0,1 ore, Ekos "
+"attenderà che la montatura passi il meridiano di 0,1 ore (6 minuti), quindi "
+"comanderà che la montatura esegua un'inversione di meridiano. Dopo "
+"completata questa operazione, Ekos riallineerà utilizzando astrometry.net "
+"(se è stato utilizzato :doc:`l'allineamento <ekos-align>`) e riprenderà la "
+"guida (se era stata avviata in precedenza), quindi riprenderà il processo di "
+"acquisizione in modo automatico."
 
 #: ../../user_manual/ekos-capture.rst:144
 #: ../../user_manual/ekos-capture.rst:400
@@ -503,6 +530,13 @@ msgid ""
 "click on the add button |image2| in the sequence queue to add it to the "
 "queue."
 msgstr ""
+"*Coda della sequenza* è l'hub principale del modulo di acquisizione di Ekos. "
+"Qui puoi progettare ed eseguire i processi utilizzando l'editor avanzato "
+"incorporato delle code delle sequenza. Per aggiungere un processo, seleziona "
+"semplicemente tutti i parametri dalle impostazioni di acquisizione e dei "
+"file come indicato sopra. Una volta selezionati i parametri desiderati, fai "
+"cli sul pulsante aggiungi |image2| nella coda della sequenza per aggiungerlo "
+"alla coda."
 
 #: ../../user_manual/ekos-capture.rst:148
 msgid "|Sequence Queue|"
@@ -522,6 +556,19 @@ msgid ""
 "progress counts are reset as well. To preview an image in KStars FITS "
 "Viewer, click the ``Preview`` button."
 msgstr ""
+"Puoi aggiungere quanti processi vuoi. Sebbene non sia strettamente "
+"necessario, è preferibile aggiungere i processi dark e flat dopo i light "
+"frame. Una volta che hai completato l'aggiunta dei processi, fai clic su "
+"``Sequenza di avvio`` |image3| per iniziare a eseguire i processi. Lo stato "
+"di un processo cambia da ``Inattiva`` a ``In corso`` a ``Completata`` una "
+"volta terminata la sequenza. La Coda della sequenza avvia automaticamente il "
+"processo successivo. Se un processo viene interrotto, può essere fatto "
+"ripartire. Per mettere in pausa una sequenza, fai clic sul pulsante della "
+"pausa |image4| ed essa sarà fermata dopo aver completato l'acquisizione in "
+"corso. Per ripristinare lo stato di tutti i processi, fai clic sul pulsante "
+"di ripristino |image5|. Tieni presente che tutti i conteggi di avanzamento "
+"delle immagini vengono reimpostati. Per eseguire l'anteprima di un'immagine "
+"nel Visore FITS di KStars FITS fai clic sul pulsante ``Anteprima``."
 
 #: ../../user_manual/ekos-capture.rst:152
 msgid ""
@@ -530,6 +577,10 @@ msgid ""
 "image6|. Please note that it will replace any current sequence queues in "
 "Ekos."
 msgstr ""
+"Le code della sequenza possono essere salvate come file XML con estensione "
+"``.esq`` (Ekos Sequence Queue). Per caricare una coda della sequenza fai "
+"clic sul pulsante di apertura dei documenti |image6|. Nota che quest'azione "
+"sostituirà qualsiasi coda della sequenza attualmente caricata in Ekos."
 
 #: ../../user_manual/ekos-capture.rst:156
 msgid ""
@@ -540,6 +591,13 @@ msgid ""
 "from where it was left off. If this default behavior is not desired, simply "
 "turn off Remember Job Progress under options."
 msgstr ""
+"**Avanzamento del processo**: Ekos è progettato per eseguire e riprendere la "
+"sequenza in più notti, se necessario. Se, dunque, l'opzione *Ricorda "
+"l'avanzamento del processo* è attivata nelle :doc:`Opzioni di Ekos <ekos>`, "
+"Ekos analizzerà il sistema di file per contare quante immagini sono state "
+"già completate e riprenderà la sequenza da dove è stata interrotta. Questo è "
+"il comportamento predefinito e, se non va bene per le tue esigenze, basta "
+"disattivare l'opzione *Ricorda l'avanzamento del processo*."
 
 #: ../../user_manual/ekos-capture.rst:158
 msgid ""
@@ -549,6 +607,12 @@ msgid ""
 "cancel a job edit, click anywhere on the empty space within the sequence "
 "queue table."
 msgstr ""
+"Per modificare un processo facci sopra doppio clic. Noterai il pulsante di "
+"aggiunta |image7| che cambia col pulsante di conferma |image8|.  Fai le "
+"modifiche necessarie nella parte sinistra del modulo CCD e, una volta "
+"terminato, fai clic sul pulsante di conferma. Per annullare la modifica di "
+"un processo, fai clic in un punto qualsiasi nello spazio vuoto all'interno "
+"della tabella della coda della sequenza."
 
 #: ../../user_manual/ekos-capture.rst:162
 msgid ""
@@ -557,6 +621,12 @@ msgid ""
 "Capture tab. However, the scheduler tab does have a Capture Sequence Editor "
 "tool that can be used to edit .esl files on disk, or create new ones."
 msgstr ""
+"**Modifica dei processi in esecuzione**: quando è in esecuzione "
+"l'acquisizione o il Pianificatore non è possibile modificare la coda della "
+"sequenza o un file .esq file sul disco utilizzando la scheda Acquisisci. "
+"Tuttavia, la scheda del pianificatore possiede un editor di sequenza "
+"acquisizione che può essere utilizzato per modificare i file .esl sul disco "
+"o crearne di nuovi."
 
 #: ../../user_manual/ekos-capture.rst:164
 msgid ""
@@ -564,6 +634,10 @@ msgid ""
 "button to start streaming. The video stream window enables recording and "
 "subframing of the video stream. For more information, check the video below:"
 msgstr ""
+"Se la tua fotocamera supporta le fonti (feed) video in diretta, puoi fare "
+"clic sul pulsante *Video in diretta* per avviare lo streaming. La finestra "
+"del flusso video abilita la registrazione e il subframing del flusso video. "
+"Per ulteriori informazioni, guarda il video riportato di seguito:"
 
 #: ../../user_manual/ekos-capture.rst:169
 msgid "Recording feature (`<https://youtu.be/qRsAqTL4ZZI>`__)"
@@ -574,6 +648,9 @@ msgid ""
 "The live view also provides a graphical overlay tool to aid in collimation. "
 "This is toggled on/off by the crosshair button."
 msgstr ""
+"La vista in diretta fornisce anche uno strumento di sovrapposizione grafica "
+"come supporto nella collimazione. Viene attivato/disattivato dal pulsante a "
+"forma di mirino."
 
 #: ../../user_manual/ekos-capture.rst:173
 msgid "|image9|"
@@ -581,7 +658,7 @@ msgstr "|image9|"
 
 #: ../../user_manual/ekos-capture.rst:175
 msgid "Collimation overlay"
-msgstr ""
+msgstr "Sovrapposizione collimazione"
 
 #: ../../user_manual/ekos-capture.rst:177
 msgid ""
@@ -591,6 +668,12 @@ msgid ""
 "its own size, offset, repetition, thickness and color (including "
 "transparency)."
 msgstr ""
+"Il pulsante delle opzioni di sovrapposizione apre una finestra di dialogo "
+"che consente la creazione flessibile e arbitraria di ellissi (inclusi i "
+"cerchi), rettangoli e linee, e anche di punti di ancoraggio che agiscono "
+"come offset di disegno globale. Ciascun elemento definito ha la sua propria "
+"dimensione, compensazione, ripetizione, spessore e colore (inclusa la "
+"trasparenza)."
 
 #: ../../user_manual/ekos-capture.rst:179
 msgid "|image10|"
@@ -598,7 +681,7 @@ msgstr "|image10|"
 
 #: ../../user_manual/ekos-capture.rst:181
 msgid "Collimation overlay options"
-msgstr ""
+msgstr "Opzioni di sovrapposizione collimazione"
 
 #: ../../user_manual/ekos-capture.rst:186
 msgid "FITS Viewer"
@@ -609,6 +692,9 @@ msgid ""
 "Captured images are displayed in KStars FITS Viewer, and also in the summary "
 "screen. Set options related to how the images are displayed in the viewer."
 msgstr ""
+"Le immagini acquisite sono visualizzate nel Visore FITS di KStars, e anche "
+"nella schermata di riepilogo. Imposta le opzioni relative a come le immagini "
+"debbano essere visualizzate nel visore."
 
 #: ../../user_manual/ekos-capture.rst:190
 msgid ""
@@ -616,12 +702,17 @@ msgid ""
 "checking this option. Note that this option is only applicable when using "
 "``Preview``, you cannot use it in batch mode sequence queue."
 msgstr ""
+"``Dark automatico``: spuntando l'opzione puoi acquisire un'immagine e "
+"sottrarre automaticamente il dark. Nota che applicabile soltanto quando usa "
+"la ``Anteprima``, non puoi usarla con la coda della sequenza in serie."
 
 #: ../../user_manual/ekos-capture.rst:192
 msgid ""
 "``Effects``: Image enhancement filter to be applied to the image after "
 "capture."
 msgstr ""
+"``Effetti``: filtro di miglioramento da applicare all'immagine dopo "
+"l'acquisizione."
 
 #: ../../user_manual/ekos-capture.rst:197
 #: ../../user_manual/ekos-capture.rst:409
@@ -644,6 +735,15 @@ msgid ""
 "caltech.edu/NuSTAR_Public/NuSTAROperationSite/file/NuSTAR-PA.pdf>`__ for "
 "various PAs."
 msgstr ""
+"In INDI ed Ekos sono supportati i rotatori di campo. L'angolo del rotatore è "
+"l'angolo grezzo riportato dal rotatore e non è necessario `l'angolo di "
+"posizione <https://en.wikipedia.org/wiki/Position_angle>`__. Un angolo di "
+"posizione uguale a *zero* indica che la parte superiore del frame (indicata "
+"da una piccola freccia) sta puntando *direttamente* al polo. L'angolo di "
+"posizione è espresso come E di N (Est di Nord), dunque 90 gradi AP indica "
+"che la *parte superiore* del frame punta 90 gradi lontano (in senso "
+"antiorario) dal polo. Consulta gli `esempi <https://nustarsoc.caltech.edu/"
+"NuSTAR_Public/NuSTAROperationSite/file/NuSTAR-PA.pdf>`__ per i vari AP."
 
 #: ../../user_manual/ekos-capture.rst:203
 msgid ""
@@ -656,10 +756,20 @@ msgid ""
 "View (FOV) indicator on the Sky Map with the PA value as you change it in "
 "the dialog."
 msgstr ""
+"Per calibrare l'Angolo di Posizione (AP), acquisisci e risolvi un'immagine "
+"nel :doc:`modulo Allinea di Ekos <ekos-align>`. All'angolo grezzo sono "
+"applicati uno *scostamento* e un *moltiplicatore* per produrre l'angolo di "
+"posizione. La finestra di dialogo Rotatore di Ekos permette il controllo "
+"diretto dell'angolo grezzo e anche dell'angolo di posizione. Lo scostamento "
+"e il moltiplicatore possono essere modificati manualmente per sincronizzare "
+"l'angolo grezzo del rotatore con l'angolo di posizione reale. Spunta "
+"``Sincronizza CDV a AP`` per ruotare l'attuale indicatore del campo di vista "
+"(CDV) sulla mappa celeste col valore AP, nel momento che lo cambi nella "
+"finestra di dialogo."
 
 #: ../../user_manual/ekos-capture.rst:208
 msgid "Rotator settings (`<https://youtu.be/V_hRPMlPjmA>`__)"
-msgstr "Impostazioni rotatore (`<https://youtu.be/V_hRPMlPjmA>`__)"
+msgstr "Impostazioni del rotatore (`<https://youtu.be/V_hRPMlPjmA>`__)"
 
 #: ../../user_manual/ekos-capture.rst:210
 msgid ""
@@ -668,10 +778,16 @@ msgid ""
 "when rotating. Therefore, for most sequences, the rotator angle is kept the "
 "same for all capture jobs."
 msgstr ""
+"A ciascun processo di acquisizione può essere assegnato un diverso angolo "
+"del rotatore, ma tieni presente che ciò causerebbe un'interruzione del "
+"processo di guida, in quanto si perderebbe l'inseguimento della stella guida "
+"durante la rotazione. Per questo motivo, per la maggior parte delle sequenze "
+"l'angolo del rotatore viene mantenuto uguale per tutti i processi di "
+"acquisizione."
 
 #: ../../user_manual/ekos-capture.rst:215
 msgid "Calibration Frames"
-msgstr ""
+msgstr "Fotogrammi di calibrazione"
 
 #: ../../user_manual/ekos-capture.rst:217
 msgid "|Calibration settings|"
@@ -689,14 +805,24 @@ msgid ""
 "then specify the duration of the flat field frame. The duration can be "
 "either manual or based on ADU calculations."
 msgstr ""
+"Per i fotogrammi flat field, puoi impostare le opzioni di calibrazione in "
+"modo da automatizzare il processo. Le opzioni di calibrazione sono pensate "
+"per facilitare l'acquisizione automatica inattesa di fotogrammi flat field. "
+"Se vuoi, puoi utilizzarla che per i frame dark e bias. Se la tua fotocamera "
+"è corredata di otturatore meccanico, allora non è necessario configurare le "
+"impostazioni di calibrazione, a meno che tu non voglia chiudere il cappuccio "
+"antipolvere in modo che non passi alcuna luce tramite il tubo ottico. Per i "
+"flat field, devi specificare la sorgente luminosa del flat field, quindi "
+"specificare la durata del fotogramma flat field. La durata può essere "
+"manuale o basata su calcoli ADU."
 
 #: ../../user_manual/ekos-capture.rst:221
 msgid "Flat Field Source"
-msgstr ""
+msgstr "Sorgente flat field"
 
 #: ../../user_manual/ekos-capture.rst:223
 msgid "``Manual``: The flat light source is manual."
-msgstr ""
+msgstr "``Manuale``: la sorgente luminosa del flat è manuale."
 
 #: ../../user_manual/ekos-capture.rst:225
 msgid ""
@@ -705,6 +831,10 @@ msgid ""
 "before proceeding. For flat frames, close the dust cap and turn on the light "
 "source."
 msgstr ""
+"``Cappuccio antipolvere con flat light integrato``: se usi un cappuccio "
+"antipolvere con sorgente luminosa integrata (es. FlipFlat). Per i frame dark "
+"e bias, chiudi il cappuccio prima di procedere. Per i flat frame, chiudi il "
+"cappuccio e accendi la sorgente luminosa."
 
 #: ../../user_manual/ekos-capture.rst:227
 msgid ""
@@ -725,19 +855,21 @@ msgstr ""
 
 #: ../../user_manual/ekos-capture.rst:231
 msgid "``Dawn/Dusk``: Currently unsupported."
-msgstr ""
+msgstr "``Alba/Crepuscolo``: attualmente non supportato."
 
 #: ../../user_manual/ekos-capture.rst:233
 msgid "Flat Field Duration"
-msgstr ""
+msgstr "Durata del flat field"
 
 #: ../../user_manual/ekos-capture.rst:235
 msgid "``Manual``: Duration is as specified in the Sequence Queue."
-msgstr ""
+msgstr "``Manuale``: durata come specificata nella Coda della sequenza."
 
 #: ../../user_manual/ekos-capture.rst:237
 msgid "``ADU``: Duration is variable until specified ADU is met."
 msgstr ""
+"``ADU``: durata variabile fino a quando non conforme all'ADU (Analog to "
+"Digital Unit) specificata."
 
 #: ../../user_manual/ekos-capture.rst:239
 msgid ""
@@ -1378,7 +1510,7 @@ msgstr "Acquisisci (`<https://youtu.be/Gz07j7VPnpc>`__)"
 
 #: ../../user_manual/ekos-capture.rst:393
 msgid "Filter Wheels (`<https://youtu.be/yfz9_UJIvLY>`__)"
-msgstr ""
+msgstr "Ruote portafiltri (`<https://youtu.be/yfz9_UJIvLY>`__)"
 
 #: ../../user_manual/ekos-capture.rst:395
 msgid "Ekos Capture"
