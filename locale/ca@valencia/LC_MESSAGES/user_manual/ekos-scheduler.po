@@ -1,16 +1,16 @@
 # Translation of kstars_docs_user_manual___ekos-scheduler.po to Catalan (Valencian)
-# Copyright (C) 2019-2025 This_file_is_part_of_KDE
+# Copyright (C) 2019-2026 This_file_is_part_of_KDE
 # Licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
 # This file is distributed under the same license as the KStars Handbook package.
 #
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Antoni Bella Pérez <antonibella5@yahoo.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Antoni Bella Pérez <antonibella5@yahoo.com>
 # SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2025-12-01 17:54+0100\n"
+"PO-Revision-Date: 2026-01-05 19:13+0100\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -393,7 +393,7 @@ msgid ""
 "``ASAP``, or when the target is near or past culmination, or at a specific "
 "time."
 msgstr ""
-"``Condicions d'inici``: les condicions que s'han de complir **abans** "
+"``Condicions de l'inici``: les condicions que s'han de complir **abans** "
 "d'iniciar la tasca del programador. Actualment, l'usuari pot seleccionar "
 "iniciar tan prompte com siga possible, ``ASAP``, o quan l'objectiu estiga a "
 "prop o més enllà de la culminació, o a un temps determinat."
@@ -956,9 +956,10 @@ msgstr ""
 "**Avís**: les condicions meteorològiques no són clares, la vista és "
 "insatisfactòria o està parcialment obstruïda, i no és adequada per a "
 "l'obtenció de les imatges. Qualsevol altre procés d'obtenció de les imatges "
-"serà suspés fins que millore el temps. L'estat meteorològic d'avís no suposa "
-"cap perill per a l'equip de l'observatori, de manera que es mantindrà "
-"operatiu. El comportament exacte davall l'estat d'avís es pot configurar."
+"serà suspés fins que millore el temps. L'avís de l'estat de la meteorologia "
+"no suposa cap perill per a l'equip de l'observatori, de manera que es "
+"mantindrà operatiu. El comportament exacte davall l'estat d'avís es pot "
+"configurar."
 
 #: ../../user_manual/ekos-scheduler.rst:530
 msgid ""
@@ -975,19 +976,24 @@ msgstr "|Scheduler Weather Settings|"
 
 #: ../../user_manual/ekos-scheduler.rst:536
 msgid "Weather monitoring can be configured in two ways:"
-msgstr ""
+msgstr "El seguiment del clima es pot configurar de dues maneres:"
 
 #: ../../user_manual/ekos-scheduler.rst:538
 msgid ""
 "**Part of the equipment profile** - A weather driver starts with the "
 "observatory equipment"
 msgstr ""
+"**Part del perfil de l'equip:** Un controlador meteorològic comença amb "
+"l'equip de l'observatori."
 
 #: ../../user_manual/ekos-scheduler.rst:539
 msgid ""
 "**Standalone INDI Safety Monitor** - An INDI Safety Monitor driver runs "
 "independently on a separate INDI server"
 msgstr ""
+"**Monitor de seguretat INDI autònom:** un controlador del monitor de "
+"seguretat INDI s'executa de manera independent en un servidor INDI "
+"independent."
 
 #: ../../user_manual/ekos-scheduler.rst:541
 msgid ""
@@ -998,6 +1004,13 @@ msgid ""
 "a shutdown if conditions are unsafe, this start-stop cycle is inefficient "
 "and potentially harmful to equipment."
 msgstr ""
+"**Important:** si no es configura cap monitor de seguretat autònom, el "
+"planificador no podrà comprovar les condicions de seguretat abans d'iniciar "
+"l'observatori. Açò significa que l'observatori podria iniciar-se en "
+"condicions insegures. Tot i que el controlador meteorològic del perfil de "
+"l'equip s'activarà després de l'inici i activarà immediatament un tancament "
+"si les condicions no són segures, este cicle d'inici i parada és ineficient "
+"i potencialment perjudicial per a l'equip."
 
 #: ../../user_manual/ekos-scheduler.rst:547
 msgid ""
@@ -1010,10 +1023,20 @@ msgid ""
 "Safety Monitor driver. This allows the scheduler to verify conditions are "
 "safe *before* starting up the observatory."
 msgstr ""
+"**Pràctica recomanada:** configureu un monitor de seguretat INDI autònom. "
+"Quan està present, sempre tindrà prioritat sobre qualsevol controlador "
+"meteorològic al perfil de l'equip per a determinar la seguretat de "
+"l'observatori. El monitor es pot configurar per a que escolte qualsevol "
+"nombre de controladors meteorològics o auxiliars (com l'UPS) que poden "
+"suposar un risc per a la seguretat del funcionament de l'observatori. "
+"Qualsevol controlador INDI que implemente la propietat estàndard "
+"«SAFETY_STATUS» d'INDI es pot afegir al controlador del monitor de "
+"seguretat. Açò permet al planificador verificar que les condicions són "
+"segures *abans* d'iniciar l'observatori."
 
 #: ../../user_manual/ekos-scheduler.rst:555
 msgid "Weather Alert Response"
-msgstr ""
+msgstr "Resposta d'alerta meteorològica"
 
 #: ../../user_manual/ekos-scheduler.rst:557
 msgid ""
@@ -1023,44 +1046,58 @@ msgid ""
 "the Ekos and INDI connections while protecting your equipment, allowing for "
 "quick resumption when conditions improve."
 msgstr ""
+"Quan les condicions meteorològiques es deterioren a l'estat d'«Alerta» "
+"durant les operacions, el programador inicia un procediment de protecció amb "
+"«tancament suau». A diferència d'un tancament complet on s'pararan tots els "
+"sistemes, un tancament suau mantín les connexions amb Ekos i INDI alhora que "
+"protegix l'equip, permetent una represa ràpida quan milloren les condicions."
 
 #: ../../user_manual/ekos-scheduler.rst:563
 msgid "**Soft Shutdown Sequence:**"
-msgstr ""
+msgstr "**Seqüència de tancament suau:**"
 
 #: ../../user_manual/ekos-scheduler.rst:565
 msgid "When a weather alert is detected:"
-msgstr ""
+msgstr "Quan es detecta una alerta meteorològica:"
 
 #: ../../user_manual/ekos-scheduler.rst:567
 msgid ""
 "A configurable delay period (default: 10 seconds) prevents reaction to "
 "momentary sensor issues"
 msgstr ""
+"Un període de retard configurable (predeterminat: 10 segons) evita la "
+"reacció a problemes momentanis del sensor."
 
 #: ../../user_manual/ekos-scheduler.rst:570
 msgid ""
 "If the alert persists, the current scheduler job is aborted (marked ABORTED, "
 "not ERROR, so it can restart later)"
 msgstr ""
+"Si l'alerta persistix, s'interromp la tasca actual del programador (marcada "
+"INTERROMPUDA, no ERROR, de manera que es puga reiniciar més avant)."
 
 #: ../../user_manual/ekos-scheduler.rst:573
 msgid ""
 "The Pre-Shutdown Queue executes to protect equipment (typically closes dust "
 "caps, parks mount, closes dome)"
 msgstr ""
+"S'executa la cua prèvia al tancament per a protegir l'equip (normalment "
+"tanca els taps per la pols, aparca la muntura i tanca la cúpula)."
 
 #: ../../user_manual/ekos-scheduler.rst:576
 msgid "Ekos and INDI remain running for faster recovery"
 msgstr ""
+"Ekos i INDI continuen en funcionament per a una recuperació més ràpida."
 
 #: ../../user_manual/ekos-scheduler.rst:578
 msgid "The scheduler enters a grace period to wait for weather improvement"
 msgstr ""
+"El programador entra en un període de gràcia per a esperar la millora de la "
+"meteorologia."
 
 #: ../../user_manual/ekos-scheduler.rst:583
 msgid "Weather Grace Period"
-msgstr ""
+msgstr "Període de gràcia meteorològic"
 
 #: ../../user_manual/ekos-scheduler.rst:585
 msgid ""
@@ -1069,30 +1106,37 @@ msgid ""
 "operations automatically resume. If the grace period expires with alert "
 "conditions still present, the job is marked as ERROR and will not restart."
 msgstr ""
+"El període de gràcia és un temps d'espera configurable durant el qual el "
+"programador supervisa les condicions meteorològiques. Si el temps millora "
+"durant este període, les operacions es reprendran automàticament. Si el "
+"període de gràcia expira amb les condicions d'alerta encara presents, la "
+"tasca es marcarà com a ERROR i no es reiniciarà."
 
 #: ../../user_manual/ekos-scheduler.rst:591
 msgid "**During the Grace Period:**"
-msgstr ""
+msgstr "**Durant el període de gràcia:**"
 
 #: ../../user_manual/ekos-scheduler.rst:593
 msgid "Equipment remains protected (mount parked, dome closed)"
-msgstr ""
+msgstr "L'equip romandrà protegit (muntura aparcada i la cúpula tancada)."
 
 #: ../../user_manual/ekos-scheduler.rst:594
 msgid "Ekos and INDI connections are maintained"
-msgstr ""
+msgstr "Es mantindran les connexions amb Ekos i INDI."
 
 #: ../../user_manual/ekos-scheduler.rst:595
 msgid "Weather status is continuously monitored"
-msgstr ""
+msgstr "Es controlarà contínuament l'estat de la meteorologia."
 
 #: ../../user_manual/ekos-scheduler.rst:596
 msgid "If weather improves to Ok, operations resume automatically"
 msgstr ""
+"Si la meteorologia millora a «BONA», les operacions es reprendran "
+"automàticament."
 
 #: ../../user_manual/ekos-scheduler.rst:597
 msgid "If period expires with Alert status, the job fails"
-msgstr ""
+msgstr "Si el període expira amb l'estat d'«Alerta», la tasca falla."
 
 #: ../../user_manual/ekos-scheduler.rst:599
 msgid "**Configuration:**"
@@ -1100,7 +1144,7 @@ msgstr "**Configuració:**"
 
 #: ../../user_manual/ekos-scheduler.rst:601
 msgid "In the Scheduler Weather Settings:"
-msgstr ""
+msgstr "En la configuració meteorològica del programador:"
 
 #: ../../user_manual/ekos-scheduler.rst:603
 msgid ""
@@ -1108,6 +1152,9 @@ msgid ""
 "initiating shutdown (default: 10). This prevents false alarms from brief "
 "sensor glitches."
 msgstr ""
+"**Retard del tancament per la meteorologia:** segons que cal esperar després "
+"de la detecció d'alerta abans d'iniciar el tancament (predeterminat: 10). "
+"Açò evita alarmes falses per errors breus del sensor."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
@@ -1115,54 +1162,71 @@ msgid ""
 "based on your local weather patterns—longer grace periods work well if "
 "alerts are typically brief."
 msgstr ""
+"**Període de gràcia meteorològic:** els minuts d'espera fins que millore el "
+"temps. Trieu-ho en funció dels vostres patrons de la meteorologia local: els "
+"períodes de gràcia més llargs funcionen bé si les alertes solen ser breus."
 
 #: ../../user_manual/ekos-scheduler.rst:614
 msgid "Automatic Weather Recovery"
-msgstr ""
+msgstr "Recuperació automàtica de la meteorologia"
 
 #: ../../user_manual/ekos-scheduler.rst:616
 msgid ""
 "When weather improves during the grace period, the scheduler automatically "
 "resumes operations:"
 msgstr ""
+"Quan la meteorologia millora durant el període de gràcia, el programador "
+"reprendrà automàticament les operacions:"
 
 #: ../../user_manual/ekos-scheduler.rst:619
 msgid "Weather status changes from Alert to Ok"
-msgstr ""
+msgstr "L'estat de la meteorologia canvia d'«Alerta» a «BONA»."
 
 #: ../../user_manual/ekos-scheduler.rst:621
 msgid ""
 "The Post-Startup Queue executes to reverse protective actions (opens dome, "
 "unparks mount, opens dust caps)"
 msgstr ""
+"La cua posterior a l'inici s'executa per a revertir les accions de protecció "
+"(obri la cúpula, desaparca la muntura i obri els taps per la pols)."
 
 #: ../../user_manual/ekos-scheduler.rst:624
 msgid "The scheduler resumes normal operation"
-msgstr ""
+msgstr "El programador reprén el funcionament normal."
 
 #: ../../user_manual/ekos-scheduler.rst:626
 msgid "The aborted job can restart if its constraints are still met"
 msgstr ""
+"La tasca interrompuda es pot reiniciar si ja es complixen les seues "
+"restriccions."
 
 #: ../../user_manual/ekos-scheduler.rst:628
 msgid "**Queue Usage During Weather Events:**"
-msgstr ""
+msgstr "**Ús de la cua durant els esdeveniments meteorològics:**"
 
 #: ../../user_manual/ekos-scheduler.rst:630
 msgid "Weather events use specific startup and shutdown queues:"
 msgstr ""
+"Els esdeveniments meteorològics utilitzen cues específiques d'inici i de "
+"tancament:"
 
 #: ../../user_manual/ekos-scheduler.rst:632
 msgid ""
 "**During Weather Shutdown**: Only Pre-Shutdown Queue executes (runs before "
 "stopping Ekos). Post-Shutdown Queue is skipped since Ekos remains running."
 msgstr ""
+"**Durant el tancament per la meteorologia:** només s'executa la cua prèvia "
+"al tancament (s'executa abans de parar Ekos). La cua posterior al tancament "
+"s'ometrà perquè Ekos continua funcionant."
 
 #: ../../user_manual/ekos-scheduler.rst:636
 msgid ""
 "**During Weather Recovery**: Only Post-Startup Queue executes (runs after "
 "devices ready). Pre-Startup Queue is skipped since Ekos never stopped."
 msgstr ""
+"**Durant la recuperació de la meteorologia:** només s'executa la cua "
+"posterior a l'inici (s'executa una vegada els dispositius estiguen "
+"preparats). La cua prèvia a l'inici s'ometrà, ja que Ekos no s'ha parat mai."
 
 #: ../../user_manual/ekos-scheduler.rst:640
 msgid ""
@@ -1170,6 +1234,9 @@ msgid ""
 "the Post-Startup queue should reverse exactly what the Pre-Shutdown queue "
 "did."
 msgstr ""
+"Les vostres cues prèvia al tancament i posterior a l'inici haurien de "
+"funcionar de manera simètrica: la cua de posterior a l'inici hauria "
+"d'invertir exactament el que haja fet la cua prèvia al tancament."
 
 #: ../../user_manual/ekos-scheduler.rst:644
 msgid "**Example Queue Design:**"
@@ -1256,7 +1323,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-scheduler.rst:688
 msgid "Startup & Shutdown Scripts"
-msgstr "Scripts durant l'inici i tancament"
+msgstr "Scripts durant l'inici i el tancament"
 
 #: ../../user_manual/ekos-scheduler.rst:692
 msgid "**NEW: Task Queue System**"
@@ -1308,8 +1375,8 @@ msgid ""
 "mount & dome before executing the shutdown script as the final procedure."
 msgstr ""
 "A causa de la singularitat de cada observatori, Ekos permet a l'usuari "
-"seleccionar els scripts d'inici i tancament. Els scripts s'ocuparan dels "
-"procediments necessaris que s'hauran de realitzar en les etapes d'inici i "
+"seleccionar els scripts d'inici i de tancament. Els scripts s'ocuparan dels "
+"procediments necessaris que s'hauran de realitzar en les etapes d'inici i de "
 "tancament. En l'inici, Ekos executarà els scripts d'inici i només procedirà "
 "amb la resta del procediment d'inici (desaparcar la cúpula/desaparcar la "
 "muntura) si l'script finalitza amb èxit. A la inversa, el procediment de "
