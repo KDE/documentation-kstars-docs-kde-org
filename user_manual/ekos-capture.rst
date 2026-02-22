@@ -238,6 +238,203 @@ For Flat Field frames, you can set calibration options in order to automate the 
 
 Before the calibration capture process is started, you can request Ekos to park the mount and/or dome. Depending on your flat source selection above, Ekos will use the appropriate flat light source before starting flat frames capture. If ADU is specified, Ekos begins by capturing a couple of preview images to establish the curve required to achieve the desired ADU count. Once an appropriate value is calculated, another capture is taken and ADU is recounted until a satisfactory value is achieved.
 
+.. _ekos-capture-scripts:
+
+Capture Scripts
+===================
+
+Ekos allows you to execute custom scripts at various stages of the capture process. These scripts can be used to automate tasks such as notifying external systems, updating observatory control software, or performing custom operations based on capture progress.
+
+Script Types
+------------
+
+There are four types of scripts that can be configured for each capture job:
+
+  -  ``Pre-Job``: Executed once before the job starts. Only runs when no images have been captured yet for this job (completed count is 0). Useful for setup tasks like enabling equipment or sending notifications.
+
+  -  ``Pre-Capture``: Executed before each individual capture. Runs every time an image is about to be captured. Useful for tasks that need to happen before every exposure.
+
+  -  ``Post-Capture``: Executed after each individual capture completes. Runs every time an image is successfully captured. Useful for tasks like copying files to backup storage, updating databases, or sending notifications.
+
+  -  ``Post-Job``: Executed once after the job completes. Runs when all requested images for the job have been captured. Useful for cleanup tasks or final notifications.
+
+Input Data Format
+-----------------
+
+When a script is executed, Ekos passes JSON-formatted data to the script via standard input (stdin). The script can read this data to obtain information about the capture job and progress.
+
+The JSON structure contains the following fields:
+
+  .. code:: json
+
+     {
+       "script_type": "PRE_CAPTURE",
+       "job": {
+         "filter": "Ha",
+         "exposure": 300.0,
+         "type": "Light",
+         "binning_x": 1,
+         "binning_y": 1,
+         "target_name": "M42"
+       },
+       "fits": {
+         "filename": "/home/user/images/M42/Light/M42_Light_Ha_001.fits",
+         "headers": {
+           "OBJECT": "M42",
+           "EXPTIME": 300.0,
+           "FILTER": "Ha"
+         }
+       },
+       "progress": {
+         "completed": 5,
+         "total": 20
+       }
+     }
+
+  -  ``script_type``: The type of script being executed. One of: ``PRE_CAPTURE``, ``POST_CAPTURE``, ``PRE_JOB``, ``POST_JOB``.
+
+  -  ``job``: Information about the current capture job:
+
+     -  ``filter``: The filter name used for this capture.
+     -  ``exposure``: Exposure duration in seconds.
+     -  ``type``: Frame type - one of ``Light``, ``Dark``, ``Bias``, ``Flat``, ``Video``, or ``None``.
+     -  ``binning_x``: Horizontal binning value.
+     -  ``binning_y``: Vertical binning value.
+     -  ``target_name``: Name of the target being imaged.
+
+  -  ``fits``: (Only available for ``POST_CAPTURE`` scripts) Information about the captured FITS file:
+
+     -  ``filename``: Full path to the captured image file.
+     -  ``headers``: FITS header key-value pairs from the captured image.
+
+  -  ``progress``: Progress information:
+
+     -  For ``POST_CAPTURE``: Progress of the current job (``completed`` / ``total`` images).
+     -  For ``POST_JOB``: Progress of the entire sequence (``completed`` / ``total`` jobs).
+
+Output and Exit Codes
+---------------------
+
+Scripts communicate their status back to Ekos through exit codes:
+
+  -  Exit code ``0``: Script completed successfully. Ekos continues with the capture process.
+
+  -  Any non-zero exit code: Script encountered an error. Ekos logs the error and may abort the capture depending on the script type.
+
+Any text printed to stdout or stderr by the script is captured and displayed in the Ekos log window. This is useful for debugging and monitoring script execution.
+
+Example Python Script
+---------------------
+
+The following example demonstrates a Python script that processes the JSON input from Ekos:
+
+  .. code:: python
+
+     #!/usr/bin/env python3
+     """
+     Example Ekos Capture Script
+     
+     This script demonstrates how to read and process JSON data
+     passed from Ekos during capture script execution.
+     """
+     
+     import sys
+     import json
+     
+     def main():
+         try:
+             # Read JSON data from stdin
+             input_data = json.loads(sys.stdin.read())
+             
+             # Extract script type and job information
+             script_type = input_data.get("script_type", "")
+             job = input_data.get("job", {})
+             
+             # Log basic job information
+             print(f"Script type: {script_type}")
+             print(f"Target: {job.get('target_name', 'Unknown')}")
+             print(f"Frame type: {job.get('type', 'Unknown')}")
+             print(f"Filter: {job.get('filter', 'None')}")
+             print(f"Exposure: {job.get('exposure', 0)} seconds")
+             print(f"Binning: {job.get('binning_x', 1)}x{job.get('binning_y', 1)}")
+             
+             # Handle different script types
+             if script_type == "POST_CAPTURE":
+                 # Access FITS file information
+                 fits = input_data.get("fits", {})
+                 filename = fits.get("filename", "")
+                 print(f"Captured file: {filename}")
+                 
+                 # Access FITS headers
+                 headers = fits.get("headers", {})
+                 if headers:
+                     print("FITS Headers:")
+                     for key, value in headers.items():
+                         print(f"  {key}: {value}")
+                 
+                 # Log progress
+                 progress = input_data.get("progress", {})
+                 completed = progress.get("completed", 0)
+                 total = progress.get("total", 0)
+                 print(f"Job progress: {completed}/{total} images")
+                 
+                 # Add your custom logic here, e.g.:
+                 # - Copy file to backup location
+                 # - Update a database
+                 # - Send a notification
+                 # - Trigger external processing
+             
+             elif script_type == "POST_JOB":
+                 # Job completed, log sequence progress
+                 progress = input_data.get("progress", {})
+                 completed = progress.get("completed", 0)
+                 total = progress.get("total", 0)
+                 print(f"Sequence progress: {completed}/{total} jobs completed")
+                 
+                 # Add your custom logic here, e.g.:
+                 # - Send completion notification
+                 # - Update observatory status
+                 # - Clean up temporary files
+             
+             # Exit with success code
+             sys.exit(0)
+             
+         except json.JSONDecodeError as e:
+             print(f"Error parsing JSON input: {e}", file=sys.stderr)
+             sys.exit(1)
+             
+         except Exception as e:
+             print(f"Error: {e}", file=sys.stderr)
+             sys.exit(1)
+     
+     if __name__ == "__main__":
+         main()
+
+.. important::
+
+  **Making Scripts Executable**: Scripts must be marked as executable before Ekos can run them. Use the following command to make a script executable:
+
+  .. code:: bash
+
+     chmod +x /path/to/your_script.py
+
+Configuration
+-------------
+
+To configure scripts for a capture job:
+
+  1. Open the Capture Module and create or edit a job in the Sequence Queue.
+
+  2. In the job settings, look for the script configuration options where you can specify the path to your script for each script type.
+
+  3. Enter the full path to your executable script for the desired script types.
+
+  4. Save the sequence queue to preserve the script configuration.
+
+.. note::
+
+  Scripts are executed on the computer running Ekos. If Ekos is running on a remote device (e.g., Stellarmate), ensure your scripts are present on that device and have appropriate permissions.
+
 .. _ekos-capture-exp-calc:
    
 Exposure Calculator
