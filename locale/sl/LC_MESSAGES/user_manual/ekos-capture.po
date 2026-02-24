@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-17 08:59+0000\n"
+"POT-Creation-Date: 2026-02-23 02:04+0000\n"
 "PO-Revision-Date: 2025-10-10 00:42+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -81,7 +81,7 @@ msgstr ""
 "*Privzeta* toleranca je 0,1 stopinje Celzija, vendar jo je mogoče "
 "prilagoditi v možnostih ``Zajemi`` pod konfiguracijo Ekos."
 
-#: ../../user_manual/ekos-capture.rst:25 ../../user_manual/ekos-capture.rst:396
+#: ../../user_manual/ekos-capture.rst:25 ../../user_manual/ekos-capture.rst:593
 msgid "Capture Settings"
 msgstr "Nastavitve zajema"
 
@@ -215,7 +215,7 @@ msgstr ""
 "(Video je na voljo na spletu na `<https://www.stellarmate.com/images/fss/"
 "videos/custom_properties.mp4>`__)"
 
-#: ../../user_manual/ekos-capture.rst:70 ../../user_manual/ekos-capture.rst:397
+#: ../../user_manual/ekos-capture.rst:70 ../../user_manual/ekos-capture.rst:594
 msgid "File Settings"
 msgstr "Nastavitve datoteke"
 
@@ -420,7 +420,7 @@ msgstr ""
 "samodejno povečala, ko bo opravilo v teku."
 
 #: ../../user_manual/ekos-capture.rst:129
-#: ../../user_manual/ekos-capture.rst:398
+#: ../../user_manual/ekos-capture.rst:595
 msgid "Limit Settings"
 msgstr "Nastavitve omejitve"
 
@@ -494,7 +494,7 @@ msgstr ""
 "postopek zajemanja."
 
 #: ../../user_manual/ekos-capture.rst:144
-#: ../../user_manual/ekos-capture.rst:400
+#: ../../user_manual/ekos-capture.rst:597
 msgid "Sequence Queue"
 msgstr "Čakalna vrsta zaporedja"
 
@@ -685,7 +685,7 @@ msgstr ""
 "``Učinki``: Filter za izboljšavo slike, ki se uporabi za sliko po zajemu."
 
 #: ../../user_manual/ekos-capture.rst:197
-#: ../../user_manual/ekos-capture.rst:409
+#: ../../user_manual/ekos-capture.rst:606
 msgid "Rotator Settings"
 msgstr "Nastavitve rotatorja"
 
@@ -861,14 +861,347 @@ msgstr ""
 "dokler ni dosežena zadovoljiva vrednost."
 
 #: ../../user_manual/ekos-capture.rst:244
+#, fuzzy
+#| msgid "Capture Settings"
+msgid "Capture Scripts"
+msgstr "Nastavitve zajema"
+
+#: ../../user_manual/ekos-capture.rst:246
+msgid ""
+"Ekos allows you to execute custom scripts at various stages of the capture "
+"process. These scripts can be used to automate tasks such as notifying "
+"external systems, updating observatory control software, or performing "
+"custom operations based on capture progress."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:249
+msgid "Script Types"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:251
+msgid ""
+"There are four types of scripts that can be configured for each capture job:"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:253
+msgid ""
+"``Pre-Job``: Executed once before the job starts. Only runs when no images "
+"have been captured yet for this job (completed count is 0). Useful for setup "
+"tasks like enabling equipment or sending notifications."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:255
+msgid ""
+"``Pre-Capture``: Executed before each individual capture. Runs every time an "
+"image is about to be captured. Useful for tasks that need to happen before "
+"every exposure."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:257
+msgid ""
+"``Post-Capture``: Executed after each individual capture completes. Runs "
+"every time an image is successfully captured. Useful for tasks like copying "
+"files to backup storage, updating databases, or sending notifications."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:259
+msgid ""
+"``Post-Job``: Executed once after the job completes. Runs when all requested "
+"images for the job have been captured. Useful for cleanup tasks or final "
+"notifications."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:262
+msgid "Input Data Format"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:264
+msgid ""
+"When a script is executed, Ekos passes JSON-formatted data to the script via "
+"standard input (stdin). The script can read this data to obtain information "
+"about the capture job and progress."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:266
+msgid "The JSON structure contains the following fields:"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:268
+msgid ""
+"{\n"
+"  \"script_type\": \"PRE_CAPTURE\",\n"
+"  \"job\": {\n"
+"    \"filter\": \"Ha\",\n"
+"    \"exposure\": 300.0,\n"
+"    \"type\": \"Light\",\n"
+"    \"binning_x\": 1,\n"
+"    \"binning_y\": 1,\n"
+"    \"target_name\": \"M42\"\n"
+"  },\n"
+"  \"fits\": {\n"
+"    \"filename\": \"/home/user/images/M42/Light/M42_Light_Ha_001.fits\",\n"
+"    \"headers\": {\n"
+"      \"OBJECT\": \"M42\",\n"
+"      \"EXPTIME\": 300.0,\n"
+"      \"FILTER\": \"Ha\"\n"
+"    }\n"
+"  },\n"
+"  \"progress\": {\n"
+"    \"completed\": 5,\n"
+"    \"total\": 20\n"
+"  }\n"
+"}"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:294
+msgid ""
+"``script_type``: The type of script being executed. One of: ``PRE_CAPTURE``, "
+"``POST_CAPTURE``, ``PRE_JOB``, ``POST_JOB``."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:296
+msgid "``job``: Information about the current capture job:"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:298
+msgid "``filter``: The filter name used for this capture."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:299
+#, fuzzy
+#| msgid "``Exposure``: Specify exposure duration in seconds."
+msgid "``exposure``: Exposure duration in seconds."
+msgstr "``Osvetlitev``: Določite trajanje osvetlitve v sekundah."
+
+#: ../../user_manual/ekos-capture.rst:300
+#, fuzzy
+#| msgid ""
+#| "``Type``: Specify the type of desired CCD frame. Options are ``Light``, "
+#| "``Dark``, ``Bias``, and ``Flat`` frames."
+msgid ""
+"``type``: Frame type - one of ``Light``, ``Dark``, ``Bias``, ``Flat``, "
+"``Video``, or ``None``."
+msgstr ""
+"``Vrsta``: Določite vrsto želenega CCD okvirja. Možnosti so ``Svetli``, "
+"``Temni``, ``Pristranski`` in ``Raven`` okvir."
+
+#: ../../user_manual/ekos-capture.rst:301
+msgid "``binning_x``: Horizontal binning value."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:302
+msgid "``binning_y``: Vertical binning value."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:303
+msgid "``target_name``: Name of the target being imaged."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:305
+msgid ""
+"``fits``: (Only available for ``POST_CAPTURE`` scripts) Information about "
+"the captured FITS file:"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:307
+msgid "``filename``: Full path to the captured image file."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:308
+msgid "``headers``: FITS header key-value pairs from the captured image."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:310
+msgid "``progress``: Progress information:"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:312
+msgid ""
+"For ``POST_CAPTURE``: Progress of the current job (``completed`` / ``total`` "
+"images)."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:313
+msgid ""
+"For ``POST_JOB``: Progress of the entire sequence (``completed`` / ``total`` "
+"jobs)."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:316
+msgid "Output and Exit Codes"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:318
+msgid "Scripts communicate their status back to Ekos through exit codes:"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:320
+msgid ""
+"Exit code ``0``: Script completed successfully. Ekos continues with the "
+"capture process."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:322
+msgid ""
+"Any non-zero exit code: Script encountered an error. Ekos logs the error and "
+"may abort the capture depending on the script type."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:324
+msgid ""
+"Any text printed to stdout or stderr by the script is captured and displayed "
+"in the Ekos log window. This is useful for debugging and monitoring script "
+"execution."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:327
+msgid "Example Python Script"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:329
+msgid ""
+"The following example demonstrates a Python script that processes the JSON "
+"input from Ekos:"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:331
+msgid ""
+"#!/usr/bin/env python3\n"
+"\"\"\"\n"
+"Example Ekos Capture Script\n"
+"\n"
+"This script demonstrates how to read and process JSON data\n"
+"passed from Ekos during capture script execution.\n"
+"\"\"\"\n"
+"\n"
+"import sys\n"
+"import json\n"
+"\n"
+"def main():\n"
+"    try:\n"
+"        # Read JSON data from stdin\n"
+"        input_data = json.loads(sys.stdin.read())\n"
+"\n"
+"        # Extract script type and job information\n"
+"        script_type = input_data.get(\"script_type\", \"\")\n"
+"        job = input_data.get(\"job\", {})\n"
+"\n"
+"        # Log basic job information\n"
+"        print(f\"Script type: {script_type}\")\n"
+"        print(f\"Target: {job.get('target_name', 'Unknown')}\")\n"
+"        print(f\"Frame type: {job.get('type', 'Unknown')}\")\n"
+"        print(f\"Filter: {job.get('filter', 'None')}\")\n"
+"        print(f\"Exposure: {job.get('exposure', 0)} seconds\")\n"
+"        print(f\"Binning: {job.get('binning_x', 1)}x{job.get('binning_y', "
+"1)}\")\n"
+"\n"
+"        # Handle different script types\n"
+"        if script_type == \"POST_CAPTURE\":\n"
+"            # Access FITS file information\n"
+"            fits = input_data.get(\"fits\", {})\n"
+"            filename = fits.get(\"filename\", \"\")\n"
+"            print(f\"Captured file: {filename}\")\n"
+"\n"
+"            # Access FITS headers\n"
+"            headers = fits.get(\"headers\", {})\n"
+"            if headers:\n"
+"                print(\"FITS Headers:\")\n"
+"                for key, value in headers.items():\n"
+"                    print(f\"  {key}: {value}\")\n"
+"\n"
+"            # Log progress\n"
+"            progress = input_data.get(\"progress\", {})\n"
+"            completed = progress.get(\"completed\", 0)\n"
+"            total = progress.get(\"total\", 0)\n"
+"            print(f\"Job progress: {completed}/{total} images\")\n"
+"\n"
+"            # Add your custom logic here, e.g.:\n"
+"            # - Copy file to backup location\n"
+"            # - Update a database\n"
+"            # - Send a notification\n"
+"            # - Trigger external processing\n"
+"\n"
+"        elif script_type == \"POST_JOB\":\n"
+"            # Job completed, log sequence progress\n"
+"            progress = input_data.get(\"progress\", {})\n"
+"            completed = progress.get(\"completed\", 0)\n"
+"            total = progress.get(\"total\", 0)\n"
+"            print(f\"Sequence progress: {completed}/{total} jobs completed"
+"\")\n"
+"\n"
+"            # Add your custom logic here, e.g.:\n"
+"            # - Send completion notification\n"
+"            # - Update observatory status\n"
+"            # - Clean up temporary files\n"
+"\n"
+"        # Exit with success code\n"
+"        sys.exit(0)\n"
+"\n"
+"    except json.JSONDecodeError as e:\n"
+"        print(f\"Error parsing JSON input: {e}\", file=sys.stderr)\n"
+"        sys.exit(1)\n"
+"\n"
+"    except Exception as e:\n"
+"        print(f\"Error: {e}\", file=sys.stderr)\n"
+"        sys.exit(1)\n"
+"\n"
+"if __name__ == \"__main__\":\n"
+"    main()"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:415
+msgid ""
+"**Making Scripts Executable**: Scripts must be marked as executable before "
+"Ekos can run them. Use the following command to make a script executable:"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:417
+msgid "chmod +x /path/to/your_script.py"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:422
+msgid "Configuration"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:424
+msgid "To configure scripts for a capture job:"
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:426
+msgid "Open the Capture Module and create or edit a job in the Sequence Queue."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:428
+msgid ""
+"In the job settings, look for the script configuration options where you can "
+"specify the path to your script for each script type."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:430
+msgid ""
+"Enter the full path to your executable script for the desired script types."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:432
+msgid "Save the sequence queue to preserve the script configuration."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:436
+msgid ""
+"Scripts are executed on the computer running Ekos. If Ekos is running on a "
+"remote device (e.g., Stellarmate), ensure your scripts are present on that "
+"device and have appropriate permissions."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:441
 msgid "Exposure Calculator"
 msgstr "Kalkulator osvetlitve"
 
-#: ../../user_manual/ekos-capture.rst:246
+#: ../../user_manual/ekos-capture.rst:443
 msgid "|Exposure calculator|"
 msgstr "|Exposure calculator|"
 
-#: ../../user_manual/ekos-capture.rst:248
+#: ../../user_manual/ekos-capture.rst:445
 msgid ""
 "The exposure calculator is an implementation of a calculation process "
 "presented by Dr. Robin Glover in 2019.  This calculation process seeks to "
@@ -889,7 +1222,7 @@ msgstr ""
 "da bi vključil učinke kvantne učinkovitosti senzorja in velikosti slikovnih "
 "pik senzorja. Trenutna implementacija KStars nima teh zmožnosti.)"
 
-#: ../../user_manual/ekos-capture.rst:250
+#: ../../user_manual/ekos-capture.rst:447
 msgid ""
 "The concept in Dr. Glover's calculation is to provide a sufficiently long "
 "exposure so that the effects of camera read-noise are overwhelmed by the "
@@ -902,7 +1235,7 @@ msgstr ""
 "ne tako dolgo osvetlitev, da bi se učinki svetlobnega onesnaženja dvignili "
 "na ravni, ki bi preglasi signal cilja."
 
-#: ../../user_manual/ekos-capture.rst:252
+#: ../../user_manual/ekos-capture.rst:449
 msgid ""
 "The implementation of this process does not consider the strength (magnitude "
 "or flux) of the intended target, nor does it consider other factors which "
@@ -922,7 +1255,7 @@ msgstr ""
 "razmer, ki lahko motijo ​​pogoje opazovanja, vdore zračnega prometa ali "
 "mimobežnih satelitov."
 
-#: ../../user_manual/ekos-capture.rst:254
+#: ../../user_manual/ekos-capture.rst:451
 msgid ""
 "Approaches to imaging can vary greatly in the selection of exposure times, "
 "and number of sub-exposures used for integration. A well accepted approach "
@@ -947,11 +1280,11 @@ msgstr ""
 "izpostavljenosti se bo razlikovala glede na to, kateri pristop slikanja je "
 "uporabljen."
 
-#: ../../user_manual/ekos-capture.rst:256
+#: ../../user_manual/ekos-capture.rst:453
 msgid "Exposure Calculator Inputs"
 msgstr "Vnosi kalkulatorja osvetlitve"
 
-#: ../../user_manual/ekos-capture.rst:258
+#: ../../user_manual/ekos-capture.rst:455
 msgid ""
 "``Sky Quality``: The Sky Quality selector sets the measurement of the "
 "magnitude per square arc-second of the background sky."
@@ -959,7 +1292,7 @@ msgstr ""
 "``Kakovost neba``: Izbirnik Kakovost neba nastavi merjenje magnitude neba v "
 "ozadju na kvadratno ločno sekundo."
 
-#: ../../user_manual/ekos-capture.rst:260
+#: ../../user_manual/ekos-capture.rst:457
 msgid ""
 "The range for Sky Quality is from 22 for the darkest skies, to 16 for the "
 "brightest (most light-polluted) skies. The magnitude scale is non-linear; it "
@@ -979,7 +1312,7 @@ msgstr ""
 "Sky Brightness <https://en.wikipedia.org/wiki/Sky_brightness>`__ `Wikipedia "
 "Light Pollution <https://en.wikipedia.org/wiki/Light_pollution>`__"
 
-#: ../../user_manual/ekos-capture.rst:262
+#: ../../user_manual/ekos-capture.rst:459
 msgid ""
 "All light scattered in the background sky is considered to be light "
 "pollution regardless of its source, so the effects of moonlight should be "
@@ -993,7 +1326,7 @@ msgstr ""
 "kakovost neba, saj lahko vlaga ali oblačnost odbijata in razpršita kateri "
 "koli vir svetlobe skozi ozračje"
 
-#: ../../user_manual/ekos-capture.rst:264
+#: ../../user_manual/ekos-capture.rst:461
 msgid ""
 "A `Sky Quality Meter (SQM) <https://en.wikipedia.org/wiki/"
 "Sky_quality_meter>`__ can provide the most accurate reading of sky quality "
@@ -1017,7 +1350,7 @@ msgstr ""
 "strani o svetlobnem onesnaženju obravnavati le kot \"najboljši možni scenarij"
 "\" za brezoblačno noč med mlajem."
 
-#: ../../user_manual/ekos-capture.rst:266
+#: ../../user_manual/ekos-capture.rst:463
 msgid ""
 "If a light pollution map value is used for the input value of SQM, but "
 "imaging will be performed with a partial moon, then a decrease in the input "
@@ -1041,7 +1374,7 @@ msgstr ""
 "malo pred polno luno (starost lune 12,4 in magnituda lune KStars = -12). "
 "Odčitek SQM v zenitu je pokazal izmerjeno vrednost SQM 15,95."
 
-#: ../../user_manual/ekos-capture.rst:268
+#: ../../user_manual/ekos-capture.rst:465
 msgid ""
 "The value of Sky Quality has a drastic impact on the calculated exposure "
 "because of the logarithmic scale involved. An image taken from a location "
@@ -1059,7 +1392,7 @@ msgstr ""
 "zelo malo svetlobnega onesnaženja (visoka vrednost kakovosti neba), lahko "
 "povzroči večurno podosvetlitev."
 
-#: ../../user_manual/ekos-capture.rst:270
+#: ../../user_manual/ekos-capture.rst:467
 msgid ""
 "``Focal Ratio``: The selector for Focal Ratio sets the value from the "
 "optical train, which is needed for the evaluation of light gathering "
@@ -1068,7 +1401,7 @@ msgstr ""
 "``Goriščno razmerje``: Izbirnik za Goriščno razmerje nastavi vrednost iz "
 "optičnega vlaka, ki je potrebna za oceno zmožnosti zbiranja svetlobe."
 
-#: ../../user_manual/ekos-capture.rst:272
+#: ../../user_manual/ekos-capture.rst:469
 msgid ""
 "The value of the focal ratio of the optic has a direct effect on the "
 "exposure calculation. A lower focal ratio is considered to be a \"faster "
@@ -1082,7 +1415,7 @@ msgstr ""
 "se bo izračun osvetlitve zmanjšal, če bo uporabljeno nižje žariščno "
 "razmerje, in povečal, če bo uporabljeno višje žariščno razmerje."
 
-#: ../../user_manual/ekos-capture.rst:274
+#: ../../user_manual/ekos-capture.rst:471
 msgid ""
 "The user might consider making a slight adjustment to the input value of the "
 "focal ratio to compensate for the efficiency or for obstructions in the "
@@ -1091,7 +1424,7 @@ msgstr ""
 "Uporabnik lahko razmisli o rahli prilagoditvi vhodne vrednosti goriščnega "
 "razmerja, da bi nadomestil učinkovitost ali ovire v optiki."
 
-#: ../../user_manual/ekos-capture.rst:276
+#: ../../user_manual/ekos-capture.rst:473
 msgid ""
 "For example, two optics of the same focal ratio, a refractor (with no "
 "obstruction) and a reflector (with a secondary mirror obstruction) would be "
@@ -1108,7 +1441,7 @@ msgstr ""
 "učinkovitost optike. Za refraktor na splošno velja, da ima izkoristek "
 "približno 94%, za reflektor pa se na splošno šteje izkoristek okoli 78%."
 
-#: ../../user_manual/ekos-capture.rst:278
+#: ../../user_manual/ekos-capture.rst:475
 msgid ""
 "An effective / adjusted focal ratio value for a refractor = Optic Focal "
 "Ratio / 0.94"
@@ -1116,7 +1449,7 @@ msgstr ""
 "Efektivna / prilagojena vrednost goriščnega razmerja za refraktor = optično "
 "goriščno razmerje / 0,94"
 
-#: ../../user_manual/ekos-capture.rst:280
+#: ../../user_manual/ekos-capture.rst:477
 msgid ""
 "An effective / adjusted focal ratio value for a reflector = Optic Focal "
 "Ratio / 0.78"
@@ -1124,7 +1457,7 @@ msgstr ""
 "Efektivna / prilagojena vrednost goriščnega razmerja za reflektor = optično "
 "goriščno razmerje / 0,78"
 
-#: ../../user_manual/ekos-capture.rst:282
+#: ../../user_manual/ekos-capture.rst:479
 msgid ""
 "These adjustments slightly increase the focal ratio, and therefore slightly "
 "reduce the computed light gathering capability considered in the calculation."
@@ -1132,7 +1465,7 @@ msgstr ""
 "Te prilagoditve nekoliko povečajo goriščno razmerje in zato nekoliko "
 "zmanjšajo izračunano zmožnost zbiranja svetlobe, upoštevano pri izračunu."
 
-#: ../../user_manual/ekos-capture.rst:284
+#: ../../user_manual/ekos-capture.rst:481
 msgid ""
 "``Filter Bandwidth``: The selector for ``Filter Bandwidth`` sets the value "
 "for the bandwidth (in nanometers), and should be reduced from the default "
@@ -1147,7 +1480,7 @@ msgstr ""
 "filtrov v optični vlak bo močno vplivala na izračun osvetlitve. Vrednost se "
 "giblje od 300 za slikanje brez filtra do 2,8 za izjemno ozkopasovni filter."
 
-#: ../../user_manual/ekos-capture.rst:286
+#: ../../user_manual/ekos-capture.rst:483
 msgid ""
 "Filters fall generally into two categories: single band, or multi-band. The "
 "bandwidth for a single band filter should be relatively easy to determine or "
@@ -1167,7 +1500,7 @@ msgstr ""
 "onesnaženje, ali filtri posebej zasnovani za uporabo na meglicah, je morda "
 "težje določiti, saj so lahko njihovi profili prenosa veliko bolj kompleksni."
 
-#: ../../user_manual/ekos-capture.rst:288
+#: ../../user_manual/ekos-capture.rst:485
 msgid ""
 "Even within the bands that filters are intended to pass, filters are not "
 "100% efficient. So a user of the calculator might wish to slightly reduce "
@@ -1183,7 +1516,7 @@ msgstr ""
 "92%, potem lahko vrednost 92 bolje predstavlja ta filter in povzroči "
 "nekoliko natančnejši izračun osvetlitve."
 
-#: ../../user_manual/ekos-capture.rst:290
+#: ../../user_manual/ekos-capture.rst:487
 msgid ""
 "The value of the filter bandwidth has an inverse effect on the exposure "
 "calculation. An unfiltered exposure would use the max value of 300 for the "
@@ -1198,7 +1531,7 @@ msgstr ""
 "najkrajši čas osvetlitve. Izjemno ozkopasovni filter (na primer pasovna "
 "širina 3 nanometrov) bo ustvaril najdaljši čas osvetlitve."
 
-#: ../../user_manual/ekos-capture.rst:292
+#: ../../user_manual/ekos-capture.rst:489
 msgid ""
 "``Camera``: The exposure calculation requires a value for the read noise of "
 "the camera. Camera read noise is an electronic noise that occurs at the "
@@ -1212,7 +1545,7 @@ msgstr ""
 "meritve pretvarja v digitalne vrednosti. Na šum pri branju ne vpliva dolžina "
 "osvetlitve."
 
-#: ../../user_manual/ekos-capture.rst:294
+#: ../../user_manual/ekos-capture.rst:491
 msgid ""
 "Camera sensors are one of two types: \"Charge Coupled Device\" (CCD) or "
 "\"Complementary Metal-Oxide Semiconductor\" (CMOS). For the exposure "
@@ -1231,7 +1564,7 @@ msgstr ""
 "spremenljivo ojačanje (ali vrednost ISO) in spremembe te nastavitve običajno "
 "povzročijo spremembo šuma branja."
 
-#: ../../user_manual/ekos-capture.rst:296
+#: ../../user_manual/ekos-capture.rst:493
 msgid ""
 "The exposure calculator relies upon the selection of a camera data file so "
 "that it can access an appropriate read noise value for use in the "
@@ -1253,7 +1586,7 @@ msgstr ""
 "namenskih kamer za astrofotografijo, večina teh kamer uporablja senzorje "
 "CMOS."
 
-#: ../../user_manual/ekos-capture.rst:298
+#: ../../user_manual/ekos-capture.rst:495
 msgid ""
 "The camera data files provided in KStars contain values which are "
 "transcribed from manufacturers technical documentation. But actual read "
@@ -1276,7 +1609,7 @@ msgstr ""
 "ustvarjanje prilagojene datoteke s podatki o kameri za uporabo s "
 "kalkulatorjem osvetlitve KStars."
 
-#: ../../user_manual/ekos-capture.rst:300
+#: ../../user_manual/ekos-capture.rst:497
 msgid ""
 "``Read Mode``: Some cameras manufactured by QHY have the capability to "
 "function in multiple modes.  These modes alter the read noise values, so the "
@@ -1292,7 +1625,7 @@ msgstr ""
 "uporabniku omogočil, da izbere tabelo načinov branja, ki bi ustrezala "
 "načinu, v katerem bo kamera delovala za slikanje."
 
-#: ../../user_manual/ekos-capture.rst:302
+#: ../../user_manual/ekos-capture.rst:499
 msgid ""
 "``Exposure Time Graph``: The calculator will present a graph of the "
 "potential exposure times determined from the inputs. In the case of CMOS "
@@ -1308,7 +1641,7 @@ msgstr ""
 "primeru kamer, ki temeljijo na CCD, bo graf preprost stolpec, ker je bralni "
 "šum senzorja CCD nespremenljiv."
 
-#: ../../user_manual/ekos-capture.rst:304
+#: ../../user_manual/ekos-capture.rst:501
 msgid ""
 "``Gain / ISO Selection``: For cameras with CMOS sensors, a Gain or ISO value "
 "can be selected. A Gain control will appear for cameras that allow a gain "
@@ -1324,7 +1657,7 @@ msgstr ""
 "indikator izbire bočno vzdolž grafa časa osvetlitve, da pokaže, kako bo "
 "izbrana vrednost ojačanja vplivala na izračunani čas osvetlitve."
 
-#: ../../user_manual/ekos-capture.rst:306
+#: ../../user_manual/ekos-capture.rst:503
 msgid ""
 "CMOS based cameras tend to have high read noise at low gain / ISO values, "
 "and the read noise diminishes as the Gain / ISO value is increased.  So a "
@@ -1341,7 +1674,7 @@ msgstr ""
 "ISO najnižje. Večja polna zmogljivost odprtine zagotavlja večji dinamični "
 "razpon na sliki."
 
-#: ../../user_manual/ekos-capture.rst:308
+#: ../../user_manual/ekos-capture.rst:505
 msgid ""
 "Selection of a gain / ISO value would be dependent upon the imaging "
 "technique being employed. When a long exposure is desired (as with 'typical' "
@@ -1361,7 +1694,7 @@ msgstr ""
 "šumu branja pri podosvetlitvah in bo verjetno boste morali izbrati visoko "
 "vrednost ojačanja/ISO."
 
-#: ../../user_manual/ekos-capture.rst:310
+#: ../../user_manual/ekos-capture.rst:507
 msgid ""
 "Some cameras may show a smooth progressive curve in the read-noise over the "
 "range of gain values, other cameras may have very pronounced steps (and "
@@ -1392,7 +1725,7 @@ msgstr ""
 "priporočljivo, da se izognete izbiri vrednosti ojačenja, ki je na stopnji "
 "šumu branja."
 
-#: ../../user_manual/ekos-capture.rst:312
+#: ../../user_manual/ekos-capture.rst:509
 msgid ""
 "When using data from camera manufacturer documentation, avoid selecting a "
 "gain near a step"
@@ -1400,23 +1733,23 @@ msgstr ""
 "Ko uporabljate podatke iz dokumentacije proizvajalca fotoaparata, se "
 "izogibajte izbiri ojačanja blizu koraka"
 
-#: ../../user_manual/ekos-capture.rst:314
+#: ../../user_manual/ekos-capture.rst:511
 msgid "|Avoid selecting gain near a step|"
 msgstr "|Avoid selecting gain near a step|"
 
-#: ../../user_manual/ekos-capture.rst:317
+#: ../../user_manual/ekos-capture.rst:514
 msgid "step"
 msgstr "korak"
 
-#: ../../user_manual/ekos-capture.rst:319
+#: ../../user_manual/ekos-capture.rst:516
 msgid "Instead, shift the gain selection away from the"
 msgstr "Namesto tega premaknite izbiro ojačanja stran od"
 
-#: ../../user_manual/ekos-capture.rst:319
+#: ../../user_manual/ekos-capture.rst:516
 msgid "|Shift gain away from such steps|"
 msgstr "|Shift gain away from such steps|"
 
-#: ../../user_manual/ekos-capture.rst:321
+#: ../../user_manual/ekos-capture.rst:518
 msgid ""
 "``Noise Increase %``: The ``'Noise Increase %'`` selector controls a factor "
 "used in Dr Glover's equation. This value will alter the relative balance "
@@ -1430,7 +1763,7 @@ msgstr ""
 "priporočal uporabo vrednosti 5 %, vendar jo je treba znižati na 2 %, če se "
 "izračunani čas osvetlitve zdi prekratek."
 
-#: ../../user_manual/ekos-capture.rst:323
+#: ../../user_manual/ekos-capture.rst:520
 msgid ""
 "The perspective of the \"increase\" is a relative increase in read-noise "
 "compared to noise from light pollution. It may seem counter-intuitive, but "
@@ -1452,7 +1785,7 @@ msgstr ""
 "ciljnega signala) pri  osvetlitvi. To učinkovito zmanjša relativni vpliv "
 "šuma branja."
 
-#: ../../user_manual/ekos-capture.rst:325
+#: ../../user_manual/ekos-capture.rst:522
 msgid ""
 "In this implementation of the calculator, the value for the 'Noise Increase "
 "%' can be set to in a very broad range to allow a user a greater range for "
@@ -1476,7 +1809,7 @@ msgstr ""
 "Podaljšanje časa osvetlitve na dolgo osvetlitev lahko povzroči čezmeren šum "
 "zaradi svetlobnega onesnaženja."
 
-#: ../../user_manual/ekos-capture.rst:327
+#: ../../user_manual/ekos-capture.rst:524
 msgid ""
 "The value selected for the 'noise increase %' is also one which is dependent "
 "upon the imaging technique being employed. When a speckle technique ('lucky "
@@ -1493,15 +1826,15 @@ msgstr ""
 "Tako bo uporabnik morda moral drastično povečati vrednost 'povišanja šuma "
 "%', da skrajša čas podosvetlitve do trajanja, ki ga zahteva ta tehnika."
 
-#: ../../user_manual/ekos-capture.rst:329
+#: ../../user_manual/ekos-capture.rst:526
 msgid "Exposure Calculator Results"
 msgstr "Rezultati kalkulatorja osvetlitve"
 
-#: ../../user_manual/ekos-capture.rst:331
+#: ../../user_manual/ekos-capture.rst:528
 msgid "``Exposure Time (sec)``: The calculated duration of an exposure."
 msgstr "``Čas osvetlitve (sek)``: Izračunano trajanje osvetlitve."
 
-#: ../../user_manual/ekos-capture.rst:333
+#: ../../user_manual/ekos-capture.rst:530
 msgid ""
 "``Pollution Electrons``: The calculated number of light pollution electrons "
 "per pixel impacting the exposure."
@@ -1509,7 +1842,7 @@ msgstr ""
 "``Elektroni onesnaženja``: Izračunano število elektronov svetlobnega "
 "onesnaženja na slikovno piko, ki vplivajo na osvetlitev."
 
-#: ../../user_manual/ekos-capture.rst:335
+#: ../../user_manual/ekos-capture.rst:532
 msgid ""
 "``Shot Noise``: The calculated noise from light pollution impacting the "
 "exposure."
@@ -1517,7 +1850,7 @@ msgstr ""
 "``Šum posnetka``: Izračunani šum zaradi svetlobnega onesnaženja, ki vpliva "
 "na osvetlitev."
 
-#: ../../user_manual/ekos-capture.rst:337
+#: ../../user_manual/ekos-capture.rst:534
 msgid ""
 "``Total Noise``: The calculated noise from both light pollution and image "
 "sensor read noise impacting the exposure."
@@ -1525,7 +1858,7 @@ msgstr ""
 "``Skupni šum``: Izračunani šum svetlobnega onesnaženja in slikovnega "
 "senzorja odčita šum, ki vpliva na osvetlitev."
 
-#: ../../user_manual/ekos-capture.rst:341
+#: ../../user_manual/ekos-capture.rst:538
 msgid ""
 "**Recognize the relationship of exposure time to total noise**: The ratio of "
 "exposure time to exposure total noise can be thought of as a measurement of "
@@ -1543,11 +1876,11 @@ msgstr ""
 "še vedno izvedljive, vendar bo za integracijo potrebno nesorazmerno večje "
 "število kratkih podosvetlitev, da se doseže slika želene kakovosti."
 
-#: ../../user_manual/ekos-capture.rst:344
+#: ../../user_manual/ekos-capture.rst:541
 msgid "Stacking / Image Integration Information"
 msgstr "Informacije o zlaganju/integraciji slike"
 
-#: ../../user_manual/ekos-capture.rst:346
+#: ../../user_manual/ekos-capture.rst:543
 msgid ""
 "The value of image stacking is that as images are stacked, the accumulation "
 "of exposure time and the data that represents the target signal is increased "
@@ -1565,7 +1898,7 @@ msgstr ""
 "podosvetlitev, vendar ima ta krivulja vse manjše rezultate, ko se poveča "
 "število integriranih podosvetlitev."
 
-#: ../../user_manual/ekos-capture.rst:348
+#: ../../user_manual/ekos-capture.rst:545
 msgid ""
 "Ideally a desired signal to noise ratio (SNR) would be used for the measure "
 "of the level of quality of an image, but the exposure calculator does not "
@@ -1592,7 +1925,7 @@ msgstr ""
 "integriranih slik iz vseh ciljev, ker moč signala (magnituda ali tok) ni del "
 "tega izračuna."
 
-#: ../../user_manual/ekos-capture.rst:350
+#: ../../user_manual/ekos-capture.rst:547
 msgid ""
 "``Table``: A table provides details for stacking based upon the number of "
 "hours planned for imaging."
@@ -1600,7 +1933,7 @@ msgstr ""
 "``Tabela``: tabela vsebuje podrobnosti za zlaganje na podlagi števila ur, "
 "načrtovanih za slikanje."
 
-#: ../../user_manual/ekos-capture.rst:352
+#: ../../user_manual/ekos-capture.rst:549
 msgid ""
 "The table provides a quick reference for finding the approximate number of "
 "sub-exposures that might be completed for a given number of hours in an "
@@ -1617,7 +1950,7 @@ msgstr ""
 "je uporabnik izbral samodejno tresenje, bo postopek slikanja porabil dodaten "
 "čas, ki ni vključen v ta izračun časa."
 
-#: ../../user_manual/ekos-capture.rst:354
+#: ../../user_manual/ekos-capture.rst:551
 msgid ""
 "The far right column of the table shows the calculated time/noise ratio of "
 "the integrated (stacked) image that would be produced."
@@ -1625,7 +1958,7 @@ msgstr ""
 "Skrajni desni stolpec tabele prikazuje izračunano razmerje med časom in "
 "šumom integrirane (zložene) slike, ki bi bila izdelana."
 
-#: ../../user_manual/ekos-capture.rst:356
+#: ../../user_manual/ekos-capture.rst:553
 msgid ""
 "``Graph``: An interactive graph allows the user to visualize the relative "
 "change in potential quality for integrated images with various counts of sub-"
@@ -1641,7 +1974,7 @@ msgstr ""
 "ponovno izračunala količino podosvetlitev, ki je potrebna za integrirano "
 "sliko, da doseže navedeno razmerje med časom in šumom."
 
-#: ../../user_manual/ekos-capture.rst:358
+#: ../../user_manual/ekos-capture.rst:555
 msgid ""
 "In the selection of a Time/Noise ratio for the calculation of the count of "
 "stacked exposures, the user might want consider the incremental change to "
@@ -1662,7 +1995,7 @@ msgstr ""
 "spremembo potencialne kakovosti, ki bo posledica seštevanja ali odštevanja "
 "ene same podosvetlitve."
 
-#: ../../user_manual/ekos-capture.rst:360
+#: ../../user_manual/ekos-capture.rst:557
 msgid ""
 "As one should expect, at the low-end of exposure counts (when a low value "
 "for the Time/Noise Ratio is input), the delta value will be relatively high, "
@@ -1680,7 +2013,7 @@ msgstr ""
 "bo padla, kar pomeni, da je z dodajanjem več podosvetlitev mogoče pridobiti "
 "manj."
 
-#: ../../user_manual/ekos-capture.rst:362
+#: ../../user_manual/ekos-capture.rst:559
 msgid ""
 "The default value for the time / noise ratio is set to 80. This value should "
 "not be construed in any way as an optimal value; it was simply chosen as a "
@@ -1698,7 +2031,7 @@ msgstr ""
 "izračunane podosvetlitve, 3) omejitve časa za slikanje in obdelavo in "
 "omejitve zmogljivosti shranjevanja slik."
 
-#: ../../user_manual/ekos-capture.rst:364
+#: ../../user_manual/ekos-capture.rst:561
 msgid ""
 "For a strong target, (example, Orion Nebula with magnitude 4), would provide "
 "a relatively strong signal. On such a target, the value for the Time/Noise "
@@ -1714,7 +2047,7 @@ msgstr ""
 "(na primer Thorjeva čelada, magnituda 11) bo morda zahtevala višje razmerje "
 "med časom in šumom za kompenzacijo razmeroma šibkega ciljnega signala."
 
-#: ../../user_manual/ekos-capture.rst:366
+#: ../../user_manual/ekos-capture.rst:563
 msgid ""
 "Depending on the various inputs and imaging conditions, the potential "
 "quality of a sub-exposure can vary greatly. In poor sky quality with little "
@@ -1750,7 +2083,7 @@ msgstr ""
 "razmerja med časom in šumom močno izboljšal potencialno kakovost integrirane "
 "slike."
 
-#: ../../user_manual/ekos-capture.rst:368
+#: ../../user_manual/ekos-capture.rst:565
 msgid ""
 "Part of the value of using a Time/Noise ratio as the input for the "
 "calculation of the required number of sub-exposures is that it should tend "
@@ -1768,7 +2101,7 @@ msgstr ""
 "kratkih osvetlitev, da se doseže dano razmerje med časom in šumom na "
 "integrirani sliki."
 
-#: ../../user_manual/ekos-capture.rst:370
+#: ../../user_manual/ekos-capture.rst:567
 msgid ""
 "As an example, consider the calculation of the number of sub-exposures "
 "required when two sub-exposures times were compared: a 300 second sub-"
@@ -1791,7 +2124,7 @@ msgstr ""
 "kakovosti kot 30-sekundna osvetlitev. Za integracijo v obeh primerih bomo "
 "zahtevali privzeto razmerje med časom in šumom 80."
 
-#: ../../user_manual/ekos-capture.rst:372
+#: ../../user_manual/ekos-capture.rst:569
 msgid ""
 "For an integration using the 300 second sub-exposures we find that 34 sub-"
 "exposures are required to achieve a time/noise ratio of 80. So a total "
@@ -1801,11 +2134,11 @@ msgstr ""
 "potrebnih 34 podosvetlitev, da se doseže razmerje med časom in šumom 80. "
 "Torej je potreben skupni integracijski čas 2,83 ure."
 
-#: ../../user_manual/ekos-capture.rst:374
+#: ../../user_manual/ekos-capture.rst:571
 msgid "|300 Second sub-exposure|"
 msgstr "|300 Second sub-exposure|"
 
-#: ../../user_manual/ekos-capture.rst:376
+#: ../../user_manual/ekos-capture.rst:573
 msgid ""
 "For an integration using the 30 second sub-exposures we find that 637 sub-"
 "exposures would be required to achieve a time/noise ratio of 80. So a total "
@@ -1817,164 +2150,164 @@ msgstr ""
 "potreben skupni čas integracije 5,31 ure s temi krajšimi osvetlitvami, da bi "
 "dosegli enak čas/ razmerje šuma v integrirani sliki."
 
-#: ../../user_manual/ekos-capture.rst:378
+#: ../../user_manual/ekos-capture.rst:575
 msgid "|30 Second sub-exposure|"
 msgstr "|30 Second sub-exposure|"
 
-#: ../../user_manual/ekos-capture.rst:383
+#: ../../user_manual/ekos-capture.rst:580
 msgid "Video Tutorials"
 msgstr "Video vadnice"
 
-#: ../../user_manual/ekos-capture.rst:388
+#: ../../user_manual/ekos-capture.rst:585
 msgid "Capture (`<https://youtu.be/Gz07j7VPnpc>`__)"
 msgstr "Zajem (`<https://youtu.be/Gz07j7VPnpc>`__)"
 
-#: ../../user_manual/ekos-capture.rst:393
+#: ../../user_manual/ekos-capture.rst:590
 msgid "Filter Wheels (`<https://youtu.be/yfz9_UJIvLY>`__)"
 msgstr "Kolesa filtra (`<https://youtu.be/yfz9_UJIvLY>`__)"
 
-#: ../../user_manual/ekos-capture.rst:395
+#: ../../user_manual/ekos-capture.rst:592
 msgid "Ekos Capture"
 msgstr "Ekos Capture"
 
-#: ../../user_manual/ekos-capture.rst:395
+#: ../../user_manual/ekos-capture.rst:592
 msgid ".. image:: /images/ekos_capture.png"
 msgstr ".. image:: /images/ekos_capture.png"
 
-#: ../../user_manual/ekos-capture.rst:396
+#: ../../user_manual/ekos-capture.rst:593
 msgid ".. image:: /images/capture_settings.png"
 msgstr ".. image:: /images/capture_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:397
+#: ../../user_manual/ekos-capture.rst:594
 msgid ".. image:: /images/file_settings.png"
 msgstr ".. image:: /images/file_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:398
+#: ../../user_manual/ekos-capture.rst:595
 msgid ".. image:: /images/limit_settings.png"
 msgstr ".. image:: /images/limit_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:399
+#: ../../user_manual/ekos-capture.rst:596
 msgid "image2"
 msgstr "image2"
 
-#: ../../user_manual/ekos-capture.rst:399
-#: ../../user_manual/ekos-capture.rst:405
+#: ../../user_manual/ekos-capture.rst:596
+#: ../../user_manual/ekos-capture.rst:602
 msgid ".. image:: /images/list-add.png"
 msgstr ".. image:: /images/list-add.png"
 
-#: ../../user_manual/ekos-capture.rst:400
+#: ../../user_manual/ekos-capture.rst:597
 msgid ".. image:: /images/sequence_settings.png"
 msgstr ".. image:: /images/sequence_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:401
+#: ../../user_manual/ekos-capture.rst:598
 msgid "image3"
 msgstr "image3"
 
-#: ../../user_manual/ekos-capture.rst:401
+#: ../../user_manual/ekos-capture.rst:598
 msgid ".. image:: /images/media-playback-start.png"
 msgstr ".. image:: /images/media-playback-start.png"
 
-#: ../../user_manual/ekos-capture.rst:402
+#: ../../user_manual/ekos-capture.rst:599
 msgid "image4"
 msgstr "image4"
 
-#: ../../user_manual/ekos-capture.rst:402
+#: ../../user_manual/ekos-capture.rst:599
 msgid ".. image:: /images/media-playback-pause.png"
 msgstr ".. image:: /images/media-playback-pause.png"
 
-#: ../../user_manual/ekos-capture.rst:403
+#: ../../user_manual/ekos-capture.rst:600
 msgid "image5"
 msgstr "image5"
 
-#: ../../user_manual/ekos-capture.rst:403
+#: ../../user_manual/ekos-capture.rst:600
 msgid ".. image:: /images/view-refresh.png"
 msgstr ".. image:: /images/view-refresh.png"
 
-#: ../../user_manual/ekos-capture.rst:404
+#: ../../user_manual/ekos-capture.rst:601
 msgid "image6"
 msgstr "image6"
 
-#: ../../user_manual/ekos-capture.rst:404
+#: ../../user_manual/ekos-capture.rst:601
 msgid ".. image:: /images/document-open.png"
 msgstr ".. image:: /images/document-open.png"
 
-#: ../../user_manual/ekos-capture.rst:405
+#: ../../user_manual/ekos-capture.rst:602
 msgid "image7"
 msgstr "image7"
 
-#: ../../user_manual/ekos-capture.rst:406
+#: ../../user_manual/ekos-capture.rst:603
 msgid "image8"
 msgstr "image8"
 
-#: ../../user_manual/ekos-capture.rst:406
+#: ../../user_manual/ekos-capture.rst:603
 msgid ".. image:: /images/dialog-ok-apply.png"
 msgstr ".. image:: /images/dialog-ok-apply.png"
 
-#: ../../user_manual/ekos-capture.rst:407
+#: ../../user_manual/ekos-capture.rst:604
 msgid "image9"
 msgstr "image9"
 
-#: ../../user_manual/ekos-capture.rst:407
+#: ../../user_manual/ekos-capture.rst:604
 msgid ".. image:: /images/ekos_live_overlay.png"
 msgstr ".. image:: /images/ekos_live_overlay.png"
 
-#: ../../user_manual/ekos-capture.rst:408
+#: ../../user_manual/ekos-capture.rst:605
 msgid "image10"
 msgstr "image10"
 
-#: ../../user_manual/ekos-capture.rst:408
+#: ../../user_manual/ekos-capture.rst:605
 msgid ".. image:: /images/ekos_live_overlay_options.png"
 msgstr ".. image:: /images/ekos_live_overlay_options.png"
 
-#: ../../user_manual/ekos-capture.rst:409
+#: ../../user_manual/ekos-capture.rst:606
 msgid ".. image:: /images/ekos_rotator_settings.png"
 msgstr ".. image:: /images/ekos_rotator_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:410
+#: ../../user_manual/ekos-capture.rst:607
 msgid "Calibration settings"
 msgstr "Nastavitve kalibracije"
 
-#: ../../user_manual/ekos-capture.rst:410
+#: ../../user_manual/ekos-capture.rst:607
 msgid ".. image:: /images/calibration_settings.png"
 msgstr ".. image:: /images/calibration_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:411
+#: ../../user_manual/ekos-capture.rst:608
 msgid "Exposure calculator"
 msgstr "Kalkulator osvetlitve"
 
-#: ../../user_manual/ekos-capture.rst:411
+#: ../../user_manual/ekos-capture.rst:608
 msgid ".. image:: /images/exposure-calculator.png"
 msgstr ".. image:: /images/exposure-calculator.png"
 
-#: ../../user_manual/ekos-capture.rst:412
+#: ../../user_manual/ekos-capture.rst:609
 msgid "Avoid selecting gain near a step"
 msgstr "Izogibajte se izbiri ojačanja blizu koraka"
 
-#: ../../user_manual/ekos-capture.rst:412
+#: ../../user_manual/ekos-capture.rst:609
 msgid ".. image:: /images/exposurecalculation_gain_at_step-avoid.png"
 msgstr ".. image:: /images/exposurecalculation_gain_at_step-avoid.png"
 
-#: ../../user_manual/ekos-capture.rst:413
+#: ../../user_manual/ekos-capture.rst:610
 msgid "Shift gain away from such steps"
 msgstr "Zamaknite ojačitev od takih korakov"
 
-#: ../../user_manual/ekos-capture.rst:413
+#: ../../user_manual/ekos-capture.rst:610
 msgid ".. image:: /images/exposurecalculation_gain_at_step-shift.png"
 msgstr ".. image:: /images/exposurecalculation_gain_at_step-shift.png"
 
-#: ../../user_manual/ekos-capture.rst:414
+#: ../../user_manual/ekos-capture.rst:611
 msgid "300 Second sub-exposure"
 msgstr "300 sekundna podosvetlitev"
 
-#: ../../user_manual/ekos-capture.rst:414
+#: ../../user_manual/ekos-capture.rst:611
 msgid ".. image:: /images/exposurecalculation-example_subexp300.png"
 msgstr ".. image:: /images/exposurecalculation-example_subexp300.png"
 
-#: ../../user_manual/ekos-capture.rst:415
+#: ../../user_manual/ekos-capture.rst:612
 msgid "30 Second sub-exposure"
 msgstr "30 sekundna podosvetlitev"
 
-#: ../../user_manual/ekos-capture.rst:415
+#: ../../user_manual/ekos-capture.rst:612
 msgid ".. image:: /images/exposurecalculation-example_subexp30.png"
 msgstr ".. image:: /images/exposurecalculation-example_subexp30.png"
 
