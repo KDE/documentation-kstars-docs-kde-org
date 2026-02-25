@@ -1,19 +1,19 @@
 #
-# SPDX-FileCopyrightText: 2019, 2021, 2022, 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2019, 2021, 2022, 2023, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 # Jaap Woldringh <jjhwoldringh@kde.nl>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-23 02:04+0000\n"
-"PO-Revision-Date: 2025-07-16 12:30+0200\n"
+"PO-Revision-Date: 2026-02-23 11:32+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../user_manual/ekos-capture.rst:3
@@ -333,7 +333,7 @@ msgid ""
 msgstr ""
 "``Bladerknop in map``: opent een bladerdialoog om een selectie van de "
 "locatie van een map te bieden die gebruikt kan worden in de "
-"formaattekenreeks. Te gebruiken bij de eerste definitie van een opnamejob."
+"formaattekenreeks. Te gebruiken bij de eerste definitie van een opnametaak."
 
 #: ../../user_manual/ekos-capture.rst:104
 msgid ""
@@ -873,10 +873,8 @@ msgstr ""
 "verkregen."
 
 #: ../../user_manual/ekos-capture.rst:244
-#, fuzzy
-#| msgid "Capture Settings"
 msgid "Capture Scripts"
-msgstr "Opname-instellingen"
+msgstr "Scripts voor opnemen"
 
 #: ../../user_manual/ekos-capture.rst:246
 msgid ""
@@ -885,15 +883,22 @@ msgid ""
 "external systems, updating observatory control software, or performing "
 "custom operations based on capture progress."
 msgstr ""
+"Met Ekos kunt u aangepaste scripts uitvoeren in verschillende fasen van het "
+"opnameproces. Deze scripts kunnen worden gebruikt om taken te automatiseren, "
+"zoals het informeren van externe systemen, het bijwerken van de "
+"besturingssoftware van het observatorium of het uitvoeren van aangepaste "
+"bewerkingen op basis van de voortgang van de opname."
 
 #: ../../user_manual/ekos-capture.rst:249
 msgid "Script Types"
-msgstr ""
+msgstr "Typen scripts"
 
 #: ../../user_manual/ekos-capture.rst:251
 msgid ""
 "There are four types of scripts that can be configured for each capture job:"
 msgstr ""
+"Er zijn vier soorten scripts die voor elke opnametaak geconfigureerd kunnen "
+"worden:"
 
 #: ../../user_manual/ekos-capture.rst:253
 msgid ""
@@ -901,6 +906,10 @@ msgid ""
 "have been captured yet for this job (completed count is 0). Useful for setup "
 "tasks like enabling equipment or sending notifications."
 msgstr ""
+"``Pre-Job``: wordt eenmaal uitgevoerd voordat de taak start. Wordt alleen "
+"uitgevoerd als er nog geen afbeeldingen zijn vastgelegd voor deze taak "
+"(voltooide teller is 0). Handig voor insteltaken zoals het inschakelen van "
+"apparatuur of het verzenden van meldingen."
 
 #: ../../user_manual/ekos-capture.rst:255
 msgid ""
@@ -908,6 +917,9 @@ msgid ""
 "image is about to be captured. Useful for tasks that need to happen before "
 "every exposure."
 msgstr ""
+"``Pre-Capture``: wordt uitgevoerd vóór elke afzonderlijke opname. Wordt elke "
+"keer uitgevoerd wanneer een afbeelding op het punt staat te worden "
+"vastgelegd. Handig voor taken die moeten plaatsvinden vóór elke opname."
 
 #: ../../user_manual/ekos-capture.rst:257
 msgid ""
@@ -915,6 +927,11 @@ msgid ""
 "every time an image is successfully captured. Useful for tasks like copying "
 "files to backup storage, updating databases, or sending notifications."
 msgstr ""
+"``Post-Capture``: wordt uitgevoerd nadat elke individuele opname is "
+"voltooid. Wordt uitgevoerd elke keer dat een afbeelding succesvol is "
+"vastgelegd. Handig voor taken zoals het kopiëren van bestanden naar "
+"reservekopie-opslag, het bijwerken van databases of het verzenden van "
+"meldingen."
 
 #: ../../user_manual/ekos-capture.rst:259
 msgid ""
@@ -922,10 +939,13 @@ msgid ""
 "images for the job have been captured. Useful for cleanup tasks or final "
 "notifications."
 msgstr ""
+"``Post-Job``: Wordt eenmaal uitgevoerd nadat de taak is voltooid. Wordt "
+"uitgevoerd wanneer alle gevraagde afbeeldingen voor de taak zijn vastgelegd. "
+"Handig voor opruimtaken of eindmeldingen."
 
 #: ../../user_manual/ekos-capture.rst:262
 msgid "Input Data Format"
-msgstr ""
+msgstr "Invoerformaat van gegevens"
 
 #: ../../user_manual/ekos-capture.rst:264
 msgid ""
@@ -933,10 +953,14 @@ msgid ""
 "standard input (stdin). The script can read this data to obtain information "
 "about the capture job and progress."
 msgstr ""
+"Wanneer een script wordt uitgevoerd, geeft Ekos JSON-geformatteerde gegevens "
+"door aan het script via de standaardinvoer (stdin). Het script kan deze "
+"gegevens lezen om informatie te verkrijgen over de opnametaak en de "
+"voortgang ervan."
 
 #: ../../user_manual/ekos-capture.rst:266
 msgid "The JSON structure contains the following fields:"
-msgstr ""
+msgstr "De JSON-structuur bevat de volgende velden:"
 
 #: ../../user_manual/ekos-capture.rst:268
 msgid ""
@@ -964,100 +988,131 @@ msgid ""
 "  }\n"
 "}"
 msgstr ""
+"{\n"
+"  \"script_type\": \"PRE_CAPTURE\",\n"
+"  \"job\": {\n"
+"    \"filter\": \"Ha\",\n"
+"    \"exposure\": 300.0,\n"
+"    \"type\": \"Light\",\n"
+"    \"binning_x\": 1,\n"
+"    \"binning_y\": 1,\n"
+"    \"target_name\": \"M42\"\n"
+"  },\n"
+"  \"fits\": {\n"
+"    \"filename\": \"/home/user/images/M42/Light/M42_Light_Ha_001.fits\",\n"
+"    \"headers\": {\n"
+"      \"OBJECT\": \"M42\",\n"
+"      \"EXPTIME\": 300.0,\n"
+"      \"FILTER\": \"Ha\"\n"
+"    }\n"
+"  },\n"
+"  \"progress\": {\n"
+"    \"completed\": 5,\n"
+"    \"total\": 20\n"
+"  }\n"
+"}"
 
 #: ../../user_manual/ekos-capture.rst:294
 msgid ""
 "``script_type``: The type of script being executed. One of: ``PRE_CAPTURE``, "
 "``POST_CAPTURE``, ``PRE_JOB``, ``POST_JOB``."
 msgstr ""
+"``script_type``: het type script dat wordt uitgevoerd. Een van: "
+"``PRE_CAPTURE``, ``POST_CAPTURE``, ``PRE_JOB``, ``POST_JOB``."
 
 #: ../../user_manual/ekos-capture.rst:296
 msgid "``job``: Information about the current capture job:"
-msgstr ""
+msgstr "``job``: informatie over de huidige opnametaak:"
 
 #: ../../user_manual/ekos-capture.rst:298
 msgid "``filter``: The filter name used for this capture."
-msgstr ""
+msgstr "``filter``: de filternaam gebruikt voor deze opname."
 
 #: ../../user_manual/ekos-capture.rst:299
-#, fuzzy
-#| msgid "``Exposure``: Specify exposure duration in seconds."
 msgid "``exposure``: Exposure duration in seconds."
-msgstr "``Belichting``: Geef belichtingstijd op in seconden."
+msgstr "``belichting``: belichtingstijd in seconden."
 
 #: ../../user_manual/ekos-capture.rst:300
-#, fuzzy
-#| msgid ""
-#| "``Type``: Specify the type of desired CCD frame. Options are ``Light``, "
-#| "``Dark``, ``Bias``, and ``Flat`` frames."
 msgid ""
 "``type``: Frame type - one of ``Light``, ``Dark``, ``Bias``, ``Flat``, "
 "``Video``, or ``None``."
 msgstr ""
-"``Type``: Specificeer het type van gewenst CCD-frame. Opties zijn ``Light``, "
-"``Dark``, ``Bias`` en ``Flat`` frames."
+"``type``: type van frame - een van ``Light``, ``Dark``, ``Bias``, ``Flat``, "
+"``Video`` of `None``."
 
 #: ../../user_manual/ekos-capture.rst:301
 msgid "``binning_x``: Horizontal binning value."
-msgstr ""
+msgstr "``binning_x``: horizontale binning waarde."
 
 #: ../../user_manual/ekos-capture.rst:302
 msgid "``binning_y``: Vertical binning value."
-msgstr ""
+msgstr "``binning_y``: verticale binning waarde."
 
 #: ../../user_manual/ekos-capture.rst:303
 msgid "``target_name``: Name of the target being imaged."
-msgstr ""
+msgstr "``target_name``: naam van het doel dat wordt opgenomen."
 
 #: ../../user_manual/ekos-capture.rst:305
 msgid ""
 "``fits``: (Only available for ``POST_CAPTURE`` scripts) Information about "
 "the captured FITS file:"
 msgstr ""
+"``fits``: (alleen beschikbaar voor ``POST_CAPTURE`` scripts) informatie over "
+"het opgenomen FITS-bestand:"
 
 #: ../../user_manual/ekos-capture.rst:307
 msgid "``filename``: Full path to the captured image file."
-msgstr ""
+msgstr "``filename``: volledige pad naar het opgenomen afbeeldingsbestand."
 
 #: ../../user_manual/ekos-capture.rst:308
 msgid "``headers``: FITS header key-value pairs from the captured image."
 msgstr ""
+"``headers``: FITS-header sleutel-waardeparen van de opgenomen afbeelding."
 
 #: ../../user_manual/ekos-capture.rst:310
 msgid "``progress``: Progress information:"
-msgstr ""
+msgstr "``progress``: voortgangsinformatie:"
 
 #: ../../user_manual/ekos-capture.rst:312
 msgid ""
 "For ``POST_CAPTURE``: Progress of the current job (``completed`` / ``total`` "
 "images)."
 msgstr ""
+"Voor ``POST_CAPTURE``: voorgang van de huidige taak (``voltooid`` / "
+"``totaal`` afbeeldingen)."
 
 #: ../../user_manual/ekos-capture.rst:313
 msgid ""
 "For ``POST_JOB``: Progress of the entire sequence (``completed`` / ``total`` "
 "jobs)."
 msgstr ""
+"Voor ``POST_JOB``: voortgang van de gehele reeks (``voltooid`` / ``totaal`` "
+"taken)."
 
 #: ../../user_manual/ekos-capture.rst:316
 msgid "Output and Exit Codes"
-msgstr ""
+msgstr "Uitvoer en afsluitcode"
 
 #: ../../user_manual/ekos-capture.rst:318
 msgid "Scripts communicate their status back to Ekos through exit codes:"
-msgstr ""
+msgstr "Scripts communiceren hun status terug aan Ekos via afsluitcodes:"
 
 #: ../../user_manual/ekos-capture.rst:320
 msgid ""
 "Exit code ``0``: Script completed successfully. Ekos continues with the "
 "capture process."
 msgstr ""
+"Afsluitcode ``0``: script met succes voltooid. Ekos gaat door met het "
+"opnameproces."
 
 #: ../../user_manual/ekos-capture.rst:322
 msgid ""
 "Any non-zero exit code: Script encountered an error. Ekos logs the error and "
 "may abort the capture depending on the script type."
 msgstr ""
+"Elke afsluitcode die niet nul is: het script heeft een fout ondervonden. "
+"Ekos registreert de fout en kan de opname afbreken, afhankelijk van het "
+"scripttype."
 
 #: ../../user_manual/ekos-capture.rst:324
 msgid ""
@@ -1065,16 +1120,21 @@ msgid ""
 "in the Ekos log window. This is useful for debugging and monitoring script "
 "execution."
 msgstr ""
+"Alle tekst die door het script naar stdout of stderr wordt gestuurd, wordt "
+"vastgelegd en weergegeven in het Ekos-logvenster. Dit is handig voor het "
+"debuggen en bewaken van de scriptuitvoering."
 
 #: ../../user_manual/ekos-capture.rst:327
 msgid "Example Python Script"
-msgstr ""
+msgstr "Voorbeeld Pythonscript"
 
 #: ../../user_manual/ekos-capture.rst:329
 msgid ""
 "The following example demonstrates a Python script that processes the JSON "
 "input from Ekos:"
 msgstr ""
+"Het volgende voorbeeld laat een Python-script zien dat de JSON-invoer van "
+"Ekos verwerkt:"
 
 #: ../../user_manual/ekos-capture.rst:331
 msgid ""
@@ -1160,43 +1220,133 @@ msgid ""
 "if __name__ == \"__main__\":\n"
 "    main()"
 msgstr ""
+"#!/usr/bin/env python3\n"
+"\"\"\"\n"
+"Voorbeeld Ekos opnamescript\n"
+"\n"
+"Dit script demonstreert hoe de proces-JSON gegevens doorgegeven uit\n"
+"Ekos tijdens het uitvoeren van het opnamescript wordt gelezen en verwerkt.\n"
+"\"\"\"\n"
+"\n"
+"import sys\n"
+"import json\n"
+"\n"
+"def main():\n"
+"    try:\n"
+"        # Lees JSON-gegevens van stdin\n"
+"        input_data = json.loads(sys.stdin.read())\n"
+"\n"
+"        # Extraheer type script en taakinformatie\n"
+"        script_type = input_data.get(\"script_type\", \"\")\n"
+"        job = input_data.get(\"job\", {})\n"
+"\n"
+"        # Log basis taakinformatie\n"
+"        print(f\"Script type: {script_type}\")\n"
+"        print(f\"Target: {job.get('target_name', 'Unknown')}\")\n"
+"        print(f\"Frame type: {job.get('type', 'Unknown')}\")\n"
+"        print(f\"Filter: {job.get('filter', 'None')}\")\n"
+"        print(f\"Exposure: {job.get('exposure', 0)} seconds\")\n"
+"        print(f\"Binning: {job.get('binning_x', 1)}x{job.get('binning_y', "
+"1)}\")\n"
+"\n"
+"        # Behandel verschillende typen scripts\n"
+"        if script_type == \"POST_CAPTURE\":\n"
+"            # Haal FITS-bestandsinformatie op\n"
+"            fits = input_data.get(\"fits\", {})\n"
+"            filename = fits.get(\"filename\", \"\")\n"
+"            print(f\"Captured file: {filename}\")\n"
+"\n"
+"            # Haal FITS-headers op\n"
+"            headers = fits.get(\"headers\", {})\n"
+"            if headers:\n"
+"                print(\"FITS Headers:\")\n"
+"                for key, value in headers.items():\n"
+"                    print(f\"  {key}: {value}\")\n"
+"\n"
+"            # Log voortgang\n"
+"            progress = input_data.get(\"progress\", {})\n"
+"            completed = progress.get(\"completed\", 0)\n"
+"            total = progress.get(\"total\", 0)\n"
+"            print(f\"Job progress: {completed}/{total} images\")\n"
+"\n"
+"            # voeg uw aangepaste logica hier in, bijv.:\n"
+"            # - Kopieer bestand naar locatie van reservekopie\n"
+"            # - Werk een database bij\n"
+"            # - Stuur een melding\n"
+"            # - Start een extern proces\n"
+"\n"
+"        elif script_type == \"POST_JOB\":\n"
+"            # Taak voltooid, log voortgang van de reeks\n"
+"            progress = input_data.get(\"progress\", {})\n"
+"            completed = progress.get(\"completed\", 0)\n"
+"            total = progress.get(\"total\", 0)\n"
+"            print(f\"Sequence progress: {completed}/{total} jobs completed"
+"\")\n"
+"\n"
+"            # Voeg uw aangepaste logica hier in, bijv.:\n"
+"            # - Stuur melding over voltooid\n"
+"            # - Werk status van observatorium bij\n"
+"            # - Schoon tijdelijke bestanden op\n"
+"\n"
+"        # Sluit af met succescode\n"
+"        sys.exit(0)\n"
+"\n"
+"    except json.JSONDecodeError as e:\n"
+"        print(f\"Error parsing JSON input: {e}\", file=sys.stderr)\n"
+"        sys.exit(1)\n"
+"\n"
+"    except Exception as e:\n"
+"        print(f\"Error: {e}\", file=sys.stderr)\n"
+"        sys.exit(1)\n"
+"\n"
+"if __name__ == \"__main__\":\n"
+"    main()"
 
 #: ../../user_manual/ekos-capture.rst:415
 msgid ""
 "**Making Scripts Executable**: Scripts must be marked as executable before "
 "Ekos can run them. Use the following command to make a script executable:"
 msgstr ""
+"**Scripts uitvoerbaar maken**: scripts moeten als uitvoerbaar worden "
+"gemarkeerd voordat Ekos ze kan uitvoeren. Gebruik de volgende opdracht om "
+"een ​​script uitvoerbaar te maken:"
 
 #: ../../user_manual/ekos-capture.rst:417
 msgid "chmod +x /path/to/your_script.py"
-msgstr ""
+msgstr "chmod +x /pad/naar/uw_script.py"
 
 #: ../../user_manual/ekos-capture.rst:422
 msgid "Configuration"
-msgstr ""
+msgstr "Configuratie"
 
 #: ../../user_manual/ekos-capture.rst:424
 msgid "To configure scripts for a capture job:"
-msgstr ""
+msgstr "Om scripts voor een opnametaak te configureren:"
 
 #: ../../user_manual/ekos-capture.rst:426
 msgid "Open the Capture Module and create or edit a job in the Sequence Queue."
 msgstr ""
+"Open de opnamemodule en maak een taak aan of bewerk een taak in de "
+"reeksenwachtrij."
 
 #: ../../user_manual/ekos-capture.rst:428
 msgid ""
 "In the job settings, look for the script configuration options where you can "
 "specify the path to your script for each script type."
 msgstr ""
+"In de taakinstellingen vindt u de opties voor scriptconfiguratie, waar u "
+"voor elk scripttype het pad naar uw script kunt opgeven."
 
 #: ../../user_manual/ekos-capture.rst:430
 msgid ""
 "Enter the full path to your executable script for the desired script types."
 msgstr ""
+"Voer het volledige pad naar uw uitvoerbare script in voor de gewenste typen "
+"scripts."
 
 #: ../../user_manual/ekos-capture.rst:432
 msgid "Save the sequence queue to preserve the script configuration."
-msgstr ""
+msgstr "Sla de reeksenwachtrij op om de scriptconfiguratie te behouden."
 
 #: ../../user_manual/ekos-capture.rst:436
 msgid ""
@@ -1204,6 +1354,9 @@ msgid ""
 "remote device (e.g., Stellarmate), ensure your scripts are present on that "
 "device and have appropriate permissions."
 msgstr ""
+"Scripts worden uitgevoerd op de computer waarop Ekos draait. Als Ekos op een "
+"extern apparaat draait (bijv. Stellarmate), zorg er dan voor dat uw scripts "
+"op dat apparaat aanwezig zijn en de juiste machtigingen hebben."
 
 #: ../../user_manual/ekos-capture.rst:441
 msgid "Exposure Calculator"

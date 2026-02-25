@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-23 02:04+0000\n"
-"PO-Revision-Date: 2025-10-10 00:42+0200\n"
+"PO-Revision-Date: 2026-02-23 07:59+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ../../user_manual/ekos-capture.rst:3
 msgid "Capture"
@@ -861,10 +861,8 @@ msgstr ""
 "dokler ni dosežena zadovoljiva vrednost."
 
 #: ../../user_manual/ekos-capture.rst:244
-#, fuzzy
-#| msgid "Capture Settings"
 msgid "Capture Scripts"
-msgstr "Nastavitve zajema"
+msgstr "Skripti zajema"
 
 #: ../../user_manual/ekos-capture.rst:246
 msgid ""
@@ -873,15 +871,20 @@ msgid ""
 "external systems, updating observatory control software, or performing "
 "custom operations based on capture progress."
 msgstr ""
+"Ekos vam omogoča izvajanje skriptov po meri na različnih stopnjah postopka "
+"zajemanja. Te skripte je mogoče uporabiti za avtomatizacijo opravil, kot so "
+"obveščanje zunanjih sistemov, posodabljanje programske opreme za nadzor "
+"observatorija ali izvajanje operacij po meri glede na napredek zajemanja."
 
 #: ../../user_manual/ekos-capture.rst:249
 msgid "Script Types"
-msgstr ""
+msgstr "Vrste skriptov"
 
 #: ../../user_manual/ekos-capture.rst:251
 msgid ""
 "There are four types of scripts that can be configured for each capture job:"
 msgstr ""
+"Za vsako opravilo zajemanja je mogoče konfigurirati štiri vrste skriptov:"
 
 #: ../../user_manual/ekos-capture.rst:253
 msgid ""
@@ -889,6 +892,10 @@ msgid ""
 "have been captured yet for this job (completed count is 0). Useful for setup "
 "tasks like enabling equipment or sending notifications."
 msgstr ""
+"``Pre-Job``: Izvede se enkrat pred začetkom opravila. Zažene se le, če za to "
+"opravilo še ni bila zajeta nobena slika (število dokončanih opravil je 0). "
+"Uporabno za nastavitvena opravila, kot sta omogočanje opreme ali pošiljanje "
+"obvestil."
 
 #: ../../user_manual/ekos-capture.rst:255
 msgid ""
@@ -896,6 +903,9 @@ msgid ""
 "image is about to be captured. Useful for tasks that need to happen before "
 "every exposure."
 msgstr ""
+"``Pre-Capture``: Izvede se pred vsakim posameznim zajemom. Zažene se vsakič, "
+"ko je treba zajeti sliko. Uporabno za naloge, ki se morajo zgoditi pred "
+"vsako osvetlitvijo."
 
 #: ../../user_manual/ekos-capture.rst:257
 msgid ""
@@ -903,6 +913,10 @@ msgid ""
 "every time an image is successfully captured. Useful for tasks like copying "
 "files to backup storage, updating databases, or sending notifications."
 msgstr ""
+"``Post-Capture``: Izvede se po vsakem posameznem zaključku zajemanja. Zažene "
+"se vsakič, ko je slika uspešno zajeta. Uporabno za naloge, kot so kopiranje "
+"datotek v varnostno kopijo, posodabljanje baz podatkov ali pošiljanje "
+"obvestil."
 
 #: ../../user_manual/ekos-capture.rst:259
 msgid ""
@@ -910,10 +924,13 @@ msgid ""
 "images for the job have been captured. Useful for cleanup tasks or final "
 "notifications."
 msgstr ""
+"``Post-Job``: Izvede se enkrat po zaključku opravila. Zažene se, ko so "
+"zajete vse zahtevane slike za opravilo. Uporabno za opravila čiščenja ali "
+"končna obvestila."
 
 #: ../../user_manual/ekos-capture.rst:262
 msgid "Input Data Format"
-msgstr ""
+msgstr "Format vhodnih podatkov"
 
 #: ../../user_manual/ekos-capture.rst:264
 msgid ""
@@ -921,10 +938,13 @@ msgid ""
 "standard input (stdin). The script can read this data to obtain information "
 "about the capture job and progress."
 msgstr ""
+"Ko se skript izvede, Ekos prek standardnega vhoda (stdin) skriptu posreduje "
+"podatke v formatu JSON. Skript lahko te podatke prebere, da pridobi "
+"informacije o opravilu zajemanja in napredku."
 
 #: ../../user_manual/ekos-capture.rst:266
 msgid "The JSON structure contains the following fields:"
-msgstr ""
+msgstr "Struktura JSON vsebuje naslednja polja:"
 
 #: ../../user_manual/ekos-capture.rst:268
 msgid ""
@@ -952,100 +972,129 @@ msgid ""
 "  }\n"
 "}"
 msgstr ""
+"{\n"
+"  \"script_type\": \"PRE_CAPTURE\",\n"
+"  \"job\": {\n"
+"    \"filter\": \"Ha\",\n"
+"    \"exposure\": 300.0,\n"
+"    \"type\": \"Light\",\n"
+"    \"binning_x\": 1,\n"
+"    \"binning_y\": 1,\n"
+"    \"target_name\": \"M42\"\n"
+"  },\n"
+"  \"fits\": {\n"
+"    \"filename\": \"/home/user/images/M42/Light/M42_Light_Ha_001.fits\",\n"
+"    \"headers\": {\n"
+"      \"OBJECT\": \"M42\",\n"
+"      \"EXPTIME\": 300.0,\n"
+"      \"FILTER\": \"Ha\"\n"
+"    }\n"
+"  },\n"
+"  \"progress\": {\n"
+"    \"completed\": 5,\n"
+"    \"total\": 20\n"
+"  }\n"
+"}"
 
 #: ../../user_manual/ekos-capture.rst:294
 msgid ""
 "``script_type``: The type of script being executed. One of: ``PRE_CAPTURE``, "
 "``POST_CAPTURE``, ``PRE_JOB``, ``POST_JOB``."
 msgstr ""
+"``script_type``: Vrsta skripta, ki se izvaja. Ena od: ``PRE_CAPTURE``, "
+"``POST_CAPTURE``, ``PRE_JOB``, ``POST_JOB``."
 
 #: ../../user_manual/ekos-capture.rst:296
 msgid "``job``: Information about the current capture job:"
-msgstr ""
+msgstr "``job``: Informacije o trenutnem opravilu zajemanja:"
 
 #: ../../user_manual/ekos-capture.rst:298
 msgid "``filter``: The filter name used for this capture."
-msgstr ""
+msgstr "``filter``: Ime filtra, uporabljenega za ta zajem."
 
 #: ../../user_manual/ekos-capture.rst:299
-#, fuzzy
-#| msgid "``Exposure``: Specify exposure duration in seconds."
 msgid "``exposure``: Exposure duration in seconds."
-msgstr "``Osvetlitev``: Določite trajanje osvetlitve v sekundah."
+msgstr "``exposure``: Trajanje osvetlitve v sekundah."
 
 #: ../../user_manual/ekos-capture.rst:300
-#, fuzzy
-#| msgid ""
-#| "``Type``: Specify the type of desired CCD frame. Options are ``Light``, "
-#| "``Dark``, ``Bias``, and ``Flat`` frames."
 msgid ""
 "``type``: Frame type - one of ``Light``, ``Dark``, ``Bias``, ``Flat``, "
 "``Video``, or ``None``."
 msgstr ""
-"``Vrsta``: Določite vrsto želenega CCD okvirja. Možnosti so ``Svetli``, "
-"``Temni``, ``Pristranski`` in ``Raven`` okvir."
+"``type``: Vrsta sličice - ena od ``Light``, ``Dark``, ``Bias``, ``Flat``, "
+"``Video``, ali ``None``."
 
 #: ../../user_manual/ekos-capture.rst:301
 msgid "``binning_x``: Horizontal binning value."
-msgstr ""
+msgstr "``binning_x``: Vrednost horizontalnega binninga."
 
 #: ../../user_manual/ekos-capture.rst:302
 msgid "``binning_y``: Vertical binning value."
-msgstr ""
+msgstr "``binning_y``: Vrednost navpičnega binninga."
 
 #: ../../user_manual/ekos-capture.rst:303
 msgid "``target_name``: Name of the target being imaged."
-msgstr ""
+msgstr "``target_name``: Ime cilja, ki ga slikamo."
 
 #: ../../user_manual/ekos-capture.rst:305
 msgid ""
 "``fits``: (Only available for ``POST_CAPTURE`` scripts) Information about "
 "the captured FITS file:"
 msgstr ""
+"``fits``: (Na voljo samo za skripte ``POST_CAPTURE``) Informacije o zajeti "
+"datoteki FITS:"
 
 #: ../../user_manual/ekos-capture.rst:307
 msgid "``filename``: Full path to the captured image file."
-msgstr ""
+msgstr "``filename``: Celotna pot do zajete slikovne datoteke."
 
 #: ../../user_manual/ekos-capture.rst:308
 msgid "``headers``: FITS header key-value pairs from the captured image."
-msgstr ""
+msgstr "``headers``: Ustreza parom ključ-vrednost glave iz zajete slike."
 
 #: ../../user_manual/ekos-capture.rst:310
 msgid "``progress``: Progress information:"
-msgstr ""
+msgstr "``progress``: Informacije o napredku:"
 
 #: ../../user_manual/ekos-capture.rst:312
 msgid ""
 "For ``POST_CAPTURE``: Progress of the current job (``completed`` / ``total`` "
 "images)."
 msgstr ""
+"Za ``POST_CAPTURE``: Napredek trenutnega opravila (``completed`` / ``total`` "
+"slik)."
 
 #: ../../user_manual/ekos-capture.rst:313
 msgid ""
 "For ``POST_JOB``: Progress of the entire sequence (``completed`` / ``total`` "
 "jobs)."
 msgstr ""
+"Za ``POST_JOB``: Napredek celotnega zaporedja (``completed`` / ``total`` "
+"opravil)."
 
 #: ../../user_manual/ekos-capture.rst:316
 msgid "Output and Exit Codes"
-msgstr ""
+msgstr "Izhod in izhodne kode"
 
 #: ../../user_manual/ekos-capture.rst:318
 msgid "Scripts communicate their status back to Ekos through exit codes:"
-msgstr ""
+msgstr "Skripti sporočijo svoj status nazaj Ekosu prek izhodnih kod:"
 
 #: ../../user_manual/ekos-capture.rst:320
 msgid ""
 "Exit code ``0``: Script completed successfully. Ekos continues with the "
 "capture process."
 msgstr ""
+"Izhodna koda ``0``: Skripta je bila uspešno zaključena. Ekos nadaljuje "
+"postopek zajemanja."
 
 #: ../../user_manual/ekos-capture.rst:322
 msgid ""
 "Any non-zero exit code: Script encountered an error. Ekos logs the error and "
 "may abort the capture depending on the script type."
 msgstr ""
+"Izhodna koda, ki ni enaka ničli: V skripti je prišlo do napake. Ekos "
+"zabeleži napako in lahko prekine zajem, odvisno od vrste skripte."
 
 #: ../../user_manual/ekos-capture.rst:324
 msgid ""
@@ -1053,16 +1102,20 @@ msgid ""
 "in the Ekos log window. This is useful for debugging and monitoring script "
 "execution."
 msgstr ""
+"Vsako besedilo, ki ga skripta izpiše v stdout ali stderr, se zajame in "
+"prikaže v oknu dnevnika Ekos. To je uporabno za odpravljanje napak in "
+"spremljanje izvajanja skripte."
 
 #: ../../user_manual/ekos-capture.rst:327
 msgid "Example Python Script"
-msgstr ""
+msgstr "Primer skripte v Pythonu"
 
 #: ../../user_manual/ekos-capture.rst:329
 msgid ""
 "The following example demonstrates a Python script that processes the JSON "
 "input from Ekos:"
 msgstr ""
+"Naslednji primer prikazuje skript v Pythonu, ki obdeluje vhod JSON iz Ekosa:"
 
 #: ../../user_manual/ekos-capture.rst:331
 msgid ""
@@ -1148,43 +1201,131 @@ msgid ""
 "if __name__ == \"__main__\":\n"
 "    main()"
 msgstr ""
+"#!/usr/bin/env python3\n"
+"\"\"\"\n"
+"Example Ekos Capture Script\n"
+"\n"
+"This script demonstrates how to read and process JSON data\n"
+"passed from Ekos during capture script execution.\n"
+"\"\"\"\n"
+"\n"
+"import sys\n"
+"import json\n"
+"\n"
+"def main():\n"
+"    try:\n"
+"        # Read JSON data from stdin\n"
+"        input_data = json.loads(sys.stdin.read())\n"
+"\n"
+"        # Extract script type and job information\n"
+"        script_type = input_data.get(\"script_type\", \"\")\n"
+"        job = input_data.get(\"job\", {})\n"
+"\n"
+"        # Log basic job information\n"
+"        print(f\"Script type: {script_type}\")\n"
+"        print(f\"Target: {job.get('target_name', 'Unknown')}\")\n"
+"        print(f\"Frame type: {job.get('type', 'Unknown')}\")\n"
+"        print(f\"Filter: {job.get('filter', 'None')}\")\n"
+"        print(f\"Exposure: {job.get('exposure', 0)} seconds\")\n"
+"        print(f\"Binning: {job.get('binning_x', 1)}x{job.get('binning_y', "
+"1)}\")\n"
+"\n"
+"        # Handle different script types\n"
+"        if script_type == \"POST_CAPTURE\":\n"
+"            # Access FITS file information\n"
+"            fits = input_data.get(\"fits\", {})\n"
+"            filename = fits.get(\"filename\", \"\")\n"
+"            print(f\"Captured file: {filename}\")\n"
+"\n"
+"            # Access FITS headers\n"
+"            headers = fits.get(\"headers\", {})\n"
+"            if headers:\n"
+"                print(\"FITS Headers:\")\n"
+"                for key, value in headers.items():\n"
+"                    print(f\"  {key}: {value}\")\n"
+"\n"
+"            # Log progress\n"
+"            progress = input_data.get(\"progress\", {})\n"
+"            completed = progress.get(\"completed\", 0)\n"
+"            total = progress.get(\"total\", 0)\n"
+"            print(f\"Job progress: {completed}/{total} images\")\n"
+"\n"
+"            # Add your custom logic here, e.g.:\n"
+"            # - Copy file to backup location\n"
+"            # - Update a database\n"
+"            # - Send a notification\n"
+"            # - Trigger external processing\n"
+"\n"
+"        elif script_type == \"POST_JOB\":\n"
+"            # Job completed, log sequence progress\n"
+"            progress = input_data.get(\"progress\", {})\n"
+"            completed = progress.get(\"completed\", 0)\n"
+"            total = progress.get(\"total\", 0)\n"
+"            print(f\"Sequence progress: {completed}/{total} jobs completed"
+"\")\n"
+"\n"
+"            # Add your custom logic here, e.g.:\n"
+"            # - Send completion notification\n"
+"            # - Update observatory status\n"
+"            # - Clean up temporary files\n"
+"\n"
+"        # Exit with success code\n"
+"        sys.exit(0)\n"
+"\n"
+"    except json.JSONDecodeError as e:\n"
+"        print(f\"Error parsing JSON input: {e}\", file=sys.stderr)\n"
+"        sys.exit(1)\n"
+"\n"
+"    except Exception as e:\n"
+"        print(f\"Error: {e}\", file=sys.stderr)\n"
+"        sys.exit(1)\n"
+"\n"
+"if __name__ == \"__main__\":\n"
+"    main()"
 
 #: ../../user_manual/ekos-capture.rst:415
 msgid ""
 "**Making Scripts Executable**: Scripts must be marked as executable before "
 "Ekos can run them. Use the following command to make a script executable:"
 msgstr ""
+"**Nastavitev izvedljivih skriptov**: Skripte morajo biti označene kot "
+"izvedljive, preden jih Ekos lahko zažene. Za nastavitev izvedljivega skripta "
+"uporabite naslednji ukaz:"
 
 #: ../../user_manual/ekos-capture.rst:417
 msgid "chmod +x /path/to/your_script.py"
-msgstr ""
+msgstr "chmod +x /path/to/your_script.py"
 
 #: ../../user_manual/ekos-capture.rst:422
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguracija"
 
 #: ../../user_manual/ekos-capture.rst:424
 msgid "To configure scripts for a capture job:"
-msgstr ""
+msgstr "Za konfiguriranje skriptov za opravilo zajemanja:"
 
 #: ../../user_manual/ekos-capture.rst:426
 msgid "Open the Capture Module and create or edit a job in the Sequence Queue."
 msgstr ""
+"Odprite modul za zajemanje in ustvarite ali uredite opravilo v zaporedju "
+"čakalne vrste ."
 
 #: ../../user_manual/ekos-capture.rst:428
 msgid ""
 "In the job settings, look for the script configuration options where you can "
 "specify the path to your script for each script type."
 msgstr ""
+"V nastavitvah opravila poiščite možnosti konfiguracije skripta, kjer lahko "
+"za vsako vrsto skripta določite pot do skripta."
 
 #: ../../user_manual/ekos-capture.rst:430
 msgid ""
 "Enter the full path to your executable script for the desired script types."
-msgstr ""
+msgstr "Vnesite celotno pot do izvedljive skripte za želene vrste skript."
 
 #: ../../user_manual/ekos-capture.rst:432
 msgid "Save the sequence queue to preserve the script configuration."
-msgstr ""
+msgstr "Shranite zaporedje čakalne vrste , da ohranite konfiguracijo skripta."
 
 #: ../../user_manual/ekos-capture.rst:436
 msgid ""
@@ -1192,6 +1333,9 @@ msgid ""
 "remote device (e.g., Stellarmate), ensure your scripts are present on that "
 "device and have appropriate permissions."
 msgstr ""
+"Skripti se izvajajo na računalniku, na katerem se izvaja Ekos. Če se Ekos "
+"izvaja na oddaljeni napravi (npr. Stellarmate), se prepričajte, da so vaši "
+"skripti prisotni na tej napravi in ​​imajo ustrezna dovoljenja."
 
 #: ../../user_manual/ekos-capture.rst:441
 msgid "Exposure Calculator"
