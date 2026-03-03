@@ -583,30 +583,53 @@ Weather Grace Period
 ---------------------
 
             The grace period is a configurable waiting time during which the
-            scheduler monitors weather conditions. If weather improves during
-            this period, operations automatically resume. If the grace period
-            expires with alert conditions still present, the job is marked
-            as ERROR and will not restart.
+            scheduler monitors weather conditions after initiating a soft
+            shutdown. If weather improves during this period, operations
+            automatically resume.
 
-            **During the Grace Period:**
+            **Special value — Grace Period = 0 (Indefinite Wait):**
 
-               -  Equipment remains protected (mount parked, dome closed)
-               -  Ekos and INDI connections are maintained
-               -  Weather status is continuously monitored
-               -  If weather improves to Ok, operations resume automatically
-               -  If period expires with Alert status, the job fails
+            Setting the grace period to **0** instructs the scheduler to
+            wait **indefinitely** for the weather to improve. The scheduler
+            will never give up or abort jobs due to weather — it simply waits,
+            parked, until safety conditions return to OK, no matter how long
+            that takes (hours, days, etc.). This is the recommended setting
+            for fully automated, unattended observatories.
+
+            When the grace period is 0:
+
+               -  Equipment is protected immediately (pre-shutdown queue runs:
+                  park mount, close dome, etc.)
+               -  Ekos and INDI **remain running** — no full shutdown occurs
+               -  The scheduler monitors weather every 5 minutes as a safety net,
+                  and recovers **immediately** (within 10 ms) when the weather
+                  sensor reports OK
+               -  Jobs are left in **ABORTED** state (not ERROR) so they will
+                  restart automatically once conditions improve
+               -  The log will show: *"Observatory scheduled for soft shutdown.
+                  Monitoring weather indefinitely until safety improves."*
+
+            **Grace Period > 0 behavior:**
+
+            If a non-zero grace period is configured, the scheduler waits that
+            many minutes after the soft shutdown for weather to improve. If the
+            grace period expires while the alert is still active, a full
+            shutdown (INDI/Ekos stop) is performed and jobs are marked as
+            aborted.
 
             **Configuration:**
 
             In the Scheduler Weather Settings:
 
                -  **Weather Shutdown Delay**: Seconds to wait after alert
-                  detection before initiating shutdown (default: 10). This
-                  prevents false alarms from brief sensor glitches.
+                  detection before initiating soft shutdown (default: 10). This
+                  prevents false alarms from brief sensor glitches. During this
+                  delay, if the weather sensor recovers, no action is taken at all.
 
-               -  **Weather Grace Period**: Minutes to wait for weather
-                  improvement. Choose based on your local weather patterns—longer
-                  grace periods work well if alerts are typically brief.
+               -  **Weather Grace Period**: Minutes to wait (in the parked/soft-shutdown
+                  state) for weather to improve before giving up with a full shutdown.
+                  Set to **0** for indefinite monitoring — the recommended value
+                  for automated observatories that should always resume on their own.
 
 .. _ekos-scheduler-weather-recovery:
 
@@ -667,10 +690,14 @@ Weather Monitoring Best Practices
                   Delay long enough to avoid false alarms but short enough
                   to protect equipment promptly (10-30 seconds recommended).
 
-               3. **Choose Grace Period Wisely**: Base the grace period on
-                  local weather patterns. For areas with brief passing clouds
-                  or showers, 30-60 minutes allows resumption without
-                  abandoning the night.
+               3. **Set Grace Period to 0 for Fully Automated Observatories**:
+                  Setting the grace period to **0** is the recommended configuration
+                  for unattended operation. The scheduler will wait indefinitely for
+                  weather to improve — even across multiple days — and resume
+                  automatically without any human intervention. If you prefer a
+                  finite grace period (e.g. to trigger a full INDI shutdown after
+                  N minutes), choose a value based on local weather patterns
+                  (30–120 minutes is typical for passing clouds or showers).
 
                4. **Test Your Setup**: Manually test weather shutdown and
                   recovery before unattended operations.
