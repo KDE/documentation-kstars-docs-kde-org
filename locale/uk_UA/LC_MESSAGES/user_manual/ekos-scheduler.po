@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2019, 2021, 2022, 2023, 2024, 2025.
+# Yuri Chornoivan <yurchor@ukr.net>, 2019, 2021, 2022, 2023, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kstars_ekos-scheduler\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-04 02:06+0000\n"
-"PO-Revision-Date: 2025-11-14 13:50+0200\n"
+"PO-Revision-Date: 2026-03-04 14:19+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1091,27 +1091,20 @@ msgid "Weather Grace Period"
 msgstr "Період толерантності для погоди"
 
 #: ../../user_manual/ekos-scheduler.rst:585
-#, fuzzy
-#| msgid ""
-#| "The grace period is a configurable waiting time during which the "
-#| "scheduler monitors weather conditions. If weather improves during this "
-#| "period, operations automatically resume. If the grace period expires with "
-#| "alert conditions still present, the job is marked as ERROR and will not "
-#| "restart."
 msgid ""
 "The grace period is a configurable waiting time during which the scheduler "
 "monitors weather conditions after initiating a soft shutdown. If weather "
 "improves during this period, operations automatically resume."
 msgstr ""
-"Період лояльності – це налаштований час очікування, протягом якого "
-"планувальник відстежує погодні умови. Якщо погода покращується протягом "
-"цього періоду, виконання операцій автоматично відновлюється. Якщо період "
-"лояльності закінчується, а умови сповіщення все ще наявні, завдання "
-"позначається як ERROR і не перезапускається."
+"Період толерантності – це налаштований час очікування, протягом якого "
+"планувальник відстежує погодні умови після започаткування м'якого вимикання. "
+"Якщо погода покращується протягом цього періоду, виконання операцій "
+"автоматично відновлюється."
 
 #: ../../user_manual/ekos-scheduler.rst:590
 msgid "**Special value — Grace Period = 0 (Indefinite Wait):**"
 msgstr ""
+"**Особливе значення — період толерантності = 0 (нескінченне очікування):**"
 
 #: ../../user_manual/ekos-scheduler.rst:592
 msgid ""
@@ -1122,46 +1115,61 @@ msgid ""
 "This is the recommended setting for fully automated, unattended "
 "observatories."
 msgstr ""
+"Встановлення значення періоду толерантності **0** призведе до того, що "
+"планувальник **безстроково** чекатиме на поліпшення погоди. Планувальник "
+"ніколи не припинить і не перерве завдання через погоду — він просто чекає, "
+"перебуваючи в режимі очікування, поки умови безпеки не повернуться до норми, "
+"незалежно від того, скільки часу це займе (години, дні тощо). Це "
+"рекомендоване налаштування для повністю автоматизованих, необслуговуваних "
+"обсерваторій."
 
 #: ../../user_manual/ekos-scheduler.rst:599
-#, fuzzy
-#| msgid "Weather Grace Period"
 msgid "When the grace period is 0:"
-msgstr "Період толерантності для погоди"
+msgstr "Якщо значення періоду толерантності дорівнює 0:"
 
 #: ../../user_manual/ekos-scheduler.rst:601
 msgid ""
 "Equipment is protected immediately (pre-shutdown queue runs: park mount, "
 "close dome, etc.)"
 msgstr ""
+"Обладнання буде негайно захищено (буде виконано чергу дій перед вимиканням: "
+"паркування лафета, закриття купола тощо)"
 
 #: ../../user_manual/ekos-scheduler.rst:603
-#, fuzzy
-#| msgid "Ekos and INDI remain running for faster recovery"
 msgid "Ekos and INDI **remain running** — no full shutdown occurs"
-msgstr "Ekos і INDI лишаються працювати, щоб пришвидшити відновлення роботи"
+msgstr ""
+"Ekos і INDI **продовжуватимуть працювати** — повного вимикання не "
+"відбуватиметься"
 
 #: ../../user_manual/ekos-scheduler.rst:604
 msgid ""
 "The scheduler monitors weather every 5 minutes as a safety net, and recovers "
 "**immediately** (within 10 ms) when the weather sensor reports OK"
 msgstr ""
+"Планувальник відстежує погоду кожні 5 хвилин як запобіжний захід і відновлює "
+"обробку **негайно** (протягом 10 мс), якщо датчик погоди повідомляє, що все "
+"гаразд."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
 "Jobs are left in **ABORTED** state (not ERROR) so they will restart "
 "automatically once conditions improve"
 msgstr ""
+"Завдання залишаються у стані **ABORTED** (не ERROR), тому вони автоматично "
+"перезапустяться, як тільки умови покращаться."
 
 #: ../../user_manual/ekos-scheduler.rst:609
 msgid ""
 "The log will show: *\"Observatory scheduled for soft shutdown. Monitoring "
 "weather indefinitely until safety improves.\"*"
 msgstr ""
+"У журналі буде показано: *«Заплановано переведення обсерваторії у стан "
+"м'якого вимикання. Вестимемо неперервне спостереження за погодою, доки "
+"спостереження не стане безпечним.»*"
 
 #: ../../user_manual/ekos-scheduler.rst:612
 msgid "**Grace Period > 0 behavior:**"
-msgstr ""
+msgstr "**Поведінка зі значенням періоду толерантності > 0:**"
 
 #: ../../user_manual/ekos-scheduler.rst:614
 msgid ""
@@ -1170,6 +1178,11 @@ msgid ""
 "expires while the alert is still active, a full shutdown (INDI/Ekos stop) is "
 "performed and jobs are marked as aborted."
 msgstr ""
+"Якщо налаштовано ненульовий період толерантності, планувальник чекає на "
+"покращення погоди протягом такої кількості хвилин після м’якого вимкнення. "
+"Якщо період толерантності закінчується, поки сповіщення ще активне, "
+"виконується повне вимкнення (зупинка INDI/Ekos), а завдання позначаються як "
+"перервані."
 
 #: ../../user_manual/ekos-scheduler.rst:620
 msgid "**Configuration:**"
@@ -1180,11 +1193,6 @@ msgid "In the Scheduler Weather Settings:"
 msgstr "На панелі параметрів погоди планувальника:"
 
 #: ../../user_manual/ekos-scheduler.rst:624
-#, fuzzy
-#| msgid ""
-#| "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
-#| "initiating shutdown (default: 10). This prevents false alarms from brief "
-#| "sensor glitches."
 msgid ""
 "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
 "initiating soft shutdown (default: 10). This prevents false alarms from "
@@ -1192,8 +1200,10 @@ msgid ""
 "action is taken at all."
 msgstr ""
 "**Затримка вимкнення через погоду**: кількість секунд після виявлення "
-"сповіщення перед ініціюванням вимкнення (типове значення — 10). Це запобігає "
-"хибним спрацьовуванням через короткочасні збої датчиків."
+"сповіщення перед ініціюванням м'якого вимкнення (типове значення — 10). Це "
+"запобігає хибним спрацьовуванням через короткочасні збої датчиків. Якщо "
+"протягом цього періоду роботу датчика погоди буде відновлено, не буде вжито "
+"взагалі ніяких дій."
 
 #: ../../user_manual/ekos-scheduler.rst:629
 msgid ""
@@ -1202,6 +1212,11 @@ msgid ""
 "**0** for indefinite monitoring — the recommended value for automated "
 "observatories that should always resume on their own."
 msgstr ""
+"**Період толерантності щодо погоди**: очікування у хвилинах (у стані "
+"паркування/м’якого вимкнення) покращення погоди перед повним вимкненням. "
+"Встановіть значення **0** для безстрокового спостереження — рекомендоване "
+"значення для автоматизованих обсерваторій, які завжди повинні відновлювати "
+"роботу самостійно."
 
 #: ../../user_manual/ekos-scheduler.rst:637
 msgid "Automatic Weather Recovery"
@@ -1212,7 +1227,7 @@ msgid ""
 "When weather improves during the grace period, the scheduler automatically "
 "resumes operations:"
 msgstr ""
-"Якщо протягом періоду лояльності погодні умови поліпшуються, засіб "
+"Якщо протягом періоду толерантності погодні умови поліпшуються, засіб "
 "планування автоматично відновлює обробку:"
 
 #: ../../user_manual/ekos-scheduler.rst:642
@@ -1349,6 +1364,15 @@ msgid ""
 "INDI shutdown after N minutes), choose a value based on local weather "
 "patterns (30–120 minutes is typical for passing clouds or showers)."
 msgstr ""
+"**Встановіть значення періоду толерантності 0 для повністю автоматизованих "
+"обсерваторій**: Встановлення значення періоду толерантності **0** є "
+"рекомендованим налаштуванням для роботи без попереднього налаштовування. "
+"Планувальник чекатиме на покращення погоди необмежений час — навіть протягом "
+"кількох днів — і автоматично відновлюватиме роботу без будь-якого втручання "
+"людини. Якщо ви надаєте перевагу обмеженому періоду толерантності "
+"(наприклад, щоб ініціювати повне вимкнення INDI через вказану кількість "
+"хвилин), виберіть значення на основі місцевих погодних умов (30–120 хвилин "
+"типово для швидкоплинних хмар або злив)."
 
 #: ../../user_manual/ekos-scheduler.rst:702
 msgid ""

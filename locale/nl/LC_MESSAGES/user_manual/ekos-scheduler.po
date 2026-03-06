@@ -1,19 +1,19 @@
 #
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 # Jaap Woldringh <jjhwoldringh@kde.nl>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-04 02:06+0000\n"
-"PO-Revision-Date: 2025-12-13 13:00+0100\n"
+"PO-Revision-Date: 2026-03-04 12:01+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../user_manual/ekos-scheduler.rst:3
@@ -1082,27 +1082,19 @@ msgid "Weather Grace Period"
 msgstr "Weerrespijtperiode"
 
 #: ../../user_manual/ekos-scheduler.rst:585
-#, fuzzy
-#| msgid ""
-#| "The grace period is a configurable waiting time during which the "
-#| "scheduler monitors weather conditions. If weather improves during this "
-#| "period, operations automatically resume. If the grace period expires with "
-#| "alert conditions still present, the job is marked as ERROR and will not "
-#| "restart."
 msgid ""
 "The grace period is a configurable waiting time during which the scheduler "
 "monitors weather conditions after initiating a soft shutdown. If weather "
 "improves during this period, operations automatically resume."
 msgstr ""
 "De respijtperiode is een instelbare wachttijd waarin de planner de "
-"weersomstandigheden controleert. Als het weer tijdens deze periode "
-"verbetert, worden de werkzaamheden automatisch hervat. Als de respijtperiode "
-"afloopt terwijl er nog steeds waarschuwingen van kracht zijn, wordt de taak "
-"gemarkeerd als FOUT en wordt deze niet opnieuw gestart."
+"weersomstandigheden controleert, na het initiëren van een zachte afsluiting. "
+"Als het weer tijdens deze periode verbetert, worden de werkzaamheden "
+"automatisch hervat."
 
 #: ../../user_manual/ekos-scheduler.rst:590
 msgid "**Special value — Grace Period = 0 (Indefinite Wait):**"
-msgstr ""
+msgstr "**Speciale waarde — respijtperiode = 0 (onbepaalde wachttijd):**"
 
 #: ../../user_manual/ekos-scheduler.rst:592
 msgid ""
@@ -1113,46 +1105,60 @@ msgid ""
 "This is the recommended setting for fully automated, unattended "
 "observatories."
 msgstr ""
+"Door de respijtperiode op **0** in te stellen, geeft u de planner de "
+"opdracht om **onbepaalde tijd** te wachten tot het weer verbetert. De "
+"planner zal nooit taken opgeven of afbreken vanwege het weer — hij wacht "
+"gewoon, geparkeerd, totdat de veiligheidsomstandigheden weer in orde zijn, "
+"ongeacht hoe lang dat duurt (uren, dagen, enz.). Dit is de aanbevolen "
+"instelling voor volledig geautomatiseerde, onbemande observatoria."
 
 #: ../../user_manual/ekos-scheduler.rst:599
-#, fuzzy
-#| msgid "Weather Grace Period"
 msgid "When the grace period is 0:"
-msgstr "Weerrespijtperiode"
+msgstr "Wanneer de respijtperiode 0 is:"
 
 #: ../../user_manual/ekos-scheduler.rst:601
 msgid ""
 "Equipment is protected immediately (pre-shutdown queue runs: park mount, "
 "close dome, etc.)"
 msgstr ""
+"De apparatuur wordt direct beveiligd (uitschakelprocedures vooraf worden "
+"uitgevoerd: opstelling parkeren, koepel sluiten, enz.)"
 
 #: ../../user_manual/ekos-scheduler.rst:603
-#, fuzzy
-#| msgid "Ekos and INDI remain running for faster recovery"
 msgid "Ekos and INDI **remain running** — no full shutdown occurs"
-msgstr "Ekos en INDI blijven in bedrijf voor een sneller herstel"
+msgstr ""
+"Ekos en INDI **blijven in bedrijf** - geen volledige afsluiting wordt "
+"uitgevoerd"
 
 #: ../../user_manual/ekos-scheduler.rst:604
 msgid ""
 "The scheduler monitors weather every 5 minutes as a safety net, and recovers "
 "**immediately** (within 10 ms) when the weather sensor reports OK"
 msgstr ""
+"De planner controleert elke 5 minuten het weer als vangnet en herstelt zich "
+"**onmiddellijk** (binnen 10 ms) wanneer de weersensor aangeeft dat het weer "
+"in orde is"
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
 "Jobs are left in **ABORTED** state (not ERROR) so they will restart "
 "automatically once conditions improve"
 msgstr ""
+"Taken blijven in de status **AFGEBROKEN** (niet FOUT) zodat ze automatisch "
+"opnieuw worden gestart zodra de omstandigheden verbeteren"
 
 #: ../../user_manual/ekos-scheduler.rst:609
 msgid ""
 "The log will show: *\"Observatory scheduled for soft shutdown. Monitoring "
 "weather indefinitely until safety improves.\"*"
 msgstr ""
+"Het logboek zal het volgende weergeven: *\"Observatorium gepland voor "
+"gedeeltelijke afsluiting. Weermonitoring wordt voor onbepaalde tijd "
+"voortgezet totdat de veiligheid is verbeterd.\"*"
 
 #: ../../user_manual/ekos-scheduler.rst:612
 msgid "**Grace Period > 0 behavior:**"
-msgstr ""
+msgstr "**Gedrag bij Respijtperiode > 0:**"
 
 #: ../../user_manual/ekos-scheduler.rst:614
 msgid ""
@@ -1161,6 +1167,11 @@ msgid ""
 "expires while the alert is still active, a full shutdown (INDI/Ekos stop) is "
 "performed and jobs are marked as aborted."
 msgstr ""
+"Als er een respijtperiode van meer dan nul is geconfigureerd, wacht de "
+"planner dat aantal minuten na de zachte afsluiting totdat het weer "
+"verbetert. Als de respijtperiode verloopt terwijl de waarschuwing nog actief "
+"is, wordt een volledige afsluiting (INDI/Ekos stopt) uitgevoerd en worden "
+"taken gemarkeerd als afgebroken."
 
 #: ../../user_manual/ekos-scheduler.rst:620
 msgid "**Configuration:**"
@@ -1171,11 +1182,6 @@ msgid "In the Scheduler Weather Settings:"
 msgstr "In de weerinstellingen van planner:"
 
 #: ../../user_manual/ekos-scheduler.rst:624
-#, fuzzy
-#| msgid ""
-#| "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
-#| "initiating shutdown (default: 10). This prevents false alarms from brief "
-#| "sensor glitches."
 msgid ""
 "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
 "initiating soft shutdown (default: 10). This prevents false alarms from "
@@ -1183,9 +1189,10 @@ msgid ""
 "action is taken at all."
 msgstr ""
 "**Uitschakelvertraging bij weersomstandigheden**: aantal seconden dat "
-"gewacht moet worden na detectie van een waarschuwing voordat de "
-"uitschakeling wordt gestart (standaard: 10). Dit voorkomt valse "
-"waarschuwingen door korte storingen in de sensor."
+"gewacht moet worden na detectie van een waarschuwing voordat de zachte "
+"afsluiting wordt gestart (standaard: 10). Dit voorkomt valse waarschuwingen "
+"door korte storingen in de sensor. Tijdens deze vertraging, als de "
+"weersensor herstelt, wordt helemaal geen actie genomen."
 
 #: ../../user_manual/ekos-scheduler.rst:629
 msgid ""
@@ -1194,6 +1201,10 @@ msgid ""
 "**0** for indefinite monitoring — the recommended value for automated "
 "observatories that should always resume on their own."
 msgstr ""
+"**Weerwaarschuwingsperiode**: Minuten wachten (in de geparkeerde/zachte "
+"afsluitingstoestand) tot het weer verbetert voordat volledig wordt "
+"afgesloten. Stel in op 0 voor onbeperkte monitoring — de aanbevolen waarde "
+"voor geautomatiseerde observatoria die altijd automatisch moeten hervatten."
 
 #: ../../user_manual/ekos-scheduler.rst:637
 msgid "Automatic Weather Recovery"
@@ -1340,6 +1351,15 @@ msgid ""
 "INDI shutdown after N minutes), choose a value based on local weather "
 "patterns (30–120 minutes is typical for passing clouds or showers)."
 msgstr ""
+"**Stel de respijtperiode in op 0 voor volledig geautomatiseerde "
+"observatoria**: Het instellen van de respijtperiode op **0** is de "
+"aanbevolen configuratie voor onbeheerde werking. De planner wacht dan "
+"onbeperkt tot het weer verbetert – zelfs gedurende meerdere dagen – en "
+"hervat automatisch zonder menselijke tussenkomst. Als u de voorkeur geeft "
+"aan een eindige respijtperiode (bijvoorbeeld om een ​​volledige INDI-"
+"afsluiting te activeren na N minuten), kies dan een waarde op basis van de "
+"lokale weersomstandigheden (30-120 minuten is gebruikelijk voor passerende "
+"bewolking of buien)."
 
 #: ../../user_manual/ekos-scheduler.rst:702
 msgid ""

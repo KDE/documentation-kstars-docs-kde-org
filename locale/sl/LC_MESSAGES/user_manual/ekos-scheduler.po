@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-04 02:06+0000\n"
-"PO-Revision-Date: 2025-11-11 11:25+0100\n"
+"PO-Revision-Date: 2026-03-04 07:04+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1059,26 +1059,18 @@ msgid "Weather Grace Period"
 msgstr "Vremensko obdobje čakanja"
 
 #: ../../user_manual/ekos-scheduler.rst:585
-#, fuzzy
-#| msgid ""
-#| "The grace period is a configurable waiting time during which the "
-#| "scheduler monitors weather conditions. If weather improves during this "
-#| "period, operations automatically resume. If the grace period expires with "
-#| "alert conditions still present, the job is marked as ERROR and will not "
-#| "restart."
 msgid ""
 "The grace period is a configurable waiting time during which the scheduler "
 "monitors weather conditions after initiating a soft shutdown. If weather "
 "improves during this period, operations automatically resume."
 msgstr ""
-"Obdobje čakanja je nastavljiv čas čakanja, v katerem razporejevalnik "
-"spremlja vremenske razmere. Če se vreme v tem obdobju izboljša, se delovanje "
-"samodejno nadaljuje. Če se obdobje čakanja izteče, ko so opozorilni pogoji "
-"še vedno prisotni, je opravilo označeno kot NAPAKA in se ne bo znova zagnalo."
+"Obdobje mirovanja je nastavljiv čas čakanja, v katerem razporejevalnik "
+"spremlja vremenske razmere po sprožitvi mehke zaustavitve. Če se vreme v tem "
+"obdobju izboljša, se delovanje samodejno nadaljuje."
 
 #: ../../user_manual/ekos-scheduler.rst:590
 msgid "**Special value — Grace Period = 0 (Indefinite Wait):**"
-msgstr ""
+msgstr "**Posebna vrednost – obdobje odloga = 0 (nedoločen čas čakanja):**"
 
 #: ../../user_manual/ekos-scheduler.rst:592
 msgid ""
@@ -1089,46 +1081,56 @@ msgid ""
 "This is the recommended setting for fully automated, unattended "
 "observatories."
 msgstr ""
+"Če obdobje mirovanja nastavite na **0**, razporejevalniku naročite, naj "
+"**neomejeno** čaka na izboljšanje vremena. Razporejevalnik zaradi vremena "
+"nikoli ne bo odnehal ali prekinil opravil – preprosto bo čakal, parkiran, "
+"dokler se varnostni pogoji ne vrnejo v normalno stanje, ne glede na to, "
+"koliko časa to traja (ure, dnevi itd.). To je priporočena nastavitev za "
+"popolnoma avtomatizirane, nenadzorovane observatorije."
 
 #: ../../user_manual/ekos-scheduler.rst:599
-#, fuzzy
-#| msgid "Weather Grace Period"
 msgid "When the grace period is 0:"
-msgstr "Vremensko obdobje čakanja"
+msgstr "Ko je obdobje mirovanja 0:"
 
 #: ../../user_manual/ekos-scheduler.rst:601
 msgid ""
 "Equipment is protected immediately (pre-shutdown queue runs: park mount, "
 "close dome, etc.)"
 msgstr ""
+"Oprema je takoj zaščitena (izvede se čakalna vrsta pred izklopom: "
+"parkiranje, zapiranje kupole itd.)"
 
 #: ../../user_manual/ekos-scheduler.rst:603
-#, fuzzy
-#| msgid "Ekos and INDI remain running for faster recovery"
 msgid "Ekos and INDI **remain running** — no full shutdown occurs"
-msgstr "Ekos in INDI še naprej delujeta za hitrejšo obnovo"
+msgstr "Ekos in INDI **še naprej delujeta** – ni prišlo do popolne zaustavitve"
 
 #: ../../user_manual/ekos-scheduler.rst:604
 msgid ""
 "The scheduler monitors weather every 5 minutes as a safety net, and recovers "
 "**immediately** (within 10 ms) when the weather sensor reports OK"
 msgstr ""
+"Razporejevalnik spremlja vreme vsakih 5 minut kot varnostno mrežo in se "
+"**takoj** obnovi (v 10 ms), ko vremenski senzor sporoči, da je vse v redu."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
 "Jobs are left in **ABORTED** state (not ERROR) so they will restart "
 "automatically once conditions improve"
 msgstr ""
+"Naloge so ostale v stanju **PREKINJENO** (ne NAPAKA), zato se bodo samodejno "
+"znova zagnale, ko se bodo razmere izboljšale"
 
 #: ../../user_manual/ekos-scheduler.rst:609
 msgid ""
 "The log will show: *\"Observatory scheduled for soft shutdown. Monitoring "
 "weather indefinitely until safety improves.\"*"
 msgstr ""
+"Dnevnik bo prikazoval: *\"Observatory scheduled for soft shutdown. "
+"Monitoring weather indefinitely until safety improves.\"*"
 
 #: ../../user_manual/ekos-scheduler.rst:612
 msgid "**Grace Period > 0 behavior:**"
-msgstr ""
+msgstr "**Obnašanje obdobja odloga > 0:**"
 
 #: ../../user_manual/ekos-scheduler.rst:614
 msgid ""
@@ -1137,6 +1139,10 @@ msgid ""
 "expires while the alert is still active, a full shutdown (INDI/Ekos stop) is "
 "performed and jobs are marked as aborted."
 msgstr ""
+"Če je konfigurirano obdobje mirovanja, ki ni nič, razporejevalnik po mehki "
+"zaustavitvi počaka toliko minut, da se vreme izboljša. Če obdobje mirovanja "
+"poteče, medtem ko je opozorilo še aktivno, se izvede popolna zaustavitev "
+"(zaustavitev INDI/Ekos) in opravila so označena kot prekinjena."
 
 #: ../../user_manual/ekos-scheduler.rst:620
 msgid "**Configuration:**"
@@ -1147,20 +1153,16 @@ msgid "In the Scheduler Weather Settings:"
 msgstr "V nastavitvah vremena v razporejevalniku:"
 
 #: ../../user_manual/ekos-scheduler.rst:624
-#, fuzzy
-#| msgid ""
-#| "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
-#| "initiating shutdown (default: 10). This prevents false alarms from brief "
-#| "sensor glitches."
 msgid ""
 "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
 "initiating soft shutdown (default: 10). This prevents false alarms from "
 "brief sensor glitches. During this delay, if the weather sensor recovers, no "
 "action is taken at all."
 msgstr ""
-"**Zakasnitev izklopa zaradi vremena**: Število sekund po zaznavi opozorila, "
-"preden se sproži izklop (privzeto: 10). To preprečuje lažne alarme zaradi "
-"kratkotrajnih napak senzorjev."
+"**Zakasnitev izklopa zaradi vremena**: Koliko sekund je treba po zaznavi "
+"opozorila čakati, preden se sproži mehki izklop (privzeto: 10). To "
+"preprečuje lažne alarme zaradi kratkotrajnih napak senzorja. Med to "
+"zakasnitvijo se, če si vremenski senzor opomore, ne izvede nobenega ukrepa."
 
 #: ../../user_manual/ekos-scheduler.rst:629
 msgid ""
@@ -1169,6 +1171,11 @@ msgid ""
 "**0** for indefinite monitoring — the recommended value for automated "
 "observatories that should always resume on their own."
 msgstr ""
+"**Vremenski mirujoči čas**: Minute čakanja (v stanju parkiranja/mehkega "
+"izklopa), da se vreme izboljša, preden se naprava popolnoma izklopi. Za "
+"nedoločen čas spremljanja nastavite na **0** – priporočena vrednost za "
+"avtomatizirane observatorije, ki bi morale vedno samodejno nadaljevati z "
+"delovanjem."
 
 #: ../../user_manual/ekos-scheduler.rst:637
 msgid "Automatic Weather Recovery"
@@ -1313,6 +1320,14 @@ msgid ""
 "INDI shutdown after N minutes), choose a value based on local weather "
 "patterns (30–120 minutes is typical for passing clouds or showers)."
 msgstr ""
+"**Nastavite obdobje mirovanja na 0 za popolnoma avtomatizirane "
+"observatorije**: Nastavitev obdobja mirovanja na **0** je priporočena "
+"konfiguracija za delovanje brez nadzora. Razporejevalnik bo čakal na "
+"izboljšanje vremena v nedogled – tudi po več dneh – in se samodejno "
+"nadaljeval brez človeškega posredovanja. Če imate raje omejeno obdobje "
+"mirovanja (npr. za sprožitev popolne zaustavitve INDI po N minutah), "
+"izberite vrednost glede na lokalne vremenske vzorce (30–120 minut je "
+"običajno za prehodne oblake ali plohe)."
 
 #: ../../user_manual/ekos-scheduler.rst:702
 msgid ""

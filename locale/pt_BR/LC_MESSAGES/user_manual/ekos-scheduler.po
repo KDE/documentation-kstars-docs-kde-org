@@ -1,19 +1,19 @@
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2019.
-# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-04 02:06+0000\n"
-"PO-Revision-Date: 2025-11-11 06:37-0300\n"
+"PO-Revision-Date: 2026-03-04 06:41-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../../user_manual/ekos-scheduler.rst:3
@@ -1095,27 +1095,19 @@ msgid "Weather Grace Period"
 msgstr "Período de tolerância das condições climáticas"
 
 #: ../../user_manual/ekos-scheduler.rst:585
-#, fuzzy
-#| msgid ""
-#| "The grace period is a configurable waiting time during which the "
-#| "scheduler monitors weather conditions. If weather improves during this "
-#| "period, operations automatically resume. If the grace period expires with "
-#| "alert conditions still present, the job is marked as ERROR and will not "
-#| "restart."
 msgid ""
 "The grace period is a configurable waiting time during which the scheduler "
 "monitors weather conditions after initiating a soft shutdown. If weather "
 "improves during this period, operations automatically resume."
 msgstr ""
 "O período de tolerância é um tempo de espera configurável durante o qual o "
-"agendador monitora as condições climáticas. Se o tempo melhorar durante esse "
-"período, as operações são retomadas automaticamente. Se o período de "
-"tolerância expirar com as condições de alerta ainda presentes, a tarefa é "
-"marcada como ERRO e não será reiniciada."
+"agendador monitora as condições climáticas após iniciar um desligamento "
+"suave. Se o tempo melhorar durante esse período, as operações são retomadas "
+"automaticamente."
 
 #: ../../user_manual/ekos-scheduler.rst:590
 msgid "**Special value — Grace Period = 0 (Indefinite Wait):**"
-msgstr ""
+msgstr "**Valor especial — Período de tolerância = 0 (Espera indefinida):**"
 
 #: ../../user_manual/ekos-scheduler.rst:592
 msgid ""
@@ -1126,46 +1118,60 @@ msgid ""
 "This is the recommended setting for fully automated, unattended "
 "observatories."
 msgstr ""
+"Definir o período de tolerância como **0** instrui o agendador a esperar "
+"**indefinidamente** até que as condições climáticas melhorem. O agendador "
+"nunca desistirá ou cancelará tarefas devido ao clima — ele simplesmente "
+"aguarda, parado, até que as condições de segurança voltem a ser adequadas, "
+"independentemente do tempo que isso leve (horas, dias, etc.). Esta é a "
+"configuração recomendada para observatórios totalmente automatizados e não "
+"tripulados."
 
 #: ../../user_manual/ekos-scheduler.rst:599
-#, fuzzy
-#| msgid "Weather Grace Period"
 msgid "When the grace period is 0:"
-msgstr "Período de tolerância das condições climáticas"
+msgstr "Quando o período de tolerância for 0:"
 
 #: ../../user_manual/ekos-scheduler.rst:601
 msgid ""
 "Equipment is protected immediately (pre-shutdown queue runs: park mount, "
 "close dome, etc.)"
 msgstr ""
+"O equipamento é protegido imediatamente (execuções na fila de pré-"
+"desligamento: bloqueio da montagem, fechamento da cúpula, etc.)"
 
 #: ../../user_manual/ekos-scheduler.rst:603
-#, fuzzy
-#| msgid "Ekos and INDI remain running for faster recovery"
 msgid "Ekos and INDI **remain running** — no full shutdown occurs"
-msgstr "Ekos e INDI continuam em operação para uma recuperação mais rápida"
+msgstr ""
+"Ekos e INDI **continuam em operação** — não ocorre um desligamento completo"
 
 #: ../../user_manual/ekos-scheduler.rst:604
 msgid ""
 "The scheduler monitors weather every 5 minutes as a safety net, and recovers "
 "**immediately** (within 10 ms) when the weather sensor reports OK"
 msgstr ""
+"O agendador monitora as condições meteorológicas a cada 5 minutos como "
+"medida de segurança e se recupera **imediatamente** (em até 10 ms) quando o "
+"sensor meteorológico indica que está tudo bem."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
 "Jobs are left in **ABORTED** state (not ERROR) so they will restart "
 "automatically once conditions improve"
 msgstr ""
+"As tarefas ficam no estado **CANCELADA** (não ERRO), portanto serão "
+"reiniciadas automaticamente assim que as condições melhorarem."
 
 #: ../../user_manual/ekos-scheduler.rst:609
 msgid ""
 "The log will show: *\"Observatory scheduled for soft shutdown. Monitoring "
 "weather indefinitely until safety improves.\"*"
 msgstr ""
+"O registro exibirá: *\"O observatório está programado para um desligamento "
+"gradual. O monitoramento meteorológico continuará por tempo indeterminado "
+"até que a segurança melhore.\"*"
 
 #: ../../user_manual/ekos-scheduler.rst:612
 msgid "**Grace Period > 0 behavior:**"
-msgstr ""
+msgstr "**Comportamento do período de tolerância > 0:**"
 
 #: ../../user_manual/ekos-scheduler.rst:614
 msgid ""
@@ -1174,6 +1180,11 @@ msgid ""
 "expires while the alert is still active, a full shutdown (INDI/Ekos stop) is "
 "performed and jobs are marked as aborted."
 msgstr ""
+"Se um período de tolerância diferente de zero for configurado, o agendador "
+"aguardará esse número de minutos após o desligamento suave para que as "
+"condições climáticas melhorem. Se o período de tolerância expirar enquanto o "
+"alerta ainda estiver ativo, um desligamento completo (parada do INDI/Ekos) "
+"será realizado e as tarefas serão marcadas como canceladas."
 
 #: ../../user_manual/ekos-scheduler.rst:620
 msgid "**Configuration:**"
@@ -1184,11 +1195,6 @@ msgid "In the Scheduler Weather Settings:"
 msgstr "Nas configurações de clima do agendador:"
 
 #: ../../user_manual/ekos-scheduler.rst:624
-#, fuzzy
-#| msgid ""
-#| "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
-#| "initiating shutdown (default: 10). This prevents false alarms from brief "
-#| "sensor glitches."
 msgid ""
 "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
 "initiating soft shutdown (default: 10). This prevents false alarms from "
@@ -1196,8 +1202,10 @@ msgid ""
 "action is taken at all."
 msgstr ""
 "**Atraso no desligamento por condições climáticas**: Segundos a aguardar "
-"após a detecção de um alerta antes de iniciar o desligamento (padrão: 10). "
-"Isso evita alarmes falsos causados ​​por breves falhas nos sensores."
+"após a detecção de um alerta antes de iniciar o desligamento suave (padrão: "
+"10). Isso evita alarmes falsos causados ​​por breves falhas nos sensores. "
+"Durante essa espera, se o sensor meteorológico se recuperar, nenhuma ação "
+"será tomada."
 
 #: ../../user_manual/ekos-scheduler.rst:629
 msgid ""
@@ -1206,6 +1214,11 @@ msgid ""
 "**0** for indefinite monitoring — the recommended value for automated "
 "observatories that should always resume on their own."
 msgstr ""
+"**Período de tolerância meteorológica**: Minutos de espera (no estado de "
+"repouso/desligamento suave) para que as condições meteorológicas melhorem "
+"antes de desligar completamente. Defina como **0** para monitoramento "
+"indefinido — o valor recomendado para observatórios automatizados que devem "
+"sempre retomar a operação automaticamente."
 
 #: ../../user_manual/ekos-scheduler.rst:637
 msgid "Automatic Weather Recovery"
@@ -1352,6 +1365,15 @@ msgid ""
 "INDI shutdown after N minutes), choose a value based on local weather "
 "patterns (30–120 minutes is typical for passing clouds or showers)."
 msgstr ""
+"**Definir período de tolerância como 0 para observatórios totalmente "
+"automatizados**: Definir o período de tolerância como **0** é a configuração "
+"recomendada para operação autônoma. O agendador aguardará indefinidamente "
+"por uma melhora nas condições climáticas — mesmo ao longo de vários dias — e "
+"retomará as atividades automaticamente, sem qualquer intervenção humana. Se "
+"preferir um período de tolerância definido (por exemplo, para acionar um "
+"desligamento completo do INDI após N minutos), escolha um valor com base nos "
+"padrões climáticos locais (30 a 120 minutos é um valor típico para a "
+"passagem de nuvens ou chuvas)."
 
 #: ../../user_manual/ekos-scheduler.rst:702
 msgid ""
