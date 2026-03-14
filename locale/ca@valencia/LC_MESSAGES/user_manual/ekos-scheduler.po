@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-04 02:06+0000\n"
-"PO-Revision-Date: 2026-01-27 23:46+0100\n"
+"PO-Revision-Date: 2026-03-13 00:18+0100\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1100,27 +1100,19 @@ msgid "Weather Grace Period"
 msgstr "Període de gràcia meteorològic"
 
 #: ../../user_manual/ekos-scheduler.rst:585
-#, fuzzy
-#| msgid ""
-#| "The grace period is a configurable waiting time during which the "
-#| "scheduler monitors weather conditions. If weather improves during this "
-#| "period, operations automatically resume. If the grace period expires with "
-#| "alert conditions still present, the job is marked as ERROR and will not "
-#| "restart."
 msgid ""
 "The grace period is a configurable waiting time during which the scheduler "
 "monitors weather conditions after initiating a soft shutdown. If weather "
 "improves during this period, operations automatically resume."
 msgstr ""
 "El període de gràcia és un temps d'espera configurable durant el qual el "
-"programador supervisa les condicions meteorològiques. Si el temps millora "
-"durant este període, les operacions es reprendran automàticament. Si el "
-"període de gràcia expira amb les condicions d'alerta encara presents, la "
-"tasca es marcarà com a ERROR i no es reiniciarà."
+"programador supervisa les condicions meteorològiques després d'iniciar un "
+"tancament suau. Si el temps millora durant este període, les operacions es "
+"reprendran automàticament."
 
 #: ../../user_manual/ekos-scheduler.rst:590
 msgid "**Special value — Grace Period = 0 (Indefinite Wait):**"
-msgstr ""
+msgstr "**Valor especial: Període de gràcia = 0 (espera indefinida):**"
 
 #: ../../user_manual/ekos-scheduler.rst:592
 msgid ""
@@ -1131,47 +1123,61 @@ msgid ""
 "This is the recommended setting for fully automated, unattended "
 "observatories."
 msgstr ""
+"Quan s'establisca el període de gràcia a **0**, s'indicarà al programador "
+"que espere **indefinidament** fins que millore el temps. El programador no "
+"renunciarà mai o interromprà les tasques a causa del temps; senzillament "
+"esperarà, aparcarà, fins que les condicions de seguretat tornen a ser "
+"correctes, sense importar quant de temps tarde (hores, dies, etc.) Esta és "
+"la configuració recomanada per a observatoris totalment automatitzats i "
+"sense atendre."
 
 #: ../../user_manual/ekos-scheduler.rst:599
-#, fuzzy
-#| msgid "Weather Grace Period"
 msgid "When the grace period is 0:"
-msgstr "Període de gràcia meteorològic"
+msgstr "Quan el període de gràcia és 0:"
 
 #: ../../user_manual/ekos-scheduler.rst:601
 msgid ""
 "Equipment is protected immediately (pre-shutdown queue runs: park mount, "
 "close dome, etc.)"
 msgstr ""
+"L'equip es protegirà immediatament (executarà la cua prèvia al tancament: "
+"aparca la muntura, tanca la cúpula, etc.)"
 
 #: ../../user_manual/ekos-scheduler.rst:603
-#, fuzzy
-#| msgid "Ekos and INDI remain running for faster recovery"
 msgid "Ekos and INDI **remain running** — no full shutdown occurs"
 msgstr ""
-"Ekos i INDI continuen en funcionament per a una recuperació més ràpida."
+"Ekos i INDI **continuaran en funcionament**: no es farà cap tancament "
+"complet."
 
 #: ../../user_manual/ekos-scheduler.rst:604
 msgid ""
 "The scheduler monitors weather every 5 minutes as a safety net, and recovers "
 "**immediately** (within 10 ms) when the weather sensor reports OK"
 msgstr ""
+"El programador supervisarà el clima cada 5 minuts com a xarxa de seguretat i "
+"es recuperarà **immediatament** (en un termini de 10 ms) quan el sensor "
+"meteorològic informe que és correcte."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
 "Jobs are left in **ABORTED** state (not ERROR) so they will restart "
 "automatically once conditions improve"
 msgstr ""
+"Les tasques es deixaran en estat **INTERROMPUDA** (no ERROR), de manera que "
+"es reiniciaran automàticament una vegada milloren les condicions."
 
 #: ../../user_manual/ekos-scheduler.rst:609
 msgid ""
 "The log will show: *\"Observatory scheduled for soft shutdown. Monitoring "
 "weather indefinitely until safety improves.\"*"
 msgstr ""
+"El registre mostrarà: *«Observatori planificat per a un tancament suau. "
+"S'està vigilant la meteorologia indefinidament fins que millore la "
+"seguretat.»*"
 
 #: ../../user_manual/ekos-scheduler.rst:612
 msgid "**Grace Period > 0 behavior:**"
-msgstr ""
+msgstr "**Comportament del període de gràcia > 0:**"
 
 #: ../../user_manual/ekos-scheduler.rst:614
 msgid ""
@@ -1180,6 +1186,11 @@ msgid ""
 "expires while the alert is still active, a full shutdown (INDI/Ekos stop) is "
 "performed and jobs are marked as aborted."
 msgstr ""
+"Si es configura un període de gràcia diferent de zero, el programador "
+"esperarà tants minuts després del tancament suau fins que millore el temps. "
+"Si el període de gràcia expira mentre l'alerta encara està activa, es "
+"realitzarà un tancament complet (parada d'INDI i Ekos) i les tasques es "
+"marcaran com a interrompudes."
 
 #: ../../user_manual/ekos-scheduler.rst:620
 msgid "**Configuration:**"
@@ -1190,11 +1201,6 @@ msgid "In the Scheduler Weather Settings:"
 msgstr "En la configuració meteorològica del programador:"
 
 #: ../../user_manual/ekos-scheduler.rst:624
-#, fuzzy
-#| msgid ""
-#| "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
-#| "initiating shutdown (default: 10). This prevents false alarms from brief "
-#| "sensor glitches."
 msgid ""
 "**Weather Shutdown Delay**: Seconds to wait after alert detection before "
 "initiating soft shutdown (default: 10). This prevents false alarms from "
@@ -1202,8 +1208,10 @@ msgid ""
 "action is taken at all."
 msgstr ""
 "**Retard del tancament per alerta meteorològica:** segons que cal esperar "
-"després de la detecció d'alerta abans d'iniciar el tancament (predeterminat: "
-"10). Açò evita alarmes falses per errors breus del sensor."
+"després de la detecció d'alerta abans d'iniciar el tancament suau "
+"(predeterminat: 10). Açò evita alarmes falses per errors breus del sensor. "
+"Durant este retard, si es recupera el sensor meteorològic, no es farà cap "
+"acció."
 
 #: ../../user_manual/ekos-scheduler.rst:629
 msgid ""
@@ -1212,6 +1220,11 @@ msgid ""
 "**0** for indefinite monitoring — the recommended value for automated "
 "observatories that should always resume on their own."
 msgstr ""
+"**Període de gràcia meteorològic**: minuts que s'esperarà (en l'estat "
+"aparcat o tancament suau) fins que millore el temps abans de renunciar i fer "
+"un tancament complet. Establiu-la a **0** per a un seguiment indefinit: el "
+"valor recomanat per als observatoris automatitzats que sempre s'han de "
+"reprendre per si mateixos."
 
 #: ../../user_manual/ekos-scheduler.rst:637
 msgid "Automatic Weather Recovery"
@@ -1357,6 +1370,14 @@ msgid ""
 "INDI shutdown after N minutes), choose a value based on local weather "
 "patterns (30–120 minutes is typical for passing clouds or showers)."
 msgstr ""
+"**Establiu el període de gràcia a 0 per als observatoris completament "
+"automatitzats**: la configuració recomanada és establir el període de gràcia "
+"a **0** per al funcionament sense vigilància. El programador esperarà "
+"indefinidament fins que millore el temps, fins i tot durant diversos dies, i "
+"es reprendrà automàticament sense cap intervenció humana. Si preferiu un "
+"període de gràcia finit (p. ex., per a activar un tancament complet d'INDI "
+"després de N minuts), trieu un valor basat en els patrons meteorològics "
+"locals (de 30 fins a 120 minuts és típic per a núvols o ruixats)."
 
 #: ../../user_manual/ekos-scheduler.rst:702
 msgid ""
@@ -1911,42 +1932,3 @@ msgstr "Crea tasques"
 #: ../../user_manual/ekos-scheduler.rst:959
 msgid ".. image:: /images/mosaic_create_jobs.png"
 msgstr ".. image:: /images/mosaic_create_jobs.png"
-
-#~ msgid "**During the Grace Period:**"
-#~ msgstr "**Durant el període de gràcia:**"
-
-#~ msgid "Equipment remains protected (mount parked, dome closed)"
-#~ msgstr "L'equip romandrà protegit (muntura aparcada i la cúpula tancada)."
-
-#~ msgid "Ekos and INDI connections are maintained"
-#~ msgstr "Es mantindran les connexions amb Ekos i INDI."
-
-#~ msgid "Weather status is continuously monitored"
-#~ msgstr "Es controlarà contínuament l'estat de la meteorologia."
-
-#~ msgid "If weather improves to Ok, operations resume automatically"
-#~ msgstr ""
-#~ "Si la meteorologia millora a «BONA», les operacions es reprendran "
-#~ "automàticament."
-
-#~ msgid "If period expires with Alert status, the job fails"
-#~ msgstr "Si el període expira amb l'estat d'«Alerta», la tasca falla."
-
-#~ msgid ""
-#~ "**Weather Grace Period**: Minutes to wait for weather improvement. Choose "
-#~ "based on your local weather patterns—longer grace periods work well if "
-#~ "alerts are typically brief."
-#~ msgstr ""
-#~ "**Període de gràcia meteorològic:** els minuts d'espera fins que millore "
-#~ "el temps. Trieu-ho en funció dels vostres patrons de la meteorologia "
-#~ "local: els períodes de gràcia més llargs funcionen bé si les alertes "
-#~ "solen ser breus."
-
-#~ msgid ""
-#~ "**Choose Grace Period Wisely**: Base the grace period on local weather "
-#~ "patterns. For areas with brief passing clouds or showers, 30-60 minutes "
-#~ "allows resumption without abandoning the night."
-#~ msgstr ""
-#~ "**Trieu el període de gràcia amb prudència:** baseu el període de gràcia "
-#~ "en els patrons de la meteorologia local. Per a zones amb núvols breus o "
-#~ "ruixats, de 30 a 60 minuts permeten la reprendre la nit sense abandonar."

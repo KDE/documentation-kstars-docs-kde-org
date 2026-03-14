@@ -3,14 +3,14 @@
 # Licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
 # This file is distributed under the same license as the KStars Handbook package.
 #
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Antoni Bella Pérez <antonibella5@yahoo.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Antoni Bella Pérez <antonibella5@yahoo.com>
 # SPDX-FileCopyrightText: 2020, 2021, 2022 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-23 02:04+0000\n"
-"PO-Revision-Date: 2025-08-30 03:41+0200\n"
+"PO-Revision-Date: 2026-03-13 01:18+0100\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: ../../user_manual/ekos-capture.rst:3
 msgid "Capture"
@@ -485,7 +485,7 @@ msgid ""
 "the job is aborted."
 msgstr ""
 "``Enfocament automàtic si HFR >``: si l'enfocament automàtic està habilitat "
-"en el :doc:`mòdul «Enfocament» <ekos-focus>` i s'ha completat correctament "
+"al :doc:`mòdul «Enfocament» <ekos-focus>` i s'ha completat correctament "
 "almenys una operació d'enfocament automàtic, podreu establir el valor HFR "
 "màxim acceptable. Si esta opció està habilitada, entre les exposicions "
 "consecutives, el valor HFR es tornarà a calcular, i si es troba que excedix "
@@ -899,10 +899,8 @@ msgstr ""
 "fins que s'obtinga un valor satisfactori."
 
 #: ../../user_manual/ekos-capture.rst:244
-#, fuzzy
-#| msgid "Capture Settings"
 msgid "Capture Scripts"
-msgstr "Configureu la captura"
+msgstr "Scripts de captura"
 
 #: ../../user_manual/ekos-capture.rst:246
 msgid ""
@@ -911,15 +909,22 @@ msgid ""
 "external systems, updating observatory control software, or performing "
 "custom operations based on capture progress."
 msgstr ""
+"Ekos permet executar scripts personalitzats en diverses etapes del procés de "
+"captura. Estos scripts es poden utilitzar per a automatitzar tasques com ara "
+"notificar a sistemes externs, actualitzar el programari de control de "
+"l'observatori o realitzar operacions personalitzades basades en el progrés "
+"de la captura."
 
 #: ../../user_manual/ekos-capture.rst:249
 msgid "Script Types"
-msgstr ""
+msgstr "Tipus de scripts"
 
 #: ../../user_manual/ekos-capture.rst:251
 msgid ""
 "There are four types of scripts that can be configured for each capture job:"
 msgstr ""
+"Hi ha quatre tipus de scripts que es poden configurar per a cada tasca de "
+"captura:"
 
 #: ../../user_manual/ekos-capture.rst:253
 msgid ""
@@ -927,6 +932,10 @@ msgid ""
 "have been captured yet for this job (completed count is 0). Useful for setup "
 "tasks like enabling equipment or sending notifications."
 msgstr ""
+"``Anterior a la tasca``: s'executa una vegada abans que comence la tasca. "
+"Només s'executa quan encara no s'ha capturat cap imatge per a esta tasca (el "
+"recompte és 0). Útil per a configurar tasques com activar equips o enviar "
+"notificacions."
 
 #: ../../user_manual/ekos-capture.rst:255
 msgid ""
@@ -934,6 +943,9 @@ msgid ""
 "image is about to be captured. Useful for tasks that need to happen before "
 "every exposure."
 msgstr ""
+"``Anterior a la captura``: s'executa abans de cada captura individual. Cada "
+"vegada que s'està a punt de capturar una imatge. Útil per a tasques que han "
+"de succeir abans de cada exposició."
 
 #: ../../user_manual/ekos-capture.rst:257
 msgid ""
@@ -941,6 +953,10 @@ msgid ""
 "every time an image is successfully captured. Useful for tasks like copying "
 "files to backup storage, updating databases, or sending notifications."
 msgstr ""
+"``Posterior a la captura``: s'executa després de completar cada captura "
+"individual. Cada vegada que es captura correctament una imatge. Útil per a "
+"tasques com copiar fitxers a l'emmagatzematge de còpia de seguretat, "
+"actualitzar bases de dades o enviar notificacions."
 
 #: ../../user_manual/ekos-capture.rst:259
 msgid ""
@@ -948,10 +964,13 @@ msgid ""
 "images for the job have been captured. Useful for cleanup tasks or final "
 "notifications."
 msgstr ""
+"``Posterior a la tasca``: s'executa una vegada després de finalitzar la "
+"tasca. Quan s'han capturat totes les imatges sol·licitades per la tasca. "
+"Útil per a tasques de neteja o notificacions finals."
 
 #: ../../user_manual/ekos-capture.rst:262
 msgid "Input Data Format"
-msgstr ""
+msgstr "Format de les dades d'entrada"
 
 #: ../../user_manual/ekos-capture.rst:264
 msgid ""
@@ -959,10 +978,13 @@ msgid ""
 "standard input (stdin). The script can read this data to obtain information "
 "about the capture job and progress."
 msgstr ""
+"Quan s'executa un script, Ekos passarà les dades amb el format JSON a "
+"l'script a través de l'entrada estàndard (stdin). L'script pot llegir estes "
+"dades per a obtindre informació sobre la tasca de captura i el progrés."
 
 #: ../../user_manual/ekos-capture.rst:266
 msgid "The JSON structure contains the following fields:"
-msgstr ""
+msgstr "L'estructura JSON conté els camps següents:"
 
 #: ../../user_manual/ekos-capture.rst:268
 msgid ""
@@ -990,100 +1012,132 @@ msgid ""
 "  }\n"
 "}"
 msgstr ""
+"{\n"
+"  \"script_type\": \"PRE_CAPTURE\",\n"
+"  \"job\": {\n"
+"    \"filter\": \"Ha\",\n"
+"    \"exposure\": 300.0,\n"
+"    \"type\": \"Light\",\n"
+"    \"binning_x\": 1,\n"
+"    \"binning_y\": 1,\n"
+"    \"target_name\": \"M42\"\n"
+"  },\n"
+"  \"fits\": {\n"
+"    \"filename\": \"/home/usuari/imatges/M42/Light/M42_Light_Ha_001.fits\",\n"
+"    \"headers\": {\n"
+"      \"OBJECT\": \"M42\",\n"
+"      \"EXPTIME\": 300.0,\n"
+"      \"FILTER\": \"Ha\"\n"
+"    }\n"
+"  },\n"
+"  \"progress\": {\n"
+"    \"completed\": 5,\n"
+"    \"total\": 20\n"
+"  }\n"
+"}"
 
 #: ../../user_manual/ekos-capture.rst:294
 msgid ""
 "``script_type``: The type of script being executed. One of: ``PRE_CAPTURE``, "
 "``POST_CAPTURE``, ``PRE_JOB``, ``POST_JOB``."
 msgstr ""
+"``script_type``: El tipus de script que s'està executant. Un de: "
+"``PRE_CAPTURE``, ``POST_CAPTURE``, ``PRE_JOB``, ``POST_JOB``."
 
 #: ../../user_manual/ekos-capture.rst:296
 msgid "``job``: Information about the current capture job:"
-msgstr ""
+msgstr "``job``: informació sobre la tasca de captura actual:"
 
 #: ../../user_manual/ekos-capture.rst:298
 msgid "``filter``: The filter name used for this capture."
-msgstr ""
+msgstr "``filter``: el nom del filtre utilitzat per a esta captura."
 
 #: ../../user_manual/ekos-capture.rst:299
-#, fuzzy
-#| msgid "``Exposure``: Specify exposure duration in seconds."
 msgid "``exposure``: Exposure duration in seconds."
-msgstr "``Exposició``: especifiqueu la duració de l'exposició en segons."
+msgstr "``exposure``: duració de l'exposició en segons."
 
 #: ../../user_manual/ekos-capture.rst:300
-#, fuzzy
-#| msgid ""
-#| "``Type``: Specify the type of desired CCD frame. Options are ``Light``, "
-#| "``Dark``, ``Bias``, and ``Flat`` frames."
 msgid ""
 "``type``: Frame type - one of ``Light``, ``Dark``, ``Bias``, ``Flat``, "
 "``Video``, or ``None``."
 msgstr ""
-"``Tipus``: especifiqueu el tipus de fotograma de CCD desitjat. Les opcions "
-"són fotograma ``Lluminós``, ``Fosc``, ``Biaix`` i ``Pla``."
+"``type``: el tipus de fotograma: ``Lluminós``, ``Fosc``, ``Biaix``, ``Pla``, "
+"``Vídeo`` o ``Cap``."
 
 #: ../../user_manual/ekos-capture.rst:301
 msgid "``binning_x``: Horizontal binning value."
-msgstr ""
+msgstr "``binning_x``: el valor de l'agrupament horitzontal."
 
 #: ../../user_manual/ekos-capture.rst:302
 msgid "``binning_y``: Vertical binning value."
-msgstr ""
+msgstr "``binning_y``: el valor de l'agrupament vertical."
 
 #: ../../user_manual/ekos-capture.rst:303
 msgid "``target_name``: Name of the target being imaged."
 msgstr ""
+"``target_name``: el nom de l'objectiu del qual s'està obtenint la imatge."
 
 #: ../../user_manual/ekos-capture.rst:305
 msgid ""
 "``fits``: (Only available for ``POST_CAPTURE`` scripts) Information about "
 "the captured FITS file:"
 msgstr ""
+"``fits``: (només disponible per als scripts de ``POST_CAPTURE``) informació "
+"sobre el fitxer FITS capturat:"
 
 #: ../../user_manual/ekos-capture.rst:307
 msgid "``filename``: Full path to the captured image file."
-msgstr ""
+msgstr "``filename``: camí complet cap al fitxer de la imatge capturada."
 
 #: ../../user_manual/ekos-capture.rst:308
 msgid "``headers``: FITS header key-value pairs from the captured image."
 msgstr ""
+"``headers``: parells de valors de la clau de capçalera FITS de la imatge "
+"capturada."
 
 #: ../../user_manual/ekos-capture.rst:310
 msgid "``progress``: Progress information:"
-msgstr ""
+msgstr "``progress``: informació del progrés:"
 
 #: ../../user_manual/ekos-capture.rst:312
 msgid ""
 "For ``POST_CAPTURE``: Progress of the current job (``completed`` / ``total`` "
 "images)."
 msgstr ""
+"Per a ``POST_CAPTURE``: el progrés de la tasca actual (tasques "
+"``completades`` / ``totals``)."
 
 #: ../../user_manual/ekos-capture.rst:313
 msgid ""
 "For ``POST_JOB``: Progress of the entire sequence (``completed`` / ``total`` "
 "jobs)."
 msgstr ""
+"Per a ``POST_JOB``: el progrés de tota la seqüencia (tasques "
+"``completades`` / ``totals``)."
 
 #: ../../user_manual/ekos-capture.rst:316
 msgid "Output and Exit Codes"
-msgstr ""
+msgstr "Codis d'eixida i final"
 
 #: ../../user_manual/ekos-capture.rst:318
 msgid "Scripts communicate their status back to Ekos through exit codes:"
-msgstr ""
+msgstr "Els scripts comuniquen el seu estat a Ekos mitjançant codis d'eixida:"
 
 #: ../../user_manual/ekos-capture.rst:320
 msgid ""
 "Exit code ``0``: Script completed successfully. Ekos continues with the "
 "capture process."
 msgstr ""
+"Codi d'eixida ``0``: l'script s'ha completat correctament. Ekos continuarà "
+"amb el procés de captura."
 
 #: ../../user_manual/ekos-capture.rst:322
 msgid ""
 "Any non-zero exit code: Script encountered an error. Ekos logs the error and "
 "may abort the capture depending on the script type."
 msgstr ""
+"Qualsevol codi d'eixida diferent de zero: l'script ha trobat un error. Ekos "
+"grava l'error i pot interrompre la captura depenent del tipus de script."
 
 #: ../../user_manual/ekos-capture.rst:324
 msgid ""
@@ -1091,16 +1145,21 @@ msgid ""
 "in the Ekos log window. This is useful for debugging and monitoring script "
 "execution."
 msgstr ""
+"Qualsevol text imprés a stdout o stderr per l'script es capturarà i es "
+"mostrarà a la finestra de registre d'Ekos. Així serà útil per a depurar i "
+"controlar l'execució dels scripts."
 
 #: ../../user_manual/ekos-capture.rst:327
 msgid "Example Python Script"
-msgstr ""
+msgstr "Exemple de script en Python"
 
 #: ../../user_manual/ekos-capture.rst:329
 msgid ""
 "The following example demonstrates a Python script that processes the JSON "
 "input from Ekos:"
 msgstr ""
+"L'exemple següent mostra un script en Python que processa l'entrada JSON "
+"d'Ekos:"
 
 #: ../../user_manual/ekos-capture.rst:331
 msgid ""
@@ -1186,43 +1245,136 @@ msgid ""
 "if __name__ == \"__main__\":\n"
 "    main()"
 msgstr ""
+"#!/usr/bin/env python3\n"
+"\"\"\"\n"
+"Exemple d'un script de captura d'Ekos\n"
+"\n"
+"Este script demostra com llegir i processar les dades\n"
+"JSON transmeses des d'Ekos durant l'execució de l'script\n"
+"de captura.\n"
+"\"\"\"\n"
+"\n"
+"import sys\n"
+"import json\n"
+"\n"
+"def main():\n"
+"    try:\n"
+"        # Llig les dades JSON des de stdin\n"
+"        input_data = json.loads(sys.stdin.read())\n"
+"\n"
+"        # Extrau el tipus d'script i la informació de la tasca\n"
+"        script_type = input_data.get(\"script_type\", \"\")\n"
+"        job = input_data.get(\"job\", {})\n"
+"\n"
+"        # Grava la informació bàsica de la tasca\n"
+"        print(f\"Tipus de script: {script_type}\")\n"
+"        print(f\"Objectiu: {job.get('target_name', 'Unknown')}\")\n"
+"        print(f\"Tipus de fotograma: {job.get('type', 'Unknown')}\")\n"
+"        print(f\"Filtre: {job.get('filter', 'None')}\")\n"
+"        print(f\"Exposició: {job.get('exposure', 0)} seconds\")\n"
+"        print(f\"Agrupament: {job.get('binning_x', 1)}x{job.get('binning_y', "
+"1)}\")\n"
+"\n"
+"        # Gestiona tipus de script diferents\n"
+"        if script_type == \"POST_CAPTURE\":\n"
+"            # Access FITS file information\n"
+"            fits = input_data.get(\"fits\", {})\n"
+"            filename = fits.get(\"filename\", \"\")\n"
+"            print(f\"Fitxer capturat: {filename}\")\n"
+"\n"
+"            # Accedix a les capçaleres de FITS\n"
+"            headers = fits.get(\"headers\", {})\n"
+"            if headers:\n"
+"                print(\"Capçaleres de FITS:\")\n"
+"                for key, value in headers.items():\n"
+"                    print(f\"  {key}: {value}\")\n"
+"\n"
+"            # Grava el progrés\n"
+"            progress = input_data.get(\"progress\", {})\n"
+"            completed = progress.get(\"completed\", 0)\n"
+"            total = progress.get(\"total\", 0)\n"
+"            print(f\"Progrés de la tasca: {completed}/{total} images\")\n"
+"\n"
+"            # Afegiu ací la vostra lògica personalitzada, p. ex:\n"
+"            # - Copia el fitxer a la ubicació de còpia de seguretat\n"
+"            # - Actualitza una base de dades\n"
+"            # - Envia una notificació\n"
+"            # - Activa el processament extern\n"
+"\n"
+"        elif script_type == \"POST_JOB\":\n"
+"            # Tasca completada, grava el progrés de la seqüència\n"
+"            progress = input_data.get(\"progress\", {})\n"
+"            completed = progress.get(\"completed\", 0)\n"
+"            total = progress.get(\"total\", 0)\n"
+"            print(f\"Progrés de la seqüència: {completed}/{total} tasques "
+"completades\")\n"
+"\n"
+"            # Afegiu ací la vostra lògica personalitzada, p. ex:\n"
+"            # - Envia una notificació de finalització\n"
+"            # - Actualitza l'estat de l'observatori\n"
+"            # - Neteja els fitxers temporals\n"
+"\n"
+"        # Eixida amb el codi de correcte\n"
+"        sys.exit(0)\n"
+"\n"
+"    except json.JSONDecodeError as e:\n"
+"        print(f\"S'ha produït un error mentre s'analitzava l'entrada JSON: "
+"{e}\", file=sys.stderr)\n"
+"        sys.exit(1)\n"
+"\n"
+"    except Exception as e:\n"
+"        print(f\"S'ha produït un error: {e}\", file=sys.stderr)\n"
+"        sys.exit(1)\n"
+"\n"
+"if __name__ == \"__main__\":\n"
+"    main()"
 
 #: ../../user_manual/ekos-capture.rst:415
 msgid ""
 "**Making Scripts Executable**: Scripts must be marked as executable before "
 "Ekos can run them. Use the following command to make a script executable:"
 msgstr ""
+"**Feu executables els scripts**: els scripts s'han de marcar com a "
+"executables abans que Ekos els puga executar. Utilitzeu l'ordre següent per "
+"a fer-ho:"
 
 #: ../../user_manual/ekos-capture.rst:417
 msgid "chmod +x /path/to/your_script.py"
-msgstr ""
+msgstr "chmod +X /camí/cap_al/vostre_script.py"
 
 #: ../../user_manual/ekos-capture.rst:422
 msgid "Configuration"
-msgstr ""
+msgstr "Configuració"
 
 #: ../../user_manual/ekos-capture.rst:424
 msgid "To configure scripts for a capture job:"
-msgstr ""
+msgstr "Per a configurar scripts per a una tasca de captura:"
 
 #: ../../user_manual/ekos-capture.rst:426
 msgid "Open the Capture Module and create or edit a job in the Sequence Queue."
 msgstr ""
+"Obriu el mòdul «Captura» i creeu o editeu una tasca a la «Cua en seqüència»."
 
 #: ../../user_manual/ekos-capture.rst:428
 msgid ""
 "In the job settings, look for the script configuration options where you can "
 "specify the path to your script for each script type."
 msgstr ""
+"En la configuració de la tasca, busqueu les opcions de configuració de "
+"l'script on podeu especificar el camí cap al vostre script per a cada tipus "
+"de script."
 
 #: ../../user_manual/ekos-capture.rst:430
 msgid ""
 "Enter the full path to your executable script for the desired script types."
 msgstr ""
+"Introduïu el camí complet cap al vostre script executable per als tipus de "
+"script desitjats."
 
 #: ../../user_manual/ekos-capture.rst:432
 msgid "Save the sequence queue to preserve the script configuration."
 msgstr ""
+"Guardeu la cua en seqüència per a preservar la configuració de l'script."
 
 #: ../../user_manual/ekos-capture.rst:436
 msgid ""
@@ -1230,6 +1382,10 @@ msgid ""
 "remote device (e.g., Stellarmate), ensure your scripts are present on that "
 "device and have appropriate permissions."
 msgstr ""
+"Els scripts s'executen a l'ordinador amb Ekos. Si 'Ekos s'executa en un "
+"dispositiu remot (p. ex., Stellarmate), assegureu-vos que els vostres "
+"scripts estiguen presents en este dispositiu i que tinguen els permisos "
+"adequats."
 
 #: ../../user_manual/ekos-capture.rst:441
 msgid "Exposure Calculator"
