@@ -22,7 +22,12 @@ existing functionality such as rotation, object highlighting, histogram
 manipulation, etc. to be run on the image. The stacked image can be saved
 by the user using the existing Save functionality.
 
-Live Stacker only operates on .fits files. They can be either mono
+Live Stacker operates an option webserver to serve up images to
+devices such as phones and tablets with web-browsers. This allows the stacked
+image to be viewed on individuals' devices, for example, at star parties
+and outreach events.
+
+Live Stacker operates on .fits and .xisf files. They can be either mono
 or color.
 
 Dark and Flat master files may optionally be specified to improve image
@@ -49,6 +54,9 @@ Following is a description of the UI widgets:
     -  Proc / Fail / Total: Output statistics of the number of subs
        Processed successfully, Failed and the Total. The Total is the
        number of subs in the directory.
+
+    -  Webcast Button: Launch the webcast dialog that allows Live Stacker to start or
+       stop webcasting the stacked images in the session.
 
     -  Start Button: This button has 3 states:
 
@@ -103,6 +111,12 @@ Following is a description of the UI widgets:
 
     -  Master Flat Button: Launches a file picker dialog box to choose
        a Master Flat.
+
+    -  Remove Hot Pix: Check to have Live Stacker automatically find and remove
+       hot pixels from subframes.
+
+    -  Remove Cold Pix: Check to have Live Stacker automatically find and remove
+       cold pixels from subframes.
 
     Alignment Settings:
 
@@ -177,6 +191,15 @@ Following is a description of the UI widgets:
         -  Num Stars: Subs are weighted by Num Stars. So the better the sub,
            the higher than number of stars detected and the higher the
            weighting.
+
+    -  Normalization:
+
+        -  None: No normalization of subframes is performed.
+
+        -  Linear: Incoming subframes are linear normalized to the existing stack. This
+           is the preferred method as it will stack better with subframes of various background
+           intensity. This option will also deal better with the frame edges to avoid sharp jumps
+           in brightness where subframes have moved slightly during the session.
 
     -  Low Sigma (Sigma Clipping and Winsor SC Methods). This is the number of Standard
        Deviations on the low side of the median to clip pixels out.
@@ -310,6 +333,39 @@ when stacking has finished, to experiment with it.
 To experiment, set one of the options and press Reprocess. You can then adjust the parameter
 and press Reprocess again until you have the optimum settings.
 
+Live Stacker Webcast
+====================
+
+Pressing the Webcast button launches the Live Stacker Webcast window. This lets you control all
+aspects of the webcast which allows yourself and others to view stacked images on web-browsers on
+phones, tablets and computers. This is useful at star parties and outreach events.
+
+        |FITS Viewer Live Stacker Webcast|
+
+The Webcast is initially stopped but is started by pressing Start. This starts the webserver and also
+displays a QR code in the dialog. This can be scanned to launch a web-browser on a device at the appropriate
+URL to receive images. Alternatively the displayed URL can be typed in.
+
+Multiple devices can be connected.
+
+As stacking progresses each registered device is automatically updated. The usual features of the device's
+browser are available. For example, if supported, the image can be user to the device's camera roll. The
+webpage can be converted to an app by the user (if this is supported on the device). This can be useful as
+sometimes it gives more screen space to the image and minimises decoration.
+
+The following widgets are available:
+Title. Sets a title for the session - which is displayed on the device.
+Logo L / R: Allows a logo to be displayed to the left and right of the Title.
+Port: Defaults to 8080 but can be changed if required.
+Throttle Updates: If short exposures are causing bandwidth issues, setting this with throttle updates to clients.
+QR Code: Scan the QR code from a device to launch a browser on the URL
+URL: The URL the webcast is being broadcast on.
+Start Webcast: Starts the webcast
+Stop Webcast: Stops the webcast
+Reset: removes the images history of the webcast. Effectively a Stop Webcast followed by Start Webcast
+Subscribers: Toggle to show / hide a grid of subscribing devices to the webcast.
+Close: Close the Webcast dialog (can be reopened at any time).
+
 Live Stacker Monitor
 ====================
 
@@ -335,7 +391,7 @@ represent the stacking workflow with relevant information from each step:
 2. Loading: displays timings and status of the load step and SNR of the sub.
 3. Plate Solving: displays timings, status, average HFR, number of stars.
 4. Stack Waiting: displays timings, status of a sub once loaded before the next stacking step.
-5. Calibration: displays timings, status. Note that calibration is optional.
+5. Calibration: displays timings, status, Hot Pix, Cold Pix. Note that calibration is optional.
 6. Alignment: displays timings, status and x, y and rotation of the sub to align with the master.
 7. Stacking: displays timings, status and stacking weight.
 
@@ -433,6 +489,7 @@ manual for more information.
 
 
 .. |FITS Viewer Live Stacker| image:: /images/fitsviewer-livestacker.png
+.. |FITS Viewer Live Stacker Webcast| image:: /images/fitsviewer-livestacker-webcast.png
 .. |FITS Viewer Live Stacker Monitor| image:: /images/fitsviewer-livestacker-monitor.png
 .. |FITS Viewer Live Stacker MultiChannel| image:: /images/fitsviewer-livestacker-mchan.png
 .. |FITS Viewer Live Stacker Options| image:: /images/fitsviewer-livestacker-options.png

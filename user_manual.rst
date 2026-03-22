@@ -7,9 +7,9 @@ The KStars Handbook
 Discover the features of KStars through an online manual.
 
 
-Revision 3.7.6 (2024-12-03)
+Revision 3.8.2 (2026-22-03)
 
-Copyright © 2001-2025 Jason Harris and the KStars Team
+Copyright © 2001-2026 Jason Harris and the KStars Team
 
 :doc:`Legal Notice <user_manual/legal-notice>`
 
