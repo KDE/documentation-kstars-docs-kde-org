@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-07 02:06+0000\n"
-"PO-Revision-Date: 2026-03-14 20:31+0100\n"
+"PO-Revision-Date: 2026-03-21 13:32+0100\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -35,6 +35,10 @@ msgid ""
 "directory and / or to add new subframes as they are taken during a live "
 "session."
 msgstr ""
+"L'apilador en directe (Live Stacker) del visor FITS apila i mostra els "
+"submarcs. Supervisa un directori, de manera que es pot utilitzar per a "
+"apilar el contingut existent del directori i/o afegir-hi submarcs nous a "
+"mesura que es prenen durant una sessió en directe."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:12
 msgid ""
@@ -45,6 +49,13 @@ msgid ""
 "(so it is stopped when KStars itself is stopped) but has its own process "
 "space within the operating system."
 msgstr ""
+"Es poden executar múltiples apiladors en directe per a supervisar directoris "
+"diferents. Estos apiladors en directe es poden executar com a finestres del "
+"Visor de FITS separades o en múltiples pestanyes dins d'una sola pestanya "
+"del Visor de FITS. A més, és possible executar l'apilador en directe com un "
+"procés autònom que encara està davall el control de KStars (de manera que es "
+"pararà alhora que el mateix KStars) però té el seu propi espai de procés "
+"dins del sistema operatiu."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:19
 msgid ""
@@ -54,27 +65,40 @@ msgid ""
 "run on the image. The stacked image can be saved by the user using the "
 "existing Save functionality."
 msgstr ""
+"L'apilador en directe seguix l'enfocament arquitectònic de Visor de FITS per "
+"a mostrar el resultat (en este cas, la imatge apilada) i permetre que la "
+"funcionalitat existent, com ara el gir, el ressaltat dels objectes, la "
+"manipulació dels histogrames, etc., s'execute damunt de la imatge. L'usuari "
+"pot guardar la imatge apilada mitjançant la funcionalitat «Guarda» existent."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:25
 msgid ""
 "Live Stacker only operates on .fits files. They can be either mono or color."
 msgstr ""
+"L'apilador en directe només funciona amb fitxers «.fits». Poden ser "
+"monocroms o en color."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:28
 msgid ""
 "Dark and Flat master files may optionally be specified to improve image "
 "quality."
 msgstr ""
+"De manera opcional, es poden especificar fitxers mestres foscos i plans per "
+"a millorar la qualitat de la imatge."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:31
 msgid ""
 "Each section of the Live Stacker input / output widgets are enclosed within "
 "a minimize widget that allows the block to be either expanded or minimized."
 msgstr ""
+"Cada secció dels ginys d'entrada i d'eixida de l'apilador en directe "
+"s'inclou dins d'un giny de minimització que permet ampliar o minimitzar el "
+"bloc."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:34
 msgid "Following is a description of the UI widgets:"
 msgstr ""
+"A continuació es mostra una descripció dels ginys de la interfície d'usuari:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:36
 msgid ""
@@ -83,12 +107,18 @@ msgid ""
 "started, and as new files (subs) are added to the directory these will be "
 "added to the existing stack."
 msgstr ""
+"Carpeta d'apilament: esta és la carpeta que mirarà l'«Apilador en directe». "
+"Qualsevol fitxer de la carpeta s'apilarà quan s'inicie el procés d'apilament "
+"en directe i, a mesura que s'afigen fitxers nous (subsolucions) a la "
+"carpeta, s'afegiran a l'apilament existent."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:41
 msgid ""
 "Stack Directory Button: Launches a directory dialog box to choose a "
 "directory."
 msgstr ""
+"Botó de la «Carpeta d'apilament»: obri un diàleg de carpetes per a triar-ne "
+"una."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:44
 msgid ""
@@ -97,6 +127,11 @@ msgid ""
 "combine mono subs into a color image. In this mode Red, Green and Blue must "
 "be specified and optionally Luminance can be added."
 msgstr ""
+"Botó del «Multicanal» (fletxa cap avall): alterna entre un únic canal (ja "
+"siga mono o en color) i el multicanal. El multicanal permet a l'usuari "
+"combinar les subsolucions mono dins d'una imatge en color. En este mode "
+"s'han d'especificar el roig, el verd i el blau i, de manera opcional, es pot "
+"afegir la luminància."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:49
 msgid ""
@@ -104,10 +139,13 @@ msgid ""
 "successfully, Failed and the Total. The Total is the number of subs in the "
 "directory."
 msgstr ""
+"Proc. / Fall. / Total: les estadístiques d'eixida del nombre de subsolucions "
+"processades amb èxit, fallides i el total. El total és el nombre de "
+"subsolucions que hi ha en la carpeta."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:53
 msgid "Start Button: This button has 3 states:"
-msgstr ""
+msgstr "Botó d'inici: té 3 estats:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:55
 msgid ""
@@ -115,12 +153,18 @@ msgid ""
 "Stack Directory and watches the directory for new subs. Button text changes "
 "to \"Stop\"."
 msgstr ""
+"«Inicia»: quan es prem el botó, s'executa el procés d'apilament de qualsevol "
+"subsolució a la carpeta d'apilament i mira el directori per a detectar les "
+"subsolucions noves. El text del botó canviarà a «Para»."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:59
 msgid ""
 "\"Stop\": Pressing the button stops watching the directory and cancels any "
 "in-flight stacking operation. Button text changes to \"Cancelling...\"."
 msgstr ""
+"«Para»: quan es prem el botó es deixarà de veure la carpeta i es cancel·larà "
+"qualsevol operació d'apilament al vol. El text del botó canviarà a «S'està "
+"cancel·lant…»."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:62
 msgid ""
@@ -128,12 +172,18 @@ msgid ""
 "completes, the button text resets to \"Start\" and the user can start "
 "another stacking process."
 msgstr ""
+"«S'està cancel·lant…»: no es pot prémer el botó. Quan es completa l'operació "
+"de cancel·lació, el text del botó es restablirà a «Inicia» i l'usuari podrà "
+"iniciar un altre procés d'apilament."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:66
 msgid ""
 "Live Stacker Monitor button: Launches the Live Stacker Monitor window. See "
 "the section on Live Stacker Monitor for more details."
 msgstr ""
+"Monitor de l'«Apilador en directe»: inicia la finestra Monitor de "
+"l'«Apilador en directe». Per a obtindre més detalls, vegeu la secció Monitor "
+"de l'«Apilador en directe»."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:69
 msgid ""
@@ -141,12 +191,17 @@ msgid ""
 "stacked image. Usually useful to turn on, but if performance is key this can "
 "be toggled off."
 msgstr ""
+"Càlcul de la SNR: alterneu-la per a activar o desactivar el càlcul de la SNR "
+"per a cada subsolució i la imatge apilada. Normalment és útil activar-lo, "
+"però si el rendiment és clau, es pot desactivar."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:72
 msgid ""
 "SNR Av / Min / Max: Output statistics of the subs processed so far. Average "
 "SNR / Minimum SNR / Maximum SNR."
 msgstr ""
+"Relació de senyal a soroll Màx. / Mín. / Mitjana: estadístiques d'eixida de "
+"les subsolucions processades fins ara."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:75
 msgid ""
@@ -155,20 +210,30 @@ msgid ""
 "(<50% of available) rather than Amber (<70%) or Red (>=70%). Double click "
 "the widget to hide text and just display the progress bar."
 msgstr ""
+"Giny de memòria: mostra la quantitat de memòria que utilitza el procés "
+"actual com a percentatge de la memòria disponible. Intenteu mantindre l'ús "
+"de la memòria en verd (<50% de disponible) en lloc d'ambre (<70%) o roig "
+"(>=70%). Feu doble clic damunt del giny per a ocultar el text i només "
+"visualitzar la barra de progrés."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:81
 msgid "Image SNR: This is the SNR of the stacked image at that time."
 msgstr ""
+"SNR de la imatge: esta és la relació de senyal a soroll de la imatge apilada "
+"en aquell moment."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:83
 msgid ""
 "Save Settings Button. This saves the configuration of the Live Stacker to "
 "disk."
 msgstr ""
+"Botó «Guardeu la configuració»: guarda la configuració de l'«Apilador en "
+"directe» al disc."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:86
 msgid "Help button: Launches web documentation for Live Stacker."
 msgstr ""
+"Botó «Ajuda»: inicia la documentació web per a l'«Apilador en directe»."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:88
 msgid "Calibration Settings:"
@@ -182,30 +247,42 @@ msgid ""
 "flat associated with each of the 4 stack dirs: Red, Green, Blue and "
 "Luminance."
 msgstr ""
+"Esta secció canvia en funció de si s'ha seleccionat el mode d'un sol canal o "
+"multicanal. En el mode d'un sol canal hi ha 1 fosc i 1 pla associats amb la "
+"carpeta d'apilament. En el mode multicanal, hi ha un fosc i un pla associat "
+"amb cadascuna de les 4 carpetes d'apilament: roig, verd, blau i luminància."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:95
 msgid ""
 "Master Dark: Blank or pathname to a Master Dark .fits file to be used to "
 "calibrate subs."
 msgstr ""
+"Fotograma fosc mestre: en blanc o nom del camí cap a un fitxer «.fits» que "
+"s'utilitzarà per a calibrar les subsolucions."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:98
 msgid ""
 "Master Dark Button: Launches a file picker dialog box to choose a Master "
 "Dark."
 msgstr ""
+"Botó del «Fotograma fosc mestre»: inicia un diàleg de selecció de fitxers "
+"per a triar-lo."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:101
 msgid ""
 "Master Flat: Blank or pathname to a Master Flat .fits file to be used to "
 "calibrate subs."
 msgstr ""
+"Fotograma pla mestre: en blanc o nom del camí cap a un fitxer «.fits» que "
+"s'utilitzarà per a calibrar les subsolucions."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:104
 msgid ""
 "Master Flat Button: Launches a file picker dialog box to choose a Master "
 "Flat."
 msgstr ""
+"Botó del «Fotograma pla mestre»: inicia un diàleg de selecció de fitxers per "
+"a triar-lo."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:107
 msgid "Alignment Settings:"
@@ -216,20 +293,27 @@ msgid ""
 "Master Sub: Blank or pathname to the sub to be used to align all other subs "
 "to. If blank, the first sub is used as alignment master."
 msgstr ""
+"Subsolució mestra: en blanc o el nom del camí cap a la subsolució que "
+"s'utilitzarà per a alinear totes les altres subsolucions. Si està en blanc, "
+"la primera subsolució s'utilitzarà com a mestra per a l'alineació."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:112
 msgid ""
 "Master Sub Button: Launches a file picker dialog box to choose the alignment "
 "master sub."
 msgstr ""
+"Botó de la «Subsolució mestra»: inicia un diàleg de selecció de fitxers per "
+"a triar-la."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:115
 msgid "Method: Plate Solve. Use plate solving as the method of aligning subs."
 msgstr ""
+"Mètode: Resolució de plaques. Utilitzeu la resolució de plaques com a mètode "
+"d'alineació de les subsolucions."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:118
 msgid "Stacking Settings:"
-msgstr ""
+msgstr "Configureu l'apilament:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:120
 msgid ""
@@ -237,6 +321,10 @@ msgid ""
 "in-memory at any one time and specifies the number of subs that cause a "
 "transition from initial stack to running stack."
 msgstr ""
+"Subsolucions en la memòria: especifica el nombre màxim de les subsolucions "
+"que es mantindran en la memòria en qualsevol moment i especifica el nombre "
+"de les subsolucions que provocaran una transició de l'apilament inicial a "
+"l'apilament en execució."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:124
 msgid ""
@@ -245,6 +333,11 @@ msgid ""
 "stacking. If the number of subs available is less than this then the "
 "stacking process runs in order to display the stacked image to the user."
 msgstr ""
+"El procés d'apilament acumularà este nombre de subsolucions (si està "
+"disponible) abans d'apilar-les i continuarà amb lots d'este nombre abans de "
+"realitzar l'apilament. Si el nombre de les subsolucions disponibles és "
+"inferior, s'executarà el procés d'apilament per a mostrar la imatge apilada "
+"a l'usuari."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:130
 msgid ""
@@ -252,6 +345,9 @@ msgid ""
 "and intermediate results are then held in order to more rapidly add new, "
 "incoming subs to the stack."
 msgstr ""
+"Una vegada s'arribe fins este nombre de subsolucions, es completarà la fase "
+"inicial de l'apilament i després es mantindran els resultats intermedis per "
+"a afegir més ràpidament les subsolucions noves entrants a la pila."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:134
 msgid ""
@@ -259,6 +355,9 @@ msgid ""
 "use sigma clipping (or winsorized sigma clipping) setting this too low can "
 "compromise results."
 msgstr ""
+"Establiu este nombre baix per a que siga més eficient amb l'ús de la "
+"memòria. Tanmateix, si utilitzeu el retallat de la sigma (o este és "
+"winsoritzat), establir-ho massa baix pot comprometre el resultat."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:138
 msgid ""
@@ -269,6 +368,13 @@ msgid ""
 "pixels in each sub is reduced by a factor of 4 which will significantly "
 "speed up processing"
 msgstr ""
+"Reducció de l'escala: hi ha disponibles les opcions «Cap», «2x2», «3x3» i "
+"«4x4». Esta opció reduïx la mida de les subsolucions pel factor seleccionat. "
+"Per exemple, si es tria «2x2», es farà la mitjana de cada grup de 2x2 píxels "
+"a un valor únic per color, reduint tant l'amplària com l'alçària de la "
+"imatge en un factor de 2. Per tant, el nombre de píxels a cada subsolució es "
+"reduirà en un factor de 4, el qual accelerarà significativament el "
+"processament."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:145
 msgid "Method:"
@@ -276,7 +382,7 @@ msgstr "Mètode:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:147
 msgid "Average: Frames are averaged (mean). No pixels are rejected."
-msgstr ""
+msgstr "Mitjana: fa la mitjana dels fotogrames. No es rebutjarà cap píxel."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:149
 msgid ""
@@ -289,6 +395,16 @@ msgid ""
 "they are checked against the saved pixel statistics to determine whether "
 "they are inliers or outliers and are processed accordingly."
 msgstr ""
+"Retallat de la sigma: s'aplica a les primeres «Subsolucions en la memòria» "
+"que s'hagen de processar. Una vegada acumulat, es construirà una pila de "
+"píxels per a cada píxel de les subsolucions que continga el valor del píxel "
+"en totes les subsolucions. Es calcularà la mitjana i la desviació estàndard "
+"dels valors dels píxels, tots els valors que es troben fora dels llindars "
+"«Sigma baixa» i «Sigma alta» s'exclouran com a valors discrepants. A "
+"continuació, els valors concordants s'utilitzaran per a calcular la imatge "
+"apilada. A mesura que arriben subsolucions noves, es comprovaran amb les "
+"estadístiques de píxels guardades per a determinar si són valors concordants "
+"o discrepants, i es processaran en conseqüència."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:159
 msgid ""
@@ -296,6 +412,9 @@ msgid ""
 "in Sigma Clipping, they are set to Low Sigma / High Sigma and included in "
 "the calculation."
 msgstr ""
+"SC winsoritzat: pareixent a «Retallat de la sigma», excepte quan s'exclouen "
+"els valors discrepants a «Retallat de la sigma», s'establixen en «Sigma "
+"baixa:» i «Sigma alta:», i s'inclouen en el càlcul."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:163
 msgid ""
@@ -306,38 +425,56 @@ msgid ""
 "observed subs. It uses an iterative approach and is extremely resource "
 "intensive. This is an experimental approach at this time."
 msgstr ""
+"ImageMM: este mètode d'apilament es basa en `este article<https://iopscience."
+"iop.org/article/10.3847/1538-3881/adfb72>`__. Bàsicament, es pot pensar que "
+"és una combinació d'apilament i de desconvolució. El mètode busca determinar "
+"la imatge apilada desconvolutada més probable que hauria creat el conjunt de "
+"les subsolucions observades. Utilitza un enfocament iteratiu i requerix molt "
+"recursos. En este moment, este és un enfocament experimental."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:170
 msgid "Frame Weighting:"
-msgstr ""
+msgstr "Ponderació dels fotogrames:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:172
 msgid "Equal: All subs are given an equal weight (=1.0)"
-msgstr ""
+msgstr "Igual: a totes les subsolucions se'ls dona el mateix pes (=1.0)."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:174
 msgid ""
 "HFR: Subs are weighted by 1 / (Av HFR). So the better the sub, the lower the "
 "HFR and the higher the weighting."
 msgstr ""
+"HFR: les subsolucions tenen una ponderació d'1 / (mitjanana d'HFR). Per "
+"tant, com millor siga la subsolució, més baix serà HFR i més gran serà la "
+"ponderació."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:177
 msgid ""
 "Num Stars: Subs are weighted by Num Stars. So the better the sub, the higher "
 "than number of stars detected and the higher the weighting."
 msgstr ""
+"Nombre d'estreles: les subsolucions són ponderades pel nombre d'estreles. "
+"Per tant, com millor siga la subsolució, més gran serà el nombre d'estreles "
+"detectades i més gran serà la ponderació."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:181
 msgid ""
 "Low Sigma (Sigma Clipping and Winsor SC Methods). This is the number of "
 "Standard Deviations on the low side of the median to clip pixels out."
 msgstr ""
+"Sigma baix (mètodes «Retallat de la sigma» i «SC winsoritzat»). Este és el "
+"nombre de desviacions estàndard a la part baixa de la mitjana per a retallar "
+"els píxels."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:184
 msgid ""
 "High Sigma (Sigma Clipping and Winsor SC Methods). This is the number of "
 "Standard Deviations on the high side of the median to clip pixels out."
 msgstr ""
+"Sigma alt (mètodes «Retallat de la sigma» i «SC winsoritzat»). Este és el "
+"nombre de desviacions estàndard a la part alta de la mitjana per a retallar "
+"els píxels."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:187
 msgid ""
@@ -345,6 +482,10 @@ msgid ""
 "away from the median to use as cutoff to adjust outlying values before "
 "running Sigma Clipping."
 msgstr ""
+"Retall winsoritzat (mètode «SC winsoritzat»). Este és el nombre de "
+"desviacions estàndard allunyades de la mitjana que s'utilitzaran com a "
+"retallat per a ajustar els valors no atípics abans d'executar el «Retallat "
+"de la sigma»."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:190
 msgid ""
@@ -352,6 +493,9 @@ msgid ""
 "algorithm will attempt. Increase the number for more accurate performance "
 "but at the expense of performance."
 msgstr ""
+"Iteració (ImageMM). Especifica el nombre màxim d'iteracions que intentarà "
+"l'algorisme. Incrementeu el nombre per a obtindre un rendiment més precís, "
+"però a costa del rendiment."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:194
 msgid ""
@@ -359,18 +503,26 @@ msgid ""
 "kappa=1 means no update for the iteration. Increase kappa for bigger updates "
 "but if you see signs of over \"deconvolving\" the image then reduce kappa."
 msgstr ""
+"Kappa (ImageMM). Arreplega les actualitzacions iteratives a l'interval 1/"
+"kappa a kappa. Per tant, «kappa=1» significa cap actualització per a la "
+"iteració. Incrementeu el kappa per a actualitzacions més grans, però si veeu "
+"signes de «desconvolució» excessiva de la imatge, reduïu el kappa."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:198
 msgid ""
 "Alpha (ImageMM). Damping between iterations by blending alpha * this "
 "iteration with (1 - alpha) * last iteration."
 msgstr ""
+"Alfa (ImageMM). Esmorteïment entre les iteracions combinant l'alfa * esta "
+"iteració amb (1 - alfa) * última iteració."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:201
 msgid ""
 "Sigma Scale (ImageMM). Reduce calculated image sigma by this scale factor. "
 "Reduce if you see ringing artifacts."
 msgstr ""
+"Escala de la sigma (ImageMM). Reduïx la sigma de la imatge calculada segons "
+"este factor d'escala. Reduïu-la si veeu defectes d'anellament."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:204
 msgid ""
@@ -378,6 +530,9 @@ msgid ""
 "disable. Updating too frequently can lead to artifacts. This is quite "
 "computationally intensive."
 msgstr ""
+"Actualització del PSF (ImageMM). Actualitza el PSF cada enèsima iteració. "
+"Establiu-la a zero per a desactivar-la. L'actualització amb massa freqüència "
+"pot provocar defectes visuals. És força intensiu en recursos."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:207
 msgid "Post Processing Settings:"
@@ -390,6 +545,10 @@ msgid ""
 "initial stacking phase to speed up processing. Thereafter, control is with "
 "the user."
 msgstr ""
+"Les opcions de postprocessament es poden activar o desactivar amb la casella "
+"de selecció de minimització associada amb el giny. El sistema desactivarà "
+"temporalment el postprocessament durant la fase inicial d'apilament per a "
+"accelerar-lo.  A partir de llavors, el control el tindrà l'usuari."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:214
 msgid ""
@@ -399,16 +558,24 @@ msgid ""
 "changing values and hitting the Reprocess Button, the user can adjust values "
 "and rerun the Post Processing without re-running the stacking process."
 msgstr ""
+"Estos paràmetres s'apliquen a la imatge apilada per a millorar-ne l'aspecte. "
+"Hi ha 3 eines: «Desconvolució», «Reducció del soroll» i «Agudització». "
+"Normalment, els paràmetres que s'utilitzaran es troben mitjançant "
+"l'experimentació per part de l'usuari. Si canvieu els valors i premeu el "
+"botó «Reprocessament», l'usuari pot anar ajustant els valors i tornar a "
+"executar el postprocessament sense tornar a executar el procés d'apilament."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:220
 msgid "Deconvolution Settings:"
-msgstr ""
+msgstr "Configureu la desconvolució:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:222
 msgid ""
 "Wiener Deconvolution can be applied to the image. The PSF sigma to use must "
 "be specified along with an amount."
 msgstr ""
+"La desconvolució de Wiener es pot aplicar a la imatge. S'ha d'especificar la "
+"«Sigma PSF» que s'utilitzarà juntament amb una quantitat."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:225
 msgid ""
@@ -416,48 +583,60 @@ msgid ""
 "original stacked image. The range is between 0 (no deconvolution) to 1 (use "
 "only the deconvolved image). Set to 0 to disable Deconvolution."
 msgstr ""
+"Quantitat de desconvolució: esta és la quantitat de la imatge "
+"desconvolucionada que cal combinar amb la imatge apilada original. "
+"L'interval està entre 0 (sense desconvolució) i 1 (utilitza només la imatge "
+"desconvolucionada). Establiu-la a 0 per a desactivar-la."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:229
 msgid "PSF Sigma. The PSF Sigma to use in the deconvolution process."
-msgstr ""
+msgstr "Sigma PSF. S'utilitza en el procés de desconvolució."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:231
 msgid "Denoising Settings:"
-msgstr ""
+msgstr "Configureu la reducció del soroll:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:233
 msgid ""
 "Denoise Amount: The amount of denoising to apply. Higher values denoise "
 "more. Set to 0 to disable denoising."
 msgstr ""
+"Quantitat de reducció del soroll: la quantitat que cal aplicar. Els valors "
+"més alts reduïxen més el soroll. Establiu-la a 0 per a desactivar-la."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:236
 msgid "Sharpening Settings:"
-msgstr ""
+msgstr "Configureu l'agudització:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:238
 msgid "A basic Unsharp Mask sharpening algorithm is used."
 msgstr ""
+"S'utilitza un algorisme bàsic d'agudització de la màscara de desenfocament."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:240
 msgid ""
 "Sharpen Amount: The amount of sharpening to apply. Higher values sharpen "
 "more. Set to 0 to disable sharpening."
 msgstr ""
+"Quantitat d'agudització: la quantitat que s'aplicarà. Els valors més alts "
+"fan més agudització. Establiu-la a 0 per a desactivar-la."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:243
 msgid ""
 "Sharpen Kernel. The size of the kernel used for sharpening in pixels "
 "(usually 5 or 7 works well). Choose an odd integer."
 msgstr ""
+"Nucli d'agudització. La mida del nucli que s'utilitza per a l'agudització en "
+"píxels (normalment 5 o 7 treballa bé). Trieu un nombre enter senar."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:246
 msgid "Sharpen Sigma. The sigma used in the sharpening process."
 msgstr ""
+"Sigma de l'agudització: la sigma utilitzada en el procés d'agudització."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:248
 msgid "Reprocess:"
-msgstr ""
+msgstr "Reprocessament:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:250
 msgid ""
@@ -467,6 +646,12 @@ msgid ""
 "a stacked image the user can adjust settings and re-run, adjust again and re-"
 "run, etc."
 msgstr ""
+"Botó «Reprocessament». Quan es prem, es torna a executar la funcionalitat de "
+"postprocessament («Desconvolució», «Reducció del soroll» i «Agudització») "
+"damunt de la imatge apilada utilitzant els valors actuals de la configuració "
+"de postprocessament. Açò vol dir que en una imatge apilada l'usuari pot "
+"ajustar la configuració i tornar a executar, ajustar de nou i tornar a "
+"executar, etc."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:256
 msgid "Using Live Stacker for the First Time"
