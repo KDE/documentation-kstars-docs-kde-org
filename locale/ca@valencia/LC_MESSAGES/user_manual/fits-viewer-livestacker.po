@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-23 02:00+0000\n"
-"PO-Revision-Date: 2026-03-22 18:18+0100\n"
+"PO-Revision-Date: 2026-03-24 12:48+0100\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -78,17 +78,17 @@ msgid ""
 "viewed on individuals' devices, for example, at star parties and outreach "
 "events."
 msgstr ""
+"L'apilador en directe opera un servidor web opcional per a servir les "
+"imatges a dispositius com ara telèfons i tauletes amb navegadors web. Açò "
+"permet que la imatge apilada es veja als dispositius de la gent, per "
+"exemple, en festes d'estreles i esdeveniments de divulgació."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:30
-#, fuzzy
-#| msgid ""
-#| "Live Stacker only operates on .fits files. They can be either mono or "
-#| "color."
 msgid ""
 "Live Stacker operates on .fits and .xisf files. They can be either mono or "
 "color."
 msgstr ""
-"L'apilador en directe només funciona amb fitxers «.fits». Poden ser "
+"L'apilador en directe funciona amb els fitxers «.fits» i «.xisf». Poden ser "
 "monocroms o en color."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:33
@@ -161,6 +161,9 @@ msgid ""
 "Webcast Button: Launch the webcast dialog that allows Live Stacker to start "
 "or stop webcasting the stacked images in the session."
 msgstr ""
+"Botó «Difusió web»: inicia el diàleg de difusió web que permet a l'«Apilador "
+"en directe» iniciar o parar la difusió web de les imatges apilades durant la "
+"sessió."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:61
 msgid "Start Button: This button has 3 states:"
@@ -200,9 +203,9 @@ msgid ""
 "Live Stacker Monitor button: Launches the Live Stacker Monitor window. See "
 "the section on Live Stacker Monitor for more details."
 msgstr ""
-"Monitor de l'apilador en directe: inicia la finestra «Monitor de l'apilador "
-"en directe». Per a obtindre més detalls, vegeu la secció «Monitor de "
-"l'apilador en directe»."
+"El botó «Monitor de l'apilador en directe»: inicia la finestra «Monitor de "
+"l'apilador en directe». Per a obtindre més detalls, vegeu la secció «Monitor "
+"de l'apilador en directe»."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:77
 msgid ""
@@ -308,12 +311,16 @@ msgid ""
 "Remove Hot Pix: Check to have Live Stacker automatically find and remove hot "
 "pixels from subframes."
 msgstr ""
+"Elimina els píxels cremats: marqueu-la per a que l'«Apilador en directe» "
+"trobe i suprimisca automàticament els píxels cremats dels submarcs."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:118
 msgid ""
 "Remove Cold Pix: Check to have Live Stacker automatically find and remove "
 "cold pixels from subframes."
 msgstr ""
+"Elimina els píxels freds: marqueu-la per a que l'«Apilador en directe» trobe "
+"i suprimisca automàticament els píxels freds dels submarcs."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:121
 msgid "Alignment Settings:"
@@ -390,6 +397,7 @@ msgstr ""
 "memòria. Tanmateix, si utilitzeu el retallat de la sigma (o este és "
 "winsoritzat), establir-ho massa baix pot comprometre el resultat."
 
+# skip-rule: punctuation-period-no
 #: ../../user_manual/fits-viewer-livestacker.rst:152
 msgid ""
 "Downscale: Options of None, 2x2, 3x3 and 4x4 are available. This options "
@@ -447,6 +455,7 @@ msgstr ""
 "els valors discrepants a «Retallat de la sigma», s'establixen en «Sigma "
 "baixa:» i «Sigma alta:», i s'inclouen en el càlcul."
 
+# skip-rule: t-acc_obe
 #: ../../user_manual/fits-viewer-livestacker.rst:177
 msgid ""
 "ImageMM: The ImageMM stacking method based on this paper: https://iopscience."
@@ -467,6 +476,7 @@ msgstr ""
 msgid "Frame Weighting:"
 msgstr "Ponderació dels fotogrames:"
 
+# skip-rule: barb-igual,punctuation-period-no
 #: ../../user_manual/fits-viewer-livestacker.rst:186
 msgid "Equal: All subs are given an equal weight (=1.0)"
 msgstr "Igual: a totes les subsolucions se'ls dona el mateix pes (=1.0)."
@@ -491,11 +501,11 @@ msgstr ""
 
 #: ../../user_manual/fits-viewer-livestacker.rst:195
 msgid "Normalization:"
-msgstr ""
+msgstr "Normalització:"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:197
 msgid "None: No normalization of subframes is performed."
-msgstr ""
+msgstr "Cap: no es realitza cap normalització dels submarcs."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:199
 msgid ""
@@ -505,6 +515,11 @@ msgid ""
 "to avoid sharp jumps in brightness where subframes have moved slightly "
 "during the session."
 msgstr ""
+"Lineal: els submarcs entrants estan normalitzats linealment a l'apilament "
+"existent. Este és el mètode preferit, ja que s'apilarà millor amb els "
+"submarcs amb diverses intensitats de fons. Esta opció també tractarà millor "
+"les vores del marc per a evitar salts bruscos en la brillantor, cap on els "
+"submarcs s'han mogut lleugerament durant la sessió."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:204
 msgid ""
@@ -596,7 +611,7 @@ msgstr ""
 "Les opcions de postprocessament es poden activar o desactivar amb la casella "
 "de selecció de minimització associada amb el giny. El sistema desactivarà "
 "temporalment el postprocessament durant la fase inicial d'apilament per a "
-"accelerar-lo.  A partir de llavors, el control el tindrà l'usuari."
+"accelerar-lo. A partir de llavors, el control el tindrà l'usuari."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:237
 msgid ""
@@ -772,6 +787,7 @@ msgstr ""
 "la imatge, potencialment de manera significativa, però a costa d'un "
 "processament addicional."
 
+# skip-rule: barb-igual
 #: ../../user_manual/fits-viewer-livestacker.rst:305
 msgid ""
 "Frame Weighting: Equal is the most efficient option. Num Stars requires an "
@@ -855,10 +871,8 @@ msgstr ""
 "«Torna a processar» fins que tingueu la configuració òptima."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:337
-#, fuzzy
-#| msgid "Live Stacker Monitor"
 msgid "Live Stacker Webcast"
-msgstr "Monitor de l'apilador en directe"
+msgstr "Difusió web de l'«Apilador en directe»"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:339
 msgid ""
@@ -867,12 +881,15 @@ msgid ""
 "to view stacked images on web-browsers on phones, tablets and computers. "
 "This is useful at star parties and outreach events."
 msgstr ""
+"Quan es prem el botó «Difusió web» s'obrirà la finestra «Difusió web de "
+"l'Apilador en directe». Permet controlar tots els aspectes de la difusió web "
+"permetent-vos veure les imatges apilades als navegadors web en telèfons, "
+"tauletes i ordinadors. Açò és útil en festes d'estreles i esdeveniments de "
+"divulgació."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:343
-#, fuzzy
-#| msgid "|FITS Viewer Live Stacker|"
 msgid "|FITS Viewer Live Stacker Webcast|"
-msgstr "|FITS Viewer Live Stacker|"
+msgstr "|FITS Viewer Live Stacker Webcast|"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:345
 msgid ""
@@ -881,10 +898,15 @@ msgid ""
 "scanned to launch a web-browser on a device at the appropriate URL to "
 "receive images. Alternatively the displayed URL can be typed in."
 msgstr ""
+"La transmissió web està parada inicialment, però s'inicia prement «Inicia». "
+"Açò iniciarà el servidor web i també mostrarà un codi QR al diàleg. Es pot "
+"escanejar per a iniciar un navegador web en un dispositiu amb l'URL adequat "
+"per a rebre les imatges. De manera alternativa, es pot escriure l'URL "
+"mostrat."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:349
 msgid "Multiple devices can be connected."
-msgstr ""
+msgstr "S'hi poden connectar múltiples dispositius."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:351
 msgid ""
@@ -895,6 +917,13 @@ msgid ""
 "This can be useful as sometimes it gives more screen space to the image and "
 "minimises decoration."
 msgstr ""
+"A mesura que avança l'apilament, cada dispositiu registrat s'actualitza "
+"automàticament. Estan disponibles les característiques habituals del "
+"navegador del dispositiu. Per exemple, si s'admet, la imatge es pot "
+"utilitzar al rodet de la càmera del dispositiu. L'usuari pot convertir la "
+"pàgina web en una aplicació (si açò és compatible amb el dispositiu). Açò "
+"pot ser útil, ja que de vegades dona més espai de pantalla a la imatge i "
+"minimitza les decoracions."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:356
 msgid ""
@@ -910,6 +939,19 @@ msgid ""
 "show / hide a grid of subscribing devices to the webcast. Close: Close the "
 "Webcast dialog (can be reopened at any time)."
 msgstr ""
+"Hi ha disponibles els ginys següents: Títol: establix un títol per a la "
+"sessió, el qual es mostra al dispositiu. Logotip E/D: permet mostrar un "
+"logotip a l'esquerra i a la dreta del títol. Port: el valor predeterminat és "
+"8080, però es pot canviar. Accelerador d'actualitzacions: si les exposicions "
+"breus causen problemes d'amplada de banda, configureu-ho amb actualitzacions "
+"per als clients. Codi QR: escanegeu el codi QR des d'un dispositiu per a "
+"iniciar un navegador amb l'URL. URL: L'URL on es transmet la difusió web. "
+"Inicia la difusió web: inicia la difusió web. Para la difusió web: para la "
+"difusió web. Restablix: suprimix l'historial de les imatges de la difusió "
+"web. Efectivament, «Para la difusió web» seguit d'«Inicia la difusió web». "
+"Subscriptors: alterna el mostrar o ocultar una quadrícula dels dispositius "
+"subscrits a la difusió web. Tanca: tanca el diàleg «Difusió web» (es pot "
+"tornar a obrir en qualsevol moment)."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:370
 msgid "Live Stacker Monitor"
@@ -966,19 +1008,6 @@ msgstr ""
 "actualitzacions."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:388
-#, fuzzy
-#| msgid ""
-#| "Tooltips on the column headers explain what each column represents but in "
-#| "summary the columns represent the stacking workflow with relevant "
-#| "information from each step: 1. Miscellaneous columns: ID, pathname, "
-#| "filename, channel(s) and overall status. 2. Loading: displays timings and "
-#| "status of the load step and SNR of the sub. 3. Plate Solving: displays "
-#| "timings, status, average HFR, number of stars. 4. Stack Waiting: displays "
-#| "timings, status of a sub once loaded before the next stacking step. 5. "
-#| "Calibration: displays timings, status. Note that calibration is optional. "
-#| "6. Alignment: displays timings, status and x, y and rotation of the sub "
-#| "to align with the master. 7. Stacking: displays timings, status and "
-#| "stacking weight."
 msgid ""
 "Tooltips on the column headers explain what each column represents but in "
 "summary the columns represent the stacking workflow with relevant "
@@ -1002,9 +1031,9 @@ msgstr ""
 "mostra els temps i l'estat d'una subsolució una vegada carregada abans del "
 "següent pas de l'apilament. 5. Calibratge: mostra els temps i l'estat. Cal "
 "tindre en compte que el calibratge és opcional. 6. Alineació: mostra els "
-"temps, l'estat, «x» i «y», així com el gir de la subsolució per a alinear-la "
-"amb el mestre. 7. Apilament: mostra els temps, l'estat i el pes de "
-"l'apilament."
+"temps, l'estat, «Píxels cremats», «Píxels freds», «x» i «y», així com el gir "
+"de la subsolució per a alinear-la amb el mestre. 7. Apilament: mostra els "
+"temps, l'estat i el pes de l'apilament."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:398
 msgid ""
@@ -1131,11 +1160,11 @@ msgid ""
 "name to whatever you like. This is particularly useful when runing multiple "
 "instances of Live Stacker as separate tabs."
 msgstr ""
-"De manera predeterminada, el nom de la pestanya per a  l'«Apilador en "
+"De manera predeterminada, el nom de la pestanya per a l'«Apilador en "
 "directe» és «(n) Camí_cap_a_la_carpeta», on «n» és el nombre de subsolucions "
 "que hi ha a la «carpeta». Feu clic dret damunt del nom de la pestanya per a "
 "canviar el nom pel que vulgueu. Açò és particularment útil quan s'executen "
-"múltiples instàncies de  l'«Apilador en directe» en pestanyes separades."
+"múltiples instàncies de l'«Apilador en directe» en pestanyes separades."
 
 #: ../../user_manual/fits-viewer-livestacker.rst:447
 msgid ""
@@ -1182,10 +1211,12 @@ msgstr ""
 msgid "Zooming in / out."
 msgstr "Acostar o allunyar."
 
+# skip-rule: punctuation-period-no
 #: ../../user_manual/fits-viewer-livestacker.rst:462
 msgid "Rotating the image"
 msgstr "Girar la imatge."
 
+# skip-rule: punctuation-period-no
 #: ../../user_manual/fits-viewer-livestacker.rst:463
 msgid "Marking stars / highlighting clipped stars"
 msgstr "Marcar les estreles i ressaltar les estreles retallades."
@@ -1198,16 +1229,19 @@ msgstr ""
 "Resoldre la placa de la imatge apilada, encara que de manera predeterminada "
 "el procés d'apilament ja l'haurà resolt."
 
+# skip-rule: punctuation-period-no
 #: ../../user_manual/fits-viewer-livestacker.rst:466
 msgid "Stretch / Histogram adjustments"
 msgstr "Ajustos en l'estirament i l'histograma."
 
+# skip-rule: punctuation-period-no
 #: ../../user_manual/fits-viewer-livestacker.rst:467
 msgid "Viewing image statistics / FITS Header keywords"
 msgstr ""
 "Visualitzar les estadístiques de les imatges i les paraules clau de la "
 "capçalera FITS."
 
+# skip-rule: punctuation-period-no
 #: ../../user_manual/fits-viewer-livestacker.rst:468
 msgid "Viewing Catalog objects (e.g. Simbad objects)"
 msgstr "Visualitzar els objectes del catàleg (p. ex., els objectes Simbad)."
@@ -1268,16 +1302,12 @@ msgid ".. image:: /images/fitsviewer-livestacker.png"
 msgstr ".. image:: /images/fitsviewer-livestacker.png"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:492
-#, fuzzy
-#| msgid "FITS Viewer Live Stacker"
 msgid "FITS Viewer Live Stacker Webcast"
-msgstr "Apilador en directe del visor de FITS"
+msgstr "Difusió web de l'«Apilador en directe» del visor de FITS"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:492
-#, fuzzy
-#| msgid ".. image:: /images/fitsviewer-livestacker-mchan.png"
 msgid ".. image:: /images/fitsviewer-livestacker-webcast.png"
-msgstr ".. image:: /images/fitsviewer-livestacker-mchan.png"
+msgstr ".. image:: /images/fitsviewer-livestacker-webcast.png"
 
 #: ../../user_manual/fits-viewer-livestacker.rst:493
 msgid "FITS Viewer Live Stacker Monitor"
