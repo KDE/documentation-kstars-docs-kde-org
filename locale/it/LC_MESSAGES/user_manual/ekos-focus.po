@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2026-06-05 23:50+0200\n"
+"PO-Revision-Date: 2026-06-23 20:14+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -36,6 +36,10 @@ msgid ""
 "can see it as *unfocused*, as the human eye is very good at detecting that, "
 "but *how* can Ekos possibly know that?"
 msgstr ""
+"Per mettere a fuoco un'immagine, Ekos deve stabilire un metodo numerico per "
+"tarare quanto *buona* è la tua messa a fuoco. È facile quando guardi "
+"un'immagine e puoi osservarla *sfuocata*, dato che l'occhio umano è molto "
+"bravo a distinguerla, ma *come* può riuscirci Ekos?"
 
 #: ../../user_manual/ekos-focus.rst:14
 msgid ""
@@ -47,6 +51,15 @@ msgid ""
 "from focus. HFR has been used on lots of different types of equipment and "
 "has proved to be stable in a wide range of circumstances."
 msgstr ""
+"Il metodo più provato e testato è Half-Flux-Radius (HFR, raggio di mezzo "
+"flusso), che è una misura della larghezza in pixel che inizia a contare dal "
+"centro della stella fino a che l'intensità accumulata è la metà del flusso "
+"totale della stella. Avvicinandoti al punto di fuoco ottimale, l'HFR si "
+"riduce progressivamente fino a raggiungere il valore minimo in "
+"corrispondenza della messa a fuoco perfetta, prima di ricominciare ad "
+"aumentare man mano che ti allontani dalla messa a fuoco. HFR è stato "
+"utilizzato in molti tipi di attrezzatura differenti, e la sua stabilità è "
+"provata in un'ampia gamma di situazioni."
 
 #: ../../user_manual/ekos-focus.rst:16
 msgid ""
@@ -55,6 +68,11 @@ msgid ""
 "recommended to start with HFR and when the user has become proficient in "
 "focusing their equipment, to try the other measures."
 msgstr ""
+"In aggiunta a HFR, Ekos supporta altre misure di messa a fuoco, inclusa la "
+"misura HFR regolata, FWHM, Numero di stelle e la Potenza di Fourier. È "
+"consigliato iniziare con HFR e, una volta che l'utente ha preso "
+"dimestichezza con la messa a fuoco della propria attrezzatura, provare poi "
+"le altre misure."
 
 #: ../../user_manual/ekos-focus.rst:18
 msgid ""
@@ -64,12 +82,20 @@ msgid ""
 "stars, or you can select a single star manually. It is recommended to allow "
 "Ekos to select a set of stars."
 msgstr ""
+"Dopo che elabora un'immagine, Ekos seleziona o una singola stella e inizia a "
+"misurare il suo HFR, oppure seleziona un gruppo di stelle che corrispondono "
+"ai criteri che sono stati impostati e calcola un HFR medio. Può selezionare "
+"automaticamente le stelle, oppure puoi selezionare manualmente una singola "
+"stella. Si raccomanda di consentire a Ekos la selezione di un gruppo di "
+"stelle."
 
 #: ../../user_manual/ekos-focus.rst:20
 msgid ""
 "Ekos supports 4 different focus algorithms: Linear 1 Pass, Linear, "
 "Iterative, Polynomial. Linear 1 Pass is the recommended algorithm."
 msgstr ""
+"Ekos supporta quattro diversi algoritmi di messa a fuoco: Lineare a 1 passo, "
+"Lineare, Iterativo, Polinomiale. Lineare a 1 passo è quello raccomandato."
 
 #: ../../user_manual/ekos-focus.rst:22
 msgid ""
@@ -77,15 +103,19 @@ msgid ""
 "Curve and fits a curve to the data to find the focus solution. It then moves "
 "to the calculated minimum. Key features include:"
 msgstr ""
+"**Lineare a 1 passo**: in questo algoritmo, Ekos stabilisce una curva-V e "
+"adatta una curva ai dati per individuare la soluzione di messa a fuoco. "
+"Quindi si sposta al minimo calcolato. Le caratteristiche principali "
+"includono:"
 
 #: ../../user_manual/ekos-focus.rst:24 ../../user_manual/ekos-focus.rst:36
 msgid "The algorithm compensates for focuser backlash."
-msgstr ""
+msgstr "L'algoritmo compensa il gioco del focheggiatore."
 
 #: ../../user_manual/ekos-focus.rst:26
 msgid "The algorithm is fast, taking 1 pass to identify optimum focus."
 msgstr ""
-"L'algoritmo è veloce, richiede 1 passaggio per identificare la messa a fuoco "
+"L'algoritmo è veloce, richiede un passo per identificare la messa a fuoco "
 "ottimale."
 
 #: ../../user_manual/ekos-focus.rst:28
@@ -94,20 +124,17 @@ msgid ""
 "focus position."
 msgstr ""
 "L'algoritmo utilizza un adattamento della curva più sofisticato per "
-"individuare la posizione di messa a fuoco ottimale."
+"individuare la posizione del fuoco ottimale."
 
 #: ../../user_manual/ekos-focus.rst:30
-#, fuzzy
-#| msgid ""
-#| "The algorithm is highly configurable with user control over many "
-#| "parameters like step size and number of steps."
 msgid ""
 "The algorithm is highly configurable with user control over many parameters "
 "like step size, number of steps and how to deal with outliers in the "
 "datapoints."
 msgstr ""
 "L'algoritmo è altamente configurabile con il controllo dell'utente su molti "
-"parametri come la dimensione del passo e il numero di passi."
+"parametri come la dimensione del passo, il numero di passi e come gestire i "
+"valori anomali nei punti dati."
 
 #: ../../user_manual/ekos-focus.rst:32
 msgid ""
@@ -115,6 +142,9 @@ msgid ""
 "to position X, it always goes to the same position, then this algorithm will "
 "be the best to use."
 msgstr ""
+"Purché il focheggiatore abbia un comportamento ripetibile, ossia se "
+"comandato di andare alla posizione X raggiunga sempre la medesima posizione, "
+"allora questo algoritmo è la scelta migliore da utilizzare."
 
 #: ../../user_manual/ekos-focus.rst:34
 msgid ""
@@ -128,11 +158,22 @@ msgid ""
 "measurements it uses the % tolerance to help decide when it has found a "
 "solution. Key features include:"
 msgstr ""
+"**Lineare**: in questo algoritmo, Ekos si sposta verso l'esterno dal suo "
+"punto di partenza, quindi si sposta verso l'interno acquisendo punti dati "
+"regolari tramite il punto di messa a fuoco ottimale, quindi ancora più "
+"all'interno, disegnando una curva-V. Adatta poi una curva quadratica ai "
+"punti dati e calcola il punto di messa a fuoco ottimale. Quindi si sposta di "
+"nuovo verso l'esterno oltre il punto di messa a fuoco ottimale, dimezza la "
+"dimensione passo e si risposta all'interno per un secondo passo. Sembra che "
+"segua la curva dal primo passo e che trovi l'HFR minimo. A causa della "
+"imprevedibilità nelle misurazioni HFR, usa la tolleranza percentuale per "
+"stabilire quando ha trovato una soluzione. Le caratteristiche principali "
+"includono:"
 
 #: ../../user_manual/ekos-focus.rst:38
 msgid "The algorithm is slow, taking 2 passes to identify optimum focus."
 msgstr ""
-"L'algoritmo è lento e richiede 2 passaggi per identificare la messa a fuoco "
+"L'algoritmo è lento e richiede due passi per identificare la messa a fuoco "
 "ottimale."
 
 #: ../../user_manual/ekos-focus.rst:40
@@ -141,6 +182,9 @@ msgid ""
 "pass 1, but then uses % Tolerance to try to stop as close as possible to "
 "this HFR on pass 2."
 msgstr ""
+"L'algoritmo utilizza l'adattamento della curva per individuare la posizione "
+"del fuoco ottimale nel passo 1, ma poi usa la tolleranza percentuale per "
+"provare a fermarsi il più vicino possibile a questo HFR nel passo 2."
 
 #: ../../user_manual/ekos-focus.rst:42
 msgid ""
@@ -157,6 +201,10 @@ msgid ""
 "algorithm will be the best to use as it has some built in tolerance for this "
 "variability."
 msgstr ""
+"Se il focheggiatore si comporta in modo imprevedibile, ossia se comandato di "
+"andare alla posizione X c'è variabilità nella posizione a cui arriva, allora "
+"questo algoritmo è la scelta migliore da utilizzare dato che possiede alcune "
+"tolleranze integrate per questa variabilità."
 
 #: ../../user_manual/ekos-focus.rst:46
 msgid ""
@@ -179,21 +227,47 @@ msgid ""
 "focus motion, as all subsequent motions depend on the V-Curve slope "
 "calculations. Key features include:"
 msgstr ""
+"**Iterativo**: in questo algoritmo, Ekos opera in modo iterativo spostando "
+"passi discreti decisi inizialmente dalla dimensione passo configurabile "
+"dall'utente e successivamente dalla inclinazione della curva-V, per "
+"avvicinarsi alla posizione del fuoco ottimale, dove cambia poi ingranaggi ed "
+"esegue movimenti più piccoli e precisi per raggiungere la messa a fuoco "
+"ottimale. La procedura di messa a fuoco si interrompe quando l'HFR misurato "
+"si trova all'interno della tolleranza configurabile dell'HFR minimo "
+"registrato nella procedura. In altre parole, ogniqualvolta la procedura "
+"inizia a cercare una soluzione all'interno di un intervallo a malapena "
+"limitato, controlla se l'HFR attuale si trova all'interno della differenza "
+"percentuale confrontato con l'HFR minimo registrato, e se questa condizione "
+"viene soddisfatta allora la procedura di messa a fuoco automatica è "
+"considerata riuscita correttamente. Il valore predefinito è impostato a 1% "
+"ed è sufficiente nella maggior parte delle situazioni. Le opzioni Passi "
+"specificano il numero dei tic iniziali di cui si deve spostare il "
+"focheggiatore. Se l'immagine è molto fuori fuoco, impostiamo una dimensione "
+"alta del passo (ossia maggiore di 250). Al contrario, se la messa a fuoco è "
+"vicina alla messa a fuoco ottimale, impostiamo la dimensione passo a un "
+"intervallo più ragionevole (inferiore a 50). Bisogna andare per tentativi "
+"per trovare il migliore tic di partenza, ma Ekos usa l'opzione soltanto per "
+"il movimento della prima messa a fuoco, dato che tutti i movimenti "
+"successivi dipendono dai calcoli dell'inclinazione della curva-V. Le "
+"caratteristiche principali includono:"
 
 #: ../../user_manual/ekos-focus.rst:48 ../../user_manual/ekos-focus.rst:56
 msgid "The algorithm relies on the focuser having well controlled backlash."
 msgstr ""
+"L'algoritmo confida che il gioco del focheggiatore sia ben controllato."
 
 #: ../../user_manual/ekos-focus.rst:50 ../../user_manual/ekos-focus.rst:58
 msgid "The algorithm can be fast using a minimum number of steps."
-msgstr ""
-"L'algoritmo può essere veloce utilizzando un numero minimo di passaggi."
+msgstr "L'algoritmo può essere veloce utilizzando un numero minimo di passi."
 
 #: ../../user_manual/ekos-focus.rst:52
 msgid ""
 "The algorithm works on a \"good enough\" paradigm whereby it stops when the "
 "HFR is within % Tolerance of the perceived minimum."
 msgstr ""
+"L'algoritmo lavora su un paradigma \"sufficientemente buono\" per mezzo del "
+"quale si interrompe quando l'HFR si trova all'interno della tolleranza "
+"percentuale del minimo percepito."
 
 #: ../../user_manual/ekos-focus.rst:54
 msgid ""
@@ -203,17 +277,23 @@ msgid ""
 "performs quadratic curve fitting to find a solution that predicts the "
 "minimum possible HFR position. Key features include:"
 msgstr ""
+"**Polinomiale**: in questo algoritmo, la procedura inizia in modalità "
+"iterativa, ma una volta superato l'altro lato della curva-V (una volta che i "
+"valori HFR iniziano ad aumentare di nuovo dopo essere diminuiti per un po'), "
+"allora Ekos esegue l'adattamento della curva quadratica per trovare una "
+"soluzione che preveda la posizione HFR minima possibile. Le caratteristiche "
+"principali includono:"
 
 #: ../../user_manual/ekos-focus.rst:60
 msgid ""
 "The algorithm uses curve fitting to pinpoint the optimum focus position."
 msgstr ""
 "L'algoritmo utilizza l'adattamento della curva per individuare la posizione "
-"di messa a fuoco ottimale."
+"del fuoco ottimale."
 
 #: ../../user_manual/ekos-focus.rst:65
 msgid "Optical Train Group"
-msgstr ""
+msgstr "Gruppo ottico"
 
 #: ../../user_manual/ekos-focus.rst:68
 msgid "|Optical Train Settings|"
@@ -225,18 +305,27 @@ msgid ""
 "default this will be the primary imaging train, but other trains can be "
 "selected. The group consists of:"
 msgstr ""
+"Il gruppo del Gruppo ottico mostra il gruppo ottico attualmente selezionato. "
+"Per impostazione predefinita questo sarà il gruppo di riprese fotografiche "
+"principale, ma possono essere selezionati anche altri gruppi. Il gruppo è "
+"composto da:"
 
 #: ../../user_manual/ekos-focus.rst:73
 msgid ""
 "``Train``: The Optical Train currently in use by the Focus tab. Hover the "
 "mouse over this field for a more detailed description of the selected train."
 msgstr ""
+"``Gruppo``: il gruppo ottico attualmente in uso dalla scheda Messa a fuoco. "
+"Passa il mouse sopra questo campo per visualizzare una descrizione più "
+"dettagliata del gruppo selezionato."
 
 #: ../../user_manual/ekos-focus.rst:75
 msgid ""
 "``Edit Button``: Brings up the Optical Train dialog to view and potentially "
 "change the optical trains."
 msgstr ""
+"``Pulsante Modifica``: apre la finestra di dialogo Gruppo ottico per "
+"visualizzare, ed eventualmente cambiare, i gruppi ottici."
 
 #: ../../user_manual/ekos-focus.rst:77
 msgid ""
@@ -244,6 +333,9 @@ msgid ""
 "trains can be setup to manage different configurations with different "
 "parameters."
 msgstr ""
+"I parametri della messa a fuoco sono salvati automaticamente per ciascun "
+"gruppo ottico, pertanto possono essere configurati più gruppi per gestire "
+"configurazioni diverse contenenti parametri diversi."
 
 #: ../../user_manual/ekos-focus.rst:79
 msgid ""
@@ -253,16 +345,25 @@ msgid ""
 "train for the selected Focuser and scope type then default parameters are "
 "created."
 msgstr ""
+"Quando viene creato un nuovo gruppo ottico, la messa a fuoco tenterà di "
+"attribuirgli dei parametri predefiniti mutuati da altri gruppi ottici "
+"simili. Gli attributi che devono coincidere per questa operazione sono il "
+"focheggiatore e il tipo di telescopio. Se questo risulta essere il primo "
+"gruppo per il focheggiatore e il tipo di telescopio selezionati, allora "
+"vengono creati i parametri predefiniti."
 
 #: ../../user_manual/ekos-focus.rst:81
 msgid ""
 "It is recommended to use the :ref:`Focus Advisor <ekos-focus-focus-advisor>` "
 "tool on new Optical Trains to set parameters appropriately."
 msgstr ""
+"Per l'attribuzione dei parametri corretti ai nuovi gruppi ottici, è "
+"consigliato utilizzare lo strumento :ref:`Assistente di messa a fuoco <ekos-"
+"focus-focus-advisor>`."
 
 #: ../../user_manual/ekos-focus.rst:86
 msgid "Focuser Group"
-msgstr ""
+msgstr "Gruppo focheggiatore"
 
 #: ../../user_manual/ekos-focus.rst:89
 msgid "|Focuser Settings|"
@@ -277,26 +378,40 @@ msgid ""
 "position increases, while it decreases when focusing *inwards*. The "
 "following focuser types are supported:"
 msgstr ""
+"Sono supportati tutti i focheggiatori compatibili con INDI. Per ottenere i "
+"risultati migliori è raccomandato usare focheggiatori **assoluti**, dato che "
+"la loro posizione assoluta è nota all'accensione. In INDI, la posizione "
+"*zero* del focheggiatore è quando il tubo è **completamente retratto**. "
+"Quando si mette a fuoco *verso l'esterno*, la posizione del focheggiatore "
+"aumenta, mentre quando si mette a fuoco *verso l'interno* diminuisce. Sono "
+"supportati i seguenti tipi di focheggiatore:"
 
 #: ../../user_manual/ekos-focus.rst:94
 msgid ""
 "**Absolute**: Absolute Position Focusers such as RoboFocus, MoonLite, ASI ZWO"
 msgstr ""
+"**Assoluto**: Absolute Position Focuser (APT) come RoboFocus, MoonLite, ASI "
+"ZWO"
 
 #: ../../user_manual/ekos-focus.rst:96
 msgid "**Relative**: Relative Position Focusers."
-msgstr ""
+msgstr "**Relative**: Relative Position Focuser (RPF)."
 
 #: ../../user_manual/ekos-focus.rst:98
 msgid ""
 "**Time Based**: Time based focusers with no position feedback that adjust "
 "focus position by moving for a certain amount of time."
 msgstr ""
+"**Basati sul tempo**: Time Based Focuser (TBF), senza feedback sulla "
+"posizione, che regola la posizione del fuoco spostandosi per un certa "
+"quantità di tempo."
 
 #: ../../user_manual/ekos-focus.rst:100
 msgid ""
 "The ``Focuser`` field contains the focuser in the attached Optical Train."
 msgstr ""
+"Il campo ``Focheggiatore`` contiene il focheggiatore presente nel Gruppo "
+"ottico collegato."
 
 #: ../../user_manual/ekos-focus.rst:102
 msgid ""
@@ -306,16 +421,25 @@ msgid ""
 "number of ticks defined in the Initial Step Size field in the :ref:"
 "`Mechanics <ekos-focus-focus-mechanics>` tab."
 msgstr ""
+"Per i focheggiatori assoluti e relativi la dimensione passo è espressa in "
+"*tic*, mentre per quelli semplici o basati sul tempo la dimensione passo è "
+"espressa in *millisecondi*. I pulsanti ``In`` e ``Out`` si possono "
+"utilizzare per spostare il focheggiatore del numero di tic definiti nel "
+"campo \"Dimensione iniziale del passo\" definita nella scheda :ref:"
+"`Meccanica <ekos-focus-focus-mechanics>`."
 
 #: ../../user_manual/ekos-focus.rst:104
 msgid "The Steps fields has 2 parts:"
-msgstr ""
+msgstr "I campi Passi contengono due parti:"
 
 #: ../../user_manual/ekos-focus.rst:106
 msgid ""
 "**Left Hand Steps**: Current focuser position. This is output only and is "
 "updated as the focuser moves to reflect the current position."
 msgstr ""
+"**Passi alla sinistra**: posizione attuale del focheggiatore. È soltanto il "
+"risultato e viene aggiornato come il focheggiatore si sposta per riflettere "
+"la posizione attuale."
 
 #: ../../user_manual/ekos-focus.rst:108
 msgid ""
@@ -323,6 +447,10 @@ msgid ""
 "position. When the ``Goto`` button is pressed, the focuser is moved from its "
 "current position to the position indicated in this field."
 msgstr ""
+"**Passi alla destra**: è un campo di inserimento e permette all'utente di "
+"inserire la posizione desiderata. Quando viene premuto il pulsante ``Vai "
+"a``, il focheggiatore si sposta dalla sua posizione attuale a quella "
+"indicata in questo campo."
 
 #: ../../user_manual/ekos-focus.rst:110
 msgid ""
@@ -335,23 +463,39 @@ msgid ""
 "if the user presses the ``Goto`` button then the focuser will be moved to a "
 "good place to start focusing from."
 msgstr ""
+"All'avvio, i passi alla sinistra mostreranno la posizione attuale del "
+"focheggiatore. I passi alla destra prende come valore predefinito le "
+"impostazioni salvate nel Gruppo ottico. Questo è utile, per esempio, se hai "
+"più gruppi ottici che utilizzano lo stesso focheggiatore ma risolvono in "
+"posizioni differenti. In questo caso i passi alla destra conterranno "
+"l'ultimo valore salvato per questo campo, per il gruppo ottico selezionato. "
+"Quindi, dopo aver cambiato attrezzatura e selezionato il gruppo ottico, se "
+"l'utente preme il pulsante ``Vai a`` allora il focheggiatore verrà spostato "
+"nel punto migliore da cui partire per iniziare la messa a fuoco."
 
 #: ../../user_manual/ekos-focus.rst:112
 msgid ""
 "The ``Goto Focus Position`` button moves the focuser to the position in the "
 "righthand Steps field."
 msgstr ""
+"Il pulsante ``Vai alla posizione del fuoco`` sposta il focheggiatore alla "
+"posizione contenuta nel campo dei passi alla destra."
 
 #: ../../user_manual/ekos-focus.rst:114
 msgid ""
 "The ``Stop Focuser Motion`` button stops the in-progress focuser motion."
 msgstr ""
+"Il pulsante ``Ferma il movimento del focheggiatore`` interrompe il movimento "
+"del focheggiatore in avanzamento."
 
 #: ../../user_manual/ekos-focus.rst:116
 msgid ""
 "The ``Auto Focus`` button starts an Autofocus run. The ``Stop`` button is "
 "used to stop the run."
 msgstr ""
+"Il pulsante ``Messa a fuoco automatica`` avvia un'esecuzione di messa a "
+"fuoco automatica. Il pulsante ``Interrompi`` serve per interrompere "
+"l'operazione."
 
 #: ../../user_manual/ekos-focus.rst:118
 msgid ""
@@ -360,6 +504,11 @@ msgid ""
 "group>`. The ``Start Framing`` button will start repeatedly capturing frames "
 "until the Stop button is pressed."
 msgstr ""
+"Il pulsante ``Acquisisci immagine`` scatta un fotogramma basato sulle "
+"impostazioni correnti contenute nel :ref:`Gruppo fotocamera e ruota "
+"portafiltri <ekos-focus-camera-filter-wheel-group>`. Il pulsante ``Avvio "
+"dell'inquadratura`` avvierà l'acquisizione ripetuta di fotogrammi fino a "
+"quando è premuto il pulsante Interrompi."
 
 #: ../../user_manual/ekos-focus.rst:120
 msgid ""
@@ -372,6 +521,16 @@ msgid ""
 "focus-v-curve>` graph changes to show a time series of frames and their "
 "associated HFRs. This makes the framing process much easier to perform."
 msgstr ""
+"Alcuni algoritmi di messa a fuoco tenteranno di gestire l'avvio lontano dal "
+"punto di messa a fuoco ottimale, ma per risultati prevedibili, è meglio "
+"iniziare da una posizione che sia approssimativamente a fuoco. Per la "
+"primissima configurazione può essere utilizzata l'opzione ``Avvio "
+"dell'inquadratura``, insieme con i pulsanti ``In`` e ``Out`` per regolare la "
+"posizione del fuoco e minimizzare approssimativamente l'HFR delle stelle "
+"nelle immagini acquisite. Quando l'inquadratura viene utilizzata in questo "
+"modo, il grafico della :ref:`Curva-V <ekos-focus-v-curve>` cambia per "
+"mostrare una serie temporale di fotogrammi e i loro HFR associati. Ciò "
+"semplifica enormemente l'esecuzione della procedura di inquadratura."
 
 #: ../../user_manual/ekos-focus.rst:122
 msgid ""
@@ -380,6 +539,10 @@ msgid ""
 "approximate focus position on a distant object. This will provide a good "
 "starting position for focusing on stars when nighttime comes."
 msgstr ""
+"Se sei un neofita dell'astronomia, è sempre una buona idea familiarizzare "
+"con l'attrezzatura durante le ore diurne. Ciò permetterà di ottenere la "
+"posizione del fuoco approssimata su un oggetto distante, e fornirà una buona "
+"posizione di partenza per la messa a fuoco su stelle durante le ore notturne."
 
 #: ../../user_manual/ekos-focus.rst:127
 msgid "Camera & Filter Wheel Group"
@@ -394,14 +557,16 @@ msgid ""
 "This section of parameters deals with the Camera and Filter settings to use "
 "when focusing."
 msgstr ""
+"Questa sezione dei parametri descrive le impostazioni della fotocamera e dei "
+"filtri da utilizzare durante la messa a fuoco."
 
 #: ../../user_manual/ekos-focus.rst:135
 msgid "The top row of controls allows CCD parameters to be set."
-msgstr ""
+msgstr "La prima riga dei controlli permette l'impostazione dei parametri CCD."
 
 #: ../../user_manual/ekos-focus.rst:137
 msgid "``Exp``: The exposure time in seconds."
-msgstr ""
+msgstr "``Esp``: tempo di esposizione in secondi."
 
 #: ../../user_manual/ekos-focus.rst:139
 msgid ""
@@ -409,6 +574,9 @@ msgid ""
 "out to a separate window.  Pressing it again returns it within the focus "
 "window."
 msgstr ""
+"Il pulsante ``Passa a schermo intero`` visualizza il fotogramma della messa "
+"a fuoco in una finestra separata. Premendolo di nuovo la finestra rientra "
+"all'interno della finestra."
 
 #: ../../user_manual/ekos-focus.rst:141
 msgid ""
@@ -416,16 +584,22 @@ msgid ""
 "display the focus frame, in addition to the focus frame displayed within the "
 "focus window."
 msgstr ""
+"Il pulsante ``Mostra nel visore FITS`` apre una finestra separata del visore "
+"FITS per mostrare il fotogramma della messa a fuoco, in aggiunta a quello "
+"visualizzato nella finestra del fuoco."
 
 #: ../../user_manual/ekos-focus.rst:143
 msgid "The ``Live Video`` button brings up the associated popup."
-msgstr ""
+msgstr "Il pulsante ``Video in diretta`` apre la finestra associata."
 
 #: ../../user_manual/ekos-focus.rst:145
 msgid ""
 "The next row of controls allows Camera parameters to be set.  Choose a value "
 "from the binning dropdown and then set either the camera gain or ISO."
 msgstr ""
+"La successiva riga di controlli permette di impostare i parametri della "
+"fotocamera.  Scegli un valore dalla finestra a tendina del binning, poi "
+"imposta o il guadagno o il valore ISO."
 
 #: ../../user_manual/ekos-focus.rst:147
 msgid ""
@@ -435,6 +609,12 @@ msgid ""
 "not lead to a loss of resolution. If you wish to increase star brightness "
 "try increasing the exposure and / or gain. If you are unsure bin 1x1."
 msgstr ""
+"``Bin(ning)``: l'aumento del binning cambia la scala dell'immagine così come "
+"la risultanza dei pixel più luminosi. Vale la pena, in genere, eseguire il "
+"binning sopra 1x1 se la scala della tua immagine è sovracampionata, laddove "
+"l'aumento della scala non porta a una perdita di risoluzione. Se vuoi "
+"aumentare la luminosità delle stelle, prova ad aumentare l'esposizione e/o "
+"il guadagno. Se non sei sicuro, lascia il binning a 1x1."
 
 #: ../../user_manual/ekos-focus.rst:149
 msgid ""
@@ -444,18 +624,28 @@ msgid ""
 "will be required to find an optimum value. If you are unsure where to start "
 "try unity gain for your camera and adjust from there."
 msgstr ""
+"``Guadagno``: imposta il guadagno per la fotocamera da utilizzare per la "
+"messa a fuoco. Il valore deve essere sufficientemente alto per ottenere un "
+"modello chiaro di stelle, ma non troppo elevato da creare rumore che "
+"interferisca con l'operazione di messa a fuoco. Dovrai eseguire delle prove "
+"per individuare il valore ottimale. Se non sei sicuro da dove iniziare, "
+"prova il guadagno unità per la tua fotocamera e regola da lì."
 
 #: ../../user_manual/ekos-focus.rst:151
 msgid ""
 "``ISO``: Set the ISO for the Camera being used to focus.  Some "
 "experimentation will be required to find an optimum value."
 msgstr ""
+"``ISO``: imposta l'ISO per la fotocamera da usare per la messa a fuoco. "
+"Dovrai eseguire delle prove per individuare il valore ottimale."
 
 #: ../../user_manual/ekos-focus.rst:153
 msgid ""
 "The third row of controls deals with the Temperature Source and Filter, if "
 "there is one:"
 msgstr ""
+"La terza riga di controlli riguarda la sorgente della temperatura e il "
+"filtro, se è presente:"
 
 #: ../../user_manual/ekos-focus.rst:155
 msgid ""
@@ -465,6 +655,12 @@ msgid ""
 "completed and the current temperature. It is common practice to redo focus "
 "after significant temperature changes that alter the telescope's focus point."
 msgstr ""
+"``ST``: seleziona la sorgente della temperatura dal menu a tendina. Sotto "
+"viene visualizzata la temperatura corrente dalla sorgente della temperatura "
+"selezionata e il cambio di temperatura tra l'ultima esecuzione di messa a "
+"fuoco automatica completata correttamente e la temperatura corrente. È "
+"prassi comune rieseguire la messa a fuoco dopo cambi di temperatura "
+"significativi che alterano il punto di messa a fuoco del telescopio."
 
 #: ../../user_manual/ekos-focus.rst:157
 msgid "``Filter``: Select the filter to use."
@@ -478,10 +674,18 @@ msgid ""
 "settings>` popup. This allows a number of parameters to be set per filter to "
 "be used during an Autofocus run."
 msgstr ""
+"Per iniziare a mettere a fuoco sarà probabilmente più semplice selezionare "
+"il filtro che consente il maggior passaggio di luce, per esempio il filtro "
+"Lum. Fai clic sull'icona del filtro |image2| per aprire la finestra a "
+"comparsa :ref:`Impostazioni filtro <ekos-focus-filter-settings>`. Qui è "
+"possibile impostare i parametri per ciascun filtro da utilizzare durante "
+"l'esecuzione di messa a fuoco automatica."
 
 #: ../../user_manual/ekos-focus.rst:161
 msgid "``Reset`` button will reset the focusing subframe to full frame."
 msgstr ""
+"Il pulsante ``Ripristina`` reimposta il subframe della messa a fuoco a "
+"fotogramma intero."
 
 #: ../../user_manual/ekos-focus.rst:166
 msgid "Tools Group"
@@ -494,6 +698,8 @@ msgstr "|Focus Tools Group|"
 #: ../../user_manual/ekos-focus.rst:172
 msgid "This section describes the focus tools that are currently available."
 msgstr ""
+"Questo paragrafo descrive gli strumenti di messa a fuoco attualmente "
+"disponibili."
 
 #: ../../user_manual/ekos-focus.rst:174
 msgid ""
@@ -501,18 +707,25 @@ msgid ""
 "<ekos-focus-aberration-inspector>` run. The Stop button can be used to stop "
 "the run."
 msgstr ""
+"Pulsante ``Ispettore aberrazione``: avvia l'esecuzione dell`:ref:`Ispettore "
+"aberrazione <ekos-focus-aberration-inspector>`. Il pulsante Interrompi "
+"interrompe l'esecuzione."
 
 #: ../../user_manual/ekos-focus.rst:176
 msgid ""
 "The ``CFZ`` button launches the :ref:`Critical Focus Zone <ekos-focus-cfz>` "
 "tool."
 msgstr ""
+"Il pulsante ``CFZ`` avvia lo strumento :ref:`Critical Focus Zone <ekos-focus-"
+"cfz>` (Zona della messa a fuoco critica)."
 
 #: ../../user_manual/ekos-focus.rst:178
 msgid ""
 "The ``Advisor`` button launches the :ref:`Focus Advisor <ekos-focus-focus-"
 "advisor>` tool."
 msgstr ""
+"Il pulsante ``Assistente`` avvia lo strumento :ref:`Assistente di messa a "
+"fuoco <ekos-focus-focus-advisor>`."
 
 #: ../../user_manual/ekos-focus.rst:180
 msgid ""
@@ -520,6 +733,10 @@ msgid ""
 "Capture or the Scheduler. When checked, an Autofocus will be triggered at "
 "the completion of the currently active subframe."
 msgstr ""
+"La casella di controllo ``Forza AF`` si può utilizzare quando una sequenza è "
+"attiva in ce is active either in Acquisisci o nel Pianificatore. Se "
+"spuntata, sarà attivata una messa a fuoco automatica al completamento del "
+"subframe attualmente attivo."
 
 #: ../../user_manual/ekos-focus.rst:185 ../../user_manual/ekos-focus.rst:2158
 msgid "Focus Options"
@@ -534,24 +751,33 @@ msgid ""
 "Parameters to configure Focus are accessed by pressing the ``Options...`` "
 "button. This launches the Options dialog with three panes:"
 msgstr ""
+"I parametri per configurare la messa a fuoco sono raggiungibili premendo il "
+"pulsante ``Opzioni...``, che apre la relativa finestra di dialogo con tre "
+"pannelli:"
 
 #: ../../user_manual/ekos-focus.rst:193
 msgid ""
 ":ref:`Settings <ekos-focus-focus-settings>`: These are general Focus "
 "settings."
 msgstr ""
+":ref:`Impostazioni <ekos-focus-focus-settings>`: sono le impostazioni "
+"generali della messa a fuoco."
 
 #: ../../user_manual/ekos-focus.rst:195
 msgid ""
 ":ref:`Process <ekos-focus-focus-process>`: Parameters associated with the "
 "Autofocus process."
 msgstr ""
+":ref:`Procedura <ekos-focus-focus-process>`: parametri associati alla "
+"procedura di messa a fuoco automatica."
 
 #: ../../user_manual/ekos-focus.rst:197
 msgid ""
 ":ref:`Mechanics <ekos-focus-focus-mechanics>`: Parameters associated with "
 "the focuser mechanics."
 msgstr ""
+":ref:`Meccanica <ekos-focus-focus-mechanics>`: parametri associati alla "
+"meccanica del focheggiatore."
 
 #: ../../user_manual/ekos-focus.rst:199
 msgid ""
@@ -560,6 +786,10 @@ msgid ""
 "when they are changed, so on startup the last used configuration for the "
 "selected Optical Train is loaded."
 msgstr ""
+"I parametri sono salvati per ciascun gruppo ottico. Questo permette il "
+"salvataggio di diverse configurazioni per attrezzature differenti. I "
+"parametri sono salvati quando vengono modificati, e all'avvio viene caricata "
+"l'ultima configurazione utilizzata per il gruppo ottico selezionato."
 
 #: ../../user_manual/ekos-focus.rst:204 ../../user_manual/ekos-focus.rst:2161
 msgid "Focus Settings"
@@ -571,7 +801,7 @@ msgstr "|Focus Settings|"
 
 #: ../../user_manual/ekos-focus.rst:210
 msgid "General section parameters:"
-msgstr ""
+msgstr "Parametri della sezione Generale:"
 
 #: ../../user_manual/ekos-focus.rst:212
 msgid ""
@@ -580,6 +810,11 @@ msgid ""
 "select the star to use for focus; otherwise the user will have to manually "
 "select the star using FitsViewer."
 msgstr ""
+"``Selezione automatica stella``: questa impostazione ha valore solo se è "
+"selezionato ``Subframe``. In questo caso, se l'opzione ``Selezione "
+"automatica stella`` è spuntata, Ekos selezionerà la stella da usare per la "
+"messa a fuoco; in caso contrario, l'utente dovrà selezionare manualmente la "
+"stella tramite il Visore FITS."
 
 #: ../../user_manual/ekos-focus.rst:214
 msgid ""
@@ -588,6 +823,11 @@ msgid ""
 "defocused stars during the focus process where, for example, the guide scope "
 "is attached to the main telescope using an OAG."
 msgstr ""
+"``Sospendi guida``: imposta questa opzione per sospendere la guida durante "
+"un'esecuzione di messa a fuoco automatica. Lo scopo di questa opzione è "
+"impedire che la guida abbia problemi con stelle sfocate durante la procedura "
+"di messa a fuoco dove, per esempio, il telescopio della guida è collegato al "
+"telescopio principale tramite un OAG."
 
 #: ../../user_manual/ekos-focus.rst:216
 msgid ""
@@ -595,12 +835,19 @@ msgid ""
 "option can be useful in noisy images, where a pretaken dark is subtracted "
 "from the focus image before further processing."
 msgstr ""
+"``Dark frame``: spunta questa opzione per eseguire sottrazione di dark "
+"frame. L'opzione può essere utile nelle immagini con rumore, in cui un dark "
+"pre-scattato viene sottratto dalla immagine della messa a fuoco prima di "
+"ulteriore elaborazione."
 
 #: ../../user_manual/ekos-focus.rst:218
 msgid ""
 "If hot pixels are causing problems with focus, select Dark Frames and either "
 "setup a regular Master Dark frame or a Defect Map."
 msgstr ""
+"Se i problemi con la messa a fuoco sono i pixel bruciati, seleziona Dark "
+"frame e imposta un \"Master dark frame\" regolare oppure una Mappa dei "
+"difetti."
 
 #: ../../user_manual/ekos-focus.rst:220
 msgid ""
@@ -608,6 +855,9 @@ msgid ""
 "feature within the :doc:`Capture Module <ekos-capture>` for more details on "
 "how to setup Dark Frames."
 msgstr ""
+"I dark frame sono utilizzati dalla messa a fuoco, l'allineamento e il "
+"sistema di guida. Per ulteriori dettagli su come configurare di dark frame, "
+"vedi la Libreria dark nel :doc:`Modulo Acquisisci <ekos-capture>`."
 
 #: ../../user_manual/ekos-focus.rst:222
 msgid ""
@@ -615,6 +865,10 @@ msgid ""
 "focus will automatically select multiple stars for use in an Autofocus run.  "
 "The alternative to this is ``Sub Frame``."
 msgstr ""
+"``Campo completo``: seleziona per utilizzare il campo completo della "
+"fotocamera. In questa modalità, la messa a fuoco selezionerà automaticamente "
+"più stelle da usare in un'esecuzione di messa a fuoco automatica. "
+"L'alternativa a questa opzione è ``Subframe``."
 
 #: ../../user_manual/ekos-focus.rst:224
 msgid ""
@@ -623,6 +877,11 @@ msgid ""
 "Autofocus. Depending on the setting of ``Auto Select Star`` either the user "
 "or Ekos will select the star."
 msgstr ""
+"``Subframe``: seleziona per usare una stella singola nella procedura di "
+"messa a fuoco automatica. L'alternativa a questa opzione è ``Campo "
+"completo`` in cui vengono utilizzate più stelle dalla messa a fuoco "
+"automatica. A seconda dell'impostazione di ``Selezione automatica stella``, "
+"la stella sarà selezionata o dall'utente o da Ekos."
 
 #: ../../user_manual/ekos-focus.rst:226
 msgid ""
@@ -631,12 +890,20 @@ msgid ""
 "size can be increased even more to better enclose the Bahtinov diffraction "
 "pattern."
 msgstr ""
+"``Riquadro``: imposta la dimensione del riquadro utilizzato per racchiudere "
+"la stella per la messa a fuoco quando si usa **Subframe**. Aumenta se hai "
+"stelle molto grandi. Per la messa a fuoco Bahtinov la dimensione del "
+"riquadro può essere aumentata ancora di più per includere meglio il modello "
+"di diffrazione di Bahtinov."
 
 #: ../../user_manual/ekos-focus.rst:228
 msgid ""
 "``Display Units``: Select the units for display on the Autofocus V-Curve "
 "when HFR or FWHM is selected.  **Pixels** and **Arc Seconds** are supported."
 msgstr ""
+"``Mostra unità``: seleziona le unità da mostrare sulla Curva-V della messa a "
+"fuoco automatica quando è selezionato HFR o FWHM. Sono supportati i "
+"**pixel** e i **secondi d'arco**."
 
 #: ../../user_manual/ekos-focus.rst:230
 msgid ""
@@ -645,10 +912,14 @@ msgid ""
 "waiting this many seconds after the Autofocus process has completed, before "
 "restarting guiding."
 msgstr ""
+"``Stabilizzazione guida``: questa opzione viene utilizzata insieme con "
+"``Sospendi guida``. Permette di stabilizzare tutte le vibrazioni nel gruppo "
+"ottico attendendo i secondi indicati dopo che è completata la procedura di "
+"messa a fuoco automatica, prima di riavviare la guida."
 
 #: ../../user_manual/ekos-focus.rst:232
 msgid "Mask Section Parameters:"
-msgstr ""
+msgstr "Parametri della sezione Maschera:"
 
 #: ../../user_manual/ekos-focus.rst:234
 msgid ""
@@ -656,12 +927,17 @@ msgid ""
 "Field`` mode. The effect of Masking Options can be seen in the :ref:`FITS "
 "Viewer <ekos-focus-focus-display>`."
 msgstr ""
+"Questi controllo si riferiscono alle **opzioni di maschera** da utilizzare "
+"quando ci si trova in modalità ``Campo completo``. L'effetto di queste "
+"opzioni è visibile nel :ref:`Visore FITS <ekos-focus-focus-display>`."
 
 #: ../../user_manual/ekos-focus.rst:236
 msgid ""
 "``Use all stars for focusing``: Select this option if all stars of the field "
 "should be considered for focusing."
 msgstr ""
+"``Usa tutte le stelle per la messa a fuoco``: seleziona questa opzione se "
+"devono essere considerate tutte le stelle del campo per la messa a fuoco."
 
 #: ../../user_manual/ekos-focus.rst:238
 msgid ""
@@ -674,6 +950,15 @@ msgid ""
 "FOV to be discarded during focusing. This could be useful if you do not have "
 "a flat field out to the edges of your FOV."
 msgstr ""
+"``Maschera ad anello``: questa opzione fornisce due campi d'inserimento che "
+"insieme definiscono una ciambella sopra il CDV della fotocamera. Le stelle "
+"che ricadono al di fuori della ciambella vengono ignorate dall'elaborazione. "
+"Impostare un valore interno sopra lo 0% scarta le stelle che si trovano al "
+"centro del CDV, utile per evitare l'uso di stelle nel bersaglio "
+"dell'immagine (per esempio una galassia) per scopi di messa a fuoco. "
+"Impostare un valore esterno sotto il 100% scarta le stelle ai bordi del CDV "
+"durante la messa a fuoco, essere utile se non hai un flat field che si trova "
+"all'esterno del tuo CDV."
 
 #: ../../user_manual/ekos-focus.rst:240
 msgid ""
@@ -683,10 +968,16 @@ msgid ""
 "Inspector script. The tile size can be configured in percent of the frame "
 "width, with the spacer value specifying the space between the tiles."
 msgstr ""
+"``Maschera a mosaico``: un mosaico 3x3 composto da tessere dal centro "
+"dell'immagine, i suoi angoli e dai bordi. Questa opzione è utile se vuoi "
+"ispezionare le prestazioni dell'ottica: puoi ricavarle dallo script "
+"dell'Ispettore aberrazione PixInsight. La dimensione delle tessere è "
+"configurabile in percentuale della larghezza del fotogramma, e il valore del "
+"distanziatore specifica lo spazio tra le tessere."
 
 #: ../../user_manual/ekos-focus.rst:242
 msgid "There are four use-cases for the Mosaic Mask:"
-msgstr ""
+msgstr "Ci sono quattro casi d'uso per il Mosaico a maschera:"
 
 #: ../../user_manual/ekos-focus.rst:244
 msgid ""
@@ -695,6 +986,11 @@ msgid ""
 "sensor. This is especially useful for optics that show aberration if the "
 "focus is not 100% met."
 msgstr ""
+"Controllo della messa a fuoco in tutte le parti del sensore: la maschera "
+"consente una facile ispezione visiva e il confronto delle stelle al centro, "
+"negli angoli e nei bordi del sensore. Ciò è particolarmente utile per le "
+"ottiche che mostrano aberrazione se la messa a fuoco non è soddisfatta al "
+"100%."
 
 #: ../../user_manual/ekos-focus.rst:246
 msgid ""
@@ -704,6 +1000,12 @@ msgid ""
 "effect, the distance needs to be corrected. If the aberrations in the "
 "corners differ, this is typically the result of a tilted sensor."
 msgstr ""
+"Correzione dell'inclinazione dell'immagine: soprattutto i sensori grandi "
+"sono molto sensibili alla distanza scorretta e all'inclinazione del sensore. "
+"In questi casi, l'immagine mostra aberrazione, in particolar modo negli "
+"angoli dell'immagine. Se tutti gli angoli mostrano lo stesso effetto, la "
+"distanza deve essere corretta. Se le aberrazioni negli angoli differiscono, "
+"ciò è in genere il risultato di un sensore inclinato."
 
 #: ../../user_manual/ekos-focus.rst:248
 msgid ""
@@ -712,16 +1014,23 @@ msgid ""
 "Photonewton Collimation Primer <https://teleskop-austria.at/information/pdf/"
 "JUS_Photonewton_Collimation_Primer_EN.pdf>`__ for more details."
 msgstr ""
+"Collimazione dei Newtoniani: l'ispezione dei fotogrammi in uno stato "
+"sfuocato è in genere utilizzato per la collimazione dei Newtoniani. Vedi, "
+"per esempio, l'articolo `The Photonewton Collimation Primer <https://"
+"teleskop-austria.at/information/pdf/JUS_Photonewton_Collimation_Primer_EN."
+"pdf>`__ di Tommy Nawratil per ulteriori dettagli."
 
 #: ../../user_manual/ekos-focus.rst:250
 msgid ""
 "Running the :ref:`Aberration Inspector <ekos-focus-aberration-inspector>` "
 "tool."
 msgstr ""
+"Esecuzione dello strumento :ref:`Ispettore aberrazione <ekos-focus-"
+"aberration-inspector>`."
 
 #: ../../user_manual/ekos-focus.rst:252
 msgid "Adaptive Focus Parameters:"
-msgstr ""
+msgstr "Parametri della messa a fuoco adattiva:"
 
 #: ../../user_manual/ekos-focus.rst:254
 msgid ""
@@ -730,6 +1039,12 @@ msgid ""
 "in environmental conditions without having to perform a full Autofocus run. "
 "See the :ref:`Adaptive Focus <ekos-focus-adaptive>` section for more details."
 msgstr ""
+"Il gruppo seguente di controlli si riferisce alla **Messa a fuoco "
+"adattiva**. L'idea qui è mantenere il telescopio a fuoco adattando la "
+"posizione del focheggiatore in base alle modifiche delle condizioni "
+"ambientali senza dover eseguire un'operazione di messa a fuoco automatica "
+"completa. Per ulteriori dettagli vedi il paragrafo :ref:`Messa a fuoco "
+"adattiva <ekos-focus-adaptive>`."
 
 #: ../../user_manual/ekos-focus.rst:256
 msgid ""
@@ -738,6 +1053,11 @@ msgid ""
 "possible to firstly calculate the change in temperature and then to convert "
 "this to a number of ticks of focuser movement to apply between subframes."
 msgstr ""
+"Per esempio, se cambia la temperatura durante una sessione di riprese "
+"fotografiche cambia anche il punto di fuoco. Campionando la temperatura tra "
+"i subframe è possibile prima calcolare il cambio di temperatura, quindi "
+"convertire questo cambio in vari tic di spostamento del focheggiatore da "
+"applicare tra i subframe."
 
 #: ../../user_manual/ekos-focus.rst:258
 msgid ""
@@ -747,6 +1067,12 @@ msgid ""
 "change. This is covered in the :ref:`Filter Settings <ekos-focus-filter-"
 "settings>` popup. The popup is launched by clicking the filter icon |image3|."
 msgstr ""
+"Per utilizzare la **messa a fuoco adattiva** è necessario configurare alcuni "
+"dati del tuo sistema. In particolare, devi indicare a Ekos quanti tic (e in "
+"quale direzione) spostare il focheggiatore quando le condizioni ambientali "
+"cambiano. È possibile configurare questi dati nella finestra a comparsa :ref:"
+"`Impostazioni filtro <ekos-focus-filter-settings>`, che si apre facendo clic "
+"sull'icona del filtro |image3|."
 
 #: ../../user_manual/ekos-focus.rst:260
 msgid "The following controls are available:"
@@ -754,11 +1080,13 @@ msgstr "Sono disponibili i seguenti controlli:"
 
 #: ../../user_manual/ekos-focus.rst:262
 msgid "``Adaptive Focus``: Select this option to activate **Adaptive Focus**."
-msgstr ""
+msgstr "``Messa a fuoco adattiva``: seleziona questa opzione per attivarla."
 
 #: ../../user_manual/ekos-focus.rst:264
 msgid "``Min Move``: The minimum Adaptive Focus movement allowed."
 msgstr ""
+"``Movimento minimo``: il movimento di messa a fuoco adattiva minimo "
+"consentito."
 
 #: ../../user_manual/ekos-focus.rst:266
 msgid ""
@@ -766,6 +1094,10 @@ msgid ""
 "position for an Autofocus run.  The starting position is the last good solve "
 "position for the selected filter, adapted for environmental changes."
 msgstr ""
+"``Adatta posiz. di inizio``: spunta l'opzione per permettere alla Messa a "
+"fuoco adattiva di calcolare la posizione iniziale per un'operazione di messa "
+"a fuoco automatica.  La posizione iniziale è l'ultima buona posizione di "
+"risoluzione per il filtro selezionato, adattato per le variazioni ambientali."
 
 #: ../../user_manual/ekos-focus.rst:268
 msgid ""
@@ -775,6 +1107,13 @@ msgid ""
 "is off, Autofocus will start at 1000. If Adapt Start Pos is on, Autofocus "
 "will start at 990 + (5 - 4) \\* 3 = 993."
 msgstr ""
+"Per esempio, se la posizione attuale del focheggiatore è 1000, la "
+"temperatura = 4C, e se è selezionato il filtro Rosso (ultima posizione di "
+"messa a fuoco buona per Rosso è 990 @ 5C e Ekos è configurato per spostarsi "
+"di +3 ``Tic / °C``).  Quindi, se \"Adatta posizione di inizio\" è "
+"disattivata, la messa a fuoco automatica inizierà a 1000. Se invece \"Adatta "
+"posizione di inizio\" è attivata, la messa a fuoco automatica inizierà a 990 "
+"+ (5 - 4) \\* 3 = 993."
 
 #: ../../user_manual/ekos-focus.rst:270
 msgid ""
@@ -783,6 +1122,10 @@ msgid ""
 "useful when changing between filters which have large differences in focus "
 "points."
 msgstr ""
+"Questa funzionalità è utile per garantire che la messa a fuoco automatica "
+"parta vicino al punto di messa a fuoco, il che significa una curva-V più "
+"simmetrica. È particolarmente utile quando sono eseguiti scambi tra filtri "
+"con grandi differenze nei punti di fuoco."
 
 #: ../../user_manual/ekos-focus.rst:272
 msgid ""
@@ -792,6 +1135,12 @@ msgid ""
 "Autofocus run at the focus point of the last successful Autofocus run for "
 "that filter."
 msgstr ""
+"È possibile utilizzare questa funzionalità in modo indipendente, senza messa "
+"a fuoco adattiva. Basta impostare la casella di controllo e lasciare i tic "
+"per grado C impostati a zero. In questo modo la posizione di inizio della "
+"messa a fuoco automatica dipenderà dal filtro e inizierà ogni esecuzione al "
+"punto di fuoco dell'ultima esecuzione corretta di messa a fuoco automatica "
+"per quel filtro."
 
 #: ../../user_manual/ekos-focus.rst:274
 msgid ""
@@ -802,16 +1151,26 @@ msgid ""
 "equipment is unattended, this could result in Adaptive Focus attempting to "
 "make large focuser movements."
 msgstr ""
+"``Spostamento tot. max.``: lo spostamento totale massimo del focheggiatore "
+"consentito alla messa a fuoco adattiva nella sessione di osservazione. Lo "
+"scopo di questa opzione è fungere da \"maniglia di sicurezza\" per la messa "
+"a fuoco adattiva nel caso in cui si verifichi un'anomalia. Per esempio, se "
+"la sorgente della temperatura funziona male e restituisce delle letture "
+"sbagliate mentre l'attrezzatura è incustodita, ciò potrebbe far sì che la "
+"messa a fuoco adattiva tenti di eseguire grandi movimenti del focheggiatore."
 
 #: ../../user_manual/ekos-focus.rst:276
 msgid ""
 "If the Max Total Move is reached then ``Adaptive Focus`` is unchecked until "
 "manually re-checked by the user."
 msgstr ""
+"Se lo \"Spostamento totale massimo\" viene raggiunto, la ``Messa a fuoco "
+"adattiva`` viene quindi disattivata fino alla riattivazione manuale da parte "
+"dell'utente."
 
 #: ../../user_manual/ekos-focus.rst:281 ../../user_manual/ekos-focus.rst:2166
 msgid "Focus Process"
-msgstr "Procedimento di messa a fuoco"
+msgstr "Procedura di messa a fuoco"
 
 #: ../../user_manual/ekos-focus.rst:284
 msgid "|Focus Process|"
@@ -819,7 +1178,7 @@ msgstr "|Focus Process|"
 
 #: ../../user_manual/ekos-focus.rst:287
 msgid "Focus Process Parameters:"
-msgstr ""
+msgstr "Parametri della procedura di messa a fuoco:"
 
 #: ../../user_manual/ekos-focus.rst:289
 msgid ""
@@ -827,28 +1186,40 @@ msgid ""
 "strengths and weaknesses. It is recommended to use SEP, unless you have a "
 "specialized use. The following are available:"
 msgstr ""
+"``Rilevamento``: seleziona l'algoritmo di rilevamento stelle. Ogni algoritmo "
+"ha i suoi punti di forza e i suoi punti deboli. Si consiglia di usare SEP, a "
+"meno che tu non ne faccia un uso specializzato. Sono disponibili i seguenti "
+"algoritmi:"
 
 #: ../../user_manual/ekos-focus.rst:291
 msgid ""
 "**SEP**: Source Extraction and Photometry built in library. This is the "
 "default value."
 msgstr ""
+"**SEP**: \"Source Extraction and Photometry\" (Estrazione sorgente e "
+"fotometria), integrato nella libreria. È il valore predefinito."
 
 #: ../../user_manual/ekos-focus.rst:293
 msgid ""
 "**Centroid**: An extraction method based on estimating star mass around "
 "signal peaks."
 msgstr ""
+"**Baricentro**: metodo di estrazione basato sulla stima delle masse stellari "
+"attorno ai picchi di segnale."
 
 #: ../../user_manual/ekos-focus.rst:295
 msgid ""
 "**Gradient**: A single source extraction model based on the Sobel filter."
 msgstr ""
+"**Gradiente**: modello di estrazione di sorgente singola basato sul filtro "
+"Sobel."
 
 #: ../../user_manual/ekos-focus.rst:297
 msgid ""
 "**Threshold**: A single source detection algorithm based on pixel values."
 msgstr ""
+"**Soglia**: algoritmo per il rilevamento di sorgente singola basato sui "
+"valori dei pixel."
 
 #: ../../user_manual/ekos-focus.rst:299
 msgid ""
@@ -862,6 +1233,16 @@ msgid ""
 "indicator for the focus. The shorter the line, the better the image is in "
 "focus."
 msgstr ""
+"**Bahtinov**: questo metodo di rilevamento può essere utilizzato quando si "
+"usa una maschera Bahtinov per la messa a fuoco. Per prima cosa scatta "
+"un'immagine, quindi seleziona la stella su cui eseguire la messa a fuoco. "
+"Viene poi scattata una nuova immagine e analizzato lo schema di diffrazione. "
+"Vengono mostrate tre linee sullo schema di diffrazione che mostrano quanto "
+"bene viene riconosciuto lo schema e quanto è a fuoco l'immagine. Quando lo "
+"schema non viene riconosciuto bene, può essere regolato il parametro *Num. "
+"di righe* in modo da migliorare il riconoscimento. La linea con i cerchi "
+"alle estremità è un indicatore ingrandito per la messa a fuoco. Più corta è "
+"la linea, più a fuoco è l'immagine."
 
 #: ../../user_manual/ekos-focus.rst:301
 msgid ""
@@ -869,22 +1250,31 @@ msgid ""
 "choose a parameter profile to use with the algorithm. The following are "
 "recommended:"
 msgstr ""
+"``Profilo SEP``: se l'algoritmo di rilevamento stelle è impostato a *SEP*, "
+"allora scegli un profilo di parametri da usare con l'algoritmo. Sono "
+"raccomandati i seguenti profili:"
 
 #: ../../user_manual/ekos-focus.rst:303
 msgid ""
 "**1-Focus-Default:** for scopes that do not have a central obstruction such "
 "as a refractor."
 msgstr ""
+"**1-Focus-Default:** per telescopi che non hanno un'ostruzione centrale come "
+"un rifrattore."
 
 #: ../../user_manual/ekos-focus.rst:305
 msgid ""
 "**1-Focus-Default-Donut:** for scopes that have a central obstruction such "
 "as a Newtonian, SCT, RASA, Ritchey-Cretien, etc."
 msgstr ""
+"**1-Focus-Default-Donut:** per telescopi che hanno un'ostruzione centrale "
+"come i Newtoniani, SCT, RASA, Ritchey-Cretien, ecc."
 
 #: ../../user_manual/ekos-focus.rst:307
 msgid "``Algorithm``: Select the Autofocus process algorithm:"
 msgstr ""
+"``Algoritmo``. Seleziona l'algoritmo per la procedura di messa a fuoco "
+"automatica:"
 
 #: ../../user_manual/ekos-focus.rst:309
 msgid ""
@@ -892,6 +1282,9 @@ msgid ""
 "Ekos establishes a V-Curve and fits a curve to the data to find the focus "
 "solution. It then moves to the calculated solution."
 msgstr ""
+"**Lineare a 1 passo**: è l'algoritmo raccomandato. In questo algoritmo, Ekos "
+"stabilisce una curva-V e adatta una curva ai dati per individuare la "
+"soluzione di messa a fuoco. Quindi si sposta alla soluzione calcolata."
 
 #: ../../user_manual/ekos-focus.rst:311
 msgid ""
@@ -901,6 +1294,12 @@ msgid ""
 "curve fitting process if Use Weights is checked and run a refinement process "
 "if Refine Curve Fit is selected."
 msgstr ""
+"Questo algoritmo supporta il tipo curva quadratica di stile più vecchio, "
+"così come il più recente :ref:`Risolutore Levenberg-Marquardt <ekos-focus-"
+"levenberg-marquardt>` per le curve iperboliche e paraboliche. Pesa anche i "
+"punti dati nella procedura di adattamento della curva, se è attiva l'opzione "
+"\"Usa pesi\", ed esegue un'operazione di perfezionamento, se è selezionata "
+"l'opzione \"Perfeziona adattamento della curva\"."
 
 #: ../../user_manual/ekos-focus.rst:313
 msgid ""
@@ -931,7 +1330,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-focus.rst:319
 msgid "``Curve Fit``: The type of curve to fit to the datapoints."
-msgstr ""
+msgstr "``Adattamento curva``: il tipo di curva da adattare ai punti dati."
 
 #: ../../user_manual/ekos-focus.rst:321
 msgid ""
@@ -3722,7 +4121,7 @@ msgstr "immagine2"
 #: ../../user_manual/ekos-focus.rst:2154 ../../user_manual/ekos-focus.rst:2164
 #: ../../user_manual/ekos-focus.rst:2192
 msgid ".. image:: /images/view-filter.png"
-msgstr ""
+msgstr ".. image:: /images/view-filter.png"
 
 #: ../../user_manual/ekos-focus.rst:2156
 msgid "Focus Tools Group"

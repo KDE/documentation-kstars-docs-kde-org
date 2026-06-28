@@ -1,19 +1,19 @@
 #
-# SPDX-FileCopyrightText: 2025 Valter Mura <valtermura@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Valter Mura <valtermura@gmail.com>
 # Vincenzo Reale <smart2128vr@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2025-09-23 23:12+0200\n"
+"PO-Revision-Date: 2026-06-19 11:52+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../../user_manual/ekos-guide.rst:3
@@ -40,6 +40,17 @@ msgid ""
 "are well documented so just hover your mouse over an item and a tooltip will "
 "popup with helpful information."
 msgstr ""
+"Il modulo Guida di Ekos esegue la guida automatica utilizzando o il "
+"telescopio guida avanzato integrato oppure, a tua scelta, la guida esterna "
+"tramite `PHD2 <https://openphdguiding.org/>`__ o `lin_guider <https://"
+"sourceforge.net/projects/linguider/>`__. Utilizzando la guida interna, i "
+"fotogrammi della fotocamera del telescopio guida vengono acquisiti e inviati "
+"a Ekos per l'analisi. A seconda delle deviazioni delle stelle dalle loro "
+"posizioni di blocco, vengono inviate le correzioni degli impulsi della guida "
+"ai motori degli assi AR e DEC della tua montatura. La maggior parte delle "
+"opzioni dell'interfaccia nel modulo di guida è ben documentata e basta "
+"passare il mouse sopra un elemento per ottenere un suggerimento contenente "
+"informazioni utili."
 
 #: ../../user_manual/ekos-guide.rst:27
 msgid "Setup"
@@ -55,6 +66,10 @@ msgid ""
 "Editor for the profile you will be using. In the profile editor, choose "
 "Internal for the Ekos internal guider, or PHD2."
 msgstr ""
+"Per eseguire la guida, hai necessità (solo una volta) di selezionare un "
+"Telescopio guida per il profilo che andrai a utilizzare, all'interno "
+"dell'Editor dei profili. Nell'editor, scegli Interno per il telescopio guida "
+"interno di Ekos, oppure PHD2."
 
 #: ../../user_manual/ekos-guide.rst:36
 msgid "|Ekos Guider Optical Train|"
@@ -72,6 +87,17 @@ msgid ""
 "guide pulses directly to your mount, or the name of the ST4 device (e.g. "
 "your camera) should you be using ST4 guide pulses."
 msgstr ""
+"Per eseguire la guida devi anche configurare il gruppo ottico della tua "
+"guida. Questo secondo gruppo ottico è quasi sempre diverso da quello che "
+"stai utilizzando per acquisire/allineare/mettere a fuoco. Come esempio di "
+"configurazione del gruppo ottico, guarda l'immagine sopra riportata. Puoi "
+"notare che il telescopio scelto è il telescopio guida, che può essere lo "
+"stesso del tuo telescopio principale, se stai utilizzando uno schema di "
+"guida OAG (off-axis-guiding) o ONAG. La fotocamera selezionata è, "
+"ovviamente, la fotocamera guida. «Guida tramite» deve essere la tua "
+"montatura, presumendo che invii gli impulsi guida direttamente alla "
+"montatura, oppure il nome del dispositivo ST4 (per es. la tua fotocamera), "
+"nel caso stia usando impulsi guida ST4."
 
 #: ../../user_manual/ekos-guide.rst:51
 msgid ""
@@ -79,6 +105,9 @@ msgid ""
 "section. There are many parameters that also can be adjusted, some of which "
 "are listed below."
 msgstr ""
+"Dai un'occhiata alla pagina principale del telescopio guida mostrata "
+"all'inizio di questo capitolo. I parametri da regolare sono molti, e alcuni "
+"dei quali sono elencati di seguito."
 
 #: ../../user_manual/ekos-guide.rst:55
 msgid ""
@@ -87,6 +116,10 @@ msgid ""
 "computes and sends the guide pulses to the mount, then it waits a user-"
 "configurable delay, and then then begins its next exposure."
 msgstr ""
+"``Esposizione`` (Esp:): puoi regolare il tempo di esposizione della guida. "
+"Dopo che la fotocamera di guida completa l'esposizione, l'algoritmo di guida "
+"calcola e invia gli impulsi guida alla montatura, quindi attende un ritardo "
+"configurabile dall'utente, poi inizia con l'esposizione successiva."
 
 #: ../../user_manual/ekos-guide.rst:62
 msgid ""
@@ -94,6 +127,10 @@ msgid ""
 "bin the pixels 2x2. The algorithms can still find sub-pixel star positions "
 "and send proper guide pulses to the mount."
 msgstr ""
+"``Binning`` (Bin:): il binning dei pixel per l'immagine guida. Ha in genere "
+"senso per combinare i pixel 2x2. Gli algoritmi possono ancora trovare "
+"posizioni di stelle con pixel secondari e inviare gli impulsi guida corretti "
+"alla montatura."
 
 #: ../../user_manual/ekos-guide.rst:67
 msgid ""
@@ -102,6 +139,10 @@ msgid ""
 "the guide star. Select a suitable size that is neither too large or too "
 "small for the selected star."
 msgstr ""
+"``Riquadro``: applicabile solo agli algoritmi di guida diversi da MultiStar; "
+"MultiStar è lo schema di guida consigliato. Dimensione del riquadro che "
+"racchiude la stella guida. Seleziona una dimensione adatta che non sia né "
+"troppo grande, né troppo piccola per la stella selezionata."
 
 #: ../../user_manual/ekos-guide.rst:73
 msgid ""
@@ -109,24 +150,33 @@ msgid ""
 "Unchecking them will disable guiding in those directions. For instance it is "
 "possible to disable DEC guiding in the North direction."
 msgstr ""
+"``Direzioni``: in genere è bene mantenere attive tutte le caselle. Se le "
+"disattivi, disattiverai la guida in quelle direzioni. Per esempio, è "
+"possibile disattivare la guida DEC nella direzione Nord."
 
 #: ../../user_manual/ekos-guide.rst:79
 msgid ""
 "``Dark``: Check this to enable dark-frame corrections to your guiding image. "
 "See below."
 msgstr ""
+"``Dark``: attiva questa opzione per abilitare le correzioni dark frame alla "
+"tua immagine guida. Vedi sotto."
 
 #: ../../user_manual/ekos-guide.rst:82
 msgid ""
 "``Clear Calibration``: Check this to delete your calibration data. See the "
 "calibration section below."
 msgstr ""
+"``Pulisci calibrazione``: attiva questa opzione per eliminare i dati di "
+"calibrazione. Vedi il paragrafo Calibrazione qui sotto."
 
 #: ../../user_manual/ekos-guide.rst:85
 msgid ""
 "``Subframe, AutoStar``: These only apply to guide algorithms other than "
 "MultiStar, and MultiStar is the recommended guiding scheme."
 msgstr ""
+"``Subframe, Stella automatica``: si applicano soltanto agli algoritmi di "
+"guida diversi da MultiStar; MultiStar è lo schema di guida consigliato."
 
 #: ../../user_manual/ekos-guide.rst:92
 msgid "Calibration"
@@ -146,6 +196,14 @@ msgid ""
 "can see calibrated values for those parameters in the above image in the "
 "\"Calibrated Values\" section."
 msgstr ""
+"La guida automatica è un'operazione a due passaggi: la calibrazione e la "
+"guida. La calibrazione è necessaria allo schema per capire l'orientazione "
+"della fotocamera, relativamente agli assi AR e DEC, e anche per gli effetti "
+"degli impulsi guida (per es., di quanto un impulso guida AR di 100 ms "
+"sposterà l'asse AR). Una volta stimati questi valori, il telescopio guida "
+"può correggere efficacemente la posizione della montatura. Puoi osservare i "
+"valori calibrati per questi parametri nell'immagine sopra riportata nella "
+"sezione \"Valori calibrati\"."
 
 #: ../../user_manual/ekos-guide.rst:106
 msgid ""
@@ -159,14 +217,28 @@ msgid ""
 "openphdguiding.org/PHD2_BestPractices_2019-12.pdf>`__ contains good advice "
 "on how to calibrate the Internal Guider and/or PHD2."
 msgstr ""
+"In modo simile agli altri telescopi guida, raccomandiamo di calibrare una "
+"volta in modo accurato, e ricalibrare soltanto quando necessario. È "
+"necessario ricalibrare quando la fotocamera viene spostata (per es. ruotata) "
+"rispetto alla montatura. Non sarà necessario calibrare ogni volta che ruoti "
+"la montatura. Dovrai calibrare quando punti vicino al Meridiano e lungo "
+"l'Equatore celeste (probabilmente appena ad Ovest). La guida, e la "
+"calibrazione della guida, diventa problematica vicino al Polo (probabilmente "
+"non funzionerà). `Questa presentazione <https://openphdguiding.org/"
+"PHD2_BestPractices_2019-12.pdf>`__ contiene degli ottimi consigli su come "
+"calibrare il telescopio guida interno e/o il PHD2."
 
 #: ../../user_manual/ekos-guide.rst:119
 msgid "The important options on the calibration options page (above) are:"
 msgstr ""
+"Le opzioni importanti contenute nella pagina delle opzioni di calibrazione "
+"(riportata sopra) sono:"
 
 #: ../../user_manual/ekos-guide.rst:122
 msgid "``Pulse Size``: should be large enough to move your image a few pixels."
 msgstr ""
+"``(Dimensione) Impulso``: deve essere sufficientemente grande per spostare "
+"la tua immagine di alcuni pixel."
 
 #: ../../user_manual/ekos-guide.rst:125
 msgid ""
@@ -175,6 +247,11 @@ msgid ""
 "possible\", and un-checking \"Reset Guide Calibration After Each Mount Slew"
 "\"."
 msgstr ""
+"``Riutilizzo della calibrazione``: sono presenti due caselle di controllo "
+"relative al mantenimento della calibrazione. Consigliamo di spuntare "
+"\"Memorizza e riutilizza la calibrazione della guida quando possibile\" e di "
+"togliere la spunta a \"Ripristina la calibrazione della guida dopo ciascuna "
+"rotazione della montatura\"."
 
 #: ../../user_manual/ekos-guide.rst:131
 msgid ""
@@ -185,6 +262,14 @@ msgid ""
 "then switch to the other side. Guide for a minute or two. If DEC runs away, "
 "then you probably have the wrong setting for the \"Reverse DEC...\" checkbox."
 msgstr ""
+"``Inverti DEC...``: è anche importante attivare o disattivare l'opzione "
+"(dipendente dalla montatura) \"Inverti DEC sul cambio dello stato di "
+"puntamento quando riutilizzi la calibrazione\". Per trovare la giusta "
+"impostazione per la tua montatura, devi calibrare in modo corretto su uno "
+"stato di puntamento, assicurarti che la guida stia funzionando bene su quel "
+"lato dello stato, quindi passare all'altro lato. Esegui la guida per un "
+"minuto o due. Se DEC fugge via, probabilmente l'impostazione per l'opzione "
+"\"Inverti DEC...\" è scorretta."
 
 #: ../../user_manual/ekos-guide.rst:141
 msgid ""
@@ -194,6 +279,11 @@ msgid ""
 "something you do rarely, so it is best to take a little extra time and get "
 "right."
 msgstr ""
+"``Spostamento massimo; Iterazioni massime``: Consigliamo di mantenere estese "
+"le iterazioni (es. 10) ed esteso lo spostamento massimo (es. 20+ pixel). In "
+"questo modo dovresti ottenere una buona stima dei parametri di calibrazione "
+"della guida. La calibrazione è un'operazione che va eseguita di rado, è "
+"dunque meglio spenderci un po' di tempo in più ed eseguirla in modo corretto."
 
 #: ../../user_manual/ekos-guide.rst:148
 msgid ""
@@ -203,6 +293,12 @@ msgid ""
 "are re-using calibrations, then the autoguiding process will begin "
 "immediately, otherwise, it will start the calibration process."
 msgstr ""
+"Per ricalibrare, azzera la calibrazione nella pagina principale della guida "
+"e fai clic semplicemente sul pulsante Guida. Tieni presente che se la "
+"calibrazione era stata già  completata in modo corretto, non l'avevi "
+"azzerata, e stai riutilizzando le calibrazioni, allora l'operazione di guida "
+"automatica partirà subito; in caso contrario partirà il procedimento di "
+"calibrazione."
 
 #: ../../user_manual/ekos-guide.rst:156
 msgid ""
@@ -212,40 +308,53 @@ msgid ""
 "pulses out and back in for DEC. To view this graphically, click on the "
 "\"Calibration Plot\" subtab on the main guiding page."
 msgstr ""
+"Ekos inizia il procedimento di calibrazione inviando impulsi per spostare la "
+"montatura in AR e DEC. Invia un impulso all'asse AR in una direzione, quindi "
+"un impulso nella direzione opposta per riportarlo indietro. Successivamente "
+"esegue un piccolo movimento in DEC per eliminare l'eventuale gioco presente "
+"e poi invia gli impulsi in entrambe le direzioni anche sull'asse DEC. Per "
+"visualizzare questa operazione graficamente, fai clic sulla sottoscheda "
+"\"Tracciato calibrazione\" nella pagina principale della guida."
 
 #: ../../user_manual/ekos-guide.rst:166
-#, fuzzy
-#| msgid "Calibration"
 msgid "Calibration Failures"
-msgstr "Calibrazione"
+msgstr "Errori di calibrazione"
 
 #: ../../user_manual/ekos-guide.rst:168
 msgid ""
 "Calibration can fail for a variety of reasons. To improve the chances of "
 "success, try the tips below."
 msgstr ""
+"La calibrazione può non riuscire per svariati motivi. Per aumentare le "
+"probabilità di successo, prova i suggerimenti sotto riportati."
 
 #: ../../user_manual/ekos-guide.rst:171
 msgid ""
 "Bad sky conditions. If your sky condition are not great, it may not be worth "
 "fighting guiding/calibration."
 msgstr ""
+"Cattive condizioni del cielo: se le condizioni non sono buone, non è il caso "
+"di insistere con la guida/calibrazione."
 
 #: ../../user_manual/ekos-guide.rst:175
 msgid "Guide camera focus."
-msgstr ""
+msgstr "Messa a fuoco della fotocamera della guida."
 
 #: ../../user_manual/ekos-guide.rst:177
 msgid ""
 "Leave algorithm to the default value (``SEP MultiStar``) in the Guide Option "
 "tab."
 msgstr ""
+"Lascia l'algoritmo al valore predefinito (``SEP MultiStar``) nella scheda "
+"Opzioni della Guida."
 
 #: ../../user_manual/ekos-guide.rst:180
 msgid ""
 "Try the \"Guide-Default\" SEP star-detection parameters (in the Guide Option "
 "tab) and adjust them if necessary."
 msgstr ""
+"Prova i parametri di rilevamento delle stelle SEP \"Guida-Predefinito"
+"\" (nella scheda Opzioni della Guida) e regolali, se necessario."
 
 #: ../../user_manual/ekos-guide.rst:184
 msgid ""
@@ -253,20 +362,25 @@ msgid ""
 "astrophotography session. Use the Ekos :ref:`Polar Alignment procedure  "
 "<ekos-align-polar-align>` in the Align module."
 msgstr ""
+"``Allineamento polare migliore``: fondamentale per il successo di qualsiasi "
+"sessione di astrofotografia. Usa la :ref:`procedura di Allineamento polare "
+"<ekos-align-polar-align>` di Ekos nel modulo Allinea."
 
 #: ../../user_manual/ekos-guide.rst:190
 msgid ""
 "``Set binning to 2x2``: Binning improves SNR and is often very important to "
 "the success of the calibration and guiding procedures."
 msgstr ""
+"``Imposta il binning a 2x2``: il binning migliora lo SNR ed è spesso molto "
+"importante per il successo delle procedure di calibrazione e guida."
 
 #: ../../user_manual/ekos-guide.rst:194
 msgid "Take dark frames to reduce noise."
-msgstr ""
+msgstr "Scatta dark frame per ridurre il rumore."
 
 #: ../../user_manual/ekos-guide.rst:199
 msgid "Guiding"
-msgstr "Guida"
+msgstr "Sistema di guida"
 
 #: ../../user_manual/ekos-guide.rst:201
 msgid ""
@@ -281,6 +395,18 @@ msgid ""
 "inspect a specific region of the graph. Another convenient place to examine "
 "guiding performance is in the Analyze tab."
 msgstr ""
+"Una volta completata correttamente la procedura di calibrazione, la guida "
+"inizia automaticamente. Le prestazioni della guida vengono visualizzate "
+"nella regione del ``grafico della deriva``, dove il ``verde`` indica le "
+"deviazioni in AR e il ``blu`` quelle in DEC. I colori delle linee AR/DE "
+"possono essere modificate nello :doc:`schema dei colori <colors>` "
+"all'interno della finestra di dialogo delle impostazioni di KStars. L'asse "
+"verticale indica la deviazione in secondi d'arco dalla posizione di blocco e "
+"l'asse orizzontale indica il tempo. Puoi passare il mouse sulla linea per "
+"conoscere l'esatta deviazione in quel particolare punto nel tempo. Puoi "
+"anche ingrandire e trascinare/spostare il grafico per esaminare una sua "
+"regione specifica. Un'altra posto in cui osservare le prestazioni della "
+"guida è la scheda Analizza."
 
 #: ../../user_manual/ekos-guide.rst:214
 msgid "|Guide Settings|"
@@ -296,6 +422,14 @@ msgid ""
 "second type of algorithm is the ``Guiding Algorithm`` used to compute the RA "
 "and DEC guide pulses that should be sent to your mount to correct that drift."
 msgstr ""
+"Sono utilizzati due tipi di algoritmi nel telescopio guida interno, e puoi "
+"scegliere quali variazioni usare per entrambi. Il primo è l'algoritmo di "
+"``Rilevamento stella``. Il telescopio guida acquisisce le immagini del cielo "
+"e individua automaticamente le stelle in queste immagini. Una volta eseguita "
+"questa operazione, può determinare la deriva della tua montatura in AR e DEC "
+"dalla sua posizione originale. Il secondo tipo di algoritmo è quello di "
+"``Guida``, utilizzato per calcolare gli impulsi guida AR e DEC che devono "
+"essere inviati alla montatura per correggere quella deriva."
 
 #: ../../user_manual/ekos-guide.rst:224
 msgid ""
@@ -310,12 +444,26 @@ msgid ""
 "the only reason not to use SEP MultiStar would be if you can't get your SEP "
 "star-detection to perform adequately."
 msgstr ""
+"Le scelte per l'algoritmo di rilevamento stelle si trovano nella pagina "
+"Impostazioni della Guida (immagine sopra) in cima alla sezione ``Altre "
+"impostazioni``. L'algoritmo di gran lunga più preciso è SEP MultiStar, che è "
+"anche il predefinito. Utilizza la posizione rilevata di molte stelle (nelle "
+"impostazioni sopra riportate, fino a 50) per determinare la stima migliore "
+"per la deriva attuale. È dipendente dal rilevamento stelle preciso. Pertanto "
+"è importante regolare i parametri del rilevamento stelle. Inizia col profilo "
+"SEP predefinito della guida e, opzionalmente, modifica i suoi parametri se "
+"ti accorgi che le stelle non vengono rilevate in modo preciso.  L'unico "
+"motivo per non usare SEP MultiStar sarebbe se il rilevamento stelle SEP non "
+"funzionasse in modo adeguato."
 
 #: ../../user_manual/ekos-guide.rst:236
 msgid ""
 "Guiding algorithm choices are made at the top of the settings page. You can "
 "choose separate algorithms for RA and DEC. Here are the possibilities:"
 msgstr ""
+"Le scelte dell'algoritmo di guida vengono fatte in cima alla pagina delle "
+"impostazioni. Puoi scegliere algoritmi separati per AR e DEC. Ecco le varie "
+"possibilità:"
 
 #: ../../user_manual/ekos-guide.rst:240
 msgid ""
@@ -325,12 +473,20 @@ msgid ""
 "not recommended. Errors smaller than MinError won't be corrected. Max "
 "response limits the largest correction. The hysteresis parameter is not used."
 msgstr ""
+"Standard: l'algoritmo di guida proporzionale tradizionale. Calcola un "
+"impulso per correggere la deriva della guida calcolata. Il parametro di "
+"aggressività decide quale proporzione dell'errore viene corretto. Il "
+"guadagno integrale può essere utilizzato ma non è consigliato. Gli errori "
+"più piccoli dell'errore minimo non saranno corretti. La risposta Max limita "
+"la correzione più grande. Il parametro isteresi non viene utilizzato."
 
 #: ../../user_manual/ekos-guide.rst:247
 msgid ""
 "Hysteresis: Hysteresis is like the standard algorithm but weights in the "
 "previous correction according to the hysteresis parameter."
 msgstr ""
+"Isteresi: è come l'algoritmo standard ma pesa nella correzione precedente in "
+"base al parametro di isteresi."
 
 #: ../../user_manual/ekos-guide.rst:250
 msgid ""
@@ -339,6 +495,10 @@ msgid ""
 "applicable to very stable mounts and is similar to the PHD2 LowPass2 "
 "algorithm."
 msgstr ""
+"Linear: è simile all'algoritmo PHD2 Passa_basso2. Calcola gli impulsi di "
+"errore basati su una breve cronologia degli errori recenti. Ciò può essere "
+"applicabile a montature molto stabili ed è simile all'algoritmo PHD2 "
+"Passa_basso2."
 
 #: ../../user_manual/ekos-guide.rst:254
 msgid ""
@@ -350,6 +510,13 @@ msgid ""
 "Based_Predictive_Control_for_Periodic_Error_Correction>`__. There is more "
 "detail on GPG below."
 msgstr ""
+"GPG: (solo AR) l'algoritmo GPG tenta di predire l'errore periodico e le "
+"derive lineari. Usa qui l'aggressività, i parametri min e max, e altri "
+"parametri sulla scheda GPG separata. È molto simile all'algoritmo PHD2 PPEC. "
+"Per i dettagli tecnici vedi `questo lavoro <https://www.researchgate.net/"
+"publication/276459268_Gaussian_Process-"
+"Based_Predictive_Control_for_Periodic_Error_Correction>`__. Ulteriori "
+"dettagli su GPG più sotto."
 
 #: ../../user_manual/ekos-guide.rst:260
 msgid ""
@@ -359,6 +526,11 @@ msgid ""
 "set up (see below). ``Linear`` is recommended for some high-performance "
 "mounts."
 msgstr ""
+"Una buona scelta di partenza è ``Standard`` o ``Isteresi`` (col parametro di "
+"isteresi impostato a 0,1). Potresti usare ``GPG`` per AR, dato che è "
+"l'algoritmo dalle migliori prestazioni per molte montature, tuttavia risulta "
+"più complesso da configurare (vedi sotto). ``Lineare`` è consigliato per "
+"alcune montature ad alte prestazioni."
 
 #: ../../user_manual/ekos-guide.rst:265
 msgid ""
@@ -366,12 +538,17 @@ msgid ""
 "`the above slideshow <https://openphdguiding.org/PHD2_BestPractices_2019-12."
 "pdf>`__."
 msgstr ""
+"Validi consigli per la scelta dei parametri sono reperibili in Internet, per "
+"esempio dalla `presentazione citata in precedenza <https://openphdguiding."
+"org/PHD2_BestPractices_2019-12.pdf>`__."
 
 #: ../../user_manual/ekos-guide.rst:269
 msgid ""
 "The main parameter choices you have are below. They are applicable to all "
 "the guiding algorithms."
 msgstr ""
+"Le scelte dei parametri principali presenti sono riportate sotto. Esse sono "
+"applicabili a tutti gli algoritmi di guida."
 
 #: ../../user_manual/ekos-guide.rst:272
 msgid ""
@@ -381,12 +558,21 @@ msgid ""
 "error can cause poor performance as the guider may oscillate with "
 "overcorrections."
 msgstr ""
+"Aggressività: controlla quanto rapidamente vuoi che il telescopio guida "
+"corregga l'errore. I valori migliori sono in genere tra 0,5 e 0,7 (ossia, "
+"una correzione corrispondente a circa la metà dell'errore osservato). Non di "
+"facile intuizione, sembra che correggere il 100% dell'errore causi una "
+"cattiva prestazione, dato che il telescopio guida possa oscillare causando "
+"sovra-correzioni."
 
 #: ../../user_manual/ekos-guide.rst:279
 msgid ""
 "Min error. This controls the minimum deviation (in arc-seconds) for which a "
 "correction will be made. Adjusting this can avoid chasing the seeing."
 msgstr ""
+"Errore minimo: controlla la deviazione minima (in secondi d'arco) per cui "
+"sarà eseguita la correzione. Le regolazione di questo parametro può evitare "
+"l'inseguimento del seeing."
 
 #: ../../user_manual/ekos-guide.rst:286
 msgid "Dithering"
@@ -410,6 +596,21 @@ msgid ""
 "failure should terminate the autoguiding process or not. Toggle ``Abort "
 "Autoguide on failure`` to select the desired behavior."
 msgstr ""
+"Per abilitare il dithering automatico tra i fotogrammi, accertati di aver "
+"spuntato la casella di controllo ``Dithering``. Per impostazione "
+"predefinita, Ekos esegue il dithering (ossia lo spostamento) della scatola "
+"della guida fino a tre pixel dopo ogni N fotogrammi acquisiti nel :doc:"
+"`modulo Acquisisci di Ekos <ekos-capture>`. La durata del movimento e la "
+"direzione sono randomizzate. Poiché le prestazioni della guida possono "
+"oscillare subito dopo aver eseguito il dithering, puoi impostare la corretta "
+"durata di ``Stabilizza`` in modo da attendere dopo che il dithering viene "
+"completato, prima di riprendere il procedimento di acquisizione. Nei rari "
+"casi in cui il processo di dithering rimanga bloccato in un ciclo infinito, "
+"imposta il corretto ``Tempo massimo`` per interrompere la procedura. Ma "
+"anche se il dithering dovesse restituire errore, puoi scegliere se questo "
+"errore debba terminare la procedura di guida automatica oppure no. Spunta la "
+"casella ``Interrompi la guida automatica in caso di errore`` in modo da "
+"ottenere il comportamento desiderato."
 
 #: ../../user_manual/ekos-guide.rst:305
 msgid ""
@@ -418,6 +619,10 @@ msgid ""
 "moves the target back towards the original target should the position have "
 "drifted too far."
 msgstr ""
+"Il dithering non girovaga troppo lontano dalla posizione del bersaglio "
+"originale. Ekos mantiene traccia della posizione originale del bersaglio e "
+"di quella attuale, e riporta il bersaglio verso la posizione originale nel "
+"caso in cui la posizione sia andata troppo alla deriva."
 
 #: ../../user_manual/ekos-guide.rst:311
 msgid ""
@@ -426,6 +631,10 @@ msgid ""
 "is possible that the dithering for any given dither isn't as much as "
 "desired, but the overall effect should be good."
 msgstr ""
+"``Dithering a un impulso`` è un'interessante opzione più rapida che invia un "
+"impulso al dithering, ma non verifica che esso abbia raggiunto la località "
+"desiderata. È possibile che il dithering per un dato valore non sia così "
+"elevato come desiderato, ma l'effetto complessivo dovrebbe essere buono."
 
 #: ../../user_manual/ekos-guide.rst:317
 msgid ""
@@ -434,10 +643,15 @@ msgid ""
 "be commanded to dither in a random direction for up to the pulse specified "
 "in the ``Non-Guide Dither Pulse`` option."
 msgstr ""
+"È supportato anche il dithering non in guida. L'opzione è utile quando non è "
+"disponibile la fotocamera di guida o quando si eseguono esposizioni brevi. "
+"In questo caso la montatura può essere comandata per eseguire il dithering "
+"in una direzione casuale fino all'impulso specificato nell'opzione ``Impulso "
+"del dithering non in guida``."
 
 #: ../../user_manual/ekos-guide.rst:326 ../../user_manual/ekos-guide.rst:513
 msgid "Drift Graphics"
-msgstr ""
+msgstr "Grafico della deriva"
 
 #: ../../user_manual/ekos-guide.rst:328
 msgid "|Drift Graphics|"
@@ -455,6 +669,17 @@ msgid ""
 "corrections are plotted as shaded areas in the background with the same "
 "color as that of the axis."
 msgstr ""
+"Il grafico della deriva è uno strumento molto utile per monitorare le "
+"prestazioni della guida. È un tracciato a due dimensioni delle *deviazioni* "
+"e delle *correzioni* di guida. Per impostazione predefinita vengono "
+"visualizzate soltanto le deviazioni di guida in AR e DE. L'asse orizzontale "
+"indica il tempo in secondi a partire dall'inizio della procedura di guida "
+"automatica, mentre l'asse verticale traccia la deriva/deviazione della guida "
+"in secondi d'arco per ciascun asse. Le correzioni di guida (impulsi) possono "
+"anche essere tracciate nello stesso grafico e puoi abilitarle spuntando la "
+"casella di controllo ``Corr`` sotto a ciascun asse. Le correzioni vengono "
+"tracciate come aree sfumate nello sfondo, con lo stesso colore dell'asse di "
+"riferimento."
 
 #: ../../user_manual/ekos-guide.rst:342
 msgid ""
@@ -465,6 +690,12 @@ msgid ""
 "the image can be used to adjust the height of the secondary Y-axis for "
 "pulses corrections."
 msgstr ""
+"Puoi spostare e ingrandire il tracciato, e se passi il mouse sul grafico "
+"compare un suggerimento che mostra informazioni su quel punto temporale "
+"specifico: contiene la deriva della guida e tutte le correzioni eseguite e, "
+"in aggiunta all'orario locale, l'orario in cui è stato registrato l'evento. "
+"Puoi utilizzare un cursore verticale alla destra dell'immagine per regolare "
+"l'altezza dell'asse Y secondario relativo alle correzioni degli impulsi."
 
 #: ../../user_manual/ekos-guide.rst:350
 msgid ""
@@ -477,12 +708,24 @@ msgid ""
 "includes a label to indicate when a dither occurred so the user knows "
 "guiding was not bad at those points."
 msgstr ""
+"Puoi utilizzare il cursore orizzontale ``Traccia`` in basso per scorrere la "
+"cronologia della guida. In alternativa, puoi fare clic sulla casella di "
+"controllo ``Max`` per bloccare il grafico sul punto più recente in modo che "
+"il grafico della deriva scorra in automatico. I pulsanti alla destra del "
+"cursore servono per il ridimensionamento automatico del grafico, "
+"l'esportazione dei dati di guida in un file CSV, la cancellazione di tutti i "
+"dati di guida e il ridimensionamento del bersaglio nel ``Tracciato deriva``. "
+"Inoltre, il grafico della deriva include un'etichetta per indicare quando si "
+"è verificato un dithering in modo che l'utente sappia che l'operazione di "
+"guida non sia andata così male in quei punti."
 
 #: ../../user_manual/ekos-guide.rst:361
 msgid ""
 "The colors of each axis can be customized in :doc:`KStars Settings color "
 "scheme  <colors>`."
 msgstr ""
+"I colori di ciascun asse possono essere personalizzati nello :doc:`schema di "
+"colori delle impostazioni di KStars <colors>`."
 
 #: ../../user_manual/ekos-guide.rst:367
 msgid "Drift Plot"
@@ -497,10 +740,17 @@ msgid ""
 "concentric ring it falls within. You can change the radius of the innermost "
 "green circle by adjusting the drift plot accuracy."
 msgstr ""
+"Per calibrare la *precisione* delle prestazioni complessive del sistema di "
+"guida può essere utilizzato un grafico a dispersione con bersaglio. È "
+"composto da tre anelli concentrici con raggi che variano, il cui anello "
+"centrale, verde, ha un raggio predefinito di due secondi d'arco. L'ultimo "
+"valore RMS viene tracciato come |image2| con colore che riflette l'anello "
+"concentrico in cui è compreso. Puoi cambiare il raggio del cerchio verde più "
+"interno regolando la precisione del tracciato deriva."
 
 #: ../../user_manual/ekos-guide.rst:380
 msgid "Guiding with Multiple Stars"
-msgstr ""
+msgstr "Guida con più stelle"
 
 #: ../../user_manual/ekos-guide.rst:382
 msgid "|Guiding with MultiStar|"
@@ -521,6 +771,19 @@ msgid ""
 "detected at all. We recommended you choose this way to guide by selecting "
 "the guide Algorithm SEP Multi Star."
 msgstr ""
+"Nella guida standard il sistema seleziona una stella guida. Nei sistemi non "
+"MultiStar, i movimenti misurati di quella stella relativa alle sue "
+"misurazioni di posizioni originali sono convertiti in scostamenti AR e DEC "
+"che rappresentano errori di deriva della guida. Nella guida MultiStar il "
+"sistema seleziona molte stelle di riferimento e misura tutti gli scostamenti "
+"relativi alle loro posizioni iniziali. L'errore di guida viene calcolato "
+"come dislocamento medio delle singolo stelle di riferimento dalle loro "
+"posizioni originali. La magia che il sistema deve compiere è trovare questo "
+"schema bidimensionale rumoroso di stelle di riferimento nell'immagine guida. "
+"Ma trovare questo schema è più affidabile che trovare una singola stella "
+"guida che potrebbe essersi spostata in modo significativo o potrebbe non "
+"essere stata rilevata affatto. Consigliamo di scegliere questo metodo di "
+"guida selezionando l'algoritmo di guida SEP MultiStar."
 
 #: ../../user_manual/ekos-guide.rst:400
 msgid ""
@@ -533,6 +796,15 @@ msgid ""
 "checked, and Max MultiStar HFR is an old parameter that likely has little "
 "effect anymore."
 msgstr ""
+"Ci sono poche opzioni da considerare. ``Stelle di rif. MultiStar max`` è il "
+"numero massimo di stelle di riferimento che il sistema può utilizzare. La "
+"ragione principale di questo limite è il costo del calcolo, sebbene non sia "
+"troppo dispendioso. un valore di 50 è una buona scelta. L'impostazione "
+"``Rilevamento stelle MultiStar minimo`` indica al sistema di ritornare al "
+"sistema di stella guida singola nel caso in cui il rilevamento di stelle sia "
+"inferiore a questo valore. ``Inventa stella guida a più stelle`` deve essere "
+"lasciato spuntato, mentre ``HFR MultiStar max`` è un parametro  obsoleto che "
+"probabilmente non ha più effetto."
 
 #: ../../user_manual/ekos-guide.rst:414 ../../user_manual/ekos-guide.rst:516
 msgid "Guiding with GPG"
@@ -548,6 +820,10 @@ msgid ""
 "for the RA axis. This adaptively models the periodic error of the mount, and "
 "adds its predicted contribution to each guide pulse."
 msgstr ""
+"Col sistema di guida GPG, il telescopio guida interno usa una guida "
+"predittiva e adattiva per gli assi AR. Questo sistema modella in modo "
+"adattivo l'errore periodico della montatura e aggiunge il contributo "
+"predetto a ciascun impulso della guida."
 
 #: ../../user_manual/ekos-guide.rst:423
 msgid ""
@@ -563,10 +839,26 @@ msgid ""
 "effectively performing periodic error correction and allowing longer guide "
 "camera exposures. All the other parameters are best left to defaults."
 msgstr ""
+"Le impostazioni principali da considerare sono \"Periodo principale\" e "
+"\"Periodo stimato\". Se conosci il periodo della vite senza fine per la tua "
+"montatura, magari consultando `questa tabella <https://github.com/"
+"OpenPHDGuiding/phd2/wiki/Mount-Worm-Period-Info>`__, allora togli la spunta "
+"da Periodo stimato e inserisci il Periodo principale conosciuto. Se non lo "
+"conosci, allora attiva la casella Periodo stimato. La guida dark intra-frame "
+"può essere utilizzata per \"distribuire nel tempo la previsione del GPG\". "
+"Per esempio, se guidi con esposizioni da 5 secondi, puoi impostare "
+"l'intervallo della guida dark a un secondo, e la previsione del GPG viene "
+"applicata ogni secondo, mentre le correzioni dell'errore di deriva vengono "
+"inviate ogni cinque secondi. In questo modo le correzioni previste vengono "
+"emesse con una frequenza molto più elevata rispetto a quella delle "
+"esposizioni della fotocamera di guida, realizzando di fatto una correzione "
+"dell'errore periodico e consentendo l'utilizzo di tempi di esposizione più "
+"lunghi per la fotocamera di guida. Tutti gli altri parametri è preferibile "
+"lasciarli ai valori predefiniti."
 
 #: ../../user_manual/ekos-guide.rst:442
 msgid "Dark Frames"
-msgstr "Fotogrammi scuri"
+msgstr "Dark frame"
 
 #: ../../user_manual/ekos-guide.rst:444
 msgid ""
@@ -584,6 +876,21 @@ msgid ""
 "frames. This value is configurable and can be adjusted in :doc:`Ekos "
 "settings  <ekos>` in the KStars settings dialog."
 msgstr ""
+"I dark frame possono essere utili per ridurre il rumore nei frame della "
+"guida. Se scegli di utilizzare questa opzione, allora consigliamo di "
+"scattare i dark frame prima di iniziare la procedura di calibrazione o di "
+"guida. Per scattare un dark frame, spunta la casella di controllo ``Dark`` e "
+"fai clic su ``Acquisisci``. La prima volta Ekos ti chiederà informazioni "
+"sull'otturatore della tua fotocamera. Se la fotocamera non ha otturatore, "
+"allora Ekos ti avviserà ogni volta che scatti un dark frame per coprire la "
+"tua fotocamera/telescopio prima di procedere con l'acquisizione. "
+"Diversamente, se la fotocamera include l'otturatore, Ekos scatterà "
+"direttamente il dark frame. Tutti i dark frame vengono salvato "
+"automaticamente nella libreria dei dark frame di Ekos. Per impostazione "
+"predefinita, la Libreria dei dark riutilizza i dark frame per 30 giorni, "
+"dopodiché ne acquisisce di nuovi. Questo valore è configurabile e può essere "
+"regolato nelle :doc:`impostazioni di Ekos <ekos>` all'interno della finestra "
+"di dialogo delle impostazioni di KStars."
 
 #: ../../user_manual/ekos-guide.rst:461
 msgid "|Ekos Dark frames library|"
@@ -594,6 +901,9 @@ msgid ""
 "It is recommended to take dark frames covering several binning and exposure "
 "values so that they may be reused transparently by Ekos whenever needed."
 msgstr ""
+"Si raccomanda di scattare dark frame che coprano i vari valori di binning ed "
+"esposizione, affinché possano essere riutilizzati in modo trasparente da "
+"Ekos quando necessario."
 
 #: ../../user_manual/ekos-guide.rst:470
 msgid "PHD2 Support"
@@ -604,6 +914,8 @@ msgid ""
 "You can opt to select external PHD2 application to perform guiding instead "
 "of the built-in guider."
 msgstr ""
+"Anziché utilizzare il telescopio guida integrato per eseguire il sistema di "
+"guida, puoi scegliere di selezionare l'applicazione PHD2 esterna."
 
 #: ../../user_manual/ekos-guide.rst:475
 msgid "|Ekos Guide PHD2 settings|"
@@ -617,6 +929,12 @@ msgid ""
 "perform all the required actions to start the guiding process. PHD2 **must** "
 "be started and configured *before* Ekos."
 msgstr ""
+"Se è selezionato PHD2, sono abilitati i pulsanti ``Connetti`` e "
+"``Disconnetti`` per permetterti di stabilire un collegamento col server "
+"PHD2. Puoi controllare l'esposizione PHD2 e le impostazioni di guida DEC. "
+"Quando fai clic su ``Guida``, PHD2 eseguirà tutte le azioni richieste per "
+"avviare l'operazione di guida. PHD2 **deve** essere avviato e configurato "
+"*prima* di Ekos."
 
 #: ../../user_manual/ekos-guide.rst:484
 msgid ""
@@ -628,12 +946,19 @@ msgid ""
 "PHD2 is commanded to dither given the offset pixels indicated, and once "
 "guiding is settled and stable, the capture process in Ekos resumes."
 msgstr ""
+"Dopo aver avviato PHD2, seleziona la tua attrezzatura INDI e imposta le sue "
+"opzioni. Da Ekos, connettiti a PHD2 tramite il pulsante ``Connetti``. "
+"All'avvio Ekos tenterà di collegarsi automaticamente a PHD2. Una volta che "
+"la connessione è stabilita, puoi iniziare immediatamente la guida facendo "
+"clic sul pulsante ``Guida``. PHD2 esegue la calibrazione, se necessario. Se "
+"è selezionato il dithering, PHD2 viene comandato di eseguire il dithering "
+"specificato per i pixel di scostamento indicati e una volta che il sistema "
+"di guida è assestato e stabile, la procedura di acquisizione in Ekos "
+"riprende."
 
 #: ../../user_manual/ekos-guide.rst:497
-#, fuzzy
-#| msgid "Guiding"
 msgid "Guiding Logs"
-msgstr "Guida"
+msgstr "Registri della guida"
 
 #: ../../user_manual/ekos-guide.rst:499
 msgid ""
@@ -643,30 +968,32 @@ msgid ""
 "using Ekos' internal guider. It should be compatible with `PHD2's guide log "
 "viewer <https://openphdguiding.org/phd2-log-viewer/>`__."
 msgstr ""
+"Il telescopio guida di Ekos salva un registro CSV della guida nel formato "
+"dati PHD2, utile per l'analisi delle prestazioni della montatura. In Linux è "
+"memorizzato in ``~/.local/share/kstars/guidelogs/``. Questo registro è "
+"disponibile soltanto quando si utilizza il telescopio guida interno di Ekos. "
+"Dovrebbe essere compatibile col `visore del registro della guida PHD2 "
+"<https://openphdguiding.org/phd2-log-viewer/>`__."
 
 #: ../../user_manual/ekos-guide.rst:507
 msgid "Ekos Guide Module"
-msgstr ""
+msgstr "Modulo di guida Ekos"
 
 #: ../../user_manual/ekos-guide.rst:507
 msgid ".. image:: /images/ekos_guide.png"
 msgstr ".. image:: /images/ekos_guide.png"
 
 #: ../../user_manual/ekos-guide.rst:508
-#, fuzzy
-#| msgid "<phrase>Calibration Settings</phrase>"
 msgid "Ekos Profile Guider Selection"
-msgstr "<phrase>Impostazioni di calibrazione</phrase>"
+msgstr "Selezione del telescopio guida del profilo di Ekos"
 
 #: ../../user_manual/ekos-guide.rst:508
 msgid ".. image:: /images/ekos_profile_guide.png"
 msgstr ".. image:: /images/ekos_profile_guide.png"
 
 #: ../../user_manual/ekos-guide.rst:509
-#, fuzzy
-#| msgid "<phrase>Calibration Settings</phrase>"
 msgid "Ekos Guider Optical Train"
-msgstr "<phrase>Impostazioni di calibrazione</phrase>"
+msgstr "Gruppo ottico del telescopio guida di Ekos"
 
 #: ../../user_manual/ekos-guide.rst:509
 msgid ".. image:: /images/ekos_guide_optical_train.png"
@@ -681,20 +1008,16 @@ msgid ".. image:: /images/guide_calibration_settings.png"
 msgstr ".. image:: /images/guide_calibration_settings.png"
 
 #: ../../user_manual/ekos-guide.rst:511
-#, fuzzy
-#| msgid "Guiding"
 msgid "Guide Settings"
-msgstr "Guida"
+msgstr "Impostazioni di guida"
 
 #: ../../user_manual/ekos-guide.rst:511
 msgid ".. image:: /images/guide_guide_settings.png"
 msgstr ".. image:: /images/guide_guide_settings.png"
 
 #: ../../user_manual/ekos-guide.rst:512
-#, fuzzy
-#| msgid "<phrase>Calibration Settings</phrase>"
 msgid "Dithering Settings"
-msgstr "<phrase>Impostazioni di calibrazione</phrase>"
+msgstr "Impostazioni di dithering"
 
 #: ../../user_manual/ekos-guide.rst:512
 msgid ".. image:: /images/ekos_guide_dithering_settings.png"
@@ -713,10 +1036,8 @@ msgid ".. image:: /images/add-circle.png"
 msgstr ".. image:: /images/add-circle.png"
 
 #: ../../user_manual/ekos-guide.rst:515
-#, fuzzy
-#| msgid "<title>Guide</title>"
 msgid "Guiding with MultiStar"
-msgstr "<title>Guida</title>"
+msgstr "Guida con MultiStar"
 
 #: ../../user_manual/ekos-guide.rst:515
 msgid ".. image:: /images/ekos_guide_multistar_settings.png"
@@ -728,7 +1049,7 @@ msgstr ".. image:: /images/ekos_guide_gpg_settings.png"
 
 #: ../../user_manual/ekos-guide.rst:517
 msgid "Ekos Dark frames library"
-msgstr ""
+msgstr "Libreria dark frames di Ekos"
 
 #: ../../user_manual/ekos-guide.rst:517
 msgid ".. image:: /images/dark_library.png"
@@ -736,7 +1057,7 @@ msgstr ".. image:: /images/dark_library.png"
 
 #: ../../user_manual/ekos-guide.rst:518
 msgid "Ekos Guide PHD2 settings"
-msgstr ""
+msgstr "Impostazioni PHD2 della guida di Ekos"
 
 #: ../../user_manual/ekos-guide.rst:518
 msgid ".. image:: /images/ekos_guide_phd2.png"
