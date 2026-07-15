@@ -1,20 +1,20 @@
 #
 # SPDX-FileCopyrightText: 2023 Paolo Zamponi <feus73@gmail.com>
 # Vincenzo Reale <smart2128vr@gmail.com>, 2022.
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Valter Mura <valtermura@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Valter Mura <valtermura@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2026-06-23 20:14+0200\n"
+"PO-Revision-Date: 2026-07-03 11:50+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../../user_manual/ekos-focus.rst:3
@@ -1311,6 +1311,14 @@ msgid ""
 "the curve from the 1st pass. It attempts to stop within **Tolerance** of the "
 "minimum HFR calculated during the 1st pass."
 msgstr ""
+"**Lineare**: questo algoritmo costruisce una curva-V con passi **Multiplo "
+"fuori passo** in modo approssimato su ciascun lato del minimo. Dopo aver "
+"costruito la curva-V adatta quindi un'equazione quadratica alla curva (di "
+"forma parabolica) e usa questa per calcolare la posizione del focheggiatore "
+"fornendo l'HFR minimo. Avendo identificato il minimo, esegue poi un secondo "
+"passo dimezzando la dimensione del passo, e ricreando la curva dal primo "
+"passo. Tenta di interrompersi dentro la **tolleranza** dell'HFR minimo "
+"calcolato durante il primo passo."
 
 #: ../../user_manual/ekos-focus.rst:315
 msgid ""
@@ -1319,6 +1327,12 @@ msgid ""
 "to reach an optimal solution. The algorithm stops when the measured HFR is "
 "within **Tolerance** of the minimum HFR recorded in the procedure."
 msgstr ""
+"**Iterativo**: sposta il focheggiatore con passi discreti inizialmente "
+"decisi dalla dimensione del passo. Una volta calcolata una pendenza della "
+"curva, vengono calcolate ulteriori dimensioni del passo in modo da "
+"raggiungere la soluzione ottimale. L'algoritmo si interrompe quando l'HFR "
+"misurato rientra nella tolleranza percentuale dell'HFR minimo registrato "
+"nella procedura."
 
 #: ../../user_manual/ekos-focus.rst:317
 msgid ""
@@ -1327,6 +1341,11 @@ msgid ""
 "minimum solution are calculated. This algorithm can be faster than a purely "
 "iterative approach given a good data set."
 msgstr ""
+"**Polynomial**: si inizia con il metodo iterativo. Al passaggio all'altro "
+"lato della curva V vengono calcolati i coefficienti di adattamento "
+"polinomiale, insieme alla possibile soluzione minima. Questo algoritmo può "
+"essere più veloce dell'approccio puramente iterativo se viene fornito un "
+"buon insieme di dati."
 
 #: ../../user_manual/ekos-focus.rst:319
 msgid "``Curve Fit``: The type of curve to fit to the datapoints."
@@ -1338,10 +1357,14 @@ msgid ""
 "supplied by GSL (GNU Science Library). See :ref:`Levenberg-Marquardt Solver "
 "<ekos-focus-levenberg-marquardt>` for more details."
 msgstr ""
+"**Iperbole**: adatta un'iperbole utilizzando un algoritmo dei minimi "
+"quadrati non lineari fornito da GSL (GNU Science Library). Per altri "
+"dettagli, vedi il :ref:`Risolutore Levenberg-Marquardt <ekos-focus-levenberg-"
+"marquardt>`."
 
 #: ../../user_manual/ekos-focus.rst:323
 msgid "This is the recommended option."
-msgstr ""
+msgstr "Questa è l'opzione raccomandata."
 
 #: ../../user_manual/ekos-focus.rst:325
 msgid ""
@@ -1349,6 +1372,10 @@ msgid ""
 "supplied by GSL (GNU Science Library). See :ref:`Levenberg-Marquardt Solver "
 "<ekos-focus-levenberg-marquardt>` for more details."
 msgstr ""
+"**Parabola**: adatta una parabola utilizzando un algoritmo dei minimi "
+"quadrati non lineari fornito da GSL (GNU Science Library). Per altri "
+"dettagli, vedi il :ref:`Risolutore Levenberg-Marquardt <ekos-focus-levenberg-"
+"marquardt>`."
 
 #: ../../user_manual/ekos-focus.rst:327
 msgid ""
@@ -1356,16 +1383,21 @@ msgid ""
 "algorithm supplied by GSL (GNU Science Library). This is, in effect, a "
 "parabolic curve."
 msgstr ""
+"**Quadratico**: usa un'equazione quadratica utilizzando un algoritmo dei "
+"minimi quadrati di stile lineare fornito da GSL (GNU Science Library). "
+"Questa è, in effetti, una curva parabolica."
 
 #: ../../user_manual/ekos-focus.rst:329
 msgid "It is no longer recommended to use this curve."
-msgstr ""
+msgstr "L'uso di questa curva non è più consigliato."
 
 #: ../../user_manual/ekos-focus.rst:331
 msgid ""
 "``Measure``: Select Measure to use in the focus process. The following are "
 "available:"
 msgstr ""
+"``Misura``: seleziona la misura da utilizzare per la procedura di messa a "
+"fuoco. Sono disponibili le seguenti misure:"
 
 #: ../../user_manual/ekos-focus.rst:333
 msgid ""
@@ -1374,10 +1406,14 @@ msgid ""
 "an imaginary circle, centered on the star center, that encloses half the "
 "star's total flux."
 msgstr ""
+"**HFR**: Half Flux Radius (HFR) è la misura raccomandata. Quando viene "
+"rilevata una stella, Ekos calcola l'HFR per la stella. Questo è il raggio di "
+"un cerchio immaginario, centrato sul centro della stella, che racchiude metà "
+"del flusso totale della stella."
 
 #: ../../user_manual/ekos-focus.rst:335
 msgid "The point of best focus corresponds to the minimum HFR."
-msgstr ""
+msgstr "Il punto della migliore messa a fuoco corrisponde all'HFR minimo."
 
 #: ../../user_manual/ekos-focus.rst:337
 msgid ""
@@ -1385,6 +1421,9 @@ msgid ""
 "account of the fact that the HFR for brighter stars is larger than for "
 "smaller stars."
 msgstr ""
+"**HFR regolato**: utilizza un calcolo HFR regolato per la luminosità per "
+"tener conto che l'HFR per le stelle più luminose è maggiore di quello per le "
+"stelle più piccole."
 
 #: ../../user_manual/ekos-focus.rst:339
 msgid ""
@@ -1393,16 +1432,24 @@ msgid ""
 "values. This does not mean that you are getting worse results by using HFR "
 "Adj, simply that the measure is different."
 msgstr ""
+"L'algoritmo regola il valore dell'HFR misurato, in genere verso l'alto, in "
+"modo che gli HFR ottenuti dal metodo HFR regolato risultino superiori dei "
+"valori dell'HFR misurato. Questo non significa che stai ottenendo risultati "
+"peggiori con l'uso dell'HFR regolato, ma semplicemente che la misura è "
+"diversa."
 
 #: ../../user_manual/ekos-focus.rst:341
 msgid ""
 "When using this Measure it is usual to get smaller error bars on the "
 "datapoints when ``Use Weights`` is selected."
 msgstr ""
+"Quando si utilizza questa misura, se è selezionata l'opzione ``Usa pesi`` di "
+"solito si ottengono barre d'errore più piccole sui punti dati."
 
 #: ../../user_manual/ekos-focus.rst:343
 msgid "The point of best focus corresponds to the minimum adjusted HFR."
 msgstr ""
+"Il punto della migliore messa a fuoco corrisponde all'HFR regolato minimo."
 
 #: ../../user_manual/ekos-focus.rst:345
 msgid ""
@@ -1411,14 +1458,20 @@ msgid ""
 "width of an circle (or ellipse) centered on the star center reaching the "
 "edge of the star at half its maximum intensity."
 msgstr ""
+"**FWHM**: adatta una superficie gaussiana a ciascuna stella e la utilizza "
+"per calcolare la FWHM (Full Width Half Maximum, *larghezza a metà altezza*) "
+"della stella. La FWHM è la larghezza di un cerchio (o ellisse) centrata sul "
+"centro della stella che raggiunge il bordo della stella alla sua intensità "
+"massima."
 
 #: ../../user_manual/ekos-focus.rst:347
 msgid "The point of best focus corresponds to the minimum FWHM."
-msgstr ""
+msgstr "Il punto della migliore messa a fuoco corrisponde al FWHM minimo."
 
 #: ../../user_manual/ekos-focus.rst:349
 msgid "Expect the FWHM to be approximately twice the HFR of a star."
 msgstr ""
+"Ci si attende che FWHM sia approssimativamente due volte l'HFR di una stella."
 
 #: ../../user_manual/ekos-focus.rst:351
 msgid ""
@@ -1426,19 +1479,23 @@ msgid ""
 "uses this number as the focus measure. The idea is that as you move nearer "
 "focus so more stars become detectable."
 msgstr ""
+"**# Stelle**: calcola il numero di stelle nell'immagine e usa questo numero "
+"come misura per la messa a fuoco. L'idea è che come ti avvicini alla messa a "
+"fuoco sono individuabili più stelle."
 
 #: ../../user_manual/ekos-focus.rst:353
 msgid ""
 "The advantage of this Measure is that it is very simple and does not require "
 "algorithms to calculate HFRs or FWHMs."
 msgstr ""
+"Il vantaggio di questa misura è che è molto semplice e non richiede "
+"algoritmi per calcolare l'HFR o la FWHM."
 
 #: ../../user_manual/ekos-focus.rst:355
-#, fuzzy
-#| msgid "The algorithm can be fast using a minimum number of steps."
 msgid "The point of best focus corresponds to a maximum number of stars."
 msgstr ""
-"L'algoritmo può essere veloce utilizzando un numero minimo di passaggi."
+"Il punto della migliore messa a fuoco corrisponde a un numero massimo di "
+"stelle."
 
 #: ../../user_manual/ekos-focus.rst:357
 msgid ""
@@ -1450,6 +1507,14 @@ msgid ""
 "versa. So, at focus, summing up the contents in frequency space, which is in "
 "effect a measure of power, will be a maximum."
 msgstr ""
+"**Fourier**: prende una trasformata di Fourier dell'immagine e calcola la "
+"potenza dell'immagine nello spazio di frequenza. Il presupposto è che per "
+"un'immagine astronomica con stelle e sfondo, le stelle siano gaussiane. "
+"Sotto una trasformata di Fourier, una gaussiana si trasforma in un'altra "
+"gaussiana; ma le stelle più ampie si trasformano in gaussiane più strette "
+"nello spazio di frequenza, e viceversa. Pertanto, la somma dei contenuti "
+"nello spazio di frequenza, che è in effetti una misura della potenza, sarà "
+"un massimo."
 
 #: ../../user_manual/ekos-focus.rst:359
 msgid ""
@@ -1459,6 +1524,11 @@ msgid ""
 "makes other processing suggestions beyond the idea of using Fourier "
 "Transforms that are not included within Ekos"
 msgstr ""
+"Questo segue l'idea principale suggerita da Tan and Schulz nel loro articolo "
+"scientifico: `A Fourier method for the determination of focus for telescopes "
+"with stars <https://arxiv.org/pdf/2201.12466.pdf>`__. Considera che, oltre "
+"l'idea di utilizzare la Trasformata di Fourier, questo articolo ipotizza "
+"altre procedure non incluse in Ekos."
 
 #: ../../user_manual/ekos-focus.rst:361
 msgid ""
@@ -1466,6 +1536,9 @@ msgid ""
 "star detection. Tan and Schulz report good results with both amateur and "
 "professional telescopes."
 msgstr ""
+"È un metodo relativamente nuovo nella comunità astronomica e non richiede il "
+"rilevamento stelle. Tan and Schulz riportano buoni risultati con telescopi "
+"sia amatoriali, sia professionali."
 
 #: ../../user_manual/ekos-focus.rst:363
 msgid ""
@@ -1473,6 +1546,9 @@ msgid ""
 "for use in fitting a surface to the star. At present just Gaussian is "
 "supported."
 msgstr ""
+"``PSF``: se ``Misura`` è impostata a FWHM, allora è possibile selezionare "
+"l'oggetto PSF per adattare una superficie alla stella. Attualmente è "
+"supportato solo Gaussiana."
 
 #: ../../user_manual/ekos-focus.rst:365
 msgid ""
@@ -1486,22 +1562,36 @@ msgid ""
 "unchecked, and for all other curve fitting where the option is not allowed, "
 "all datapoints are given equal weight in the curve fitting process."
 msgstr ""
+"``Usa pesi``: disponibile solo con l'algoritmo di messa a fuoco \"Lineare a "
+"un passo\" e \"Adattamento curva\" di Iperbole e Parabola. Richiede la "
+"selezione di \"Campo completo\". L'opzione calcola la deviazione standard "
+"della misura stellare e usa il quadrato di questa (matematicamente la "
+"varianza) come peso nella procedura di adattamento curva. Il suo vantaggio è "
+"che ai punti dati con dati meno affidabili, e dunque con deviazioni standard "
+"HFR maggiori, sarà attribuito meno peso dei punti dati affidabili. Se questa "
+"opzione è deselezionata, e per tutti gli altri adattamenti curva in cui "
+"l'opzione non è consentita, a tutti i punti dati viene attribuito un peso "
+"uguale nella procedura di adattamento curva."
 
 #: ../../user_manual/ekos-focus.rst:367
 msgid ""
 "The standard deviation is drawn on the V-Curve for each datapoint as an "
 "error bar."
 msgstr ""
+"La deviazione standard viene disegnata sulla curva-V per ciascun punto dati "
+"come una barra d'errore."
 
 #: ../../user_manual/ekos-focus.rst:369 ../../user_manual/ekos-focus.rst:381
 msgid "It is recommended to check this option."
-msgstr ""
+msgstr "È consigliato spuntare questa opzione."
 
 #: ../../user_manual/ekos-focus.rst:371
 msgid ""
 "See the :ref:`Levenberg-Marquardt Solver <ekos-focus-levenberg-marquardt>` "
 "for more details."
 msgstr ""
+"Per altri dettagli vedi il :ref:`Risolutore Levenberg-Marquardt <ekos-focus-"
+"levenberg-marquardt>`."
 
 #: ../../user_manual/ekos-focus.rst:373
 msgid ""
@@ -1516,12 +1606,25 @@ msgid ""
 "minimum R² has not been met the second time, the Autofocus run will still be "
 "deemed successful."
 msgstr ""
+"``Limite R²``: disponibile solo con l'algoritmo di messa a fuoco \"Lineare a "
+"un passo\" e \"Adattamento curva\" di Iperbole e Parabola. Come parte "
+"dell'algoritmo Lineare a un passo, viene calcolato il grado in cui la curva "
+"si adatta ai punti dati, o :ref:`Coefficiente di determinazione, R² <ekos-"
+"focus-coefficient-of-determination>`. Questa opzione consente la definizione "
+"di un valore accettabile minimo di R² che viene confrontato col valore "
+"ottenuto dalla procedura di adattamento curva. Se il valore minimo non è "
+"stato raggiunto, allora la messa a fuoco automatica si ripeterà. Sarà "
+"eseguita solo una ripetizione e, anche se l'R² minimo non è stato "
+"soddisfatto la seconda volta, l'esecuzione della messa a fuoco automatica "
+"verrà ancora considerata corretta."
 
 #: ../../user_manual/ekos-focus.rst:375
 msgid ""
 "Experiment to find an appropriate value but a good starting point would be "
 "0.8 or 0.9"
 msgstr ""
+"Prova a trovare un valore appropriato, ma un buon punto di partenza potrebbe "
+"essere 0,8 o 0,9."
 
 #: ../../user_manual/ekos-focus.rst:377
 msgid ""
@@ -1537,11 +1640,26 @@ msgid ""
 "with the original curve fit R². If the R² is better, then the latest run is "
 "used, if not, the original curve fit (with the outliers included) is used."
 msgstr ""
+"``Perfeziona adattamento della curva``: disponibile solo con l'algoritmo di "
+"messa a fuoco \"Lineare a un passo\" e \"Adattamento curva\" di Iperbole e "
+"Parabola. Se l'opzione è spuntata, allora alla fine della ripulitura dei "
+"punti dati Ekos adatta una curva e misura l'R². Quindi applica il Criterio "
+"di Peirce basato sulla metodologia di Gould per l'identificazione dei valori "
+"anomali. Per dettagli, vedi il `Criterio di Peirce <https://en.wikipedia.org/"
+"wiki/Peirce%27s_criterion>`__, e anche gli articoli originali di Peirce e di "
+"Gould, entrambi citati nelle note. Se il Criterio di Peirce rileva uno o più "
+"valori anomali, allora viene tentato un altro adattamento della curva dopo "
+"aver rimosso detti valori. Viene di nuovo calcolato l'R² e confrontato con "
+"l'adattamento curva R² originale. Se l'R² è meglio allora viene utilizzata "
+"l'ultima esecuzione; se non lo è, viene utilizzato l'adattamento curva "
+"originale (comprensivo dei valori anomali)."
 
 #: ../../user_manual/ekos-focus.rst:379
 msgid ""
 "Outliers are clearly marked on the V-Curve with an X through the datapoint."
 msgstr ""
+"I valori anomali sono contrassegnati chiaramente con una X sulla curva-V per "
+"tutto il punto dati."
 
 #: ../../user_manual/ekos-focus.rst:383
 msgid ""
@@ -1549,6 +1667,10 @@ msgid ""
 "usually sensible to start with 1 but increasing this will result in an "
 "averaging process for the star Measure selected."
 msgstr ""
+"``Media sopra``: numero di fotogrammi da acquisire in ciascun punto dati. Di "
+"solito è consigliabile iniziare con 1, ma aumentando questo valore si "
+"otterrà un procedura di calcolo della media per la misura stellare "
+"selezionata."
 
 #: ../../user_manual/ekos-focus.rst:385
 msgid ""
@@ -1560,6 +1682,15 @@ msgid ""
 "increased if there are issues with HFR Check Autofocus runs being triggered "
 "by outlying datapoints when the HFR Check runs."
 msgstr ""
+"``Controllo HFR medio``: idea simile a ``Media sopra`` ma in questo caso "
+"viene calcolata la media del punto dati del Controllo HFR sul numero "
+"selezionato di fotogrammi. Inoltre, se lo ``Algoritmo`` è *Lineare a un "
+"passo* allora viene calcolata la media dell'ultimo punto dati di un "
+"esecuzione di messa a fuoco automatica (che è il punto dati a fuoco) su "
+"questo numero di fotogrammi. Imposta il valore 1 per iniziare; il valore può "
+"essere aumentato se si verificano problemi con le esecuzioni di messa a "
+"fuoco automatica del controllo HFR che vengono attivate da punti dati "
+"anomali durante l'esecuzione del controllo HFR."
 
 #: ../../user_manual/ekos-focus.rst:387
 msgid ""
@@ -1567,6 +1698,10 @@ msgid ""
 "telescopes with central obstructions that create donut shaped stars when "
 "defocused, e.g. Newtonians, SCTs, RASAs, Ritchey-Cretiens, etc."
 msgstr ""
+"``Donut Buster``: l'intenzione di questa opzione è migliorare la messa a "
+"fuoco per i telescopi con ostruzione centrale che crea stelle a forma di "
+"ciambella quando sfocate, per esempio Newtoniani, SCT, RASA, Ritchey-"
+"Cretiens, ecc."
 
 #: ../../user_manual/ekos-focus.rst:389
 msgid ""
@@ -1574,6 +1709,9 @@ msgid ""
 "Shuffle, curves fits of Hyperbola and Parabola, and focus measures of: HFR, "
 "HFR Adj and FWHM."
 msgstr ""
+"``Donut Buster`` è disponibile soltanto per Lineare a un passo, Passi fissi "
+"e CFZ casuale, curve di adattamento di iperbole e parabola, e misure di "
+"messa a fuoco di: HFR, HFR regolato e FWHM."
 
 #: ../../user_manual/ekos-focus.rst:391
 msgid ""
@@ -1581,12 +1719,15 @@ msgid ""
 "and is only activated at the end of the focus sweep. This allows donut "
 "buster to better process edge datapoints that may be affected by donuts."
 msgstr ""
+"Quando è attivato ``Donut Buster``, l'adattamento curva intermittente viene "
+"sospeso e attivato soltanto alla fine della ripulitura della messa a fuoco. "
+"Ciò consente a Donut Buster di elaborare meglio i punti dati periferici che "
+"potrebbero essere influenzati dalle *ciambelle*."
 
 #: ../../user_manual/ekos-focus.rst:393
-#, fuzzy
-#| msgid "The following controls are available:"
 msgid "The following sub-options are available within Donut Buster:"
-msgstr "Sono disponibili i seguenti controlli:"
+msgstr ""
+"All'interno di Donut Buster sono disponibili le seguenti opzioni secondarie:"
 
 #: ../../user_manual/ekos-focus.rst:395
 msgid ""
