@@ -74,4 +74,5 @@ Features:
     ekos-scheduler-taskqueue
     ekos-analyze
     ekos-extensions
+    ekos-mcp
     ekos-tutorials
