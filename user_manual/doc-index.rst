@@ -545,6 +545,8 @@ Index
 
                    Ekos
 
+                       AI Guiding, :doc:`Guide  <ekos-guide>`
+
                        Align, :doc:`Align  <ekos-align>`
 
                        Analyze, :doc:`Analyze  <ekos-analyze>`

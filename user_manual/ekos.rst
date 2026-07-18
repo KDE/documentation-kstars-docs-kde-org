@@ -13,7 +13,7 @@ Features:
 
 -  Control your telescope, Camera (& DSLRs), filter wheel, focuser, guider, adaptive optics unit, and any INDI-compatible auxiliary device from Ekos.
 
--  *Built-in* native :doc:`autoguiding  <ekos-guide>` with support for automatic dithering between exposures and support for Adaptive Optics devices in addition to traditional guiders.
+-  *Built-in* native :doc:`autoguiding  <ekos-guide>` with support for automatic dithering between exposures and support for Adaptive Optics devices in addition to traditional guiders, including an experimental AI-assisted predictive guiding mode.
 
 -  `Extremely accurate GOTOs <https://knro.blogspot.com/2013/10/demo-of-ekos-alignment-module.html>`__ using astrometry.net solver (both Online and Offline solvers supported).
 
