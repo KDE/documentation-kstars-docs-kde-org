@@ -4,11 +4,11 @@ KStars
 ======
 
 KStars is free, open source, cross-platform Astronomy Software.
-  
-  It provides an accurate graphical simulation of the night sky, from any
-  location on Earth, at any date and time. The display includes up to 100 
-  million stars, 13,000 deep-sky objects,all 8 planets, the Sun and Moon, 
-  and thousands of comets, asteroids, supernovae, and satellites.
+
+It provides an accurate graphical simulation of the night sky, from any
+location on Earth, at any date and time. The display includes up to 100
+million stars, 13,000 deep-sky objects,all 8 planets, the Sun and Moon,
+and thousands of comets, asteroids, supernovae, and satellites.
 
 
 For students and teachers, it supports adjustable simulation speeds in order to view phenomena that happen over long timescales, the KStars Astrocalculator to predict conjunctions, and many common astronomical calculations. For the amateur astronomer, it provides an observation planner, a sky calendar tool, and an FOV editor to calculate field of view of equipment and display them. Find out interesting objects in the "What's up Tonight" tool, plot altitude vs. time graphs for any object, print high-quality sky charts, and gain access to lots of information and resources to help you explore the universe!
