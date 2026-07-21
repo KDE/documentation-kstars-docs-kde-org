@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-19 02:06+0000\n"
-"PO-Revision-Date: 2025-10-10 00:38+0200\n"
+"PO-Revision-Date: 2026-07-19 09:39+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ../../user_manual/ekos-guide.rst:3
 msgid "Guide"
@@ -504,6 +504,11 @@ msgid ""
 "Assistant before it can be selected. See :ref:`AI Guiding Assistant <ekos-"
 "guide-ai-guiding-assistant>` below."
 msgstr ""
+"Vodilo z umetno inteligenco: (Poskusno) Doda naučene, za priklop specifične "
+"napovedi posredovanja podatkov na vrh standardnega algoritma, ki se nenehno "
+"izvaja pod njim. Preden ga je mogoče izbrati, je potrebna enkratna učna seja "
+"z vodilom z umetno inteligenco. Glejte :ref:`Vodilo z umetno inteligenco "
+"<ekos-guide-ai-guiding-assistant>` spodaj."
 
 #: ../../user_manual/ekos-guide.rst:266
 msgid ""
@@ -824,11 +829,11 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:448
 msgid "AI Guiding Assistant (Experimental)"
-msgstr ""
+msgstr "Pomočnik vodenja z umetno inteligenco (poskusno)"
 
 #: ../../user_manual/ekos-guide.rst:450
 msgid "|AI Guiding Menu|"
-msgstr ""
+msgstr "|AI Guiding Menu|"
 
 #: ../../user_manual/ekos-guide.rst:452
 msgid ""
@@ -840,6 +845,13 @@ msgid ""
 "algorithm keeps running underneath at all times and corrects whatever the "
 "prediction misses."
 msgstr ""
+"Pomočnik za vodenje z umetno inteligenco notranjemu vodilu doda usposobljen, "
+"za montažo specifičen *feed-forward* prediktor. Po enkratnem učenju se "
+"umetna inteligenca nauči ponovljivega dela napake sledenja vaše montaže – "
+"kot sta periodična napaka in počasen odmik – in doda predvideni popravek "
+"vsakemu vodilnemu impulzu *preden* napaka postane vidna na sliki vodila. "
+"Standardni algoritem za vodenje ves čas deluje spodaj in popravi vse, kar "
+"napoved zgreši."
 
 #: ../../user_manual/ekos-guide.rst:460
 msgid ""
@@ -851,6 +863,13 @@ msgid ""
 "`AI Assistant (MCP) <ekos-mcp>` interface, which connects KStars to external "
 "chat assistants."
 msgstr ""
+"Vstopna točka je gumb menija :guilabel:`AI Guiding (Experimental)` na glavni "
+"strani vodnika, tik pod :guilabel:`Clear Calibration`. Ponuja dve dejanji: :"
+"guilabel:`AI Guiding Assistant...`, ki odpre spodaj opisanega čarovnika za "
+"zbiranje podatkov, in :guilabel:`Load Weights...`, ki naloži predhodno "
+"naučeno datoteko modela. Ta funkcija ni povezana z vmesnikom :doc:`AI "
+"Assistant (MCP) <ekos-mcp>`, ki povezuje KStars z zunanjimi klepetalniškimi "
+"pomočniki."
 
 #: ../../user_manual/ekos-guide.rst:470
 msgid ""
@@ -860,16 +879,24 @@ msgid ""
 "and be prepared to switch back to the :guilabel:`Standard` or :guilabel:"
 "`GPG` algorithms if your results are not better with the AI."
 msgstr ""
+"Vodniški pomočnik z umetno inteligenco je **eksperimentalna** funkcija, ki "
+"je v aktivnem razvoju. Izurjeni modeli so vezani na vaše specifične "
+"nastavitve montaće, kamere in vodila. Po vklopu vedno preverite delovanje "
+"vodenja in bodite pripravljeni, da se vrnete na algoritme :guilabel:"
+"`Standard` ali :guilabel:`GPG`, če vaši rezultati z umetno inteligenco niso "
+"boljši."
 
 #: ../../user_manual/ekos-guide.rst:479
 msgid "Expectations and Prerequisites"
-msgstr ""
+msgstr "Pričakovanja in predpogoji"
 
 #: ../../user_manual/ekos-guide.rst:481
 msgid ""
 "Please read this part carefully before investing time in training a model — "
 "it will save you from disappointment later."
 msgstr ""
+"Preden vložite čas v učenje modela, natančno preberite ta del – to vas bo "
+"rešilo pred kasnejšim razočaranjem."
 
 #: ../../user_manual/ekos-guide.rst:486
 msgid ""
@@ -878,22 +905,26 @@ msgid ""
 "mount's error and layers that prediction on top of the standard guiding "
 "algorithm. It will **not** fix:"
 msgstr ""
+"Vodenje z umetno inteligenco **izboljša** dobro delujočo nastavitev vodenja "
+"– ne popravi slabo delujoče. Predvidi *ponavljajoči se* del napake vaše "
+"montaže in to napoved doda standardnemu algoritmu vodenja. Ne bo pa "
+"**popravilo**:"
 
 #: ../../user_manual/ekos-guide.rst:491
 msgid "poor polar alignment,"
-msgstr ""
+msgstr "slabe polarne poravnave,"
 
 #: ../../user_manual/ekos-guide.rst:492
 msgid "imbalance, cable drag, or differential flexure,"
-msgstr ""
+msgstr "neravnovesja, vlečenja kabla ali diferencialnega upogibanja,"
 
 #: ../../user_manual/ekos-guide.rst:493
 msgid "wind gusts, vibrations, or bad seeing,"
-msgstr ""
+msgstr "sunke vetra, vibracije ali slabe vidljivosti,"
 
 #: ../../user_manual/ekos-guide.rst:494
 msgid "a mount or guide system that is not already well tuned."
-msgstr ""
+msgstr "montaže ali sistema vodil, ki še ni dobro nastavljen."
 
 #: ../../user_manual/ekos-guide.rst:496
 msgid ""
@@ -902,32 +933,45 @@ msgid ""
 "The improvement from AI guiding varies considerably from mount to mount, and "
 "on some mounts you may see no measurable benefit at all."
 msgstr ""
+"Nobena od teh napak ni ponovljiva, zato jih nobeno učenje ne more "
+"predvideti. Če standardno vodenje na vašem sistemu ne deluje dobro, najprej "
+"popravite to. Izboljšanje vodenja z umetno inteligenco se precej razlikuje "
+"od montaže do montaže, pri nekaterih montažah pa morda sploh ne boste "
+"opazili nobene merljive koristi."
 
 #: ../../user_manual/ekos-guide.rst:502
 msgid "Before running the assistant, make sure that:"
-msgstr ""
+msgstr "Preden zaženete pomočnika, se prepričajte, da:"
 
 #: ../../user_manual/ekos-guide.rst:504
 msgid ""
 "You are using the **internal guider**, with a working guide camera and a "
 "completed, successful calibration."
 msgstr ""
+"Uporabljate **notranje vodilo* s kamero delujočim vodilo in uspešno "
+"opravljeno kalibracijo."
 
 #: ../../user_manual/ekos-guide.rst:506
 msgid ""
 "Ordinary guiding with the :guilabel:`Standard` algorithm already works "
 "reliably on your setup."
 msgstr ""
+"Običajno vodenje z algoritmom :guilabel:`Standard` že zanesljivo deluje na "
+"vaši nastavitvi."
 
 #: ../../user_manual/ekos-guide.rst:508
 msgid "Your mount is well polar-aligned, balanced, and free of cable snags."
 msgstr ""
+"Vaša montaža je dobro polarno poravnana, uravnotežena in brez zatikanja "
+"kablov."
 
 #: ../../user_manual/ekos-guide.rst:509
 msgid ""
 "You know your mount's drive type: worm gear (most equatorial mounts), "
 "harmonic/strain-wave drive, or direct drive."
 msgstr ""
+"Poznate vrsto pogona vaše montaže: polžasti zobnik (večina ekvatorialnih "
+"montaž), harmonični/deformacijski valovni pogon ali direktni pogon."
 
 #: ../../user_manual/ekos-guide.rst:511
 msgid ""
@@ -935,16 +979,21 @@ msgid ""
 "trained *and locked* to the guide exposure, binning, and guide settings used "
 "during data collection."
 msgstr ""
+"Vaša osvetlitev vodila je tista, ki jo nameravate uporabljati še naprej: "
+"model je usposobljen *in zaklenjen* na osvetlitev vodila, združevanje in "
+"nastavitve vodila, ki se uporabljajo med zbiranjem podatkov."
 
 #: ../../user_manual/ekos-guide.rst:514
 msgid ""
 "You have 20–45 minutes of clear, reasonably steady sky to spend on data "
 "collection, depending on the mount type."
 msgstr ""
+"Za zbiranje podatkov imate na voljo 20–45 minut jasnega, razmeroma stalnega "
+"neba, odvisno od vrste montaže."
 
 #: ../../user_manual/ekos-guide.rst:520
 msgid "Data Collection with the AI Guiding Assistant"
-msgstr ""
+msgstr "Zbiranje podatkov s pomočnikom vodenja z umetno inteligenco"
 
 #: ../../user_manual/ekos-guide.rst:522
 msgid ""
@@ -955,10 +1004,16 @@ msgid ""
 "measured. Click :guilabel:`AI Guiding (Experimental)` → :guilabel:`AI "
 "Guiding Assistant...` on the Guide page to start the wizard."
 msgstr ""
+"Učenje modela se začne s sejo *identifikacije sistema*: asistent usmeri "
+"montažo na nekaj položajev na nebu in zabeleži, kako se vodilna zvezda "
+"premika, tako med vodenjem v teku kot med namerno zaustavljenim vodenjem "
+"(\"prosti zdrs\"), da se lahko izmeri surov podpis napake montaže. Za zagon "
+"čarovnika kliknite :guilabel:`Vodenje z umetno inteligenco (poskusno)` → :"
+"guilabel:`Pomočnik za vodenje z umetno inteligenco...` ​​na strani Vodila."
 
 #: ../../user_manual/ekos-guide.rst:530
 msgid "|AI Wizard Mount Page|"
-msgstr ""
+msgstr "|AI Wizard Mount Page|"
 
 #: ../../user_manual/ekos-guide.rst:532
 msgid ""
@@ -969,10 +1024,16 @@ msgid ""
 "1.0–3.0 s for direct drives. Set your exposure *before* proceeding: the "
 "trained model is locked to it."
 msgstr ""
+"**Stran 1 — Identifikacija montaže.** Preverite zaznano vrsto montaže: :"
+"guilabel:`Požasti zobnik`, :guilabel:`Harmonični pogon` ali :guilabel:"
+"`Neposredni pogon`. Čarovnik priporoča tudi vodilno osvetlitev na vrsto "
+"pogona — 2,0 s za polžasta gonila, 0,5–1,0 s za harmonične pogone (odvisno "
+"od signala vodilne zvezde) in 1,0–3,0 s za neposredne pogone. Nastavite "
+"osvetlitev *pred* nadaljevanjem: izurjeni model je zaklenjen nanjo."
 
 #: ../../user_manual/ekos-guide.rst:539
 msgid "|AI Wizard Protocol Page|"
-msgstr ""
+msgstr "|AI Wizard Protocol Page|"
 
 #: ../../user_manual/ekos-guide.rst:541
 msgid ""
@@ -982,6 +1043,11 @@ msgid ""
 "all guide directions enabled; your original settings are restored when the "
 "wizard finishes. The protocol depends on the mount type:"
 msgstr ""
+"**Stran 2 – Predogled protokola.** Čarovnik prikaže merilni protokol, ki ga "
+"bo zagnal. Med zbiranjem podatkov se vaše nastavitve vodenja začasno "
+"preklopijo na algoritem :guilabel:`Standard` na obeh oseh z omogočenimi "
+"vsemi smermi vodenja; prvotne nastavitve se obnovijo, ko se čarovnik "
+"zaključi. Protokol je odvisen od vrste montaže:"
 
 #: ../../user_manual/ekos-guide.rst:547
 msgid ""
@@ -990,6 +1056,10 @@ msgid ""
 "drift. The long free-drift phases capture roughly three full worm cycles, "
 "which is what allows the periodic error to be measured."
 msgstr ""
+"**Polžasti zobnik** (~45 minut): tri meritve na visoki, nižji in veliki "
+"višini, pri čemer vsako združuje standardno vodenje z nekaj minutami "
+"prostega drsenja. Dolge faze prostega drsenja zajamejo približno tri polne "
+"polžje cikle, kar omogoča merjenje periodične napake."
 
 #: ../../user_manual/ekos-guide.rst:551
 msgid ""
@@ -998,16 +1068,21 @@ msgid ""
 "pulses in all four directions) that measure how the drive reacts to "
 "corrections."
 msgstr ""
+"**Harmonični pogon** (~35 minut): prosti zdrs in standardno vodenje v dveh "
+"točkah ter vrsta testov odziva na kratke impulze (impulzi 50, 100 in 200 ms "
+"v vse štiri smeri), ki merijo, kako se pogon odziva na popravke."
 
 #: ../../user_manual/ekos-guide.rst:555
 msgid ""
 "**Direct Drive** (~20 minutes): short guiding and free-drift phases at three "
 "different altitudes."
 msgstr ""
+"**Direktni pogon** (~20 minut): kratke faze vodenja in prostega drsenja na "
+"treh različnih višinah."
 
 #: ../../user_manual/ekos-guide.rst:558
 msgid "|AI Wizard Progress Page|"
-msgstr ""
+msgstr "|AI Wizard Progress Page|"
 
 #: ../../user_manual/ekos-guide.rst:560
 msgid ""
@@ -1016,10 +1091,14 @@ msgid ""
 "the process invalidates the affected phase. Use :guilabel:`Stop` only if "
 "something goes wrong."
 msgstr ""
+"**Stran 3 – Napredek identifikacije sistema.** Pomočnik se samodejno "
+"premika, vodi in premika. Med delovanjem pustite sistem pri miru – "
+"prekinitev procesa razveljavi prizadeto fazo. :guilabel:`Stop` uporabite le, "
+"če gre kaj narobe."
 
 #: ../../user_manual/ekos-guide.rst:565
 msgid "|AI Wizard Complete Page|"
-msgstr ""
+msgstr "|AI Wizard Complete Page|"
 
 #: ../../user_manual/ekos-guide.rst:567
 msgid ""
@@ -1030,10 +1109,16 @@ msgid ""
 "file for the Python trainer (see :ref:`below <ekos-guide-ai-offline-"
 "training>`)."
 msgstr ""
+"**Stran 4 – Zbiranje podatkov je končano.** Izmerjeni podatki so shranjeni "
+"in izberete, kako želite učiti model: :guilabel:`Učenje v EkosLive` naloži "
+"podatke v EkosLive Cloud in vrne model, pripravljen za uporabo (naslednji "
+"razdelek), medtem ko :guilabel:`Izvozi za učenje brez povezave` zapiše "
+"datoteko ``sysid_data.json`` za učitelja Pythona (glejte :ref:`spodaj <ekos-"
+"guide-ai-offline-training>`)."
 
 #: ../../user_manual/ekos-guide.rst:577
 msgid "Training via EkosLive"
-msgstr ""
+msgstr "Učenje prek EkosLive"
 
 #: ../../user_manual/ekos-guide.rst:579
 msgid ""
@@ -1044,6 +1129,12 @@ msgid ""
 "data folder, ``~/.local/share/kstars/`` on Linux) and set as the active "
 "weights file — no further steps are needed."
 msgstr ""
+"Najlažji način za učenje modela je z računom `EkosLive <https://ekoslive."
+"com>`__: kliknite :guilabel:`Učenje v EkosLive` na strani 4 čarovnika. "
+"Podatki se naložijo, model se nauči v oblaku in nastale uteži se samodejno "
+"shranijo (kot ``ai_guider_weights.json`` v mapi s podatki KStars, ``~/.local/"
+"share/kstars/`` v Linuxu) in nastavijo kot aktivna datoteka z utežmi – "
+"nadaljnji koraki niso potrebni."
 
 #: ../../user_manual/ekos-guide.rst:589
 msgid ""
@@ -1054,10 +1145,15 @@ msgid ""
 "If you prefer not to upload anything, use offline training instead — it "
 "produces identical weights."
 msgstr ""
+"Naloženi podatki za identifikacijo sistema **ne vsebujejo koordinat neba**: "
+"samo višino, azimut in paralaktični kot, skupaj z meritvami premika "
+"slikovnih pik, razmerji signal/šum zvezd in poslanimi vodilnimi impulzi. "
+"Vključujejo pa ime vaše montaže in imena kamer. Če ne želite ničesar "
+"naložiti, uporabite učenje brez povezave – ustvari enake uteži."
 
 #: ../../user_manual/ekos-guide.rst:600
 msgid "Training the Model Offline"
-msgstr ""
+msgstr "Učenje modela brez povezave"
 
 #: ../../user_manual/ekos-guide.rst:602
 msgid ""
@@ -1065,12 +1161,18 @@ msgid ""
 "Python scripts that runs on any ordinary computer. Training uses only the "
 "CPU and finishes in under ten minutes; no GPU is required."
 msgstr ""
+"Za učenje modela ne potrebujete EkosLive – učitelj je majhen nabor skript "
+"Pythona, ki se izvaja na katerem koli navadnem računalniku. Učenje uporablja "
+"samo procesor in se konča v manj kot desetih minutah; grafični procesor ni "
+"potreben."
 
 #: ../../user_manual/ekos-guide.rst:606
 msgid ""
 "On wizard page 4, click :guilabel:`Export for offline training` and save "
 "``sysid_data.json``."
 msgstr ""
+"Na strani 4 čarovnika kliknite :guilabel:`Izvozi za učenje brez povezave` in "
+"shranite ``sysid_data.json``."
 
 #: ../../user_manual/ekos-guide.rst:608
 msgid ""
@@ -1078,6 +1180,9 @@ msgid ""
 "observatory computer itself, but a desktop or laptop is usually more "
 "convenient)."
 msgstr ""
+"Kopirajte datoteko na računalnik, kjer želite izvajati učenje (lahko je to "
+"sam računalnik observatorija, vendar je običajno bolj priročno uporabiti "
+"namizni ali prenosni računalnik)."
 
 #: ../../user_manual/ekos-guide.rst:611
 msgid ""
@@ -1085,10 +1190,13 @@ msgid ""
 "directory of the `KStars source repository <https://invent.kde.org/education/"
 "kstars/-/tree/master/kstars/ekos/guide/offlinetrainer>`__."
 msgstr ""
+"Pridobite skripte za učitelja iz imenika ``kstars/ekos/guide/offlinetrainer/"
+"`` v repozitoriju izvorne kode `KStars <https://invent.kde.org/education/"
+"kstars/-/tree/master/kstars/ekos/guide/offlinetrainer>`__."
 
 #: ../../user_manual/ekos-guide.rst:614
 msgid "In that directory, create a Python environment and run the trainer:"
-msgstr ""
+msgstr "V tem imeniku ustvarite okolje Python in zaženite učitelja:"
 
 #: ../../user_manual/ekos-guide.rst:616
 msgid ""
@@ -1097,6 +1205,10 @@ msgid ""
 "pip install numpy scipy torch\n"
 "python train.py --sysid-data ./sysid_data.json --output ./weights.json"
 msgstr ""
+"python3 -m venv venv\n"
+"source venv/bin/activate\n"
+"pip install numpy scipy torch\n"
+"python train.py --sysid-data ./sysid_data.json --output ./weights.json"
 
 #: ../../user_manual/ekos-guide.rst:623
 msgid ""
@@ -1104,6 +1216,9 @@ msgid ""
 "matching model. Should the detection ever be wrong, it can be overridden "
 "with ``--mount-type WORM_GEAR|HARMONIC_DRIVE|DIRECT_DRIVE``."
 msgstr ""
+"Učitelj samodejno zazna vrsto vaše montaže iz podatkov in izbere ustrezen "
+"model. Če je zaznavanje kdaj napačno, ga lahko preglasite z ``--mount-type "
+"WORM_GEAR|HARMONIC_DRIVE|DIRECT_DRIVE``."
 
 #: ../../user_manual/ekos-guide.rst:627
 msgid ""
@@ -1113,16 +1228,19 @@ msgid ""
 "File` on the :guilabel:`AI Guider` options page). The weights are applied "
 "the next time guiding starts."
 msgstr ""
+"Nazadnje kopirajte nastalo datoteko ``weights.json`` nazaj v računalnik "
+"observatorija in jo naložite v KStars prek :guilabel:`AI Guiding "
+"(Experimental)` → :guilabel:`Load Weights...` na strani Vodnik (ali "
+"nastavite :guilabel:`Weights File` na strani z možnostmi :guilabel:`AI "
+"Guider`). Uteži se uporabijo ob naslednjem začetku vodenja."
 
 #: ../../user_manual/ekos-guide.rst:636
 msgid "Activating AI Guiding and Options"
-msgstr ""
+msgstr "Aktiviranje vodenja in možnosti umetne inteligence"
 
 #: ../../user_manual/ekos-guide.rst:638
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|AI Guider Options|"
-msgstr "|Guide Settings|"
+msgstr "|AI Guider Options|"
 
 #: ../../user_manual/ekos-guide.rst:640
 msgid ""
@@ -1131,10 +1249,14 @@ msgid ""
 "usual. The AI-related settings live on the :guilabel:`AI Guider` page of the "
 "guide settings dialog:"
 msgstr ""
+"Ko je datoteka z utežmi naložena, v možnostih vodila izberite :guilabel:`AI "
+"Guider` kot algoritem vodenja za RA in/ali DEC in začnite z vodenjem kot "
+"običajno. Nastavitve, povezane z umetno inteligenco, so na voljo na strani :"
+"guilabel:`AI Guider` v pogovornem oknu z nastavitvami vodila:"
 
 #: ../../user_manual/ekos-guide.rst:645
 msgid ":guilabel:`Weights File`: path to the trained model weights (JSON)."
-msgstr ""
+msgstr ":guilabel:`Datoteka z utežmi`: pot do naučenih uteži modela (JSON)."
 
 #: ../../user_manual/ekos-guide.rst:646
 msgid ""
@@ -1143,6 +1265,10 @@ msgid ""
 "its full prediction. Start at the default and increase gradually if guiding "
 "improves."
 msgstr ""
+":guilabel:`Ojačanje napovedi umetne inteligence` (privzeto 0,5): kako močno "
+"se napoved umetne inteligence zlije z vodilnimi impulzi. 0,0 v celoti prezre "
+"umetno inteligenco; 1,0 uporabi njeno celotno napoved. Začnite s privzeto "
+"vrednostjo in jo postopoma povečujte, če se vodenje izboljša."
 
 #: ../../user_manual/ekos-guide.rst:650
 msgid ""
@@ -1151,6 +1277,10 @@ msgid ""
 "highly confident, to avoid the two controllers over-correcting the same "
 "error."
 msgstr ""
+":guilabel:`Zmanjšaj proporcionalno ojačanje med korekcijo umetne "
+"inteligence` (privzeto izklopljeno): zmanjša standardni proporcionalni odziv "
+"za do polovico, ko je umetna inteligenca zelo samozavestna, da se prepreči "
+"prekomerno popravljanje iste napake s strani obeh krmilnikov."
 
 #: ../../user_manual/ekos-guide.rst:654
 msgid ""
@@ -1159,12 +1289,18 @@ msgid ""
 "settling, autofocus runs, or camera downloads — by extrapolating the "
 "periodic error forward in time."
 msgstr ""
+":guilabel:`Omogoči napovedno vodenje v temi` (privzeto izklopljeno): oddaja "
+"predvidene popravke med premori v meritvah vodilnih zvezd – umirjanje "
+"tresenja, izvajanje samodejnega ostrenja ali prenosi s kamere – z "
+"ekstrapolacijo periodične napake naprej v času."
 
 #: ../../user_manual/ekos-guide.rst:658
 msgid ""
 ":guilabel:`Dark Guiding Interval` (default 1.0 s): seconds between predicted "
 "pulses when no guide-star measurement is available."
 msgstr ""
+":guilabel:`Interval temnega vodenja` (privzeto 1,0 s): sekunde med "
+"predvidenimi impulzi, ko meritev vodilne zvezde ni na voljo."
 
 #: ../../user_manual/ekos-guide.rst:663
 msgid ""
@@ -1175,10 +1311,17 @@ msgid ""
 "settings you used during data collection, re-run the assistant to train new "
 "weights, or switch the algorithm back to :guilabel:`Standard`."
 msgstr ""
+"Datoteka z utežmi deluje samo z nastavitvami vodila, s katerimi je bila "
+"naučena. Ko se vodenje začne, se prstni odtis datoteke preveri glede na "
+"trenutne nastavitve osvetlitve vodila, zbiranja podatkov, ojačanja, "
+"minimalnega/maksimalnega impulza in histereze. V primeru neujemanja se "
+"vodenje prekine s pojasnjevalnim sporočilom – bodisi obnovite nastavitve, ki "
+"ste jih uporabili med zbiranjem podatkov, ponovno zaženite pomočnika za "
+"učenje novih uteži ali preklopite algoritem nazaj na :guilabel:`Standard`."
 
 #: ../../user_manual/ekos-guide.rst:674
 msgid "Monitoring AI Guiding"
-msgstr ""
+msgstr "Spremljanje vodenja z umetno inteligenco"
 
 #: ../../user_manual/ekos-guide.rst:676
 msgid ""
@@ -1190,6 +1333,13 @@ msgid ""
 "are verified against real measurements, the AI becomes :guilabel:`Active` "
 "and its corrections are blended in."
 msgstr ""
+"Prikaz stanja vodenja prikazuje, kaj počne umetna inteligenca. Po začetku "
+"vodenja je umetna inteligenca v fazi *ogrevanja* (prikazano kot :guilabel:"
+"`Ogrevanje`), medtem ko sinhronizira svoj model z živo montažo – približno "
+"50 vodilnih okvirjev za polžaste zobnike, 30 za harmonične pogone in 10 za "
+"direktne pogone. Med ogrevanjem vodenje v celoti izvaja standardni "
+"algoritem. Ko so njene napovedi potrjene z dejanskimi meritvami, umetna "
+"inteligenca postane :guilabel:`Aktivna` in njeni popravki se vključijo."
 
 #: ../../user_manual/ekos-guide.rst:684
 msgid ""
@@ -1200,6 +1350,12 @@ msgid ""
 "low, the standard guiding algorithm does most of the work — an "
 "underperforming model degrades gracefully instead of ruining your subframes."
 msgstr ""
+"Mešanica je utežena z živo sprotno oceno *zaupanja*. Zaupanje zahteva "
+"razmeroma svetlo vodilno zvezdo (največ doseže okoli razmerja signal/šum 30 "
+"in pade na nič pod 10) in pade, kadar se napovedi umetne inteligence ne "
+"ujemajo več z dejanskim delovanjem montaže. Ko je zaupanje nizko, večino "
+"dela opravi standardni algoritem za vodenje – premalo delujoč model se "
+"elegantno poslabša, namesto da bi uničil vaše podokvirje."
 
 #: ../../user_manual/ekos-guide.rst:692
 msgid ""
@@ -1209,10 +1365,16 @@ msgid ""
 "for re-warm-up; and a lost guide star triggers the guider's normal "
 "reacquisition logic."
 msgstr ""
+"Ves čas velja več zaščitnih ukrepov: vsak impulz spoštuje vaše konfigurirane "
+"omejitve največjega števila impulzov in fiksno 5-sekundno zgornjo mejo; "
+"napovedi umetne inteligence so med tresenjem začasno ustavljene; ​​preklop "
+"meridiana ponastavi notranje stanje umetne inteligence za ponovno ogrevanje; "
+"izgubljena vodilna zvezda pa sproži normalno logiko ponovnega pridobivanja "
+"signala vodila."
 
 #: ../../user_manual/ekos-guide.rst:701
 msgid "How It Works"
-msgstr ""
+msgstr "Kako to deluje"
 
 #: ../../user_manual/ekos-guide.rst:703
 msgid ""
@@ -1226,6 +1388,15 @@ msgid ""
 "repeat, which is why data collection matters and why the random part remains "
 "the standard algorithm's job."
 msgstr ""
+"Napaka sledenja montaže ima dva dela. *Ponovljivi* del izhaja iz njene "
+"mehanike – periodične napake polžastega zobnika, nepopolnosti zobnika, "
+"atmosferske refrakcije in počasnega premika zaradi preostale napake polarne "
+"poravnave. *Naključni* del izhaja iz vidnega šuma, vetra in merilnega šuma. "
+"Konvencionalni navigacijski sistem je povsem reaktiven: napako lahko popravi "
+"šele, ko se zvezda že premakne. Nasprotno pa navigacijski sistem s predhodno "
+"podajo predvidi ponovljivi del in ga prekliče, ko se zgodi – vendar to lahko "
+"stori le za napake, ki se ponavljajo, zato je zbiranje podatkov pomembno in "
+"zato naključni del ostaja naloga standardnega algoritma."
 
 #: ../../user_manual/ekos-guide.rst:713
 msgid ""
@@ -1237,12 +1408,22 @@ msgid ""
 "clamps before being sent to the mount. If the AI contributes nothing useful, "
 "its term simply fades to zero and you are left with plain standard guiding."
 msgstr ""
+"Vodnik z umetno inteligenco je namerno konzervativen pri uporabi svojih "
+"napovedi. V vsakem ciklu vodenja standardni krmilnik izračuna svoj normalni "
+"popravek iz izmerjenega premika. Vzporedno model umetne inteligence izračuna "
+"predvideni popravek, ki je v umerjen glede na oceno zaupanja v živo in vaš "
+"dobiček napovedi ter sešteje. Sešteti impulz nato prehaja skozi varnostne "
+"sponke, preden se pošlje na nosilec. Če umetna inteligenca ne prispeva "
+"ničesar koristnega, njen člen preprosto pade na nič in ostane vam le "
+"standardno vodenje."
 
 #: ../../user_manual/ekos-guide.rst:722
 msgid ""
 "The model itself is chosen to match the mount's physics rather than being "
 "one large neural network:"
 msgstr ""
+"Sam model je izbran tako, da se ujema s fiziko montaže in ne kot ena sama "
+"velika nevronska mreža:"
 
 #: ../../user_manual/ekos-guide.rst:725
 msgid ""
@@ -1251,6 +1432,10 @@ msgid ""
 "neural network (about 200 parameters) that learns the leftover, mount-"
 "specific residuals."
 msgstr ""
+"Montaže s **polžastim zobnikom** uporabljajo fizikalni model periodične "
+"napake, loma in polarnega drsenja, pri čemer se njegova faza med vodenjem "
+"spremlja v živo, ter majhno nevronsko mrežo (približno 200 parametrov), ki "
+"se uči preostalih, za montažo specifičnih ostankov."
 
 #: ../../user_manual/ekos-guide.rst:729
 msgid ""
@@ -1258,16 +1443,21 @@ msgid ""
 "wind-up and periodic error, with a small neural network correcting its "
 "predictions."
 msgstr ""
+"Montaže s **Harmoničnim gonilom** uporabljajo model Kalmanovega filtra za "
+"navijanje vzmeti pogona in periodične napake, pri čemer majhna nevronska "
+"mreža popravlja njegove napovedi."
 
 #: ../../user_manual/ekos-guide.rst:732
 msgid ""
 "**Direct drive** mounts have almost no mechanical error, so only refraction "
 "and drift are modeled analytically — no neural network is involved."
 msgstr ""
+"Nosilci z **direktnim pogonom** skoraj nimajo mehanskih napak, zato se "
+"analitično modelirata le lom in zamik – nevronska mreža ni vključena."
 
 #: ../../user_manual/ekos-guide.rst:739
 msgid "Troubleshooting and Notes"
-msgstr ""
+msgstr "Odpravljanje težav in opombe"
 
 #: ../../user_manual/ekos-guide.rst:741
 msgid ""
@@ -1276,6 +1466,10 @@ msgid ""
 "Restore the settings used during data collection, retrain, or switch the "
 "algorithm back to :guilabel:`Standard`."
 msgstr ""
+"*Vodenje se takoj prekine z napako uteži.* Nalaganje datoteke z utežmi ni "
+"uspelo ali pa se njen prstni odtis ne ujema s trenutnimi nastavitvami "
+"vodila. Obnovite nastavitve, uporabljene med zbiranjem podatkov, ponovno "
+"usposobite algoritem ali preklopite nazaj na :guilabel:`Standard`."
 
 #: ../../user_manual/ekos-guide.rst:745
 msgid ""
@@ -1284,6 +1478,11 @@ msgid ""
 "your mount's current behavior. Guiding continues normally on the standard "
 "algorithm either way; consider retraining under better conditions."
 msgstr ""
+"*Umetna inteligenca ostane v fazi ogrevanja ali pa se nikoli ne aktivira.* "
+"To je običajno posledica šibke vodilne zvezde (nizko razmerje signal-šum) "
+"ali napovedi, ki se ne ujemajo s trenutnim vedenjem vašega montaže. Vodenje "
+"se v obeh primerih nadaljuje normalno po standardnem algoritmu; razmislite o "
+"ponovnem učenju modela v boljših pogojih."
 
 #: ../../user_manual/ekos-guide.rst:750
 msgid ""
@@ -1292,6 +1491,11 @@ msgid ""
 "errors. Compare a few guiding sessions with the AI enabled and disabled "
 "under similar conditions before drawing conclusions."
 msgstr ""
+"*Ni vidnega izboljšanja.* To je realističen rezultat pri nekaterih montažah "
+"– zlasti pri tistih z majhnimi periodičnimi napakami ali pri tistih, pri "
+"katerih prevladujejo neponovljive napake. Preden sklepate, primerjajte nekaj "
+"sej vodenja z vklopljeno in izklopljeno umetno inteligenco pod podobnimi "
+"pogoji."
 
 #: ../../user_manual/ekos-guide.rst:755
 msgid ""
@@ -1300,6 +1504,10 @@ msgid ""
 "whenever guiding performance degrades noticeably after a remesh or "
 "mechanical adjustment."
 msgstr ""
+"*Kdaj je potrebno ponovno učenje:* po spremembi kamere za vodenje, "
+"osvetlitve vodenja, združevanja, optičnega vlaka vodenja, montaže ali katere "
+"koli nastavitve vodenja s prstnim odtisom – in kadar se zmogljivost vodenja "
+"opazno poslabša po ponovnem mreženju ali mehanski nastavitvi."
 
 #: ../../user_manual/ekos-guide.rst:759
 msgid ""
@@ -1307,6 +1515,9 @@ msgid ""
 "the AI debug logs and guide logs into a single archive that you can attach "
 "to a bug report or forum post."
 msgstr ""
+"*Prijavljanje težav:* čarovnikov gumb :guilabel:`Izvozi dnevnike` združi "
+"dnevnike odpravljanja napak umetne inteligence in dnevnike vodila v en sam "
+"arhiv, ki ga lahko priložite poročilu o napaki ali objavi na forumu."
 
 #: ../../user_manual/ekos-guide.rst:766
 msgid "Dark Frames"
@@ -1510,68 +1721,52 @@ msgid ".. image:: /images/ekos_guide_phd2.png"
 msgstr ".. image:: /images/ekos_guide_phd2.png"
 
 #: ../../user_manual/ekos-guide.rst:843
-#, fuzzy
-#| msgid "Guiding"
 msgid "AI Guiding Menu"
-msgstr "Vodenje"
+msgstr "Meni vodenja umetne inteligence"
 
 #: ../../user_manual/ekos-guide.rst:843
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_ai_menu.png"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_ai_menu.png"
 
 #: ../../user_manual/ekos-guide.rst:844
 msgid "AI Wizard Mount Page"
-msgstr ""
+msgstr "Stran čarovnika za umetno inteligenco za montažo"
 
 #: ../../user_manual/ekos-guide.rst:844
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_mount.png"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_mount.png"
 
 #: ../../user_manual/ekos-guide.rst:845
 msgid "AI Wizard Protocol Page"
-msgstr ""
+msgstr "Stran čarovnika za umetno inteligenco za protokol"
 
 #: ../../user_manual/ekos-guide.rst:845
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
 
 #: ../../user_manual/ekos-guide.rst:846
 msgid "AI Wizard Progress Page"
-msgstr ""
+msgstr "Stran čarovnika za umetno inteligenco za napredek"
 
 #: ../../user_manual/ekos-guide.rst:846
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_progress.png"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_progress.png"
 
 #: ../../user_manual/ekos-guide.rst:847
 msgid "AI Wizard Complete Page"
-msgstr ""
+msgstr "Stran čarovnika za umetno inteligenco za dokončanje"
 
 #: ../../user_manual/ekos-guide.rst:847
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_complete.png"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_complete.png"
 
 #: ../../user_manual/ekos-guide.rst:848
-#, fuzzy
-#| msgid "Guide Settings"
 msgid "AI Guider Options"
-msgstr "Nastavitve vodila"
+msgstr "Možnosti vodila za umetno inteligenco"
 
 #: ../../user_manual/ekos-guide.rst:848
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_gpg_settings.png"
 msgid ".. image:: /images/ekos_guide_ai_options.png"
-msgstr ".. image:: /images/ekos_guide_gpg_settings.png"
+msgstr ".. image:: /images/ekos_guide_ai_options.png"
 
 #~ msgid "<title>Guide</title>"
 #~ msgstr "<title>Vodnik</title>"

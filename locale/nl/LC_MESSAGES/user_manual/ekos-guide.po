@@ -1,19 +1,19 @@
 #
-# SPDX-FileCopyrightText: 2019, 2021, 2022, 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2019, 2021-2026 Freek de Kruijf <freekdekruijf@kde.nl>
 # jaap <jjhwoldringh@kde.nl>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-19 02:06+0000\n"
-"PO-Revision-Date: 2025-07-28 11:39+0200\n"
+"PO-Revision-Date: 2026-07-19 18:05+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 26.04.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../user_manual/ekos-guide.rst:3
@@ -517,6 +517,11 @@ msgid ""
 "Assistant before it can be selected. See :ref:`AI Guiding Assistant <ekos-"
 "guide-ai-guiding-assistant>` below."
 msgstr ""
+"AI-volgen: (experimenteel) voegt getrainde, opstellingsspecifieke 'feed-"
+"forward'-voorspellingen toe aan het standaardalgoritme, dat op de "
+"achtergrond blijft draaien. Er is een eenmalige trainingssessie met de AI-"
+"volg-assistant vereist voordat deze optie kan worden geselecteerd. Zie :ref:"
+"`AI-volgassistent <ekos-guide-ai-guiding-assistant>` hieronder."
 
 #: ../../user_manual/ekos-guide.rst:266
 msgid ""
@@ -849,13 +854,11 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:448
 msgid "AI Guiding Assistant (Experimental)"
-msgstr ""
+msgstr "AI-volgassistent (experimenteel)"
 
 #: ../../user_manual/ekos-guide.rst:450
-#, fuzzy
-#| msgid "Guiding Rate"
 msgid "|AI Guiding Menu|"
-msgstr "Volgsnelheid"
+msgstr "|AI-volgmenu|"
 
 #: ../../user_manual/ekos-guide.rst:452
 msgid ""
@@ -867,6 +870,13 @@ msgid ""
 "algorithm keeps running underneath at all times and corrects whatever the "
 "prediction misses."
 msgstr ""
+"De AI-volgassistent voegt een getrainde, opstellingsspecifieke *feed-"
+"forward*-voorspeller toe aan het interne volgsysteem. Na een eenmalige "
+"trainingssessie leert de AI het herhaalbare deel van de volgfout van uw "
+"opstelling kennen – zoals periodieke fouten en langzame drift – en voegt een "
+"voorspelde correctie toe aan elke volgimpuls, *voordat* de fout zichtbaar "
+"wordt in het volgbeeld. Het standaard volgalgoritme blijft ondertussen "
+"altijd actief en corrigeert eventuele afwijkingen die de voorspelling mist."
 
 #: ../../user_manual/ekos-guide.rst:460
 msgid ""
@@ -878,6 +888,13 @@ msgid ""
 "`AI Assistant (MCP) <ekos-mcp>` interface, which connects KStars to external "
 "chat assistants."
 msgstr ""
+"Het startpunt is de menuknop :guilabel:`AI-volgen (experimenteel)` op de "
+"hoofdpagina voor het volgen (Guide), vlak onder :guilabel:`Kalibratie "
+"wissen`. Deze biedt twee acties: :guilabel:`AI-volgassistent...`, waarmee de "
+"hieronder beschreven wizard voor gegevensverzameling wordt geopend, en :"
+"guilabel:`Gewichten laden...`, waarmee een eerder getraind modelbestand "
+"wordt geladen. Deze functie staat los van de interface :doc:`AI-assistent "
+"(MCP) <ekos-mcp>`, die KStars verbindt met externe chat-assistenten."
 
 #: ../../user_manual/ekos-guide.rst:470
 msgid ""
@@ -887,16 +904,24 @@ msgid ""
 "and be prepared to switch back to the :guilabel:`Standard` or :guilabel:"
 "`GPG` algorithms if your results are not better with the AI."
 msgstr ""
+"De AI-volgassistent is een **experimentele** functie die volop in "
+"ontwikkeling is. Getrainde modellen zijn gekoppeld aan uw specifieke "
+"opstelling, camera en volginstellingen. Controleer altijd de volgprestaties "
+"nadat u de functie hebt ingeschakeld en wees bereid om terug te schakelen "
+"naar de algoritmen :guilabel:`Standaard` of :guilabel:`GPG` als de "
+"resultaten met AI niet beter zijn."
 
 #: ../../user_manual/ekos-guide.rst:479
 msgid "Expectations and Prerequisites"
-msgstr ""
+msgstr "Verwachtingen en vereisten"
 
 #: ../../user_manual/ekos-guide.rst:481
 msgid ""
 "Please read this part carefully before investing time in training a model — "
 "it will save you from disappointment later."
 msgstr ""
+"Lees dit gedeelte zorgvuldig door voordat u tijd investeert in het trainen "
+"van een model — zo voorkomt u teleurstelling achteraf."
 
 #: ../../user_manual/ekos-guide.rst:486
 msgid ""
@@ -905,22 +930,26 @@ msgid ""
 "mount's error and layers that prediction on top of the standard guiding "
 "algorithm. It will **not** fix:"
 msgstr ""
+"AI-gestuurd volgen **vult** een goed functionerend volgsysteem aan; het "
+"herstelt geen slecht functionerend systeem. Het voorspelt het *herhaalbare* "
+"deel van de fout van uw opstelling en voegt die voorspelling toe aan het "
+"standaard volgalgoritme. Het lost de volgende problemen **niet** op:"
 
 #: ../../user_manual/ekos-guide.rst:491
 msgid "poor polar alignment,"
-msgstr ""
+msgstr "Slechte uitlijnen op de poolster,"
 
 #: ../../user_manual/ekos-guide.rst:492
 msgid "imbalance, cable drag, or differential flexure,"
-msgstr ""
+msgstr "onbalans, kabelweerstand of differentiële doorbuiging,"
 
 #: ../../user_manual/ekos-guide.rst:493
 msgid "wind gusts, vibrations, or bad seeing,"
-msgstr ""
+msgstr "windstoten, trillingen of slecht zicht,"
 
 #: ../../user_manual/ekos-guide.rst:494
 msgid "a mount or guide system that is not already well tuned."
-msgstr ""
+msgstr "een opstelling of volgsysteem dat nog niet goed is afgesteld."
 
 #: ../../user_manual/ekos-guide.rst:496
 msgid ""
@@ -929,32 +958,46 @@ msgid ""
 "The improvement from AI guiding varies considerably from mount to mount, and "
 "on some mounts you may see no measurable benefit at all."
 msgstr ""
+"Dit zijn geen fouten die zich op dezelfde manier herhalen, dus ze zijn niet "
+"te voorspellen door middel van training. Als standaard volgen niet goed "
+"werkt op uw systeem, los dat probleem dan eerst op. De verbetering door AI-"
+"volgen verschilt sterk per opstelling; bij sommige opstellingen merkt u "
+"wellicht helemaal geen meetbaar voordeel."
 
 #: ../../user_manual/ekos-guide.rst:502
 msgid "Before running the assistant, make sure that:"
-msgstr ""
+msgstr "Voordat u de assistent start, moet u ervoor zorgen dat:"
 
 #: ../../user_manual/ekos-guide.rst:504
 msgid ""
 "You are using the **internal guider**, with a working guide camera and a "
 "completed, successful calibration."
 msgstr ""
+"U gebruikt de **interne volger**, met een werkende volg-camera en een "
+"voltooide, geslaagde kalibratie."
 
 #: ../../user_manual/ekos-guide.rst:506
 msgid ""
 "Ordinary guiding with the :guilabel:`Standard` algorithm already works "
 "reliably on your setup."
 msgstr ""
+"Gewoon volgen met het :guilabel:`Standaard`-algoritme werkt al betrouwbaar "
+"op uw opstelling."
 
 #: ../../user_manual/ekos-guide.rst:508
 msgid "Your mount is well polar-aligned, balanced, and free of cable snags."
 msgstr ""
+"Uw opstelling is nauwkeurig op de poolster uitgelijnd en in balans, en er "
+"zijn geen kabels die kunnen blijven haken."
 
 #: ../../user_manual/ekos-guide.rst:509
 msgid ""
 "You know your mount's drive type: worm gear (most equatorial mounts), "
 "harmonic/strain-wave drive, or direct drive."
 msgstr ""
+"U weet welk type aandrijving uw opstelling heeft: wormwielaandrijving (de "
+"meeste equatoriale opstellingen), harmonische aandrijving (strain-wave "
+"drive) of directe aandrijving."
 
 #: ../../user_manual/ekos-guide.rst:511
 msgid ""
@@ -962,16 +1005,22 @@ msgid ""
 "trained *and locked* to the guide exposure, binning, and guide settings used "
 "during data collection."
 msgstr ""
+"De belichtingstijd voor het volgen is degene die u blijft gebruiken: het "
+"model is getraind op — en gekoppeld aan — de belichtingstijd, binning en "
+"instellingen voor het volgen die tijdens de gegevensverzameling zijn "
+"gebruikt."
 
 #: ../../user_manual/ekos-guide.rst:514
 msgid ""
 "You have 20–45 minutes of clear, reasonably steady sky to spend on data "
 "collection, depending on the mount type."
 msgstr ""
+"Afhankelijk van het type opstelling hebt u 20 tot 45 minuten de tijd met een "
+"heldere, redelijk stabiele hemel voor het verzamelen van gegevens."
 
 #: ../../user_manual/ekos-guide.rst:520
 msgid "Data Collection with the AI Guiding Assistant"
-msgstr ""
+msgstr "Gegevensverzameling met de AI-volgassistent"
 
 #: ../../user_manual/ekos-guide.rst:522
 msgid ""
@@ -982,10 +1031,17 @@ msgid ""
 "measured. Click :guilabel:`AI Guiding (Experimental)` → :guilabel:`AI "
 "Guiding Assistant...` on the Guide page to start the wizard."
 msgstr ""
+"Het trainen van een model begint met een sessie voor *systeemidentificatie*: "
+"de assistent richt de opstelling op enkele posities aan de hemel en "
+"registreert hoe de volgster afwijkt, zowel terwijl het volgen actief is als "
+"wanneer het volgen bewust is gepauzeerd ('vrije drift'), zodat de ruwe "
+"foutkarakteristiek van de opstelling kan worden gemeten. Klik op de pagina "
+"'Volgen' op :guilabel:`AI-volgen (experimenteel)` → :guilabel:`AI-"
+"volgassistent...` om de assistent te starten."
 
 #: ../../user_manual/ekos-guide.rst:530
 msgid "|AI Wizard Mount Page|"
-msgstr ""
+msgstr "|Pagina AI-assistent van opstelling|"
 
 #: ../../user_manual/ekos-guide.rst:532
 msgid ""
@@ -996,10 +1052,18 @@ msgid ""
 "1.0–3.0 s for direct drives. Set your exposure *before* proceeding: the "
 "trained model is locked to it."
 msgstr ""
+"**Pagina 1 — Identificatie van de opstelling.** Controleer het gedetecteerde "
+"type opstelling: :guilabel:`Wormwiel`, :guilabel:`Harmonisch aandrijving` "
+"of :guilabel:`Directe aandrijving`. De assistent adviseert ook een "
+"belichtingstijd voor het volgen (guiding) per type aandrijving: 2,0 s voor "
+"wormwielen, 0,5–1,0 s voor Harmonische aandrijving (afhankelijk van het "
+"signaal van de volgster) en 1,0–3,0 s voor directe aandrijving. Stel de "
+"belichtingstijd in *voordat* u verdergaat: het getrainde model is hieraan "
+"gekoppeld."
 
 #: ../../user_manual/ekos-guide.rst:539
 msgid "|AI Wizard Protocol Page|"
-msgstr ""
+msgstr "|Pagina AI-assistentprotocol|"
 
 #: ../../user_manual/ekos-guide.rst:541
 msgid ""
@@ -1009,6 +1073,13 @@ msgid ""
 "all guide directions enabled; your original settings are restored when the "
 "wizard finishes. The protocol depends on the mount type:"
 msgstr ""
+"**Pagina 2 — Voorbeeld van het protocol.** De assistent toont het "
+"meetprotocol dat zal worden uitgevoerd. Tijdens de gegevensverzameling "
+"worden uw instellingen voor het volgen tijdelijk gewijzigd naar het "
+"algoritme :guilabel:`Standaard` voor beide assen, waarbij alle "
+"volgrichtingen zijn ingeschakeld; uw oorspronkelijke instellingen worden "
+"hersteld zodra de assistent gereed is. Het protocol hangt af van het type "
+"opstelling:"
 
 #: ../../user_manual/ekos-guide.rst:547
 msgid ""
@@ -1017,6 +1088,11 @@ msgid ""
 "drift. The long free-drift phases capture roughly three full worm cycles, "
 "which is what allows the periodic error to be measured."
 msgstr ""
+"**Wormwiel** (~45 minuten): drie waarnemingen op grote, lagere en weer grote "
+"hoogte, waarbij standaard volgen telkens wordt gecombineerd met enkele "
+"minuten vrije drift. De lange periodes van vrije drift beslaan ongeveer drie "
+"volledige cycli van het wormwiel, waardoor de periodieke fout kan worden "
+"gemeten."
 
 #: ../../user_manual/ekos-guide.rst:551
 msgid ""
@@ -1025,16 +1101,22 @@ msgid ""
 "pulses in all four directions) that measure how the drive reacts to "
 "corrections."
 msgstr ""
+"**Harmonische aandrijving** (~35 minuten): vrije drift en standaard volgen "
+"op twee richtpunten, plus een reeks korte tests van de respons op pulsen "
+"(pulsen van 50, 100 en 200 ms in alle vier de richtingen) om te meten hoe de "
+"aandrijving op correcties reageert."
 
 #: ../../user_manual/ekos-guide.rst:555
 msgid ""
 "**Direct Drive** (~20 minutes): short guiding and free-drift phases at three "
 "different altitudes."
 msgstr ""
+"**Directe aandrijving** (~20 minuten): korte fasen van volgen en vrije drift "
+"op drie verschillende hoogten."
 
 #: ../../user_manual/ekos-guide.rst:558
 msgid "|AI Wizard Progress Page|"
-msgstr ""
+msgstr "|Pagina AI-assistent voortgang|"
 
 #: ../../user_manual/ekos-guide.rst:560
 msgid ""
@@ -1043,10 +1125,14 @@ msgid ""
 "the process invalidates the affected phase. Use :guilabel:`Stop` only if "
 "something goes wrong."
 msgstr ""
+"**Pagina 3 — Voortgang systeemidentificatie.** De opstelling voert "
+"zelfstandig slew-, volg- en driftbewegingen uit. Laat het systeem met rust "
+"terwijl het proces loopt; onderbreking ervan maakt de betreffende fase "
+"ongeldig. Gebruik :guilabel:`Stop` alleen als er iets misgaat."
 
 #: ../../user_manual/ekos-guide.rst:565
 msgid "|AI Wizard Complete Page|"
-msgstr ""
+msgstr "|Pagina AI-assistent gereed|"
 
 #: ../../user_manual/ekos-guide.rst:567
 msgid ""
@@ -1057,10 +1143,17 @@ msgid ""
 "file for the Python trainer (see :ref:`below <ekos-guide-ai-offline-"
 "training>`)."
 msgstr ""
+"**Pagina 4 — Gegevensverzameling voltooid.** De gemeten gegevens worden "
+"opgeslagen en u kiest hoe het model getraind moet worden: :guilabel:`Train "
+"in EkosLive` uploadt de gegevens naar de EkosLive-cloud en deze levert een "
+"gebruiksklaar model op (zie het volgende gedeelte), terwijl :guilabel:"
+"`Exporteren voor offline training` een ``sysid_data.json``-bestand aanmaakt "
+"voor de Python-trainer (zie :ref:`hieronder <ekos-guide-ai-offline-"
+"training>`)."
 
 #: ../../user_manual/ekos-guide.rst:577
 msgid "Training via EkosLive"
-msgstr ""
+msgstr "Training via EkosLive"
 
 #: ../../user_manual/ekos-guide.rst:579
 msgid ""
@@ -1071,6 +1164,13 @@ msgid ""
 "data folder, ``~/.local/share/kstars/`` on Linux) and set as the active "
 "weights file — no further steps are needed."
 msgstr ""
+"De eenvoudigste manier om het model te trainen is via een `EkosLive <https://"
+"ekoslive.com>`-account: klik op :guilabel:`In EkosLive trainen` op pagina 4 "
+"van de assistent. De gegevens worden geüpload, het model wordt in de cloud "
+"getraind en de resulterende gewichten worden automatisch opgeslagen (als "
+"``ai_guider_weights.json`` in de KStars-gegevensmap, ``~/.local/share/kstars/"
+"`` op Linux) en ingesteld als het actieve gewichtenbestand; er zijn geen "
+"verdere stappen nodig."
 
 #: ../../user_manual/ekos-guide.rst:589
 msgid ""
@@ -1081,10 +1181,16 @@ msgid ""
 "If you prefer not to upload anything, use offline training instead — it "
 "produces identical weights."
 msgstr ""
+"De geüploade gegevens voor systeemidentificatie bevatten **geen "
+"hemelcoördinaten**: alleen hoogte, azimut en parallactische hoek, samen met "
+"metingen van pixeldrift, signaal-ruisverhoudingen van sterren en de "
+"verzonden volgpulsen. De gegevens bevatten echter wel de naam van uw "
+"opstelling en de namen van de camera-apparaten. Als u liever niets uploadt, "
+"kunt u gebruikmaken van offline training; dit levert identieke gewichten op."
 
 #: ../../user_manual/ekos-guide.rst:600
 msgid "Training the Model Offline"
-msgstr ""
+msgstr "Offline trainen van het model"
 
 #: ../../user_manual/ekos-guide.rst:602
 msgid ""
@@ -1092,12 +1198,18 @@ msgid ""
 "Python scripts that runs on any ordinary computer. Training uses only the "
 "CPU and finishes in under ten minutes; no GPU is required."
 msgstr ""
+"U hebt EkosLive niet nodig om een ​​model te trainen; de trainer bestaat uit "
+"een kleine set Python-scripts die op elke gewone computer draait. Bij het "
+"trainen wordt alleen de CPU gebruikt en het proces is in minder dan tien "
+"minuten voltooid; er is geen GPU vereist."
 
 #: ../../user_manual/ekos-guide.rst:606
 msgid ""
 "On wizard page 4, click :guilabel:`Export for offline training` and save "
 "``sysid_data.json``."
 msgstr ""
+"Klik op pagina 4 van de assistent op :guilabel:`Exporteren voor offline "
+"training` en sla ``sysid_data.json`` op."
 
 #: ../../user_manual/ekos-guide.rst:608
 msgid ""
@@ -1105,6 +1217,9 @@ msgid ""
 "observatory computer itself, but a desktop or laptop is usually more "
 "convenient)."
 msgstr ""
+"Kopieer het bestand naar de computer waarop u wilt trainen (dit kan de "
+"computer van het observatorium zelf zijn, maar een desktop of laptop is "
+"doorgaans handiger)."
 
 #: ../../user_manual/ekos-guide.rst:611
 msgid ""
@@ -1112,10 +1227,13 @@ msgid ""
 "directory of the `KStars source repository <https://invent.kde.org/education/"
 "kstars/-/tree/master/kstars/ekos/guide/offlinetrainer>`__."
 msgstr ""
+"Haal de trainerscripts op uit de map ``kstars/ekos/guide/offlinetrainer/`` "
+"van de `KStars-broncode-opslagruimte <https://invent.kde.org/education/"
+"kstars/-/tree/master/kstars/ekos/guide/offlinetrainer>`__."
 
 #: ../../user_manual/ekos-guide.rst:614
 msgid "In that directory, create a Python environment and run the trainer:"
-msgstr ""
+msgstr "Maak in die map een Python-omgeving aan en voer de trainer uit:"
 
 #: ../../user_manual/ekos-guide.rst:616
 msgid ""
@@ -1124,6 +1242,10 @@ msgid ""
 "pip install numpy scipy torch\n"
 "python train.py --sysid-data ./sysid_data.json --output ./weights.json"
 msgstr ""
+"python3 -m venv venv\n"
+"source venv/bin/activate\n"
+"pip install numpy scipy torch\n"
+"python train.py --sysid-data ./sysid_data.json --output ./weights.json"
 
 #: ../../user_manual/ekos-guide.rst:623
 msgid ""
@@ -1131,6 +1253,10 @@ msgid ""
 "matching model. Should the detection ever be wrong, it can be overridden "
 "with ``--mount-type WORM_GEAR|HARMONIC_DRIVE|DIRECT_DRIVE``."
 msgstr ""
+"De trainer herkent automatisch het type opstelling op basis van de gegevens "
+"en kiest het bijbehorende model. Mocht de herkenning onjuist zijn, dan kan "
+"dit worden overschreven met ``--mount-type WORM_GEAR|HARMONIC_DRIVE|"
+"DIRECT_DRIVE``."
 
 #: ../../user_manual/ekos-guide.rst:627
 msgid ""
@@ -1140,16 +1266,20 @@ msgid ""
 "File` on the :guilabel:`AI Guider` options page). The weights are applied "
 "the next time guiding starts."
 msgstr ""
+"Kopieer ten slotte het resulterende bestand ``weights.json`` terug naar de "
+"computer in het observatorium en laad het in KStars via :guilabel:`AI-volgen "
+"(experimenteel)` → :guilabel:`Gewichten laden...` op de pagina 'Volgen' (of "
+"stel het :guilabel:`Gewichtenbestand` in op de optiepagina van de :guilabel:"
+"`AI-volgen`). De gewichten worden toegepast zodra het volgen (guiding) de "
+"volgende keer start."
 
 #: ../../user_manual/ekos-guide.rst:636
 msgid "Activating AI Guiding and Options"
-msgstr ""
+msgstr "AI-volgen en -opties activeren"
 
 #: ../../user_manual/ekos-guide.rst:638
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|AI Guider Options|"
-msgstr "|Guide Settings|"
+msgstr "|AI-volgopties|"
 
 #: ../../user_manual/ekos-guide.rst:640
 msgid ""
@@ -1158,10 +1288,17 @@ msgid ""
 "usual. The AI-related settings live on the :guilabel:`AI Guider` page of the "
 "guide settings dialog:"
 msgstr ""
+"Selecteer, nadat een gewichtenbestand is geladen, :guilabel:`AI-volgen` als "
+"het volgalgoritme voor RK en/of DEC in de opties voor de volger, en start "
+"het volgen zoals gebruikelijk. De instellingen voor de AI-volger zijn te "
+"vinden op het tabblad :guilabel:`AI-volgen` in het dialoogvenster met de "
+"volginstellingen:"
 
 #: ../../user_manual/ekos-guide.rst:645
 msgid ":guilabel:`Weights File`: path to the trained model weights (JSON)."
 msgstr ""
+":guilabel:`Gewichtenbestand`: pad naar de gewichten van het getrainde model "
+"(JSON)."
 
 #: ../../user_manual/ekos-guide.rst:646
 msgid ""
@@ -1170,6 +1307,11 @@ msgid ""
 "its full prediction. Start at the default and increase gradually if guiding "
 "improves."
 msgstr ""
+":guilabel:`AI-voorspelingsversterking` (standaard 0,5): de mate waarin de AI-"
+"voorspelling wordt verwerkt in de volgpulsen. Bij 0,0 wordt de AI volledig "
+"genegeerd; bij 1,0 wordt de volledige voorspelling toegepast. Begin met de "
+"standaardwaarde en verhoog deze geleidelijk als de volgnauwkeurigheid "
+"verbetert."
 
 #: ../../user_manual/ekos-guide.rst:650
 msgid ""
@@ -1178,6 +1320,10 @@ msgid ""
 "highly confident, to avoid the two controllers over-correcting the same "
 "error."
 msgstr ""
+":guilabel:`Proportionele versterking verkleinen tijdens AI-correctie` "
+"(standaard uitgeschakeld): vermindert de standaard proportionele respons met "
+"maximaal de helft wanneer de AI een hoge mate van zekerheid heeft, om te "
+"voorkomen dat de twee regelaars dezelfde fout overcorrigeren."
 
 #: ../../user_manual/ekos-guide.rst:654
 msgid ""
@@ -1186,12 +1332,19 @@ msgid ""
 "settling, autofocus runs, or camera downloads — by extrapolating the "
 "periodic error forward in time."
 msgstr ""
+":guilabel:`Voorspellende 'donker volgen' inschakelen` (standaard "
+"uitgeschakeld): blijft voorspelde correcties afgeven tijdens onderbrekingen "
+"in de metingen van de volgster — zoals bij het stabiliseren na een dither-"
+"actie, autofocus-cycli of het uitlezen van de camera — door de periodieke "
+"fout naar de toekomst toe te extrapoleren."
 
 #: ../../user_manual/ekos-guide.rst:658
 msgid ""
 ":guilabel:`Dark Guiding Interval` (default 1.0 s): seconds between predicted "
 "pulses when no guide-star measurement is available."
 msgstr ""
+":guilabel:`Donker volginterval` (standaard 1,0 s): aantal seconden tussen "
+"voorspelde pulsen wanneer er geen meting van de volgster beschikbaar is."
 
 #: ../../user_manual/ekos-guide.rst:663
 msgid ""
@@ -1202,6 +1355,14 @@ msgid ""
 "settings you used during data collection, re-run the assistant to train new "
 "weights, or switch the algorithm back to :guilabel:`Standard`."
 msgstr ""
+"Een gewichtenbestand werkt alleen met de volginstellingen waarmee het is "
+"getraind. Bij de start van het volgen wordt de vingerafdruk van het bestand "
+"vergeleken met uw huidige instellingen voor de volgbelichting, binning, "
+"versterking (gain), minimale/maximale pulsduur en hysteresis. Bij een "
+"afwijking wordt het volgen afgebroken met een toelichtende melding: herstel "
+"de instellingen die u tijdens de gegevensverzameling gebruikte, voer de "
+"assistent opnieuw uit om nieuwe gewichten te trainen, of schakel het "
+"algoritme terug naar :guilabel:`Standaard`."
 
 #: ../../user_manual/ekos-guide.rst:674
 msgid "Monitoring AI Guiding"
@@ -1239,7 +1400,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:701
 msgid "How It Works"
-msgstr ""
+msgstr "Hoe het werkt"
 
 #: ../../user_manual/ekos-guide.rst:703
 msgid ""
@@ -1539,68 +1700,52 @@ msgid ".. image:: /images/ekos_guide_phd2.png"
 msgstr ".. image:: /images/ekos_guide_phd2.png"
 
 #: ../../user_manual/ekos-guide.rst:843
-#, fuzzy
-#| msgid "Guiding Rate"
 msgid "AI Guiding Menu"
-msgstr "Volgsnelheid"
+msgstr "AI-volgmenu"
 
 #: ../../user_manual/ekos-guide.rst:843
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_ai_menu.png"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_ai_menu.png"
 
 #: ../../user_manual/ekos-guide.rst:844
 msgid "AI Wizard Mount Page"
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:844
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_mount.png"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_mount.png"
 
 #: ../../user_manual/ekos-guide.rst:845
 msgid "AI Wizard Protocol Page"
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:845
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
 
 #: ../../user_manual/ekos-guide.rst:846
 msgid "AI Wizard Progress Page"
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:846
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_progress.png"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_progress.png"
 
 #: ../../user_manual/ekos-guide.rst:847
 msgid "AI Wizard Complete Page"
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:847
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_complete.png"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_complete.png"
 
 #: ../../user_manual/ekos-guide.rst:848
-#, fuzzy
-#| msgid "Guide Settings"
 msgid "AI Guider Options"
-msgstr "Volgerinstellingen"
+msgstr "AI-volgopties"
 
 #: ../../user_manual/ekos-guide.rst:848
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_gpg_settings.png"
 msgid ".. image:: /images/ekos_guide_ai_options.png"
-msgstr ".. image:: /images/ekos_guide_gpg_settings.png"
+msgstr ".. image:: /images/ekos_guide_ai_options.png"
 
 #~ msgid "<title>Guide</title>"
 #~ msgstr "<title>Volgen</title>"
