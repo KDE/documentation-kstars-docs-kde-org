@@ -1,0 +1,562 @@
+# Translation of kstars_docs_user_manual___ekos-mcp.po to Catalan
+# Copyright (C) 2026 This_file_is_part_of_KDE
+# Licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
+# This file is distributed under the same license as the KStars Handbook package.
+#
+# SPDX-FileCopyrightText: 2026 Josep M. Ferrer <txemaq@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: documentation-kstars-docs-kde-org\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-18 02:07+0000\n"
+"PO-Revision-Date: 2026-07-19 23:15+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.04.3\n"
+
+#: ../../user_manual/ekos-mcp.rst:-1
+msgid "Ekos MCP options tab"
+msgstr "Pestanya d'opcions MCP de l'Ekos"
+
+#: ../../user_manual/ekos-mcp.rst:-1
+msgid ".. image:: /images/ekos_mcp_options.png"
+msgstr ".. image:: /images/ekos_mcp_options.png"
+
+#: ../../user_manual/ekos-mcp.rst:-1
+msgid "Available tools tree with per-tool checkboxes"
+msgstr "Arbre d'eines disponibles amb caselles de selecció per a cada eina"
+
+#: ../../user_manual/ekos-mcp.rst:-1
+msgid ".. image:: /images/ekos_mcp_tools_tree.png"
+msgstr ".. image:: /images/ekos_mcp_tools_tree.png"
+
+#: ../../user_manual/ekos-mcp.rst:3
+msgid "AI Assistant (MCP)"
+msgstr "Assistent d'IA (MCP)"
+
+#: ../../user_manual/ekos-mcp.rst:8
+msgid "Introduction"
+msgstr "Introducció"
+
+#: ../../user_manual/ekos-mcp.rst:10
+msgid ""
+"Ekos embeds a Model Context Protocol (MCP) server. MCP is an open standard "
+"that lets AI assistants and agents discover and call tools exposed by an "
+"application. With the MCP server enabled, an AI assistant can observe your "
+"rig — connection status, mount position, the last captured image — and, if "
+"you allow it, operate the mount and focuser, resolve catalog targets, and "
+"more."
+msgstr ""
+"L'Ekos incrusta un servidor «Model Context Protocol» (MCP). MCP és un "
+"estàndard obert que permet als assistents i agents d'IA descobrir i invocar "
+"les eines exposades per una aplicació. Amb el servidor MCP habilitat, un "
+"assistent d'IA pot observar el vostre equip (estat de connexió, posició de "
+"la muntura, l'última imatge capturada), i si ho permeteu, operar la muntura "
+"i l'enfocador, resoldre els objectius del catàleg i molt més."
+
+#: ../../user_manual/ekos-mcp.rst:12
+msgid ""
+"Any MCP-capable client can consume the server out of the box: it speaks "
+"standard JSON-RPC 2.0 over HTTP, with the usual ``initialize``, ``tools/"
+"list`` and ``tools/call`` methods. No KStars-specific client code is "
+"required."
+msgstr ""
+"Qualsevol client amb capacitat MCP pot consumir el servidor directament: es "
+"comunica mitjançant JSON-RPC 2.0 estàndard sobre HTTP, amb els mètodes "
+"habituals ``initialize`` i ``tools/lis``. No es requereix cap codi de client "
+"específic del KStars."
+
+#: ../../user_manual/ekos-mcp.rst:21
+msgid "Enabling the Server"
+msgstr "Activació del servidor"
+
+#: ../../user_manual/ekos-mcp.rst:23
+msgid ""
+"The server is configured in the Ekos settings dialog, in the :guilabel:`MCP` "
+"tab."
+msgstr ""
+"El servidor es configura en el diàleg de configuració de l'Ekos, a la "
+"pestanya :guilabel:`MCP`."
+
+#: ../../user_manual/ekos-mcp.rst:25
+msgid ""
+"Check :guilabel:`Enable MCP server` to start it. The server starts "
+"automatically with Ekos whenever this option is enabled."
+msgstr ""
+"Marqueu :guilabel:`Activa el servidor MCP` per a iniciar-lo. El servidor "
+"s'inicia automàticament amb l'Ekos sempre que aquesta opció estigui activada."
+
+#: ../../user_manual/ekos-mcp.rst:27
+msgid ""
+":guilabel:`Port` selects the TCP port to listen on. The default is 8765; any "
+"port between 1024 and 65535 may be used."
+msgstr ""
+"El :guilabel:`Port` selecciona el port TCP a escoltar. El valor "
+"predeterminat és 8765; es pot utilitzar qualsevol port entre 1024 i 65535."
+
+#: ../../user_manual/ekos-mcp.rst:29
+msgid ""
+"The status LED next to the port shows whether the server is currently "
+"listening."
+msgstr ""
+"El LED d'estat al costat del port mostra si actualment el servidor està "
+"escoltant."
+
+#: ../../user_manual/ekos-mcp.rst:33
+msgid ""
+"The server only listens on the local machine (127.0.0.1). It is not "
+"reachable from the network. To use it from another machine, you need to set "
+"up your own tunnel (for example an SSH port forward) and understand the "
+"security implications of doing so."
+msgstr ""
+"El servidor només escolta a la màquina local (127.0.0.1). No és accessible "
+"des de la xarxa. Per utilitzar-lo des d'una altra màquina, cal configurar el "
+"vostre propi túnel (per exemple, un reenviament de port SSH) i entendre les "
+"implicacions de seguretat de fer-ho."
+
+#: ../../user_manual/ekos-mcp.rst:38
+msgid "Authentication and Tokens"
+msgstr "Autenticació i testimonis"
+
+#: ../../user_manual/ekos-mcp.rst:40
+msgid ""
+"Every request must carry a bearer token. Two tokens are managed in the :"
+"guilabel:`MCP` tab, each with show, copy and :guilabel:`Regenerate` buttons:"
+msgstr ""
+"Cada sol·licitud ha de portar un testimoni de portador. Es gestionen dos "
+"testimonis a la pestanya :guilabel:`MCP`, cadascun amb els botons mostra, "
+"copia i :guilabel:`Regenera`:"
+
+#: ../../user_manual/ekos-mcp.rst:42
+msgid ""
+"The :guilabel:`Token` field holds the full-access token. Clients presenting "
+"it can call every enabled tool."
+msgstr ""
+"El camp :guilabel:`Testimoni` conté el testimoni d'accés complet. Els "
+"clients que la presenten poden invocar a totes les eines habilitades."
+
+#: ../../user_manual/ekos-mcp.rst:44
+msgid ""
+"The :guilabel:`Read-only token` field holds a separate token restricted to "
+"read-only tools. Give this one to assistants that should observe the rig but "
+"never move hardware."
+msgstr ""
+"El camp :guilabel:`Testimoni de només lectura` conté un testimoni separat "
+"restringit a les eines de només lectura. Doneu aquest als assistents que "
+"haurien d'observar l'equip però no moure mai el maquinari."
+
+#: ../../user_manual/ekos-mcp.rst:46
+msgid ""
+"Tokens are stored in your system keychain (under the service name "
+"``kstars``), never in plain-text configuration files. Regenerating a token "
+"immediately invalidates the previous one."
+msgstr ""
+"Els testimonis s'emmagatzemen al clauer del sistema (sota el nom de servei "
+"``kstars``), mai en fitxers de configuració de text net. Regenerar un "
+"testimoni invalida immediatament l'anterior."
+
+#: ../../user_manual/ekos-mcp.rst:48
+msgid ""
+"To connect a client, point it at ``http://127.0.0.1:8765/mcp`` and pass the "
+"token as a standard HTTP bearer credential. Requests are JSON-RPC 2.0 "
+"messages sent with ``POST``. For example, calling the ``ekos_status`` tool "
+"with curl:"
+msgstr ""
+"Per connectar un client, apunteu-lo a ``http://127.0.0.1:8765/mcp`` i passeu "
+"el testimoni com a credencial estàndard del portador HTTP. Les sol·licituds "
+"són missatges JSON-RPC 2.0 enviats amb ``POST``. Per exemple, cridant l'eina "
+"``ekos_status`` amb el curl:"
+
+# skip-rule: t-apo_ini, t-apo_fim
+#: ../../user_manual/ekos-mcp.rst:50
+msgid ""
+"curl -s http://127.0.0.1:8765/mcp \\\n"
+"  -H \"Authorization: Bearer <your token>\" \\\n"
+"  -H \"Content-Type: application/json\" \\\n"
+"  -d '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"tools/call\",\n"
+"       \"params\": {\"name\": \"ekos_status\", \"arguments\": {}}}'"
+msgstr ""
+"curl -s http://127.0.0.1:8765/mcp \\\n"
+"  -H \"Authorization: Bearer <el vostre testimoni>\" \\\n"
+"  -H \"Content-Type: application/json\" \\\n"
+"  -d '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"tools/call\",\n"
+"       \"params\": {\"name\": \"ekos_status\", \"arguments\": {}}}'"
+
+#: ../../user_manual/ekos-mcp.rst:58
+msgid ""
+"The response is a JSON-RPC envelope whose ``result`` carries the tool output "
+"— here the INDI connection state, the active profile, and the connected "
+"devices."
+msgstr ""
+"La resposta és un sobre JSON-RPC el ``result`` del qual porta la sortida de "
+"l'eina, aquí l'estat de connexió INDI, el perfil actiu i els dispositius "
+"connectats."
+
+#: ../../user_manual/ekos-mcp.rst:60
+msgid ""
+"A Server-Sent Events stream is available at ``/mcp/stream``. Each connection "
+"is rate-limited to 60 requests."
+msgstr ""
+"Hi ha disponible un flux d'esdeveniments d'enviament del servidor a ``/mcp/"
+"stream``. Cada connexió està limitada a 60 sol·licituds."
+
+#: ../../user_manual/ekos-mcp.rst:65
+msgid "Safety Controls"
+msgstr "Controls de seguretat"
+
+#: ../../user_manual/ekos-mcp.rst:69
+msgid ""
+"A full-access token allows an AI agent to move your mount and focuser. On a "
+"live rig, treat that token like a password: prefer the read-only token "
+"whenever observation is enough, and review which tools are enabled before "
+"handing control to an agent."
+msgstr ""
+"Un testimoni d'accés complet permet a un agent d'IA moure la muntura i "
+"l'enfocador. En un equip en viu, tracta aquest testimoni com una "
+"contrasenya: preferiu el testimoni de només lectura sempre que l'observació "
+"sigui suficient, i reviseu quines eines estan habilitades abans de lliurar "
+"el control a un agent."
+
+#: ../../user_manual/ekos-mcp.rst:71
+msgid "Three mechanisms limit what a connected client can do:"
+msgstr "Tres mecanismes limiten el que pot fer un client connectat:"
+
+#: ../../user_manual/ekos-mcp.rst:73
+msgid ""
+":guilabel:`Read-only mode (refuse rig control tools)`. When checked, the "
+"server refuses every mutating tool for all clients, regardless of which "
+"token they present."
+msgstr ""
+":guilabel:`Mode de només lectura (refusa les eines de control de l'equip)`. "
+"Quan està marcat, el servidor rebutja totes les eines de mutació per a tots "
+"els clients, independentment del testimoni que presentin."
+
+#: ../../user_manual/ekos-mcp.rst:75
+msgid ""
+"The read-only token. Clients authenticating with it can only call tools "
+"marked read-only, even when read-only mode is off."
+msgstr ""
+"El testimoni de només lectura. Els clients que s'autentiquin amb ell només "
+"poden invocar a les eines marcades com a només de lectura, fins i tot quan "
+"el mode de només lectura està desactivat."
+
+#: ../../user_manual/ekos-mcp.rst:77
+msgid ""
+"The :guilabel:`Available tools` tree. Every tool the server exposes is "
+"listed here, grouped by family, with a checkbox per tool and per family. "
+"Unchecked tools are hidden from clients entirely: they disappear from "
+"``tools/list`` and calls to them are rejected."
+msgstr ""
+"L'arbre :guilabel:`Eines disponibles`. Totes les eines que exposa el "
+"servidor es llisten aquí, agrupades per família, amb una casella de selecció "
+"per eina i per família. Les eines sense marcar s'oculten completament als "
+"clients: desapareixen de les ``tools/list`` i les invocacions a elles es "
+"rebutgen."
+
+#: ../../user_manual/ekos-mcp.rst:83
+msgid ""
+"In the tree, a lock icon marks read-only tools and a gear icon marks tools "
+"that change the state of the rig. Tooltips also indicate tools whose effect "
+"is hard to undo (such as ``mount_sync``), following the annotation hints of "
+"the MCP specification."
+msgstr ""
+"A l'arbre, una icona d'un pany marca eines de només lectura i una icona "
+"d'engranatge marca eines que canvien l'estat de l'equip. Els consells d'eina "
+"també indiquen eines l'efecte de les quals és difícil de desfer (com ara "
+"``mount_sync``), seguint els consells d'anotació de l'especificació MCP."
+
+#: ../../user_manual/ekos-mcp.rst:88
+msgid "Tool Reference"
+msgstr "Referència de les eines"
+
+#: ../../user_manual/ekos-mcp.rst:90
+msgid ""
+"The tables below list the tools currently shipped with KStars. The *Access* "
+"column shows *read* for tools that only observe the rig and *control* for "
+"tools that change its state."
+msgstr ""
+"Les taules següents llisten les eines que es distribueixen actualment amb el "
+"KStars. La columna *Access* mostra *lectura* a les eines que només observen "
+"l'equip i *control* per a eines que canvien el seu estat."
+
+#: ../../user_manual/ekos-mcp.rst:95
+msgid "Ekos Status"
+msgstr "Estat de l'Ekos"
+
+#: ../../user_manual/ekos-mcp.rst:101 ../../user_manual/ekos-mcp.rst:117
+#: ../../user_manual/ekos-mcp.rst:133 ../../user_manual/ekos-mcp.rst:179
+#: ../../user_manual/ekos-mcp.rst:206
+msgid "Tool"
+msgstr "Eina"
+
+#: ../../user_manual/ekos-mcp.rst:102 ../../user_manual/ekos-mcp.rst:118
+#: ../../user_manual/ekos-mcp.rst:134 ../../user_manual/ekos-mcp.rst:180
+#: ../../user_manual/ekos-mcp.rst:207
+msgid "Purpose"
+msgstr "Finalitat"
+
+#: ../../user_manual/ekos-mcp.rst:103 ../../user_manual/ekos-mcp.rst:119
+#: ../../user_manual/ekos-mcp.rst:135 ../../user_manual/ekos-mcp.rst:181
+#: ../../user_manual/ekos-mcp.rst:208
+msgid "Access"
+msgstr "Accés"
+
+#: ../../user_manual/ekos-mcp.rst:104
+msgid "``ekos_status``"
+msgstr "``ekos_status``"
+
+#: ../../user_manual/ekos-mcp.rst:105
+msgid ""
+"Current INDI/Ekos connection status, active profile, and connected device "
+"names."
+msgstr ""
+"Estat actual de la connexió INDI/Ekos, perfil actiu i noms de dispositius "
+"connectats."
+
+#: ../../user_manual/ekos-mcp.rst:106 ../../user_manual/ekos-mcp.rst:122
+#: ../../user_manual/ekos-mcp.rst:138 ../../user_manual/ekos-mcp.rst:141
+#: ../../user_manual/ekos-mcp.rst:184 ../../user_manual/ekos-mcp.rst:211
+#: ../../user_manual/ekos-mcp.rst:214
+msgid "read"
+msgstr "lectura"
+
+#: ../../user_manual/ekos-mcp.rst:111
+msgid "Catalog"
+msgstr "Catàleg"
+
+#: ../../user_manual/ekos-mcp.rst:120
+msgid "``catalog_search``"
+msgstr "``catalog_search``"
+
+#: ../../user_manual/ekos-mcp.rst:121
+msgid ""
+"Search the KStars catalogs by name. Returns matching objects with canonical "
+"names, types, J2000 coordinates and magnitudes. Supports substring or exact "
+"match, a type filter, and a magnitude limit. Use it to resolve a name like "
+"\"M42\" to the canonical \"M 42\" before slewing."
+msgstr ""
+"Cerca els catàlegs del KStars pel nom. Retorna objectes que coincideixen amb "
+"noms canònics, tipus, coordenades J2000 i magnituds. Permet coincidències de "
+"subcadena o exactes, un filtre de tipus i un límit de magnitud. Utilitzeu-ho "
+"per resoldre un nom com «M42» al canònic «M 42» abans de l'orientació."
+
+#: ../../user_manual/ekos-mcp.rst:127
+msgid "Mount"
+msgstr "Muntura"
+
+#: ../../user_manual/ekos-mcp.rst:136
+msgid "``mount_coords``"
+msgstr "``mount_coords``"
+
+#: ../../user_manual/ekos-mcp.rst:137
+msgid "Current RA/Dec, Alt/Az, hour angle, pier side and tracking status."
+msgstr ""
+"AR/Dec actual, Alt/Az, angle horari, costat del moll i estat de seguiment."
+
+#: ../../user_manual/ekos-mcp.rst:139
+msgid "``mount_get_slew_rates``"
+msgstr "``mount_get_slew_rates``"
+
+#: ../../user_manual/ekos-mcp.rst:140
+msgid ""
+"List the slew rates supported by the driver and the currently selected one."
+msgstr ""
+"Llista les taxes d'orientació suportades pel controlador i la seleccionada "
+"actualment."
+
+#: ../../user_manual/ekos-mcp.rst:142
+msgid "``mount_goto``"
+msgstr "``mount_goto``"
+
+#: ../../user_manual/ekos-mcp.rst:143
+msgid "Slew to equatorial coordinates (RA in hours, Dec in degrees)."
+msgstr "Orienta a coordenades equatorials (AR en hores, Dec en graus)."
+
+#: ../../user_manual/ekos-mcp.rst:144 ../../user_manual/ekos-mcp.rst:147
+#: ../../user_manual/ekos-mcp.rst:150 ../../user_manual/ekos-mcp.rst:153
+#: ../../user_manual/ekos-mcp.rst:156 ../../user_manual/ekos-mcp.rst:159
+#: ../../user_manual/ekos-mcp.rst:162 ../../user_manual/ekos-mcp.rst:165
+#: ../../user_manual/ekos-mcp.rst:168 ../../user_manual/ekos-mcp.rst:187
+#: ../../user_manual/ekos-mcp.rst:190 ../../user_manual/ekos-mcp.rst:193
+msgid "control"
+msgstr "control"
+
+#: ../../user_manual/ekos-mcp.rst:145
+msgid "``mount_goto_target``"
+msgstr "``mount_goto_target``"
+
+#: ../../user_manual/ekos-mcp.rst:146
+msgid ""
+"Slew to a named object, resolved by KStars (canonical name, e.g. \"M 42\")."
+msgstr ""
+"Orienta a un objecte amb nom, resolt pel KStars (nom canònic, p. ex. «M 42»)."
+
+#: ../../user_manual/ekos-mcp.rst:148
+msgid "``mount_sync``"
+msgstr "``mount_sync``"
+
+#: ../../user_manual/ekos-mcp.rst:149
+msgid ""
+"Sync the mount pointing model to the given coordinates. Hard to undo — a "
+"wrong sync corrupts the pointing model."
+msgstr ""
+"Sincronitza el model d'apuntament de muntura a les coordenades donades. És "
+"difícil de desfer: una sincronització incorrecta corromp el model "
+"d'apuntament."
+
+#: ../../user_manual/ekos-mcp.rst:151
+msgid "``mount_park`` / ``mount_unpark``"
+msgstr "``mount_park`` / ``mount_unpark``"
+
+#: ../../user_manual/ekos-mcp.rst:152
+msgid "Park the mount at its park position, or unpark it for operation."
+msgstr ""
+"Aparca la muntura a la seva posició d'aparcament, o la desaparca per al seu "
+"funcionament."
+
+#: ../../user_manual/ekos-mcp.rst:154
+msgid "``mount_abort``"
+msgstr "``mount_abort``"
+
+#: ../../user_manual/ekos-mcp.rst:155
+msgid "Immediately stop all mount motion."
+msgstr "Atura immediatament tot el moviment de la muntura."
+
+#: ../../user_manual/ekos-mcp.rst:157
+msgid "``mount_set_tracking``"
+msgstr "``mount_set_tracking``"
+
+#: ../../user_manual/ekos-mcp.rst:158
+msgid "Enable or disable sidereal tracking."
+msgstr "Activa o desactiva el seguiment sideral."
+
+#: ../../user_manual/ekos-mcp.rst:160
+msgid "``mount_set_track_mode``"
+msgstr "``mount_set_track_mode``"
+
+#: ../../user_manual/ekos-mcp.rst:161
+msgid "Select the tracking rate: sidereal, lunar, solar or custom."
+msgstr ""
+"Seleccioneu la taxa de seguiment: sideral, lunar, solar o personalitzada."
+
+#: ../../user_manual/ekos-mcp.rst:163
+msgid "``mount_set_slew_rate``"
+msgstr "``mount_set_slew_rate``"
+
+#: ../../user_manual/ekos-mcp.rst:164
+msgid "Select a slew rate by index into the driver's list."
+msgstr ""
+"Selecciona una taxa d'orientació per índex a la llista del controlador."
+
+#: ../../user_manual/ekos-mcp.rst:166
+msgid "``mount_set_meridian_flip``"
+msgstr "``mount_set_meridian_flip``"
+
+#: ../../user_manual/ekos-mcp.rst:167
+msgid ""
+"Enable or disable the automatic meridian flip and set its hour-angle offset."
+msgstr ""
+"Activa o desactiva la inversió automàtica del meridià i estableix el seu "
+"desplaçament d'angle horari."
+
+#: ../../user_manual/ekos-mcp.rst:173
+msgid "Focuser"
+msgstr "Enfocador"
+
+#: ../../user_manual/ekos-mcp.rst:182
+msgid "``focuser_status``"
+msgstr "``focuser_status``"
+
+#: ../../user_manual/ekos-mcp.rst:183
+msgid ""
+"Focuser name, current and maximum position, and capability flags. An "
+"optional ``name`` parameter selects a device on multi-focuser rigs; all "
+"focuser tools accept it."
+msgstr ""
+"Nom de l'enfocador, posició actual i màxima, i indicadors de capacitat. Un "
+"paràmetre opcional ``name`` selecciona un dispositiu en equips "
+"multienfocador; totes les eines d'enfocament l'accepten."
+
+#: ../../user_manual/ekos-mcp.rst:185
+msgid "``focuser_move_absolute``"
+msgstr "``focuser_move_absolute``"
+
+#: ../../user_manual/ekos-mcp.rst:186
+msgid ""
+"Move to an absolute step position, validated against the driver's maximum. "
+"Must not be called while Ekos autofocus is running."
+msgstr ""
+"Es mou a una posició de pas absolut, validat contra el màxim del "
+"controlador. No s'ha d'invocar mentre s'estigui executant l'enfocament "
+"automàtic de l'Ekos."
+
+#: ../../user_manual/ekos-mcp.rst:188
+msgid "``focuser_move_relative``"
+msgstr "``focuser_move_relative``"
+
+#: ../../user_manual/ekos-mcp.rst:189
+msgid ""
+"Move by a signed number of steps (positive outward, negative inward; "
+"direction is driver-dependent). Must not be called while Ekos autofocus is "
+"running."
+msgstr ""
+"Mou amb un nombre de passos amb signe (positiu cap a fora, negatiu cap a "
+"dins; la direcció depèn del controlador). No s'ha d'invocar mentre s'estigui "
+"executant l'enfocament automàtic de l'Ekos."
+
+#: ../../user_manual/ekos-mcp.rst:191
+msgid "``focuser_abort_move``"
+msgstr "``focuser_abort_move``"
+
+#: ../../user_manual/ekos-mcp.rst:192
+msgid "Stop any in-flight focuser motion."
+msgstr "Atura qualsevol moviment al vol de l'enfocador."
+
+#: ../../user_manual/ekos-mcp.rst:198
+msgid "Image Access"
+msgstr "Accés a les imatges"
+
+#: ../../user_manual/ekos-mcp.rst:200
+msgid ""
+"These tools see frames from every producer: the Capture queue, Focus, Align, "
+"polar alignment, and ad-hoc captures. On a multi-camera rig, an optional "
+"``camera`` parameter selects a device; by default the most recent frame "
+"across all cameras is returned."
+msgstr ""
+"Aquestes eines veuen fotogrames de cada productor: la cua de captura, "
+"l'enfocador, alineació, alineació polar i captures ad-hoc. En un equip "
+"multicàmera, un paràmetre opcional ``càmera`` selecciona un dispositiu; de "
+"manera predeterminada es retorna el fotograma més recent a través de totes "
+"les càmeres."
+
+#: ../../user_manual/ekos-mcp.rst:209
+msgid "``image_last_info``"
+msgstr "``image_last_info``"
+
+#: ../../user_manual/ekos-mcp.rst:210
+msgid ""
+"Metadata of the most recently captured frame: file path, camera, exposure, "
+"filter, target, timestamp, sensor temperature, HFR, star count and "
+"dimensions."
+msgstr ""
+"Metadades del fotograma capturat més recentment: camí de fitxer, càmera, "
+"exposició, filtre, objectiu, marca horària, temperatura del sensor, HFR, "
+"recompte d'estrelles i dimensions."
+
+#: ../../user_manual/ekos-mcp.rst:212
+msgid "``image_last_thumbnail``"
+msgstr "``image_last_thumbnail``"
+
+#: ../../user_manual/ekos-mcp.rst:213
+msgid ""
+"A base64-encoded JPEG preview of the most recent frame, sized for vision-"
+"capable models (default 512 pixels on the long edge, at most 1024)."
+msgstr ""
+"Una vista prèvia JPEG codificada en base64 del fotograma més recent, a mida "
+"dels models amb capacitat de visió (predeterminat 512 píxels en la vora "
+"llarga, com a màxim 1024)."
