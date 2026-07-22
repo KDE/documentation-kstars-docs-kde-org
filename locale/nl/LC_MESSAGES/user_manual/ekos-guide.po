@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-19 02:06+0000\n"
-"PO-Revision-Date: 2026-07-19 18:05+0200\n"
+"PO-Revision-Date: 2026-07-20 11:32+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -257,13 +257,13 @@ msgid ""
 "then switch to the other side. Guide for a minute or two. If DEC runs away, "
 "then you probably have the wrong setting for the \"Reverse DEC...\" checkbox."
 msgstr ""
-"``DEC omdraaien...``: het is ook belangrijk om \"Reverse DEC on pier-side "
-"change when re-using calibration\" te activeren of te deactiveren. Om de "
-"juiste instelling voor uw opstelling te vinden moet u nagaan, dat volgen met "
-"succes werkt op één kant van de pier, daarna omschakelen naar de ander kant. "
-"Volg gedurende een paar minuten. Als DEC weg beweegt, dan hebt u "
-"waarschijnlijk de verkeerde instelling voor het keuzevak \"DEC omdraaien..."
-"\"."
+"``DEC omdraaien...``: het is ook belangrijk om \"Omgekeerde DEC aan pier-"
+"kant wijziging bij hergebruik van kalibratie\" te activeren of te "
+"deactiveren. Om de juiste instelling voor uw opstelling te vinden moet u "
+"nagaan, dat volgen met succes werkt op één kant van de pier, daarna "
+"omschakelen naar de ander kant. Volg gedurende een paar minuten. Als DEC weg "
+"beweegt, dan hebt u waarschijnlijk de verkeerde instelling voor het keuzevak "
+"\"DEC omdraaien...\"."
 
 #: ../../user_manual/ekos-guide.rst:141
 msgid ""
@@ -1006,7 +1006,7 @@ msgid ""
 "during data collection."
 msgstr ""
 "De belichtingstijd voor het volgen is degene die u blijft gebruiken: het "
-"model is getraind op — en gekoppeld aan — de belichtingstijd, binning en "
+"model is getraind op *en gekoppeld aan* de belichtingstijd, binning en "
 "instellingen voor het volgen die tijdens de gegevensverzameling zijn "
 "gebruikt."
 
@@ -1366,7 +1366,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:674
 msgid "Monitoring AI Guiding"
-msgstr ""
+msgstr "AI-volgen monitoren"
 
 #: ../../user_manual/ekos-guide.rst:676
 msgid ""
@@ -1378,6 +1378,14 @@ msgid ""
 "are verified against real measurements, the AI becomes :guilabel:`Active` "
 "and its corrections are blended in."
 msgstr ""
+"De volgstatus toont wat de AI doet. Na de start van het volgen bevindt de AI "
+"zich in een *opwarmfase* (aangegeven als :guilabel:`Opwarmen`) waarin het "
+"model wordt gesynchroniseerd met de actieve opstelling; dit duurt ongeveer "
+"50 volg-frames voor wormwielaandrijvingen, 30 voor harmonische aansturing en "
+"10 voor directe aandrijving. Tijdens het opwarmen wordt het volgen volledig "
+"door het standaardalgoritme afgehandeld. Zodra de voorspellingen zijn "
+"geverifieerd aan de hand van werkelijke metingen, wordt de AI :guilabel:"
+"`Actief` en worden de correcties geïntegreerd."
 
 #: ../../user_manual/ekos-guide.rst:684
 msgid ""
@@ -1388,6 +1396,16 @@ msgid ""
 "low, the standard guiding algorithm does most of the work — an "
 "underperforming model degrades gracefully instead of ruining your subframes."
 msgstr ""
+"De uiteindelijke correctie wordt gewogen op basis van een actuele "
+"*betrouwbaarheidsscore*. Voor een hoge betrouwbaarheid is een redelijk "
+"heldere volgster vereist (de score bereikt een maximum bij een signaal-"
+"ruisverhouding van 30 en daalt tot nul bij een waarde onder de 10); de score "
+"neemt af zodra de voorspellingen van de AI niet meer overeenkomen met de "
+"daadwerkelijke beweging van de opstelling. Bij een lage betrouwbaarheid "
+"neemt het standaard volgalgoritme het leeuwendeel van het werk voor zijn "
+"rekening: een minder goed presterend model zorgt zo voor een geleidelijke "
+"terugval in prestaties, in plaats van dat u opnames (subframes) onbruikbaar "
+"worden."
 
 #: ../../user_manual/ekos-guide.rst:692
 msgid ""
@@ -1397,6 +1415,13 @@ msgid ""
 "for re-warm-up; and a lost guide star triggers the guider's normal "
 "reacquisition logic."
 msgstr ""
+"Er zijn te allen tijde diverse veiligheidsmechanismen van kracht: elke puls "
+"houdt zich aan de ingestelde maximale pulslimieten en een harde bovengrens "
+"van 5 seconden; AI-voorspellingen worden tijdens dithering opgeschort; een "
+"meridiaanwissel (meridian flip) reset de interne status van de AI, waarna "
+"deze opnieuw opwarmt; en bij verlies van de volgster treedt de "
+"standaardprocedure van de volger voor het opnieuw oppikken van de ster in "
+"werking."
 
 #: ../../user_manual/ekos-guide.rst:701
 msgid "How It Works"
@@ -1414,6 +1439,17 @@ msgid ""
 "repeat, which is why data collection matters and why the random part remains "
 "the standard algorithm's job."
 msgstr ""
+"De volgfout van een opstelling bestaat uit twee delen. Het *herhaalbare* "
+"deel komt voort uit de mechaniek: de periodieke fout van het wormwiel, "
+"onvolkomenheden in de tandwielen, atmosferische refractie en het langzame "
+"verloop door een resterende fout in de poolsteruitlijning. Het "
+"*willekeurige* deel wordt veroorzaakt door 'seeing', wind en meetruis. Een "
+"conventioneel volgsysteem werkt puur reactief: het kan een fout pas "
+"corrigeren nadat de ster al is verschoven. Een 'feed-forward'-volgsysteem "
+"daarentegen voorspelt het herhaalbare deel en heft dit op zodra het "
+"optreedt; dit werkt echter alleen bij fouten die zich herhalen. Daarom is "
+"het verzamelen van gegevens van belang en blijft de afhandeling van het "
+"willekeurige deel een taak voor het standaardalgoritme."
 
 #: ../../user_manual/ekos-guide.rst:713
 msgid ""
@@ -1425,12 +1461,23 @@ msgid ""
 "clamps before being sent to the mount. If the AI contributes nothing useful, "
 "its term simply fades to zero and you are left with plain standard guiding."
 msgstr ""
+"De AI-volger gaat bewust voorzichtig om met zijn voorspellingen. Bij elke "
+"volgcyclus berekent de standaardregelaar de gebruikelijke correctie op basis "
+"van de gemeten drift. Tegelijkertijd berekent het AI-model een voorspelde "
+"correctie; deze wordt geschaald aan de hand van de actuele "
+"betrouwbaarheidsscore en de door u ingestelde 'Voorspellingsversterking', en "
+"vervolgens bij de standaardcorrectie opgeteld. De resulterende puls passeert "
+"de veiligheidsbegrenzers voordat deze naar de opstelling wordt gestuurd. Als "
+"de AI geen nuttige bijdrage levert, neemt de bijdrage ervan simpelweg af tot "
+"nul en blijft er gewone standaardvolging over."
 
 #: ../../user_manual/ekos-guide.rst:722
 msgid ""
 "The model itself is chosen to match the mount's physics rather than being "
 "one large neural network:"
 msgstr ""
+"Het model zelf is zo gekozen dat het aansluit bij de fysica van de "
+"opstelling, in plaats van dat het één groot neuraal netwerk is:"
 
 #: ../../user_manual/ekos-guide.rst:725
 msgid ""
@@ -1439,6 +1486,11 @@ msgid ""
 "neural network (about 200 parameters) that learns the leftover, mount-"
 "specific residuals."
 msgstr ""
+"Bij opstellingen met **Wormwiel** wordt gebruikgemaakt van een natuurkundig "
+"model voor periodieke fouten, refractie en polaire drift – waarbij de fase "
+"tijdens het volgen (guiden) live wordt bijgehouden – in combinatie met een "
+"klein neuraal netwerk (circa 200 parameters) dat de resterende, "
+"opstellingsspecifieke afwijkingen leert."
 
 #: ../../user_manual/ekos-guide.rst:729
 msgid ""
@@ -1446,16 +1498,22 @@ msgid ""
 "wind-up and periodic error, with a small neural network correcting its "
 "predictions."
 msgstr ""
+"Opstellingen met **Harmonisch aandrijving** maken gebruik van een Kalman-"
+"filtermodel voor de veerwerking (torsie) en de periodieke fout van de "
+"aandrijving, waarbij een klein neuraal netwerk de voorspellingen corrigeert."
 
 #: ../../user_manual/ekos-guide.rst:732
 msgid ""
 "**Direct drive** mounts have almost no mechanical error, so only refraction "
 "and drift are modeled analytically — no neural network is involved."
 msgstr ""
+"Opstellingen met **Directe aandrijving** vertonen vrijwel geen mechanische "
+"fouten; daarom worden alleen refractie en drift analytisch gemodelleerd — er "
+"komt geen neuraal netwerk aan te pas."
 
 #: ../../user_manual/ekos-guide.rst:739
 msgid "Troubleshooting and Notes"
-msgstr ""
+msgstr "Problemen oplossen en notities"
 
 #: ../../user_manual/ekos-guide.rst:741
 msgid ""
@@ -1464,6 +1522,11 @@ msgid ""
 "Restore the settings used during data collection, retrain, or switch the "
 "algorithm back to :guilabel:`Standard`."
 msgstr ""
+"*Het volgen wordt onmiddellijk afgebroken vanwege een fout in de gewichten.* "
+"Het bestand met gewichten kon niet worden geladen of de vingerafdruk ervan "
+"komt niet overeen met uw huidige volg-instellingen. Herstel de instellingen "
+"die tijdens de gegevensverzameling werden gebruikt, train opnieuw of schakel "
+"het algoritme terug naar :guilabel:`Standaard`."
 
 #: ../../user_manual/ekos-guide.rst:745
 msgid ""
@@ -1472,6 +1535,12 @@ msgid ""
 "your mount's current behavior. Guiding continues normally on the standard "
 "algorithm either way; consider retraining under better conditions."
 msgstr ""
+"*De AI blijft in de opwarmfase of wordt nooit actief.* Dit wordt meestal "
+"veroorzaakt door een zwakke volgster (lage signaal-ruisverhouding) of door "
+"voorspellingen die niet overeenkomen met het huidige gedrag van de "
+"opstelling. Het volgen verloopt hoe dan ook normaal via het "
+"standaardalgoritme; overweeg om het systeem opnieuw te trainen onder betere "
+"omstandigheden."
 
 #: ../../user_manual/ekos-guide.rst:750
 msgid ""
@@ -1480,6 +1549,11 @@ msgid ""
 "errors. Compare a few guiding sessions with the AI enabled and disabled "
 "under similar conditions before drawing conclusions."
 msgstr ""
+"*Geen zichtbare verbetering.* Dit is een realistisch resultaat bij sommige "
+"opstellingen — vooral bij exemplaren met weinig periodieke fouten of waarbij "
+"niet-herhaalbare fouten overheersen. Vergelijk enkele volgsessies met de AI "
+"ingeschakeld en uitgeschakeld onder vergelijkbare omstandigheden voordat u "
+"conclusies trekt."
 
 #: ../../user_manual/ekos-guide.rst:755
 msgid ""
@@ -1488,6 +1562,11 @@ msgid ""
 "whenever guiding performance degrades noticeably after a remesh or "
 "mechanical adjustment."
 msgstr ""
+"*Wanneer opnieuw trainen:* na het wijzigen van de volgcamera, de "
+"belichtingstijd voor het volgen, de binning, de optische trein voor het "
+"volgen, de opstelling of een instelling voor het volgen die is vastgelegd in "
+"een 'vingerafdruk' – en telkens wanneer de volgprestaties merkbaar "
+"verslechteren na een 'remesh' of mechanische aanpassing."
 
 #: ../../user_manual/ekos-guide.rst:759
 msgid ""
@@ -1495,6 +1574,9 @@ msgid ""
 "the AI debug logs and guide logs into a single archive that you can attach "
 "to a bug report or forum post."
 msgstr ""
+"*Problemen melden:* met de knop :guilabel:`Logs exporteren` van de assistent "
+"worden de AI-foutopsporingslogboeken en de volglogboeken samengevoegd tot "
+"één enkel archief, dat u kunt bijvoegen bij een foutmelding of forumbericht."
 
 #: ../../user_manual/ekos-guide.rst:766
 msgid "Dark Frames"
@@ -1709,7 +1791,7 @@ msgstr ".. image:: /images/ekos_guide_ai_menu.png"
 
 #: ../../user_manual/ekos-guide.rst:844
 msgid "AI Wizard Mount Page"
-msgstr ""
+msgstr "Pagina AI-assistent van opstelling"
 
 #: ../../user_manual/ekos-guide.rst:844
 msgid ".. image:: /images/ekos_guide_ai_wizard_mount.png"
@@ -1717,7 +1799,7 @@ msgstr ".. image:: /images/ekos_guide_ai_wizard_mount.png"
 
 #: ../../user_manual/ekos-guide.rst:845
 msgid "AI Wizard Protocol Page"
-msgstr ""
+msgstr "Pagina AI-assistentprotocol"
 
 #: ../../user_manual/ekos-guide.rst:845
 msgid ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
@@ -1725,7 +1807,7 @@ msgstr ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
 
 #: ../../user_manual/ekos-guide.rst:846
 msgid "AI Wizard Progress Page"
-msgstr ""
+msgstr "Pagina AI-assistent voortgang"
 
 #: ../../user_manual/ekos-guide.rst:846
 msgid ".. image:: /images/ekos_guide_ai_wizard_progress.png"
@@ -1733,7 +1815,7 @@ msgstr ".. image:: /images/ekos_guide_ai_wizard_progress.png"
 
 #: ../../user_manual/ekos-guide.rst:847
 msgid "AI Wizard Complete Page"
-msgstr ""
+msgstr "Pagina AI-assistent gereed"
 
 #: ../../user_manual/ekos-guide.rst:847
 msgid ".. image:: /images/ekos_guide_ai_wizard_complete.png"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kstars_ekos-guide\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-19 02:06+0000\n"
-"PO-Revision-Date: 2026-07-19 15:22+0300\n"
+"PO-Revision-Date: 2026-07-20 20:36+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -882,6 +882,14 @@ msgid ""
 "algorithm keeps running underneath at all times and corrects whatever the "
 "prediction misses."
 msgstr ""
+"Помічник наведення на основі штучного інтелекту додає до внутрішнього "
+"наведення навчений, специфічний для лафета засіб *прямого* прогнозування. "
+"Після одноразового сеансу навчання штучний інтелект вивчає повторювану "
+"частину похибки відстеження вашого лафета, таку як періодична похибка та "
+"повільний дрейф, і додає прогнозоване виправлення до кожної пульсації "
+"наведення, *до* того, як помилка стане видимою на зображенні наведення. "
+"Стандартний алгоритм наведення працює постійно і виправляє все, що пропускає "
+"засіб прогнозування."
 
 #: ../../user_manual/ekos-guide.rst:460
 msgid ""
@@ -893,6 +901,14 @@ msgid ""
 "`AI Assistant (MCP) <ekos-mcp>` interface, which connects KStars to external "
 "chat assistants."
 msgstr ""
+"Точкою входу є кнопка меню :guilabel:`ШІ-наведення (експериментальне)` на "
+"головній сторінці «Наведення», трохи нижче :guilabel:`Вилучити "
+"калібрування`. Вона пропонує дві дії: :guilabel:`Помічник ШІ-наведення...`, "
+"яка відкриває майстер збирання даних, описаний нижче, та :guilabel:"
+"`Завантажити вагу...`, яка завантажує файл моделі за результатами "
+"попереднього навчання. Ця функція не пов’язана з інтерфейсом :doc:`Помічник "
+"ШІ (MCP) <ekos-mcp>`, який встановлює з'єднання KStars із зовнішніми "
+"помічниками обміну даними."
 
 #: ../../user_manual/ekos-guide.rst:470
 msgid ""
@@ -902,6 +918,12 @@ msgid ""
 "and be prepared to switch back to the :guilabel:`Standard` or :guilabel:"
 "`GPG` algorithms if your results are not better with the AI."
 msgstr ""
+"Помічник ШІ-наведення – це **експериментальна** можливість, яка перебуває у "
+"стадії активної розробки. Навчені моделі прив’язані до вашого конкретного "
+"лафета, камери та налаштувань наведення. Завжди перевіряйте ефективність "
+"наведення після його ввімкнення та будьте готові повернутися до алгоритмів :"
+"guilabel:`Стандартний` або :guilabel:`GPG`, якщо вважаєте ваші результати зі "
+"штучним інтелектом не найкращими."
 
 #: ../../user_manual/ekos-guide.rst:479
 msgid "Expectations and Prerequisites"
@@ -922,6 +944,10 @@ msgid ""
 "mount's error and layers that prediction on top of the standard guiding "
 "algorithm. It will **not** fix:"
 msgstr ""
+"Штучний інтелект **доповнює** функціональну систему наведення — він не "
+"виправляє таку, яка працює погано. Він передбачає *повторювану* частину "
+"похибки вашого лафета та накладає це передбачення поверх стандартного "
+"алгоритму наведення. Він **не** виправляє:"
 
 #: ../../user_manual/ekos-guide.rst:491
 msgid "poor polar alignment,"
@@ -948,32 +974,45 @@ msgid ""
 "The improvement from AI guiding varies considerably from mount to mount, and "
 "on some mounts you may see no measurable benefit at all."
 msgstr ""
+"Жодна з цих похибок не є повторюваною, тому жодне навчання не може їх "
+"передбачити. Якщо стандартне наведення не працює належним чином у вашій "
+"системі, спочатку виправте причину похибки. Покращення від штучного "
+"інтелекту значно залежить від лафета, а на деяких лафетах ви можете взагалі "
+"не побачити жодної помітної користі."
 
 #: ../../user_manual/ekos-guide.rst:502
 msgid "Before running the assistant, make sure that:"
-msgstr ""
+msgstr "Перш ніж запускати помічник, переконайтеся, що:"
 
 #: ../../user_manual/ekos-guide.rst:504
 msgid ""
 "You are using the **internal guider**, with a working guide camera and a "
 "completed, successful calibration."
 msgstr ""
+"Ви користуєтеся **вбудованим засобом наведення**, з працездатною камерою "
+"наведення і завершеним успішним калібруванням."
 
 #: ../../user_manual/ekos-guide.rst:506
 msgid ""
 "Ordinary guiding with the :guilabel:`Standard` algorithm already works "
 "reliably on your setup."
 msgstr ""
+"У вашій конфігурації надійно працює звичайне наведення з алгоритмом :"
+"guilabel:`Стандартний`."
 
 #: ../../user_manual/ekos-guide.rst:508
 msgid "Your mount is well polar-aligned, balanced, and free of cable snags."
 msgstr ""
+"Ваш лафет добре полярно вирівняно, врівноважено і немає блокування кабелем."
 
 #: ../../user_manual/ekos-guide.rst:509
 msgid ""
 "You know your mount's drive type: worm gear (most equatorial mounts), "
 "harmonic/strain-wave drive, or direct drive."
 msgstr ""
+"Ви знаєте тип приводу вашого лафета: черв'ячний привід (більшість "
+"екваторіальних лафетів), гармонічний/деформаційно-хвильовий привід або "
+"безпосередній привід."
 
 #: ../../user_manual/ekos-guide.rst:511
 msgid ""
@@ -981,16 +1020,21 @@ msgid ""
 "trained *and locked* to the guide exposure, binning, and guide settings used "
 "during data collection."
 msgstr ""
+"Ваша витримка наведення – це та, яку ви маєте намір використовувати й "
+"надалі: модель навчається *та фіксується* до витримки наведення, групування "
+"та налаштувань наведення, що використовуються під час збирання даних."
 
 #: ../../user_manual/ekos-guide.rst:514
 msgid ""
 "You have 20–45 minutes of clear, reasonably steady sky to spend on data "
 "collection, depending on the mount type."
 msgstr ""
+"У вас є 20–45 хвилин ясного, досить стабільного неба для збору даних, "
+"залежно від типу лафета."
 
 #: ../../user_manual/ekos-guide.rst:520
 msgid "Data Collection with the AI Guiding Assistant"
-msgstr ""
+msgstr "Збирання даних за допомогою Помічника ШІ-наведення"
 
 #: ../../user_manual/ekos-guide.rst:522
 msgid ""
@@ -1001,10 +1045,17 @@ msgid ""
 "measured. Click :guilabel:`AI Guiding (Experimental)` → :guilabel:`AI "
 "Guiding Assistant...` on the Guide page to start the wizard."
 msgstr ""
+"Навчання моделі починається із сеансу *ідентифікації системи*: помічник "
+"наводить лафет на кілька позицій на небі та записує, як дрейфує зірка "
+"наведення, як під час активного наведення, так і під час навмисно "
+"призупиненого наведення («вільний дрейф»), щоб можна було виміряти сигнатуру "
+"похибок лафета. Натисніть :guilabel:`ШІ-наведення (експериментальне)` → :"
+"guilabel:`Помічник ШІ-наведення...` на сторінці «Наведення», щоб запустити "
+"майстер."
 
 #: ../../user_manual/ekos-guide.rst:530
 msgid "|AI Wizard Mount Page|"
-msgstr ""
+msgstr "|Сторінка лафета ЩІ-майстра|"
 
 #: ../../user_manual/ekos-guide.rst:532
 msgid ""
@@ -1015,10 +1066,17 @@ msgid ""
 "1.0–3.0 s for direct drives. Set your exposure *before* proceeding: the "
 "trained model is locked to it."
 msgstr ""
+"**Сторінка 1 — Ідентифікація лафета.** Перевірка виявленого типу лафета: :"
+"guilabel:`Черв'ячна передача`, :guilabel:`Гармонічний привід` або :guilabel:"
+"`Безпосередній привід`. Майстер також рекомендує витримку для кожного типу "
+"приводу — 2,0 с для черв'ячних передач, 0,5–1,0 с для гармонійних приводів "
+"(залежно від сигналу зірки наведення) та 1,0–3,0 с для безпосередніх "
+"приводів. Встановіть витримку *перед* тим, як продовжити: навчена модель "
+"зафіксована на ній."
 
 #: ../../user_manual/ekos-guide.rst:539
 msgid "|AI Wizard Protocol Page|"
-msgstr ""
+msgstr "|Сторінка протоколу ШІ-майстра|"
 
 #: ../../user_manual/ekos-guide.rst:541
 msgid ""
@@ -1050,10 +1108,12 @@ msgid ""
 "**Direct Drive** (~20 minutes): short guiding and free-drift phases at three "
 "different altitudes."
 msgstr ""
+"**Безпосередній привід** (~20 хвилин): короткі фази наведення і вільного "
+"дрейфу на трьох різних висотах."
 
 #: ../../user_manual/ekos-guide.rst:558
 msgid "|AI Wizard Progress Page|"
-msgstr ""
+msgstr "|Сторінка поступу ШІ-майстра|"
 
 #: ../../user_manual/ekos-guide.rst:560
 msgid ""
@@ -1065,7 +1125,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:565
 msgid "|AI Wizard Complete Page|"
-msgstr ""
+msgstr "|Сторінка завершення роботи ШІ-майстра|"
 
 #: ../../user_manual/ekos-guide.rst:567
 msgid ""
@@ -1079,7 +1139,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:577
 msgid "Training via EkosLive"
-msgstr ""
+msgstr "Навчання за допомогою EkosLive"
 
 #: ../../user_manual/ekos-guide.rst:579
 msgid ""
@@ -1103,7 +1163,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:600
 msgid "Training the Model Offline"
-msgstr ""
+msgstr "Навчання моделі в автономному режимі"
 
 #: ../../user_manual/ekos-guide.rst:602
 msgid ""
@@ -1143,6 +1203,10 @@ msgid ""
 "pip install numpy scipy torch\n"
 "python train.py --sysid-data ./sysid_data.json --output ./weights.json"
 msgstr ""
+"python3 -m venv venv\n"
+"source venv/bin/activate\n"
+"pip install numpy scipy torch\n"
+"python train.py --sysid-data ./sysid_data.json --output ./weights.json"
 
 #: ../../user_manual/ekos-guide.rst:623
 msgid ""
@@ -1162,7 +1226,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:636
 msgid "Activating AI Guiding and Options"
-msgstr ""
+msgstr "Активація ШІ-наведення і параметри"
 
 #: ../../user_manual/ekos-guide.rst:638
 msgid "|AI Guider Options|"
@@ -1222,7 +1286,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:674
 msgid "Monitoring AI Guiding"
-msgstr ""
+msgstr "Стеження за ШІ-наведенням"
 
 #: ../../user_manual/ekos-guide.rst:676
 msgid ""
@@ -1311,7 +1375,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:739
 msgid "Troubleshooting and Notes"
-msgstr ""
+msgstr "Вирішення проблем і зауваження"
 
 #: ../../user_manual/ekos-guide.rst:741
 msgid ""
@@ -1566,7 +1630,7 @@ msgstr ".. image:: /images/ekos_guide_ai_menu.png"
 
 #: ../../user_manual/ekos-guide.rst:844
 msgid "AI Wizard Mount Page"
-msgstr ""
+msgstr "Сторінка лафета ШІ-майстра"
 
 #: ../../user_manual/ekos-guide.rst:844
 msgid ".. image:: /images/ekos_guide_ai_wizard_mount.png"
@@ -1574,7 +1638,7 @@ msgstr ".. image:: /images/ekos_guide_ai_wizard_mount.png"
 
 #: ../../user_manual/ekos-guide.rst:845
 msgid "AI Wizard Protocol Page"
-msgstr ""
+msgstr "Сторінка протоколу ШІ-майстра"
 
 #: ../../user_manual/ekos-guide.rst:845
 msgid ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
@@ -1582,7 +1646,7 @@ msgstr ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
 
 #: ../../user_manual/ekos-guide.rst:846
 msgid "AI Wizard Progress Page"
-msgstr ""
+msgstr "Сторінка поступу ШІ-майстра"
 
 #: ../../user_manual/ekos-guide.rst:846
 msgid ".. image:: /images/ekos_guide_ai_wizard_progress.png"
@@ -1590,7 +1654,7 @@ msgstr ".. image:: /images/ekos_guide_ai_wizard_progress.png"
 
 #: ../../user_manual/ekos-guide.rst:847
 msgid "AI Wizard Complete Page"
-msgstr ""
+msgstr "Завершальна сторінка ШІ-майстра"
 
 #: ../../user_manual/ekos-guide.rst:847
 msgid ".. image:: /images/ekos_guide_ai_wizard_complete.png"
