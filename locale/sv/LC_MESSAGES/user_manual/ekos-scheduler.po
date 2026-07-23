@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-04 02:06+0000\n"
-"PO-Revision-Date: 2026-07-20 10:28+0200\n"
+"PO-Revision-Date: 2026-07-21 13:23+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -938,23 +938,27 @@ msgstr ""
 
 #: ../../user_manual/ekos-scheduler.rst:534
 msgid "|Scheduler Weather Settings|"
-msgstr ""
+msgstr "|Scheduler Weather Settings|"
 
 #: ../../user_manual/ekos-scheduler.rst:536
 msgid "Weather monitoring can be configured in two ways:"
-msgstr ""
+msgstr "Väderövervakning kan ställas in på två sätt:"
 
 #: ../../user_manual/ekos-scheduler.rst:538
 msgid ""
 "**Part of the equipment profile** - A weather driver starts with the "
 "observatory equipment"
 msgstr ""
+"**Del av utrustningsprofilen**: En väderdrivrutin startas med "
+"observatorieutrustningen"
 
 #: ../../user_manual/ekos-scheduler.rst:539
 msgid ""
 "**Standalone INDI Safety Monitor** - An INDI Safety Monitor driver runs "
 "independently on a separate INDI server"
 msgstr ""
+"**Fristående INDI-säkerhetsövervakning**: En INDI "
+"säkerhetsövervakningsdrivrutin körs oberoende på en separat INDI-server"
 
 #: ../../user_manual/ekos-scheduler.rst:541
 msgid ""
@@ -965,6 +969,12 @@ msgid ""
 "a shutdown if conditions are unsafe, this start-stop cycle is inefficient "
 "and potentially harmful to equipment."
 msgstr ""
+"*Viktigt:** Om ingen fristående säkerhetsövervakning är inställd kan "
+"schemaläggningen inte kontrollera säkerhetsförhållandena innan observatoriet "
+"startas. Det innebär att observatoriet kan starta under osäkra förhållanden. "
+"Även om utrustningsprofilens väderdrivrutin aktiveras efter start och "
+"omedelbart utlöser en avstängning om förhållandena är osäkra, är start-stopp-"
+"cykeln ineffektiv och potentiellt skadlig för utrustningen."
 
 #: ../../user_manual/ekos-scheduler.rst:547
 msgid ""
@@ -977,10 +987,19 @@ msgid ""
 "Safety Monitor driver. This allows the scheduler to verify conditions are "
 "safe *before* starting up the observatory."
 msgstr ""
+"**Bästa praxis:** Ställ in en fristående INDI-säkerhetsövervakning. När den "
+"finns har den alltid företräde framför alla väderdrivrutiner i "
+"utrustningsprofilen för att säkerställa observatoriets säkerhet. "
+"Övervakningen kan ställas in att lyssna på valfritt antal väder- eller "
+"hjälpdrivrutiner (som UPS) vilka kan utgöra en säkerhetsrisk för "
+"observatoriets drift. Alla INDI-drivrutiner som implementerar INDI-"
+"standardegenskapen SAFETY_STATUS kan läggas till i säkerhetsövervakningens "
+"drivrutin. Det gör det möjligt för schemaläggaren att verifiera att "
+"förhållandena är säkra *innan* observatoriet startas."
 
 #: ../../user_manual/ekos-scheduler.rst:555
 msgid "Weather Alert Response"
-msgstr ""
+msgstr "Svar på väderlarm"
 
 #: ../../user_manual/ekos-scheduler.rst:557
 msgid ""
@@ -990,44 +1009,57 @@ msgid ""
 "the Ekos and INDI connections while protecting your equipment, allowing for "
 "quick resumption when conditions improve."
 msgstr ""
+"När väderförhållandena försämras till larmstatus under drift initierar "
+"schemaläggaren en skyddande \"mjuk avstängningsprocedur\". Till skillnad "
+"från en fullständig avstängning där alla system stoppas, bevarar en mjuk "
+"avstängning Ekos- och INDI-anslutningarna samtidigt som den skyddar "
+"utrustningen, vilket möjliggör att snabbt återuppta när förhållandena "
+"förbättras."
 
 #: ../../user_manual/ekos-scheduler.rst:563
 msgid "**Soft Shutdown Sequence:**"
-msgstr ""
+msgstr "**Mjuk avstängningssekvens:**"
 
 #: ../../user_manual/ekos-scheduler.rst:565
 msgid "When a weather alert is detected:"
-msgstr ""
+msgstr "När ett väderlarm detekteras:"
 
 #: ../../user_manual/ekos-scheduler.rst:567
 msgid ""
 "A configurable delay period (default: 10 seconds) prevents reaction to "
 "momentary sensor issues"
 msgstr ""
+"En inställningsbar fördröjningsperiod (standardvärde: 10 sekunder) "
+"förhindrar reaktion på tillfälliga sensorproblem"
 
 #: ../../user_manual/ekos-scheduler.rst:570
 msgid ""
 "If the alert persists, the current scheduler job is aborted (marked ABORTED, "
 "not ERROR, so it can restart later)"
 msgstr ""
+"Om larmet kvarstår avbryts det aktuella schemalagda jobbet (markeras som "
+"AVBRUTET, inte FEL, så det kan startas om senare)"
 
 #: ../../user_manual/ekos-scheduler.rst:573
 msgid ""
 "The Pre-Shutdown Queue executes to protect equipment (typically closes dust "
 "caps, parks mount, closes dome)"
 msgstr ""
+"Kön före avstängning körs för att skydda utrustning (stänger vanligtvis "
+"dammskydd, parkerar stativet, stänger kupolen)"
 
 #: ../../user_manual/ekos-scheduler.rst:576
 msgid "Ekos and INDI remain running for faster recovery"
-msgstr ""
+msgstr "Ekos och INDI fortsätter köra för snabbare återstart"
 
 #: ../../user_manual/ekos-scheduler.rst:578
 msgid "The scheduler enters a grace period to wait for weather improvement"
 msgstr ""
+"Schemaläggningen går in i en respitperiod för att vänta på väderförbättringar"
 
 #: ../../user_manual/ekos-scheduler.rst:583
 msgid "Weather Grace Period"
-msgstr ""
+msgstr "Värderrespitperiod"
 
 #: ../../user_manual/ekos-scheduler.rst:585
 msgid ""
@@ -1035,10 +1067,13 @@ msgid ""
 "monitors weather conditions after initiating a soft shutdown. If weather "
 "improves during this period, operations automatically resume."
 msgstr ""
+"Respitperioden är en inställningsbar väntetid då schemaläggningen övervakar "
+"väderförhållandena efter att ha initierat en mjuk avstängning. Om vädret "
+"förbättras under perioden återupptas driften automatiskt."
 
 #: ../../user_manual/ekos-scheduler.rst:590
 msgid "**Special value — Grace Period = 0 (Indefinite Wait):**"
-msgstr ""
+msgstr "**Specialvärde: Respitperiod = 0 (obestämd tid):**"
 
 #: ../../user_manual/ekos-scheduler.rst:592
 msgid ""
@@ -1049,42 +1084,56 @@ msgid ""
 "This is the recommended setting for fully automated, unattended "
 "observatories."
 msgstr ""
+"Om respitperioden ställs in till **0** instrueras schemaläggningen att vänta "
+"**obestämd tid** på att vädret ska förbättras. Schemaläggningen ger aldrig "
+"upp eller avbryter jobb på grund av väder, den väntar helt enkelt, parkerad, "
+"tills säkerhetsförhållandena återgår till ok, oavsett hur lång tid det tar "
+"(timmar, dagar etc.). Det är den rekommenderade inställningen för "
+"helautomatiska observatorier utan tillsyn."
 
 #: ../../user_manual/ekos-scheduler.rst:599
 msgid "When the grace period is 0:"
-msgstr ""
+msgstr "När respitperioden är 0:"
 
 #: ../../user_manual/ekos-scheduler.rst:601
 msgid ""
 "Equipment is protected immediately (pre-shutdown queue runs: park mount, "
 "close dome, etc.)"
 msgstr ""
+"Utrustningen skyddas omedelbart (kö före avstängning körs: parkerar stativ, "
+"stänger kupolen etc.)"
 
 #: ../../user_manual/ekos-scheduler.rst:603
 msgid "Ekos and INDI **remain running** — no full shutdown occurs"
-msgstr ""
+msgstr "Ekos och INDI **fortsätter köra**: ingen fullständig avstängning sker"
 
 #: ../../user_manual/ekos-scheduler.rst:604
 msgid ""
 "The scheduler monitors weather every 5 minutes as a safety net, and recovers "
 "**immediately** (within 10 ms) when the weather sensor reports OK"
 msgstr ""
+"Schemaläggningen övervakar vädret var 5:e minut som ett skyddsnät och "
+"återstartar **omedelbart** (inom 10 ms) när vädersensorn rapporterar ok."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
 "Jobs are left in **ABORTED** state (not ERROR) so they will restart "
 "automatically once conditions improve"
 msgstr ""
+"Jobb lämnas i tillståndet **AVBRUTET** (inte FEL) så de startas om "
+"automatiskt när förhållandena förbättras"
 
 #: ../../user_manual/ekos-scheduler.rst:609
 msgid ""
 "The log will show: *\"Observatory scheduled for soft shutdown. Monitoring "
 "weather indefinitely until safety improves.\"*"
 msgstr ""
+"Loggen visar: *\"Observatoriet schemalagt för mjuk avstängning. Övervakar "
+"vädret på obestämd tid tills säkerhet förbättras.\"*"
 
 #: ../../user_manual/ekos-scheduler.rst:612
 msgid "**Grace Period > 0 behavior:**"
-msgstr ""
+msgstr "**Beteende med respitperiod > 0:**"
 
 #: ../../user_manual/ekos-scheduler.rst:614
 msgid ""
@@ -1093,10 +1142,14 @@ msgid ""
 "expires while the alert is still active, a full shutdown (INDI/Ekos stop) is "
 "performed and jobs are marked as aborted."
 msgstr ""
+"Om en respitperiod större än noll är inställd väntar schemaläggningen det "
+"antalet minuter efter den mjuka avstängningen på att vädret ska förbättras. "
+"Om respitperioden löper ut medan larmet fortfarande är aktiv utförs en "
+"fullständig avstängning (INDI/Ekos stoppas) och jobb markeras som avbrutna."
 
 #: ../../user_manual/ekos-scheduler.rst:620
 msgid "**Configuration:**"
-msgstr ""
+msgstr "**Inställning:**"
 
 #: ../../user_manual/ekos-scheduler.rst:622
 msgid "In the Scheduler Weather Settings:"
@@ -1109,6 +1162,10 @@ msgid ""
 "brief sensor glitches. During this delay, if the weather sensor recovers, no "
 "action is taken at all."
 msgstr ""
+"**Väderavstängningsfördröjning**: Sekunder att vänta efter larmdetektering "
+"innan mjuk avstängning initieras (standardvärde: 10). Det förhindrar "
+"falsklarm från korta sensorfel. Om vädersensorn återställs under väntetiden, "
+"vidtas ingen åtgärd alls."
 
 #: ../../user_manual/ekos-scheduler.rst:629
 msgid ""
@@ -1117,54 +1174,71 @@ msgid ""
 "**0** for indefinite monitoring — the recommended value for automated "
 "observatories that should always resume on their own."
 msgstr ""
+"**Värderrespitperiod**: Minuter att vänta (i parkerat, mjukt "
+"avstängningstillstånd) på att vädret ska förbättras innan en fullständig "
+"avstängning sker. Ställ in till **0** för obestämd väntetid: det "
+"rekommenderade värdet för automatiserade observatorier som alltid ska "
+"återstarta av sig själva."
 
 #: ../../user_manual/ekos-scheduler.rst:637
 msgid "Automatic Weather Recovery"
-msgstr ""
+msgstr "Automatisk väderåterhämtning"
 
 #: ../../user_manual/ekos-scheduler.rst:639
 msgid ""
 "When weather improves during the grace period, the scheduler automatically "
 "resumes operations:"
 msgstr ""
+"När vädret förbättras under respitperioden återupptar schemaläggningen "
+"automatiskt driften:"
 
 #: ../../user_manual/ekos-scheduler.rst:642
 msgid "Weather status changes from Alert to Ok"
-msgstr ""
+msgstr "Väderstatus ändras från larm till ok"
 
 #: ../../user_manual/ekos-scheduler.rst:644
 msgid ""
 "The Post-Startup Queue executes to reverse protective actions (opens dome, "
 "unparks mount, opens dust caps)"
 msgstr ""
+"Kön efter start kör för att omvända skyddsåtgärder (öppnar kupolen, lösgör "
+"stativet, öppnar dammskydd)"
 
 #: ../../user_manual/ekos-scheduler.rst:647
 msgid "The scheduler resumes normal operation"
-msgstr ""
+msgstr "Schemaläggningen återupptar normal drift"
 
 #: ../../user_manual/ekos-scheduler.rst:649
 msgid "The aborted job can restart if its constraints are still met"
 msgstr ""
+"Det avbrutna jobbet kan startas om om dess begränsningar fortfarande är "
+"uppfyllda"
 
 #: ../../user_manual/ekos-scheduler.rst:651
 msgid "**Queue Usage During Weather Events:**"
-msgstr ""
+msgstr "**Köanvändning under väderhändelser:**"
 
 #: ../../user_manual/ekos-scheduler.rst:653
 msgid "Weather events use specific startup and shutdown queues:"
-msgstr ""
+msgstr "Väderhändelser använder specifika köer vid start och avstängning:"
 
 #: ../../user_manual/ekos-scheduler.rst:655
 msgid ""
 "**During Weather Shutdown**: Only Pre-Shutdown Queue executes (runs before "
 "stopping Ekos). Post-Shutdown Queue is skipped since Ekos remains running."
 msgstr ""
+"**Under väderavstängning**: Endast kön före avstängning körs (körs innan "
+"Ekos stoppas). Kön efter avstängning hoppas över eftersom Ekos fortsätter "
+"att köras."
 
 #: ../../user_manual/ekos-scheduler.rst:659
 msgid ""
 "**During Weather Recovery**: Only Post-Startup Queue executes (runs after "
 "devices ready). Pre-Startup Queue is skipped since Ekos never stopped."
 msgstr ""
+"**Under väderåterhämtning**: Endast kön efter start körs (körs efter att "
+"enheterna är redo). Kön före start hoppas över eftersom Ekos aldrig har "
+"stoppats."
 
 #: ../../user_manual/ekos-scheduler.rst:663
 msgid ""
@@ -1172,14 +1246,16 @@ msgid ""
 "the Post-Startup queue should reverse exactly what the Pre-Shutdown queue "
 "did."
 msgstr ""
+"Köerna före avstängning och efter start ska fungera symmetriskt tillsammans: "
+"kön efter start ska vara exakt omvänd mot vad kön före avstängning gjorde."
 
 #: ../../user_manual/ekos-scheduler.rst:667
 msgid "**Example Queue Design:**"
-msgstr ""
+msgstr "**Exempel på konstruktion av köer:**"
 
 #: ../../user_manual/ekos-scheduler.rst:670
 msgid "Close dust cap"
-msgstr "Stäng dammskyddet"
+msgstr "Stänga dammskyddet"
 
 #: ../../user_manual/ekos-scheduler.rst:671
 msgid "Park mount"
@@ -1187,15 +1263,15 @@ msgstr "Parkera stativet"
 
 #: ../../user_manual/ekos-scheduler.rst:672
 msgid "Pre-Shutdown Queue:"
-msgstr ""
+msgstr "Kö före avstängning: "
 
 #: ../../user_manual/ekos-scheduler.rst:672
 msgid "Close dome shutter"
-msgstr ""
+msgstr "Stänga kupollucka"
 
 #: ../../user_manual/ekos-scheduler.rst:675
 msgid "Open dome shutter"
-msgstr ""
+msgstr "Öppna kupollucka"
 
 #: ../../user_manual/ekos-scheduler.rst:676
 msgid "Unpark mount"
@@ -1207,7 +1283,7 @@ msgstr "Kö efter start:"
 
 #: ../../user_manual/ekos-scheduler.rst:677
 msgid "Open dust cap"
-msgstr ""
+msgstr "Öppna dammskyddet"
 
 #: ../../user_manual/ekos-scheduler.rst:682
 msgid "Weather Monitoring Best Practices"
@@ -1215,13 +1291,15 @@ msgstr "Bästa metoder för väderövervakning"
 
 #: ../../user_manual/ekos-scheduler.rst:684
 msgid "For reliable weather protection:"
-msgstr ""
+msgstr "För tillförlitligt väderskydd:"
 
 #: ../../user_manual/ekos-scheduler.rst:686
 msgid ""
 "**Design Symmetric Queues**: Ensure Pre-Shutdown and Post-Startup queues "
 "mirror each other exactly."
 msgstr ""
+"**Konstruera symmetriska köer**: Se till att köerna före avstängning och "
+"efter start speglar varandra exakt."
 
 #: ../../user_manual/ekos-scheduler.rst:689
 msgid ""
@@ -1229,6 +1307,9 @@ msgid ""
 "avoid false alarms but short enough to protect equipment promptly (10-30 "
 "seconds recommended)."
 msgstr ""
+"**Ställ in lämpliga fördröjningar**: Ställ in avstängningsfördröjningen för "
+"väder tillräckligt lång för att undvika falsklarm men tillräckligt kort för "
+"att skydda utrustningen omedelbart (10–30 sekunder rekommenderas)."
 
 #: ../../user_manual/ekos-scheduler.rst:693
 msgid ""
@@ -1240,18 +1321,30 @@ msgid ""
 "INDI shutdown after N minutes), choose a value based on local weather "
 "patterns (30–120 minutes is typical for passing clouds or showers)."
 msgstr ""
+"**Ställ in respitperioden till 0 för helautomatiska observatorier**: Att "
+"ställa in respitperioden till **0** är den rekommenderade inställningen för "
+"obevakad drift. Schemaläggningen väntar på obestämd tid på att vädret ska "
+"förbättras, även över flera dagar, och återupptar driften automatiskt utan "
+"mänsklig inblandning. Om du föredrar en begränsad respitperiod (t.ex. för "
+"att ge en fullständig avstängning av INDI efter N minuter), välj ett värde "
+"baserat på lokala vädermönster (30–120 minuter är typiskt för passerande "
+"moln eller skurar)."
 
 #: ../../user_manual/ekos-scheduler.rst:702
 msgid ""
 "**Test Your Setup**: Manually test weather shutdown and recovery before "
 "unattended operations."
 msgstr ""
+"**Prova inställningen**: Prova manuellt väderavstängning och återställning "
+"innan obevakad drift."
 
 #: ../../user_manual/ekos-scheduler.rst:705
 msgid ""
 "**Monitor Connection Stability**: Ensure reliable weather station "
 "connectivity. The scheduler attempts reconnection if connection is lost."
 msgstr ""
+"**Övervaka anslutningsstabilitet**: Säkerställ tillförlitlig anslutning till "
+"väderstation. Schemaläggningen försöker återansluta om anslutningen bryts."
 
 #: ../../user_manual/ekos-scheduler.rst:709
 msgid ""
@@ -1259,6 +1352,9 @@ msgid ""
 "in scheduler settings to monitor conditions even before starting equipment, "
 "preventing unsafe startups."
 msgstr ""
+"**Använd fristående väderövervakning**: Ställ in en fristående väderenhet i "
+"schemaläggningsinställningarna för att övervaka förhållandena redan innan "
+"utrustningen startas, vilket förhindrar osäkra starter."
 
 #: ../../user_manual/ekos-scheduler.rst:715
 msgid "Startup & Shutdown Scripts"
@@ -1266,7 +1362,7 @@ msgstr "Start- och avslutningsskript"
 
 #: ../../user_manual/ekos-scheduler.rst:719
 msgid "**NEW: Task Queue System**"
-msgstr ""
+msgstr "**NYTT: Uppgiftskösystem**"
 
 #: ../../user_manual/ekos-scheduler.rst:721
 msgid ""
@@ -1274,18 +1370,21 @@ msgid ""
 "taskqueue>` that provides a powerful, template-based alternative to "
 "traditional startup and shutdown scripts. The Task Queue offers:"
 msgstr ""
+"Kstars inkluderar nu ett modernt :doc:`Uppgiftskösystem <ekos-scheduler-"
+"taskqueue>` som erbjuder ett kraftfullt, mallbaserat alternativ till "
+"traditionella start- och avstängningsskript. Uppgiftskön erbjuder:"
 
 #: ../../user_manual/ekos-scheduler.rst:725
 msgid "Visual interface for building automation sequences"
-msgstr ""
+msgstr "Visuellt gränssnitt för att bygga automatiska sekvenser"
 
 #: ../../user_manual/ekos-scheduler.rst:726
 msgid "Pre-built templates for common operations"
-msgstr ""
+msgstr "Fördefinierade mallar för vanliga åtgärder"
 
 #: ../../user_manual/ekos-scheduler.rst:727
 msgid "Built-in error handling and retry logic"
-msgstr ""
+msgstr "Inbyggd felhantering och logik för att försöka igen"
 
 #: ../../user_manual/ekos-scheduler.rst:728
 msgid "Real-time progress monitoring"
@@ -1293,7 +1392,7 @@ msgstr "Övervakning av förlopp i realtid"
 
 #: ../../user_manual/ekos-scheduler.rst:729
 msgid "Device-aware task execution"
-msgstr ""
+msgstr "Uppgiftskörning med kännedom om enheter"
 
 #: ../../user_manual/ekos-scheduler.rst:731
 msgid ""
@@ -1301,6 +1400,10 @@ msgid ""
 "recommend exploring the Task Queue system. See the complete :doc:`Task Queue "
 "documentation <ekos-scheduler-taskqueue>` for details."
 msgstr ""
+"För nya observatorier eller de som vill modernisera sin automation "
+"rekommenderar vi att utforska uppgiftskösystemet. Se den fullständiga :doc:"
+"`Uppgiftsködokumentationen <ekos-scheduler-taskqueue>` för detaljerad "
+"information."
 
 #: ../../user_manual/ekos-scheduler.rst:735
 #: ../../user_manual/ekos-scheduler.rst:746
