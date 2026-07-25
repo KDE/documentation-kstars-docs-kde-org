@@ -15,27 +15,27 @@ msgstr ""
 
 #: ../../user_manual/ekos-mcp.rst:-1
 msgid "Ekos MCP options tab"
-msgstr ""
+msgstr "Onglet des options MCP d'Ekos"
 
 #: ../../user_manual/ekos-mcp.rst:-1
 msgid ".. image:: /images/ekos_mcp_options.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_mcp_options.png"
 
 #: ../../user_manual/ekos-mcp.rst:-1
 msgid "Available tools tree with per-tool checkboxes"
-msgstr ""
+msgstr "Arborescence des outils disponibles avec case à cocher par outil"
 
 #: ../../user_manual/ekos-mcp.rst:-1
 msgid ".. image:: /images/ekos_mcp_tools_tree.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_mcp_tools_tree.png"
 
 #: ../../user_manual/ekos-mcp.rst:3
 msgid "AI Assistant (MCP)"
-msgstr ""
+msgstr "Assistant IA (MCP)"
 
 #: ../../user_manual/ekos-mcp.rst:8
 msgid "Introduction"
-msgstr ""
+msgstr "Introduction"
 
 #: ../../user_manual/ekos-mcp.rst:10
 msgid ""
@@ -46,6 +46,13 @@ msgid ""
 "you allow it, operate the mount and focuser, resolve catalog targets, and "
 "more."
 msgstr ""
+"Ekos intègre un serveur MCP (Model Context Protocol). MCP est un standard "
+"ouvert qui permet à des assistants et agents IA de découvrir et d'appeler "
+"les outils exposés par une application. Une fois le serveur MCP activé, un "
+"assistant IA peut observer votre matériel — état de la connexion, position "
+"de la monture, dernière image capturée — et, si vous l'y autorisez, piloter "
+"la monture et le moteur de mise au point, résoudre des cibles du catalogue, "
+"et plus encore."
 
 #: ../../user_manual/ekos-mcp.rst:12
 msgid ""
@@ -54,34 +61,46 @@ msgid ""
 "list`` and ``tools/call`` methods. No KStars-specific client code is "
 "required."
 msgstr ""
+"N'importe quel client compatible MCP peut utiliser le serveur "
+"immédiatement : il parle le JSON-RPC 2.0 standard par HTTP, avec les "
+"méthodes habituelles ``initialize``, ``tools/list`` et ``tools/call``. Aucun "
+"code client spécifique à KStars n'est nécessaire."
 
 #: ../../user_manual/ekos-mcp.rst:21
 msgid "Enabling the Server"
-msgstr ""
+msgstr "Activer le serveur"
 
 #: ../../user_manual/ekos-mcp.rst:23
 msgid ""
 "The server is configured in the Ekos settings dialog, in the :guilabel:`MCP` "
 "tab."
 msgstr ""
+"Le serveur se configure dans la boîte de dialogue des réglages d'Ekos, dans "
+"l'onglet :guilabel:`MCP`."
 
 #: ../../user_manual/ekos-mcp.rst:25
 msgid ""
 "Check :guilabel:`Enable MCP server` to start it. The server starts "
 "automatically with Ekos whenever this option is enabled."
 msgstr ""
+"Cochez :guilabel:`Activer le serveur MCP` pour le démarrer. Le serveur "
+"démarre automatiquement avec Ekos dès que cette option est activée."
 
 #: ../../user_manual/ekos-mcp.rst:27
 msgid ""
 ":guilabel:`Port` selects the TCP port to listen on. The default is 8765; any "
 "port between 1024 and 65535 may be used."
 msgstr ""
+":guilabel:`Port` sélectionne le port TCP d'écoute. La valeur par défaut est "
+"8765 ; n'importe quel port entre 1024 et 65535 peut être utilisé."
 
 #: ../../user_manual/ekos-mcp.rst:29
 msgid ""
 "The status LED next to the port shows whether the server is currently "
 "listening."
 msgstr ""
+"Le voyant d'état à côté du port indique si le serveur est actuellement en "
+"écoute."
 
 #: ../../user_manual/ekos-mcp.rst:33
 msgid ""
@@ -90,22 +109,31 @@ msgid ""
 "up your own tunnel (for example an SSH port forward) and understand the "
 "security implications of doing so."
 msgstr ""
+"Le serveur n'écoute que sur la machine locale (127.0.0.1). Il n'est pas "
+"accessible depuis le réseau. Pour l'utiliser depuis une autre machine, vous "
+"devez mettre en place votre propre tunnel (par exemple une redirection de "
+"port SSH) et comprendre les implications de sécurité que cela entraîne."
 
 #: ../../user_manual/ekos-mcp.rst:38
 msgid "Authentication and Tokens"
-msgstr ""
+msgstr "Authentification et jetons"
 
 #: ../../user_manual/ekos-mcp.rst:40
 msgid ""
 "Every request must carry a bearer token. Two tokens are managed in the :"
 "guilabel:`MCP` tab, each with show, copy and :guilabel:`Regenerate` buttons:"
 msgstr ""
+"Chaque requête doit porter un jeton d'authentification (Bearer). Deux jetons "
+"sont gérés dans l'onglet :guilabel:`MCP`, chacun avec des boutons afficher, "
+"copier et :guilabel:`Régénérer` :"
 
 #: ../../user_manual/ekos-mcp.rst:42
 msgid ""
 "The :guilabel:`Token` field holds the full-access token. Clients presenting "
 "it can call every enabled tool."
 msgstr ""
+"Le champ :guilabel:`Jeton` contient le jeton à accès complet. Les clients "
+"qui le présentent peuvent appeler tous les outils activés."
 
 #: ../../user_manual/ekos-mcp.rst:44
 msgid ""
@@ -113,6 +141,9 @@ msgid ""
 "read-only tools. Give this one to assistants that should observe the rig but "
 "never move hardware."
 msgstr ""
+"Le champ :guilabel:`Jeton en lecture seule` contient un jeton distinct, "
+"limité aux outils en lecture seule. Donnez celui-ci aux assistants qui "
+"doivent seulement observer le matériel, sans jamais le piloter."
 
 #: ../../user_manual/ekos-mcp.rst:46
 msgid ""
@@ -120,6 +151,9 @@ msgid ""
 "``kstars``), never in plain-text configuration files. Regenerating a token "
 "immediately invalidates the previous one."
 msgstr ""
+"Les jetons sont stockés dans le trousseau système (sous le nom de service "
+"``kstars``), jamais dans des fichiers de configuration en clair. Régénérer "
+"un jeton invalide immédiatement le précédent."
 
 #: ../../user_manual/ekos-mcp.rst:48
 msgid ""
@@ -128,6 +162,10 @@ msgid ""
 "messages sent with ``POST``. For example, calling the ``ekos_status`` tool "
 "with curl:"
 msgstr ""
+"Pour connecter un client, pointez-le vers ``http://127.0.0.1:8765/mcp`` et "
+"transmettez le jeton comme identifiant HTTP Bearer standard. Les requêtes "
+"sont des messages JSON-RPC 2.0 envoyés en ``POST``. Par exemple, pour "
+"appeler l'outil ``ekos_status`` avec curl :"
 
 #: ../../user_manual/ekos-mcp.rst:50
 msgid ""
@@ -137,6 +175,11 @@ msgid ""
 "  -d '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"tools/call\",\n"
 "       \"params\": {\"name\": \"ekos_status\", \"arguments\": {}}}'"
 msgstr ""
+"curl -s http://127.0.0.1:8765/mcp \\\n"
+"  -H \"Authorization: Bearer <your token>\" \\\n"
+"  -H \"Content-Type: application/json\" \\\n"
+"  -d '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"tools/call\",\n"
+"       \"params\": {\"name\": \"ekos_status\", \"arguments\": {}}}'"
 
 #: ../../user_manual/ekos-mcp.rst:58
 msgid ""
@@ -144,16 +187,21 @@ msgid ""
 "— here the INDI connection state, the active profile, and the connected "
 "devices."
 msgstr ""
+"La réponse est une enveloppe JSON-RPC dont le champ ``result`` porte le "
+"résultat de l'outil — ici l'état de la connexion INDI, le profil actif et "
+"les périphériques connectés."
 
 #: ../../user_manual/ekos-mcp.rst:60
 msgid ""
 "A Server-Sent Events stream is available at ``/mcp/stream``. Each connection "
 "is rate-limited to 60 requests."
 msgstr ""
+"Un flux Server-Sent Events est disponible sur ``/mcp/stream``. Chaque "
+"connexion est limitée à 60 requêtes."
 
 #: ../../user_manual/ekos-mcp.rst:65
 msgid "Safety Controls"
-msgstr ""
+msgstr "Contrôles de sécurité"
 
 #: ../../user_manual/ekos-mcp.rst:69
 msgid ""
@@ -162,10 +210,15 @@ msgid ""
 "whenever observation is enough, and review which tools are enabled before "
 "handing control to an agent."
 msgstr ""
+"Un jeton à accès complet permet à un agent IA de piloter votre monture et "
+"votre moteur de mise au point. Sur un matériel en fonctionnement, traitez ce "
+"jeton comme un mot de passe : préférez le jeton en lecture seule dès que "
+"l'observation suffit, et vérifiez quels outils sont activés avant de confier "
+"le contrôle à un agent."
 
 #: ../../user_manual/ekos-mcp.rst:71
 msgid "Three mechanisms limit what a connected client can do:"
-msgstr ""
+msgstr "Trois mécanismes limitent ce qu'un client connecté peut faire :"
 
 #: ../../user_manual/ekos-mcp.rst:73
 msgid ""
@@ -173,12 +226,18 @@ msgid ""
 "server refuses every mutating tool for all clients, regardless of which "
 "token they present."
 msgstr ""
+":guilabel:`Mode lecture seule (refuse les outils de contrôle du matériel)`. "
+"Une fois coché, le serveur refuse tous les outils modifiants pour tous les "
+"clients, quel que soit le jeton présenté."
 
 #: ../../user_manual/ekos-mcp.rst:75
 msgid ""
 "The read-only token. Clients authenticating with it can only call tools "
 "marked read-only, even when read-only mode is off."
 msgstr ""
+"Le jeton en lecture seule. Les clients qui s'authentifient avec lui peuvent "
+"seulement appeler les outils marqués en lecture seule, même quand le mode "
+"lecture seule est désactivé."
 
 #: ../../user_manual/ekos-mcp.rst:77
 msgid ""
@@ -187,6 +246,11 @@ msgid ""
 "Unchecked tools are hidden from clients entirely: they disappear from "
 "``tools/list`` and calls to them are rejected."
 msgstr ""
+"L'arborescence :guilabel:`Outils disponibles`. Tous les outils exposés par "
+"le serveur y sont listés, regroupés par famille, avec une case à cocher par "
+"outil et par famille. Les outils décochés sont entièrement masqués aux "
+"clients : ils disparaissent de ``tools/list`` et les appels vers eux sont "
+"rejetés."
 
 #: ../../user_manual/ekos-mcp.rst:83
 msgid ""
@@ -195,10 +259,15 @@ msgid ""
 "is hard to undo (such as ``mount_sync``), following the annotation hints of "
 "the MCP specification."
 msgstr ""
+"Dans l'arborescence, une icône de cadenas marque les outils en lecture seule "
+"et une icône d'engrenage marque les outils qui modifient l'état du matériel. "
+"Les infobulles indiquent aussi les outils dont l'effet est difficile à "
+"annuler (comme ``mount_sync``), en suivant les indications d'annotation de "
+"la spécification MCP."
 
 #: ../../user_manual/ekos-mcp.rst:88
 msgid "Tool Reference"
-msgstr ""
+msgstr "Référence des outils"
 
 #: ../../user_manual/ekos-mcp.rst:90
 msgid ""
@@ -206,53 +275,58 @@ msgid ""
 "column shows *read* for tools that only observe the rig and *control* for "
 "tools that change its state."
 msgstr ""
+"Les tableaux ci-dessous listent les outils actuellement fournis avec KStars. "
+"La colonne *Accès* indique *lecture* pour les outils qui se contentent "
+"d'observer le matériel et *contrôle* pour ceux qui modifient son état."
 
 #: ../../user_manual/ekos-mcp.rst:95
 msgid "Ekos Status"
-msgstr ""
+msgstr "État d'Ekos"
 
 #: ../../user_manual/ekos-mcp.rst:101 ../../user_manual/ekos-mcp.rst:117
 #: ../../user_manual/ekos-mcp.rst:133 ../../user_manual/ekos-mcp.rst:179
 #: ../../user_manual/ekos-mcp.rst:206
 msgid "Tool"
-msgstr ""
+msgstr "Outil"
 
 #: ../../user_manual/ekos-mcp.rst:102 ../../user_manual/ekos-mcp.rst:118
 #: ../../user_manual/ekos-mcp.rst:134 ../../user_manual/ekos-mcp.rst:180
 #: ../../user_manual/ekos-mcp.rst:207
 msgid "Purpose"
-msgstr ""
+msgstr "Rôle"
 
 #: ../../user_manual/ekos-mcp.rst:103 ../../user_manual/ekos-mcp.rst:119
 #: ../../user_manual/ekos-mcp.rst:135 ../../user_manual/ekos-mcp.rst:181
 #: ../../user_manual/ekos-mcp.rst:208
 msgid "Access"
-msgstr ""
+msgstr "Accès"
 
 #: ../../user_manual/ekos-mcp.rst:104
 msgid "``ekos_status``"
-msgstr ""
+msgstr "``ekos_status``"
 
 #: ../../user_manual/ekos-mcp.rst:105
 msgid ""
 "Current INDI/Ekos connection status, active profile, and connected device "
 "names."
 msgstr ""
+"État actuel de la connexion INDI/Ekos, profil actif et noms des "
+"périphériques connectés."
 
 #: ../../user_manual/ekos-mcp.rst:106 ../../user_manual/ekos-mcp.rst:122
 #: ../../user_manual/ekos-mcp.rst:138 ../../user_manual/ekos-mcp.rst:141
 #: ../../user_manual/ekos-mcp.rst:184 ../../user_manual/ekos-mcp.rst:211
 #: ../../user_manual/ekos-mcp.rst:214
 msgid "read"
-msgstr ""
+msgstr "lecture"
 
 #: ../../user_manual/ekos-mcp.rst:111
 msgid "Catalog"
-msgstr ""
+msgstr "Catalogue"
 
 #: ../../user_manual/ekos-mcp.rst:120
 msgid "``catalog_search``"
-msgstr ""
+msgstr "``catalog_search``"
 
 #: ../../user_manual/ekos-mcp.rst:121
 msgid ""
@@ -261,35 +335,45 @@ msgid ""
 "match, a type filter, and a magnitude limit. Use it to resolve a name like "
 "\"M42\" to the canonical \"M 42\" before slewing."
 msgstr ""
+"Recherche dans les catalogues de KStars par nom. Renvoie les objets "
+"correspondants avec leurs noms canoniques, types, coordonnées J2000 et "
+"magnitudes. Prend en charge la correspondance partielle ou exacte, un filtre "
+"de type et une limite de magnitude. Utilisez-le pour résoudre un nom comme « "
+"M42 » vers sa forme canonique « M 42 » avant de pointer."
 
 #: ../../user_manual/ekos-mcp.rst:127
 msgid "Mount"
-msgstr ""
+msgstr "Monture"
 
 #: ../../user_manual/ekos-mcp.rst:136
 msgid "``mount_coords``"
-msgstr ""
+msgstr "``mount_coords``"
 
 #: ../../user_manual/ekos-mcp.rst:137
 msgid "Current RA/Dec, Alt/Az, hour angle, pier side and tracking status."
 msgstr ""
+"AD/DEC, Alt/Az, angle horaire, côté du pied de la monture et état du suivi "
+"actuels."
 
 #: ../../user_manual/ekos-mcp.rst:139
 msgid "``mount_get_slew_rates``"
-msgstr ""
+msgstr "``mount_get_slew_rates``"
 
 #: ../../user_manual/ekos-mcp.rst:140
 msgid ""
 "List the slew rates supported by the driver and the currently selected one."
 msgstr ""
+"Liste les taux de pivotement pris en charge par le pilote, ainsi que celui "
+"actuellement sélectionné."
 
 #: ../../user_manual/ekos-mcp.rst:142
 msgid "``mount_goto``"
-msgstr ""
+msgstr "``mount_goto``"
 
 #: ../../user_manual/ekos-mcp.rst:143
 msgid "Slew to equatorial coordinates (RA in hours, Dec in degrees)."
 msgstr ""
+"Pointe vers des coordonnées équatoriales (AD en heures, Dec en degrés)."
 
 #: ../../user_manual/ekos-mcp.rst:144 ../../user_manual/ekos-mcp.rst:147
 #: ../../user_manual/ekos-mcp.rst:150 ../../user_manual/ekos-mcp.rst:153
@@ -298,83 +382,93 @@ msgstr ""
 #: ../../user_manual/ekos-mcp.rst:168 ../../user_manual/ekos-mcp.rst:187
 #: ../../user_manual/ekos-mcp.rst:190 ../../user_manual/ekos-mcp.rst:193
 msgid "control"
-msgstr ""
+msgstr "contrôle"
 
 #: ../../user_manual/ekos-mcp.rst:145
 msgid "``mount_goto_target``"
-msgstr ""
+msgstr "``mount_goto_target``"
 
 #: ../../user_manual/ekos-mcp.rst:146
 msgid ""
 "Slew to a named object, resolved by KStars (canonical name, e.g. \"M 42\")."
 msgstr ""
+"Pointe vers un objet nommé, résolu par KStars (nom canonique, par exemple « "
+"M 42 »)."
 
 #: ../../user_manual/ekos-mcp.rst:148
 msgid "``mount_sync``"
-msgstr ""
+msgstr "``mount_sync``"
 
 #: ../../user_manual/ekos-mcp.rst:149
 msgid ""
 "Sync the mount pointing model to the given coordinates. Hard to undo — a "
 "wrong sync corrupts the pointing model."
 msgstr ""
+"Synchronise le modèle de pointage de la monture sur les coordonnées données. "
+"Difficile à annuler — une synchronisation erronée corrompt le modèle de "
+"pointage."
 
 #: ../../user_manual/ekos-mcp.rst:151
 msgid "``mount_park`` / ``mount_unpark``"
-msgstr ""
+msgstr "``mount_park`` / ``mount_unpark``"
 
 #: ../../user_manual/ekos-mcp.rst:152
 msgid "Park the mount at its park position, or unpark it for operation."
 msgstr ""
+"Parque la monture à sa position de parcage, ou la déparque pour l'utiliser."
 
 #: ../../user_manual/ekos-mcp.rst:154
 msgid "``mount_abort``"
-msgstr ""
+msgstr "``mount_abort``"
 
 #: ../../user_manual/ekos-mcp.rst:155
 msgid "Immediately stop all mount motion."
-msgstr ""
+msgstr "Arrête immédiatement tout mouvement de la monture."
 
 #: ../../user_manual/ekos-mcp.rst:157
 msgid "``mount_set_tracking``"
-msgstr ""
+msgstr "``mount_set_tracking``"
 
 #: ../../user_manual/ekos-mcp.rst:158
 msgid "Enable or disable sidereal tracking."
-msgstr ""
+msgstr "Active ou désactive le suivi sidéral."
 
 #: ../../user_manual/ekos-mcp.rst:160
 msgid "``mount_set_track_mode``"
-msgstr ""
+msgstr "``mount_set_track_mode``"
 
 #: ../../user_manual/ekos-mcp.rst:161
 msgid "Select the tracking rate: sidereal, lunar, solar or custom."
 msgstr ""
+"Sélectionne le taux de suivi : sidéral, lunaire, solaire ou personnalisé."
 
 #: ../../user_manual/ekos-mcp.rst:163
 msgid "``mount_set_slew_rate``"
-msgstr ""
+msgstr "``mount_set_slew_rate``"
 
 #: ../../user_manual/ekos-mcp.rst:164
 msgid "Select a slew rate by index into the driver's list."
 msgstr ""
+"Sélectionne un taux de pivotement par son index dans la liste du pilote."
 
 #: ../../user_manual/ekos-mcp.rst:166
 msgid "``mount_set_meridian_flip``"
-msgstr ""
+msgstr "``mount_set_meridian_flip``"
 
 #: ../../user_manual/ekos-mcp.rst:167
 msgid ""
 "Enable or disable the automatic meridian flip and set its hour-angle offset."
 msgstr ""
+"Active ou désactive le retournement au méridien automatique et définit son "
+"décalage d'angle horaire."
 
 #: ../../user_manual/ekos-mcp.rst:173
 msgid "Focuser"
-msgstr ""
+msgstr "Moteur de mise au point"
 
 #: ../../user_manual/ekos-mcp.rst:182
 msgid "``focuser_status``"
-msgstr ""
+msgstr "``focuser_status``"
 
 #: ../../user_manual/ekos-mcp.rst:183
 msgid ""
@@ -382,20 +476,27 @@ msgid ""
 "optional ``name`` parameter selects a device on multi-focuser rigs; all "
 "focuser tools accept it."
 msgstr ""
+"Nom du moteur de mise au point, position actuelle et maximale, et "
+"indicateurs de capacités. Un paramètre ``name`` optionnel permet de "
+"sélectionner un périphérique sur un matériel à plusieurs moteurs de mise au "
+"point ; tous les outils de mise au point l'acceptent."
 
 #: ../../user_manual/ekos-mcp.rst:185
 msgid "``focuser_move_absolute``"
-msgstr ""
+msgstr "``focuser_move_absolute``"
 
 #: ../../user_manual/ekos-mcp.rst:186
 msgid ""
 "Move to an absolute step position, validated against the driver's maximum. "
 "Must not be called while Ekos autofocus is running."
 msgstr ""
+"Déplace vers une position en pas absolue, validée par rapport au maximum du "
+"pilote. Ne doit pas être appelé pendant qu'une mise au point automatique "
+"Ekos est en cours."
 
 #: ../../user_manual/ekos-mcp.rst:188
 msgid "``focuser_move_relative``"
-msgstr ""
+msgstr "``focuser_move_relative``"
 
 #: ../../user_manual/ekos-mcp.rst:189
 msgid ""
@@ -403,18 +504,21 @@ msgid ""
 "direction is driver-dependent). Must not be called while Ekos autofocus is "
 "running."
 msgstr ""
+"Déplace d'un nombre signé de pas (positif vers l'extérieur, négatif vers "
+"l'intérieur ; le sens dépend du pilote). Ne doit pas être appelé pendant "
+"qu'une mise au point automatique Ekos est en cours."
 
 #: ../../user_manual/ekos-mcp.rst:191
 msgid "``focuser_abort_move``"
-msgstr ""
+msgstr "``focuser_abort_move``"
 
 #: ../../user_manual/ekos-mcp.rst:192
 msgid "Stop any in-flight focuser motion."
-msgstr ""
+msgstr "Arrête tout mouvement du moteur de mise au point en cours."
 
 #: ../../user_manual/ekos-mcp.rst:198
 msgid "Image Access"
-msgstr ""
+msgstr "Accès aux images"
 
 #: ../../user_manual/ekos-mcp.rst:200
 msgid ""
@@ -423,10 +527,15 @@ msgid ""
 "``camera`` parameter selects a device; by default the most recent frame "
 "across all cameras is returned."
 msgstr ""
+"Ces outils voient les images de tous les producteurs : la file "
+"d'acquisition, la mise au point, l'alignement, l'alignement polaire et les "
+"acquisitions ponctuelles. Sur un matériel à plusieurs caméras, un paramètre "
+"``camera`` optionnel permet de sélectionner un périphérique ; par défaut, "
+"l'image la plus récente toutes caméras confondues est renvoyée."
 
 #: ../../user_manual/ekos-mcp.rst:209
 msgid "``image_last_info``"
-msgstr ""
+msgstr "``image_last_info``"
 
 #: ../../user_manual/ekos-mcp.rst:210
 msgid ""
@@ -434,13 +543,19 @@ msgid ""
 "filter, target, timestamp, sensor temperature, HFR, star count and "
 "dimensions."
 msgstr ""
+"Métadonnées de l'image la plus récemment capturée : chemin du fichier, "
+"caméra, exposition, filtre, cible, horodatage, température du capteur, HFR, "
+"nombre d'étoiles et dimensions."
 
 #: ../../user_manual/ekos-mcp.rst:212
 msgid "``image_last_thumbnail``"
-msgstr ""
+msgstr "``image_last_thumbnail``"
 
 #: ../../user_manual/ekos-mcp.rst:213
 msgid ""
 "A base64-encoded JPEG preview of the most recent frame, sized for vision-"
 "capable models (default 512 pixels on the long edge, at most 1024)."
 msgstr ""
+"Un aperçu JPEG encodé en base64 de l'image la plus récente, dimensionné pour "
+"les modèles capables de vision (512 pixels sur le plus grand côté par "
+"défaut, 1024 au maximum)."

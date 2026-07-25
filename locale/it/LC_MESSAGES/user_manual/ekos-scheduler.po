@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-04 02:06+0000\n"
-"PO-Revision-Date: 2026-07-11 19:35+0200\n"
+"PO-Revision-Date: 2026-07-19 20:39+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -693,6 +693,17 @@ msgid ""
 "to wait until your scheduler job is completed and edit that .esq directly in "
 "the capture tab."
 msgstr ""
+"È importante capire che le sequenze di acquisizione dipendono in qualche "
+"misura dalla ruota portafiltri e dalla fotocamera che vengono utilizzate "
+"(per es. i nomi dei filtri, i valori ISO possibili, ecc.). L'Editor sequenza "
+"di acquisizione, che non è connesso ai driver del dispositivo, non ha "
+"accesso diretto a queste informazioni, al contrario, utilizza i valori "
+"registrati dall'ultima volta che la scheda di acquisizione si è collegata "
+"con i suoi dispositivi. Pertanto, non ha senso provare e creare un file .esq "
+"per una fotocamera o una ruota portafiltri diversa dall'ultima volta in cui "
+"ci si è connessi. Potrebbe essere necessario dover aspettare il "
+"completamento del processo del pianificatore e modificare quel file .esq "
+"direttamente nella scheda Acquisisci."
 
 #: ../../user_manual/ekos-scheduler.rst:381
 msgid ""
@@ -703,6 +714,13 @@ msgid ""
 "can save to a different filename and then edit the scheduler job to use the "
 "new .esq filename."
 msgstr ""
+"Si consiglia anche di non sovrascrivere i file .esq quando i processi del "
+"pianificatore stanno attualmente utilizzando quegli stessi file (va bene se "
+"il pianificatore è in esecuzione, ma non sta eseguendo quel processo). Ciò "
+"può provocare una de-sincronizzazione del pianificatore e dei moduli di "
+"acquisizione, dato che leggono i file in tempi differenti. Puoi salvare, "
+"invece, con un nome file diverso e poi modificare il processo per utilizzare "
+"il nuovo nome file .esq."
 
 #: ../../user_manual/ekos-scheduler.rst:393
 msgid "Workflow"
@@ -718,6 +736,10 @@ msgid ""
 "observatory workflow. The overall procedure typically utilized in an "
 "observatory can be summarized in three primary stages:"
 msgstr ""
+"La descrizione sopra riportata affronta solo lo stadio di **Acquisizione dei "
+"dati** del flusso di lavoro dell'osservatorio. La procedura complessiva "
+"normalmente utilizzata in un osservatorio può essere riassunta in tre stadi "
+"principali:"
 
 #: ../../user_manual/ekos-scheduler.rst:402
 msgid "Startup"
@@ -725,7 +747,7 @@ msgstr "Avvio"
 
 #: ../../user_manual/ekos-scheduler.rst:404
 msgid "Data Acquisition (including preprocessing and storage)"
-msgstr ""
+msgstr "Acquisizione dati (inclusi preelaborazione e memorizzazione)"
 
 #: ../../user_manual/ekos-scheduler.rst:406
 #: ../../user_manual/ekos-scheduler.rst:485
@@ -739,26 +761,27 @@ msgstr "Procedura di avvio"
 #: ../../user_manual/ekos-scheduler.rst:413
 msgid "Startup procedure is unique to each observatory but may include:"
 msgstr ""
+"La procedura di avvio è unica per ciascun osservatorio ma può includere:"
 
 #: ../../user_manual/ekos-scheduler.rst:416
 msgid "Turning on power to equipment"
-msgstr ""
+msgstr "Accensione dell'attrezzatura"
 
 #: ../../user_manual/ekos-scheduler.rst:418
 msgid "Running safety/sanity checks"
-msgstr ""
+msgstr "Esecuzione dei controlli di sicurezza"
 
 #: ../../user_manual/ekos-scheduler.rst:420
 msgid "Checking weather conditions"
-msgstr ""
+msgstr "Verifica delle condizioni meteorologiche"
 
 #: ../../user_manual/ekos-scheduler.rst:422
 msgid "Turning off light"
-msgstr ""
+msgstr "Spegnimento della luce"
 
 #: ../../user_manual/ekos-scheduler.rst:424
 msgid "Fan/Light control"
-msgstr ""
+msgstr "Controllo ventola/luce"
 
 #: ../../user_manual/ekos-scheduler.rst:426
 msgid "Unparking dome"
@@ -781,6 +804,13 @@ msgid ""
 "sequence process. If a startup script is specified, it shall be executed "
 "first."
 msgstr ""
+"Il Pianificatore di Ekos inizializza la procedura di avvio soltanto dopo che "
+"l'orario di avvio per il primo processo è stato chiuso (il tempo "
+"*precedente* predefinito è di 5 minuti prima dell'orario di *avvio*). Una "
+"volta che la procedura di avvio viene completata correttamente, il "
+"pianificatore sceglie il bersaglio del processo e inizia la procedura della "
+"sequenza. Se è stato specificato uno script di avvio, esso sarà eseguito per "
+"primo."
 
 #: ../../user_manual/ekos-scheduler.rst:443
 msgid "Data Acquisition"
@@ -791,28 +821,40 @@ msgid ""
 "Depending the on the user selection, the typical workflow proceeds as "
 "follows:"
 msgstr ""
+"A seconda della selezione dell'utente, il tipico flusso di lavoro procede "
+"come segue:"
 
 #: ../../user_manual/ekos-scheduler.rst:448
 msgid ""
 "Slew mount to target. If a FITS file was specified, it first solves the "
 "files and slew to the file coordinates."
 msgstr ""
+"Rotazione della montatura verso il bersaglio. Se è stato specificato un file "
+"FITS, prima risolve i file e quindi ruota verso le coordinate specificate "
+"nel file."
 
 #: ../../user_manual/ekos-scheduler.rst:452
 msgid ""
 "Auto-focus target. The autofocus process automatically selects the best star "
 "in the frame and runs the autofocus algorithm against it."
 msgstr ""
+"Messa a fuoco automatica del bersaglio. La procedura di messa a fuoco "
+"automatica seleziona automaticamente la stella migliore nel fotogramma ed "
+"esegue l'algoritmo di messa a fuoco automatica nei suoi confronti."
 
 #: ../../user_manual/ekos-scheduler.rst:456
 msgid "Perform plate solving, sync mount, and slew to target coordinates."
 msgstr ""
+"Esecuzione della risoluzione astrometrica, sincronizzazione della montatura "
+"e rotazione verso le coordinate del bersaglio."
 
 #: ../../user_manual/ekos-scheduler.rst:459
 msgid ""
 "Perform post-alignment focusing since the frame might have moved during the "
 "plate solving process."
 msgstr ""
+"Esecuzione della messa a fuoco di post-allineamento, dato che il fotogramma "
+"potrebbe essersi spostato durante la procedura di risoluzione astrometrica."
 
 #: ../../user_manual/ekos-scheduler.rst:462
 msgid ""
@@ -820,18 +862,26 @@ msgid ""
 "automatically selects the best guide star, performs calibration, and starts "
 "the autoguide process."
 msgstr ""
+"Esecuzione della calibrazione e avvio della guida automatica: la procedura "
+"di calibrazione seleziona automaticamente la stella guida migliore, esegue "
+"la calibrazione e avvia la procedura di guida automatica."
 
 #: ../../user_manual/ekos-scheduler.rst:467
 msgid ""
 "Load the sequence file in the :doc:`Capture module  <ekos-capture>` and "
 "start the imaging process."
 msgstr ""
+"Caricamento del file delle sequenze nel :doc:`modulo Acquisisci <ekos-"
+"capture>` e avvio della procedura di riprese fotografiche."
 
 #: ../../user_manual/ekos-scheduler.rst:471
 msgid ""
 "Coordinate module issues, such as failures in guiding or alignment. They may "
 "result is Scheduler job suspensions and rescheduling."
 msgstr ""
+"Coordinamento di problemi con i moduli, come errori nella guida o "
+"nell'allineamento. Può comportare la sospensione dei processi del "
+"pianificatore e la loro riprogrammazione."
 
 #: ../../user_manual/ekos-scheduler.rst:475
 msgid ""
@@ -840,6 +890,11 @@ msgid ""
 "flips, autofocus runs initiated by temperature change or timer expiration, "
 "and minimum guiding deviation requirements for capture."
 msgstr ""
+"Nota: alcune interazioni tra i moduli sono inizializzate dagli stessi moduli "
+"ma monitorate dal pianificatore. Esse includono le inversioni del meridiano, "
+"esecuzioni della messa a fuoco automatica inizializzate dal cambio di "
+"temperatura o dalla fine del timer e i requisiti di deviazione minimi della "
+"guida per le acquisizioni."
 
 #: ../../user_manual/ekos-scheduler.rst:487
 msgid ""
@@ -850,22 +905,34 @@ msgid ""
 "shutdown to preserve resources and performs the startup procedure again when "
 "the target is due."
 msgstr ""
+"Una volta che il processo è stato completato correttamente, il pianificatore "
+"seleziona il processo successivo. Se in quel momento non è previsto alcun "
+"processo, la montatura viene parcheggiata fino all'esecuzione del processo "
+"successivo. Inoltre, se il processo successivo non è previsto entro un tempo "
+"configurabile dall'utente, il pianificatore esegue uno spegnimento "
+"*preventivo* per risparmiare risorse, e ripete la procedura di avvio alla "
+"data di scadenza prevista."
 
 #: ../../user_manual/ekos-scheduler.rst:495
 msgid ""
 "If an unrecoverable error occurs, the observatory initiates shutdown "
 "procedure. If there is a shutdown script, it will be executed last."
 msgstr ""
+"Se si verifica un errore irreversibile, l'osservatorio inizializza la "
+"procedura di spegnimento. Se è presente uno script per lo spegnimento, sarà "
+"l'ultimo a essere eseguito."
 
 #: ../../user_manual/ekos-scheduler.rst:499
 msgid ""
 "The following video demonstrates an earlier version of the scheduler, but "
 "the basic principles still apply today:"
 msgstr ""
+"Il video seguente mostra una versione precedente del pianificatore ma i "
+"principi di base sono ancora applicabili:"
 
 #: ../../user_manual/ekos-scheduler.rst:505
 msgid "Ekos Scheduler (https://youtu.be/v8vIXD1kois)"
-msgstr ""
+msgstr "Pianificatore di Ekos (https://youtu.be/v8vIXD1kois)"
 
 #: ../../user_manual/ekos-scheduler.rst:510
 msgid "Weather Monitoring"
@@ -878,10 +945,17 @@ msgid ""
 "weather driver to continuously monitor the weather conditions. For "
 "simplicity sake, the weather conditions can be summed in three states:"
 msgstr ""
+"Un'altra funzionalità critica di qualsiasi osservatorio robotico operato da "
+"remoto è il monitoraggio del meteo. Per gli aggiornamenti meteo Ekos si basa "
+"sul driver meteo INDI selezionato per monitorare in maniera continuativa le "
+"condizioni meteorologiche. Per semplicità, le condizioni meteo si possono "
+"riassumere in tre stati:"
 
 #: ../../user_manual/ekos-scheduler.rst:518
 msgid "**Ok**: Weather conditions are clear and optimal for imaging."
 msgstr ""
+"**Ok**: le condizioni meteorologiche sono buone e ottimali per le riprese "
+"fotografiche."
 
 #: ../../user_manual/ekos-scheduler.rst:521
 msgid ""
@@ -892,12 +966,21 @@ msgid ""
 "operational. The exact behavior to take under Warning status can be "
 "configured."
 msgstr ""
+"**Avviso**: le condizioni meteorologiche non sono buone, il seeing è "
+"mediocre o parzialmente ostruito e non adatto alle riprese fotografiche. "
+"Qualsiasi ulteriore procedura di ripresa è sospesa fino a quando il meteo "
+"non migliora. Lo stato dell'avviso meteo non rappresenta un pericolo per le "
+"apparecchiature dell'osservatorio, pertanto esso è mantenuto operativo. Può "
+"essere configurato il comportamento esatto da intraprendere nello stato di "
+"Avviso."
 
 #: ../../user_manual/ekos-scheduler.rst:530
 msgid ""
 "**Alert**: Weather conditions are detrimental to the observatory safety and "
 "shutdown must be initiated as soon as possible."
 msgstr ""
+"**Allerta**: le condizioni meteorologiche sono dannose per la sicurezza "
+"dell'osservatorio e lo spegnimento deve essere inizializzato quanto prima."
 
 #: ../../user_manual/ekos-scheduler.rst:534
 msgid "|Scheduler Weather Settings|"
@@ -905,19 +988,24 @@ msgstr "|Scheduler Weather Settings|"
 
 #: ../../user_manual/ekos-scheduler.rst:536
 msgid "Weather monitoring can be configured in two ways:"
-msgstr ""
+msgstr "Il monitoraggio meteorologico può essere configurato in due modi:"
 
 #: ../../user_manual/ekos-scheduler.rst:538
 msgid ""
 "**Part of the equipment profile** - A weather driver starts with the "
 "observatory equipment"
 msgstr ""
+"come **Parte del profilo dell'attrezzatura** - si avvia un driver meteo con "
+"l'attrezzatura dell'osservatorio"
 
 #: ../../user_manual/ekos-scheduler.rst:539
 msgid ""
 "**Standalone INDI Safety Monitor** - An INDI Safety Monitor driver runs "
 "independently on a separate INDI server"
 msgstr ""
+"come **Monitor della sicurezza INDI indipendente** - viene eseguito in modo "
+"indipendente un driver di monitoraggio della sicurezza INDI su server INDI "
+"separato"
 
 #: ../../user_manual/ekos-scheduler.rst:541
 msgid ""
@@ -928,6 +1016,13 @@ msgid ""
 "a shutdown if conditions are unsafe, this start-stop cycle is inefficient "
 "and potentially harmful to equipment."
 msgstr ""
+"**Importante:** se non è configurato un monitor della sicurezza "
+"indipendente, il pianificatore non può eseguire i controlli di sicurezza "
+"sulle condizioni meteo prima di avviare l'osservatorio. Questo significa che "
+"l'osservatorio potrebbe avviarsi in condizioni non sicure. Mentre il driver "
+"meteo del profilo dell'attrezzatura si attiva dopo l'avvio ed esegue "
+"immediatamente uno spegnimento se le condizioni non sono sicure, questo "
+"ciclo start-stop è inefficiente e potenzialmente dannoso per l'attrezzatura."
 
 #: ../../user_manual/ekos-scheduler.rst:547
 msgid ""
@@ -940,10 +1035,19 @@ msgid ""
 "Safety Monitor driver. This allows the scheduler to verify conditions are "
 "safe *before* starting up the observatory."
 msgstr ""
+"**Buona pratica:** configura un Monitor della sicurezza INDI indipendente. "
+"Quando è presente, ha sempre la precedenza su qualsiasi driver per il meteo "
+"presente nel profilo dell'attrezzatura per determinare la sicurezza "
+"dell'osservatorio. Il monitor può essere configurato per ascoltare qualsiasi "
+"numero di driver meteo o ausiliare (come UPS) che può creare un rischio per "
+"la sicurezza dell'operatività dell'osservatorio. Al driver Monitor della "
+"sicurezza può essere aggiunto qualsiasi driver INDI che implementa la "
+"proprietà standard INDI SAFETY_STATUS. Ciò permette al pianificatore di "
+"verificare che le condizioni siano sicure *prima* di avviare l'osservatorio."
 
 #: ../../user_manual/ekos-scheduler.rst:555
 msgid "Weather Alert Response"
-msgstr ""
+msgstr "Risposta di allerta meteo"
 
 #: ../../user_manual/ekos-scheduler.rst:557
 msgid ""
@@ -953,44 +1057,59 @@ msgid ""
 "the Ekos and INDI connections while protecting your equipment, allowing for "
 "quick resumption when conditions improve."
 msgstr ""
+"Quando le condizioni meteorologiche peggiorano e passano allo stato di "
+"Allerta durante le operazioni, il pianificatore inizializza una procedura di "
+"\"spegnimento parziale\" protettivo. A differenza dello spegnimento "
+"completo, in cui tutti i sistemi vengono fermati, lo spegnimento parziale "
+"mantiene le connessioni Ekos e INDI e nel contempo protegge l'attrezzatura, "
+"permettendo una riattivazione rapida se le condizioni migliorano."
 
 #: ../../user_manual/ekos-scheduler.rst:563
 msgid "**Soft Shutdown Sequence:**"
-msgstr ""
+msgstr "**Sequenza di spegnimento parziale:**"
 
 #: ../../user_manual/ekos-scheduler.rst:565
 msgid "When a weather alert is detected:"
-msgstr ""
+msgstr "Quando viene rilevato un'allerta meteo:"
 
 #: ../../user_manual/ekos-scheduler.rst:567
 msgid ""
 "A configurable delay period (default: 10 seconds) prevents reaction to "
 "momentary sensor issues"
 msgstr ""
+"Un periodo di ritardo configurabile (predefinito: 10 secondi) impedisce la "
+"reazione ai problemi transitori dei sensori"
 
 #: ../../user_manual/ekos-scheduler.rst:570
 msgid ""
 "If the alert persists, the current scheduler job is aborted (marked ABORTED, "
 "not ERROR, so it can restart later)"
 msgstr ""
+"Se l'allerta persiste, il processo in corso del pianificatore è interrotto "
+"(contrassegnato INTERROTTO, non ERRORE, in modo che possa essere riavviato "
+"successivamente)"
 
 #: ../../user_manual/ekos-scheduler.rst:573
 msgid ""
 "The Pre-Shutdown Queue executes to protect equipment (typically closes dust "
 "caps, parks mount, closes dome)"
 msgstr ""
+"Si esegue la coda di pre-spegnimento per proteggere l'attrezzatura (in "
+"genere chiude i parapolvere, parcheggia la montatura, chiude la cupola)"
 
 #: ../../user_manual/ekos-scheduler.rst:576
 msgid "Ekos and INDI remain running for faster recovery"
-msgstr ""
+msgstr "Ekos e INDI restano in esecuzione per un ripristino più veloce"
 
 #: ../../user_manual/ekos-scheduler.rst:578
 msgid "The scheduler enters a grace period to wait for weather improvement"
 msgstr ""
+"Il pianificatore entra in un periodo di ritardo, in attesa che le condizioni "
+"meteorologiche migliorino"
 
 #: ../../user_manual/ekos-scheduler.rst:583
 msgid "Weather Grace Period"
-msgstr ""
+msgstr "Ritardo meteo"
 
 #: ../../user_manual/ekos-scheduler.rst:585
 msgid ""
@@ -998,10 +1117,14 @@ msgid ""
 "monitors weather conditions after initiating a soft shutdown. If weather "
 "improves during this period, operations automatically resume."
 msgstr ""
+"Il ritardo è un tempo di attesa configurabile durante il quale il "
+"pianificatore controlla le condizioni meteorologiche dopo aver inizializzato "
+"uno spegnimento parziale. Se il meteo migliora durante questo periodo, le "
+"operazioni riprendono in automatico."
 
 #: ../../user_manual/ekos-scheduler.rst:590
 msgid "**Special value — Grace Period = 0 (Indefinite Wait):**"
-msgstr ""
+msgstr "**Valore speciale — Ritardo = 0 (attesa indefinita):**"
 
 #: ../../user_manual/ekos-scheduler.rst:592
 msgid ""
@@ -1012,20 +1135,31 @@ msgid ""
 "This is the recommended setting for fully automated, unattended "
 "observatories."
 msgstr ""
+"Impostare il ritardo a **0** istruisce il pianificatore ad attendere **in "
+"modo indefinito** il miglioramento delle condizioni meteorologiche. Il "
+"pianificatore non dismette mai o interrompe i processi a causa del meteo: "
+"semplicemente attende, parcheggia fino a quando le condizioni di sicurezza "
+"non ritornano OK, non importa quanto tempo ci impieghino (ore, giorni, "
+"ecc.). Questa è l'impostazione raccomandata per gli osservatori "
+"completamente automatizzati, non sorvegliati."
 
 #: ../../user_manual/ekos-scheduler.rst:599
 msgid "When the grace period is 0:"
-msgstr ""
+msgstr "Quanto il periodo di ritardo è 0:"
 
 #: ../../user_manual/ekos-scheduler.rst:601
 msgid ""
 "Equipment is protected immediately (pre-shutdown queue runs: park mount, "
 "close dome, etc.)"
 msgstr ""
+"L'attrezzatura viene protetta immediatamente (viene eseguita la coda di pre-"
+"spegnimento: parcheggio montatura, chiusura cupola, ecc.)"
 
 #: ../../user_manual/ekos-scheduler.rst:603
 msgid "Ekos and INDI **remain running** — no full shutdown occurs"
 msgstr ""
+"Ekos e INDI **restano in esecuzione** — non viene eseguito lo spegnimento "
+"completo"
 
 #: ../../user_manual/ekos-scheduler.rst:604
 msgid ""
@@ -1059,7 +1193,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-scheduler.rst:620
 msgid "**Configuration:**"
-msgstr ""
+msgstr "**Configurazione:**"
 
 #: ../../user_manual/ekos-scheduler.rst:622
 #, fuzzy
