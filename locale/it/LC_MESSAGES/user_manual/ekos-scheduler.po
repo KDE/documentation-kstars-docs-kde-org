@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-04 02:06+0000\n"
-"PO-Revision-Date: 2026-07-19 20:39+0200\n"
+"PO-Revision-Date: 2026-07-25 17:06+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1166,22 +1166,30 @@ msgid ""
 "The scheduler monitors weather every 5 minutes as a safety net, and recovers "
 "**immediately** (within 10 ms) when the weather sensor reports OK"
 msgstr ""
+"Il pianificatore monitora il tempo meteorologico ogni cinque minuti come "
+"misura di sicurezza, e ripristina **immediatamente** (entro 10 ms) quando il "
+"sensore meteo segnala OK"
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
 "Jobs are left in **ABORTED** state (not ERROR) so they will restart "
 "automatically once conditions improve"
 msgstr ""
+"I processi vengono lasciati nello stato **INTERROTTO** (non ERRORE) in modo "
+"che possano ripartire automaticamente una volta che condizioni migliorano"
 
 #: ../../user_manual/ekos-scheduler.rst:609
 msgid ""
 "The log will show: *\"Observatory scheduled for soft shutdown. Monitoring "
 "weather indefinitely until safety improves.\"*"
 msgstr ""
+"Il registro mostrerà il seguente avviso: *\"Osservatorio programmato per lo "
+"spegnimento parziale. Monitoraggio indefinito del meteo fino a quando la "
+"sicurezza non migliora.\"*"
 
 #: ../../user_manual/ekos-scheduler.rst:612
 msgid "**Grace Period > 0 behavior:**"
-msgstr ""
+msgstr "**Comportamento del Ritardo > 0:**"
 
 #: ../../user_manual/ekos-scheduler.rst:614
 msgid ""
@@ -1190,16 +1198,20 @@ msgid ""
 "expires while the alert is still active, a full shutdown (INDI/Ekos stop) is "
 "performed and jobs are marked as aborted."
 msgstr ""
+"Se è stato configurato un periodo di ritardo diverso da zero, il "
+"pianificatore attende i minuti impostati dopo lo spegnimento parziale in "
+"attesa del miglioramento delle condizioni meteorologiche. Se il ritardo "
+"scade mentre è ancora attiva l'allerta, viene eseguito uno spegnimento "
+"completo (stop di INDI/Ekos) e i processi vengono contrassegnati come "
+"interrotti."
 
 #: ../../user_manual/ekos-scheduler.rst:620
 msgid "**Configuration:**"
 msgstr "**Configurazione:**"
 
 #: ../../user_manual/ekos-scheduler.rst:622
-#, fuzzy
-#| msgid "<phrase>Scheduler Settings</phrase>"
 msgid "In the Scheduler Weather Settings:"
-msgstr "<phrase>Impostazioni del Pianificatore</phrase>"
+msgstr "Nelle Impostazioni meteo del pianificatore:"
 
 #: ../../user_manual/ekos-scheduler.rst:624
 msgid ""
@@ -1208,6 +1220,11 @@ msgid ""
 "brief sensor glitches. During this delay, if the weather sensor recovers, no "
 "action is taken at all."
 msgstr ""
+"**Ritardo spegnimento per allerta meteo**: secondi di attesa dopo il "
+"rilevamento di allerta prima di iniziare lo spegnimento parziale "
+"(predefiniti: 10). Questo evita i falsi allarmi provocati da brevi e falsi "
+"segnali dei sensori. Durante questo ritardo, se il sensore meteo si "
+"riprende, non viene intrapresa alcuna azione."
 
 #: ../../user_manual/ekos-scheduler.rst:629
 msgid ""
@@ -1216,54 +1233,72 @@ msgid ""
 "**0** for indefinite monitoring — the recommended value for automated "
 "observatories that should always resume on their own."
 msgstr ""
+"**Ritardo meteo**: minuti di attesa (nello stato parcheggiato/spegnimento "
+"parziale) del miglioramento delle condizioni meteorologiche prima di "
+"attivare uno spegnimento completo. Imposta a **0** per il monitoraggio a "
+"tempo indefinito — il valore consigliato per gli osservatori automatizzati "
+"che devono ripartire da soli."
 
 #: ../../user_manual/ekos-scheduler.rst:637
 msgid "Automatic Weather Recovery"
-msgstr ""
+msgstr "Ripristino automatico"
 
 #: ../../user_manual/ekos-scheduler.rst:639
 msgid ""
 "When weather improves during the grace period, the scheduler automatically "
 "resumes operations:"
 msgstr ""
+"Quando il meteo migliora durante il periodo di ritardo, il pianificatore "
+"riprende automaticamente le operazioni:"
 
 #: ../../user_manual/ekos-scheduler.rst:642
 msgid "Weather status changes from Alert to Ok"
-msgstr ""
+msgstr "Lo stato del meteo passa da Allerta a Ok"
 
 #: ../../user_manual/ekos-scheduler.rst:644
 msgid ""
 "The Post-Startup Queue executes to reverse protective actions (opens dome, "
 "unparks mount, opens dust caps)"
 msgstr ""
+"La coda di post-avvio esegue le azioni di protezione al contrario (apre la "
+"cupola, sparcheggia la montatura, apre il cappuccio parapolvere)"
 
 #: ../../user_manual/ekos-scheduler.rst:647
 msgid "The scheduler resumes normal operation"
-msgstr ""
+msgstr "Il pianificatore riprende le normali operazioni"
 
 #: ../../user_manual/ekos-scheduler.rst:649
 msgid "The aborted job can restart if its constraints are still met"
 msgstr ""
+"Il processo interrotto può ripartire se i suoi vincoli sono ancora "
+"soddisfatti"
 
 #: ../../user_manual/ekos-scheduler.rst:651
 msgid "**Queue Usage During Weather Events:**"
-msgstr ""
+msgstr "**Uso della coda durante gli eventi meteorologici:**"
 
 #: ../../user_manual/ekos-scheduler.rst:653
 msgid "Weather events use specific startup and shutdown queues:"
 msgstr ""
+"Gli eventi meteorologici utilizzano code di avvio e spegnimento specifiche:"
 
 #: ../../user_manual/ekos-scheduler.rst:655
 msgid ""
 "**During Weather Shutdown**: Only Pre-Shutdown Queue executes (runs before "
 "stopping Ekos). Post-Shutdown Queue is skipped since Ekos remains running."
 msgstr ""
+"**Durante lo spegnimento per condizioni meteo**: viene eseguita solo la coda "
+"di pre-spegnimento (viene eseguita prima di fermare Ekos). La coda di post-"
+"spegnimento è saltata perché Ekos resta in esecuzione."
 
 #: ../../user_manual/ekos-scheduler.rst:659
 msgid ""
 "**During Weather Recovery**: Only Post-Startup Queue executes (runs after "
 "devices ready). Pre-Startup Queue is skipped since Ekos never stopped."
 msgstr ""
+"**Durante la ripartenza per condizioni meteo**: viene eseguita solo la coda "
+"di post-avvio (si esegue dopo i dispositivi sono pronti). La coda di pre-"
+"avvio è saltata perché Ekos non è mai fermato."
 
 #: ../../user_manual/ekos-scheduler.rst:663
 msgid ""
@@ -1271,6 +1306,9 @@ msgid ""
 "the Post-Startup queue should reverse exactly what the Pre-Shutdown queue "
 "did."
 msgstr ""
+"Le code di pre-spegnimento e post-avvio devono lavorare assieme in modo "
+"simmetrico: la coda di post-avvio deve fare esattamente il contrario di "
+"quello che ha fatto la coda di post-spegnimento."
 
 #: ../../user_manual/ekos-scheduler.rst:667
 msgid "**Example Queue Design:**"
@@ -1309,20 +1347,20 @@ msgid "Open dust cap"
 msgstr "Apri il parapolvere"
 
 #: ../../user_manual/ekos-scheduler.rst:682
-#, fuzzy
-#| msgid "Weather Monitoring"
 msgid "Weather Monitoring Best Practices"
-msgstr "Monitoraggio meteorologico"
+msgstr "Migliori pratiche di monitoraggio meteorologico"
 
 #: ../../user_manual/ekos-scheduler.rst:684
 msgid "For reliable weather protection:"
-msgstr ""
+msgstr "Per una protezione affidabile dagli eventi meteorologici:"
 
 #: ../../user_manual/ekos-scheduler.rst:686
 msgid ""
 "**Design Symmetric Queues**: Ensure Pre-Shutdown and Post-Startup queues "
 "mirror each other exactly."
 msgstr ""
+"**Struttura code simmetriche**: accertati che le code di pre-spegnimento e "
+"post-avvio rispecchino esattamente una con l'altra."
 
 #: ../../user_manual/ekos-scheduler.rst:689
 msgid ""
@@ -1330,6 +1368,10 @@ msgid ""
 "avoid false alarms but short enough to protect equipment promptly (10-30 "
 "seconds recommended)."
 msgstr ""
+"**Imposta i giusti ritardi**: configura il ritardo per spegnimento meteo "
+"sufficientemente lungo per evitare falsi allarmi, ma sufficientemente corto "
+"per proteggere rapidamente la tua attrezzatura (sono consigliati 10-30 "
+"secondi)."
 
 #: ../../user_manual/ekos-scheduler.rst:693
 msgid ""
@@ -1341,18 +1383,32 @@ msgid ""
 "INDI shutdown after N minutes), choose a value based on local weather "
 "patterns (30–120 minutes is typical for passing clouds or showers)."
 msgstr ""
+"**Imposta il ritardo a 0 per gli osservatori completamente automatizzati**: "
+"l'impostazione del ritardo a **0** è la configurazione consigliata per le "
+"operazioni non vigilate. Il pianificatore attende indefinitamente il "
+"miglioramento delle condizioni meteo — anche più giorni — e riprende "
+"automaticamente senza alcun intervento dell'utente. Se preferisci un periodo "
+"di ritardo definito (es. per innescare uno spegnimento INDI completo dopo N "
+"minuti), scegli un valore in base ai modelli riferiti al meteo locale (in "
+"genere, il tempo di transito di nuvole o rovesci è di 30-120 minuti)."
 
 #: ../../user_manual/ekos-scheduler.rst:702
 msgid ""
 "**Test Your Setup**: Manually test weather shutdown and recovery before "
 "unattended operations."
 msgstr ""
+"**Prova la tua configurazione**: prima di avviare operazioni non "
+"controllate, esegui manualmente i test di spegnimento e ripristino per "
+"condizioni meteo."
 
 #: ../../user_manual/ekos-scheduler.rst:705
 msgid ""
 "**Monitor Connection Stability**: Ensure reliable weather station "
 "connectivity. The scheduler attempts reconnection if connection is lost."
 msgstr ""
+"**Monitora la stabilità della connessione**: accertati che la connettività "
+"della tua stazione meteorologica sia affidabile. Se viene persa, il "
+"pianificatore ritenta la connessione."
 
 #: ../../user_manual/ekos-scheduler.rst:709
 msgid ""
@@ -1360,6 +1416,10 @@ msgid ""
 "in scheduler settings to monitor conditions even before starting equipment, "
 "preventing unsafe startups."
 msgstr ""
+"**Usa un monitoraggio delle condizioni meteorologiche indipendente**: "
+"configura un dispositivo di controllo indipendente nelle impostazioni del "
+"dispositivo, in modo da monitorare le condizioni anche prima di avviare "
+"l'attrezzatura e impedire avvii non sicuri."
 
 #: ../../user_manual/ekos-scheduler.rst:715
 msgid "Startup & Shutdown Scripts"
@@ -1367,7 +1427,7 @@ msgstr "Script di avvio e spegnimento"
 
 #: ../../user_manual/ekos-scheduler.rst:719
 msgid "**NEW: Task Queue System**"
-msgstr ""
+msgstr "**NUOVO: Sistema di coda delle operazioni**"
 
 #: ../../user_manual/ekos-scheduler.rst:721
 msgid ""
@@ -1375,28 +1435,30 @@ msgid ""
 "taskqueue>` that provides a powerful, template-based alternative to "
 "traditional startup and shutdown scripts. The Task Queue offers:"
 msgstr ""
+"KStars ora include un moderno :doc:`sistema di coda delle operazioni <ekos-"
+"scheduler-taskqueue>` che fornisce un'alternativa avanzata e basata su "
+"modelli ai tradizioni script di avvio e spegnimento. La Coda delle "
+"operazioni offre:"
 
 #: ../../user_manual/ekos-scheduler.rst:725
 msgid "Visual interface for building automation sequences"
-msgstr ""
+msgstr "Interfaccia visiva per costruire sequenze automatizzate"
 
 #: ../../user_manual/ekos-scheduler.rst:726
 msgid "Pre-built templates for common operations"
-msgstr ""
+msgstr "Modelli preconfigurati per operazioni comuni"
 
 #: ../../user_manual/ekos-scheduler.rst:727
 msgid "Built-in error handling and retry logic"
-msgstr ""
+msgstr "Gestione degli errori integrata e sistema per nuovi tentativi"
 
 #: ../../user_manual/ekos-scheduler.rst:728
-#, fuzzy
-#| msgid "Weather Monitoring"
 msgid "Real-time progress monitoring"
-msgstr "Monitoraggio meteorologico"
+msgstr "Monitoraggio dell'avanzamento in tempo reale"
 
 #: ../../user_manual/ekos-scheduler.rst:729
 msgid "Device-aware task execution"
-msgstr ""
+msgstr "Esecuzione delle operazioni consapevoli del dispositivo"
 
 #: ../../user_manual/ekos-scheduler.rst:731
 msgid ""
@@ -1404,6 +1466,10 @@ msgid ""
 "recommend exploring the Task Queue system. See the complete :doc:`Task Queue "
 "documentation <ekos-scheduler-taskqueue>` for details."
 msgstr ""
+"Per i nuovi osservatori o per coloro i quali vogliono modernizzare le "
+"proprie operazioni automatizzate, raccomandiamo di esplorare il sistema di "
+"Coda delle operazioni. Per dettagli, consulta la :doc:`documentazione "
+"relativa alla Coda delle operazioni <ekos-scheduler-taskqueue>`."
 
 #: ../../user_manual/ekos-scheduler.rst:735
 #: ../../user_manual/ekos-scheduler.rst:746
@@ -1416,6 +1482,14 @@ msgid ""
 "successfully. Conversely, the shutdown procedure begins with parking the "
 "mount & dome before executing the shutdown script as the final procedure."
 msgstr ""
+"A causa dell'unicità di ciascun osservatorio, Ekos abilita l'utente a "
+"selezionare gli script di avvio e spegnimento. Gli script si occupano di "
+"tutte le procedure necessarie da intraprendere durante le fasi di avvio e "
+"spegnimento. All'avvio, Ekos esegue gli script di avvio e procede soltanto "
+"al promemoria della procedura di avvio (sparcheggia la cupola/sparcheggia la "
+"montatura), se lo script si completa correttamente. Al contrario, la "
+"procedura di spegnimento inizia col parcheggio della montatura e della "
+"cupola prima di eseguire lo script di spegnimento come procedura finale."
 
 #: ../../user_manual/ekos-scheduler.rst:756
 msgid ""
@@ -1425,6 +1499,12 @@ msgid ""
 "is also directed to Ekos logger window. The following is an sample demo "
 "startup script in Python:"
 msgstr ""
+"Gli script di avvio e spegnimento possono essere scritti in qualsiasi "
+"linguaggio eseguibile nella macchina locale. Deve essere restituito 0 per "
+"l'esecuzione corretta, qualsiasi altro valore generato è considerato un "
+"indicatore di errore. Il risultato standard dello script viene anche "
+"indirizzato alla finestra del registratore di Ekos. Di seguito uno script di "
+"avvio dimostrativo scritto in Python:"
 
 #: ../../user_manual/ekos-scheduler.rst:763
 msgid ""
@@ -1457,17 +1537,17 @@ msgstr ""
 "import time\n"
 "import sys\n"
 "\n"
-"print \"Turning on observatory equipment...\"\n"
+"print \"Accensione dell'attrezzatura dell'osservatorio...\"\n"
 "sys.stdout.flush()\n"
 "\n"
 "time.sleep(5)\n"
 "\n"
-"print \"Checking safety switches...\"\n"
+"print \"Controllo interruttori di sicurezza...\"\n"
 "sys.stdout.flush()\n"
 "\n"
 "time.sleep(5)\n"
 "\n"
-"print \"All systems are GO\"\n"
+"print \"Tutti i sistemi sono GO\"\n"
 "sys.stdout.flush()\n"
 "\n"
 "exit(0)"
@@ -1483,6 +1563,15 @@ msgid ""
 "notifications, the user can configure audible alarms and email notifications "
 "for the various events in the Scheduler."
 msgstr ""
+"Affinché Ekos li possa invocare, gli script di avvio e spegnimento devono "
+"essere *eseguibili* (es. usa **``chmod +x startup_script.py``** per "
+"contrassegnare lo script come eseguibile). Il pianificatore di Ekos abilita "
+"operazioni robotizzate davvero semplici, senza la necessità di alcun "
+"intervento dell'utente in qualsiasi passaggio della procedura. Senza la "
+"presenza umana, diviene critico il ripristino agevole dagli errori in "
+"qualsiasi fase di esecuzione dell'osservazione. Tramite le notifiche di "
+"Plasma, l'utente può configurare avvisi sonori e notifiche di posta per i "
+"vari eventi del pianificatore."
 
 #: ../../user_manual/ekos-scheduler.rst:802
 #: ../../user_manual/ekos-scheduler.rst:954
@@ -1504,6 +1593,16 @@ msgid ""
 "dollars. Nevertheless, many amateurs can obtain stellar wide-field images by "
 "combining smaller images into a single grand mosaic."
 msgstr ""
+"Le immagini a campo super ampio di `galassie <http://darkskyart.com/?"
+"page_id=96>`__  e nebulose, simili a quelle di Hubble, sono davvero "
+"impressionanti e, sebbene siano necessarie grandi abilità per ottenere ed "
+"elaborare tali immagini, molti nomi noti nel campo dell'astrofotografia "
+"utilizzano attrezzature non *molto* diverse dalle tue o dalle mie. "
+"Sottolineo *molto* perché alcuni possiedono effettivamente apparecchiature "
+"fantastiche e osservatori dedicati del valore di decine di migliaia di "
+"dollari. Ciò nonostante, molti astrofili possono ottenere immagini a campo "
+"largo di grande effetto combinando immagini più piccole in un unico grande "
+"mosaico."
 
 #: ../../user_manual/ekos-scheduler.rst:818
 msgid ""
@@ -1515,6 +1614,14 @@ msgid ""
 "a super mosaic image *stitched* together from several smaller images. There "
 "are two major steps to accomplish a super mosaic image:"
 msgstr ""
+"Siamo spesso limitati dal campo di vista (CDV) del telescopio+fotocamera in "
+"nostro possesso. Aumentando il CDV tramite un riduttore focale o un tubo più "
+"corto, otteniamo una copertura celeste più ampia sacrificando però la "
+"risoluzione spaziale. Allo stesso tempo, molti interessanti soggetti a largo "
+"campo si estendono su più CDV nel cielo. Senza apportare alcuna modifica "
+"alla tua attrezzatura astrofotografica, è possibile creare una super "
+"immagine a mosaico *cucita* insieme da immagini più piccole. I due passaggi "
+"principali per creare una super immagine a mosaico:"
 
 #: ../../user_manual/ekos-scheduler.rst:828
 msgid ""
@@ -1522,10 +1629,14 @@ msgid ""
 "images. The overlap is necessary to enable the processing software from "
 "aligning and joining the sub-images."
 msgstr ""
+"Acquisire più immagini che inquadrino il bersaglio con qualche "
+"sovrapposizione tra di esse. La sovrapposizione è necessaria per abilitare "
+"il software di elaborazione all'allineamento e all'unione delle immagini."
 
 #: ../../user_manual/ekos-scheduler.rst:833
 msgid "Process the images and *stitch* them into a super mosaic image."
 msgstr ""
+"Elaborare le immagini e *incollarle* assieme in una super immagine a mosaico."
 
 #: ../../user_manual/ekos-scheduler.rst:836
 msgid ""
@@ -1539,6 +1650,16 @@ msgid ""
 "capturing many images with different filters and calibration frames across a "
 "wide area of the sky."
 msgstr ""
+"Il secondo passaggio è gestito dalle applicazioni di elaborazione immagini "
+"tipo `PixInsight <https://pixinsight.com>`__, tra le altre, e non è "
+"argomento di discussione in questa sede. Il primo passaggio può essere "
+"eseguito nel Pianificatore di Ekos in cui si crea un mosaico adatto per la "
+"tua attrezzatura e in conformità col il campo di vista desiderato. Ekos non "
+"crea soltanto i pannelli del mosaico per il tuo bersaglio, ma predispone "
+"anche i processi dell'osservatorio corrispondenti richiesti per acquisire "
+"tutte le immagini. Questo facilita enormemente la logistica per "
+"l'acquisizione di molte immagini con filtri diversi e fotogrammi di "
+"calibrazione attraverso una vasta area di cielo."
 
 #: ../../user_manual/ekos-scheduler.rst:848
 msgid ""
@@ -1549,6 +1670,13 @@ msgid ""
 "map. It is recommended to enable HiPS overlay for the best experience. The "
 "planner is composed of four stages:"
 msgstr ""
+"Il ``Pianificatore del mosaico`` nel pianificatore di Ekos crea più processi "
+"basati su un bersaglio centrale. Per attivare il pianificatore, fai clic sul "
+"pulsante ``Pianificatore del mosaico`` nel pianificatore di Ekos o nella "
+"barra degli strumenti INDI di KStars, come illustrato nella schermata. Il "
+"pianificatore disegna il pannello del mosaico direttamente sopra la mappa "
+"celeste. Per un'esperienza ottimale, si consiglia abilitare la "
+"sovrapposizione HiPS. Il pianificatore si compone di quattro fasi:"
 
 #: ../../user_manual/ekos-scheduler.rst:856
 msgid ""
@@ -1557,11 +1685,17 @@ msgid ""
 "telescope focal length in addition to camera's width, height, and pixel "
 "dimensions. The settings are saved for future sessions."
 msgstr ""
+"**Conferma l'attrezzatura**: Ekos tenta di caricare le impostazioni "
+"dell'attrezzatura da INDI. Se non ci riesce, devi inserire manualmente le "
+"sue impostazioni, inclusa la lunghezza focale del tuo telescopio, oltre a "
+"larghezza e altezza della fotocamera, e dimensioni dei pixel. Le "
+"impostazioni vengono salvate per le sessioni future."
 
 #: ../../user_manual/ekos-scheduler.rst:863
 msgid "|Confirm Equipment|"
 msgstr "|Confirm Equipment|"
 
+# VM: possible error, should be "Select Grid".
 #: ../../user_manual/ekos-scheduler.rst:865
 msgid ""
 "**Adjust Grid**: Select the mosaic panel dimension and overlap percentage. "
@@ -1575,6 +1709,18 @@ msgid ""
 "mosaic panel can be centered in the sky map by clicking on the ``Recenter`` "
 "button."
 msgstr ""
+"**Seleziona griglia**: seleziona la dimensione dei pannelli del mosaico e la "
+"percentuale di sovrapposizione. Il pannello del mosaico viene aggiornato in "
+"base alla mappa celeste. Regola l'angolo di posizione affinché corrisponda "
+"all'orientazione del mosaico desiderata nel cielo. Se l'angolo di posizione "
+"è diverso dalla normale orientazione della tua fotocamera, potresti dover "
+"ruotare la fotocamera manualmente o tramite un rotatore meccanizzato quando "
+"vengono eseguiti i processi del pianificatore. Per impostazione predefinita, "
+"la trasparenza delle tessere è calcolata in automatico ma può essere "
+"disattivata e regolata manualmente. Per calcolare il campo del mosaico dal "
+"numero di tessere, fai clic sul pulsante ``CDV della copertura``. Il "
+"pannello del mosaico può essere centrato nella mappa celeste facendo clic "
+"sul pulsante ``Ricentra``."
 
 #: ../../user_manual/ekos-scheduler.rst:879
 msgid "|Select Grid|"
@@ -1593,6 +1739,18 @@ msgid ""
 "gives you control on signal-to-noise ratio and allows you to provide context "
 "to your target while exposing a relatively low number of captures."
 msgstr ""
+"Una sovrapposizione estesa renderà più facile la \"cucitura\" dei fotogrammi "
+"durante la post-elaborazione, ma richiede più pannelli per coprire l'area "
+"desiderata. Tuttavia, se già conosci la quantità minima di subframe che il "
+"tuo algoritmo di scarto utilizzerà durante la post-elaborazione, potresti "
+"aumentare la sovrapposizione per raggiungere quella quantità sulle aree "
+"coperte da più pannelli. Per esempio, un mosaico 4x4 con una sovrapposizione "
+"del 75% ha 16 subframe che coprono l'intersezione centrale, la quale è "
+"sufficiente per lo scarto Winsorized Sigma. Sebbene la pila risultante non "
+"abbia la stessa altezza in tutte le parti del fotogramma finale, questo "
+"metodo ti permette il controllo sul rapporto segnale-rumore e ti permette di "
+"fornire un contesto al tuo bersaglio durante l'esposizione di un numero "
+"relativamente basso di acquisizioni."
 
 #: ../../user_manual/ekos-scheduler.rst:897
 msgid ""
@@ -1608,6 +1766,19 @@ msgid ""
 "position or high declination. Use ``the overlap`` to ensure panes cover the "
 "desired frame extents properly."
 msgstr ""
+"Il numero grande nell'angolo di ciascun pannello della griglia rappresenta "
+"l'ordine in cui i pannelli saranno acquisiti. La scelta predefinita a forma "
+"di S (ovest-est quindi spostamenti alterni alto-basso/basso-alto), assicura "
+"il movimento minimo della montatura durante l'osservazione. Deseleziona "
+"``Movimento montatura minimo`` per tornare al solo movimento ovest-est/alto-"
+"basso. Le coordinate di ciascun pannello vengono indicate nel loro centro in "
+"gradi, minuti e secondi. Infine, l'angolo su cui ruota ciascun pannello "
+"rispetto al centro del mosaico è mostrato in basso. Se tuo campo di vista è "
+"esteso, o se il mosaico si trova vicino a un polo celeste, potresti "
+"osservare che i pannelli resi iniziano a ruotare in modo visibile a causa "
+"della loro posizione orizzontale o declinazione alta. Usa la "
+"``sovrapposizione`` affinché i pannelli coprano adeguatamente l'estensione "
+"di fotogrammi desiderata."
 
 #: ../../user_manual/ekos-scheduler.rst:914
 msgid "|Scheduler Mosaic Tool - Large rotation|"
@@ -1618,6 +1789,8 @@ msgid ""
 "**Adjust Grid**: Adjust Grid center by manually entering the J2000 center or "
 "by dragging the center of the mosaic on the sky map."
 msgstr ""
+"**Regola griglia**: regola il centro della griglia inserendo manualmente il "
+"centro J2000 o trascinando il centro del mosaico sulla mappa celeste."
 
 #: ../../user_manual/ekos-scheduler.rst:920
 msgid "|Adjust Grid|"
@@ -1635,6 +1808,17 @@ msgid ""
 "the second job will skip it. When the third job is executed, alignment is "
 "performed again and so forth."
 msgstr ""
+"**Crea processi**: il passaggio finale è selezionare il file delle sequenze "
+"e la cartella in cui saranno memorizzate le immagini. Il campo del bersaglio "
+"può essere compilato in automatico ma può essere modificato come vuoi. "
+"Seleziona i passi che ciascun processo del pianificatore deve eseguire nella "
+"sequenza (Insegui -> Metti a fuoco -> Allinea -> Guida -> Acquisisci), e "
+"regola la frequenza dell'allineamento automatico e le routine di messa a "
+"fuoco che devono essere eseguite durante l'operazione del mosaico. Per "
+"esempio, se l'opzione ``Allinea ogni`` è impostata a 2 processi del "
+"pianificatore, allora il primo processo eseguirà l'allineamento "
+"astrometrico, mentre il secondo processo lo salterà. Quando viene eseguito "
+"il terzo processo, l'allineamento sarà ripetuto e così di seguito."
 
 #: ../../user_manual/ekos-scheduler.rst:935
 msgid ""
@@ -1642,6 +1826,10 @@ msgid ""
 "group name with an identifier that all the tile jobs will share, and select "
 "a repeating completion condition."
 msgstr ""
+"Se vuoi che i diversi processi delle tessere del mosaico si alternino, "
+"inserisci nel nome del gruppo un identificativo da condividere con tutti i "
+"processi delle tessere e seleziona una condizione di completamento "
+"ripetibile."
 
 #: ../../user_manual/ekos-scheduler.rst:940
 msgid "|Create Jobs|"
@@ -1653,6 +1841,10 @@ msgid ""
 "schedule queue. You can further edit the jobs individually, as you would "
 "normal Scheduler jobs."
 msgstr ""
+"Fai clic su ``Crea processi`` per generare dei processi del pianificatore "
+"del mosaico e aggiungerli alla coda di pianificazione. Puoi anche modificare "
+"singolarmente i processi, come faresti con i processi del normale "
+"pianificatore."
 
 #: ../../user_manual/ekos-scheduler.rst:946
 msgid "Ekos Scheduler Module"

@@ -1,19 +1,19 @@
 #
-# SPDX-FileCopyrightText: 2025, 2026 Valter Mura <valtermura@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Valter Mura <valtermura@gmail.com>
 # Vincenzo Reale <smart2128vr@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-19 02:06+0000\n"
-"PO-Revision-Date: 2026-06-19 11:52+0200\n"
+"PO-Revision-Date: 2026-07-25 17:56+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../../user_manual/ekos-guide.rst:3
@@ -868,10 +868,11 @@ msgstr ""
 #: ../../user_manual/ekos-guide.rst:448
 msgid "AI Guiding Assistant (Experimental)"
 msgstr ""
+"Assistente al sistema di guida con intelligenza artificiale (sperimentale)"
 
 #: ../../user_manual/ekos-guide.rst:450
 msgid "|AI Guiding Menu|"
-msgstr ""
+msgstr "|AI Guiding Menu|"
 
 #: ../../user_manual/ekos-guide.rst:452
 msgid ""
@@ -883,6 +884,14 @@ msgid ""
 "algorithm keeps running underneath at all times and corrects whatever the "
 "prediction misses."
 msgstr ""
+"L'Assistente al sistema di guida IA aggiunge all'autoguida interna un "
+"predittore *feed-forward* specifico della montatura e addestrato. Dopo una "
+"sessione di addestramento, l'intelligenza artificiale apprende la parte "
+"ripetibile dell'errore di inseguimento della tua montatura — come l'errore "
+"periodico e la deriva lenta — e aggiunge una correzione prevista a ciascun "
+"impulso della guida *prima* che l'errore divenga visibile nell'immagine di "
+"guida. L'algoritmo di guida standard continua a funzionare in sottofondo in "
+"ogni momento e corregge qualsiasi mancanza della predizione."
 
 #: ../../user_manual/ekos-guide.rst:460
 msgid ""
@@ -894,6 +903,14 @@ msgid ""
 "`AI Assistant (MCP) <ekos-mcp>` interface, which connects KStars to external "
 "chat assistants."
 msgstr ""
+"Per accedere alla funzionalità usa il pulsante di menu :guilabel:`Sistema di "
+"guida IA (sperimentale)` nella pagina principale della Guida, proprio sotto "
+"al pulsante :guilabel:`Azzera calibrazione`. Offre due azioni: :guilabel:"
+"`Assistente al sistema di guida IA...`, che apre la procedura guidata della "
+"raccolta dei dati descritti sotto, e :guilabel:`Carica pesi...`, che carica "
+"il file del modello addestrato in precedenza. Questa funzionalità è "
+"indipendente dall'interfaccia :doc:`Assistente IA (MCP) <ekos-mcp>`, che "
+"connette KStars agli assistenti di chat esterni."
 
 #: ../../user_manual/ekos-guide.rst:470
 msgid ""
@@ -903,16 +920,25 @@ msgid ""
 "and be prepared to switch back to the :guilabel:`Standard` or :guilabel:"
 "`GPG` algorithms if your results are not better with the AI."
 msgstr ""
+"L'Assistente al sistema di guida IA è una funzionalità **sperimentale** "
+"ancora in fase di sviluppo. I modelli addestrati sono legati alle "
+"impostazioni delle specifiche montature, fotocamere e guide presenti "
+"nell'attrezzatura. Verifica sempre le prestazioni di guida dopo averla "
+"abilitata e preparati a tornare agli algoritmi :guilabel:`Standard` o :"
+"guilabel:`GPG`, se i risultati con l'IA non migliorano le prestazioni."
 
 #: ../../user_manual/ekos-guide.rst:479
 msgid "Expectations and Prerequisites"
-msgstr ""
+msgstr "Prospettive e prerequisiti"
 
 #: ../../user_manual/ekos-guide.rst:481
 msgid ""
 "Please read this part carefully before investing time in training a model — "
 "it will save you from disappointment later."
 msgstr ""
+"Leggi attentamente questa parte prima di investire del tempo "
+"nell'addestramento di un modello — verrai risparmiato da sgradite sorprese "
+"in seguito."
 
 #: ../../user_manual/ekos-guide.rst:486
 msgid ""
@@ -921,22 +947,26 @@ msgid ""
 "mount's error and layers that prediction on top of the standard guiding "
 "algorithm. It will **not** fix:"
 msgstr ""
+"La guida con intelligenza artificiale **estende** una configurazione di "
+"guida ben funzionante, non ne ripara una che funziona male. Prevede la parte "
+"*ripetibile* dell'errore della tua montatura e appoggia quella previsione "
+"sopra l'algoritmo di guida standard. **Non** correggerà:"
 
 #: ../../user_manual/ekos-guide.rst:491
 msgid "poor polar alignment,"
-msgstr ""
+msgstr "un cattivo allineamento polare,"
 
 #: ../../user_manual/ekos-guide.rst:492
 msgid "imbalance, cable drag, or differential flexure,"
-msgstr ""
+msgstr "squilibri, tiri dei cavi o flessioni differenziali,"
 
 #: ../../user_manual/ekos-guide.rst:493
 msgid "wind gusts, vibrations, or bad seeing,"
-msgstr ""
+msgstr "raffiche di vento, vibrazioni o cattivo seeing,"
 
 #: ../../user_manual/ekos-guide.rst:494
 msgid "a mount or guide system that is not already well tuned."
-msgstr ""
+msgstr "una montatura o un sistema di guida che non è già ben messo a punto."
 
 #: ../../user_manual/ekos-guide.rst:496
 msgid ""
@@ -945,10 +975,15 @@ msgid ""
 "The improvement from AI guiding varies considerably from mount to mount, and "
 "on some mounts you may see no measurable benefit at all."
 msgstr ""
+"Nessuno di questi errori è ripetibile, pertanto nessun addestramento li può "
+"prevedere. Se la guida standard non funziona bene nel tuo sistema, correggi "
+"prima questa. Il miglioramento con guida IA varia in modo considerevole da "
+"montatura a montatura e in alcune montature potresti non osservare alcun "
+"beneficio misurabile."
 
 #: ../../user_manual/ekos-guide.rst:502
 msgid "Before running the assistant, make sure that:"
-msgstr ""
+msgstr "Prima di eseguire l'assistente, accertati:"
 
 #: ../../user_manual/ekos-guide.rst:504
 msgid ""
@@ -1162,10 +1197,8 @@ msgid "Activating AI Guiding and Options"
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:638
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|AI Guider Options|"
-msgstr "|Guide Settings|"
+msgstr "|AI Guider Options|"
 
 #: ../../user_manual/ekos-guide.rst:640
 msgid ""
@@ -1559,56 +1592,44 @@ msgid ".. image:: /images/ekos_guide_phd2.png"
 msgstr ".. image:: /images/ekos_guide_phd2.png"
 
 #: ../../user_manual/ekos-guide.rst:843
-#, fuzzy
-#| msgid "Guiding"
 msgid "AI Guiding Menu"
-msgstr "Sistema di guida"
+msgstr "Menu del sistema di guida IA"
 
 #: ../../user_manual/ekos-guide.rst:843
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_ai_menu.png"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_ai_menu.png"
 
 #: ../../user_manual/ekos-guide.rst:844
 msgid "AI Wizard Mount Page"
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:844
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_mount.png"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_mount.png"
 
 #: ../../user_manual/ekos-guide.rst:845
 msgid "AI Wizard Protocol Page"
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:845
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
 
 #: ../../user_manual/ekos-guide.rst:846
 msgid "AI Wizard Progress Page"
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:846
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_progress.png"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_progress.png"
 
 #: ../../user_manual/ekos-guide.rst:847
 msgid "AI Wizard Complete Page"
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:847
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_ai_wizard_complete.png"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_complete.png"
 
 #: ../../user_manual/ekos-guide.rst:848
 #, fuzzy
@@ -1617,10 +1638,8 @@ msgid "AI Guider Options"
 msgstr "Impostazioni di guida"
 
 #: ../../user_manual/ekos-guide.rst:848
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_gpg_settings.png"
 msgid ".. image:: /images/ekos_guide_ai_options.png"
-msgstr ".. image:: /images/ekos_guide_gpg_settings.png"
+msgstr ".. image:: /images/ekos_guide_ai_options.png"
 
 #~ msgid "<title>Guide</title>"
 #~ msgstr "<title>Guida</title>"
