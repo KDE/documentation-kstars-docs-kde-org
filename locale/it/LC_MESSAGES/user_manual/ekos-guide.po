@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-19 02:06+0000\n"
-"PO-Revision-Date: 2026-07-25 17:56+0200\n"
+"PO-Revision-Date: 2026-07-28 20:19+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -526,6 +526,12 @@ msgid ""
 "Assistant before it can be selected. See :ref:`AI Guiding Assistant <ekos-"
 "guide-ai-guiding-assistant>` below."
 msgstr ""
+"Dispositivo di guida IA: (sperimentale) aggiunte previsioni feed-forward "
+"addestrate, specifiche della montatura in aggiunta all'algoritmo standard, "
+"che mantiene in esecuzione in sottofondo. Prima di poterlo selezionare "
+"richiede una singola sessione di addestramento con l'Assistente al sistema "
+"di guida IA. Vedi sotto :ref:`Assistente al sistema di guida IA <ekos-guide-"
+"ai-guiding-assistant>`."
 
 #: ../../user_manual/ekos-guide.rst:266
 msgid ""
@@ -990,22 +996,30 @@ msgid ""
 "You are using the **internal guider**, with a working guide camera and a "
 "completed, successful calibration."
 msgstr ""
+"di utilizzare l'**autoguida interna**, con una fotocamera di guida "
+"funzionante e una calibrazione completata correttamente;"
 
 #: ../../user_manual/ekos-guide.rst:506
 msgid ""
 "Ordinary guiding with the :guilabel:`Standard` algorithm already works "
 "reliably on your setup."
 msgstr ""
+"che il sistema di guida ordinario con l'algoritmo :guilabel:`standard` "
+"funzioni già in modo affidabile nella tua configurazione;"
 
 #: ../../user_manual/ekos-guide.rst:508
 msgid "Your mount is well polar-aligned, balanced, and free of cable snags."
 msgstr ""
+"che la tua montatura sia ben allineata polarmente, bilanciata e libera da "
+"intrecci di cavi;"
 
 #: ../../user_manual/ekos-guide.rst:509
 msgid ""
 "You know your mount's drive type: worm gear (most equatorial mounts), "
 "harmonic/strain-wave drive, or direct drive."
 msgstr ""
+"di conoscere il tipo di guida della montatura: worm gear (la maggior parte "
+"delle montature equatoriali), harmonic/strain-wave, o direct drive;"
 
 #: ../../user_manual/ekos-guide.rst:511
 msgid ""
@@ -1013,16 +1027,21 @@ msgid ""
 "trained *and locked* to the guide exposure, binning, and guide settings used "
 "during data collection."
 msgstr ""
+"che l'esposizione della tua guida sia quella che intendi mantenere: il "
+"modello è addestrato *e bloccato* all'esposizione della guida, il binning e "
+"le impostazioni di guida utilizzate durante la raccolta dei dati;"
 
 #: ../../user_manual/ekos-guide.rst:514
 msgid ""
 "You have 20–45 minutes of clear, reasonably steady sky to spend on data "
 "collection, depending on the mount type."
 msgstr ""
+"di avere 20–45 minuti di cielo specchiato stabile da impiegare nella "
+"raccolta dei dati, a seconda del tipo di montatura."
 
 #: ../../user_manual/ekos-guide.rst:520
 msgid "Data Collection with the AI Guiding Assistant"
-msgstr ""
+msgstr "Raccolta dei dati con l'Assistente al sistema di guida IA"
 
 #: ../../user_manual/ekos-guide.rst:522
 msgid ""
@@ -1033,10 +1052,18 @@ msgid ""
 "measured. Click :guilabel:`AI Guiding (Experimental)` → :guilabel:`AI "
 "Guiding Assistant...` on the Guide page to start the wizard."
 msgstr ""
+"L'addestramento di un modello inizia con una sessione di *identificazione "
+"del sistema*: l'assistente punta la montatura verso alcune posizioni nel "
+"cielo e registra come la stella guida esegue la deriva, sia col sistema di "
+"guida in esecuzione, sia col sistema di guida volutamente in pausa (\"deriva "
+"libera\"), in modo che possa essere misurata la firma dell'errore non "
+"elaborata. Fai clic su :guilabel:`Sistema di guida IA (sperimentale)` → :"
+"guilabel:`Assistente al sistema di guida IA...` sulla pagina della Guida per "
+"avviare la procedura guidata."
 
 #: ../../user_manual/ekos-guide.rst:530
 msgid "|AI Wizard Mount Page|"
-msgstr ""
+msgstr "|AI Wizard Mount Page|"
 
 #: ../../user_manual/ekos-guide.rst:532
 msgid ""
@@ -1050,7 +1077,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:539
 msgid "|AI Wizard Protocol Page|"
-msgstr ""
+msgstr "|AI Wizard Protocol Page|"
 
 #: ../../user_manual/ekos-guide.rst:541
 msgid ""
@@ -1085,7 +1112,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:558
 msgid "|AI Wizard Progress Page|"
-msgstr ""
+msgstr "|AI Wizard Progress Page|"
 
 #: ../../user_manual/ekos-guide.rst:560
 msgid ""
@@ -1097,7 +1124,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:565
 msgid "|AI Wizard Complete Page|"
-msgstr ""
+msgstr "|AI Wizard Complete Page|"
 
 #: ../../user_manual/ekos-guide.rst:567
 msgid ""
@@ -1111,7 +1138,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:577
 msgid "Training via EkosLive"
-msgstr ""
+msgstr "Addestramento tramite EkosLive"
 
 #: ../../user_manual/ekos-guide.rst:579
 msgid ""
@@ -1135,7 +1162,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:600
 msgid "Training the Model Offline"
-msgstr ""
+msgstr "Addestrare il modello fuori linea"
 
 #: ../../user_manual/ekos-guide.rst:602
 msgid ""
@@ -1175,6 +1202,10 @@ msgid ""
 "pip install numpy scipy torch\n"
 "python train.py --sysid-data ./sysid_data.json --output ./weights.json"
 msgstr ""
+"python3 -m venv venv\n"
+"source venv/bin/activate\n"
+"pip install numpy scipy torch\n"
+"python train.py --sysid-data ./sysid_data.json --output ./weights.json"
 
 #: ../../user_manual/ekos-guide.rst:623
 msgid ""
