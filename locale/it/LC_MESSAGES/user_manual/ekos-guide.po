@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-19 02:06+0000\n"
-"PO-Revision-Date: 2026-07-28 20:19+0200\n"
+"PO-Revision-Date: 2026-08-08 23:28+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1074,6 +1074,13 @@ msgid ""
 "1.0–3.0 s for direct drives. Set your exposure *before* proceeding: the "
 "trained model is locked to it."
 msgstr ""
+"**Pagina 1 — Identificazione della montatura.** Verifica il tipo di "
+"montatura rilevata: :guilabel:`Worm Gear`, :guilabel:`Harmonic Drive` o :"
+"guilabel:`Direct Drive`. La procedura guidata consiglia anche un'esposizione "
+"di guida per tipo di drive — 2,0 sec. per worm gear, 0,5–1,0 sec. per "
+"harmonic drive (a seconda del segnale della guida stella) e 1,0–3,0 sec. per "
+"direct drive. Imposta l'esposizione *prima* di procedere: il modello "
+"addestrato viene vincolato ad essa."
 
 #: ../../user_manual/ekos-guide.rst:539
 msgid "|AI Wizard Protocol Page|"
@@ -1087,6 +1094,13 @@ msgid ""
 "all guide directions enabled; your original settings are restored when the "
 "wizard finishes. The protocol depends on the mount type:"
 msgstr ""
+"**Pagina 2 — Anteprima del protocollo.** La procedura guidata mostra il "
+"protocollo di misurazione che si sta per eseguire. Durante la raccolta dei "
+"dati le impostazioni del tuo sistema di guida vengono temporaneamente "
+"passate all'algoritmo :guilabel:`Standard` su entrambi gli assi con tutte le "
+"direzioni di guida attivate; le tue impostazioni originali vengono "
+"ripristinate quando termina la procedura guidata. Il protocollo dipende dal "
+"tipo di montatura:"
 
 #: ../../user_manual/ekos-guide.rst:547
 msgid ""
@@ -1095,6 +1109,10 @@ msgid ""
 "drift. The long free-drift phases capture roughly three full worm cycles, "
 "which is what allows the periodic error to be measured."
 msgstr ""
+"**Worm Gear** (~45 minuti): tre puntamenti ad altezza alta, inferiore, alta, "
+"ognuno che combina con la guida standard con vari minuti di deriva libera. "
+"Le fasi di deriva libera lunga acquisiscono grosso modo tre cicli worm "
+"completi, che è quello che permette la misurazione dell'errore periodico."
 
 #: ../../user_manual/ekos-guide.rst:551
 msgid ""
@@ -1103,12 +1121,18 @@ msgid ""
 "pulses in all four directions) that measure how the drive reacts to "
 "corrections."
 msgstr ""
+"**Harmonic Drive** (~35 minuti): deriva libera e guida standard a due "
+"puntamenti, più vari test di risposta impulsi brevi (impulsi di 50, 100 e "
+"200 ms in tutte le quattro direzioni) che misurano come il drive reagisce "
+"alle correzioni."
 
 #: ../../user_manual/ekos-guide.rst:555
 msgid ""
 "**Direct Drive** (~20 minutes): short guiding and free-drift phases at three "
 "different altitudes."
 msgstr ""
+"**Direct Drive** (~20 minuti): guida breve e fasi di deriva libera a tre "
+"altezze diverse."
 
 #: ../../user_manual/ekos-guide.rst:558
 msgid "|AI Wizard Progress Page|"
@@ -1121,6 +1145,10 @@ msgid ""
 "the process invalidates the affected phase. Use :guilabel:`Stop` only if "
 "something goes wrong."
 msgstr ""
+"**Pagina 3 — Avanzamento identificazione del sistema.** L'assistente ruota, "
+"guida e deriva da sé. Lascia il sistema in funzione, l'interruzione del "
+"procedura invalida la fase interessata. Usa :guilabel:`Ferma` solo se "
+"qualcosa va storto."
 
 #: ../../user_manual/ekos-guide.rst:565
 msgid "|AI Wizard Complete Page|"
@@ -1135,6 +1163,12 @@ msgid ""
 "file for the Python trainer (see :ref:`below <ekos-guide-ai-offline-"
 "training>`)."
 msgstr ""
+"**Pagina 4 — Raccolta dei dati completata.** I dati misurati vengono salvati "
+"e puoi scegliere come addestrare il modello: :guilabel:`Addestra in "
+"EkosLive` carica i dati nel cloud di EkosLive e restituisce un modello "
+"pronto all'uso (prossimo paragrafo), mentre :guilabel:`Esporta per "
+"l'addestramento locale` scrive un file ``sysid_data.json`` per "
+"l'addestratore Python (vedi :ref:`sotto <ekos-guide-ai-offline-training>`)."
 
 #: ../../user_manual/ekos-guide.rst:577
 msgid "Training via EkosLive"
@@ -1149,6 +1183,13 @@ msgid ""
 "data folder, ``~/.local/share/kstars/`` on Linux) and set as the active "
 "weights file — no further steps are needed."
 msgstr ""
+"Il metodo più semplice di addestrare il modello è tramite un account "
+"`EkosLive <https://ekoslive.com>`__: fai clic su :guilabel:`Addestra in "
+"EkosLive` nella pagina 4 della procedura guidata. I dati vengono caricati, "
+"il modello è addestrato nel cloud e i pesi risultanti automaticamente "
+"salvati (come file ``ai_guider_weights.json`` nella cartella dati di KStars, "
+"``~/.local/share/kstars/`` in Linux) e configurati come file dei pesi "
+"attivi: non sono necessari ulteriori passaggi."
 
 #: ../../user_manual/ekos-guide.rst:589
 msgid ""
@@ -1159,6 +1200,12 @@ msgid ""
 "If you prefer not to upload anything, use offline training instead — it "
 "produces identical weights."
 msgstr ""
+"I dati di identificazione del sistema caricato **non contiene coordinate "
+"celesti**: contiene soltanto altezza, azimut e angolo parallattico, insieme "
+"con le misurazioni della deriva dei pixel, i rapporti S/N delle stelle e gli "
+"impulsi guida che sono stati inviati. Include, tuttavia, il nome della tua "
+"montatura e i nomi dei tuoi dispositivi fotocamera. Se preferisci non "
+"caricare nulla, usa l'addestramento locale, che produce pesi identici."
 
 #: ../../user_manual/ekos-guide.rst:600
 msgid "Training the Model Offline"
@@ -1170,12 +1217,18 @@ msgid ""
 "Python scripts that runs on any ordinary computer. Training uses only the "
 "CPU and finishes in under ten minutes; no GPU is required."
 msgstr ""
+"Non è necessario EkosLive per addestrare un modello: l'addestratore è un "
+"piccolo set di script Python che viene eseguito su un normale computer. "
+"L'addestramento usa solo la CPU e termina in dieci minuti; non richiede "
+"l'intervento della GPU."
 
 #: ../../user_manual/ekos-guide.rst:606
 msgid ""
 "On wizard page 4, click :guilabel:`Export for offline training` and save "
 "``sysid_data.json``."
 msgstr ""
+"Nella pagina 4 della procedura guidata, fai clic su :guilabel:`Esporta per "
+"l'addestramento locale` e salva il file ``sysid_data.json``."
 
 #: ../../user_manual/ekos-guide.rst:608
 msgid ""
@@ -1183,6 +1236,9 @@ msgid ""
 "observatory computer itself, but a desktop or laptop is usually more "
 "convenient)."
 msgstr ""
+"Copia il file nel computer utilizzato per l'addestramento (potresti usare "
+"anche il computer interno dell'osservatorio, ma un desktop o un portatile è "
+"più comodo)."
 
 #: ../../user_manual/ekos-guide.rst:611
 msgid ""
@@ -1190,10 +1246,13 @@ msgid ""
 "directory of the `KStars source repository <https://invent.kde.org/education/"
 "kstars/-/tree/master/kstars/ekos/guide/offlinetrainer>`__."
 msgstr ""
+"Scarica gli script dell'addestratore dalla cartella ``kstars/ekos/guide/"
+"offlinetrainer/`` del `deposito sorgenti di KStars <https://invent.kde.org/"
+"education/kstars/-/tree/master/kstars/ekos/guide/offlinetrainer>`__."
 
 #: ../../user_manual/ekos-guide.rst:614
 msgid "In that directory, create a Python environment and run the trainer:"
-msgstr ""
+msgstr "In quella cartella, crea un ambiente Python ed esegui l'addestratore:"
 
 #: ../../user_manual/ekos-guide.rst:616
 msgid ""
@@ -1213,6 +1272,10 @@ msgid ""
 "matching model. Should the detection ever be wrong, it can be overridden "
 "with ``--mount-type WORM_GEAR|HARMONIC_DRIVE|DIRECT_DRIVE``."
 msgstr ""
+"L'addestratore rileva automaticamente il tipo di montatura dai dati e "
+"sceglie il modello corrispondente. Nel caso in cui il rilevamento risultasse "
+"sbagliato, puoi ignorarlo col parametro ``--mount-type WORM_GEAR|"
+"HARMONIC_DRIVE|DIRECT_DRIVE``."
 
 #: ../../user_manual/ekos-guide.rst:627
 msgid ""
@@ -1222,10 +1285,16 @@ msgid ""
 "File` on the :guilabel:`AI Guider` options page). The weights are applied "
 "the next time guiding starts."
 msgstr ""
+"Infine, copia il file ``weights.json`` risultante nel computer "
+"dell'osservatorio e caricalo in KStars tramite :guilabel:`Sistema di guida "
+"IA (sperimentale)` → :guilabel:`Carica pesi...` nella pagina Guida (o "
+"imposta il :guilabel:`file dei pesi` nella pagina delle opzioni del :"
+"guilabel:`Dispositivo di guida IA`). I pesi vengono applicati al successivo "
+"avvio del sistema di guida."
 
 #: ../../user_manual/ekos-guide.rst:636
 msgid "Activating AI Guiding and Options"
-msgstr ""
+msgstr "Attivazione del sistema di guida IA e opzioni"
 
 #: ../../user_manual/ekos-guide.rst:638
 msgid "|AI Guider Options|"
@@ -1238,10 +1307,16 @@ msgid ""
 "usual. The AI-related settings live on the :guilabel:`AI Guider` page of the "
 "guide settings dialog:"
 msgstr ""
+"Una volta caricato un file dei pesi, seleziona :guilabel:`Dispositivo di "
+"guida IA` come algoritmo di guida per AR e/o DEC nelle opzioni del "
+"Dispositivo di guida, e avvia la guida come al solito. Le impostazioni per "
+"l'intelligenza artificiale risiedono nella pagina :guilabel:`Dispositivo di "
+"guida IA` della finestra di dialogo delle impostazioni della guida:"
 
 #: ../../user_manual/ekos-guide.rst:645
 msgid ":guilabel:`Weights File`: path to the trained model weights (JSON)."
 msgstr ""
+":guilabel:`File dei pesi`: percorso ai pesi del modello addestrato (JSON)."
 
 #: ../../user_manual/ekos-guide.rst:646
 msgid ""
@@ -1250,6 +1325,10 @@ msgid ""
 "its full prediction. Start at the default and increase gradually if guiding "
 "improves."
 msgstr ""
+":guilabel:`Guadagno previsione IA` (predefinito 0,5): quanto forte viene "
+"combinata la previsione IA all'interno degli impulsi di guida. 0,0 ignora "
+"completamente l'intelligenza artificiale; 1,0 applica l'intera previsione. "
+"Avvia al valore predefinito e aumenta gradualmente se la guida migliora."
 
 #: ../../user_manual/ekos-guide.rst:650
 msgid ""
@@ -1258,6 +1337,10 @@ msgid ""
 "highly confident, to avoid the two controllers over-correcting the same "
 "error."
 msgstr ""
+":guilabel:`Riduci il guadagno proporzionale durante la correzione dell'IA` "
+"(predefinito disattivato): riduce la risposta proporzionale standard fino "
+"alla metà quando l'intelligenza artificiale è molto sicura, per evitare che "
+"i due controller sovracorreggano lo stesso errore."
 
 #: ../../user_manual/ekos-guide.rst:654
 msgid ""
@@ -1266,12 +1349,20 @@ msgid ""
 "settling, autofocus runs, or camera downloads — by extrapolating the "
 "periodic error forward in time."
 msgstr ""
+":guilabel:`Abilita il dark guiding predittivo` (predefinito disattivato): "
+"continua a emettere correzioni previste durante gli intervalli nelle "
+"misurazioni della guida stella — stabilizzazione dithering, esecuzioni di "
+"messe a fuoco automatiche, o scaricamenti della fotocamera — estrapolando "
+"l'errore periodico avanti nel tempo."
 
 #: ../../user_manual/ekos-guide.rst:658
 msgid ""
 ":guilabel:`Dark Guiding Interval` (default 1.0 s): seconds between predicted "
 "pulses when no guide-star measurement is available."
 msgstr ""
+":guilabel:`Intervallo di dark guiding` (predefinito 1,0 sec.): secondi tra "
+"gli impulsi previsti quando non è disponibile alcuna misurazione di stella "
+"guida."
 
 #: ../../user_manual/ekos-guide.rst:663
 msgid ""
@@ -1282,10 +1373,18 @@ msgid ""
 "settings you used during data collection, re-run the assistant to train new "
 "weights, or switch the algorithm back to :guilabel:`Standard`."
 msgstr ""
+"Un file dei pesi funziona soltanto con le impostazioni di guida con cui era "
+"stato addestrato. Quando inizia la guida, il codice di controllo del file "
+"viene verificato con le impostazioni attuali di esposizione, binning, "
+"guadagni, impulso minimo/massimo e isteresi. In caso di discrepanza, la "
+"guida viene interrotta con un messaggio informativo (o di ripristinare le "
+"impostazioni utilizzate durante la raccolta dei dati, o di rieseguire "
+"l'assistente per addestrare nuovi pesi, oppure di tornare all'algoritmo :"
+"guilabel:`Standard`."
 
 #: ../../user_manual/ekos-guide.rst:674
 msgid "Monitoring AI Guiding"
-msgstr ""
+msgstr "Monitoraggio del sistema di guida IA"
 
 #: ../../user_manual/ekos-guide.rst:676
 msgid ""
@@ -1297,6 +1396,14 @@ msgid ""
 "are verified against real measurements, the AI becomes :guilabel:`Active` "
 "and its corrections are blended in."
 msgstr ""
+"La videata dello stato della guida mostra cosa sta facendo l'intelligenza "
+"artificiale. Dopo che si avvia la guida, l'IA è in una fase di "
+"*riscaldamento* (mostrata come :guilabel:`Riscaldamento`) mentre sincronizza "
+"il suo modello con la montatura in tempo reale — circa 50 fotogrammi guida "
+"per worm gear, 30 per harmonic drive e 10 per direct drive. Durante il "
+"riscaldamento, la guida viene gestita interamente dall'algoritmo standard. "
+"Una volta che le sue previsioni sono state verificate con le misurazioni "
+"reali, l'IA diventa :guilabel:`Attiva` e le sue correzioni sono combinate."
 
 #: ../../user_manual/ekos-guide.rst:684
 msgid ""
@@ -1307,6 +1414,14 @@ msgid ""
 "low, the standard guiding algorithm does most of the work — an "
 "underperforming model degrades gracefully instead of ruining your subframes."
 msgstr ""
+"La combinazione è ponderata da un punteggio di *affidabilità* in tempo "
+"reale. L'affidabilità richiede una stella guida ragionevolmente luminosa "
+"(raggiunge il suo massimo intorno a un rapporto segnale/rumore di 30 e "
+"scende a zero al di sotto di 10) e diminuisce ogni volta che le previsioni "
+"dell'IA smettono di corrispondere a ciò che fa effettivamente la montatura. "
+"Quando l'affidabilità è bassa, l'algoritmo di guida standard svolge la "
+"maggior parte del lavoro: un modello con prestazioni inferiori si degrada "
+"gradualmente invece di rovinare i subframe."
 
 #: ../../user_manual/ekos-guide.rst:692
 msgid ""
@@ -1316,10 +1431,16 @@ msgid ""
 "for re-warm-up; and a lost guide star triggers the guider's normal "
 "reacquisition logic."
 msgstr ""
+"Vengono applicate assieme varie misure di sicurezza: ogni impulso rispetta "
+"il limite massimo di impulsi configurato più un tetto non superabile di "
+"cinque secondi; le previsioni IA sono sospese durante il dithering; "
+"un'inversione del meridiano azzera lo stato interno dell'IA per un nuovo "
+"riscaldamento; una stella guida persa attiva la normale logica di "
+"riacquisizione dell'autoguida."
 
 #: ../../user_manual/ekos-guide.rst:701
 msgid "How It Works"
-msgstr ""
+msgstr "Funzionamento"
 
 #: ../../user_manual/ekos-guide.rst:703
 msgid ""
@@ -1333,6 +1454,17 @@ msgid ""
 "repeat, which is why data collection matters and why the random part remains "
 "the standard algorithm's job."
 msgstr ""
+"L'errore di inseguimento di una montatura si compone di due parti. La parte "
+"*ripetibile* deriva dalle sue parti meccaniche (l'errore periodico "
+"dell'ingranaggio worm, imperfezioni degli ingranaggi, rifrazione atmosferica "
+"e la deriva lenta da un errore di allineamento polare residuo). La parte "
+"*variabile* deriva dal seeing, il vento e il disturbo nella misurazione. Un "
+"dispositivo di guida convenzionale è puramente reattivo: può correggere "
+"soltanto un errore dopo che la stella si è già spostata. Un dispositivo di "
+"guida feed-forward, al contrario, prevede la parte ripetibile e la annulla "
+"quando si verifica (ma può farlo solo per quegli errori che si ripetono, "
+"ecco perché la raccolta dati è importante e perché la parte variabile rimane "
+"a carico dell'algoritmo standard."
 
 #: ../../user_manual/ekos-guide.rst:713
 msgid ""
@@ -1344,12 +1476,23 @@ msgid ""
 "clamps before being sent to the mount. If the AI contributes nothing useful, "
 "its term simply fades to zero and you are left with plain standard guiding."
 msgstr ""
+"Il dispositivo di guida IA è volutamente conservativa nel suo modo di "
+"utilizzare le previsioni. Ogni ciclo di guida il controllore standard "
+"calcola la sua normale correzione dalla deriva misurata. Parallelamente, il "
+"modello IA calcola una correzione prevista, scalata per il punteggio di "
+"confidenza in diretta e il tuo guadagno di previsione, e l'aggiunge sopra. "
+"L'impulso sommato passa quindi attraverso i morsetti di sicurezza prima di "
+"essere inviato alla montatura. Se l'intelligenza artificiale non introduce "
+"nulla di utile, il suo apporto si riduce semplicemente a zero e resta solo "
+"la guida standard semplice."
 
 #: ../../user_manual/ekos-guide.rst:722
 msgid ""
 "The model itself is chosen to match the mount's physics rather than being "
 "one large neural network:"
 msgstr ""
+"Lo stesso modello viene scelto in modo da coincidere con la fisica della "
+"montatura, piuttosto che essere una rete neurale grande:"
 
 #: ../../user_manual/ekos-guide.rst:725
 msgid ""
@@ -1358,6 +1501,10 @@ msgid ""
 "neural network (about 200 parameters) that learns the leftover, mount-"
 "specific residuals."
 msgstr ""
+"Le montature **Worm Gear** utilizzano un modello fisico dell'errore "
+"periodico, della rifrazione e della deriva polare, con la sua fase tracciata "
+"in diretta durante la guida, più una piccola rete neurale (circa 200 "
+"parametri) che apprende i residui rimanenti specifici della montatura."
 
 #: ../../user_manual/ekos-guide.rst:729
 msgid ""
@@ -1365,16 +1512,22 @@ msgid ""
 "wind-up and periodic error, with a small neural network correcting its "
 "predictions."
 msgstr ""
+"Le montature **Harmonic Drive** utilizzano un modello basato sul filtro "
+"Kalman della carica della molla di azionamento e dell'errore periodico, con "
+"una piccola rete neurale che corregge le sue previsioni."
 
 #: ../../user_manual/ekos-guide.rst:732
 msgid ""
 "**Direct drive** mounts have almost no mechanical error, so only refraction "
 "and drift are modeled analytically — no neural network is involved."
 msgstr ""
+"Le montature **Direct Drive** non presentano quasi errori meccanici, "
+"pertanto vengono modellate analiticamente soltanto la rifrazione e la deriva "
+"(non è coinvolta alcuna rete neurale)."
 
 #: ../../user_manual/ekos-guide.rst:739
 msgid "Troubleshooting and Notes"
-msgstr ""
+msgstr "Risoluzione di problemi e note"
 
 #: ../../user_manual/ekos-guide.rst:741
 msgid ""
@@ -1383,6 +1536,11 @@ msgid ""
 "Restore the settings used during data collection, retrain, or switch the "
 "algorithm back to :guilabel:`Standard`."
 msgstr ""
+"*Il sistema di guida si interrompe immediatamente con un errore dei pesi.* "
+"Il file dei pesi non è stato caricato o il suo codice di controllo non "
+"corrisponde alle impostazioni attuali della tua guida. Ripristina le "
+"impostazioni utilizzate durante la raccolta dei dati, addestra di nuovo o "
+"ritorna all'algoritmo :guilabel:`Standard`."
 
 #: ../../user_manual/ekos-guide.rst:745
 msgid ""
@@ -1391,6 +1549,11 @@ msgid ""
 "your mount's current behavior. Guiding continues normally on the standard "
 "algorithm either way; consider retraining under better conditions."
 msgstr ""
+"*L'IA resta in fase di riscaldamento o non diventa mai attiva.* È causato in "
+"genere da una stella guida debole (segnale rumore basso) o da previsioni che "
+"non corrispondono al comportamento corrente della tua montatura. In ogni "
+"caso, la guida continua normalmente con algoritmo standard; valuta di "
+"addestrare di nuovo in condizioni migliori."
 
 #: ../../user_manual/ekos-guide.rst:750
 msgid ""
@@ -1399,6 +1562,10 @@ msgid ""
 "errors. Compare a few guiding sessions with the AI enabled and disabled "
 "under similar conditions before drawing conclusions."
 msgstr ""
+"*Nessun miglioramento visibile.* È un risultato realistico in alcune "
+"montature, in particolare quelle con poco errore periodico o dominate da "
+"errori non ripetibili. Confronta alcune sessioni di guida con l'IA attivata "
+"e disattivata in condizioni simili prima di trarre conclusioni."
 
 #: ../../user_manual/ekos-guide.rst:755
 msgid ""
@@ -1407,6 +1574,11 @@ msgid ""
 "whenever guiding performance degrades noticeably after a remesh or "
 "mechanical adjustment."
 msgstr ""
+"*Quando riaddestrare:* dopo il cambio della fotocamera della guida, "
+"l'esposizione di guida, il binning, il gruppo ottico della guida, la "
+"montatura o qualsiasi impostazione di guida con codice di controllo (e ogni "
+"volta che le prestazioni della guida peggiorano in maniera evidente dopo una "
+"rimodellatura o una regolazione meccanica."
 
 #: ../../user_manual/ekos-guide.rst:759
 msgid ""
@@ -1414,6 +1586,10 @@ msgid ""
 "the AI debug logs and guide logs into a single archive that you can attach "
 "to a bug report or forum post."
 msgstr ""
+"*Segnalazione di problemi:* il pulsante :guilabel:`Esporta registri` della "
+"procedura guidata mette assieme i registri di debug dell'IA e della guida in "
+"un unico file archivio che puoi allegare a una segnalazione di errore o a un "
+"messaggio sul forum."
 
 #: ../../user_manual/ekos-guide.rst:766
 msgid "Dark Frames"
@@ -1632,7 +1808,7 @@ msgstr ".. image:: /images/ekos_guide_ai_menu.png"
 
 #: ../../user_manual/ekos-guide.rst:844
 msgid "AI Wizard Mount Page"
-msgstr ""
+msgstr "Montatura della procedura guidata IA"
 
 #: ../../user_manual/ekos-guide.rst:844
 msgid ".. image:: /images/ekos_guide_ai_wizard_mount.png"
@@ -1640,7 +1816,7 @@ msgstr ".. image:: /images/ekos_guide_ai_wizard_mount.png"
 
 #: ../../user_manual/ekos-guide.rst:845
 msgid "AI Wizard Protocol Page"
-msgstr ""
+msgstr "Protocollo della procedura guidata IA"
 
 #: ../../user_manual/ekos-guide.rst:845
 msgid ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
@@ -1648,7 +1824,7 @@ msgstr ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
 
 #: ../../user_manual/ekos-guide.rst:846
 msgid "AI Wizard Progress Page"
-msgstr ""
+msgstr "Avanzamento della procedura guidata IA"
 
 #: ../../user_manual/ekos-guide.rst:846
 msgid ".. image:: /images/ekos_guide_ai_wizard_progress.png"
@@ -1656,17 +1832,15 @@ msgstr ".. image:: /images/ekos_guide_ai_wizard_progress.png"
 
 #: ../../user_manual/ekos-guide.rst:847
 msgid "AI Wizard Complete Page"
-msgstr ""
+msgstr "Completamento della procedura guidata IA"
 
 #: ../../user_manual/ekos-guide.rst:847
 msgid ".. image:: /images/ekos_guide_ai_wizard_complete.png"
 msgstr ".. image:: /images/ekos_guide_ai_wizard_complete.png"
 
 #: ../../user_manual/ekos-guide.rst:848
-#, fuzzy
-#| msgid "Guide Settings"
 msgid "AI Guider Options"
-msgstr "Impostazioni di guida"
+msgstr "Opzioni del Dispositivo di guida IA"
 
 #: ../../user_manual/ekos-guide.rst:848
 msgid ".. image:: /images/ekos_guide_ai_options.png"
