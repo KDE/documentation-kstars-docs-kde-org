@@ -68,6 +68,7 @@ Features:
     ekos-logs
     ekos-capture
     ekos-focus
+    ekos-tilt-correction
     ekos-guide
     ekos-align
     ekos-scheduler
