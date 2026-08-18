@@ -442,6 +442,129 @@ Guiding with GPG
             exposures. All the other parameters are best left to
             defaults.
 
+.. _ekos-guide-streaming:
+
+Streaming Guide
+===============
+
+|Guide Stream Settings|
+
+In streaming guide mode the internal guider captures guide frames from the
+camera's continuous video stream instead of taking a separate exposure for
+each guide frame. Frames arrive continuously and the guider always works
+from the most recent one ("latest frame wins"), which removes the
+readout/download dead time between exposures. The result is a faster,
+lower-latency guide cadence — useful for the higher guide rates (roughly
+2–5 Hz) that some mounts, especially harmonic/strain-wave drives, benefit
+from.
+
+.. figure:: /images/ekos_guide_stream_timing.png
+   :alt: Single-frame versus streaming guide timing
+
+   Why streaming helps. In single-frame guiding (top) each exposure is
+   followed by readout/download/detection *dead time*, during which the mount
+   keeps drifting with no new measurement and no correction, so the pointing
+   error grows uncorrected and peaks just before each pulse. The pulse itself
+   is based on the star position measured during the *previous* exposure, so
+   the correction is already a couple of seconds old by the time it reaches
+   the mount. Streaming guiding (bottom) delivers frames back-to-back with no
+   dead time ("latest frame wins"), so corrections are more frequent and
+   fresher and far less error accumulates between them.
+
+Streaming affects only *how* frames are delivered to the guider; the guiding
+algorithms, calibration, dithering, and lost-star handling all behave as
+usual. It works with the :guilabel:`Standard`/MultiStar and :guilabel:`GPG`
+algorithms as well as the experimental :ref:`AI Guider
+<ekos-guide-ai-guiding-assistant>`.
+
+.. _ekos-guide-streaming-requirements:
+
+Requirements
+------------
+
+-  The **internal guider** (streaming is not used with external PHD2).
+-  A guide camera that supports INDI **video streaming**.
+-  A completed, successful calibration — calibration itself always runs with
+   single frames (see below).
+
+.. _ekos-guide-streaming-enabling:
+
+Enabling Streaming Guide
+------------------------
+
+Check the :guilabel:`Stream` box on the main Guide page, next to the
+:guilabel:`Exp` and :guilabel:`Delay` controls, before you start guiding.
+
+The guide :guilabel:`Exp` (exposure), :guilabel:`Gain`, and :guilabel:`Bin`
+controls apply to the streamed frames exactly as they do to single
+exposures; a gain change takes effect immediately while streaming.
+
+.. note::
+
+    Calibration always runs with single frames for stability, regardless of
+    the :guilabel:`Stream` setting. Streaming begins automatically only once
+    guiding starts (and only if :guilabel:`Stream` is checked), and stops
+    again when guiding stops. This keeps calibration clean and settled while
+    still giving you the streamed, dead-time-free cadence during guiding.
+
+.. _ekos-guide-streaming-depth:
+
+16-bit Stream Depth (INDI)
+--------------------------
+
+|Guide Stream Depth|
+
+The bit depth of the video stream is set on the camera driver, not in the
+Guide module. Open the INDI Control Panel, select your guide camera, and go
+to the :guilabel:`Streaming` tab:
+
+-  Set :guilabel:`Stream Depth` to :guilabel:`16-bit`. This is **highly
+   recommended** for guiding: 16-bit (RAW16) frames preserve the full sensor
+   bit depth, which gives better centroiding and faint-star detection than
+   8-bit.
+-  Make sure the :guilabel:`Encoder` is set to :guilabel:`RAW` (not MJPEG).
+-  Save the setting to the driver configuration (from the
+   :guilabel:`Options` tab) so it persists across sessions — otherwise the
+   stream may revert to 8-bit the next time the camera connects.
+
+.. _ekos-guide-streaming-examples:
+
+Examples
+--------
+
+|Guide Stream GPG|
+
+Streaming guide with the :guilabel:`GPG` algorithm on RA and
+:guilabel:`Linear` on DEC, at 0.7 s exposure and 2×2 binning on a
+harmonic-drive mount — total RMS around 0.46″ with 100 detected stars.
+
+|Guide Stream AI|
+
+Streaming guide combined with the experimental AI Guider. Because streaming
+supplies frames with no inter-frame dead time, it pairs naturally with the
+higher guide rates that harmonic drives and the AI predictor work best at.
+
+.. _ekos-guide-streaming-notes:
+
+Notes and Limitations
+---------------------
+
+-  **Dark-frame subtraction works in streaming mode.** The :guilabel:`Dark`
+   checkbox applies a matched dark frame (and defect map) to each streamed
+   guide frame, just as in single-frame guiding — useful for removing
+   amplifier glow or hot pixels on some guide sensors. As always, a suitable
+   dark must exist in the Dark Library for the current guide exposure, gain,
+   and binning (see :ref:`Dark Frames <ekos-guide-dark-frames>`). Note that
+   removing a smooth glow gradient requires actual dark *subtraction*: set the
+   Dark Library to *Prefer Darks* rather than *Prefer Defects*, since the
+   defect map only repairs isolated hot/cold pixels and will not remove glow.
+-  Streaming requires a camera and driver with working INDI video streaming;
+   if the camera does not support it, the guider falls back to single-frame
+   captures.
+-  As with any guide configuration, verify your results: streaming changes
+   the cadence, not the fundamentals, so good polar alignment, balance, and
+   calibration still matter most.
+
 .. _ekos-guide-ai-guiding-assistant:
 
 AI Guiding Assistant (Experimental)
@@ -846,3 +969,7 @@ Guiding Logs
 .. |AI Wizard Progress Page| image:: /images/ekos_guide_ai_wizard_progress.png
 .. |AI Wizard Complete Page| image:: /images/ekos_guide_ai_wizard_complete.png
 .. |AI Guider Options| image:: /images/ekos_guide_ai_options.png
+.. |Guide Stream Settings| image:: /images/ekos_guide_stream_settings.jpg
+.. |Guide Stream Depth| image:: /images/ekos_guide_stream_depth.jpg
+.. |Guide Stream GPG| image:: /images/ekos_guide_stream_gpg.jpg
+.. |Guide Stream AI| image:: /images/ekos_guide_stream_ai.jpg
