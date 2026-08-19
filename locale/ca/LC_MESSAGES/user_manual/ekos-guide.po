@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-19 02:06+0000\n"
+"POT-Creation-Date: 2026-08-19 02:09+0000\n"
 "PO-Revision-Date: 2026-07-21 12:39+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -666,7 +666,7 @@ msgstr ""
 "que la muntura faci el tramat en una direcció aleatòria fins al pols "
 "especificat a l'opció ``Pols del tramat sense guiatge``."
 
-#: ../../user_manual/ekos-guide.rst:332 ../../user_manual/ekos-guide.rst:837
+#: ../../user_manual/ekos-guide.rst:332 ../../user_manual/ekos-guide.rst:960
 msgid "Drift Graphics"
 msgstr "Gràfics de la deriva"
 
@@ -825,7 +825,7 @@ msgstr ""
 "marcat, i ``HFR màx. del MultiStar`` és un paràmetre antic que probablement "
 "ja té poc efecte."
 
-#: ../../user_manual/ekos-guide.rst:420 ../../user_manual/ekos-guide.rst:840
+#: ../../user_manual/ekos-guide.rst:420 ../../user_manual/ekos-guide.rst:963
 msgid "Guiding with GPG"
 msgstr "Guiatge amb GPG"
 
@@ -874,14 +874,209 @@ msgstr ""
 "altres paràmetres amb els valors predeterminats."
 
 #: ../../user_manual/ekos-guide.rst:448
+msgid "Streaming Guide"
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:450
+#, fuzzy
+#| msgid "|Guide Settings|"
+msgid "|Guide Stream Settings|"
+msgstr "|Guide Settings|"
+
+#: ../../user_manual/ekos-guide.rst:452
+msgid ""
+"In streaming guide mode the internal guider captures guide frames from the "
+"camera's continuous video stream instead of taking a separate exposure for "
+"each guide frame. Frames arrive continuously and the guider always works "
+"from the most recent one (\"latest frame wins\"), which removes the readout/"
+"download dead time between exposures. The result is a faster, lower-latency "
+"guide cadence — useful for the higher guide rates (roughly 2–5 Hz) that some "
+"mounts, especially harmonic/strain-wave drives, benefit from."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:464
+msgid "Single-frame versus streaming guide timing"
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:464
+#, fuzzy
+#| msgid ".. image:: /images/ekos_guide_ai_menu.png"
+msgid ".. image:: /images/ekos_guide_stream_timing.png"
+msgstr ".. image:: /images/ekos_guide_ai_menu.png"
+
+#: ../../user_manual/ekos-guide.rst:464
+msgid ""
+"Why streaming helps. In single-frame guiding (top) each exposure is followed "
+"by readout/download/detection *dead time*, during which the mount keeps "
+"drifting with no new measurement and no correction, so the pointing error "
+"grows uncorrected and peaks just before each pulse. The pulse itself is "
+"based on the star position measured during the *previous* exposure, so the "
+"correction is already a couple of seconds old by the time it reaches the "
+"mount. Streaming guiding (bottom) delivers frames back-to-back with no dead "
+"time (\"latest frame wins\"), so corrections are more frequent and fresher "
+"and far less error accumulates between them."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:474
+msgid ""
+"Streaming affects only *how* frames are delivered to the guider; the guiding "
+"algorithms, calibration, dithering, and lost-star handling all behave as "
+"usual. It works with the :guilabel:`Standard`/MultiStar and :guilabel:`GPG` "
+"algorithms as well as the experimental :ref:`AI Guider <ekos-guide-ai-"
+"guiding-assistant>`."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:483
+msgid "Requirements"
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:485
+msgid "The **internal guider** (streaming is not used with external PHD2)."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:486
+msgid "A guide camera that supports INDI **video streaming**."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:487
+msgid ""
+"A completed, successful calibration — calibration itself always runs with "
+"single frames (see below)."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:493
+msgid "Enabling Streaming Guide"
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:495
+msgid ""
+"Check the :guilabel:`Stream` box on the main Guide page, next to the :"
+"guilabel:`Exp` and :guilabel:`Delay` controls, before you start guiding."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:498
+msgid ""
+"The guide :guilabel:`Exp` (exposure), :guilabel:`Gain`, and :guilabel:`Bin` "
+"controls apply to the streamed frames exactly as they do to single "
+"exposures; a gain change takes effect immediately while streaming."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:504
+msgid ""
+"Calibration always runs with single frames for stability, regardless of the :"
+"guilabel:`Stream` setting. Streaming begins automatically only once guiding "
+"starts (and only if :guilabel:`Stream` is checked), and stops again when "
+"guiding stops. This keeps calibration clean and settled while still giving "
+"you the streamed, dead-time-free cadence during guiding."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:513
+msgid "16-bit Stream Depth (INDI)"
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:515
+#, fuzzy
+#| msgid "|Guide Settings|"
+msgid "|Guide Stream Depth|"
+msgstr "|Guide Settings|"
+
+#: ../../user_manual/ekos-guide.rst:517
+msgid ""
+"The bit depth of the video stream is set on the camera driver, not in the "
+"Guide module. Open the INDI Control Panel, select your guide camera, and go "
+"to the :guilabel:`Streaming` tab:"
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:521
+msgid ""
+"Set :guilabel:`Stream Depth` to :guilabel:`16-bit`. This is **highly "
+"recommended** for guiding: 16-bit (RAW16) frames preserve the full sensor "
+"bit depth, which gives better centroiding and faint-star detection than 8-"
+"bit."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:525
+msgid ""
+"Make sure the :guilabel:`Encoder` is set to :guilabel:`RAW` (not MJPEG)."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:526
+msgid ""
+"Save the setting to the driver configuration (from the :guilabel:`Options` "
+"tab) so it persists across sessions — otherwise the stream may revert to 8-"
+"bit the next time the camera connects."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:533
+msgid "Examples"
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:535
+#, fuzzy
+#| msgid "|Guiding with GPG|"
+msgid "|Guide Stream GPG|"
+msgstr "|Guiding with GPG|"
+
+#: ../../user_manual/ekos-guide.rst:537
+msgid ""
+"Streaming guide with the :guilabel:`GPG` algorithm on RA and :guilabel:"
+"`Linear` on DEC, at 0.7 s exposure and 2×2 binning on a harmonic-drive mount "
+"— total RMS around 0.46″ with 100 detected stars."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:541
+#, fuzzy
+#| msgid "|Guide Settings|"
+msgid "|Guide Stream AI|"
+msgstr "|Guide Settings|"
+
+#: ../../user_manual/ekos-guide.rst:543
+msgid ""
+"Streaming guide combined with the experimental AI Guider. Because streaming "
+"supplies frames with no inter-frame dead time, it pairs naturally with the "
+"higher guide rates that harmonic drives and the AI predictor work best at."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:550
+msgid "Notes and Limitations"
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:552
+msgid ""
+"**Dark-frame subtraction works in streaming mode.** The :guilabel:`Dark` "
+"checkbox applies a matched dark frame (and defect map) to each streamed "
+"guide frame, just as in single-frame guiding — useful for removing amplifier "
+"glow or hot pixels on some guide sensors. As always, a suitable dark must "
+"exist in the Dark Library for the current guide exposure, gain, and binning "
+"(see :ref:`Dark Frames <ekos-guide-dark-frames>`). Note that removing a "
+"smooth glow gradient requires actual dark *subtraction*: set the Dark "
+"Library to *Prefer Darks* rather than *Prefer Defects*, since the defect map "
+"only repairs isolated hot/cold pixels and will not remove glow."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:561
+msgid ""
+"Streaming requires a camera and driver with working INDI video streaming; if "
+"the camera does not support it, the guider falls back to single-frame "
+"captures."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:564
+msgid ""
+"As with any guide configuration, verify your results: streaming changes the "
+"cadence, not the fundamentals, so good polar alignment, balance, and "
+"calibration still matter most."
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:571
 msgid "AI Guiding Assistant (Experimental)"
 msgstr "Assistent de guiatge d'IA (Experimental)"
 
-#: ../../user_manual/ekos-guide.rst:450
+#: ../../user_manual/ekos-guide.rst:573
 msgid "|AI Guiding Menu|"
 msgstr "|AI Guiding Menu|"
 
-#: ../../user_manual/ekos-guide.rst:452
+#: ../../user_manual/ekos-guide.rst:575
 msgid ""
 "The AI Guiding Assistant adds a trained, mount-specific *feed-forward* "
 "predictor to the internal guider. After a one-time training session, the AI "
@@ -900,7 +1095,7 @@ msgstr ""
 "segueix funcionant a sota en tot moment i corregeix el que la predicció "
 "falli."
 
-#: ../../user_manual/ekos-guide.rst:460
+#: ../../user_manual/ekos-guide.rst:583
 msgid ""
 "The entry point is the :guilabel:`AI Guiding (Experimental)` menu button on "
 "the main Guide page, just below :guilabel:`Clear Calibration`. It offers two "
@@ -919,7 +1114,7 @@ msgstr ""
 "la interfície :doc:`Assistent d'IA (MCP) <ekos-mcp>`, que connecta el KStars "
 "amb assistents de xat externs."
 
-#: ../../user_manual/ekos-guide.rst:470
+#: ../../user_manual/ekos-guide.rst:593
 msgid ""
 "The AI Guiding Assistant is an **experimental** feature under active "
 "development. Trained models are tied to your specific mount, camera, and "
@@ -934,11 +1129,11 @@ msgstr ""
 "algorismes :guilabel:`Estàndard` o :guilabel:`GPG` si els resultats no són "
 "millors amb la IA."
 
-#: ../../user_manual/ekos-guide.rst:479
+#: ../../user_manual/ekos-guide.rst:602
 msgid "Expectations and Prerequisites"
 msgstr "Expectacions i prerequisits"
 
-#: ../../user_manual/ekos-guide.rst:481
+#: ../../user_manual/ekos-guide.rst:604
 msgid ""
 "Please read this part carefully before investing time in training a model — "
 "it will save you from disappointment later."
@@ -946,7 +1141,7 @@ msgstr ""
 "Llegiu aquesta part amb cura abans d'invertir temps en l'entrenament d'un "
 "model, us pot estalviar una decepció més endavant."
 
-#: ../../user_manual/ekos-guide.rst:486
+#: ../../user_manual/ekos-guide.rst:609
 msgid ""
 "AI guiding **augments** a well-functioning guiding setup — it does not "
 "repair a poorly functioning one. It predicts the *repeatable* part of your "
@@ -958,23 +1153,23 @@ msgstr ""
 "l'error de la muntura i les capes que prediuen a sobre de l'algorisme de "
 "guiatge estàndard. **No** corregirà:"
 
-#: ../../user_manual/ekos-guide.rst:491
+#: ../../user_manual/ekos-guide.rst:614
 msgid "poor polar alignment,"
 msgstr "una alineació polar deficient,"
 
-#: ../../user_manual/ekos-guide.rst:492
+#: ../../user_manual/ekos-guide.rst:615
 msgid "imbalance, cable drag, or differential flexure,"
 msgstr "un desequilibri, arrossegament del cable o flexió diferencial,"
 
-#: ../../user_manual/ekos-guide.rst:493
+#: ../../user_manual/ekos-guide.rst:616
 msgid "wind gusts, vibrations, or bad seeing,"
 msgstr "ràfegues de vent, vibracions, o visió («seeing») dolenta,"
 
-#: ../../user_manual/ekos-guide.rst:494
+#: ../../user_manual/ekos-guide.rst:617
 msgid "a mount or guide system that is not already well tuned."
 msgstr "un sistema de muntura o guiatge que no està ben ajustat."
 
-#: ../../user_manual/ekos-guide.rst:496
+#: ../../user_manual/ekos-guide.rst:619
 msgid ""
 "None of these are repeatable errors, so no amount of training can predict "
 "them. If standard guiding does not work well on your system, fix that first. "
@@ -987,11 +1182,11 @@ msgstr ""
 "muntura a muntura, i en algunes muntures és possible que no vegeu cap "
 "benefici mesurable."
 
-#: ../../user_manual/ekos-guide.rst:502
+#: ../../user_manual/ekos-guide.rst:625
 msgid "Before running the assistant, make sure that:"
 msgstr "Abans d'executar l'assistent, assegureu-vos que:"
 
-#: ../../user_manual/ekos-guide.rst:504
+#: ../../user_manual/ekos-guide.rst:627
 msgid ""
 "You are using the **internal guider**, with a working guide camera and a "
 "completed, successful calibration."
@@ -999,7 +1194,7 @@ msgstr ""
 "Utilitzeu el **sistema de guiatge intern**, amb una càmera de guiatge en "
 "funcionament i un calibratge complet i reeixit."
 
-#: ../../user_manual/ekos-guide.rst:506
+#: ../../user_manual/ekos-guide.rst:629
 msgid ""
 "Ordinary guiding with the :guilabel:`Standard` algorithm already works "
 "reliably on your setup."
@@ -1007,13 +1202,13 @@ msgstr ""
 "El guiatge ordinari amb l'algorisme :guilabel:`Estàndard` ja funciona de "
 "manera fiable en la vostra configuració."
 
-#: ../../user_manual/ekos-guide.rst:508
+#: ../../user_manual/ekos-guide.rst:631
 msgid "Your mount is well polar-aligned, balanced, and free of cable snags."
 msgstr ""
 "La muntura té una alineació correcta, està equilibrada i sense arrossegar "
 "cables."
 
-#: ../../user_manual/ekos-guide.rst:509
+#: ../../user_manual/ekos-guide.rst:632
 msgid ""
 "You know your mount's drive type: worm gear (most equatorial mounts), "
 "harmonic/strain-wave drive, or direct drive."
@@ -1022,7 +1217,7 @@ msgstr ""
 "(la majoria de muntures equatorials), controlador harmònic/d'ona deformant o "
 "controlador directe."
 
-#: ../../user_manual/ekos-guide.rst:511
+#: ../../user_manual/ekos-guide.rst:634
 msgid ""
 "Your guide exposure is the one you intend to keep using: the model is "
 "trained *and locked* to the guide exposure, binning, and guide settings used "
@@ -1032,7 +1227,7 @@ msgstr ""
 "entrenat *i bloquejat* a l'exposició del guiatge, l'enfocament i la "
 "configuració del guiatge utilitzada durant la recollida de dades."
 
-#: ../../user_manual/ekos-guide.rst:514
+#: ../../user_manual/ekos-guide.rst:637
 msgid ""
 "You have 20–45 minutes of clear, reasonably steady sky to spend on data "
 "collection, depending on the mount type."
@@ -1040,11 +1235,11 @@ msgstr ""
 "Teniu 20–45 minuts de cel clar i raonablement estable per gastar en la "
 "recollida de dades, depenent del tipus de muntura."
 
-#: ../../user_manual/ekos-guide.rst:520
+#: ../../user_manual/ekos-guide.rst:643
 msgid "Data Collection with the AI Guiding Assistant"
 msgstr "Recollida de dades amb l'assistent de guiatge d'IA"
 
-#: ../../user_manual/ekos-guide.rst:522
+#: ../../user_manual/ekos-guide.rst:645
 msgid ""
 "Training a model starts with a *system identification* session: the "
 "assistant points the mount at a few positions in the sky and records how the "
@@ -1061,11 +1256,11 @@ msgstr ""
 "guilabel:`Guiatge d'IA (experimental)` → :guilabel:`Assistent de guiatge "
 "d'IA...` a la pàgina de guiatge per a iniciar l'assistent."
 
-#: ../../user_manual/ekos-guide.rst:530
+#: ../../user_manual/ekos-guide.rst:653
 msgid "|AI Wizard Mount Page|"
 msgstr "|AI Wizard Mount Page|"
 
-#: ../../user_manual/ekos-guide.rst:532
+#: ../../user_manual/ekos-guide.rst:655
 msgid ""
 "**Page 1 — Mount Identification.** Verify the detected mount type: :guilabel:"
 "`Worm Gear`, :guilabel:`Harmonic Drive`, or :guilabel:`Direct Drive`. The "
@@ -1082,11 +1277,11 @@ msgstr ""
 "per a unitats directes. Establiu l'exposició *abans* de continuar: el model "
 "entrenat hi està bloquejat."
 
-#: ../../user_manual/ekos-guide.rst:539
+#: ../../user_manual/ekos-guide.rst:662
 msgid "|AI Wizard Protocol Page|"
 msgstr "|AI Wizard Protocol Page|"
 
-#: ../../user_manual/ekos-guide.rst:541
+#: ../../user_manual/ekos-guide.rst:664
 msgid ""
 "**Page 2 — Protocol Preview.** The wizard shows the measurement protocol it "
 "is about to run. During data collection your guiding settings are "
@@ -1101,7 +1296,7 @@ msgstr ""
 "els paràmetres originals es restauraran quan acabi l'assistent. El protocol "
 "depèn del tipus de muntura:"
 
-#: ../../user_manual/ekos-guide.rst:547
+#: ../../user_manual/ekos-guide.rst:670
 msgid ""
 "**Worm Gear** (~45 minutes): three pointings at high, lower, and high "
 "altitude, each combining standard guiding with several minutes of free "
@@ -1114,7 +1309,7 @@ msgstr ""
 "tres cicles complets de l'engranatge sense fi, que és el que permet mesurar "
 "l'error periòdic."
 
-#: ../../user_manual/ekos-guide.rst:551
+#: ../../user_manual/ekos-guide.rst:674
 msgid ""
 "**Harmonic Drive** (~35 minutes): free drift and standard guiding at two "
 "pointings, plus a series of short pulse-response tests (50, 100, and 200 ms "
@@ -1126,7 +1321,7 @@ msgstr ""
 "ms en les quatre direccions) que mesuren com la unitat reacciona a les "
 "correccions."
 
-#: ../../user_manual/ekos-guide.rst:555
+#: ../../user_manual/ekos-guide.rst:678
 msgid ""
 "**Direct Drive** (~20 minutes): short guiding and free-drift phases at three "
 "different altitudes."
@@ -1134,11 +1329,11 @@ msgstr ""
 "**Unitat directa** (20 minuts): fases curtes de guiatge i deriva lliure a "
 "tres altituds diferents."
 
-#: ../../user_manual/ekos-guide.rst:558
+#: ../../user_manual/ekos-guide.rst:681
 msgid "|AI Wizard Progress Page|"
 msgstr "|AI Wizard Progress Page|"
 
-#: ../../user_manual/ekos-guide.rst:560
+#: ../../user_manual/ekos-guide.rst:683
 msgid ""
 "**Page 3 — System Identification Progress.** The assistant slews, guides, "
 "and drifts on its own. Leave the system alone while it runs — interrupting "
@@ -1150,11 +1345,11 @@ msgstr ""
 "s'executa (interrompre el procés invalida la fase afectada). Utilitzeu :"
 "guilabel:`Atura` només si alguna cosa va malament."
 
-#: ../../user_manual/ekos-guide.rst:565
+#: ../../user_manual/ekos-guide.rst:688
 msgid "|AI Wizard Complete Page|"
 msgstr "|AI Wizard Complete Page|"
 
-#: ../../user_manual/ekos-guide.rst:567
+#: ../../user_manual/ekos-guide.rst:690
 msgid ""
 "**Page 4 — Data Collection Complete.** The measured data is saved, and you "
 "choose how to train the model: :guilabel:`Train in EkosLive` uploads the "
@@ -1170,11 +1365,11 @@ msgstr ""
 "línia` escriu un fitxer ``sysid_data.json`` per a l'entrenador de Python "
 "(vegeu :ref:`a continuació <ekos-guide-ai-offline-training>`)."
 
-#: ../../user_manual/ekos-guide.rst:577
+#: ../../user_manual/ekos-guide.rst:700
 msgid "Training via EkosLive"
 msgstr "Entrenament via EkosLive"
 
-#: ../../user_manual/ekos-guide.rst:579
+#: ../../user_manual/ekos-guide.rst:702
 msgid ""
 "The easiest way to train the model is with an `EkosLive <https://ekoslive."
 "com>`__ account: click :guilabel:`Train in EkosLive` on wizard page 4. The "
@@ -1191,7 +1386,7 @@ msgstr ""
 "kstars/`` al Linux) i s'estableixen com a fitxer actiu de ponderacions, no "
 "es necessiten més passos."
 
-#: ../../user_manual/ekos-guide.rst:589
+#: ../../user_manual/ekos-guide.rst:712
 msgid ""
 "The uploaded system-identification data contains **no sky coordinates**: "
 "only altitude, azimuth, and parallactic angle, together with pixel drift "
@@ -1208,11 +1403,11 @@ msgstr ""
 "el seu lloc utilitzeu l'entrenament fora de línia, que produeix ponderacions "
 "idèntiques."
 
-#: ../../user_manual/ekos-guide.rst:600
+#: ../../user_manual/ekos-guide.rst:723
 msgid "Training the Model Offline"
 msgstr "Entrenament del model fora de línia"
 
-#: ../../user_manual/ekos-guide.rst:602
+#: ../../user_manual/ekos-guide.rst:725
 msgid ""
 "You do not need EkosLive to train a model — the trainer is a small set of "
 "Python scripts that runs on any ordinary computer. Training uses only the "
@@ -1222,7 +1417,7 @@ msgstr ""
 "scripts en Python que s'executa en qualsevol ordinador normal. L'entrenament "
 "només utilitza la CPU i acaba en menys de deu minuts; no es requereix GPU."
 
-#: ../../user_manual/ekos-guide.rst:606
+#: ../../user_manual/ekos-guide.rst:729
 msgid ""
 "On wizard page 4, click :guilabel:`Export for offline training` and save "
 "``sysid_data.json``."
@@ -1230,7 +1425,7 @@ msgstr ""
 "A la pàgina 4 de l'assistent, feu clic a :guilabel:`Exporta per a "
 "l'entrenament fora de línia` i deseu ``sysid_data.json``."
 
-#: ../../user_manual/ekos-guide.rst:608
+#: ../../user_manual/ekos-guide.rst:731
 msgid ""
 "Copy the file to the computer where you want to train (it can be the "
 "observatory computer itself, but a desktop or laptop is usually more "
@@ -1240,7 +1435,7 @@ msgstr ""
 "l'observatori en si, però un ordinador de sobretaula o un portàtil sol ser "
 "més còmode)."
 
-#: ../../user_manual/ekos-guide.rst:611
+#: ../../user_manual/ekos-guide.rst:734
 msgid ""
 "Get the trainer scripts from the ``kstars/ekos/guide/offlinetrainer/`` "
 "directory of the `KStars source repository <https://invent.kde.org/education/"
@@ -1250,12 +1445,12 @@ msgstr ""
 "offlinetrainer/`` el `repositori de codi font del KStars <https://invent.kde."
 "org/education/kstars/-/tree/master/kstars/ekos/guide/offlinetrainer>`__."
 
-#: ../../user_manual/ekos-guide.rst:614
+#: ../../user_manual/ekos-guide.rst:737
 msgid "In that directory, create a Python environment and run the trainer:"
 msgstr "En aquest directori, creeu un entorn Python i executeu l'entrenador:"
 
 # skip-rule: t-sp_pu
-#: ../../user_manual/ekos-guide.rst:616
+#: ../../user_manual/ekos-guide.rst:739
 msgid ""
 "python3 -m venv venv\n"
 "source venv/bin/activate\n"
@@ -1267,7 +1462,7 @@ msgstr ""
 "pip install numpy scipy torch\n"
 "python train.py --sysid-data ./sysid_data.json --output ./weights.json"
 
-#: ../../user_manual/ekos-guide.rst:623
+#: ../../user_manual/ekos-guide.rst:746
 msgid ""
 "The trainer auto-detects your mount type from the data and picks the "
 "matching model. Should the detection ever be wrong, it can be overridden "
@@ -1277,7 +1472,7 @@ msgstr ""
 "dades i selecciona el model que coincideix. Si la detecció mai fos correcta, "
 "es pot substituir amb ``--mount-type WORM_GEAR|HARMONIC_DRIVE|DIRECT_DRIVE``."
 
-#: ../../user_manual/ekos-guide.rst:627
+#: ../../user_manual/ekos-guide.rst:750
 msgid ""
 "Finally, copy the resulting ``weights.json`` back to the observatory "
 "computer and load it in KStars via :guilabel:`AI Guiding (Experimental)` → :"
@@ -1292,15 +1487,15 @@ msgstr ""
 "d'opcions del :guilabel:`Sistema de guiatge d'IA`. Les ponderacions "
 "s'aplicaran la pròxima vegada que s'iniciï el guiatge."
 
-#: ../../user_manual/ekos-guide.rst:636
+#: ../../user_manual/ekos-guide.rst:759
 msgid "Activating AI Guiding and Options"
 msgstr "Activació del guiatge d'IA i opcions"
 
-#: ../../user_manual/ekos-guide.rst:638
+#: ../../user_manual/ekos-guide.rst:761
 msgid "|AI Guider Options|"
 msgstr "|AI Guider Options|"
 
-#: ../../user_manual/ekos-guide.rst:640
+#: ../../user_manual/ekos-guide.rst:763
 msgid ""
 "With a weights file loaded, select :guilabel:`AI Guider` as the guiding "
 "algorithm for RA and/or DEC in the guider options, and start guiding as "
@@ -1313,13 +1508,13 @@ msgstr ""
 "relacionada amb la IA es troba a la pàgina :guilabel:`Sistema de guiatge "
 "d'IA` del diàleg de configuració del guiatge:"
 
-#: ../../user_manual/ekos-guide.rst:645
+#: ../../user_manual/ekos-guide.rst:768
 msgid ":guilabel:`Weights File`: path to the trained model weights (JSON)."
 msgstr ""
 ":guilabel:`Fitxer de ponderacions`: camí a les ponderacions entrenades del "
 "model (JSON)."
 
-#: ../../user_manual/ekos-guide.rst:646
+#: ../../user_manual/ekos-guide.rst:769
 msgid ""
 ":guilabel:`AI Prediction Gain` (default 0.5): how strongly the AI prediction "
 "is blended into the guide pulses. 0.0 ignores the AI entirely; 1.0 applies "
@@ -1331,7 +1526,7 @@ msgstr ""
 "completament la IA; 1,0 aplica la seva predicció completa. Comenceu amb el "
 "valor predeterminat i augmenteu gradualment si millora el guiatge."
 
-#: ../../user_manual/ekos-guide.rst:650
+#: ../../user_manual/ekos-guide.rst:773
 msgid ""
 ":guilabel:`Scale Down Proportional Gain During AI Correction` (default off): "
 "reduces the standard proportional response by up to half when the AI is "
@@ -1343,7 +1538,7 @@ msgstr ""
 "estàndard fins a la meitat quan la IA està molt segura, per a evitar que els "
 "dos controladors corregeixin excessivament el mateix error."
 
-#: ../../user_manual/ekos-guide.rst:654
+#: ../../user_manual/ekos-guide.rst:777
 msgid ""
 ":guilabel:`Enable Predictive Dark Guiding` (default off): keeps emitting "
 "predicted corrections during gaps in guide star measurements — dither "
@@ -1356,7 +1551,7 @@ msgstr ""
 "d'enfocament automàtic o baixades de la càmera) extrapolant l'error periòdic "
 "en el temps."
 
-#: ../../user_manual/ekos-guide.rst:658
+#: ../../user_manual/ekos-guide.rst:781
 msgid ""
 ":guilabel:`Dark Guiding Interval` (default 1.0 s): seconds between predicted "
 "pulses when no guide-star measurement is available."
@@ -1364,7 +1559,7 @@ msgstr ""
 ":guilabel:`Interval de guiatge fosc` (predeterminat 1,0 s): segons entre els "
 "polsos predits quan no hi ha cap mesura disponible d'estrella guia."
 
-#: ../../user_manual/ekos-guide.rst:663
+#: ../../user_manual/ekos-guide.rst:786
 msgid ""
 "A weights file only works with the guide settings it was trained with. When "
 "guiding starts, the file's fingerprint is checked against your current guide "
@@ -1382,11 +1577,11 @@ msgstr ""
 "torneu a executar l'assistent per a entrenar ponderacions noves o torneu a "
 "canviar l'algorisme a :guilabel:`Estàndard`."
 
-#: ../../user_manual/ekos-guide.rst:674
+#: ../../user_manual/ekos-guide.rst:797
 msgid "Monitoring AI Guiding"
 msgstr "Monitoratge del guiatge d'IA"
 
-#: ../../user_manual/ekos-guide.rst:676
+#: ../../user_manual/ekos-guide.rst:799
 msgid ""
 "The guide state display shows what the AI is doing. After guiding starts, "
 "the AI is in a *warm-up* phase (shown as :guilabel:`Warm up`) while it "
@@ -1406,7 +1601,7 @@ msgstr ""
 "la IA es converteix en :guilabel:`Activa` i les seves correccions es "
 "barregen."
 
-#: ../../user_manual/ekos-guide.rst:684
+#: ../../user_manual/ekos-guide.rst:807
 msgid ""
 "The blend is weighted by a live *confidence* score. Confidence requires a "
 "reasonably bright guide star (it reaches its maximum around a signal-to-"
@@ -1423,7 +1618,7 @@ msgstr ""
 "fa la major part del treball; un model amb un rendiment inferior es degrada "
 "amb elegància en lloc d'arruïnar els submarcs."
 
-#: ../../user_manual/ekos-guide.rst:692
+#: ../../user_manual/ekos-guide.rst:815
 msgid ""
 "Several safeguards apply at all times: every pulse respects your configured "
 "maximum pulse limits plus a hard 5-second ceiling; AI predictions are "
@@ -1437,11 +1632,11 @@ msgstr ""
 "restableix l'estat intern d'IA per a tornar a escalfar; i una estrella guia "
 "perduda desencadena la lògica de readquisició normal de guiatge."
 
-#: ../../user_manual/ekos-guide.rst:701
+#: ../../user_manual/ekos-guide.rst:824
 msgid "How It Works"
 msgstr "Com funciona"
 
-#: ../../user_manual/ekos-guide.rst:703
+#: ../../user_manual/ekos-guide.rst:826
 msgid ""
 "A mount's tracking error has two parts. The *repeatable* part comes from its "
 "mechanics — the worm gear's periodic error, gear imperfections, atmospheric "
@@ -1465,7 +1660,7 @@ msgstr ""
 "dades importa i per què la part aleatòria continua sent la feina de "
 "l'algorisme estàndard."
 
-#: ../../user_manual/ekos-guide.rst:713
+#: ../../user_manual/ekos-guide.rst:836
 msgid ""
 "The AI Guider is deliberately conservative in how it uses its predictions. "
 "Each guide cycle, the standard controller computes its normal correction "
@@ -1484,7 +1679,7 @@ msgstr ""
 "muntura. Si la IA no aporta res útil, el seu terme simplement s'esvaeix a "
 "zero i es deixa amb el guiatge estàndard."
 
-#: ../../user_manual/ekos-guide.rst:722
+#: ../../user_manual/ekos-guide.rst:845
 msgid ""
 "The model itself is chosen to match the mount's physics rather than being "
 "one large neural network:"
@@ -1492,7 +1687,7 @@ msgstr ""
 "El model en si és escollit per coincidir amb la física de la muntura en lloc "
 "de ser una xarxa neuronal gran:"
 
-#: ../../user_manual/ekos-guide.rst:725
+#: ../../user_manual/ekos-guide.rst:848
 msgid ""
 "**Worm gear** mounts use a physics model of the periodic error, refraction, "
 "and polar drift, with its phase tracked live while guiding, plus a tiny "
@@ -1505,7 +1700,7 @@ msgstr ""
 "neuronal (al voltant de 200 paràmetres) que aprèn les restes sobrants i "
 "específiques de la muntura."
 
-#: ../../user_manual/ekos-guide.rst:729
+#: ../../user_manual/ekos-guide.rst:852
 msgid ""
 "**Harmonic drive** mounts use a Kalman-filter model of the drive's spring "
 "wind-up and periodic error, with a small neural network correcting its "
@@ -1515,7 +1710,7 @@ msgstr ""
 "acabar la molla de la unitat i l'error periòdic, amb una xarxa neuronal "
 "petita que corregeix les seves prediccions."
 
-#: ../../user_manual/ekos-guide.rst:732
+#: ../../user_manual/ekos-guide.rst:855
 msgid ""
 "**Direct drive** mounts have almost no mechanical error, so only refraction "
 "and drift are modeled analytically — no neural network is involved."
@@ -1524,11 +1719,11 @@ msgstr ""
 "manera que només es modelen analíticament la refracció i la deriva, no hi ha "
 "cap xarxa neuronal implicada."
 
-#: ../../user_manual/ekos-guide.rst:739
+#: ../../user_manual/ekos-guide.rst:862
 msgid "Troubleshooting and Notes"
 msgstr "Solució de problemes i notes"
 
-#: ../../user_manual/ekos-guide.rst:741
+#: ../../user_manual/ekos-guide.rst:864
 msgid ""
 "*Guiding aborts immediately with a weights error.* The weights file failed "
 "to load or its fingerprint does not match your current guide settings. "
@@ -1541,7 +1736,7 @@ msgstr ""
 "utilitzada durant la recollida de dades, torneu a entrenar o canvieu "
 "l'algorisme a :guilabel:`Estàndard`."
 
-#: ../../user_manual/ekos-guide.rst:745
+#: ../../user_manual/ekos-guide.rst:868
 msgid ""
 "*The AI stays in warm-up or never becomes active.* This is usually caused by "
 "a faint guide star (low signal-to-noise) or by predictions that do not match "
@@ -1554,7 +1749,7 @@ msgstr ""
 "normalment en l'algorisme estàndard de qualsevol manera; considereu el "
 "reciclatge en millors condicions."
 
-#: ../../user_manual/ekos-guide.rst:750
+#: ../../user_manual/ekos-guide.rst:873
 msgid ""
 "*No visible improvement.* This is a realistic outcome on some mounts — "
 "especially ones with little periodic error or dominated by non-repeatable "
@@ -1567,7 +1762,7 @@ msgstr ""
 "IA activada i desactivada en condicions similars abans d'extreure "
 "conclusions."
 
-#: ../../user_manual/ekos-guide.rst:755
+#: ../../user_manual/ekos-guide.rst:878
 msgid ""
 "*When to retrain:* after changing the guide camera, guide exposure, binning, "
 "guide optical train, mount, or any fingerprinted guide setting — and "
@@ -1580,7 +1775,7 @@ msgstr ""
 "rendiment del guiatge es degrada notablement després de tornar a muntar-ho o "
 "un ajust mecànic."
 
-#: ../../user_manual/ekos-guide.rst:759
+#: ../../user_manual/ekos-guide.rst:882
 msgid ""
 "*Reporting problems:* the wizard's :guilabel:`Export Logs` button bundles "
 "the AI debug logs and guide logs into a single archive that you can attach "
@@ -1591,11 +1786,11 @@ msgstr ""
 "guiatge en un únic arxiu que podeu adjuntar a un informe d'error o a una "
 "entrada del fòrum."
 
-#: ../../user_manual/ekos-guide.rst:766
+#: ../../user_manual/ekos-guide.rst:889
 msgid "Dark Frames"
 msgstr "Fotogrames foscos"
 
-#: ../../user_manual/ekos-guide.rst:768
+#: ../../user_manual/ekos-guide.rst:891
 msgid ""
 "Dark frames can be helpful to reduce noise in your guide frames. If you "
 "choose to use this option, then it is recommended that you take dark frames "
@@ -1628,11 +1823,11 @@ msgstr ""
 "doc:`configuració de l'Ekos <ekos>`, al diàleg de configuració del KStars."
 
 # skip-rule: kct-library
-#: ../../user_manual/ekos-guide.rst:785
+#: ../../user_manual/ekos-guide.rst:908
 msgid "|Ekos Dark frames library|"
 msgstr "|Ekos Dark frames library|"
 
-#: ../../user_manual/ekos-guide.rst:787
+#: ../../user_manual/ekos-guide.rst:910
 msgid ""
 "It is recommended to take dark frames covering several binning and exposure "
 "values so that they may be reused transparently by Ekos whenever needed."
@@ -1641,11 +1836,11 @@ msgstr ""
 "d'agrupament i exposició, de manera que l'Ekos els pugui reutilitzar de "
 "forma transparent quan sigui necessari."
 
-#: ../../user_manual/ekos-guide.rst:794
+#: ../../user_manual/ekos-guide.rst:917
 msgid "PHD2 Support"
 msgstr "Admet el PHD2"
 
-#: ../../user_manual/ekos-guide.rst:796
+#: ../../user_manual/ekos-guide.rst:919
 msgid ""
 "You can opt to select external PHD2 application to perform guiding instead "
 "of the built-in guider."
@@ -1653,11 +1848,11 @@ msgstr ""
 "Podeu optar per a seleccionar l'aplicació PHD2 externa per a realitzar el "
 "guiatge en comptes del sistema de guiatge integrat."
 
-#: ../../user_manual/ekos-guide.rst:799
+#: ../../user_manual/ekos-guide.rst:922
 msgid "|Ekos Guide PHD2 settings|"
 msgstr "|Ekos Guide PHD2 settings|"
 
-#: ../../user_manual/ekos-guide.rst:801
+#: ../../user_manual/ekos-guide.rst:924
 msgid ""
 "If PHD2 is selected, the ``Connect`` and ``Disconnect`` buttons are enabled "
 "to allow you to establish a connection with the PHD2 server. You can control "
@@ -1672,7 +1867,7 @@ msgstr ""
 "necessàries per a iniciar el procés de guiatge. El PHD2 s'**haurà** "
 "d'iniciar i configurar *abans* que l'Ekos."
 
-#: ../../user_manual/ekos-guide.rst:808
+#: ../../user_manual/ekos-guide.rst:931
 msgid ""
 "After launching PHD2, select your INDI equipment and set their options. From "
 "Ekos, connect to PHD2 by clicking the ``Connect`` button. On startup, Ekos "
@@ -1691,12 +1886,12 @@ msgstr ""
 "píxels indicats del desplaçament i, una vegada que el guiatge s'hagi "
 "posicionat i sigui estable, es reprendrà el procés de captura a l'Ekos."
 
-#: ../../user_manual/ekos-guide.rst:821
+#: ../../user_manual/ekos-guide.rst:944
 msgid "Guiding Logs"
 msgstr "Registres del sistema de guiatge"
 
 # skip-rule: t-acc_obe
-#: ../../user_manual/ekos-guide.rst:823
+#: ../../user_manual/ekos-guide.rst:946
 msgid ""
 "Ekos' internal guider saves a CSV guide log in PHD2 format data that can be "
 "useful for analysis of the mount's performance. In Linux this is stored "
@@ -1711,138 +1906,182 @@ msgstr ""
 "intern. Hauria de ser compatible amb el `Visualitzador de registre de "
 "guiatge del PHD2 <https://openphdguiding.org/phd2-log-viewer/>`__."
 
-#: ../../user_manual/ekos-guide.rst:831
+#: ../../user_manual/ekos-guide.rst:954
 msgid "Ekos Guide Module"
 msgstr "Mòdul de guiatge de l'Ekos"
 
-#: ../../user_manual/ekos-guide.rst:831
+#: ../../user_manual/ekos-guide.rst:954
 msgid ".. image:: /images/ekos_guide.png"
 msgstr ".. image:: /images/ekos_guide.png"
 
-#: ../../user_manual/ekos-guide.rst:832
+#: ../../user_manual/ekos-guide.rst:955
 msgid "Ekos Profile Guider Selection"
 msgstr "Selecció del sistema de guiatge de l'Ekos"
 
-#: ../../user_manual/ekos-guide.rst:832
+#: ../../user_manual/ekos-guide.rst:955
 msgid ".. image:: /images/ekos_profile_guide.png"
 msgstr ".. image:: /images/ekos_profile_guide.png"
 
-#: ../../user_manual/ekos-guide.rst:833
+#: ../../user_manual/ekos-guide.rst:956
 msgid "Ekos Guider Optical Train"
 msgstr "Tren òptic de guiatge de l'Ekos"
 
-#: ../../user_manual/ekos-guide.rst:833
+#: ../../user_manual/ekos-guide.rst:956
 msgid ".. image:: /images/ekos_guide_optical_train.png"
 msgstr ".. image:: /images/ekos_guide_optical_train.png"
 
-#: ../../user_manual/ekos-guide.rst:834
+#: ../../user_manual/ekos-guide.rst:957
 msgid "Calibration Settings"
 msgstr "Configuració del calibratge"
 
-#: ../../user_manual/ekos-guide.rst:834
+#: ../../user_manual/ekos-guide.rst:957
 msgid ".. image:: /images/guide_calibration_settings.png"
 msgstr ".. image:: /images/guide_calibration_settings.png"
 
-#: ../../user_manual/ekos-guide.rst:835
+#: ../../user_manual/ekos-guide.rst:958
 msgid "Guide Settings"
 msgstr "Configuració del guiatge"
 
-#: ../../user_manual/ekos-guide.rst:835
+#: ../../user_manual/ekos-guide.rst:958
 msgid ".. image:: /images/guide_guide_settings.png"
 msgstr ".. image:: /images/guide_guide_settings.png"
 
-#: ../../user_manual/ekos-guide.rst:836
+#: ../../user_manual/ekos-guide.rst:959
 msgid "Dithering Settings"
 msgstr "Configuració del tramat"
 
-#: ../../user_manual/ekos-guide.rst:836
+#: ../../user_manual/ekos-guide.rst:959
 msgid ".. image:: /images/ekos_guide_dithering_settings.png"
 msgstr ".. image:: /images/ekos_guide_dithering_settings.png"
 
-#: ../../user_manual/ekos-guide.rst:837
+#: ../../user_manual/ekos-guide.rst:960
 msgid ".. image:: /images/guide_drift_graphics.png"
 msgstr ".. image:: /images/guide_drift_graphics.png"
 
-#: ../../user_manual/ekos-guide.rst:838
+#: ../../user_manual/ekos-guide.rst:961
 msgid "image2"
 msgstr "image2"
 
-#: ../../user_manual/ekos-guide.rst:838
+#: ../../user_manual/ekos-guide.rst:961
 msgid ".. image:: /images/add-circle.png"
 msgstr ".. image:: /images/add-circle.png"
 
-#: ../../user_manual/ekos-guide.rst:839
+#: ../../user_manual/ekos-guide.rst:962
 msgid "Guiding with MultiStar"
 msgstr "Guiatge amb MultiStar"
 
-#: ../../user_manual/ekos-guide.rst:839
+#: ../../user_manual/ekos-guide.rst:962
 msgid ".. image:: /images/ekos_guide_multistar_settings.png"
 msgstr ".. image:: /images/ekos_guide_multistar_settings.png"
 
-#: ../../user_manual/ekos-guide.rst:840
+#: ../../user_manual/ekos-guide.rst:963
 msgid ".. image:: /images/ekos_guide_gpg_settings.png"
 msgstr ".. image:: /images/ekos_guide_gpg_settings.png"
 
-#: ../../user_manual/ekos-guide.rst:841
+#: ../../user_manual/ekos-guide.rst:964
 msgid "Ekos Dark frames library"
 msgstr "Biblioteca de fotogrames foscos de l'Ekos"
 
-#: ../../user_manual/ekos-guide.rst:841
+#: ../../user_manual/ekos-guide.rst:964
 msgid ".. image:: /images/dark_library.png"
 msgstr ".. image:: /images/dark_library.png"
 
-#: ../../user_manual/ekos-guide.rst:842
+#: ../../user_manual/ekos-guide.rst:965
 msgid "Ekos Guide PHD2 settings"
 msgstr "Configuració del PHD2 de guiatge de l'Ekos"
 
-#: ../../user_manual/ekos-guide.rst:842
+#: ../../user_manual/ekos-guide.rst:965
 msgid ".. image:: /images/ekos_guide_phd2.png"
 msgstr ".. image:: /images/ekos_guide_phd2.png"
 
-#: ../../user_manual/ekos-guide.rst:843
+#: ../../user_manual/ekos-guide.rst:966
 msgid "AI Guiding Menu"
 msgstr "Menú de guiatge d'IA"
 
-#: ../../user_manual/ekos-guide.rst:843
+#: ../../user_manual/ekos-guide.rst:966
 msgid ".. image:: /images/ekos_guide_ai_menu.png"
 msgstr ".. image:: /images/ekos_guide_ai_menu.png"
 
-#: ../../user_manual/ekos-guide.rst:844
+#: ../../user_manual/ekos-guide.rst:967
 msgid "AI Wizard Mount Page"
 msgstr "Pàgina de muntura de l'assistent d'IA"
 
-#: ../../user_manual/ekos-guide.rst:844
+#: ../../user_manual/ekos-guide.rst:967
 msgid ".. image:: /images/ekos_guide_ai_wizard_mount.png"
 msgstr ".. image:: /images/ekos_guide_ai_wizard_mount.png"
 
-#: ../../user_manual/ekos-guide.rst:845
+#: ../../user_manual/ekos-guide.rst:968
 msgid "AI Wizard Protocol Page"
 msgstr "Pàgina de protocol de l'assistent d'IA"
 
-#: ../../user_manual/ekos-guide.rst:845
+#: ../../user_manual/ekos-guide.rst:968
 msgid ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
 msgstr ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
 
-#: ../../user_manual/ekos-guide.rst:846
+#: ../../user_manual/ekos-guide.rst:969
 msgid "AI Wizard Progress Page"
 msgstr "Pàgina de progrés de l'assistent d'IA"
 
-#: ../../user_manual/ekos-guide.rst:846
+#: ../../user_manual/ekos-guide.rst:969
 msgid ".. image:: /images/ekos_guide_ai_wizard_progress.png"
 msgstr ".. image:: /images/ekos_guide_ai_wizard_progress.png"
 
-#: ../../user_manual/ekos-guide.rst:847
+#: ../../user_manual/ekos-guide.rst:970
 msgid "AI Wizard Complete Page"
 msgstr "Pàgina de compleció de l'assistent d'IA"
 
-#: ../../user_manual/ekos-guide.rst:847
+#: ../../user_manual/ekos-guide.rst:970
 msgid ".. image:: /images/ekos_guide_ai_wizard_complete.png"
 msgstr ".. image:: /images/ekos_guide_ai_wizard_complete.png"
 
-#: ../../user_manual/ekos-guide.rst:848
+#: ../../user_manual/ekos-guide.rst:971
 msgid "AI Guider Options"
 msgstr "Opcions del sistema de guiatge d'IA"
 
-#: ../../user_manual/ekos-guide.rst:848
+#: ../../user_manual/ekos-guide.rst:971
 msgid ".. image:: /images/ekos_guide_ai_options.png"
 msgstr ".. image:: /images/ekos_guide_ai_options.png"
+
+#: ../../user_manual/ekos-guide.rst:972
+#, fuzzy
+#| msgid "Guide Settings"
+msgid "Guide Stream Settings"
+msgstr "Configuració del guiatge"
+
+#: ../../user_manual/ekos-guide.rst:972
+#, fuzzy
+#| msgid ".. image:: /images/ekos_guide_multistar_settings.png"
+msgid ".. image:: /images/ekos_guide_stream_settings.jpg"
+msgstr ".. image:: /images/ekos_guide_multistar_settings.png"
+
+#: ../../user_manual/ekos-guide.rst:973
+msgid "Guide Stream Depth"
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:973
+#, fuzzy
+#| msgid ".. image:: /images/ekos_guide_phd2.png"
+msgid ".. image:: /images/ekos_guide_stream_depth.jpg"
+msgstr ".. image:: /images/ekos_guide_phd2.png"
+
+#: ../../user_manual/ekos-guide.rst:974
+#, fuzzy
+#| msgid "Guiding with GPG"
+msgid "Guide Stream GPG"
+msgstr "Guiatge amb GPG"
+
+#: ../../user_manual/ekos-guide.rst:974
+#, fuzzy
+#| msgid ".. image:: /images/ekos_guide.png"
+msgid ".. image:: /images/ekos_guide_stream_gpg.jpg"
+msgstr ".. image:: /images/ekos_guide.png"
+
+#: ../../user_manual/ekos-guide.rst:975
+msgid "Guide Stream AI"
+msgstr ""
+
+#: ../../user_manual/ekos-guide.rst:975
+#, fuzzy
+#| msgid ".. image:: /images/ekos_guide_optical_train.png"
+msgid ".. image:: /images/ekos_guide_stream_ai.jpg"
+msgstr ".. image:: /images/ekos_guide_optical_train.png"
