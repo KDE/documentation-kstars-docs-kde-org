@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kstars_ekos-guide\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-07-22 18:21+0300\n"
+"PO-Revision-Date: 2026-08-19 15:45+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -866,13 +866,11 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:448
 msgid "Streaming Guide"
-msgstr ""
+msgstr "Потокове наведення"
 
 #: ../../user_manual/ekos-guide.rst:450
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Settings|"
-msgstr "|Параметри наведення|"
+msgstr "|Параметри потокове наведення|"
 
 #: ../../user_manual/ekos-guide.rst:452
 msgid ""
@@ -884,16 +882,22 @@ msgid ""
 "guide cadence — useful for the higher guide rates (roughly 2–5 Hz) that some "
 "mounts, especially harmonic/strain-wave drives, benefit from."
 msgstr ""
+"У режимі потокового наведення вбудований засіб наведення захоплює кадри "
+"наведення з безперервного відеопотоку камери, замість того, щоб робити "
+"окрему експозицію для кожного кадру наведення. Кадри надходять безперервно, "
+"і засіб наведення завжди працює з найновішого («перемагає останній кадр»), "
+"що усуває час бездіяльності зчитування/завантаження між експозиціями. "
+"Результатом є швидша робота наведення з меншою затримкою — корисний для "
+"вищих швидкостей наведення (приблизно 2–5 Гц), які краще працюють для деяких "
+"лафетів, особливо гармонійні/деформаційні хвильові приводи."
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid "Single-frame versus streaming guide timing"
-msgstr ""
+msgstr "Одинарний кадр або часові параметри потокового наведення"
 
 #: ../../user_manual/ekos-guide.rst:464
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_ai_menu.png"
 msgid ".. image:: /images/ekos_guide_stream_timing.png"
-msgstr ".. image:: /images/ekos_guide_ai_menu.png"
+msgstr ".. image:: /images/ekos_guide_stream_timing.png"
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid ""
@@ -907,6 +911,16 @@ msgid ""
 "time (\"latest frame wins\"), so corrections are more frequent and fresher "
 "and far less error accumulates between them."
 msgstr ""
+"Чому потокова трансляція допомагає. При покадровому наведенні (згори) після "
+"кожної експозиції настає *час бездіяльності* зчитування/завантаження/"
+"виявлення, протягом якого лафет продовжує дрейфувати без нових вимірювань та "
+"корекції, тому похибка наведення зростає без корекції та досягає піку "
+"безпосередньо перед кожною пульсацією. Сама пульсація базується на положенні "
+"зірки, виміряному під час *попередньої* експозиції, тому корекція вже має "
+"кілька секунд затримки, коли вона досягає лафета. Потокове супроводження "
+"(знизу) передає кадри один за одним без часу бездіяльності («перемагає "
+"останній кадр»), тому корекції відбуваються частіше та свіжіше, і між ними "
+"накопичується набагато менше помилок."
 
 #: ../../user_manual/ekos-guide.rst:474
 msgid ""
@@ -916,34 +930,48 @@ msgid ""
 "algorithms as well as the experimental :ref:`AI Guider <ekos-guide-ai-"
 "guiding-assistant>`."
 msgstr ""
+"Потокова трансляція впливає лише на те, *як* кадри доставляються до засобу "
+"наведення; алгоритми наведення, калібрування, розмивання та обробка "
+"втрачених зірок працюють як завжди. Він працює з алгоритмами :guilabel:"
+"`Стандартний`/MultiStar та :guilabel:`GPG`, а також з експериментальним :ref:"
+"`ШІ наведенням <ekos-guide-ai-guiding-assistant>`."
 
 #: ../../user_manual/ekos-guide.rst:483
 msgid "Requirements"
-msgstr ""
+msgstr "Технічні вимоги"
 
 #: ../../user_manual/ekos-guide.rst:485
 msgid "The **internal guider** (streaming is not used with external PHD2)."
 msgstr ""
+"**Внутрішній засіб наведення** (потокова трансляція не використовується з "
+"зовнішнім PHD2)."
 
 #: ../../user_manual/ekos-guide.rst:486
 msgid "A guide camera that supports INDI **video streaming**."
 msgstr ""
+"Камера наведення, де передбачено підтримку **потокової трансляції відео** "
+"INDI."
 
 #: ../../user_manual/ekos-guide.rst:487
 msgid ""
 "A completed, successful calibration — calibration itself always runs with "
 "single frames (see below)."
 msgstr ""
+"Завершене, успішне калібрування — саме калібрування виконується з окремими "
+"кадрами (див. нижче)."
 
 #: ../../user_manual/ekos-guide.rst:493
 msgid "Enabling Streaming Guide"
-msgstr ""
+msgstr "Вмикання потокового наведення"
 
 #: ../../user_manual/ekos-guide.rst:495
 msgid ""
 "Check the :guilabel:`Stream` box on the main Guide page, next to the :"
 "guilabel:`Exp` and :guilabel:`Delay` controls, before you start guiding."
 msgstr ""
+"Перш ніж розпочати наведення, поставте позначку навпроти пункту :guilabel:"
+"`Потік` на головній сторінці засобу наведення, поруч із елементами "
+"керування :guilabel:`Експ.` та :guilabel:`Затримка`."
 
 #: ../../user_manual/ekos-guide.rst:498
 msgid ""
@@ -951,6 +979,10 @@ msgid ""
 "controls apply to the streamed frames exactly as they do to single "
 "exposures; a gain change takes effect immediately while streaming."
 msgstr ""
+"Елементи керування :guilabel:`Експ.` (експозиція), :guilabel:`Підсилення` "
+"та :guilabel:`Крок` застосовуються до потокових кадрів точно так само, як і "
+"до окремих експозицій; зміна підсилення набуває чинності негайно під час "
+"потокової трансляції."
 
 #: ../../user_manual/ekos-guide.rst:504
 msgid ""
@@ -960,16 +992,20 @@ msgid ""
 "guiding stops. This keeps calibration clean and settled while still giving "
 "you the streamed, dead-time-free cadence during guiding."
 msgstr ""
+"Калібрування завжди виконується з окремими кадрами для стабільності, "
+"незалежно від пункту :guilabel:`Потік`. Потокове передавання починається "
+"автоматично лише після початку наведення (і лише якщо позначено пункт :"
+"guilabel:`Потік`) і знову зупиняється, коли наведення зупиняється. Це "
+"забезпечує чисте та стабільне калібрування, водночас забезпечуючи потокову "
+"частоту кадрів без затримок під час наведення."
 
 #: ../../user_manual/ekos-guide.rst:513
 msgid "16-bit Stream Depth (INDI)"
-msgstr ""
+msgstr "16-бітова глибина потоку (INDI)"
 
 #: ../../user_manual/ekos-guide.rst:515
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Depth|"
-msgstr "|Параметри наведення|"
+msgstr "|Глибина потокового наведення|"
 
 #: ../../user_manual/ekos-guide.rst:517
 msgid ""
@@ -977,6 +1013,9 @@ msgid ""
 "Guide module. Open the INDI Control Panel, select your guide camera, and go "
 "to the :guilabel:`Streaming` tab:"
 msgstr ""
+"Бітова глибина відеопотоку встановлюється у драйвері камери, а не в модулі "
+"«Гід». Відкрийте панель керування INDI, виберіть камеру-гід і перейдіть на "
+"вкладку :guilabel:`Потокове передавання`:"
 
 #: ../../user_manual/ekos-guide.rst:521
 msgid ""
@@ -985,11 +1024,17 @@ msgid ""
 "bit depth, which gives better centroiding and faint-star detection than 8-"
 "bit."
 msgstr ""
+"Встановіть для пункту :guilabel:`Глибина потоку` значення :guilabel:`16-"
+"бітова`. Ми **наполегливо рекомендуємо** для наведення такі параметри: 16-"
+"бітові (RAW16) кадри зберігають повну розрядність датчика, що забезпечує "
+"краще центрування та виявлення слабких зірок, ніж 8-бітові."
 
 #: ../../user_manual/ekos-guide.rst:525
 msgid ""
 "Make sure the :guilabel:`Encoder` is set to :guilabel:`RAW` (not MJPEG)."
 msgstr ""
+"Переконайтеся, що для пункту :guilabel:`Кодувальник` встановлено значення :"
+"guilabel:`RAW` (не MJPEG)."
 
 #: ../../user_manual/ekos-guide.rst:526
 msgid ""
@@ -997,16 +1042,17 @@ msgid ""
 "tab) so it persists across sessions — otherwise the stream may revert to 8-"
 "bit the next time the camera connects."
 msgstr ""
+"Збережіть параметр у налаштуваннях драйвера (з вкладки :guilabel:"
+"`Параметри`), щоб він залишався актуальним протягом усіх сеансів — інакше "
+"потік може повернутися до 8-бітового під час наступного з'єднання камери."
 
 #: ../../user_manual/ekos-guide.rst:533
 msgid "Examples"
-msgstr ""
+msgstr "Приклади"
 
 #: ../../user_manual/ekos-guide.rst:535
-#, fuzzy
-#| msgid "|Guiding with GPG|"
 msgid "|Guide Stream GPG|"
-msgstr "|Наведення з GPG|"
+msgstr "|GPG потокового наведення|"
 
 #: ../../user_manual/ekos-guide.rst:537
 msgid ""
@@ -1014,12 +1060,14 @@ msgid ""
 "`Linear` on DEC, at 0.7 s exposure and 2×2 binning on a harmonic-drive mount "
 "— total RMS around 0.46″ with 100 detected stars."
 msgstr ""
+"Потокове наведення з алгоритмом :guilabel:`GPG` для прямого сходження та :"
+"guilabel:`Лінійний` для схилення, з експозицією 0,7 с та кроком 2×2 на "
+"лафеті з гармонійним приводом — загальне СКВ близько 0,46″ зі 100 виявленими "
+"зірками."
 
 #: ../../user_manual/ekos-guide.rst:541
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream AI|"
-msgstr "|Параметри наведення|"
+msgstr "|ШІ потокового наведення|"
 
 #: ../../user_manual/ekos-guide.rst:543
 msgid ""
@@ -1027,10 +1075,14 @@ msgid ""
 "supplies frames with no inter-frame dead time, it pairs naturally with the "
 "higher guide rates that harmonic drives and the AI predictor work best at."
 msgstr ""
+"Потокове наведення у поєднанні з експериментальним ШІ наведенням. Оскільки "
+"потокова трансляція забезпечує кадри без міжкадрового часу бездіяльності, "
+"воно природно поєднується з вищими швидкостями наведення, на яких найкраще "
+"працюють гармонійні драйвери та ШІ-прогнозування."
 
 #: ../../user_manual/ekos-guide.rst:550
 msgid "Notes and Limitations"
-msgstr ""
+msgstr "Нотатки та обмеження"
 
 #: ../../user_manual/ekos-guide.rst:552
 msgid ""
@@ -1044,6 +1096,17 @@ msgid ""
 "Library to *Prefer Darks* rather than *Prefer Defects*, since the defect map "
 "only repairs isolated hot/cold pixels and will not remove glow."
 msgstr ""
+"**Віднімання темних кадрів працює в потоковому режимі.** Пункт :guilabel:"
+"`Темний` застосовує узгоджений темний кадр (і карту дефектів) до кожного "
+"потокового кадру наведення, як і в покадровому наведенні — корисно для "
+"вилучення світіння підсилювача або гарячих пікселів на деяких датчиках "
+"наведення. Як завжди, у Бібліотеці темних кадрів має існувати відповідний "
+"темний кадр для поточної експозиції, підсилення та кроку кадру наведення "
+"(див. :ref:`Темні кадри <ekos-guide-dark-frames>`). Зверніть увагу, що "
+"вилучення плавного градієнта світіння вимагає фактичного *віднімання* темних "
+"кадрів: встановіть для Бібліотеки темних кадрів на *Надавати перевагу "
+"темним*, а не на *Надавати перевагу дефектам*, оскільки карта дефектів "
+"відновлює лише ізольовані гарячі/холодні пікселі і не вилучає світіння."
 
 #: ../../user_manual/ekos-guide.rst:561
 msgid ""
@@ -1051,6 +1114,9 @@ msgid ""
 "the camera does not support it, the guider falls back to single-frame "
 "captures."
 msgstr ""
+"Для потокової трансляції потрібна камера та драйвер із працездатним "
+"потоковим відео INDI; якщо у камері не передбачено цю можливість, засіб "
+"наведення повертається до покадрової зйомки."
 
 #: ../../user_manual/ekos-guide.rst:564
 msgid ""
@@ -1058,6 +1124,9 @@ msgid ""
 "cadence, not the fundamentals, so good polar alignment, balance, and "
 "calibration still matter most."
 msgstr ""
+"Як і з будь-якою конфігурацією наведення, перевірте свої результати: "
+"потокове передавання змінює темп, а не фундаментальні параметри, тому добре "
+"полярне вирівнювання, баланс і калібрування все ще мають найбільше значення."
 
 #: ../../user_manual/ekos-guide.rst:571
 msgid "AI Guiding Assistant (Experimental)"
@@ -2023,45 +2092,33 @@ msgid ".. image:: /images/ekos_guide_ai_options.png"
 msgstr ".. image:: /images/ekos_guide_ai_options.png"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid "Guide Settings"
 msgid "Guide Stream Settings"
-msgstr "Параметри наведення"
+msgstr "Параметри потокове наведення"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_multistar_settings.png"
 msgid ".. image:: /images/ekos_guide_stream_settings.jpg"
-msgstr ".. image:: /images/ekos_guide_multistar_settings.png"
+msgstr ".. image:: /images/ekos_guide_stream_settings.jpg"
 
 #: ../../user_manual/ekos-guide.rst:973
 msgid "Guide Stream Depth"
-msgstr ""
+msgstr "Глибина потокового наведення"
 
 #: ../../user_manual/ekos-guide.rst:973
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_stream_depth.jpg"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_stream_depth.jpg"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid "Guiding with GPG"
 msgid "Guide Stream GPG"
-msgstr "Наведення з GPG"
+msgstr "GPG потокового наведення"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_stream_gpg.jpg"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_stream_gpg.jpg"
 
 #: ../../user_manual/ekos-guide.rst:975
 msgid "Guide Stream AI"
-msgstr ""
+msgstr "ШІ потокового наведення"
 
 #: ../../user_manual/ekos-guide.rst:975
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_optical_train.png"
 msgid ".. image:: /images/ekos_guide_stream_ai.jpg"
-msgstr ".. image:: /images/ekos_guide_optical_train.png"
+msgstr ".. image:: /images/ekos_guide_stream_ai.jpg"

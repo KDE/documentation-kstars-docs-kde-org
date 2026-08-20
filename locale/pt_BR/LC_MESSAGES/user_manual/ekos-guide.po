@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-07-19 18:33-0300\n"
+"PO-Revision-Date: 2026-08-19 07:20-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -845,13 +845,11 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:448
 msgid "Streaming Guide"
-msgstr ""
+msgstr "Guiagem por transmissão"
 
 #: ../../user_manual/ekos-guide.rst:450
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Settings|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream Settings|"
 
 #: ../../user_manual/ekos-guide.rst:452
 msgid ""
@@ -863,16 +861,23 @@ msgid ""
 "guide cadence — useful for the higher guide rates (roughly 2–5 Hz) that some "
 "mounts, especially harmonic/strain-wave drives, benefit from."
 msgstr ""
+"No modo de guiagem por transmissão, o sistema de guiagem interno captura "
+"quadros a partir do fluxo de vídeo contínuo da câmera, em vez de realizar "
+"uma exposição separada para cada quadro de guiagem. Os quadros chegam "
+"continuamente e o sistema sempre utiliza o mais recente (\"o último quadro "
+"prevalece\"), eliminando o tempo morto de leitura e transferência de dados "
+"entre as exposições. O resultado é uma cadência de guiagem mais rápida e com "
+"menor latência — o que é vantajoso para as taxas de guiagem mais elevadas "
+"(aproximadamente 2 a 5 Hz) que beneficiam algumas montagens, especialmente "
+"aquelas equipadas com redutores harmônicos."
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid "Single-frame versus streaming guide timing"
-msgstr ""
+msgstr "Comparação de temporização de quadro único versus transmissão"
 
 #: ../../user_manual/ekos-guide.rst:464
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_ai_menu.png"
 msgid ".. image:: /images/ekos_guide_stream_timing.png"
-msgstr ".. image:: /images/ekos_guide_ai_menu.png"
+msgstr ".. image:: /images/ekos_guide_stream_timing.png"
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid ""
@@ -886,6 +891,17 @@ msgid ""
 "time (\"latest frame wins\"), so corrections are more frequent and fresher "
 "and far less error accumulates between them."
 msgstr ""
+"Por que a transmissão ajuda. No guiamento quadro a quadro (parte superior), "
+"cada exposição é seguida por um *tempo morto* de leitura, transferência e "
+"detecção; durante esse intervalo, a montagem continua a derivar sem novas "
+"medições ou correções, fazendo com que o erro de apontamento aumente sem ser "
+"corrigido e atinja seu pico logo antes de cada pulso. O pulso em si baseia-"
+"se na posição da estrela medida durante a exposição *anterior*; portanto, a "
+"correção já está defasada em alguns segundos quando chega à montagem. O "
+"guiamento por transmissão (parte inferior) fornece quadros em sequência "
+"contínua, sem tempo morto (prevalece o \"quadro mais recente\"), resultando "
+"em correções mais frequentes e atualizadas, o que reduz drasticamente o "
+"acúmulo de erros entre elas."
 
 #: ../../user_manual/ekos-guide.rst:474
 msgid ""
@@ -895,34 +911,44 @@ msgid ""
 "algorithms as well as the experimental :ref:`AI Guider <ekos-guide-ai-"
 "guiding-assistant>`."
 msgstr ""
+"A transmissão afeta apenas a *forma* como os quadros são entregues ao "
+"sistema de guiagem; os algoritmos de guiagem, a calibração, o *dithering* e "
+"o tratamento de perda de estrela funcionam normalmente. Ele é compatível com "
+"os algoritmos :guilabel:`Padrão`/MultiStar e :guilabel:`GPG`, bem como com "
+"o :ref:`Guiamento por IA<ekos-guide-ai-guiding-assistant>` experimental."
 
 #: ../../user_manual/ekos-guide.rst:483
 msgid "Requirements"
-msgstr ""
+msgstr "Requisitos"
 
 #: ../../user_manual/ekos-guide.rst:485
 msgid "The **internal guider** (streaming is not used with external PHD2)."
-msgstr ""
+msgstr "O **guia interno** (a transmissão não é utilizada com o PHD2 externo)."
 
 #: ../../user_manual/ekos-guide.rst:486
 msgid "A guide camera that supports INDI **video streaming**."
-msgstr ""
+msgstr "Uma câmera de guiagem que suporta **transmissão de vídeo** via INDI."
 
 #: ../../user_manual/ekos-guide.rst:487
 msgid ""
 "A completed, successful calibration — calibration itself always runs with "
 "single frames (see below)."
 msgstr ""
+"Uma calibração concluída com sucesso — a calibração em si é sempre realizada "
+"com quadros individuais (veja abaixo)."
 
 #: ../../user_manual/ekos-guide.rst:493
 msgid "Enabling Streaming Guide"
-msgstr ""
+msgstr "Ativar o guiamento por transmissão"
 
 #: ../../user_manual/ekos-guide.rst:495
 msgid ""
 "Check the :guilabel:`Stream` box on the main Guide page, next to the :"
 "guilabel:`Exp` and :guilabel:`Delay` controls, before you start guiding."
 msgstr ""
+"Marque a caixa :guilabel:`Transmissão` na página principal do Guia, ao lado "
+"dos controles :guilabel:`Exp` e :guilabel:`Atraso`, antes de iniciar a "
+"guiagem."
 
 #: ../../user_manual/ekos-guide.rst:498
 msgid ""
@@ -930,6 +956,10 @@ msgid ""
 "controls apply to the streamed frames exactly as they do to single "
 "exposures; a gain change takes effect immediately while streaming."
 msgstr ""
+"Os controles de guia :guilabel:`Exp` (exposição), :guilabel:`Ganho` e :"
+"guilabel:`Bin` aplicam-se aos quadros transmitidos exatamente da mesma forma "
+"que a exposições únicas; uma alteração no ganho entra em vigor imediatamente "
+"durante a transmissão."
 
 #: ../../user_manual/ekos-guide.rst:504
 msgid ""
@@ -939,16 +969,21 @@ msgid ""
 "guiding stops. This keeps calibration clean and settled while still giving "
 "you the streamed, dead-time-free cadence during guiding."
 msgstr ""
+"A calibração é sempre realizada com quadros individuais para garantir "
+"estabilidade, independentemente da configuração :guilabel:`Transmissão`. A "
+"transmissão começa automaticamente apenas quando a guiagem é iniciada (e "
+"somente se a opção :guilabel:`Transmissão` estiver marcada) e é interrompida "
+"quando a guiagem para. Isso mantém a calibração precisa e estável, ao mesmo "
+"tempo em que proporciona a cadência de transmissão contínua — sem tempos "
+"mortos — durante a guiagem."
 
 #: ../../user_manual/ekos-guide.rst:513
 msgid "16-bit Stream Depth (INDI)"
-msgstr ""
+msgstr "Profundidade de transmissão de 16 bits (INDI)"
 
 #: ../../user_manual/ekos-guide.rst:515
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Depth|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream Depth|"
 
 #: ../../user_manual/ekos-guide.rst:517
 msgid ""
@@ -956,6 +991,9 @@ msgid ""
 "Guide module. Open the INDI Control Panel, select your guide camera, and go "
 "to the :guilabel:`Streaming` tab:"
 msgstr ""
+"A profundidade de bits da transmissão de vídeo é definida no driver da "
+"câmera, e não no módulo de guiagem. Abra o Painel de Controle INDI, "
+"selecione sua câmera de guiagem e vá para a aba :guilabel:`Transmissão`:"
 
 #: ../../user_manual/ekos-guide.rst:521
 msgid ""
@@ -964,11 +1002,17 @@ msgid ""
 "bit depth, which gives better centroiding and faint-star detection than 8-"
 "bit."
 msgstr ""
+"Defina :guilabel:`Profundidade de transmissão` como :guilabel:`16-bit`. Isso "
+"é **altamente recomendável** para a guiagem: quadros de 16 bits (RAW16) "
+"preservam a profundidade de bits total do sensor, o que proporciona melhor "
+"cálculo do centroide e detecção de estrelas fracas em comparação com 8 bits."
 
 #: ../../user_manual/ekos-guide.rst:525
 msgid ""
 "Make sure the :guilabel:`Encoder` is set to :guilabel:`RAW` (not MJPEG)."
 msgstr ""
+"Certifique-se de que o :guilabel:`Codificador` esteja definido como :"
+"guilabel:`RAW` (não MJPEG)."
 
 #: ../../user_manual/ekos-guide.rst:526
 msgid ""
@@ -976,16 +1020,17 @@ msgid ""
 "tab) so it persists across sessions — otherwise the stream may revert to 8-"
 "bit the next time the camera connects."
 msgstr ""
+"Salve a configuração nas definições do driver (na aba :guilabel:`Opções`) "
+"para que ela seja mantida entre as sessões; caso contrário, a transmissão "
+"poderá voltar para 8 bits na próxima vez que a câmera for conectada."
 
 #: ../../user_manual/ekos-guide.rst:533
 msgid "Examples"
-msgstr ""
+msgstr "Exemplos"
 
 #: ../../user_manual/ekos-guide.rst:535
-#, fuzzy
-#| msgid "|Guiding with GPG|"
 msgid "|Guide Stream GPG|"
-msgstr "|Guiding with GPG|"
+msgstr "|Guide Stream GPG|"
 
 #: ../../user_manual/ekos-guide.rst:537
 msgid ""
@@ -993,12 +1038,14 @@ msgid ""
 "`Linear` on DEC, at 0.7 s exposure and 2×2 binning on a harmonic-drive mount "
 "— total RMS around 0.46″ with 100 detected stars."
 msgstr ""
+"Guiagem por transmissão utilizando o algoritmo :guilabel:`GPG` em AR e :"
+"guilabel:`Linear` em DEC, com exposição de 0,7 s e binning 2×2 em uma "
+"montagem com redutor harmônico — RMS total em torno de 0,46″ com 100 "
+"estrelas detectadas."
 
 #: ../../user_manual/ekos-guide.rst:541
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream AI|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream AI|"
 
 #: ../../user_manual/ekos-guide.rst:543
 msgid ""
@@ -1006,10 +1053,14 @@ msgid ""
 "supplies frames with no inter-frame dead time, it pairs naturally with the "
 "higher guide rates that harmonic drives and the AI predictor work best at."
 msgstr ""
+"Guiagem por transmissão combinada com o sistema experimental de guiamento "
+"por IA. Como a transmissão fornece quadros sem tempo morto entre eles, ele "
+"se integra naturalmente às taxas de guia mais elevadas nas quais os "
+"redutores harmônicos e o preditor de IA operam com melhor desempenho."
 
 #: ../../user_manual/ekos-guide.rst:550
 msgid "Notes and Limitations"
-msgstr ""
+msgstr "Observações e limitações"
 
 #: ../../user_manual/ekos-guide.rst:552
 msgid ""
@@ -1023,6 +1074,18 @@ msgid ""
 "Library to *Prefer Darks* rather than *Prefer Defects*, since the defect map "
 "only repairs isolated hot/cold pixels and will not remove glow."
 msgstr ""
+"**A subtração de quadros escuros funciona no modo de transmissão.** A caixa "
+"de seleção :guilabel:`Escuro` aplica um quadro escuro correspondente (e um "
+"mapa de defeitos) a cada quadro de guiagem transmitido, assim como na "
+"guiagem de quadro único — o que é útil para remover o brilho do amplificador "
+"ou pixels quentes em alguns sensores de guiagem. Como sempre, deve existir "
+"um quadro escuro adequado na biblioteca de escuros para o tempo de "
+"exposição, ganho e *binning* de guiagem atuais (consulte :ref:`Quadros "
+"escuros <ekos-guide-dark-frames>`). Observe que a remoção de um gradiente de "
+"brilho suave exige a *subtração* efetiva do *escuro*: configure a biblioteca "
+"de escuros para *Preferir escuros* em vez de *Preferir defeitos*, uma vez "
+"que o mapa de defeitos corrige apenas pixels quentes/frios isolados e não "
+"removerá o brilho."
 
 #: ../../user_manual/ekos-guide.rst:561
 msgid ""
@@ -1030,6 +1093,9 @@ msgid ""
 "the camera does not support it, the guider falls back to single-frame "
 "captures."
 msgstr ""
+"A transmissão requer uma câmera e um driver com suporte funcional para "
+"transmissão de vídeo via INDI; caso a câmera não ofereça esse suporte, o "
+"sistema de guiagem recorre à captura de quadros individuais."
 
 #: ../../user_manual/ekos-guide.rst:564
 msgid ""
@@ -1037,6 +1103,9 @@ msgid ""
 "cadence, not the fundamentals, so good polar alignment, balance, and "
 "calibration still matter most."
 msgstr ""
+"Como em qualquer configuração de guiagem, verifique os resultados: a guiagem "
+"altera o ritmo, não os fundamentos; portanto, um bom alinhamento polar, "
+"equilíbrio e calibração continuam sendo o mais importante."
 
 #: ../../user_manual/ekos-guide.rst:571
 msgid "AI Guiding Assistant (Experimental)"
@@ -2009,48 +2078,36 @@ msgid ".. image:: /images/ekos_guide_ai_options.png"
 msgstr ".. image:: /images/ekos_guide_ai_options.png"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid "Guide Settings"
 msgid "Guide Stream Settings"
-msgstr "Guide Settings"
+msgstr "Guide Stream Settings"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_multistar_settings.png"
 msgid ".. image:: /images/ekos_guide_stream_settings.jpg"
-msgstr ".. image:: /images/ekos_guide_multistar_settings.png"
+msgstr ".. image:: /images/ekos_guide_stream_settings.jpg"
 
 #: ../../user_manual/ekos-guide.rst:973
 msgid "Guide Stream Depth"
-msgstr ""
+msgstr "Guide Stream Depth"
 
 #: ../../user_manual/ekos-guide.rst:973
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_stream_depth.jpg"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_stream_depth.jpg"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid "Guiding with GPG"
 msgid "Guide Stream GPG"
-msgstr "Guiando com GPG"
+msgstr "Guide Stream GPG"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_stream_gpg.jpg"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_stream_gpg.jpg"
 
 #: ../../user_manual/ekos-guide.rst:975
 msgid "Guide Stream AI"
-msgstr ""
+msgstr "Guide Stream AI"
 
 #: ../../user_manual/ekos-guide.rst:975
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_optical_train.png"
 msgid ".. image:: /images/ekos_guide_stream_ai.jpg"
-msgstr ".. image:: /images/ekos_guide_optical_train.png"
+msgstr ".. image:: /images/ekos_guide_stream_ai.jpg"
 
 #~ msgid "Tools"
 #~ msgstr "Ferramentas"

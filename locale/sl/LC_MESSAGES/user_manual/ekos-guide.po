@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-07-19 09:39+0200\n"
+"PO-Revision-Date: 2026-08-19 07:45+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -829,13 +829,11 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:448
 msgid "Streaming Guide"
-msgstr ""
+msgstr "Vodnik za pretakanje"
 
 #: ../../user_manual/ekos-guide.rst:450
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Settings|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream Settings|"
 
 #: ../../user_manual/ekos-guide.rst:452
 msgid ""
@@ -847,16 +845,24 @@ msgid ""
 "guide cadence — useful for the higher guide rates (roughly 2–5 Hz) that some "
 "mounts, especially harmonic/strain-wave drives, benefit from."
 msgstr ""
+"V načinu pretočnega vodenja notranji vodnik zajema vodilne sličice iz "
+"neprekinjenega video toka kamere, namesto da bi za vsako vodilni sličico "
+"posnel ločeno osvetlitev. Sličice prihajajo neprekinjeno in vodnik vedno "
+"deluje od najnovejšega (\"zmaga najnovejša sličica\"), kar odpravi mrtvi čas "
+"branja/prenosa med osvetlitvami. Rezultat je hitrejša kadenca vodenja z "
+"manjšo zakasnitvijo – uporabno za višje hitrosti vodenja (približno 2–5 Hz), "
+"od katerih imajo koristi nekatere montaže, zlasti harmonični/deformacijski "
+"valovni pogoni."
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid "Single-frame versus streaming guide timing"
 msgstr ""
+"Časovna usklajenost posamezne sličice v primerjavi s časovno usklajenostjo "
+"pretočnega vodnika"
 
 #: ../../user_manual/ekos-guide.rst:464
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_ai_menu.png"
 msgid ".. image:: /images/ekos_guide_stream_timing.png"
-msgstr ".. image:: /images/ekos_guide_ai_menu.png"
+msgstr ".. image:: /images/ekos_guide_stream_timing.png"
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid ""
@@ -870,6 +876,15 @@ msgid ""
 "time (\"latest frame wins\"), so corrections are more frequent and fresher "
 "and far less error accumulates between them."
 msgstr ""
+"Zakaj pretakanje pomaga. Pri vodenju z eno sličico (zgoraj) vsaki osvetlitvi "
+"sledi *mrtvi čas* odčitavanja/prenosa/zaznavanja, med katerim se montaža "
+"nenehno premika brez novih meritev in popravkov, zato napaka usmeritve "
+"nepopravljena narašča in doseže vrh tik pred vsakim impulzom. Sam impulz "
+"temelji na položaju zvezde, izmerjenem med *prejšnjo* osvetlitvijo, zato je "
+"popravek star že nekaj sekund, ko doseže montažo. Vodenje s pretokom "
+"(spodaj) dostavlja sličice eno za drugo brez mrtvega časa (\"zmaga "
+"najnovejša sličica\"), zato so popravki pogostejši in sveži ter se med njimi "
+"nabere veliko manj napak."
 
 #: ../../user_manual/ekos-guide.rst:474
 msgid ""
@@ -879,34 +894,43 @@ msgid ""
 "algorithms as well as the experimental :ref:`AI Guider <ekos-guide-ai-"
 "guiding-assistant>`."
 msgstr ""
+"Pretočno predvajanje vpliva samo na to, *kako* so sličice dostavljeni "
+"vodniku; algoritmi vodenja, kalibracija, tresenje in obravnavanje "
+"izgubljenih zvezd se obnašajo kot običajno. Deluje z algoritmi :guilabel:"
+"`Standard`/MultiStar in :guilabel:`GPG` ter z eksperimentalnim :ref:`AI "
+"Guider <ekos-guide-ai-guiding-assistant>`."
 
 #: ../../user_manual/ekos-guide.rst:483
 msgid "Requirements"
-msgstr ""
+msgstr "Zahteve"
 
 #: ../../user_manual/ekos-guide.rst:485
 msgid "The **internal guider** (streaming is not used with external PHD2)."
-msgstr ""
+msgstr "**Notranji vodnik** (pretakanje se ne uporablja z zunanjim PHD2)."
 
 #: ../../user_manual/ekos-guide.rst:486
 msgid "A guide camera that supports INDI **video streaming**."
-msgstr ""
+msgstr "Vodilna kamera, ki podpira INDI **pretakanje videa**."
 
 #: ../../user_manual/ekos-guide.rst:487
 msgid ""
 "A completed, successful calibration — calibration itself always runs with "
 "single frames (see below)."
 msgstr ""
+"Zaključena, uspešna kalibracija – sama kalibracija vedno poteka z enojnimi "
+"sličicami (glejte spodaj)."
 
 #: ../../user_manual/ekos-guide.rst:493
 msgid "Enabling Streaming Guide"
-msgstr ""
+msgstr "Omogočanje vodnika pretakanja"
 
 #: ../../user_manual/ekos-guide.rst:495
 msgid ""
 "Check the :guilabel:`Stream` box on the main Guide page, next to the :"
 "guilabel:`Exp` and :guilabel:`Delay` controls, before you start guiding."
 msgstr ""
+"Preden začnete z vodenjem, na glavni strani vodnika poleg kontrolnikov :"
+"guilabel:`Exp` in :guilabel:`Zakasnitev` označite polje :guilabel:`Pretok`."
 
 #: ../../user_manual/ekos-guide.rst:498
 msgid ""
@@ -914,6 +938,9 @@ msgid ""
 "controls apply to the streamed frames exactly as they do to single "
 "exposures; a gain change takes effect immediately while streaming."
 msgstr ""
+"Kontrolniki :guilabel:`Osv` (osvetlitev), :guilabel:`Ojačitev` in :guilabel:"
+"`Bin` veljajo za pretočne sličice natanko tako kot za posamezne osvetlitve; "
+"sprememba ojačanja začne veljati takoj med pretakanjem."
 
 #: ../../user_manual/ekos-guide.rst:504
 msgid ""
@@ -923,16 +950,20 @@ msgid ""
 "guiding stops. This keeps calibration clean and settled while still giving "
 "you the streamed, dead-time-free cadence during guiding."
 msgstr ""
+"Kalibracija se zaradi stabilnosti vedno izvaja z enojnimi sličicami, ne "
+"glede na nastavitev :guilabel:`Pretok`. Pretakanje se samodejno začne šele, "
+"ko se vodenje začne (in le, če je označena možnost :guilabel:`Pretok`), in "
+"se ponovno ustavi, ko se vodenje ustavi. To ohranja kalibracijo čisto in "
+"stabilno, hkrati pa vam med vodenjem še vedno zagotavlja pretakano kadenco "
+"brez mrtvih časov."
 
 #: ../../user_manual/ekos-guide.rst:513
 msgid "16-bit Stream Depth (INDI)"
-msgstr ""
+msgstr "16-bitna globina toka (INDI)"
 
 #: ../../user_manual/ekos-guide.rst:515
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Depth|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream Depth|"
 
 #: ../../user_manual/ekos-guide.rst:517
 msgid ""
@@ -940,6 +971,9 @@ msgid ""
 "Guide module. Open the INDI Control Panel, select your guide camera, and go "
 "to the :guilabel:`Streaming` tab:"
 msgstr ""
+"Bitna globina video toka se nastavi v gonilniku kamere, ne v modulu Guide. "
+"Odprite nadzorno ploščo INDI, izberite svojo vodilno kamero in pojdite na "
+"zavihek :guilabel:`Pretok`:"
 
 #: ../../user_manual/ekos-guide.rst:521
 msgid ""
@@ -948,11 +982,17 @@ msgid ""
 "bit depth, which gives better centroiding and faint-star detection than 8-"
 "bit."
 msgstr ""
+"Nastavite :guilabel:`Globina pretoka` na :guilabel:`16-bit`. To je **zelo "
+"priporočljivo** za vodenje: 16-bitni (RAW16) posnetki ohranijo polno bitno "
+"globino senzorja, kar omogoča boljše centroidiranje in zaznavanje šibkih "
+"zvezd kot 8-bitni."
 
 #: ../../user_manual/ekos-guide.rst:525
 msgid ""
 "Make sure the :guilabel:`Encoder` is set to :guilabel:`RAW` (not MJPEG)."
 msgstr ""
+"Prepričajte se, da je :guilabel:`Encoder` nastavljen na :guilabel:`RAW` (ne "
+"MJPEG)."
 
 #: ../../user_manual/ekos-guide.rst:526
 msgid ""
@@ -960,16 +1000,17 @@ msgid ""
 "tab) so it persists across sessions — otherwise the stream may revert to 8-"
 "bit the next time the camera connects."
 msgstr ""
+"Nastavitev shranite v konfiguracijo gonilnika (na zavihku :guilabel:"
+"`Možnosti`), da se ohrani v vseh sejah – sicer se lahko tok ob naslednji "
+"povezavi kamere vrne na 8-bitno kodo."
 
 #: ../../user_manual/ekos-guide.rst:533
 msgid "Examples"
-msgstr ""
+msgstr "Primeri"
 
 #: ../../user_manual/ekos-guide.rst:535
-#, fuzzy
-#| msgid "|Guiding with GPG|"
 msgid "|Guide Stream GPG|"
-msgstr "|Guiding with GPG|"
+msgstr "|Guide Stream GPG|"
 
 #: ../../user_manual/ekos-guide.rst:537
 msgid ""
@@ -977,12 +1018,13 @@ msgid ""
 "`Linear` on DEC, at 0.7 s exposure and 2×2 binning on a harmonic-drive mount "
 "— total RMS around 0.46″ with 100 detected stars."
 msgstr ""
+"Vodnik za pretakanje z algoritmom :guilabel:`GPG` na RA in :guilabel:"
+"`Linear` na DEC, pri osvetlitvi 0,7 s in 2×2 binningu na montaži s "
+"harmoničnim pogonom – skupni RMS okoli 0,46″ s 100 zaznanimi zvezdami."
 
 #: ../../user_manual/ekos-guide.rst:541
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream AI|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream AI|"
 
 #: ../../user_manual/ekos-guide.rst:543
 msgid ""
@@ -990,10 +1032,14 @@ msgid ""
 "supplies frames with no inter-frame dead time, it pairs naturally with the "
 "higher guide rates that harmonic drives and the AI predictor work best at."
 msgstr ""
+"Vodnik za pretakanje v kombinaciji z eksperimentalnim vodnikom umetne "
+"inteligence. Ker pretakanje zagotavlja sličice brez mrtvega časa med "
+"sličicami, se naravno združuje z višjimi hitrostmi vodenja, pri katerih "
+"harmonični pogoni in napovedovalec umetne inteligence najbolje delujejo."
 
 #: ../../user_manual/ekos-guide.rst:550
 msgid "Notes and Limitations"
-msgstr ""
+msgstr "Opombe in omejitve"
 
 #: ../../user_manual/ekos-guide.rst:552
 msgid ""
@@ -1007,6 +1053,17 @@ msgid ""
 "Library to *Prefer Darks* rather than *Prefer Defects*, since the defect map "
 "only repairs isolated hot/cold pixels and will not remove glow."
 msgstr ""
+"**Odštevanje temnih okvirjev deluje v načinu pretakanja.** Potrditveno "
+"polje :guilabel:`Temno` uporabi ujemajoč se temen okvir (in zemljevid napak) "
+"za vsak pretočna vodilna sličica, tako kot pri vodenju z eno sličico – "
+"uporabno za odstranjevanje sijaja ojačevalnika ali vročih slikovnih pik na "
+"nekaterih vodilnih senzorjih. Kot vedno mora v knjižnici temnih sličic "
+"obstajati ustrezen temna sličica za trenutno osvetlitev, ojačanje in "
+"združevanje vodila (glejte :ref:`Temne sličice <ekos-guide-dark-frames>`). "
+"Upoštevajte, da odstranitev gladkega gradienta sijaja zahteva dejansko "
+"*odštevanje* temnih okvirjev: nastavite knjižnico temnih okvirjev na "
+"*Prednost temnih okvirjev* namesto na *Prednost napak*, saj zemljevid napak "
+"popravi le izolirane vroče/hladne slikovne pike in ne bo odstranil sijaja."
 
 #: ../../user_manual/ekos-guide.rst:561
 msgid ""
@@ -1014,6 +1071,9 @@ msgid ""
 "the camera does not support it, the guider falls back to single-frame "
 "captures."
 msgstr ""
+"Za pretakanje sta potrebna kamera in gonilnik z delujočim pretakanjem videa "
+"INDI; če kamera tega ne podpira, se vodnik vrne na zajemanje posameznih "
+"sličic."
 
 #: ../../user_manual/ekos-guide.rst:564
 msgid ""
@@ -1021,6 +1081,9 @@ msgid ""
 "cadence, not the fundamentals, so good polar alignment, balance, and "
 "calibration still matter most."
 msgstr ""
+"Kot pri vsaki konfiguraciji vodnika preverite svoje rezultate: pretakanje "
+"spremeni kadenco, ne osnov, zato so dobra polarna poravnava, ravnovesje in "
+"kalibracija še vedno najpomembnejši."
 
 #: ../../user_manual/ekos-guide.rst:571
 msgid "AI Guiding Assistant (Experimental)"
@@ -1964,48 +2027,36 @@ msgid ".. image:: /images/ekos_guide_ai_options.png"
 msgstr ".. image:: /images/ekos_guide_ai_options.png"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid "Guide Settings"
 msgid "Guide Stream Settings"
-msgstr "Nastavitve vodila"
+msgstr "Nastavitve vodila pretoka"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_multistar_settings.png"
 msgid ".. image:: /images/ekos_guide_stream_settings.jpg"
-msgstr ".. image:: /images/ekos_guide_multistar_settings.png"
+msgstr ".. image:: /images/ekos_guide_stream_settings.jpg"
 
 #: ../../user_manual/ekos-guide.rst:973
 msgid "Guide Stream Depth"
-msgstr ""
+msgstr "Vodnik globine pretoka"
 
 #: ../../user_manual/ekos-guide.rst:973
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_stream_depth.jpg"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_stream_depth.jpg"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid "Guiding with GPG"
 msgid "Guide Stream GPG"
-msgstr "Vodenje z GPG"
+msgstr "Vodenje pretoka GPG"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_stream_gpg.jpg"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_stream_gpg.jpg"
 
 #: ../../user_manual/ekos-guide.rst:975
 msgid "Guide Stream AI"
-msgstr ""
+msgstr "Vodnik pretoka umetne inteligence"
 
 #: ../../user_manual/ekos-guide.rst:975
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_optical_train.png"
 msgid ".. image:: /images/ekos_guide_stream_ai.jpg"
-msgstr ".. image:: /images/ekos_guide_optical_train.png"
+msgstr ".. image:: /images/ekos_guide_stream_ai.jpg"
 
 #~ msgid "<title>Guide</title>"
 #~ msgstr "<title>Vodnik</title>"
