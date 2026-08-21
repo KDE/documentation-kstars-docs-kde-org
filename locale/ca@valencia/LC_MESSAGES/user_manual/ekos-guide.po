@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-07-30 11:38+0200\n"
+"PO-Revision-Date: 2026-08-19 21:41+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -871,13 +871,11 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:448
 msgid "Streaming Guide"
-msgstr ""
+msgstr "Transmissió del guiatge"
 
 #: ../../user_manual/ekos-guide.rst:450
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Settings|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream Settings|"
 
 #: ../../user_manual/ekos-guide.rst:452
 msgid ""
@@ -889,16 +887,25 @@ msgid ""
 "guide cadence — useful for the higher guide rates (roughly 2–5 Hz) that some "
 "mounts, especially harmonic/strain-wave drives, benefit from."
 msgstr ""
+"En el mode «Transmissió del guiatge», el sistema de guiatge intern captura "
+"fotogrames del guiatge des de l'emissió de vídeo continu de la càmera en "
+"lloc de fer una exposició independent per a cada fotograma del guiatge. Els "
+"fotogrames arriben de manera contínua i el sistema de guiatge sempre "
+"treballarà amb el més recent («guanya l'últim fotograma»), el qual elimina "
+"el temps mort de lectura o baixada entre les exposicions. El resultat és una "
+"cadència del guiatge més ràpida i una latència menor, ideal per a les "
+"velocitats de guiatge més altes (aproximadament de 2 fins a 5 Hz) de les "
+"quals es beneficien algunes muntures, especialment les de «Transmissió "
+"Harmonic» o «Corona i vis sens fi»."
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid "Single-frame versus streaming guide timing"
 msgstr ""
+"Sincronitzeu el guiatge: fotograma únic enfront la transmissió del guiatge"
 
 #: ../../user_manual/ekos-guide.rst:464
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_ai_menu.png"
 msgid ".. image:: /images/ekos_guide_stream_timing.png"
-msgstr ".. image:: /images/ekos_guide_ai_menu.png"
+msgstr ".. image:: /images/ekos_guide_stream_timing.png"
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid ""
@@ -912,6 +919,16 @@ msgid ""
 "time (\"latest frame wins\"), so corrections are more frequent and fresher "
 "and far less error accumulates between them."
 msgstr ""
+"Per què ajuda la transmissió. Al guiatge d'un fotograma únic (a dalt), cada "
+"exposició va seguida d'un *temps mort* de lectura, baixada i detecció, "
+"durant el qual la muntura continua a la deriva sense cap mesura nova ni cap "
+"correcció, de manera que l'error d'apuntament crix sense corregir i assolix "
+"el seu màxim just abans de cada pols. El pols en si es basa en la posició de "
+"l'estrela mesurada durant l'exposició anterior, de manera que la correcció "
+"ja té un parell de segons quan arriba fins a la muntura. La transmissió del "
+"guiatge (a baix) lliura els fotogrames de manera consecutiva sense temps "
+"mort («guanya l'últim fotograma»), de manera que les correccions són més "
+"freqüents i actuals, i s'acumulen molts menys errors entre ells."
 
 #: ../../user_manual/ekos-guide.rst:474
 msgid ""
@@ -921,10 +938,16 @@ msgid ""
 "algorithms as well as the experimental :ref:`AI Guider <ekos-guide-ai-"
 "guiding-assistant>`."
 msgstr ""
+"La transmissió només afecta la manera *com* es lliuren els fotogrames al "
+"sistema de guiatge. Els algorismes del guiatge, calibratge, tramatge i el "
+"maneig de les estreles perdudes es comporten com de costum. Funciona amb els "
+"algorismes :guilabel:`Estàndard`, «amb múltiples estreles» i :guilabel:"
+"`GPG`, així com amb el :ref:`Sistema de guiatge per IA <ekos-guide-ai-"
+"guiding-assistant>`, el qual és experimental."
 
 #: ../../user_manual/ekos-guide.rst:483
 msgid "Requirements"
-msgstr ""
+msgstr "Requirements"
 
 #: ../../user_manual/ekos-guide.rst:485
 msgid "The **internal guider** (streaming is not used with external PHD2)."
@@ -971,10 +994,8 @@ msgid "16-bit Stream Depth (INDI)"
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:515
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Depth|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream Depth|"
 
 #: ../../user_manual/ekos-guide.rst:517
 msgid ""
@@ -1005,13 +1026,11 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:533
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 #: ../../user_manual/ekos-guide.rst:535
-#, fuzzy
-#| msgid "|Guiding with GPG|"
 msgid "|Guide Stream GPG|"
-msgstr "|Guiding with GPG|"
+msgstr "|Guide Stream GPG|"
 
 #: ../../user_manual/ekos-guide.rst:537
 msgid ""
@@ -1021,10 +1040,8 @@ msgid ""
 msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:541
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream AI|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream AI|"
 
 #: ../../user_manual/ekos-guide.rst:543
 msgid ""
@@ -1035,7 +1052,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:550
 msgid "Notes and Limitations"
-msgstr ""
+msgstr "Notes i limitacions"
 
 #: ../../user_manual/ekos-guide.rst:552
 msgid ""
@@ -2038,52 +2055,40 @@ msgstr ".. image:: /images/ekos_guide_ai_wizard_complete.png"
 
 #: ../../user_manual/ekos-guide.rst:971
 msgid "AI Guider Options"
-msgstr "Opcions del guiatge per IA"
+msgstr "Opcions del sistema de guiatge per IA"
 
 #: ../../user_manual/ekos-guide.rst:971
 msgid ".. image:: /images/ekos_guide_ai_options.png"
 msgstr ".. image:: /images/ekos_guide_ai_options.png"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid "Guide Settings"
 msgid "Guide Stream Settings"
-msgstr "Configureu el guiatge"
+msgstr "Configurar l'emissió del guiatge"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_multistar_settings.png"
 msgid ".. image:: /images/ekos_guide_stream_settings.jpg"
-msgstr ".. image:: /images/ekos_guide_multistar_settings.png"
+msgstr ".. image:: /images/ekos_guide_stream_settings.jpg"
 
 #: ../../user_manual/ekos-guide.rst:973
 msgid "Guide Stream Depth"
-msgstr ""
+msgstr "Profunditat de l'emissió del guiatge"
 
 #: ../../user_manual/ekos-guide.rst:973
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_stream_depth.jpg"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_stream_depth.jpg"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid "Guiding with GPG"
 msgid "Guide Stream GPG"
-msgstr "Guiatge amb GPG"
+msgstr "Emissió del guiatge amb GPG"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_stream_gpg.jpg"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_stream_gpg.jpg"
 
 #: ../../user_manual/ekos-guide.rst:975
 msgid "Guide Stream AI"
-msgstr ""
+msgstr "Emissió del guiatge per IA"
 
 #: ../../user_manual/ekos-guide.rst:975
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_optical_train.png"
 msgid ".. image:: /images/ekos_guide_stream_ai.jpg"
-msgstr ".. image:: /images/ekos_guide_optical_train.png"
+msgstr ".. image:: /images/ekos_guide_stream_ai.jpg"

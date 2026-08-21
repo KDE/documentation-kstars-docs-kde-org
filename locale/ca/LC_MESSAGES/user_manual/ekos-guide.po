@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-08-18 20:29+0200\n"
+"PO-Revision-Date: 2026-08-19 20:37+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -875,13 +875,11 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:448
 msgid "Streaming Guide"
-msgstr ""
+msgstr "Guia de flux de dades"
 
 #: ../../user_manual/ekos-guide.rst:450
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Settings|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream Settings|"
 
 #: ../../user_manual/ekos-guide.rst:452
 msgid ""
@@ -893,16 +891,24 @@ msgid ""
 "guide cadence — useful for the higher guide rates (roughly 2–5 Hz) that some "
 "mounts, especially harmonic/strain-wave drives, benefit from."
 msgstr ""
+"En el mode de guia de flux de dades, el guiatge intern captura fotogrames "
+"guia del flux de vídeo continu de la càmera en lloc de prendre una exposició "
+"separada de cada fotograma guia. Els fotogrames arriben contínuament i el "
+"guiatge sempre funciona des del més recent («guanya el darrer fotograma»), "
+"que elimina el temps mort de lectura/descàrrega entre exposicions. El "
+"resultat és una cadència de guia més ràpida i de baixa latència, útil per a "
+"les taxes de guia més altes (aproximadament 2-5 Hz) de les quals es "
+"beneficien algunes muntures, especialment les unitats harmòniques (també "
+"anomenades «strain-wave» en anglès)."
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid "Single-frame versus streaming guide timing"
 msgstr ""
+"Temporització de guiatge de fotogrames individuals versus flux de dades"
 
 #: ../../user_manual/ekos-guide.rst:464
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_ai_menu.png"
 msgid ".. image:: /images/ekos_guide_stream_timing.png"
-msgstr ".. image:: /images/ekos_guide_ai_menu.png"
+msgstr ".. image:: /images/ekos_guide_stream_timing.png"
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid ""
@@ -916,6 +922,17 @@ msgid ""
 "time (\"latest frame wins\"), so corrections are more frequent and fresher "
 "and far less error accumulates between them."
 msgstr ""
+"Per què el flux de dades ajuda. En el guiatge de fotogrames individuals "
+"(superior) cada exposició és seguida d'un *temps mort* de lectura/baixada/"
+"detecció, durant el qual la muntura segueix a la deriva sense cap mesura "
+"nova i sense correcció, de manera que l'error d'apuntament creix sense "
+"correcció i és màxim just abans de cada pols. El pols en si es basa en la "
+"posició de l'estrella mesurada durant l'exposició *anterior*, de manera que "
+"la correcció ja té un parell de segons d'antiguitat en el moment en què "
+"arriba a la muntura. El guiatge de flux de dades (inferior) ofereix "
+"fotogrames tot seguit sense temps mort («guanya el darrer fotograma»), de "
+"manera que les correccions són més freqüents i més fresques i s'acumula molt "
+"menys error entre elles."
 
 #: ../../user_manual/ekos-guide.rst:474
 msgid ""
@@ -925,34 +942,47 @@ msgid ""
 "algorithms as well as the experimental :ref:`AI Guider <ekos-guide-ai-"
 "guiding-assistant>`."
 msgstr ""
+"El flux de dades només afecta *com* es lliuren els fotogrames al sistema de "
+"guiatge; els algorismes de guiatge, el calibratge, el tramat i la gestió "
+"d'estrelles perdudes es comporten com de costum. Funciona amb els "
+"algorismes :guilabel:`Estàndard`/MultiStar i :guilabel:`GPG`, així com amb "
+"el :ref:`Sistema de guiatge experimental d'IA <ekos-guide-ai-guiding-"
+"assistant>`."
 
 #: ../../user_manual/ekos-guide.rst:483
 msgid "Requirements"
-msgstr ""
+msgstr "Requisits"
 
 #: ../../user_manual/ekos-guide.rst:485
 msgid "The **internal guider** (streaming is not used with external PHD2)."
 msgstr ""
+"El **sistema de guiatge intern** (el flux de dades no s'utilitza amb el PHD2 "
+"extern)."
 
 #: ../../user_manual/ekos-guide.rst:486
 msgid "A guide camera that supports INDI **video streaming**."
-msgstr ""
+msgstr "Una càmera guia que admeti el **flux de dades de vídeo** INDI."
 
 #: ../../user_manual/ekos-guide.rst:487
 msgid ""
 "A completed, successful calibration — calibration itself always runs with "
 "single frames (see below)."
 msgstr ""
+"Un calibratge complet i reeixit: el calibratge en si sempre funciona amb "
+"fotogrames únics (vegeu més avall)."
 
 #: ../../user_manual/ekos-guide.rst:493
 msgid "Enabling Streaming Guide"
-msgstr ""
+msgstr "Activació del sistema de guiatge de flux de dades"
 
 #: ../../user_manual/ekos-guide.rst:495
 msgid ""
 "Check the :guilabel:`Stream` box on the main Guide page, next to the :"
 "guilabel:`Exp` and :guilabel:`Delay` controls, before you start guiding."
 msgstr ""
+"Marqueu la casella :guilabel:`Flux de dades` a la pàgina principal de "
+"guiatge, al costat dels controls :guilabel:`Exp` i :guilabel:`Retard`, abans "
+"d'iniciar el guiatge."
 
 #: ../../user_manual/ekos-guide.rst:498
 msgid ""
@@ -960,6 +990,10 @@ msgid ""
 "controls apply to the streamed frames exactly as they do to single "
 "exposures; a gain change takes effect immediately while streaming."
 msgstr ""
+"Els controls :guilabel:`Exp` (exposició), :guilabel:`Guany` i :guilabel:"
+"`Grup` s'apliquen als fotogrames en flux de dades exactament com ho fan a "
+"les exposicions individuals; un canvi de guany té efecte immediatament "
+"mentre dura el flux de dades."
 
 #: ../../user_manual/ekos-guide.rst:504
 msgid ""
@@ -969,16 +1003,20 @@ msgid ""
 "guiding stops. This keeps calibration clean and settled while still giving "
 "you the streamed, dead-time-free cadence during guiding."
 msgstr ""
+"El calibratge sempre funciona amb fotogrames únics per a l'estabilitat, "
+"independentment de la configuració :guilabel:`Flux de dades`. El flux de "
+"dades comença automàticament només una vegada que s'inicia el guiatge (i "
+"només si està marcat :guilabel:`Flux de dades`), i s'atura de nou quan "
+"s'atura el guiatge. Això manté el calibratge net i establert mentre encara "
+"us dona la cadència en flux de dades i sense temps mort durant el guiatge."
 
 #: ../../user_manual/ekos-guide.rst:513
 msgid "16-bit Stream Depth (INDI)"
-msgstr ""
+msgstr "Profunditat del flux de dades de 16 bits (INDI)"
 
 #: ../../user_manual/ekos-guide.rst:515
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Depth|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream Depth|"
 
 #: ../../user_manual/ekos-guide.rst:517
 msgid ""
@@ -986,62 +1024,85 @@ msgid ""
 "Guide module. Open the INDI Control Panel, select your guide camera, and go "
 "to the :guilabel:`Streaming` tab:"
 msgstr ""
+"La profunditat de bits del flux de vídeo s'estableix al controlador de la "
+"càmera, no al mòdul Guia. Obriu el plafó de control de l'INDI, seleccioneu "
+"la càmera guia i aneu a la pestanya :guilabel:`Flux de dades`:"
 
 #: ../../user_manual/ekos-guide.rst:521
+#, fuzzy
 msgid ""
 "Set :guilabel:`Stream Depth` to :guilabel:`16-bit`. This is **highly "
 "recommended** for guiding: 16-bit (RAW16) frames preserve the full sensor "
 "bit depth, which gives better centroiding and faint-star detection than 8-"
 "bit."
 msgstr ""
+"Establiu :guilabel:.Profunditat del flux. a :guilabel:.16 bits.. Això és "
+"**molt recomanable** per al guiatge: els fotogrames de 16 bits (RAW16) "
+"preserven la profunditat de bits del sensor complet, el que proporciona un "
+"millor centroide i detecció d'estrelles febles que 8 bits."
 
 #: ../../user_manual/ekos-guide.rst:525
+#, fuzzy
 msgid ""
 "Make sure the :guilabel:`Encoder` is set to :guilabel:`RAW` (not MJPEG)."
 msgstr ""
+"Assegureu-vos que el :guilabel:).Encoder the està establert a :guilabel:)."
+"RAW). (no MJPEG)."
 
 #: ../../user_manual/ekos-guide.rst:526
+#, fuzzy
 msgid ""
 "Save the setting to the driver configuration (from the :guilabel:`Options` "
 "tab) so it persists across sessions — otherwise the stream may revert to 8-"
 "bit the next time the camera connects."
 msgstr ""
+"Desa la configuració a la configuració del controlador (des de la pestanya :"
+"guilabel:.Opcions.) de manera que persisteixi a través de les sessions; en "
+"cas contrari, el flux pot tornar a 8 bits la propera vegada que es connecti "
+"la càmera."
 
 #: ../../user_manual/ekos-guide.rst:533
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 #: ../../user_manual/ekos-guide.rst:535
-#, fuzzy
-#| msgid "|Guiding with GPG|"
 msgid "|Guide Stream GPG|"
-msgstr "|Guiding with GPG|"
+msgstr "|Guide Stream GPG|"
 
 #: ../../user_manual/ekos-guide.rst:537
+#, fuzzy
 msgid ""
 "Streaming guide with the :guilabel:`GPG` algorithm on RA and :guilabel:"
 "`Linear` on DEC, at 0.7 s exposure and 2×2 binning on a harmonic-drive mount "
 "— total RMS around 0.46″ with 100 detected stars."
 msgstr ""
+"Guia de flux de dades amb l'algorisme :guilabel:.GPG the a l'AR i :guilabel:."
+"Linear. a la DEC, amb una exposició de 0,7 s i un binning de 222 en una "
+"muntura de conducció harmònica — RMS total al voltant de 0,46. amb 100 "
+"estrelles detectades."
 
 #: ../../user_manual/ekos-guide.rst:541
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream AI|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream AI|"
 
 #: ../../user_manual/ekos-guide.rst:543
+#, fuzzy
 msgid ""
 "Streaming guide combined with the experimental AI Guider. Because streaming "
 "supplies frames with no inter-frame dead time, it pairs naturally with the "
 "higher guide rates that harmonic drives and the AI predictor work best at."
 msgstr ""
+"Guia de flux de dades combinada amb l'experimental AI Guider. Com que la "
+"transmissió proporciona marcs sense temps mort entre fotogrames, s'aparella "
+"de forma natural amb les taxes de guia més altes que impulsa harmònic i el "
+"predictor d'IA funciona millor."
 
 #: ../../user_manual/ekos-guide.rst:550
 msgid "Notes and Limitations"
-msgstr ""
+msgstr "Notes i limitacions"
 
 #: ../../user_manual/ekos-guide.rst:552
+#, fuzzy
 msgid ""
 "**Dark-frame subtraction works in streaming mode.** The :guilabel:`Dark` "
 "checkbox applies a matched dark frame (and defect map) to each streamed "
@@ -1053,20 +1114,39 @@ msgid ""
 "Library to *Prefer Darks* rather than *Prefer Defects*, since the defect map "
 "only repairs isolated hot/cold pixels and will not remove glow."
 msgstr ""
+"**La resta de fotogrames foscos funciona en mode streaming.** La casella de "
+"selecció :guilabel:.Dark. aplica un fotograma fosc coincident (i un mapa de "
+"defectes) a cada fotograma guia en flux, igual que en el guiatge d'un sol "
+"fotograma — útil per a eliminar la brillantor de l'amplificador o els píxels "
+"calents en alguns sensors guia. Com sempre, ha d'existir una foscor adequada "
+"a la biblioteca fosca per a l'exposició, el guany i l'inici de la guia "
+"actual (vegeu :ref:).Dark Frames <ekos-guide-dark-frames>).). Cal tenir en "
+"compte que l'eliminació d'un degradat de brillantor suau requereix una "
+"*subtracció* fosca real: establiu la biblioteca fosca a *Prefereix les "
+"fosques* en lloc de *Prefereix les defeccions*, ja que el mapa de defectes "
+"només repara píxels calents/freds aïllats i no eliminarà la brillantor."
 
 #: ../../user_manual/ekos-guide.rst:561
+#, fuzzy
 msgid ""
 "Streaming requires a camera and driver with working INDI video streaming; if "
 "the camera does not support it, the guider falls back to single-frame "
 "captures."
 msgstr ""
+"El flux de dades requereix una càmera i un controlador que funcionin amb la "
+"transmissió de vídeo INDI; si la càmera no ho permet, el sistema de guiatge "
+"torna a les captures d'un sol fotograma."
 
 #: ../../user_manual/ekos-guide.rst:564
+#, fuzzy
 msgid ""
 "As with any guide configuration, verify your results: streaming changes the "
 "cadence, not the fundamentals, so good polar alignment, balance, and "
 "calibration still matter most."
 msgstr ""
+"Igual que amb qualsevol configuració de guia, verifiqueu els vostres "
+"resultats: el flux de dades canvia la cadència, no els fonaments, de manera "
+"que l'alineació polar, l'equilibri i el calibratge encara són més importants."
 
 #: ../../user_manual/ekos-guide.rst:571
 msgid "AI Guiding Assistant (Experimental)"
@@ -1694,7 +1774,7 @@ msgid ""
 "neural network (about 200 parameters) that learns the leftover, mount-"
 "specific residuals."
 msgstr ""
-"Els muntatges d'**Engranatge sense fi** utilitzen un model de física de "
+"Les muntures d'**Engranatge sense fi** utilitzen un model de física de "
 "l'error periòdic, la refracció i la deriva polar, amb la seva fase "
 "rastrejada en directe mentre fa el guiatge, a més d'una petita xarxa "
 "neuronal (al voltant de 200 paràmetres) que aprèn les restes sobrants i "
@@ -1706,7 +1786,7 @@ msgid ""
 "wind-up and periodic error, with a small neural network correcting its "
 "predictions."
 msgstr ""
-"Els muntatges d'**unitat harmònica** utilitzen un model de filtre Kalman per "
+"Les muntures d'**unitat harmònica** utilitzen un model de filtre Kalman per "
 "acabar la molla de la unitat i l'error periòdic, amb una xarxa neuronal "
 "petita que corregeix les seves prediccions."
 
@@ -2043,45 +2123,35 @@ msgid ".. image:: /images/ekos_guide_ai_options.png"
 msgstr ".. image:: /images/ekos_guide_ai_options.png"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid "Guide Settings"
 msgid "Guide Stream Settings"
-msgstr "Configuració del guiatge"
+msgstr "Configuració del flux de guiatge"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_multistar_settings.png"
 msgid ".. image:: /images/ekos_guide_stream_settings.jpg"
-msgstr ".. image:: /images/ekos_guide_multistar_settings.png"
+msgstr ".. image:: /images/ekos_guide_stream_settings.jpg"
 
 #: ../../user_manual/ekos-guide.rst:973
+#, fuzzy
 msgid "Guide Stream Depth"
-msgstr ""
+msgstr "Profunditat del flux guia"
 
 #: ../../user_manual/ekos-guide.rst:973
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_stream_depth.jpg"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_stream_depth.jpg"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid "Guiding with GPG"
 msgid "Guide Stream GPG"
-msgstr "Guiatge amb GPG"
+msgstr "GPG del flux de guiatge"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_stream_gpg.jpg"
-msgstr ".. image:: /images/ekos_guide.png"
-
-#: ../../user_manual/ekos-guide.rst:975
-msgid "Guide Stream AI"
-msgstr ""
+msgstr ".. image:: /images/ekos_guide_stream_gpg.jpg"
 
 #: ../../user_manual/ekos-guide.rst:975
 #, fuzzy
-#| msgid ".. image:: /images/ekos_guide_optical_train.png"
+msgid "Guide Stream AI"
+msgstr "IA del flux guia"
+
+#: ../../user_manual/ekos-guide.rst:975
 msgid ".. image:: /images/ekos_guide_stream_ai.jpg"
-msgstr ".. image:: /images/ekos_guide_optical_train.png"
+msgstr ".. image:: /images/ekos_guide_stream_ai.jpg"
