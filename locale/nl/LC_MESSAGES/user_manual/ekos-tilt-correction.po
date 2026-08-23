@@ -1,0 +1,1481 @@
+# Copyright (C) licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
+# This file is distributed under the same license as the KStars Handbook package.
+#
+# SPDX-FileCopyrightText: 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+msgid ""
+msgstr ""
+"Project-Id-Version: KStars Handbook 3.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-19 02:09+0000\n"
+"PO-Revision-Date: 2026-08-21 12:38+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.04.3\n"
+
+#: ../../user_manual/ekos-tilt-correction.rst:5
+msgid "Tilt Correction and the Tilt Correction Advisory"
+msgstr "Kantelcorrectie en advies over kantelcorrectie"
+
+#: ../../user_manual/ekos-tilt-correction.rst:7
+msgid ""
+"This guide is a self-contained walk-through for measuring and correcting "
+"sensor tilt in Ekos, from initial setup through iterative correction to "
+"verification. It builds on the :ref:`Aberration Inspector <ekos-focus-"
+"aberration-inspector>` in the :doc:`Focus module <ekos-focus>` and focuses "
+"on the **Tilt Correction Advisory**, which translates measured tilt into "
+"concrete mechanical adjustments, and on its integration with motorized tilt "
+"plates such as the WandererAstro ETA M54."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:17
+msgid "Contents"
+msgstr "Inhoud"
+
+#: ../../user_manual/ekos-tilt-correction.rst:20
+msgid "Overview — What is Sensor Tilt?"
+msgstr "Overzicht - wat is kanteling van sensor?"
+
+#: ../../user_manual/ekos-tilt-correction.rst:22
+msgid ""
+"When the imaging sensor is not perfectly perpendicular to the optical axis, "
+"different regions of the field come to focus at different distances from the "
+"flattener/corrector. This manifests as:"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:26
+msgid "Stars in one corner appearing sharper than the opposite corner."
+msgstr ""
+"Sterren in de ene hoek die scherper lijken dan in de tegenoverliggende hoek."
+
+#: ../../user_manual/ekos-tilt-correction.rst:27
+msgid "Uneven HFR values across the field after autofocus."
+msgstr "Ongelijke HFR-waarden over het beeldveld na autofocus."
+
+#: ../../user_manual/ekos-tilt-correction.rst:28
+msgid "One side of the image always appearing slightly out of focus."
+msgstr "Eén kant van de afbeelding oogt altijd enigszins onscherp."
+
+#: ../../user_manual/ekos-tilt-correction.rst:29
+msgid ""
+"Uneven color-correction performance across the frame — because each region "
+"sits at a different distance from the correcting lens element, chromatic "
+"correction (and field flatness) is optimized for only part of the sensor, so "
+"color fringing can be stronger on the side that is furthest from the ideal "
+"focal plane."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:34
+msgid ""
+"The **Aberration Inspector** measures this tilt by running autofocus across "
+"multiple regions (tiles) of the sensor simultaneously. The focus-position "
+"difference between tiles, converted to physical microns using the focuser "
+"step size, reveals the tilt magnitude and direction. The **Tilt Correction "
+"Advisory** then translates these measurements into concrete mechanical "
+"adjustments — telling you which screws to turn, and by how much."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:44
+msgid "Imaging train with WandererAstro ETA M54 tilt plate"
+msgstr "Afbeeldingstrein met WandererAstro ETA M54 kantelplaat"
+
+#: ../../user_manual/ekos-tilt-correction.rst:44
+msgid ".. image:: /images/ekos_tilt_equipment_train.jpg"
+msgstr ".. image:: /images/ekos_tilt_equipment_train.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:44
+msgid ""
+"Imaging train with a WandererAstro ETA M54 tilt plate installed between the "
+"focuser and the camera."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:51
+msgid "WandererAstro ETA M54 close-up"
+msgstr "Close-up van WandererAstro ETA M54"
+
+#: ../../user_manual/ekos-tilt-correction.rst:51
+msgid ".. image:: /images/ekos_tilt_eta_closeup.jpg"
+msgstr ".. image:: /images/ekos_tilt_eta_closeup.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:51
+msgid ""
+"The WandererAstro ETA M54 Electronic Tilt Adjuster (front view). The three "
+"motorized adjustment points are labeled \"1\", \"2\", and \"3\"; each arm "
+"houses a stepper motor with an encoder. The M54 threaded side faces the "
+"telescope/focuser. The sensor side has 6 screw holes for bolting adapters "
+"directly (optional threaded adapters are available). In this photo a Pegasus "
+"Astro Indigo OAG with helical focuser is attached. Note that not all OAGs "
+"fit inside the ETA's central opening — the Svbony OAG neck, for example, is "
+"too wide, while the Pegasus Indigo OAG fits."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:61
+msgid "Prerequisites"
+msgstr "Vereisten vooraf"
+
+#: ../../user_manual/ekos-tilt-correction.rst:63
+msgid "**Hardware**"
+msgstr "**Hardware**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:65
+msgid "A telescope with a field flattener/corrector."
+msgstr "Een telescoop met een veldvlakmaker/corrector."
+
+#: ../../user_manual/ekos-tilt-correction.rst:66
+msgid ""
+"An electronic (absolute) focuser, e.g. ZWO EAF, Pegasus FocusCube, MoonLite."
+msgstr ""
+"Een elektronische (absolute) focuser, bijv. ZWO EAF, Pegasus FocusCube, "
+"MoonLite."
+
+#: ../../user_manual/ekos-tilt-correction.rst:67
+msgid "A tilt adjustment plate:"
+msgstr "Een kantelverstelplaat:"
+
+#: ../../user_manual/ekos-tilt-correction.rst:69
+msgid ""
+"**3-point motorized**: WandererAstro ETA M54 (recommended — allows automated "
+"apply)."
+msgstr ""
+"**Gemotoriseerd 3-punts**: WandererAstro ETA M54 (aanbevolen – maakt "
+"geautomatiseerde toepassing mogelijk)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:70
+msgid "**3-point manual**: Octopi, manual 3-screw tilt rings."
+msgstr ""
+"**Handmatige 3-puntsinstelling**: Octopi, handmatige kantelringen met drie "
+"schroeven."
+
+#: ../../user_manual/ekos-tilt-correction.rst:71
+msgid "**4-point manual**: ToupTek M42 Tilter and similar push/pull plates."
+msgstr ""
+"**Handmatige 4-puntsinstelling**: ToupTek M42-tilter en soortgelijke push/"
+"pull-platen."
+
+#: ../../user_manual/ekos-tilt-correction.rst:73
+msgid ""
+"A star-rich field for measurement (open clusters work well: NGC 2516, M44, "
+"M67)."
+msgstr ""
+"Een sterrenrijk veld voor metingen (open sterrenhopen zijn hiervoor zeer "
+"geschikt: NGC 2516, M44, M67)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:75
+msgid "**Software / configuration**"
+msgstr "**Software / configuratie**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:77
+msgid ""
+"KStars 3.8.4 or later (the Tilt Correction Advisory and ETA integration are "
+"merged upstream)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:79
+msgid "For ETA integration: the INDI driver ``indi_wanderer_eta``."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:80
+msgid "The **Mosaic Mask** enabled in the Focus module."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:81
+msgid "**Focuser step size** correctly configured (see the next section)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:82
+msgid ""
+"The optical train set up in Ekos (sensor dimensions and pixel size are read "
+"automatically from the camera driver)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:84
+msgid ""
+"The ETA connected as an Auxiliary device in the Ekos profile (if using "
+"automated apply)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:89
+msgid "Measuring Focuser Step Size"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:91
+msgid ""
+"The focuser step size (microns per step, µm/step) is **critical** for "
+"accurate tilt measurements. The Aberration Inspector converts focuser tick "
+"differences between tiles into physical distance (microns). If this value is "
+"wrong, the tilt magnitude will be scaled incorrectly (although the direction "
+"will still be correct)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:97
+msgid "Where to configure"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:99
+msgid ""
+"In the Focus module, open the ``CFZ`` dialog (Critical Focus Zone). The "
+"**Step Size** field specifies how many micrometers the focuser moves per "
+"single step (tick)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:105
+msgid "Focus CFZ dialog showing the step size"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:105
+msgid ".. image:: /images/ekos_tilt_cfz_stepsize.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:105
+msgid ""
+"The Focus CFZ dialog: step size is set to 2.754 µm for this ZWO EAF + Askar "
+"SQA130 combination. The CFZ calculation (18 µm = 7 steps) uses this value."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:109
+msgid "How to measure"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:111
+msgid ""
+"If your focuser manufacturer publishes a specification, use it. Typical "
+"values:"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:113
+msgid "ZWO EAF: ~1.5–3.0 µm/step (depends on the scope's focuser mechanism)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:114
+msgid "Pegasus FocusCube: ~2.0–5.0 µm/step."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:115
+msgid "MoonLite: varies by model."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:117
+msgid ""
+"If no specification is available, or you want to verify it, use the full-"
+"travel method:"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:119
+msgid ""
+"**Measure the physical travel.** With the focuser disconnected from the "
+"scope, use a digital caliper or dial indicator against the drawtube. Mark "
+"the fully retracted and fully extended positions and measure the total "
+"travel in mm."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:122
+msgid ""
+"**Count the total steps.** Drive the focuser from one end to the other using "
+"the INDI control panel and note the step count for the full travel."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:124
+msgid ""
+"**Calculate.** ``Step Size (µm/step) = (Total Travel in mm × 1000) / Total "
+"Steps``."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:126
+msgid ""
+"**Example** (ZWO EAF on Askar SQA130): total travel ~31 mm, total steps "
+"~11,250 → 31,000 µm / 11,250 = **2.76 µm/step**."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:132
+msgid "Measuring focuser step size"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:132
+msgid ".. image:: /images/ekos_tilt_stepsize_diagram.png"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:132
+msgid ""
+"Drive the focuser through its full travel, measure the physical distance, "
+"and divide by the step count."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:136
+msgid "Why it matters"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:138
+msgid ""
+"Consider a sensor with 50 µm of tilt. The focus module might report a 20-"
+"tick difference between the left and right tiles."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:141
+msgid ""
+"With the correct step size (2.5 µm/step): 20 × 2.5 = **50 µm** → correct "
+"advisory."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:142
+msgid ""
+"With a wrong step size (5.0 µm/step): 20 × 5.0 = **100 µm** → advisory "
+"overshoots 2×."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:144
+msgid ""
+"The *direction* of the correction is right either way, but a wrong step size "
+"makes you overshoot or undershoot the magnitude on each iteration, requiring "
+"more passes to converge."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:150
+msgid "Running the Aberration Inspector"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:152
+msgid ""
+"**Achieve focus first.** Before using the Aberration Inspector, run a "
+"**normal autofocus** on the full image (no mosaic mask) to bring the focuser "
+"near the correct position. You need a good V-curve with a clean solution — "
+"the Aberration Inspector sweeps around the current focus position, so if you "
+"are far from focus the tiles will not produce usable data."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:157
+msgid ""
+"**Switch to the Mosaic Mask.** The mask is selected in the Focus module's "
+"settings. Open the Focus **Options** and find the **Mask** selector — it "
+"offers *Use all stars* (full image, the default for normal autofocus), *Ring "
+"Mask*, and *Mosaic Mask*. Choose **Mosaic Mask** for tilt measurement. "
+"Adjust the tile size so each tile captures enough stars (tiles around 256–"
+"512 px work well for most setups)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:162
+msgid ""
+"**Point to a star-rich field.** Open clusters are ideal. Avoid nebulae or "
+"regions with few stars — you need multiple stars in every tile for reliable "
+"curve fits."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:167
+msgid ""
+"**Choosing a good spot in the sky.** Tilt measurement depends on clean, "
+"round star shapes and steady tracking across the whole sweep. For best "
+"results: pick a region with clear, well-separated stars and good contrast; "
+"ensure good mount performance, since tracking errors or drift during the "
+"sweep distort the per-tile HFR; and avoid areas where the mount tracks "
+"poorly. Targets very close to the **zenith** or right on the **meridian** "
+"can be problematic (near the zenith, small tracking moves cause large "
+"apparent motion; on the meridian, some mounts track less smoothly near the "
+"balance point). A field at a moderate altitude, well away from these, tends "
+"to give more consistent star shapes for measurement."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:177
+msgid ""
+"**Click \"Aberration Inspector\".** In the Focus module's Tools section, "
+"click the ``Aberration Inspector`` button. This starts a dedicated tiled "
+"autofocus run that sweeps through focus positions while measuring HFR in "
+"each mosaic tile independently."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:183
+msgid ""
+"Consider using a larger step size for the Aberration Inspector run than for "
+"your normal autofocus. Because each tile has fewer stars, the per-tile V-"
+"curves can look bumpy with small steps; larger steps produce smoother curves "
+"and more reliable tile solutions."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:188
+msgid ""
+"**Wait for completion.** When all tiles' V-curves are fit, the Aberration "
+"Inspector dialog appears automatically with the results."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:193
+msgid ""
+"The Tilt Correction Advisory section within the Aberration Inspector is only "
+"visible when either (a) a WandererAstro ETA is detected as connected, or (b) "
+"you manually enable the **Tilt Plate** checkbox in the Aberration Inspector "
+"toolbar. Otherwise the advisory panel stays hidden."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:201
+msgid "Focus module after a successful Aberration Inspector run"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:201
+msgid ".. image:: /images/ekos_tilt_focus_run.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:201
+msgid ""
+"Focus module after a successful Aberration Inspector run: 56 stars detected, "
+"HFR 1.32, R²=0.99. The mosaic mask grid is visible on the star field "
+"(right). The ``Aberration Inspector`` button in the Tools section triggers "
+"the tiled measurement run."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:207
+msgid "Understanding the Results"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:209
+msgid ""
+"The Aberration Inspector presents a per-tile table, a set of summary values, "
+"and a multi-tile V-curve graph. (See the :ref:`Aberration Inspector <ekos-"
+"focus-aberration-inspector>` reference in the Focus documentation for the "
+"full description of every control.)"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:213
+msgid ""
+"**Tile table** — each row is a mosaic tile (region of the sensor): the focus "
+"``Solution`` (steps), ``Delta (ticks)`` and ``Delta (µm)`` relative to the "
+"centre tile, the ``Num Stars`` used vs. detected, and the ``R²`` goodness-of-"
+"fit."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:217
+msgid "**Summary values**"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:219
+msgid ""
+"``Backfocus Δ`` — how far the sensor is from optimal backfocus distance (± "
+"µm)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:220
+msgid "``Left-Right Tilt`` — tilt along the horizontal axis (µm and %)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:221
+msgid "``Top-Bottom Tilt`` — tilt along the vertical axis (µm and %)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:222
+msgid "``Total Tilt`` — combined vector magnitude (µm and %)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:224
+msgid ""
+"**Multi-tile V-curve** — all tiles' V-curves overlaid. In a tilted sensor "
+"the curves are shifted horizontally relative to each other; the minimum of "
+"each curve occurs at a different focuser position."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:231
+msgid "Aberration Inspector multi-tile view"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:231
+msgid ".. image:: /images/ekos_tilt_abins_multitile.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:231
+msgid ""
+"Aberration Inspector showing all 5 tiles (TL, TR, C, BL, BR). The TL curve "
+"(red) diverges significantly from the others, indicating the top-left region "
+"is further from ideal focus. Total tilt: 30 µm. The 3D visualization (right) "
+"shows the tilt plane."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:237
+msgid "Tilt Correction Advisory"
+msgstr "Advies over kantelcorrectie"
+
+#: ../../user_manual/ekos-tilt-correction.rst:239
+msgid ""
+"Below the measurement results, the **Tilt Correction Advisory** translates "
+"the raw measurements into specific mechanical adjustments."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:243
+msgid "Configuration"
+msgstr "Configuratie"
+
+#: ../../user_manual/ekos-tilt-correction.rst:249
+msgid "Setting"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:250
+msgid "Description"
+msgstr "Beschrijving"
+
+#: ../../user_manual/ekos-tilt-correction.rst:251
+msgid "Example"
+msgstr "Voorbeeld"
+
+#: ../../user_manual/ekos-tilt-correction.rst:252
+msgid "**Plate**"
+msgstr "**Plaat**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:253
+msgid "3-point or 4-point geometry"
+msgstr "3-punts- of 4-puntgeometrie"
+
+#: ../../user_manual/ekos-tilt-correction.rst:254
+msgid "3-point"
+msgstr "3-punts"
+
+#: ../../user_manual/ekos-tilt-correction.rst:255
+msgid "**Radius**"
+msgstr "**Straal**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:256
+msgid "Bolt-circle radius in mm (centre to screw)"
+msgstr "Straal van de boutcirkel in mm (centrum van de schroef)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:257
+msgid "64.0 mm (ETA M54)"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:258
+msgid "**Thread**"
+msgstr "**Draad**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:259
+msgid "Screw thread type (determines pitch)"
+msgstr "Schroefdraadtype  (bepaalt de spoed)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:260
+msgid "Wanderer ETA (0.50 mm)"
+msgstr "Wanderer ETA (0.50 mm)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:261
+msgid "**Pitch**"
+msgstr "**Spoed**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:262
+msgid "mm per full turn of the adjustment screw"
+msgstr "mm per volledige draai van de stelschroef"
+
+#: ../../user_manual/ekos-tilt-correction.rst:263
+#: ../../user_manual/ekos-tilt-correction.rst:588
+#: ../../user_manual/ekos-tilt-correction.rst:667
+msgid "0.50 mm/turn"
+msgstr "0.50 mm/draai"
+
+#: ../../user_manual/ekos-tilt-correction.rst:264
+msgid "**Rotation**"
+msgstr "**Rotatie**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:265
+msgid "Camera body rotation (visual aid only)"
+msgstr "Rotatie van de camerabody (alleen visueel hulpmiddel)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:266
+msgid "0° or 10°"
+msgstr "0° of 10°"
+
+#: ../../user_manual/ekos-tilt-correction.rst:267
+msgid "**Mode**"
+msgstr "**Modus**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:268
+msgid "How corrections are presented"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:269
+msgid "Push-only (from zero) or Relative (± deltas)"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:273
+msgid ""
+"**Setting the radius and thread for your plate.** The radius is the bolt-"
+"circle radius — the distance from the centre of the plate to an adjustment "
+"screw/motor. Known values are listed in `Supported Tilt Plates`_ below. If "
+"your plate is not listed, check the manufacturer's website for a technical "
+"drawing, or measure it yourself (centre to screw). The thread type sets the "
+"pitch (mm per turn), which is only used to convert the correction into a "
+"\"number of turns\" — an approximate radius still gives the correct "
+"direction and a close magnitude."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:282
+msgid "Modes explained"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:284
+msgid ""
+"**Push-only (from zero)** — all values are shifted positive (minimum = 0). "
+"Use when starting from a fully retracted / zeroed position. Recommended for "
+"first-time tuning and for push-only plates like the ETA that cannot go "
+"negative."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:287
+msgid ""
+"**Relative (± deltas)** — signed values to apply on top of the current "
+"position; the values sum to zero (symmetric correction). Use for iterative "
+"fine-tuning when the screws are already mid-range."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:292
+msgid "Visual diagram"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:294
+msgid ""
+"The diagram shows the tilt plate as seen from **behind the camera** (the "
+"side facing you when you stand behind the telescope). Points are color-"
+"coded: **red** = increase / push out; **blue** = decrease / pull in (4-point "
+"plates only). For 3-point plates (ETA): Point 1 is upper-right (rear view), "
+"Point 2 is bottom-centre, Point 3 is upper-left."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:302
+msgid "Tilt Correction Advisory, first measurement"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:302
+msgid ".. image:: /images/ekos_tilt_advisory_run1.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:302
+msgid ""
+"Aberration Inspector Run 1: total tilt 29 µm. The Tilt Correction Advisory "
+"shows Point 1 (upper-right) +0.119 mm (+0.2 turns), Point 2 (bottom) +0.231 "
+"mm (+0.5 turns), Point 3 no change. The ``Apply to ETA`` button sends these "
+"corrections directly to the ETA."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:307
+msgid "4-point plate example"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:309
+msgid ""
+"For 4-point push/pull plates (e.g. the ToupTek M42 Tilter) the advisory "
+"shows corrections for all four corner screws. Each screw affects both tilt "
+"axes simultaneously because of the 45° corner geometry."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:316
+msgid "4-point plate advisory"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:316
+msgid ".. image:: /images/ekos_tilt_advisory_4point.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:316
+msgid ""
+"Aberration Inspector with a 4-point plate selected (Radius 46.0 mm, Thread "
+"M4 fine 0.50 mm, Rotation 20°). All 5 tiles fit well (R² 0.91–0.98). Total "
+"tilt: 4 µm — nearly perfect. The advisory shows tiny corrections (Screw 1 "
+"top-left −0.012 mm, Screw 4 bottom-right +0.012 mm) and an \"apply all "
+"together, or Screw 1 alone −0.025 mm\" note."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:323
+msgid "Applying Corrections (WandererAstro ETA)"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:326
+msgid "The ETA M54 tilt plate"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:328
+msgid ""
+"The WandererAstro ETA M54 is a motorized 3-point tilt adjuster with three "
+"independent stepper motors and encoder feedback, 0–1.200 mm travel per "
+"point, 0.50 mm/turn thread pitch, 0.002 mm (2 µm) positioning accuracy, and "
+"USB-serial control via INDI."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:333
+msgid "INDI control panel"
+msgstr "INDI-besturingspaneel"
+
+#: ../../user_manual/ekos-tilt-correction.rst:335
+msgid ""
+"When connected, the ETA appears in the INDI Control Panel with **Target "
+"Positions** (set each point 0.000–1.200 mm), **Current Positions** (real-"
+"time encoder readback), **Firmware** version, a **Zero All** action, and a "
+"**Backfocus Offset** that applies a uniform offset to all three points at "
+"once (handy for quickly compensating for the glass thickness of different "
+"filters)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:344
+msgid "ETA INDI control panel"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:344
+msgid ".. image:: /images/ekos_tilt_eta_indi_panel.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:344
+msgid ""
+"WandererAstro ETA M54 in the INDI Control Panel. Current positions show "
+"P1=0.200, P2=0.400, P3=0.000 mm; firmware version 20251123."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:350
+msgid "ETA after applying corrections"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:350
+msgid ".. image:: /images/ekos_tilt_eta_applied.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:350
+msgid ""
+"ETA with a correction applied: P1=0.100, P2=0.330, P3=0.170 mm — different "
+"values per point to compensate for sensor tilt."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:354
+msgid "Automated apply"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:356
+msgid ""
+"When the Aberration Inspector detects a connected ETA (and the plate is set "
+"to 3-point), the ``Apply to ETA`` button becomes active. Clicking it reads "
+"the current ETA positions, adds the advisory delta to each point, shifts all "
+"values to stay within 0.000–1.200 mm, and sends the targets sequentially "
+"(Point 1 → wait for arrival → Point 2 → …). A confirmation is displayed, e."
+"g. \"Applied to ETA: P1→X.XXX P2→X.XXX P3→X.XXX mm\"."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:365
+msgid "After Apply to ETA"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:365
+msgid ".. image:: /images/ekos_tilt_advisory_applied.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:365
+msgid ""
+"After clicking ``Apply to ETA`` the status shows \"Applied to ETA: P1→0.119 "
+"P2→0.571 P3→0.065 mm. Run autofocus again to re-measure.\" and the button "
+"changes to \"Done\"."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:370
+msgid "Iterative Workflow"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:372
+msgid ""
+"Tilt correction is iterative — one pass rarely achieves perfect correction, "
+"due to mechanical hysteresis, measurement noise, and the simplification of "
+"treating tilt as purely planar."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:377
+msgid "Recommended procedure"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:379
+msgid ""
+"Start with the ETA at zero (or all screws fully retracted for manual plates)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:380
+msgid ""
+"**Run 1**: run the Aberration Inspector → read the tilt → apply the "
+"correction."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:381
+msgid "**Run 2**: run again → the tilt should be significantly reduced."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:382
+msgid "**Run 3** (if needed): fine-tune to reach the target."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:385
+msgid "Example — real-world convergence"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:391
+msgid "Run"
+msgstr "Uitvoeren"
+
+#: ../../user_manual/ekos-tilt-correction.rst:392
+#: ../../user_manual/ekos-tilt-correction.rst:423
+msgid "Total Tilt"
+msgstr "Totale kanteling:"
+
+#: ../../user_manual/ekos-tilt-correction.rst:393
+msgid "Action"
+msgstr "Actie"
+
+#: ../../user_manual/ekos-tilt-correction.rst:394
+msgid "1"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:395
+msgid "29 µm"
+msgstr "29 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:396
+msgid "Applied P1=+0.119, P2=+0.231 mm"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:397
+msgid "2"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:398
+msgid "6 µm"
+msgstr "6 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:399
+msgid "Applied P1=+0.024, P2=+0.046 mm"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:400
+msgid "3"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:401
+msgid "0 µm"
+msgstr "0 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:402
+msgid "No change needed — perfect"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:407
+msgid "Run 2, tilt reduced to 6 µm"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:407
+msgid ".. image:: /images/ekos_tilt_run2.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:407
+msgid ""
+"After the first correction, Run 2 shows total tilt reduced from 29 µm to "
+"just 6 µm. The advisory now suggests much smaller adjustments (P1=+0.024, P2="
+"+0.046 mm)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:413
+msgid "Run 3, 0 µm tilt achieved"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:413
+msgid ".. image:: /images/ekos_tilt_run3.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:413
+msgid ""
+"Run 3: total tilt 0 µm. All three points show \"no change\" — the sensor is "
+"perpendicular to the optical axis. This is the target state."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:417
+msgid "What counts as \"good\"?"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:424
+msgid "Quality"
+msgstr "Kwaliteit"
+
+#: ../../user_manual/ekos-tilt-correction.rst:425
+#: ../../user_manual/ekos-tilt-correction.rst:584
+msgid "Notes"
+msgstr "Notities"
+
+#: ../../user_manual/ekos-tilt-correction.rst:426
+msgid "< 20 µm"
+msgstr "< 20 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:427
+msgid "Excellent"
+msgstr "Uitstekend"
+
+#: ../../user_manual/ekos-tilt-correction.rst:428
+msgid "Indistinguishable from perfect in most images"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:429
+msgid "20–50 µm"
+msgstr "20–50 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:430
+msgid "Good"
+msgstr "Goed"
+
+#: ../../user_manual/ekos-tilt-correction.rst:431
+msgid "Adequate for most setups"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:432
+msgid "50–100 µm"
+msgstr "50–100 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:433
+msgid "Acceptable"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:434
+msgid "OK for short focal length / fast scopes"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:435
+msgid "> 100 µm"
+msgstr "> 100 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:436
+msgid "Needs correction"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:437
+msgid "Visible star-shape degradation in corners"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:440
+msgid "Tips for convergence"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:442
+msgid ""
+"Use the **same star field** for each iteration (different fields can "
+"introduce noise)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:443
+msgid ""
+"Wait for **stable seeing** — poor seeing adds noise to the tile measurements."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:444
+msgid ""
+"Don't over-correct: if the advisory says 0.4 mm, consider applying 0.3 mm "
+"first."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:445
+msgid "Fix **backfocus first** if ``Backfocus Δ`` is large (> 50 µm)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:446
+msgid ""
+"Re-run after any mechanical change to the imaging train (camera rotation, "
+"filter swap)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:450
+msgid "When Tilt Cannot Be Measured (Large Tilt)"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:453
+msgid "The problem"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:455
+msgid ""
+"When sensor tilt is very large (> ~100 µm), some mosaic tiles' focus falls "
+"entirely outside the autofocus sweep range. Their V-curve cannot be fit (R² "
+"= 0.00, Solution = 0), and the precise tilt calculation returns **N/A** — "
+"the Aberration Inspector cannot safely report a tilt value. This typically "
+"happens when setting up a new imaging train for the first time, after the "
+"ETA has been zeroed or the tilt plate removed/reinstalled, or after a major "
+"mechanical change (camera swap, rotator adjustment)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:463
+msgid "How it looks in the Aberration Inspector"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:465
+msgid ""
+"Some tiles show \"Solution: 0, R²: 0.00\" and the Left-Right, Top-Bottom and "
+"Total Tilt all read **N/A**. The advisory diagram shows \"No tilt data\" and "
+"the ``Apply to ETA`` button is disabled."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:472
+msgid "Aberration Inspector, no tilt data (Run 6)"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:472
+msgid ".. image:: /images/ekos_tilt_notiltdata_run6.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:472
+msgid ""
+"Run 6: Top Left, Top Right and Bottom Right tiles failed to fit (Solution 0, "
+"R² 0.00, 0 usable stars). Only Centre (R²=0.50) and Bottom Left (R²=0.99) "
+"produced valid curves. All tilt values read \"N/A\" and the diagram shows "
+"\"No tilt data\"."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:479
+msgid "Aberration Inspector, no tilt data with diverging curves (Run 8)"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:479
+msgid ".. image:: /images/ekos_tilt_notiltdata_run8.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:479
+msgid ""
+"Run 8: same \"No tilt data\" state, but here three tiles fit (Centre "
+"R²=1.00, Bottom Left R²=1.00, Bottom Right R²=0.79) while the two Top tiles "
+"still fail. Notice how the Bottom Right curve (red) bottoms out far to the "
+"right of the others — a clear visual signature of significant tilt, even "
+"though a precise value cannot be computed because the Top tiles never "
+"reached focus."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:486
+msgid "Guessing the direction from the focus sweep"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:488
+msgid ""
+"Even when a precise value is not available, you can often **guess the tilt "
+"direction by watching the focus sweep**. As the focuser moves through its "
+"range, the in-focus region of the sensor migrates across the field. If the "
+"sharp-star region moves from the upper part of the sensor to the lower part "
+"(or left to right) during the sweep, that tells you which edge reaches focus "
+"first — and therefore which way the sensor is tilted. The two frames below "
+"are from the **same sweep** at different focuser positions:"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:498
+msgid "Focus sweep, early — upper tiles in focus"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:498
+msgid ".. image:: /images/ekos_tilt_sweep_early.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:498
+msgid ""
+"Early in the sweep (focuser ~6807): the sharp stars and their HFR values are "
+"concentrated in the **upper** tiles, while the lower tiles are still out of "
+"focus. The V-curve is just starting."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:505
+msgid "Focus sweep, later — centre/lower tiles in focus"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:505
+msgid ".. image:: /images/ekos_tilt_sweep_later.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:505
+msgid ""
+"Later in the same sweep (focuser ~6764): the sharp-star region has moved "
+"down into the **centre and lower** tiles and the V-curve is nearly complete. "
+"The in-focus band migrated from top to bottom, a strong hint that the sensor "
+"is tilted along the top-bottom axis and which side to raise."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:511
+msgid "What to do"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:513
+msgid ""
+"The advisory needs valid data on enough tiles to compute a correction. When "
+"you are in the \"No tilt data\" state, reduce the tilt manually until the "
+"far tiles come back within the autofocus sweep:"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:517
+msgid ""
+"**Estimate the direction** from the focus sweep (above) or from which "
+"corners are sharp vs. bloated in a full-frame image."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:519
+msgid ""
+"**Apply a small manual correction** to the ETA (or tilt screws) in that "
+"direction — move the point on the side that is furthest from focus."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:521
+msgid ""
+"**Re-run the Aberration Inspector.** Once all tiles fit within the sweep, "
+"the precise tilt calculation returns and you can proceed with the normal "
+"iterative workflow above."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:526
+msgid ""
+"An automated coarse pre-correction advisory (which estimates the direction "
+"for you when precise measurement fails) is under development but still needs "
+"more testing before it is documented here."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:532
+msgid "Verification with External Tools"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:534
+msgid ""
+"After achieving good tilt correction in Ekos you can verify with external "
+"analysis tools that process full-frame images (CCDInspector, ASTAP, and "
+"similar). These measure HFD (Half Flux Diameter) across the entire frame and "
+"report a tilt metric. A well-corrected sensor shows uniform HFD across all "
+"corners, a tilt percentage under ~5% (typically < 3% for excellent "
+"correction), and off-axis aberration as the dominant remaining factor rather "
+"than tilt."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:544
+msgid "Well-focused field after tilt correction"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:544
+msgid ".. image:: /images/ekos_tilt_focus_wellfocused.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:544
+msgid ""
+"After successful tilt correction: 100 detected stars with HFR 1.31 and "
+"uniform focus across the field — the end result of the iterative workflow."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:550
+msgid "External tilt analysis"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:550
+msgid ".. image:: /images/ekos_tilt_external_analysis.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:550
+msgid ""
+"External analysis of a corrected frame: 1269 stars, median HFD 2.8, "
+"Tilt[HFD] 0.10 (3%, classified \"none\"), off-axis aberration 0.03. The per-"
+"tile median HFD values range only from 2.79 to 2.89 — extremely uniform."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:557
+msgid "M31 frame with corner HFD values"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:557
+msgid ".. image:: /images/ekos_tilt_external_m31.jpg"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:557
+msgid ""
+"M31 single frame with corner HFD values: TL 2.12, TR 2.14, Centre 2.16, BL "
+"2.15, BR 2.17. The 0.05 variation across the field is negligible — within "
+"seeing-limited uniformity."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:563
+msgid "Reference Tables"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:568
+msgid "Supported Tilt Plates"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:570
+msgid ""
+"**Any 3-point or 4-point tilt plate is supported** — you only need to tell "
+"the advisory the plate's bolt-circle radius and screw thread. The values "
+"below are known reference figures. For plates not listed (or to confirm any "
+"value), check the manufacturer's website for a technical drawing, or measure "
+"the plate yourself (centre of plate to an adjustment screw = radius)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:580
+msgid "Plate"
+msgstr "Plaat"
+
+#: ../../user_manual/ekos-tilt-correction.rst:581
+msgid "Type"
+msgstr "Type"
+
+#: ../../user_manual/ekos-tilt-correction.rst:582
+msgid "Radius"
+msgstr "Straal"
+
+#: ../../user_manual/ekos-tilt-correction.rst:583
+msgid "Thread/Pitch"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:585
+msgid "WandererAstro ETA M54"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:586
+msgid "3-point motorized"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:587
+#: ../../user_manual/ekos-tilt-correction.rst:665
+msgid "64.0 mm"
+msgstr "64,0 mm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:589
+msgid "Automated Apply; radius/pitch auto-locked when detected"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:590
+msgid "ZWO Tilt Plate (M42/M48/M54/M68)"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:591
+#: ../../user_manual/ekos-tilt-correction.rst:601
+msgid "3-point manual"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:592
+msgid "40.0 mm"
+msgstr "40,0 mm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:593
+msgid "Check drawing"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:594
+msgid "Radius consistent across ZWO's thread sizes"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:595
+msgid "ToupTek M42 Tilter (Ø100 mm)"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:596
+msgid "4-point push/pull"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:597
+msgid "46.0 mm"
+msgstr "46,0 mm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:598
+msgid "M4 push (0.70 mm)"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:599
+msgid "Screws on Ø92 mm circle; use the push-screw pitch"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:600
+msgid "Octopi tilt ring"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:602
+msgid "Varies"
+msgstr "Diversen"
+
+#: ../../user_manual/ekos-tilt-correction.rst:603
+msgid "M3 (0.50 mm)"
+msgstr "M3 (0.50 mm)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:604
+msgid "Measure your specific unit"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:605
+msgid "Generic 3-/4-screw plate"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:606
+msgid "3- or 4-point manual"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:607
+msgid "Measure"
+msgstr "Meten"
+
+#: ../../user_manual/ekos-tilt-correction.rst:608
+msgid "Measure/drawing"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:609
+msgid "Any plate works — supply radius + pitch"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:613
+msgid ""
+"Manufacturer technical drawings usually give the screw positions in mm from "
+"the optical axis — that distance is exactly the radius the advisory needs. "
+"If no drawing is available, a caliper measurement from the plate centre to a "
+"screw is accurate enough (the correction direction is unaffected by small "
+"radius errors, and the magnitude scales gently)."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:620
+msgid "Thread pitch reference"
+msgstr "Schroefdraad referentie"
+
+#: ../../user_manual/ekos-tilt-correction.rst:626
+msgid "Thread"
+msgstr "Schroefdraad"
+
+#: ../../user_manual/ekos-tilt-correction.rst:627
+msgid "Pitch (mm/turn)"
+msgstr "Spoed (mm/draai)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:628
+msgid "M2.5"
+msgstr "M2.5"
+
+#: ../../user_manual/ekos-tilt-correction.rst:629
+msgid "0.45"
+msgstr "0,45"
+
+#: ../../user_manual/ekos-tilt-correction.rst:630
+msgid "M3"
+msgstr "M3"
+
+#: ../../user_manual/ekos-tilt-correction.rst:631
+#: ../../user_manual/ekos-tilt-correction.rst:637
+#: ../../user_manual/ekos-tilt-correction.rst:641
+#: ../../user_manual/ekos-tilt-correction.rst:645
+msgid "0.50"
+msgstr "0,50"
+
+#: ../../user_manual/ekos-tilt-correction.rst:632
+msgid "M3 fine"
+msgstr "M3 fijn"
+
+#: ../../user_manual/ekos-tilt-correction.rst:633
+msgid "0.35"
+msgstr "0,35"
+
+#: ../../user_manual/ekos-tilt-correction.rst:634
+msgid "M4"
+msgstr "M4"
+
+#: ../../user_manual/ekos-tilt-correction.rst:635
+msgid "0.70"
+msgstr "0,70"
+
+#: ../../user_manual/ekos-tilt-correction.rst:636
+msgid "M4 fine"
+msgstr "M4 fijn"
+
+#: ../../user_manual/ekos-tilt-correction.rst:638
+msgid "M5"
+msgstr "M5"
+
+#: ../../user_manual/ekos-tilt-correction.rst:639
+msgid "0.80"
+msgstr "0,80"
+
+#: ../../user_manual/ekos-tilt-correction.rst:640
+msgid "M5 fine"
+msgstr "M5 fijn"
+
+#: ../../user_manual/ekos-tilt-correction.rst:642
+msgid "M6"
+msgstr "M6"
+
+#: ../../user_manual/ekos-tilt-correction.rst:643
+msgid "1.00"
+msgstr "1,00"
+
+#: ../../user_manual/ekos-tilt-correction.rst:644
+msgid "Wanderer ETA"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:648
+msgid "ETA M54 specifications"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:654
+msgid "Parameter"
+msgstr "Parameter"
+
+#: ../../user_manual/ekos-tilt-correction.rst:655
+msgid "Value"
+msgstr "Waarde"
+
+#: ../../user_manual/ekos-tilt-correction.rst:656
+msgid "Connection"
+msgstr "Verbinding"
+
+#: ../../user_manual/ekos-tilt-correction.rst:657
+msgid "USB 2.0 Type-B, CH340, 19200 baud"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:658
+msgid "Travel per point"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:659
+msgid "0–1.200 mm"
+msgstr "0–1,200 mm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:660
+msgid "Accuracy"
+msgstr "Nauwkeurigheid"
+
+#: ../../user_manual/ekos-tilt-correction.rst:661
+msgid "0.002 mm (2 µm)"
+msgstr "0,002 mm (2 µm)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:662
+msgid "Motor resolution"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:663
+msgid "0.3 µm/step"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:664
+msgid "Bolt-circle radius"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:666
+msgid "Thread pitch"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:668
+msgid "Weight"
+msgstr "Gewicht"
+
+#: ../../user_manual/ekos-tilt-correction.rst:669
+msgid "470 g"
+msgstr "470 g"
+
+#: ../../user_manual/ekos-tilt-correction.rst:670
+msgid "Operating temperature"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:671
+msgid "-25°C to 50°C"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:672
+msgid "Power"
+msgstr "Energie"
+
+#: ../../user_manual/ekos-tilt-correction.rst:673
+msgid "USB 5V 0.5A"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:674
+msgid "INDI driver"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:675
+msgid "``indi_wanderer_eta``"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:676
+msgid "Device name"
+msgstr "Apparaatnaam"
+
+#: ../../user_manual/ekos-tilt-correction.rst:677
+msgid "\"Wanderer ETA M54\""
+msgstr ""
