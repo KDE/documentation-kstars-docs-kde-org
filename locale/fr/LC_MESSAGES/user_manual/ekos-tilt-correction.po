@@ -15,7 +15,7 @@ msgstr ""
 
 #: ../../user_manual/ekos-tilt-correction.rst:5
 msgid "Tilt Correction and the Tilt Correction Advisory"
-msgstr ""
+msgstr "Correction d'inclinaison et conseils de correction d'inclinaison"
 
 #: ../../user_manual/ekos-tilt-correction.rst:7
 msgid ""
@@ -27,14 +27,22 @@ msgid ""
 "concrete mechanical adjustments, and on its integration with motorized tilt "
 "plates such as the WandererAstro ETA M54."
 msgstr ""
+"Ce guide est un parcours autonome pour mesurer et corriger l'inclinaison du "
+"capteur dans Ekos, de la configuration initiale jusqu'à la vérification, en "
+"passant par la correction itérative. Il s'appuie sur l':ref:`inspecteur "
+"d'aberration <ekos-focus-aberration-inspector>` du :doc:`module de mise au "
+"point <ekos-focus>` et se concentre sur les **conseils de correction "
+"d'inclinaison**, qui traduisent l'inclinaison mesurée en ajustements "
+"mécaniques concrets, ainsi que sur son intégration avec des plaques "
+"d'inclinaison motorisées telles que la WandererAstro ETA M54."
 
 #: ../../user_manual/ekos-tilt-correction.rst:17
 msgid "Contents"
-msgstr ""
+msgstr "Sommaire"
 
 #: ../../user_manual/ekos-tilt-correction.rst:20
 msgid "Overview — What is Sensor Tilt?"
-msgstr ""
+msgstr "Vue d'ensemble — Qu'est-ce que l'inclinaison du capteur ?"
 
 #: ../../user_manual/ekos-tilt-correction.rst:22
 msgid ""
@@ -42,18 +50,22 @@ msgid ""
 "different regions of the field come to focus at different distances from the "
 "flattener/corrector. This manifests as:"
 msgstr ""
+"Lorsque le capteur d'imagerie n'est pas parfaitement perpendiculaire à l'axe "
+"optique, les différentes régions du champ font la mise au point à des "
+"distances différentes de l'aplanisseur/correcteur. Cela se manifeste par :"
 
 #: ../../user_manual/ekos-tilt-correction.rst:26
 msgid "Stars in one corner appearing sharper than the opposite corner."
-msgstr ""
+msgstr "Des étoiles plus nettes dans un coin que dans le coin opposé."
 
 #: ../../user_manual/ekos-tilt-correction.rst:27
 msgid "Uneven HFR values across the field after autofocus."
 msgstr ""
+"Des valeurs de HFR inégales sur le champ après la mise au point automatique."
 
 #: ../../user_manual/ekos-tilt-correction.rst:28
 msgid "One side of the image always appearing slightly out of focus."
-msgstr ""
+msgstr "Un côté de l'image toujours légèrement flou."
 
 #: ../../user_manual/ekos-tilt-correction.rst:29
 msgid ""
@@ -63,6 +75,11 @@ msgid ""
 "color fringing can be stronger on the side that is furthest from the ideal "
 "focal plane."
 msgstr ""
+"Une correction chromatique inégale sur l'image — comme chaque région se "
+"trouve à une distance différente de l'élément de lentille correcteur, la "
+"correction chromatique (et la planéité de champ) n'est optimisée que pour "
+"une partie du capteur ; les franges colorées peuvent donc être plus marquées "
+"du côté le plus éloigné du plan focal idéal."
 
 #: ../../user_manual/ekos-tilt-correction.rst:34
 msgid ""
@@ -73,28 +90,38 @@ msgid ""
 "Advisory** then translates these measurements into concrete mechanical "
 "adjustments — telling you which screws to turn, and by how much."
 msgstr ""
+"L'**inspecteur d'aberration** mesure cette inclinaison en effectuant une "
+"mise au point automatique sur plusieurs régions (tuiles) du capteur "
+"simultanément. La différence de position de mise au point entre les tuiles, "
+"convertie en microns physiques à l'aide de la taille de pas du moteur de "
+"mise au point, révèle l'amplitude et la direction de l'inclinaison. Les "
+"**conseils de correction d'inclinaison** traduisent ensuite ces mesures en "
+"ajustements mécaniques concrets — en indiquant quelles vis tourner, et de "
+"combien."
 
 #: ../../user_manual/ekos-tilt-correction.rst:44
 msgid "Imaging train with WandererAstro ETA M54 tilt plate"
-msgstr ""
+msgstr "Train d'imagerie avec une plaque d'inclinaison WandererAstro ETA M54"
 
 #: ../../user_manual/ekos-tilt-correction.rst:44
 msgid ".. image:: /images/ekos_tilt_equipment_train.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_equipment_train.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:44
 msgid ""
 "Imaging train with a WandererAstro ETA M54 tilt plate installed between the "
 "focuser and the camera."
 msgstr ""
+"Train d'imagerie avec une plaque d'inclinaison WandererAstro ETA M54 "
+"installée entre le moteur de mise au point et la caméra."
 
 #: ../../user_manual/ekos-tilt-correction.rst:51
 msgid "WandererAstro ETA M54 close-up"
-msgstr ""
+msgstr "Gros plan sur la WandererAstro ETA M54"
 
 #: ../../user_manual/ekos-tilt-correction.rst:51
 msgid ".. image:: /images/ekos_tilt_eta_closeup.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_eta_closeup.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:51
 msgid ""
@@ -107,85 +134,112 @@ msgid ""
 "fit inside the ETA's central opening — the Svbony OAG neck, for example, is "
 "too wide, while the Pegasus Indigo OAG fits."
 msgstr ""
+"Le dispositif d'ajustement électronique d'inclinaison WandererAstro ETA M54 "
+"(vue de face). Les trois points d'ajustement motorisés sont repérés « 1 », « "
+"2 » et « 3 » ; chaque bras loge un moteur pas à pas avec encodeur. Le côté "
+"fileté M54 fait face au télescope/moteur de mise au point. Le côté capteur "
+"comporte 6 trous de vis pour boulonner directement des adaptateurs (des "
+"adaptateurs filetés en option sont disponibles). Sur cette photo, un OAG "
+"Pegasus Astro Indigo avec moteur de mise au point hélicoïdal est fixé. Notez "
+"que tous les OAG ne s'insèrent pas dans l'ouverture centrale de l'ETA — le "
+"col de l'OAG Svbony, par exemple, est trop large, alors que celui du Pegasus "
+"Indigo convient."
 
 #: ../../user_manual/ekos-tilt-correction.rst:61
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prérequis"
 
 #: ../../user_manual/ekos-tilt-correction.rst:63
 msgid "**Hardware**"
-msgstr ""
+msgstr "**Matériel**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:65
 msgid "A telescope with a field flattener/corrector."
-msgstr ""
+msgstr "Un télescope avec un aplanisseur/correcteur de champ."
 
 #: ../../user_manual/ekos-tilt-correction.rst:66
 msgid ""
 "An electronic (absolute) focuser, e.g. ZWO EAF, Pegasus FocusCube, MoonLite."
 msgstr ""
+"Un moteur de mise au point électronique (absolu), par exemple ZWO EAF, "
+"Pegasus FocusCube, MoonLite."
 
 #: ../../user_manual/ekos-tilt-correction.rst:67
 msgid "A tilt adjustment plate:"
-msgstr ""
+msgstr "Une plaque d'ajustement d'inclinaison :"
 
 #: ../../user_manual/ekos-tilt-correction.rst:69
 msgid ""
 "**3-point motorized**: WandererAstro ETA M54 (recommended — allows automated "
 "apply)."
 msgstr ""
+"**Motorisée à 3 points** : WandererAstro ETA M54 (recommandée — permet "
+"l'application automatisée)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:70
 msgid "**3-point manual**: Octopi, manual 3-screw tilt rings."
 msgstr ""
+"**Manuelle à 3 points** : Octopi, bagues d'inclinaison manuelles à 3 vis."
 
 #: ../../user_manual/ekos-tilt-correction.rst:71
 msgid "**4-point manual**: ToupTek M42 Tilter and similar push/pull plates."
 msgstr ""
+"**Manuelle à 4 points** : ToupTek M42 Tilter et plaques similaires à vis "
+"push/pull."
 
 #: ../../user_manual/ekos-tilt-correction.rst:73
 msgid ""
 "A star-rich field for measurement (open clusters work well: NGC 2516, M44, "
 "M67)."
 msgstr ""
+"Un champ riche en étoiles pour la mesure (les amas ouverts conviennent "
+"bien : NGC 2516, M44, M67)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:75
 msgid "**Software / configuration**"
-msgstr ""
+msgstr "**Logiciel / configuration**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:77
 msgid ""
 "KStars 3.8.4 or later (the Tilt Correction Advisory and ETA integration are "
 "merged upstream)."
 msgstr ""
+"KStars 3.8.4 ou ultérieur (les conseils de correction d'inclinaison et "
+"l'intégration de l'ETA sont fusionnés en amont)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:79
 msgid "For ETA integration: the INDI driver ``indi_wanderer_eta``."
-msgstr ""
+msgstr "Pour l'intégration de l'ETA : le pilote INDI ``indi_wanderer_eta``."
 
 #: ../../user_manual/ekos-tilt-correction.rst:80
 msgid "The **Mosaic Mask** enabled in the Focus module."
-msgstr ""
+msgstr "Le **masque de mosaïque** activé dans le module de mise au point."
 
 #: ../../user_manual/ekos-tilt-correction.rst:81
 msgid "**Focuser step size** correctly configured (see the next section)."
 msgstr ""
+"La **taille de pas du moteur de mise au point** correctement configurée "
+"(voir la section suivante)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:82
 msgid ""
 "The optical train set up in Ekos (sensor dimensions and pixel size are read "
 "automatically from the camera driver)."
 msgstr ""
+"Le train optique configuré dans Ekos (les dimensions du capteur et la taille "
+"des pixels sont lues automatiquement depuis le pilote de la caméra)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:84
 msgid ""
 "The ETA connected as an Auxiliary device in the Ekos profile (if using "
 "automated apply)."
 msgstr ""
+"L'ETA connectée en tant que périphérique auxiliaire dans le profil Ekos (si "
+"l'application automatisée est utilisée)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:89
 msgid "Measuring Focuser Step Size"
-msgstr ""
+msgstr "Mesure de la taille de pas du moteur de mise au point"
 
 #: ../../user_manual/ekos-tilt-correction.rst:91
 msgid ""
@@ -195,10 +249,16 @@ msgid ""
 "wrong, the tilt magnitude will be scaled incorrectly (although the direction "
 "will still be correct)."
 msgstr ""
+"La taille de pas du moteur de mise au point (microns par pas, µm/pas) est "
+"**essentielle** pour des mesures d'inclinaison précises. L'inspecteur "
+"d'aberration convertit les différences de pas du moteur de mise au point "
+"entre les tuiles en distance physique (microns). Si cette valeur est "
+"incorrecte, l'amplitude de l'inclinaison sera mal proportionnée (bien que la "
+"direction reste correcte)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:97
 msgid "Where to configure"
-msgstr ""
+msgstr "Où la configurer"
 
 #: ../../user_manual/ekos-tilt-correction.rst:99
 msgid ""
@@ -206,48 +266,60 @@ msgid ""
 "**Step Size** field specifies how many micrometers the focuser moves per "
 "single step (tick)."
 msgstr ""
+"Dans le module de mise au point, ouvrez la boîte de dialogue ``CFZ`` (zone "
+"critique de mise au point). Le champ **Taille de pas** indique de combien de "
+"micromètres le moteur de mise au point se déplace par pas unique."
 
 #: ../../user_manual/ekos-tilt-correction.rst:105
 msgid "Focus CFZ dialog showing the step size"
-msgstr ""
+msgstr "Boîte de dialogue CFZ de la mise au point montrant la taille de pas"
 
 #: ../../user_manual/ekos-tilt-correction.rst:105
 msgid ".. image:: /images/ekos_tilt_cfz_stepsize.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_cfz_stepsize.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:105
 msgid ""
 "The Focus CFZ dialog: step size is set to 2.754 µm for this ZWO EAF + Askar "
 "SQA130 combination. The CFZ calculation (18 µm = 7 steps) uses this value."
 msgstr ""
+"La boîte de dialogue CFZ de la mise au point : la taille de pas est réglée à "
+"2,754 µm pour cette combinaison ZWO EAF + Askar SQA130. Le calcul de la CFZ "
+"(18 µm = 7 pas) utilise cette valeur."
 
 #: ../../user_manual/ekos-tilt-correction.rst:109
 msgid "How to measure"
-msgstr ""
+msgstr "Comment la mesurer"
 
 #: ../../user_manual/ekos-tilt-correction.rst:111
 msgid ""
 "If your focuser manufacturer publishes a specification, use it. Typical "
 "values:"
 msgstr ""
+"Si le fabricant de votre moteur de mise au point publie une caractéristique, "
+"utilisez-la. Valeurs typiques :"
 
 #: ../../user_manual/ekos-tilt-correction.rst:113
 msgid "ZWO EAF: ~1.5–3.0 µm/step (depends on the scope's focuser mechanism)."
 msgstr ""
+"ZWO EAF : ~1,5–3,0 µm/pas (dépend du mécanisme de mise au point du "
+"télescope)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:114
 msgid "Pegasus FocusCube: ~2.0–5.0 µm/step."
-msgstr ""
+msgstr "Pegasus FocusCube : ~2,0–5,0 µm/pas."
 
 #: ../../user_manual/ekos-tilt-correction.rst:115
 msgid "MoonLite: varies by model."
-msgstr ""
+msgstr "MoonLite : varie selon le modèle."
 
 #: ../../user_manual/ekos-tilt-correction.rst:117
 msgid ""
 "If no specification is available, or you want to verify it, use the full-"
 "travel method:"
 msgstr ""
+"Si aucune caractéristique n'est disponible, ou si vous souhaitez la "
+"vérifier, utilisez la méthode de la course complète :"
 
 #: ../../user_manual/ekos-tilt-correction.rst:119
 msgid ""
@@ -256,60 +328,79 @@ msgid ""
 "the fully retracted and fully extended positions and measure the total "
 "travel in mm."
 msgstr ""
+"**Mesurez la course physique.** Avec le moteur de mise au point déconnecté "
+"du télescope, utilisez un pied à coulisse numérique ou un comparateur à "
+"cadran contre le tube coulissant. Repérez les positions entièrement "
+"rétractée et entièrement déployée, et mesurez la course totale en mm."
 
 #: ../../user_manual/ekos-tilt-correction.rst:122
 msgid ""
 "**Count the total steps.** Drive the focuser from one end to the other using "
 "the INDI control panel and note the step count for the full travel."
 msgstr ""
+"**Comptez le nombre total de pas.** Déplacez le moteur de mise au point "
+"d'une extrémité à l'autre à l'aide du panneau de contrôle INDI et notez le "
+"nombre de pas pour la course complète."
 
 #: ../../user_manual/ekos-tilt-correction.rst:124
 msgid ""
 "**Calculate.** ``Step Size (µm/step) = (Total Travel in mm × 1000) / Total "
 "Steps``."
 msgstr ""
+"**Calculez.** ``Taille de pas (µm/pas) = (course totale en mm × 1000) / "
+"nombre total de pas``."
 
 #: ../../user_manual/ekos-tilt-correction.rst:126
 msgid ""
 "**Example** (ZWO EAF on Askar SQA130): total travel ~31 mm, total steps "
 "~11,250 → 31,000 µm / 11,250 = **2.76 µm/step**."
 msgstr ""
+"**Exemple** (ZWO EAF sur Askar SQA130) : course totale ~31 mm, nombre total "
+"de pas ~11 250 → 31 000 µm / 11 250 = **2,76 µm/pas**."
 
 #: ../../user_manual/ekos-tilt-correction.rst:132
 msgid "Measuring focuser step size"
-msgstr ""
+msgstr "Mesure de la taille de pas du moteur de mise au point"
 
 #: ../../user_manual/ekos-tilt-correction.rst:132
 msgid ".. image:: /images/ekos_tilt_stepsize_diagram.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_stepsize_diagram.png"
 
 #: ../../user_manual/ekos-tilt-correction.rst:132
 msgid ""
 "Drive the focuser through its full travel, measure the physical distance, "
 "and divide by the step count."
 msgstr ""
+"Déplacez le moteur de mise au point sur toute sa course, mesurez la distance "
+"physique et divisez par le nombre de pas."
 
 #: ../../user_manual/ekos-tilt-correction.rst:136
 msgid "Why it matters"
-msgstr ""
+msgstr "Pourquoi c'est important"
 
 #: ../../user_manual/ekos-tilt-correction.rst:138
 msgid ""
 "Consider a sensor with 50 µm of tilt. The focus module might report a 20-"
 "tick difference between the left and right tiles."
 msgstr ""
+"Prenons un capteur avec 50 µm d'inclinaison. Le module de mise au point "
+"pourrait indiquer une différence de 20 pas entre les tuiles gauche et droite."
 
 #: ../../user_manual/ekos-tilt-correction.rst:141
 msgid ""
 "With the correct step size (2.5 µm/step): 20 × 2.5 = **50 µm** → correct "
 "advisory."
 msgstr ""
+"Avec la taille de pas correcte (2,5 µm/pas) : 20 × 2,5 = **50 µm** → conseil "
+"correct."
 
 #: ../../user_manual/ekos-tilt-correction.rst:142
 msgid ""
 "With a wrong step size (5.0 µm/step): 20 × 5.0 = **100 µm** → advisory "
 "overshoots 2×."
 msgstr ""
+"Avec une taille de pas incorrecte (5,0 µm/pas) : 20 × 5,0 = **100 µm** → le "
+"conseil surestime d'un facteur 2."
 
 #: ../../user_manual/ekos-tilt-correction.rst:144
 msgid ""
@@ -317,10 +408,13 @@ msgid ""
 "makes you overshoot or undershoot the magnitude on each iteration, requiring "
 "more passes to converge."
 msgstr ""
+"La *direction* de la correction est correcte dans les deux cas, mais une "
+"taille de pas incorrecte vous fait surestimer ou sous-estimer l'amplitude à "
+"chaque itération, ce qui nécessite davantage de passes pour converger."
 
 #: ../../user_manual/ekos-tilt-correction.rst:150
 msgid "Running the Aberration Inspector"
-msgstr ""
+msgstr "Lancer l'inspecteur d'aberration"
 
 #: ../../user_manual/ekos-tilt-correction.rst:152
 msgid ""
@@ -330,6 +424,13 @@ msgid ""
 "the Aberration Inspector sweeps around the current focus position, so if you "
 "are far from focus the tiles will not produce usable data."
 msgstr ""
+"**Faites d'abord la mise au point.** Avant d'utiliser l'inspecteur "
+"d'aberration, effectuez une **mise au point automatique normale** sur "
+"l'image complète (sans masque de mosaïque) pour amener le moteur de mise au "
+"point près de la bonne position. Vous avez besoin d'une bonne courbe en V "
+"avec une solution propre — l'inspecteur d'aberration balaie autour de la "
+"position de mise au point actuelle, donc si vous êtes loin de la mise au "
+"point, les tuiles ne produiront pas de données exploitables."
 
 #: ../../user_manual/ekos-tilt-correction.rst:157
 msgid ""
@@ -340,6 +441,14 @@ msgid ""
 "Adjust the tile size so each tile captures enough stars (tiles around 256–"
 "512 px work well for most setups)."
 msgstr ""
+"**Passez au masque de mosaïque.** Le masque se sélectionne dans les réglages "
+"du module de mise au point. Ouvrez les **options** de mise au point et "
+"repérez le sélecteur **Masque** — il propose *Utiliser toutes les étoiles* "
+"(image complète, valeur par défaut pour la mise au point automatique "
+"normale), *Masque de l'anneau* et *Masque de mosaïque*. Choisissez **Masque "
+"de mosaïque** pour la mesure d'inclinaison. Ajustez la taille des tuiles "
+"pour que chacune capture suffisamment d'étoiles (des tuiles d'environ 256–"
+"512 px conviennent à la plupart des configurations)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:162
 msgid ""
@@ -347,6 +456,10 @@ msgid ""
 "regions with few stars — you need multiple stars in every tile for reliable "
 "curve fits."
 msgstr ""
+"**Pointez vers un champ riche en étoiles.** Les amas ouverts sont idéaux. "
+"Évitez les nébuleuses ou les régions pauvres en étoiles — vous avez besoin "
+"de plusieurs étoiles dans chaque tuile pour des ajustements de courbe "
+"fiables."
 
 #: ../../user_manual/ekos-tilt-correction.rst:167
 msgid ""
@@ -361,6 +474,18 @@ msgid ""
 "balance point). A field at a moderate altitude, well away from these, tends "
 "to give more consistent star shapes for measurement."
 msgstr ""
+"**Choisir un bon emplacement dans le ciel.** La mesure d'inclinaison dépend "
+"de formes d'étoiles nettes et rondes et d'un suivi stable durant tout le "
+"balayage. Pour de meilleurs résultats : choisissez une région aux étoiles "
+"claires, bien séparées et avec un bon contraste ; assurez-vous que la "
+"monture suit bien, car les erreurs de suivi ou la dérive pendant le balayage "
+"faussent le HFR par tuile ; et évitez les zones où la monture suit mal. Les "
+"cibles très proches du **zénith** ou situées exactement sur le **méridien** "
+"peuvent poser problème (près du zénith, de faibles erreurs de suivi "
+"provoquent un déplacement apparent important ; sur le méridien, certaines "
+"montures suivent moins régulièrement près du point d'équilibre). Un champ à "
+"une altitude modérée, bien éloigné de ces zones, tend à donner des formes "
+"d'étoiles plus régulières pour la mesure."
 
 #: ../../user_manual/ekos-tilt-correction.rst:177
 msgid ""
@@ -369,6 +494,11 @@ msgid ""
 "autofocus run that sweeps through focus positions while measuring HFR in "
 "each mosaic tile independently."
 msgstr ""
+"**Cliquez sur « Inspecteur d'aberration ».** Dans la section Outils du "
+"module de mise au point, cliquez sur le bouton ``Inspecteur d'aberration``. "
+"Cela lance une passe de mise au point automatique dédiée par tuiles, qui "
+"balaie les positions de mise au point tout en mesurant le HFR de chaque "
+"tuile de la mosaïque indépendamment."
 
 #: ../../user_manual/ekos-tilt-correction.rst:183
 msgid ""
@@ -377,12 +507,20 @@ msgid ""
 "curves can look bumpy with small steps; larger steps produce smoother curves "
 "and more reliable tile solutions."
 msgstr ""
+"Envisagez d'utiliser une taille de pas plus grande pour la passe de "
+"l'inspecteur d'aberration que pour votre mise au point automatique normale. "
+"Comme chaque tuile contient moins d'étoiles, les courbes en V par tuile "
+"peuvent être irrégulières avec de petits pas ; des pas plus grands "
+"produisent des courbes plus lisses et des solutions par tuile plus fiables."
 
 #: ../../user_manual/ekos-tilt-correction.rst:188
 msgid ""
 "**Wait for completion.** When all tiles' V-curves are fit, the Aberration "
 "Inspector dialog appears automatically with the results."
 msgstr ""
+"**Attendez la fin du traitement.** Une fois les courbes en V de toutes les "
+"tuiles ajustées, la boîte de dialogue de l'inspecteur d'aberration apparaît "
+"automatiquement avec les résultats."
 
 #: ../../user_manual/ekos-tilt-correction.rst:193
 msgid ""
@@ -391,14 +529,20 @@ msgid ""
 "you manually enable the **Tilt Plate** checkbox in the Aberration Inspector "
 "toolbar. Otherwise the advisory panel stays hidden."
 msgstr ""
+"La section des conseils de correction d'inclinaison dans l'inspecteur "
+"d'aberration n'est visible que si (a) une WandererAstro ETA est détectée "
+"comme connectée, ou (b) vous cochez manuellement la case **Plaque "
+"d'inclinaison** dans la barre d'outils de l'inspecteur d'aberration. Sinon, "
+"le panneau de conseils reste masqué."
 
 #: ../../user_manual/ekos-tilt-correction.rst:201
 msgid "Focus module after a successful Aberration Inspector run"
 msgstr ""
+"Module de mise au point après une passe réussie de l'inspecteur d'aberration"
 
 #: ../../user_manual/ekos-tilt-correction.rst:201
 msgid ".. image:: /images/ekos_tilt_focus_run.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_focus_run.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:201
 msgid ""
@@ -407,10 +551,15 @@ msgid ""
 "(right). The ``Aberration Inspector`` button in the Tools section triggers "
 "the tiled measurement run."
 msgstr ""
+"Module de mise au point après une passe réussie de l'inspecteur "
+"d'aberration : 56 étoiles détectées, HFR 1,32, R²=0,99. La grille du masque "
+"de mosaïque est visible sur le champ d'étoiles (à droite). Le bouton "
+"``Inspecteur d'aberration`` dans la section Outils déclenche la passe de "
+"mesure par tuiles."
 
 #: ../../user_manual/ekos-tilt-correction.rst:207
 msgid "Understanding the Results"
-msgstr ""
+msgstr "Comprendre les résultats"
 
 #: ../../user_manual/ekos-tilt-correction.rst:209
 msgid ""
@@ -419,6 +568,11 @@ msgid ""
 "focus-aberration-inspector>` reference in the Focus documentation for the "
 "full description of every control.)"
 msgstr ""
+"L'inspecteur d'aberration présente un tableau par tuile, un ensemble de "
+"valeurs de synthèse et un graphique multi-tuiles des courbes en V. (Voir la "
+"référence de l':ref:`inspecteur d'aberration <ekos-focus-aberration-"
+"inspector>` dans la documentation du module de mise au point pour la "
+"description complète de chaque contrôle.)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:213
 msgid ""
@@ -427,28 +581,35 @@ msgid ""
 "centre tile, the ``Num Stars`` used vs. detected, and the ``R²`` goodness-of-"
 "fit."
 msgstr ""
+"**Tableau des tuiles** — chaque ligne correspond à une tuile de la mosaïque "
+"(région du capteur) : la ``Solution`` de mise au point (pas), le ``Delta "
+"(pas)`` et le ``Delta (µm)`` par rapport à la tuile centrale, le nombre "
+"d'étoiles (``Num Stars``) utilisées par rapport à détectées, et la qualité "
+"d'ajustement ``R²``."
 
 #: ../../user_manual/ekos-tilt-correction.rst:217
 msgid "**Summary values**"
-msgstr ""
+msgstr "**Valeurs de synthèse**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:219
 msgid ""
 "``Backfocus Δ`` — how far the sensor is from optimal backfocus distance (± "
 "µm)."
 msgstr ""
+"``Backfocus Δ`` — l'écart du capteur par rapport à la distance de backfocus "
+"optimale (± µm)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:220
 msgid "``Left-Right Tilt`` — tilt along the horizontal axis (µm and %)."
-msgstr ""
+msgstr "``Left-Right Tilt`` — inclinaison selon l'axe horizontal (µm et %)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:221
 msgid "``Top-Bottom Tilt`` — tilt along the vertical axis (µm and %)."
-msgstr ""
+msgstr "``Top-Bottom Tilt`` — inclinaison selon l'axe vertical (µm et %)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:222
 msgid "``Total Tilt`` — combined vector magnitude (µm and %)."
-msgstr ""
+msgstr "``Total Tilt`` — amplitude vectorielle combinée (µm et %)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:224
 msgid ""
@@ -456,14 +617,18 @@ msgid ""
 "the curves are shifted horizontally relative to each other; the minimum of "
 "each curve occurs at a different focuser position."
 msgstr ""
+"**Courbe en V multi-tuiles** — les courbes en V de toutes les tuiles "
+"superposées. Sur un capteur incliné, les courbes sont décalées "
+"horizontalement les unes par rapport aux autres ; le minimum de chaque "
+"courbe se produit à une position différente du moteur de mise au point."
 
 #: ../../user_manual/ekos-tilt-correction.rst:231
 msgid "Aberration Inspector multi-tile view"
-msgstr ""
+msgstr "Vue multi-tuiles de l'inspecteur d'aberration"
 
 #: ../../user_manual/ekos-tilt-correction.rst:231
 msgid ".. image:: /images/ekos_tilt_abins_multitile.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_abins_multitile.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:231
 msgid ""
@@ -472,106 +637,112 @@ msgid ""
 "is further from ideal focus. Total tilt: 30 µm. The 3D visualization (right) "
 "shows the tilt plane."
 msgstr ""
+"Inspecteur d'aberration affichant les 5 tuiles (TL, TR, C, BL, BR). La "
+"courbe TL (rouge) diverge nettement des autres, indiquant que la région en "
+"haut à gauche est plus éloignée de la mise au point idéale. Inclinaison "
+"totale : 30 µm. La visualisation 3D (à droite) montre le plan d'inclinaison."
 
 #: ../../user_manual/ekos-tilt-correction.rst:237
 msgid "Tilt Correction Advisory"
-msgstr ""
+msgstr "Conseils de correction d'inclinaison"
 
 #: ../../user_manual/ekos-tilt-correction.rst:239
 msgid ""
 "Below the measurement results, the **Tilt Correction Advisory** translates "
 "the raw measurements into specific mechanical adjustments."
 msgstr ""
+"Sous les résultats de mesure, les **conseils de correction d'inclinaison** "
+"traduisent les mesures brutes en ajustements mécaniques précis."
 
 #: ../../user_manual/ekos-tilt-correction.rst:243
 msgid "Configuration"
-msgstr ""
+msgstr "Configuration"
 
 #: ../../user_manual/ekos-tilt-correction.rst:249
 msgid "Setting"
-msgstr ""
+msgstr "Réglage"
 
 #: ../../user_manual/ekos-tilt-correction.rst:250
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../../user_manual/ekos-tilt-correction.rst:251
 msgid "Example"
-msgstr ""
+msgstr "Exemple"
 
 #: ../../user_manual/ekos-tilt-correction.rst:252
 msgid "**Plate**"
-msgstr ""
+msgstr "**Plaque**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:253
 msgid "3-point or 4-point geometry"
-msgstr ""
+msgstr "Géométrie à 3 ou 4 points"
 
 #: ../../user_manual/ekos-tilt-correction.rst:254
 msgid "3-point"
-msgstr ""
+msgstr "3 points"
 
 #: ../../user_manual/ekos-tilt-correction.rst:255
 msgid "**Radius**"
-msgstr ""
+msgstr "**Rayon**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:256
 msgid "Bolt-circle radius in mm (centre to screw)"
-msgstr ""
+msgstr "Rayon du cercle de perçage en mm (du centre à la vis)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:257
 msgid "64.0 mm (ETA M54)"
-msgstr ""
+msgstr "64,0 mm (ETA M54)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:258
 msgid "**Thread**"
-msgstr ""
+msgstr "**Filetage**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:259
 msgid "Screw thread type (determines pitch)"
-msgstr ""
+msgstr "Type de filetage de la vis (détermine le pas)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:260
 msgid "Wanderer ETA (0.50 mm)"
-msgstr ""
+msgstr "Wanderer ETA (0,50 mm)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:261
 msgid "**Pitch**"
-msgstr ""
+msgstr "**Pas**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:262
 msgid "mm per full turn of the adjustment screw"
-msgstr ""
+msgstr "mm par tour complet de la vis d'ajustement"
 
 #: ../../user_manual/ekos-tilt-correction.rst:263
 #: ../../user_manual/ekos-tilt-correction.rst:588
 #: ../../user_manual/ekos-tilt-correction.rst:667
 msgid "0.50 mm/turn"
-msgstr ""
+msgstr "0,50 mm/tour"
 
 #: ../../user_manual/ekos-tilt-correction.rst:264
 msgid "**Rotation**"
-msgstr ""
+msgstr "**Rotation**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:265
 msgid "Camera body rotation (visual aid only)"
-msgstr ""
+msgstr "Rotation du boîtier de la caméra (aide visuelle uniquement)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:266
 msgid "0° or 10°"
-msgstr ""
+msgstr "0° ou 10°"
 
 #: ../../user_manual/ekos-tilt-correction.rst:267
 msgid "**Mode**"
-msgstr ""
+msgstr "**Mode**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:268
 msgid "How corrections are presented"
-msgstr ""
+msgstr "Comment les corrections sont présentées"
 
 #: ../../user_manual/ekos-tilt-correction.rst:269
 msgid "Push-only (from zero) or Relative (± deltas)"
-msgstr ""
+msgstr "Poussée uniquement (à partir de zéro) ou Relatif (± deltas)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:273
 msgid ""
@@ -584,10 +755,19 @@ msgid ""
 "\"number of turns\" — an approximate radius still gives the correct "
 "direction and a close magnitude."
 msgstr ""
+"**Régler le rayon et le filetage de votre plaque.** Le rayon est le rayon du "
+"cercle de perçage — la distance entre le centre de la plaque et une vis/un "
+"moteur d'ajustement. Les valeurs connues sont listées dans `Plaques "
+"d'inclinaison prises en charge`_ ci-dessous. Si votre plaque n'est pas "
+"listée, consultez le site du fabricant pour un plan technique, ou mesurez-la "
+"vous-même (du centre à la vis). Le type de filetage définit le pas (mm par "
+"tour), utilisé uniquement pour convertir la correction en « nombre de tours "
+"» — un rayon approximatif donne quand même la bonne direction et une "
+"amplitude proche."
 
 #: ../../user_manual/ekos-tilt-correction.rst:282
 msgid "Modes explained"
-msgstr ""
+msgstr "Explication des modes"
 
 #: ../../user_manual/ekos-tilt-correction.rst:284
 msgid ""
@@ -596,6 +776,11 @@ msgid ""
 "first-time tuning and for push-only plates like the ETA that cannot go "
 "negative."
 msgstr ""
+"**Poussée uniquement (à partir de zéro)** — toutes les valeurs sont décalées "
+"en positif (minimum = 0). À utiliser en partant d'une position entièrement "
+"rétractée / remise à zéro. Recommandé pour un premier réglage et pour les "
+"plaques à poussée uniquement comme l'ETA, qui ne peuvent pas aller en "
+"négatif."
 
 #: ../../user_manual/ekos-tilt-correction.rst:287
 msgid ""
@@ -603,10 +788,14 @@ msgid ""
 "position; the values sum to zero (symmetric correction). Use for iterative "
 "fine-tuning when the screws are already mid-range."
 msgstr ""
+"**Relatif (± deltas)** — valeurs signées à appliquer par-dessus la position "
+"actuelle ; la somme des valeurs est nulle (correction symétrique). À "
+"utiliser pour un affinage itératif lorsque les vis sont déjà en position "
+"médiane."
 
 #: ../../user_manual/ekos-tilt-correction.rst:292
 msgid "Visual diagram"
-msgstr ""
+msgstr "Schéma visuel"
 
 #: ../../user_manual/ekos-tilt-correction.rst:294
 msgid ""
@@ -616,14 +805,21 @@ msgid ""
 "plates only). For 3-point plates (ETA): Point 1 is upper-right (rear view), "
 "Point 2 is bottom-centre, Point 3 is upper-left."
 msgstr ""
+"Le schéma montre la plaque d'inclinaison vue **de l'arrière de la caméra** "
+"(le côté qui vous fait face lorsque vous vous tenez derrière le télescope). "
+"Les points sont codés par couleur : **rouge** = augmenter / pousser vers "
+"l'extérieur ; **bleu** = diminuer / tirer vers l'intérieur (plaques à 4 "
+"points uniquement). Pour les plaques à 3 points (ETA) : le point 1 est en "
+"haut à droite (vue arrière), le point 2 en bas au centre, le point 3 en haut "
+"à gauche."
 
 #: ../../user_manual/ekos-tilt-correction.rst:302
 msgid "Tilt Correction Advisory, first measurement"
-msgstr ""
+msgstr "Conseils de correction d'inclinaison, première mesure"
 
 #: ../../user_manual/ekos-tilt-correction.rst:302
 msgid ".. image:: /images/ekos_tilt_advisory_run1.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_advisory_run1.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:302
 msgid ""
@@ -632,10 +828,15 @@ msgid ""
 "mm (+0.5 turns), Point 3 no change. The ``Apply to ETA`` button sends these "
 "corrections directly to the ETA."
 msgstr ""
+"Inspecteur d'aberration, passe 1 : inclinaison totale 29 µm. Les conseils de "
+"correction d'inclinaison indiquent point 1 (en haut à droite) +0,119 mm "
+"(+0,2 tour), point 2 (en bas) +0,231 mm (+0,5 tour), point 3 sans "
+"changement. Le bouton ``Appliquer à l'ETA`` envoie ces corrections "
+"directement à l'ETA."
 
 #: ../../user_manual/ekos-tilt-correction.rst:307
 msgid "4-point plate example"
-msgstr ""
+msgstr "Exemple de plaque à 4 points"
 
 #: ../../user_manual/ekos-tilt-correction.rst:309
 msgid ""
@@ -643,14 +844,18 @@ msgid ""
 "shows corrections for all four corner screws. Each screw affects both tilt "
 "axes simultaneously because of the 45° corner geometry."
 msgstr ""
+"Pour les plaques push/pull à 4 points (par exemple la ToupTek M42 Tilter), "
+"les conseils indiquent les corrections pour les quatre vis d'angle. Chaque "
+"vis affecte simultanément les deux axes d'inclinaison en raison de la "
+"géométrie à 45° des angles."
 
 #: ../../user_manual/ekos-tilt-correction.rst:316
 msgid "4-point plate advisory"
-msgstr ""
+msgstr "Conseils pour plaque à 4 points"
 
 #: ../../user_manual/ekos-tilt-correction.rst:316
 msgid ".. image:: /images/ekos_tilt_advisory_4point.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_advisory_4point.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:316
 msgid ""
@@ -660,14 +865,20 @@ msgid ""
 "top-left −0.012 mm, Screw 4 bottom-right +0.012 mm) and an \"apply all "
 "together, or Screw 1 alone −0.025 mm\" note."
 msgstr ""
+"Inspecteur d'aberration avec une plaque à 4 points sélectionnée (rayon 46,0 "
+"mm, filetage M4 fin 0,50 mm, rotation 20°). Les 5 tuiles s'ajustent bien (R² "
+"0,91–0,98). Inclinaison totale : 4 µm — quasi parfaite. Les conseils "
+"indiquent de très petites corrections (vis 1 en haut à gauche −0,012 mm, vis "
+"4 en bas à droite +0,012 mm) et une remarque « appliquer toutes ensemble, ou "
+"la vis 1 seule −0,025 mm »."
 
 #: ../../user_manual/ekos-tilt-correction.rst:323
 msgid "Applying Corrections (WandererAstro ETA)"
-msgstr ""
+msgstr "Appliquer les corrections (WandererAstro ETA)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:326
 msgid "The ETA M54 tilt plate"
-msgstr ""
+msgstr "La plaque d'inclinaison ETA M54"
 
 #: ../../user_manual/ekos-tilt-correction.rst:328
 msgid ""
@@ -676,10 +887,15 @@ msgid ""
 "point, 0.50 mm/turn thread pitch, 0.002 mm (2 µm) positioning accuracy, and "
 "USB-serial control via INDI."
 msgstr ""
+"La WandererAstro ETA M54 est un dispositif motorisé d'ajustement "
+"d'inclinaison à 3 points, avec trois moteurs pas à pas indépendants et "
+"retour d'encodeur, une course de 0–1,200 mm par point, un pas de filetage de "
+"0,50 mm/tour, une précision de positionnement de 0,002 mm (2 µm), et un "
+"contrôle USB-série via INDI."
 
 #: ../../user_manual/ekos-tilt-correction.rst:333
 msgid "INDI control panel"
-msgstr ""
+msgstr "Panneau de contrôle INDI"
 
 #: ../../user_manual/ekos-tilt-correction.rst:335
 msgid ""
@@ -690,38 +906,50 @@ msgid ""
 "once (handy for quickly compensating for the glass thickness of different "
 "filters)."
 msgstr ""
+"Une fois connectée, l'ETA apparaît dans le panneau de contrôle INDI avec les "
+"**positions cibles** (réglage de chaque point de 0,000 à 1,200 mm), les "
+"**positions actuelles** (lecture de l'encodeur en temps réel), la version du "
+"**micrologiciel**, une action **Tout remettre à zéro**, et un **décalage de "
+"backfocus** qui applique un décalage uniforme aux trois points à la fois "
+"(pratique pour compenser rapidement l'épaisseur de verre de différents "
+"filtres)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:344
 msgid "ETA INDI control panel"
-msgstr ""
+msgstr "Panneau de contrôle INDI de l'ETA"
 
 #: ../../user_manual/ekos-tilt-correction.rst:344
 msgid ".. image:: /images/ekos_tilt_eta_indi_panel.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_eta_indi_panel.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:344
 msgid ""
 "WandererAstro ETA M54 in the INDI Control Panel. Current positions show "
 "P1=0.200, P2=0.400, P3=0.000 mm; firmware version 20251123."
 msgstr ""
+"WandererAstro ETA M54 dans le panneau de contrôle INDI. Les positions "
+"actuelles indiquent P1=0,200, P2=0,400, P3=0,000 mm ; version du "
+"micrologiciel 20251123."
 
 #: ../../user_manual/ekos-tilt-correction.rst:350
 msgid "ETA after applying corrections"
-msgstr ""
+msgstr "ETA après application des corrections"
 
 #: ../../user_manual/ekos-tilt-correction.rst:350
 msgid ".. image:: /images/ekos_tilt_eta_applied.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_eta_applied.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:350
 msgid ""
 "ETA with a correction applied: P1=0.100, P2=0.330, P3=0.170 mm — different "
 "values per point to compensate for sensor tilt."
 msgstr ""
+"ETA avec une correction appliquée : P1=0,100, P2=0,330, P3=0,170 mm — des "
+"valeurs différentes par point pour compenser l'inclinaison du capteur."
 
 #: ../../user_manual/ekos-tilt-correction.rst:354
 msgid "Automated apply"
-msgstr ""
+msgstr "Application automatisée"
 
 #: ../../user_manual/ekos-tilt-correction.rst:356
 msgid ""
@@ -732,14 +960,21 @@ msgid ""
 "(Point 1 → wait for arrival → Point 2 → …). A confirmation is displayed, e."
 "g. \"Applied to ETA: P1→X.XXX P2→X.XXX P3→X.XXX mm\"."
 msgstr ""
+"Lorsque l'inspecteur d'aberration détecte une ETA connectée (et que la "
+"plaque est réglée sur 3 points), le bouton ``Appliquer à l'ETA`` devient "
+"actif. En cliquant dessus, il lit les positions actuelles de l'ETA, ajoute "
+"le delta conseillé à chaque point, décale toutes les valeurs pour rester "
+"dans la plage 0,000–1,200 mm, et envoie les cibles séquentiellement (point 1 "
+"→ attente de l'arrivée → point 2 → …). Une confirmation s'affiche, par "
+"exemple « Applied to ETA : P1→X.XXX P2→X.XXX P3→X.XXX mm »."
 
 #: ../../user_manual/ekos-tilt-correction.rst:365
 msgid "After Apply to ETA"
-msgstr ""
+msgstr "Après avoir cliqué sur Appliquer à l'ETA"
 
 #: ../../user_manual/ekos-tilt-correction.rst:365
 msgid ".. image:: /images/ekos_tilt_advisory_applied.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_advisory_applied.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:365
 msgid ""
@@ -747,10 +982,13 @@ msgid ""
 "P2→0.571 P3→0.065 mm. Run autofocus again to re-measure.\" and the button "
 "changes to \"Done\"."
 msgstr ""
+"Après avoir cliqué sur ``Appliquer à l'ETA``, le statut affiche « Applied to "
+"ETA : P1→0.119 P2→0.571 P3→0.065 mm. Run autofocus again to re-measure. » et "
+"le bouton devient « Terminé »."
 
 #: ../../user_manual/ekos-tilt-correction.rst:370
 msgid "Iterative Workflow"
-msgstr ""
+msgstr "Déroulement itératif"
 
 #: ../../user_manual/ekos-tilt-correction.rst:372
 msgid ""
@@ -758,90 +996,98 @@ msgid ""
 "due to mechanical hysteresis, measurement noise, and the simplification of "
 "treating tilt as purely planar."
 msgstr ""
+"La correction d'inclinaison est itérative — une seule passe atteint rarement "
+"une correction parfaite, en raison de l'hystérésis mécanique, du bruit de "
+"mesure, et de la simplification consistant à traiter l'inclinaison comme "
+"purement plane."
 
 #: ../../user_manual/ekos-tilt-correction.rst:377
 msgid "Recommended procedure"
-msgstr ""
+msgstr "Procédure recommandée"
 
 #: ../../user_manual/ekos-tilt-correction.rst:379
 msgid ""
 "Start with the ETA at zero (or all screws fully retracted for manual plates)."
 msgstr ""
+"Commencez avec l'ETA à zéro (ou toutes les vis entièrement rétractées pour "
+"les plaques manuelles)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:380
 msgid ""
 "**Run 1**: run the Aberration Inspector → read the tilt → apply the "
 "correction."
 msgstr ""
+"**Passe 1** : lancez l'inspecteur d'aberration → relevez l'inclinaison → "
+"appliquez la correction."
 
 #: ../../user_manual/ekos-tilt-correction.rst:381
 msgid "**Run 2**: run again → the tilt should be significantly reduced."
-msgstr ""
+msgstr "**Passe 2** : relancez → l'inclinaison devrait être nettement réduite."
 
 #: ../../user_manual/ekos-tilt-correction.rst:382
 msgid "**Run 3** (if needed): fine-tune to reach the target."
-msgstr ""
+msgstr "**Passe 3** (si nécessaire) : affinez pour atteindre l'objectif."
 
 #: ../../user_manual/ekos-tilt-correction.rst:385
 msgid "Example — real-world convergence"
-msgstr ""
+msgstr "Exemple — convergence en conditions réelles"
 
 #: ../../user_manual/ekos-tilt-correction.rst:391
 msgid "Run"
-msgstr ""
+msgstr "Passe"
 
 #: ../../user_manual/ekos-tilt-correction.rst:392
 #: ../../user_manual/ekos-tilt-correction.rst:423
 msgid "Total Tilt"
-msgstr ""
+msgstr "Inclinaison totale"
 
 #: ../../user_manual/ekos-tilt-correction.rst:393
 msgid "Action"
-msgstr ""
+msgstr "Action"
 
 #: ../../user_manual/ekos-tilt-correction.rst:394
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../user_manual/ekos-tilt-correction.rst:395
 msgid "29 µm"
-msgstr ""
+msgstr "29 µm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:396
 msgid "Applied P1=+0.119, P2=+0.231 mm"
-msgstr ""
+msgstr "Appliqué P1=+0,119, P2=+0,231 mm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:397
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: ../../user_manual/ekos-tilt-correction.rst:398
 msgid "6 µm"
-msgstr ""
+msgstr "6 µm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:399
 msgid "Applied P1=+0.024, P2=+0.046 mm"
-msgstr ""
+msgstr "Appliqué P1=+0,024, P2=+0,046 mm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:400
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: ../../user_manual/ekos-tilt-correction.rst:401
 msgid "0 µm"
-msgstr ""
+msgstr "0 µm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:402
 msgid "No change needed — perfect"
-msgstr ""
+msgstr "Aucun changement nécessaire — parfait"
 
 #: ../../user_manual/ekos-tilt-correction.rst:407
 msgid "Run 2, tilt reduced to 6 µm"
-msgstr ""
+msgstr "Passe 2, inclinaison réduite à 6 µm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:407
 msgid ".. image:: /images/ekos_tilt_run2.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_run2.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:407
 msgid ""
@@ -849,120 +1095,135 @@ msgid ""
 "just 6 µm. The advisory now suggests much smaller adjustments (P1=+0.024, P2="
 "+0.046 mm)."
 msgstr ""
+"Après la première correction, la passe 2 montre une inclinaison totale "
+"réduite de 29 µm à seulement 6 µm. Les conseils suggèrent maintenant des "
+"ajustements bien plus petits (P1=+0,024, P2=+0,046 mm)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:413
 msgid "Run 3, 0 µm tilt achieved"
-msgstr ""
+msgstr "Passe 3, inclinaison de 0 µm atteinte"
 
 #: ../../user_manual/ekos-tilt-correction.rst:413
 msgid ".. image:: /images/ekos_tilt_run3.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_run3.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:413
 msgid ""
 "Run 3: total tilt 0 µm. All three points show \"no change\" — the sensor is "
 "perpendicular to the optical axis. This is the target state."
 msgstr ""
+"Passe 3 : inclinaison totale 0 µm. Les trois points affichent « aucun "
+"changement » — le capteur est perpendiculaire à l'axe optique. C'est l'état "
+"recherché."
 
 #: ../../user_manual/ekos-tilt-correction.rst:417
 msgid "What counts as \"good\"?"
-msgstr ""
+msgstr "Qu'est-ce qui est considéré comme « bon » ?"
 
 #: ../../user_manual/ekos-tilt-correction.rst:424
 msgid "Quality"
-msgstr ""
+msgstr "Qualité"
 
 #: ../../user_manual/ekos-tilt-correction.rst:425
 #: ../../user_manual/ekos-tilt-correction.rst:584
 msgid "Notes"
-msgstr ""
+msgstr "Remarques"
 
 #: ../../user_manual/ekos-tilt-correction.rst:426
 msgid "< 20 µm"
-msgstr ""
+msgstr "< 20 µm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:427
 msgid "Excellent"
-msgstr ""
+msgstr "Excellente"
 
 #: ../../user_manual/ekos-tilt-correction.rst:428
 msgid "Indistinguishable from perfect in most images"
-msgstr ""
+msgstr "Indiscernable de la perfection sur la plupart des images"
 
 #: ../../user_manual/ekos-tilt-correction.rst:429
 msgid "20–50 µm"
-msgstr ""
+msgstr "20–50 µm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:430
 msgid "Good"
-msgstr ""
+msgstr "Bonne"
 
 #: ../../user_manual/ekos-tilt-correction.rst:431
 msgid "Adequate for most setups"
-msgstr ""
+msgstr "Adaptée à la plupart des configurations"
 
 #: ../../user_manual/ekos-tilt-correction.rst:432
 msgid "50–100 µm"
-msgstr ""
+msgstr "50–100 µm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:433
 msgid "Acceptable"
-msgstr ""
+msgstr "Acceptable"
 
 #: ../../user_manual/ekos-tilt-correction.rst:434
 msgid "OK for short focal length / fast scopes"
-msgstr ""
+msgstr "Correcte pour les focales courtes / instruments rapides"
 
 #: ../../user_manual/ekos-tilt-correction.rst:435
 msgid "> 100 µm"
-msgstr ""
+msgstr "> 100 µm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:436
 msgid "Needs correction"
-msgstr ""
+msgstr "Correction nécessaire"
 
 #: ../../user_manual/ekos-tilt-correction.rst:437
 msgid "Visible star-shape degradation in corners"
-msgstr ""
+msgstr "Dégradation visible de la forme des étoiles dans les coins"
 
 #: ../../user_manual/ekos-tilt-correction.rst:440
 msgid "Tips for convergence"
-msgstr ""
+msgstr "Astuces pour la convergence"
 
 #: ../../user_manual/ekos-tilt-correction.rst:442
 msgid ""
 "Use the **same star field** for each iteration (different fields can "
 "introduce noise)."
 msgstr ""
+"Utilisez le **même champ d'étoiles** pour chaque itération (des champs "
+"différents peuvent introduire du bruit)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:443
 msgid ""
 "Wait for **stable seeing** — poor seeing adds noise to the tile measurements."
 msgstr ""
+"Attendez une **turbulence stable** — une mauvaise turbulence ajoute du bruit "
+"aux mesures par tuile."
 
 #: ../../user_manual/ekos-tilt-correction.rst:444
 msgid ""
 "Don't over-correct: if the advisory says 0.4 mm, consider applying 0.3 mm "
 "first."
 msgstr ""
+"Ne sur-corrigez pas : si les conseils indiquent 0,4 mm, envisagez "
+"d'appliquer d'abord 0,3 mm."
 
 #: ../../user_manual/ekos-tilt-correction.rst:445
 msgid "Fix **backfocus first** if ``Backfocus Δ`` is large (> 50 µm)."
 msgstr ""
+"Corrigez d'abord le **backfocus** si ``Backfocus Δ`` est important (> 50 µm)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:446
 msgid ""
 "Re-run after any mechanical change to the imaging train (camera rotation, "
 "filter swap)."
 msgstr ""
+"Relancez après toute modification mécanique du train d'imagerie (rotation de "
+"la caméra, changement de filtre)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:450
 msgid "When Tilt Cannot Be Measured (Large Tilt)"
-msgstr ""
+msgstr "Lorsque l'inclinaison ne peut pas être mesurée (forte inclinaison)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:453
 msgid "The problem"
-msgstr ""
+msgstr "Le problème"
 
 #: ../../user_manual/ekos-tilt-correction.rst:455
 msgid ""
@@ -974,10 +1235,19 @@ msgid ""
 "ETA has been zeroed or the tilt plate removed/reinstalled, or after a major "
 "mechanical change (camera swap, rotator adjustment)."
 msgstr ""
+"Lorsque l'inclinaison du capteur est très importante (> ~100 µm), la mise au "
+"point de certaines tuiles de la mosaïque tombe entièrement hors de la plage "
+"de balayage de la mise au point automatique. Leur courbe en V ne peut pas "
+"être ajustée (R² = 0,00, Solution = 0), et le calcul précis de l'inclinaison "
+"renvoie **N/A** — l'inspecteur d'aberration ne peut pas indiquer de valeur "
+"d'inclinaison fiable. Cela se produit typiquement lors de la première mise "
+"en place d'un nouveau train d'imagerie, après une remise à zéro de l'ETA ou "
+"le retrait/remontage de la plaque d'inclinaison, ou après un changement "
+"mécanique majeur (changement de caméra, ajustement du rotateur)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:463
 msgid "How it looks in the Aberration Inspector"
-msgstr ""
+msgstr "À quoi cela ressemble dans l'inspecteur d'aberration"
 
 #: ../../user_manual/ekos-tilt-correction.rst:465
 msgid ""
@@ -985,14 +1255,18 @@ msgid ""
 "Total Tilt all read **N/A**. The advisory diagram shows \"No tilt data\" and "
 "the ``Apply to ETA`` button is disabled."
 msgstr ""
+"Certaines tuiles affichent « Solution : 0, R² : 0,00 » et les valeurs Left-"
+"Right, Top-Bottom et Total Tilt affichent toutes **N/A**. Le schéma des "
+"conseils indique « No tilt data » et le bouton ``Appliquer à l'ETA`` est "
+"désactivé."
 
 #: ../../user_manual/ekos-tilt-correction.rst:472
 msgid "Aberration Inspector, no tilt data (Run 6)"
-msgstr ""
+msgstr "Inspecteur d'aberration, pas de données d'inclinaison (passe 6)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:472
 msgid ".. image:: /images/ekos_tilt_notiltdata_run6.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_notiltdata_run6.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:472
 msgid ""
@@ -1001,14 +1275,21 @@ msgid ""
 "produced valid curves. All tilt values read \"N/A\" and the diagram shows "
 "\"No tilt data\"."
 msgstr ""
+"Passe 6 : les tuiles en haut à gauche, en haut à droite et en bas à droite "
+"n'ont pas pu être ajustées (Solution 0, R² 0,00, 0 étoile exploitable). "
+"Seules les tuiles Centre (R²=0,50) et en bas à gauche (R²=0,99) ont produit "
+"des courbes valides. Toutes les valeurs d'inclinaison affichent « N/A » et "
+"le schéma indique « No tilt data »."
 
 #: ../../user_manual/ekos-tilt-correction.rst:479
 msgid "Aberration Inspector, no tilt data with diverging curves (Run 8)"
 msgstr ""
+"Inspecteur d'aberration, pas de données d'inclinaison avec courbes "
+"divergentes (passe 8)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:479
 msgid ".. image:: /images/ekos_tilt_notiltdata_run8.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_notiltdata_run8.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:479
 msgid ""
@@ -1019,10 +1300,17 @@ msgid ""
 "though a precise value cannot be computed because the Top tiles never "
 "reached focus."
 msgstr ""
+"Passe 8 : même état « No tilt data », mais ici trois tuiles s'ajustent "
+"(Centre R²=1,00, en bas à gauche R²=1,00, en bas à droite R²=0,79) tandis "
+"que les deux tuiles du haut échouent toujours. Remarquez comment la courbe "
+"en bas à droite (rouge) atteint son minimum bien plus à droite que les "
+"autres — une signature visuelle claire d'une inclinaison importante, même si "
+"une valeur précise ne peut pas être calculée car les tuiles du haut n'ont "
+"jamais atteint la mise au point."
 
 #: ../../user_manual/ekos-tilt-correction.rst:486
 msgid "Guessing the direction from the focus sweep"
-msgstr ""
+msgstr "Estimer la direction à partir du balayage de mise au point"
 
 #: ../../user_manual/ekos-tilt-correction.rst:488
 msgid ""
@@ -1034,14 +1322,23 @@ msgid ""
 "first — and therefore which way the sensor is tilted. The two frames below "
 "are from the **same sweep** at different focuser positions:"
 msgstr ""
+"Même en l'absence d'une valeur précise, vous pouvez souvent **estimer la "
+"direction de l'inclinaison en observant le balayage de mise au point**. Au "
+"fur et à mesure que le moteur de mise au point parcourt sa plage, la région "
+"nette du capteur migre à travers le champ. Si la région aux étoiles nettes "
+"se déplace de la partie supérieure du capteur vers la partie inférieure (ou "
+"de gauche à droite) pendant le balayage, cela indique quel bord atteint la "
+"mise au point en premier — et donc de quel côté le capteur est incliné. Les "
+"deux images ci-dessous proviennent du **même balayage** à des positions "
+"différentes du moteur de mise au point :"
 
 #: ../../user_manual/ekos-tilt-correction.rst:498
 msgid "Focus sweep, early — upper tiles in focus"
-msgstr ""
+msgstr "Balayage de mise au point, début — tuiles du haut nettes"
 
 #: ../../user_manual/ekos-tilt-correction.rst:498
 msgid ".. image:: /images/ekos_tilt_sweep_early.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_sweep_early.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:498
 msgid ""
@@ -1049,14 +1346,18 @@ msgid ""
 "concentrated in the **upper** tiles, while the lower tiles are still out of "
 "focus. The V-curve is just starting."
 msgstr ""
+"Au début du balayage (moteur de mise au point ~6807) : les étoiles nettes et "
+"leurs valeurs de HFR sont concentrées dans les tuiles du **haut**, tandis "
+"que les tuiles du bas sont encore floues. La courbe en V ne fait que "
+"commencer."
 
 #: ../../user_manual/ekos-tilt-correction.rst:505
 msgid "Focus sweep, later — centre/lower tiles in focus"
-msgstr ""
+msgstr "Balayage de mise au point, plus tard — tuiles du centre/bas nettes"
 
 #: ../../user_manual/ekos-tilt-correction.rst:505
 msgid ".. image:: /images/ekos_tilt_sweep_later.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_sweep_later.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:505
 msgid ""
@@ -1065,10 +1366,15 @@ msgid ""
 "The in-focus band migrated from top to bottom, a strong hint that the sensor "
 "is tilted along the top-bottom axis and which side to raise."
 msgstr ""
+"Plus tard dans le même balayage (moteur de mise au point ~6764) : la région "
+"aux étoiles nettes s'est déplacée vers les tuiles du **centre et du bas** et "
+"la courbe en V est presque complète. La bande nette a migré du haut vers le "
+"bas, ce qui indique clairement que le capteur est incliné selon l'axe haut-"
+"bas, et de quel côté le relever."
 
 #: ../../user_manual/ekos-tilt-correction.rst:511
 msgid "What to do"
-msgstr ""
+msgstr "Que faire"
 
 #: ../../user_manual/ekos-tilt-correction.rst:513
 msgid ""
@@ -1076,18 +1382,28 @@ msgid ""
 "you are in the \"No tilt data\" state, reduce the tilt manually until the "
 "far tiles come back within the autofocus sweep:"
 msgstr ""
+"Les conseils ont besoin de données valides sur suffisamment de tuiles pour "
+"calculer une correction. Lorsque vous êtes dans l'état « No tilt data », "
+"réduisez l'inclinaison manuellement jusqu'à ce que les tuiles éloignées "
+"reviennent dans la plage du balayage de mise au point automatique :"
 
 #: ../../user_manual/ekos-tilt-correction.rst:517
 msgid ""
 "**Estimate the direction** from the focus sweep (above) or from which "
 "corners are sharp vs. bloated in a full-frame image."
 msgstr ""
+"**Estimez la direction** à partir du balayage de mise au point (ci-dessus) "
+"ou en observant quels coins sont nets par rapport à ceux qui sont flous sur "
+"une image plein cadre."
 
 #: ../../user_manual/ekos-tilt-correction.rst:519
 msgid ""
 "**Apply a small manual correction** to the ETA (or tilt screws) in that "
 "direction — move the point on the side that is furthest from focus."
 msgstr ""
+"**Appliquez une petite correction manuelle** à l'ETA (ou aux vis "
+"d'inclinaison) dans cette direction — déplacez le point du côté le plus "
+"éloigné de la mise au point."
 
 #: ../../user_manual/ekos-tilt-correction.rst:521
 msgid ""
@@ -1095,6 +1411,10 @@ msgid ""
 "the precise tilt calculation returns and you can proceed with the normal "
 "iterative workflow above."
 msgstr ""
+"**Relancez l'inspecteur d'aberration.** Une fois que toutes les tuiles "
+"s'ajustent dans le balayage, le calcul précis de l'inclinaison redevient "
+"disponible et vous pouvez poursuivre avec le déroulement itératif normal ci-"
+"dessus."
 
 #: ../../user_manual/ekos-tilt-correction.rst:526
 msgid ""
@@ -1102,10 +1422,13 @@ msgid ""
 "for you when precise measurement fails) is under development but still needs "
 "more testing before it is documented here."
 msgstr ""
+"Un conseil automatisé de pré-correction grossière (qui estime la direction "
+"pour vous lorsque la mesure précise échoue) est en cours de développement, "
+"mais nécessite encore des tests avant d'être documenté ici."
 
 #: ../../user_manual/ekos-tilt-correction.rst:532
 msgid "Verification with External Tools"
-msgstr ""
+msgstr "Vérification avec des outils externes"
 
 #: ../../user_manual/ekos-tilt-correction.rst:534
 msgid ""
@@ -1117,28 +1440,39 @@ msgid ""
 "correction), and off-axis aberration as the dominant remaining factor rather "
 "than tilt."
 msgstr ""
+"Une fois une bonne correction d'inclinaison obtenue dans Ekos, vous pouvez "
+"la vérifier avec des outils d'analyse externes qui traitent des images plein "
+"cadre (CCDInspector, ASTAP, et similaires). Ceux-ci mesurent le HFD (Half "
+"Flux Diameter) sur l'ensemble de l'image et indiquent une métrique "
+"d'inclinaison. Un capteur bien corrigé présente un HFD uniforme dans tous "
+"les coins, un pourcentage d'inclinaison inférieur à ~5 % (typiquement < 3 % "
+"pour une excellente correction), et l'aberration hors axe comme facteur "
+"résiduel dominant plutôt que l'inclinaison."
 
 #: ../../user_manual/ekos-tilt-correction.rst:544
 msgid "Well-focused field after tilt correction"
-msgstr ""
+msgstr "Champ bien mis au point après correction d'inclinaison"
 
 #: ../../user_manual/ekos-tilt-correction.rst:544
 msgid ".. image:: /images/ekos_tilt_focus_wellfocused.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_focus_wellfocused.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:544
 msgid ""
 "After successful tilt correction: 100 detected stars with HFR 1.31 and "
 "uniform focus across the field — the end result of the iterative workflow."
 msgstr ""
+"Après une correction d'inclinaison réussie : 100 étoiles détectées avec un "
+"HFR de 1,31 et une mise au point uniforme sur tout le champ — le résultat "
+"final du déroulement itératif."
 
 #: ../../user_manual/ekos-tilt-correction.rst:550
 msgid "External tilt analysis"
-msgstr ""
+msgstr "Analyse externe de l'inclinaison"
 
 #: ../../user_manual/ekos-tilt-correction.rst:550
 msgid ".. image:: /images/ekos_tilt_external_analysis.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_external_analysis.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:550
 msgid ""
@@ -1146,14 +1480,18 @@ msgid ""
 "Tilt[HFD] 0.10 (3%, classified \"none\"), off-axis aberration 0.03. The per-"
 "tile median HFD values range only from 2.79 to 2.89 — extremely uniform."
 msgstr ""
+"Analyse externe d'une image corrigée : 1269 étoiles, HFD médian 2,8, "
+"Tilt[HFD] 0,10 (3 %, classé « aucune »), aberration hors axe 0,03. Les "
+"valeurs médianes de HFD par tuile ne varient que de 2,79 à 2,89 — "
+"extrêmement uniforme."
 
 #: ../../user_manual/ekos-tilt-correction.rst:557
 msgid "M31 frame with corner HFD values"
-msgstr ""
+msgstr "Image de M31 avec valeurs de HFD par coin"
 
 #: ../../user_manual/ekos-tilt-correction.rst:557
 msgid ".. image:: /images/ekos_tilt_external_m31.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_external_m31.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:557
 msgid ""
@@ -1161,14 +1499,17 @@ msgid ""
 "2.15, BR 2.17. The 0.05 variation across the field is negligible — within "
 "seeing-limited uniformity."
 msgstr ""
+"Image unique de M31 avec valeurs de HFD par coin : TL 2,12, TR 2,14, Centre "
+"2,16, BL 2,15, BR 2,17. La variation de 0,05 sur le champ est négligeable — "
+"dans la limite de l'uniformité imposée par la turbulence."
 
 #: ../../user_manual/ekos-tilt-correction.rst:563
 msgid "Reference Tables"
-msgstr ""
+msgstr "Tableaux de référence"
 
 #: ../../user_manual/ekos-tilt-correction.rst:568
 msgid "Supported Tilt Plates"
-msgstr ""
+msgstr "Plaques d'inclinaison prises en charge"
 
 #: ../../user_manual/ekos-tilt-correction.rst:570
 msgid ""
@@ -1178,116 +1519,124 @@ msgid ""
 "value), check the manufacturer's website for a technical drawing, or measure "
 "the plate yourself (centre of plate to an adjustment screw = radius)."
 msgstr ""
+"**Toute plaque d'inclinaison à 3 ou 4 points est prise en charge** — il vous "
+"suffit d'indiquer aux conseils le rayon du cercle de perçage et le filetage "
+"de la plaque. Les valeurs ci-dessous sont des repères de référence connus. "
+"Pour les plaques non listées (ou pour confirmer une valeur), consultez le "
+"site du fabricant pour un plan technique, ou mesurez la plaque vous-même (du "
+"centre de la plaque à une vis d'ajustement = rayon)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:580
 msgid "Plate"
-msgstr ""
+msgstr "Plaque"
 
 #: ../../user_manual/ekos-tilt-correction.rst:581
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: ../../user_manual/ekos-tilt-correction.rst:582
 msgid "Radius"
-msgstr ""
+msgstr "Rayon"
 
 #: ../../user_manual/ekos-tilt-correction.rst:583
 msgid "Thread/Pitch"
-msgstr ""
+msgstr "Filetage/Pas"
 
 #: ../../user_manual/ekos-tilt-correction.rst:585
 msgid "WandererAstro ETA M54"
-msgstr ""
+msgstr "WandererAstro ETA M54"
 
 #: ../../user_manual/ekos-tilt-correction.rst:586
 msgid "3-point motorized"
-msgstr ""
+msgstr "Motorisée à 3 points"
 
 #: ../../user_manual/ekos-tilt-correction.rst:587
 #: ../../user_manual/ekos-tilt-correction.rst:665
 msgid "64.0 mm"
-msgstr ""
+msgstr "64,0 mm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:589
 msgid "Automated Apply; radius/pitch auto-locked when detected"
 msgstr ""
+"Application automatisée ; rayon/pas verrouillés automatiquement à la "
+"détection"
 
 #: ../../user_manual/ekos-tilt-correction.rst:590
 msgid "ZWO Tilt Plate (M42/M48/M54/M68)"
-msgstr ""
+msgstr "Plaque d'inclinaison ZWO (M42/M48/M54/M68)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:591
 #: ../../user_manual/ekos-tilt-correction.rst:601
 msgid "3-point manual"
-msgstr ""
+msgstr "Manuelle à 3 points"
 
 #: ../../user_manual/ekos-tilt-correction.rst:592
 msgid "40.0 mm"
-msgstr ""
+msgstr "40,0 mm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:593
 msgid "Check drawing"
-msgstr ""
+msgstr "Voir le plan"
 
 #: ../../user_manual/ekos-tilt-correction.rst:594
 msgid "Radius consistent across ZWO's thread sizes"
-msgstr ""
+msgstr "Rayon identique quelle que soit la taille de filetage ZWO"
 
 #: ../../user_manual/ekos-tilt-correction.rst:595
 msgid "ToupTek M42 Tilter (Ø100 mm)"
-msgstr ""
+msgstr "ToupTek M42 Tilter (Ø100 mm)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:596
 msgid "4-point push/pull"
-msgstr ""
+msgstr "Push/pull à 4 points"
 
 #: ../../user_manual/ekos-tilt-correction.rst:597
 msgid "46.0 mm"
-msgstr ""
+msgstr "46,0 mm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:598
 msgid "M4 push (0.70 mm)"
-msgstr ""
+msgstr "M4 push (0,70 mm)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:599
 msgid "Screws on Ø92 mm circle; use the push-screw pitch"
-msgstr ""
+msgstr "Vis sur un cercle Ø92 mm ; utiliser le pas des vis push"
 
 #: ../../user_manual/ekos-tilt-correction.rst:600
 msgid "Octopi tilt ring"
-msgstr ""
+msgstr "Bague d'inclinaison Octopi"
 
 #: ../../user_manual/ekos-tilt-correction.rst:602
 msgid "Varies"
-msgstr ""
+msgstr "Variable"
 
 #: ../../user_manual/ekos-tilt-correction.rst:603
 msgid "M3 (0.50 mm)"
-msgstr ""
+msgstr "M3 (0,50 mm)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:604
 msgid "Measure your specific unit"
-msgstr ""
+msgstr "Mesurez votre exemplaire spécifique"
 
 #: ../../user_manual/ekos-tilt-correction.rst:605
 msgid "Generic 3-/4-screw plate"
-msgstr ""
+msgstr "Plaque générique à 3/4 vis"
 
 #: ../../user_manual/ekos-tilt-correction.rst:606
 msgid "3- or 4-point manual"
-msgstr ""
+msgstr "Manuelle à 3 ou 4 points"
 
 #: ../../user_manual/ekos-tilt-correction.rst:607
 msgid "Measure"
-msgstr ""
+msgstr "À mesurer"
 
 #: ../../user_manual/ekos-tilt-correction.rst:608
 msgid "Measure/drawing"
-msgstr ""
+msgstr "Mesure/plan"
 
 #: ../../user_manual/ekos-tilt-correction.rst:609
 msgid "Any plate works — supply radius + pitch"
-msgstr ""
+msgstr "Toute plaque convient — fournir rayon + pas"
 
 #: ../../user_manual/ekos-tilt-correction.rst:613
 msgid ""
@@ -1297,170 +1646,176 @@ msgid ""
 "screw is accurate enough (the correction direction is unaffected by small "
 "radius errors, and the magnitude scales gently)."
 msgstr ""
+"Les plans techniques des fabricants donnent généralement les positions des "
+"vis en mm depuis l'axe optique — cette distance est exactement le rayon dont "
+"les conseils ont besoin. Si aucun plan n'est disponible, une mesure au pied "
+"à coulisse entre le centre de la plaque et une vis est suffisamment précise "
+"(la direction de la correction n'est pas affectée par de petites erreurs de "
+"rayon, et l'amplitude varie en douceur)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:620
 msgid "Thread pitch reference"
-msgstr ""
+msgstr "Référence des pas de filetage"
 
 #: ../../user_manual/ekos-tilt-correction.rst:626
 msgid "Thread"
-msgstr ""
+msgstr "Filetage"
 
 #: ../../user_manual/ekos-tilt-correction.rst:627
 msgid "Pitch (mm/turn)"
-msgstr ""
+msgstr "Pas (mm/tour)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:628
 msgid "M2.5"
-msgstr ""
+msgstr "M2,5"
 
 #: ../../user_manual/ekos-tilt-correction.rst:629
 msgid "0.45"
-msgstr ""
+msgstr "0,45"
 
 #: ../../user_manual/ekos-tilt-correction.rst:630
 msgid "M3"
-msgstr ""
+msgstr "M3"
 
 #: ../../user_manual/ekos-tilt-correction.rst:631
 #: ../../user_manual/ekos-tilt-correction.rst:637
 #: ../../user_manual/ekos-tilt-correction.rst:641
 #: ../../user_manual/ekos-tilt-correction.rst:645
 msgid "0.50"
-msgstr ""
+msgstr "0,50"
 
 #: ../../user_manual/ekos-tilt-correction.rst:632
 msgid "M3 fine"
-msgstr ""
+msgstr "M3 fin"
 
 #: ../../user_manual/ekos-tilt-correction.rst:633
 msgid "0.35"
-msgstr ""
+msgstr "0,35"
 
 #: ../../user_manual/ekos-tilt-correction.rst:634
 msgid "M4"
-msgstr ""
+msgstr "M4"
 
 #: ../../user_manual/ekos-tilt-correction.rst:635
 msgid "0.70"
-msgstr ""
+msgstr "0,70"
 
 #: ../../user_manual/ekos-tilt-correction.rst:636
 msgid "M4 fine"
-msgstr ""
+msgstr "M4 fin"
 
 #: ../../user_manual/ekos-tilt-correction.rst:638
 msgid "M5"
-msgstr ""
+msgstr "M5"
 
 #: ../../user_manual/ekos-tilt-correction.rst:639
 msgid "0.80"
-msgstr ""
+msgstr "0,80"
 
 #: ../../user_manual/ekos-tilt-correction.rst:640
 msgid "M5 fine"
-msgstr ""
+msgstr "M5 fin"
 
 #: ../../user_manual/ekos-tilt-correction.rst:642
 msgid "M6"
-msgstr ""
+msgstr "M6"
 
 #: ../../user_manual/ekos-tilt-correction.rst:643
 msgid "1.00"
-msgstr ""
+msgstr "1,00"
 
 #: ../../user_manual/ekos-tilt-correction.rst:644
 msgid "Wanderer ETA"
-msgstr ""
+msgstr "Wanderer ETA"
 
 #: ../../user_manual/ekos-tilt-correction.rst:648
 msgid "ETA M54 specifications"
-msgstr ""
+msgstr "Caractéristiques de l'ETA M54"
 
 #: ../../user_manual/ekos-tilt-correction.rst:654
 msgid "Parameter"
-msgstr ""
+msgstr "Paramètre"
 
 #: ../../user_manual/ekos-tilt-correction.rst:655
 msgid "Value"
-msgstr ""
+msgstr "Valeur"
 
 #: ../../user_manual/ekos-tilt-correction.rst:656
 msgid "Connection"
-msgstr ""
+msgstr "Connexion"
 
 #: ../../user_manual/ekos-tilt-correction.rst:657
 msgid "USB 2.0 Type-B, CH340, 19200 baud"
-msgstr ""
+msgstr "USB 2.0 Type-B, CH340, 19200 bauds"
 
 #: ../../user_manual/ekos-tilt-correction.rst:658
 msgid "Travel per point"
-msgstr ""
+msgstr "Course par point"
 
 #: ../../user_manual/ekos-tilt-correction.rst:659
 msgid "0–1.200 mm"
-msgstr ""
+msgstr "0–1,200 mm"
 
 #: ../../user_manual/ekos-tilt-correction.rst:660
 msgid "Accuracy"
-msgstr ""
+msgstr "Précision"
 
 #: ../../user_manual/ekos-tilt-correction.rst:661
 msgid "0.002 mm (2 µm)"
-msgstr ""
+msgstr "0,002 mm (2 µm)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:662
 msgid "Motor resolution"
-msgstr ""
+msgstr "Résolution du moteur"
 
 #: ../../user_manual/ekos-tilt-correction.rst:663
 msgid "0.3 µm/step"
-msgstr ""
+msgstr "0,3 µm/pas"
 
 #: ../../user_manual/ekos-tilt-correction.rst:664
 msgid "Bolt-circle radius"
-msgstr ""
+msgstr "Rayon du cercle de perçage"
 
 #: ../../user_manual/ekos-tilt-correction.rst:666
 msgid "Thread pitch"
-msgstr ""
+msgstr "Pas de filetage"
 
 #: ../../user_manual/ekos-tilt-correction.rst:668
 msgid "Weight"
-msgstr ""
+msgstr "Poids"
 
 #: ../../user_manual/ekos-tilt-correction.rst:669
 msgid "470 g"
-msgstr ""
+msgstr "470 g"
 
 #: ../../user_manual/ekos-tilt-correction.rst:670
 msgid "Operating temperature"
-msgstr ""
+msgstr "Température de fonctionnement"
 
 #: ../../user_manual/ekos-tilt-correction.rst:671
 msgid "-25°C to 50°C"
-msgstr ""
+msgstr "-25 °C à 50 °C"
 
 #: ../../user_manual/ekos-tilt-correction.rst:672
 msgid "Power"
-msgstr ""
+msgstr "Alimentation"
 
 #: ../../user_manual/ekos-tilt-correction.rst:673
 msgid "USB 5V 0.5A"
-msgstr ""
+msgstr "USB 5V 0,5A"
 
 #: ../../user_manual/ekos-tilt-correction.rst:674
 msgid "INDI driver"
-msgstr ""
+msgstr "Pilote INDI"
 
 #: ../../user_manual/ekos-tilt-correction.rst:675
 msgid "``indi_wanderer_eta``"
-msgstr ""
+msgstr "``indi_wanderer_eta``"
 
 #: ../../user_manual/ekos-tilt-correction.rst:676
 msgid "Device name"
-msgstr ""
+msgstr "Nom du périphérique"
 
 #: ../../user_manual/ekos-tilt-correction.rst:677
 msgid "\"Wanderer ETA M54\""
-msgstr ""
+msgstr "« Wanderer ETA M54 »"

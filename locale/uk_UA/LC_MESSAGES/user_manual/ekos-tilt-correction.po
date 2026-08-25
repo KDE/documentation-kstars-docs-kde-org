@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-08-22 18:32+0300\n"
+"PO-Revision-Date: 2026-08-23 18:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -220,22 +220,28 @@ msgstr "Увімкнена **Мозаїчна маска** у модулі «Ф�
 #: ../../user_manual/ekos-tilt-correction.rst:81
 msgid "**Focuser step size** correctly configured (see the next section)."
 msgstr ""
+"Належні налаштування **розміру кроку засобу фокусування** (див. наступний "
+"розділ)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:82
 msgid ""
 "The optical train set up in Ekos (sensor dimensions and pixel size are read "
 "automatically from the camera driver)."
 msgstr ""
+"Налаштований оптичний тракт у Ekos (розміри датчика та розміри у пікселях "
+"буде автоматично прочитано з драйвера камери)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:84
 msgid ""
 "The ETA connected as an Auxiliary device in the Ekos profile (if using "
 "automated apply)."
 msgstr ""
+"ETA (електронний засіб коригування нахилу) з'єднаний як допоміжний пристрій "
+"у профілі Ekos (якщо використано автоматизоване застосування)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:89
 msgid "Measuring Focuser Step Size"
-msgstr ""
+msgstr "Вимірювання розміру кроку засобу фокусування"
 
 #: ../../user_manual/ekos-tilt-correction.rst:91
 msgid ""
@@ -245,6 +251,11 @@ msgid ""
 "wrong, the tilt magnitude will be scaled incorrectly (although the direction "
 "will still be correct)."
 msgstr ""
+"Розмір кроку засобу фокусування (у мікронах на крок, мкм/крок) є **критично "
+"важливим** для точного вимірювання нахилу. Інспектор аберації перетворює "
+"різниці в шкалах засобу фокусування між плитками на фізичну відстань "
+"(мікрони). Якщо це значення неправильне, величина нахилу буде масштабована "
+"неправильно (хоча напрямок все одно буде правильним)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:97
 msgid "Where to configure"
@@ -256,10 +267,13 @@ msgid ""
 "**Step Size** field specifies how many micrometers the focuser moves per "
 "single step (tick)."
 msgstr ""
+"У модулі фокусування відкрийте вікно ``КЗФ`` (Критична зона фокусування). "
+"Поле **Розмір кроку** визначає, на скільки мікрометрів засіб фокусування "
+"пересувається за один крок (позначку)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:105
 msgid "Focus CFZ dialog showing the step size"
-msgstr ""
+msgstr "Розмір кроку показаний у вікні КЗФ фокусування"
 
 #: ../../user_manual/ekos-tilt-correction.rst:105
 msgid ".. image:: /images/ekos_tilt_cfz_stepsize.jpg"
@@ -270,6 +284,9 @@ msgid ""
 "The Focus CFZ dialog: step size is set to 2.754 µm for this ZWO EAF + Askar "
 "SQA130 combination. The CFZ calculation (18 µm = 7 steps) uses this value."
 msgstr ""
+"Діалогове вікно КЗФ фокусування: розмір кроку встановлено на 2,754 мкм для "
+"цієї комбінації ZWO EAF + Askar SQA130. Розрахунок КЗФ (18 мкм = 7 кроків) "
+"використовує це значення."
 
 #: ../../user_manual/ekos-tilt-correction.rst:109
 msgid "How to measure"
@@ -280,14 +297,17 @@ msgid ""
 "If your focuser manufacturer publishes a specification, use it. Typical "
 "values:"
 msgstr ""
+"Якщо виробник вашого засобу фокусування оприлюднив специфікацію, "
+"використовуйте її. Типові значення:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:113
 msgid "ZWO EAF: ~1.5–3.0 µm/step (depends on the scope's focuser mechanism)."
 msgstr ""
+"ZWO EAF: ~1,5–3,0 мкм/крок (залежить від механізму фокусування телескопа)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:114
 msgid "Pegasus FocusCube: ~2.0–5.0 µm/step."
-msgstr ""
+msgstr "Pegasus FocusCube: ~2,0–5,0 мкм/крок."
 
 #: ../../user_manual/ekos-tilt-correction.rst:115
 msgid "MoonLite: varies by model."
@@ -298,6 +318,8 @@ msgid ""
 "If no specification is available, or you want to verify it, use the full-"
 "travel method:"
 msgstr ""
+"Якщо специфікація недоступна або ви хочете її перевірити, скористайтеся "
+"методом повного ходу:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:119
 msgid ""
@@ -306,28 +328,39 @@ msgid ""
 "the fully retracted and fully extended positions and measure the total "
 "travel in mm."
 msgstr ""
+"**Виміряйте фізичний хід.** Відєєднавши засіб фокусування від оптичного "
+"прицілу, скористайтеся цифровим штангенциркулем або індикатором "
+"годинникового типу і притисніть його до витяжної трубки. Позначте повністю "
+"втягнуте та повністю висунуте положення та виміряйте загальний хід у мм."
 
 #: ../../user_manual/ekos-tilt-correction.rst:122
 msgid ""
 "**Count the total steps.** Drive the focuser from one end to the other using "
 "the INDI control panel and note the step count for the full travel."
 msgstr ""
+"**Підрахуйте загальну кількість кроків.** Перемістіть засіб фокусування з "
+"одного кінця до іншого за допомогою панелі керування INDI та запишіть "
+"кількість кроків для повного ходу."
 
 #: ../../user_manual/ekos-tilt-correction.rst:124
 msgid ""
 "**Calculate.** ``Step Size (µm/step) = (Total Travel in mm × 1000) / Total "
 "Steps``."
 msgstr ""
+"**Обчисліть значення.** ``Розмір кроку (мкм/крок) = (Повний хід у мм × "
+"1000) / Загальна кількість кроків``."
 
 #: ../../user_manual/ekos-tilt-correction.rst:126
 msgid ""
 "**Example** (ZWO EAF on Askar SQA130): total travel ~31 mm, total steps "
 "~11,250 → 31,000 µm / 11,250 = **2.76 µm/step**."
 msgstr ""
+"**Приклад** (ZWO EAF на Askar SQA130): повний хід ~31 мм, загальна кількість "
+"кроків ~11,250 → 31,000 мкм / 11,250 = **2,76 мкм/крок**."
 
 #: ../../user_manual/ekos-tilt-correction.rst:132
 msgid "Measuring focuser step size"
-msgstr ""
+msgstr "Вимірювання розміру кроку засобу фокусування"
 
 #: ../../user_manual/ekos-tilt-correction.rst:132
 msgid ".. image:: /images/ekos_tilt_stepsize_diagram.png"

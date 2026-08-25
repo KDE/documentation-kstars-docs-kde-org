@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-08-21 12:38+0200\n"
+"PO-Revision-Date: 2026-08-23 13:34+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -31,6 +31,14 @@ msgid ""
 "concrete mechanical adjustments, and on its integration with motorized tilt "
 "plates such as the WandererAstro ETA M54."
 msgstr ""
+"Deze gids biedt een complete handleiding voor het meten en corrigeren van "
+"sensor-kanteling (tilt) in Ekos, van de initiële opzet en iteratieve "
+"correctie tot de uiteindelijke verificatie. De gids bouwt voort op de :ref:"
+"`Aberratie-inspecteur <ekos-focus-aberration-inspector>` in de :doc:`Focus-"
+"module <ekos-focus>` en richt zich op het **Kantelingcorrectie-advies** – "
+"die gemeten kanteling vertaalt naar concrete mechanische aanpassingen – en "
+"op de integratie daarvan met gemotoriseerde kantelingplaten, zoals de "
+"WandererAstro ETA M54."
 
 #: ../../user_manual/ekos-tilt-correction.rst:17
 msgid "Contents"
@@ -46,6 +54,9 @@ msgid ""
 "different regions of the field come to focus at different distances from the "
 "flattener/corrector. This manifests as:"
 msgstr ""
+"Wanneer de beeldsensor niet perfect loodrecht op de optische as staat, "
+"worden verschillende delen van het beeldveld op verschillende afstanden van "
+"de vlakmaker/corrector scherp afgebeeld. Dit uit zich als:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:26
 msgid "Stars in one corner appearing sharper than the opposite corner."
@@ -68,6 +79,12 @@ msgid ""
 "color fringing can be stronger on the side that is furthest from the ideal "
 "focal plane."
 msgstr ""
+"Ongelijke prestaties bij kleurcorrectie over het hele beeldveld — doordat "
+"elk deel zich op een andere afstand van het corrigerende lenselement "
+"bevindt, is de chromatische correctie (en de vlakheid van het beeldveld) "
+"slechts voor een deel van de sensor geoptimaliseerd; hierdoor kan "
+"kleurrandvorming sterker zijn aan de zijde die het verst verwijderd is van "
+"het ideale brandvlak."
 
 #: ../../user_manual/ekos-tilt-correction.rst:34
 msgid ""
@@ -78,6 +95,13 @@ msgid ""
 "Advisory** then translates these measurements into concrete mechanical "
 "adjustments — telling you which screws to turn, and by how much."
 msgstr ""
+"De **Aberratie-inspecteur** meet deze scheefstand door gelijktijdig op "
+"meerdere gebieden (tegels) van de sensor scherp te stellen. Het verschil in "
+"scherpstelpositie tussen de tegels – omgerekend naar fysieke micrometers op "
+"basis van de stapgrootte van de focuser – onthult de mate en richting van de "
+"scheefstand. Vervolgens vertaalt het **Kantelingcorrectie-advies** deze "
+"metingen naar concrete mechanische aanpassingen: u krijgt te horen aan welke "
+"schroeven u moet draaien en in welke mate."
 
 #: ../../user_manual/ekos-tilt-correction.rst:44
 msgid "Imaging train with WandererAstro ETA M54 tilt plate"
@@ -92,6 +116,8 @@ msgid ""
 "Imaging train with a WandererAstro ETA M54 tilt plate installed between the "
 "focuser and the camera."
 msgstr ""
+"Opnametrein met een WandererAstro ETA M54-kantelplaat, gemonteerd tussen de "
+"focuser en de camera."
 
 #: ../../user_manual/ekos-tilt-correction.rst:51
 msgid "WandererAstro ETA M54 close-up"
@@ -112,6 +138,15 @@ msgid ""
 "fit inside the ETA's central opening — the Svbony OAG neck, for example, is "
 "too wide, while the Pegasus Indigo OAG fits."
 msgstr ""
+"De WandererAstro ETA M54 elektronische kantelversteller (vooraanzicht). De "
+"drie gemotoriseerde afstelpunten zijn gemarkeerd met \"1\", \"2\" en \"3\"; "
+"elke arm bevat een stappenmotor met encoder. De zijde met M54-schroefdraad "
+"is naar de telescoop of focuser gericht. De zijde aan de kant van de sensor "
+"is voorzien van zes schroefgaten voor het direct bevestigen van adapters (er "
+"zijn optionele adapters met schroefdraad verkrijgbaar). Op deze foto is een "
+"Pegasus Astro Indigo OAG met helicoïdale focuser gemonteerd. Let op: niet "
+"alle OAG's passen in de centrale opening van de ETA; de hals van de Svbony "
+"OAG is bijvoorbeeld te breed, terwijl de Pegasus Indigo OAG wel past."
 
 #: ../../user_manual/ekos-tilt-correction.rst:61
 msgid "Prerequisites"
@@ -173,18 +208,22 @@ msgid ""
 "KStars 3.8.4 or later (the Tilt Correction Advisory and ETA integration are "
 "merged upstream)."
 msgstr ""
+"KStars 3.8.4 of nieuwer (het 'Kantelingcrrectie-advies' en de ETA-integratie "
+"zijn upstream samengevoegd)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:79
 msgid "For ETA integration: the INDI driver ``indi_wanderer_eta``."
-msgstr ""
+msgstr "Voor ETA-integratie: de INDI-driver ``indi_wanderer_eta``."
 
 #: ../../user_manual/ekos-tilt-correction.rst:80
 msgid "The **Mosaic Mask** enabled in the Focus module."
-msgstr ""
+msgstr "Het **Mozaïekmasker** ingeschakeld in de Focus-module."
 
 #: ../../user_manual/ekos-tilt-correction.rst:81
 msgid "**Focuser step size** correctly configured (see the next section)."
 msgstr ""
+"**Stapgrootte van de focuser** correct geconfigureerd (zie de volgende "
+"sectie)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:82
 msgid ""
@@ -221,48 +260,60 @@ msgid ""
 "**Step Size** field specifies how many micrometers the focuser moves per "
 "single step (tick)."
 msgstr ""
+"Open in de Focus-module het dialoogvenster ``CFZ`` (Critical Focus Zone). "
+"Het veld **Stapgrootte** geeft aan hoeveel micrometer de focuser per enkele "
+"stap (tick) verplaatst."
 
 #: ../../user_manual/ekos-tilt-correction.rst:105
 msgid "Focus CFZ dialog showing the step size"
-msgstr ""
+msgstr "Focus op het CFZ-dialoogvenster dat de stapgrootte weergeeft"
 
 #: ../../user_manual/ekos-tilt-correction.rst:105
 msgid ".. image:: /images/ekos_tilt_cfz_stepsize.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_cfz_stepsize.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:105
 msgid ""
 "The Focus CFZ dialog: step size is set to 2.754 µm for this ZWO EAF + Askar "
 "SQA130 combination. The CFZ calculation (18 µm = 7 steps) uses this value."
 msgstr ""
+"Het dialoogvenster Focus CFZ: de stapgrootte is ingesteld op 2,754 µm voor "
+"deze combinatie van een ZWO EAF en Askar SQA130. De CFZ-berekening (18 µm = "
+"7 stappen) maakt gebruik van deze waarde."
 
 #: ../../user_manual/ekos-tilt-correction.rst:109
 msgid "How to measure"
-msgstr ""
+msgstr "Hoe te meten"
 
 #: ../../user_manual/ekos-tilt-correction.rst:111
 msgid ""
 "If your focuser manufacturer publishes a specification, use it. Typical "
 "values:"
 msgstr ""
+"Als de fabrikant van uw focuser specificaties publiceert, gebruik deze dan. "
+"Typische waarden:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:113
 msgid "ZWO EAF: ~1.5–3.0 µm/step (depends on the scope's focuser mechanism)."
 msgstr ""
+"ZWO EAF: ~1,5–3,0 µm/stap (afhankelijk van het focuseermechanisme van de "
+"telescoop)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:114
 msgid "Pegasus FocusCube: ~2.0–5.0 µm/step."
-msgstr ""
+msgstr "Pegasus FocusCube: ~2.0–5.0 µm/step."
 
 #: ../../user_manual/ekos-tilt-correction.rst:115
 msgid "MoonLite: varies by model."
-msgstr ""
+msgstr "MoonLite: varieert per model."
 
 #: ../../user_manual/ekos-tilt-correction.rst:117
 msgid ""
 "If no specification is available, or you want to verify it, use the full-"
 "travel method:"
 msgstr ""
+"Als er geen specificatie beschikbaar is, of als u deze wilt verifiëren, "
+"gebruikt u de methode met de volledige slag:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:119
 msgid ""
@@ -271,28 +322,39 @@ msgid ""
 "the fully retracted and fully extended positions and measure the total "
 "travel in mm."
 msgstr ""
+"**Meet de fysieke verplaatsing.** Koppel de focuser los van de telescoop en "
+"plaats een digitale schuifmaat of meetklok tegen de uittrekbuis. Markeer de "
+"volledig ingeschoven en volledig uitgeschoven standen en meet de totale "
+"verplaatsing in mm."
 
 #: ../../user_manual/ekos-tilt-correction.rst:122
 msgid ""
 "**Count the total steps.** Drive the focuser from one end to the other using "
 "the INDI control panel and note the step count for the full travel."
 msgstr ""
+"**Tel het totaal aantal stappen.** Verplaats de focuser van het ene uiterste "
+"naar het andere met behulp van het INDI-bedieningspaneel en noteer het "
+"aantal stappen voor het volledige bereik."
 
 #: ../../user_manual/ekos-tilt-correction.rst:124
 msgid ""
 "**Calculate.** ``Step Size (µm/step) = (Total Travel in mm × 1000) / Total "
 "Steps``."
 msgstr ""
+"**Berekenen.** ``Stapgrootte (µm/stap) = (Totale verplaatsing in mm × "
+"1000) / Totaal aantal stappen``."
 
 #: ../../user_manual/ekos-tilt-correction.rst:126
 msgid ""
 "**Example** (ZWO EAF on Askar SQA130): total travel ~31 mm, total steps "
 "~11,250 → 31,000 µm / 11,250 = **2.76 µm/step**."
 msgstr ""
+"**Voorbeeld** (ZWO EAF op Askar SQA130): totale verplaatsing ~31 mm, totaal "
+"aantal stappen ~11.250 → 31.000 µm / 11.250 = **2,76 µm/stap**."
 
 #: ../../user_manual/ekos-tilt-correction.rst:132
 msgid "Measuring focuser step size"
-msgstr ""
+msgstr "De stapgrootte van de focuser meten"
 
 #: ../../user_manual/ekos-tilt-correction.rst:132
 msgid ".. image:: /images/ekos_tilt_stepsize_diagram.png"

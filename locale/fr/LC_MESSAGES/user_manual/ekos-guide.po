@@ -863,13 +863,11 @@ msgstr ""
 
 #: ../../user_manual/ekos-guide.rst:448
 msgid "Streaming Guide"
-msgstr ""
+msgstr "Guidage en flux"
 
 #: ../../user_manual/ekos-guide.rst:450
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Settings|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream Settings|"
 
 #: ../../user_manual/ekos-guide.rst:452
 msgid ""
@@ -881,16 +879,23 @@ msgid ""
 "guide cadence — useful for the higher guide rates (roughly 2–5 Hz) that some "
 "mounts, especially harmonic/strain-wave drives, benefit from."
 msgstr ""
+"En mode de guidage en flux, le guideur interne capture les trames de guidage "
+"à partir du flux vidéo continu de la caméra, plutôt que de réaliser une "
+"exposition séparée pour chaque trame de guidage. Les trames arrivent en "
+"continu et le guideur travaille toujours à partir de la plus récente (« la "
+"dernière trame reçue l'emporte »), ce qui supprime le temps mort de lecture/"
+"téléchargement entre les expositions. Il en résulte une cadence de guidage "
+"plus rapide et à latence réduite — utile pour les fréquences de guidage plus "
+"élevées (environ 2 à 5 Hz) dont bénéficient certaines montures, en "
+"particulier les entraînements harmoniques (à onde de déformation)."
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid "Single-frame versus streaming guide timing"
-msgstr ""
+msgstr "Chronologie du guidage : pose unique comparée au guidage en flux"
 
 #: ../../user_manual/ekos-guide.rst:464
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_ai_menu.png"
 msgid ".. image:: /images/ekos_guide_stream_timing.png"
-msgstr ".. image:: /images/ekos_guide_ai_menu.png"
+msgstr ".. image:: /images/ekos_guide_stream_timing.png"
 
 #: ../../user_manual/ekos-guide.rst:464
 msgid ""
@@ -904,6 +909,17 @@ msgid ""
 "time (\"latest frame wins\"), so corrections are more frequent and fresher "
 "and far less error accumulates between them."
 msgstr ""
+"Pourquoi le guidage en flux aide. En guidage par pose unique (en haut), "
+"chaque exposition est suivie d'un *temps mort* de lecture/téléchargement/"
+"détection, pendant lequel la monture continue de dériver sans nouvelle "
+"mesure ni correction, si bien que l'erreur de pointage croît sans être "
+"corrigée et atteint son maximum juste avant chaque impulsion. L'impulsion "
+"elle-même est basée sur la position de l'étoile mesurée lors de l'exposition "
+"*précédente*, si bien que la correction a déjà quelques secondes de retard "
+"lorsqu'elle atteint la monture. Le guidage en flux (en bas) délivre les "
+"trames les unes à la suite des autres sans temps mort (« la dernière trame "
+"reçue l'emporte »), si bien que les corrections sont plus fréquentes, plus "
+"récentes, et que beaucoup moins d'erreur s'accumule entre elles."
 
 #: ../../user_manual/ekos-guide.rst:474
 msgid ""
@@ -913,34 +929,46 @@ msgid ""
 "algorithms as well as the experimental :ref:`AI Guider <ekos-guide-ai-"
 "guiding-assistant>`."
 msgstr ""
+"Le flux ne change que la *façon* dont les trames sont transmises au "
+"guideur ; les algorithmes de guidage, la calibration, le dithering et la "
+"gestion de la perte d'étoile se comportent normalement. Cela fonctionne avec "
+"les algorithmes :guilabel:`Standard`/MultiStar et :guilabel:`GPG`, ainsi "
+"qu'avec le :ref:`Guide IA <ekos-guide-ai-guiding-assistant>` expérimental."
 
 #: ../../user_manual/ekos-guide.rst:483
 msgid "Requirements"
-msgstr ""
+msgstr "Exigences"
 
 #: ../../user_manual/ekos-guide.rst:485
 msgid "The **internal guider** (streaming is not used with external PHD2)."
 msgstr ""
+"Le **guidage interne** (le guidage en flux n'est pas utilisé avec PHD2 "
+"externe)."
 
 #: ../../user_manual/ekos-guide.rst:486
 msgid "A guide camera that supports INDI **video streaming**."
-msgstr ""
+msgstr "Une caméra de guidage prenant en charge le **flux vidéo** INDI."
 
 #: ../../user_manual/ekos-guide.rst:487
 msgid ""
 "A completed, successful calibration — calibration itself always runs with "
 "single frames (see below)."
 msgstr ""
+"Une calibration terminée avec succès — la calibration elle-même s'exécute "
+"toujours en poses uniques (voir ci-dessous)."
 
 #: ../../user_manual/ekos-guide.rst:493
 msgid "Enabling Streaming Guide"
-msgstr ""
+msgstr "Activer le guidage en flux"
 
 #: ../../user_manual/ekos-guide.rst:495
 msgid ""
 "Check the :guilabel:`Stream` box on the main Guide page, next to the :"
 "guilabel:`Exp` and :guilabel:`Delay` controls, before you start guiding."
 msgstr ""
+"Cochez la case :guilabel:`Flux` sur la page principale Guide, à côté des "
+"réglages :guilabel:`Durée` et :guilabel:`Délai`, avant de démarrer le "
+"guidage."
 
 #: ../../user_manual/ekos-guide.rst:498
 msgid ""
@@ -948,6 +976,9 @@ msgid ""
 "controls apply to the streamed frames exactly as they do to single "
 "exposures; a gain change takes effect immediately while streaming."
 msgstr ""
+"Les réglages de guidage :guilabel:`Durée` (exposition), :guilabel:`Gain` et :"
+"guilabel:`Bin` s'appliquent aux trames du flux exactement comme aux poses "
+"uniques ; un changement de gain prend effet immédiatement pendant le flux."
 
 #: ../../user_manual/ekos-guide.rst:504
 msgid ""
@@ -957,16 +988,20 @@ msgid ""
 "guiding stops. This keeps calibration clean and settled while still giving "
 "you the streamed, dead-time-free cadence during guiding."
 msgstr ""
+"La calibration s'exécute toujours en poses uniques pour plus de stabilité, "
+"quel que soit le réglage :guilabel:`Flux`. Le flux ne démarre "
+"automatiquement qu'une fois le guidage lancé (et seulement si :guilabel:"
+"`Flux` est coché), et s'arrête à nouveau quand le guidage s'arrête. Cela "
+"garde la calibration propre et stable tout en offrant la cadence du flux "
+"sans temps mort pendant le guidage."
 
 #: ../../user_manual/ekos-guide.rst:513
 msgid "16-bit Stream Depth (INDI)"
-msgstr ""
+msgstr "Profondeur de flux 16 bits (INDI)"
 
 #: ../../user_manual/ekos-guide.rst:515
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream Depth|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream Depth|"
 
 #: ../../user_manual/ekos-guide.rst:517
 msgid ""
@@ -974,6 +1009,10 @@ msgid ""
 "Guide module. Open the INDI Control Panel, select your guide camera, and go "
 "to the :guilabel:`Streaming` tab:"
 msgstr ""
+"La profondeur de bits du flux vidéo se règle au niveau du pilote de la "
+"caméra, pas dans le module Guide. Ouvrez le panneau de configuration INDI, "
+"sélectionnez votre caméra de guidage, et allez dans l'onglet :guilabel:"
+"`Flux` :"
 
 #: ../../user_manual/ekos-guide.rst:521
 msgid ""
@@ -982,11 +1021,17 @@ msgid ""
 "bit depth, which gives better centroiding and faint-star detection than 8-"
 "bit."
 msgstr ""
+"Réglez :guilabel:`Stream Depth` sur :guilabel:`16-bit`. Ceci est **fortement "
+"recommandé** pour le guidage : les trames 16 bits (RAW16) préservent toute "
+"la profondeur de bits du capteur, ce qui donne un meilleur centroïdage et "
+"une meilleure détection des étoiles faibles qu'en 8 bits."
 
 #: ../../user_manual/ekos-guide.rst:525
 msgid ""
 "Make sure the :guilabel:`Encoder` is set to :guilabel:`RAW` (not MJPEG)."
 msgstr ""
+"Assurez-vous que :guilabel:`Encodeur` est réglé sur :guilabel:`RAW` (et non "
+"MJPEG)."
 
 #: ../../user_manual/ekos-guide.rst:526
 msgid ""
@@ -994,16 +1039,17 @@ msgid ""
 "tab) so it persists across sessions — otherwise the stream may revert to 8-"
 "bit the next time the camera connects."
 msgstr ""
+"Enregistrez ce réglage dans la configuration du pilote (depuis l'onglet :"
+"guilabel:`Options`) pour qu'il persiste d'une session à l'autre — sinon le "
+"flux risque de repasser en 8 bits à la prochaine connexion de la caméra."
 
 #: ../../user_manual/ekos-guide.rst:533
 msgid "Examples"
-msgstr ""
+msgstr "Exemples"
 
 #: ../../user_manual/ekos-guide.rst:535
-#, fuzzy
-#| msgid "|Guiding with GPG|"
 msgid "|Guide Stream GPG|"
-msgstr "|Guiding with GPG|"
+msgstr "|Guide Stream GPG|"
 
 #: ../../user_manual/ekos-guide.rst:537
 msgid ""
@@ -1011,12 +1057,14 @@ msgid ""
 "`Linear` on DEC, at 0.7 s exposure and 2×2 binning on a harmonic-drive mount "
 "— total RMS around 0.46″ with 100 detected stars."
 msgstr ""
+"Guidage en flux avec l'algorithme :guilabel:`GPG` en AD et :guilabel:"
+"`Linéaire` en DEC, à 0,7 s de pose et un binning 2×2 sur une monture à "
+"entraînement harmonique — RMS total d'environ 0,46″ avec 100 étoiles "
+"détectées."
 
 #: ../../user_manual/ekos-guide.rst:541
-#, fuzzy
-#| msgid "|Guide Settings|"
 msgid "|Guide Stream AI|"
-msgstr "|Guide Settings|"
+msgstr "|Guide Stream AI|"
 
 #: ../../user_manual/ekos-guide.rst:543
 msgid ""
@@ -1024,10 +1072,14 @@ msgid ""
 "supplies frames with no inter-frame dead time, it pairs naturally with the "
 "higher guide rates that harmonic drives and the AI predictor work best at."
 msgstr ""
+"Guidage en flux combiné avec le Guide IA expérimental. Comme le flux fournit "
+"des trames sans temps mort entre elles, il s'associe naturellement aux "
+"fréquences de guidage plus élevées auxquelles les entraînements harmoniques "
+"et le prédicteur IA fonctionnent le mieux."
 
 #: ../../user_manual/ekos-guide.rst:550
 msgid "Notes and Limitations"
-msgstr ""
+msgstr "Remarques et limites"
 
 #: ../../user_manual/ekos-guide.rst:552
 msgid ""
@@ -1041,6 +1093,17 @@ msgid ""
 "Library to *Prefer Darks* rather than *Prefer Defects*, since the defect map "
 "only repairs isolated hot/cold pixels and will not remove glow."
 msgstr ""
+"**La soustraction de dark fonctionne en mode flux.** La case à cocher :"
+"guilabel:`Dark` applique un dark correspondant (et une carte de défauts) à "
+"chaque trame de guidage du flux, exactement comme en guidage par pose unique "
+"— utile pour supprimer la lueur de l'amplificateur ou les pixels chauds sur "
+"certains capteurs de guidage. Comme toujours, un dark adapté doit exister "
+"dans la bibliothèque de darks pour la durée de pose, le gain et le binning "
+"de guidage actuels (voir :ref:`Poses Dark <ekos-guide-dark-frames>`). Notez "
+"que supprimer un dégradé de lueur homogène nécessite une véritable "
+"*soustraction* de dark : réglez la bibliothèque de darks sur *Préférer les "
+"darks* plutôt que *Préférer les défauts*, car la carte de défauts ne répare "
+"que les pixels chauds/froids isolés et ne supprimera pas la lueur."
 
 #: ../../user_manual/ekos-guide.rst:561
 msgid ""
@@ -1048,6 +1111,9 @@ msgid ""
 "the camera does not support it, the guider falls back to single-frame "
 "captures."
 msgstr ""
+"Le flux nécessite une caméra et un pilote dotés d'un flux vidéo INDI "
+"fonctionnel ; si la caméra ne le prend pas en charge, le guideur revient aux "
+"captures en pose unique."
 
 #: ../../user_manual/ekos-guide.rst:564
 msgid ""
@@ -1055,6 +1121,10 @@ msgid ""
 "cadence, not the fundamentals, so good polar alignment, balance, and "
 "calibration still matter most."
 msgstr ""
+"Comme pour toute configuration de guidage, vérifiez vos résultats : le flux "
+"modifie la cadence, pas les fondamentaux, donc un bon alignement polaire, un "
+"bon équilibrage et une bonne calibration restent les facteurs les plus "
+"importants."
 
 #: ../../user_manual/ekos-guide.rst:571
 msgid "AI Guiding Assistant (Experimental)"
@@ -2033,48 +2103,36 @@ msgid ".. image:: /images/ekos_guide_ai_options.png"
 msgstr ".. image:: /images/ekos_guide_ai_options.png"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid "Guide Settings"
 msgid "Guide Stream Settings"
-msgstr "Guidage"
+msgstr "Réglages du flux de guidage"
 
 #: ../../user_manual/ekos-guide.rst:972
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_multistar_settings.png"
 msgid ".. image:: /images/ekos_guide_stream_settings.jpg"
-msgstr ".. image:: /images/ekos_guide_multistar_settings.png"
+msgstr ".. image:: /images/ekos_guide_stream_settings.jpg"
 
 #: ../../user_manual/ekos-guide.rst:973
 msgid "Guide Stream Depth"
-msgstr ""
+msgstr "Profondeur du flux de guidage"
 
 #: ../../user_manual/ekos-guide.rst:973
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_phd2.png"
 msgid ".. image:: /images/ekos_guide_stream_depth.jpg"
-msgstr ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_stream_depth.jpg"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid "Guiding with GPG"
 msgid "Guide Stream GPG"
-msgstr "Guidage avec GPG"
+msgstr "Guidage en flux avec GPG"
 
 #: ../../user_manual/ekos-guide.rst:974
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide.png"
 msgid ".. image:: /images/ekos_guide_stream_gpg.jpg"
-msgstr ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide_stream_gpg.jpg"
 
 #: ../../user_manual/ekos-guide.rst:975
 msgid "Guide Stream AI"
-msgstr ""
+msgstr "Guidage en flux avec IA"
 
 #: ../../user_manual/ekos-guide.rst:975
-#, fuzzy
-#| msgid ".. image:: /images/ekos_guide_optical_train.png"
 msgid ".. image:: /images/ekos_guide_stream_ai.jpg"
-msgstr ".. image:: /images/ekos_guide_optical_train.png"
+msgstr ".. image:: /images/ekos_guide_stream_ai.jpg"
 
 #~ msgid "<title>Guide</title>"
 #~ msgstr "<title>Guidage</title>"
