@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-08-23 18:38+0300\n"
+"PO-Revision-Date: 2026-08-24 16:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -215,7 +215,7 @@ msgstr "Для інтеграції з ETA: драйвер INDI ``indi_wanderer_
 
 #: ../../user_manual/ekos-tilt-correction.rst:80
 msgid "The **Mosaic Mask** enabled in the Focus module."
-msgstr "Увімкнена **Мозаїчна маска** у модулі «Фокусування»."
+msgstr "Увімкнена **Маска мозаїки** у модулі «Фокусування»."
 
 #: ../../user_manual/ekos-tilt-correction.rst:81
 msgid "**Focuser step size** correctly configured (see the next section)."
@@ -371,6 +371,8 @@ msgid ""
 "Drive the focuser through its full travel, measure the physical distance, "
 "and divide by the step count."
 msgstr ""
+"Виконайте повний хід засобу фокусування, виміряйте фізичну відстань і "
+"поділіть на кількість кроків."
 
 #: ../../user_manual/ekos-tilt-correction.rst:136
 msgid "Why it matters"
@@ -381,18 +383,24 @@ msgid ""
 "Consider a sensor with 50 µm of tilt. The focus module might report a 20-"
 "tick difference between the left and right tiles."
 msgstr ""
+"Розглянемо датчик з нахилом 50 мкм. Модуль фокусування може повідомляти про "
+"різницю в 20 поділок між лівою та правою плитками."
 
 #: ../../user_manual/ekos-tilt-correction.rst:141
 msgid ""
 "With the correct step size (2.5 µm/step): 20 × 2.5 = **50 µm** → correct "
 "advisory."
 msgstr ""
+"З належним розміром кроку (2,5 мкм/крок): 20 × 2,5 = **50 мкм** → поточна "
+"порада."
 
 #: ../../user_manual/ekos-tilt-correction.rst:142
 msgid ""
 "With a wrong step size (5.0 µm/step): 20 × 5.0 = **100 µm** → advisory "
 "overshoots 2×."
 msgstr ""
+"З помилковим розміром кроку (5,0 мкм/крок): 20 × 5,0 = **100 мкм** → "
+"перевищення за порадою 2×."
 
 #: ../../user_manual/ekos-tilt-correction.rst:144
 msgid ""
@@ -400,6 +408,9 @@ msgid ""
 "makes you overshoot or undershoot the magnitude on each iteration, requiring "
 "more passes to converge."
 msgstr ""
+"*Напрямок* виправлення є правильним за будь-яких умов, але помилковий розмір "
+"кроку призводить до перевищення або заниження на кожній ітерації, що "
+"потребуватиме більше кроків для збіжності."
 
 #: ../../user_manual/ekos-tilt-correction.rst:150
 msgid "Running the Aberration Inspector"
@@ -413,6 +424,12 @@ msgid ""
 "the Aberration Inspector sweeps around the current focus position, so if you "
 "are far from focus the tiles will not produce usable data."
 msgstr ""
+"**Спочатку досягніть фокусування.** Перш ніж використовувати Інспектор "
+"аберації, виконайте **звичайне автофокусування** на повному зображенні (без "
+"маски мозаїки), щоб наблизити засіб фокусування до правильного стану. Вам "
+"потрібна якісна V-подібна крива з чистим розв'язком — Інспектор аберацій "
+"рухається навколо поточного положення фокуса, тому, якщо ви далеко від "
+"фокуса, платівки не даватимуть корисних даних."
 
 #: ../../user_manual/ekos-tilt-correction.rst:157
 msgid ""
@@ -423,6 +440,14 @@ msgid ""
 "Adjust the tile size so each tile captures enough stars (tiles around 256–"
 "512 px work well for most setups)."
 msgstr ""
+"**Перемкніться до мозаїчної маски.** Маску можна вибрати у налаштуваннях "
+"модуля «Фокусування». Відкрийте **Параметри** фокусування і знайдіть "
+"селектор **Маска** — у ньому буде запропоновано варіанти *Використовувати "
+"всі зірки* (повне зображення, типове для звичайного автофокусування), "
+"*Кільцева маска* та *Маска мозаїки*. Виберіть **Маска мозаїки** для "
+"вимірювання нахилу. Налаштуйте розмір плитки так, щоб кожна плитка "
+"захоплювала достатню кількість зірок (плитки розміром приблизно 256–512 "
+"пікселів добре підходять для більшості налаштувань)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:162
 msgid ""
@@ -430,6 +455,9 @@ msgid ""
 "regions with few stars — you need multiple stars in every tile for reliable "
 "curve fits."
 msgstr ""
+"**Вкажіть поле, багате на зірки.** Ідеальними є розсіяні скупчення. Уникайте "
+"туманностей або областей з невеликою кількістю зірок — для надійного "
+"наближення кривої потрібно кілька зірок на кожній плитці."
 
 #: ../../user_manual/ekos-tilt-correction.rst:167
 msgid ""
@@ -444,6 +472,17 @@ msgid ""
 "balance point). A field at a moderate altitude, well away from these, tends "
 "to give more consistent star shapes for measurement."
 msgstr ""
+"**Вибір вдалого місця на небі.** Вимірювання нахилу залежить від чітких, "
+"круглих форм зірок та стабільного відстеження по всій ділянці огляду. Для "
+"найкращих результатів: виберіть область з чіткими, добре розділеними зірками "
+"та якісним контрастом; забезпечте хорошу роботу лафета, оскільки помилки "
+"відстеження або дрейф під час огляду спотворюють РПП для кожної плитки; та "
+"уникайте областей, де лафет погано відстежує ціль. Цілі дуже близько до "
+"**зеніту** або прямо на **меридіані** можуть бути проблематичними (поблизу "
+"зеніту невеликі рухи відстеження спричиняють великий видимий рух; на "
+"меридіані деякі лафети відстежують менш плавно поблизу точки балансу). Поле "
+"на помірній висоті, далеко від них, як правило, дає більш стабільні форми "
+"зірок для вимірювання."
 
 #: ../../user_manual/ekos-tilt-correction.rst:177
 msgid ""
@@ -452,6 +491,10 @@ msgid ""
 "autofocus run that sweeps through focus positions while measuring HFR in "
 "each mosaic tile independently."
 msgstr ""
+"**Натисніть «Інспектор аберації».** У розділі «Інструменти» модуля "
+"«Фокусування» натисніть кнопку «Інспектор аберації». Це запустить "
+"спеціальний мозаїчний автофокус, який проходить по позиціях фокусування, "
+"одночасно вимірюючи РПП у кожній мозаїчній плитці окремо."
 
 #: ../../user_manual/ekos-tilt-correction.rst:183
 msgid ""
@@ -460,12 +503,20 @@ msgid ""
 "curves can look bumpy with small steps; larger steps produce smoother curves "
 "and more reliable tile solutions."
 msgstr ""
+"Спробуйте використовувати більший крок для запуску інспектора аберацій, ніж "
+"для звичайного автофокусування. Оскільки кожна плитка містить менше зірок, V-"
+"подібні криві для кожної плитки можуть виглядати нерівними з невеликими "
+"кроками; більші кроки створюють плавніші криві та надійніші розв'язки для "
+"плиток."
 
 #: ../../user_manual/ekos-tilt-correction.rst:188
 msgid ""
 "**Wait for completion.** When all tiles' V-curves are fit, the Aberration "
 "Inspector dialog appears automatically with the results."
 msgstr ""
+"**Зачекайте на завершення.** Коли V-подібні криві всіх плиток будуть "
+"наближено, автоматично з’явиться діалогове вікно «Інспектор аберації» з "
+"результатами."
 
 #: ../../user_manual/ekos-tilt-correction.rst:193
 msgid ""
@@ -474,6 +525,10 @@ msgid ""
 "you manually enable the **Tilt Plate** checkbox in the Aberration Inspector "
 "toolbar. Otherwise the advisory panel stays hidden."
 msgstr ""
+"Розділ «Виправлення нахилу» в Інспекторі аберації буде показано лише тоді, "
+"коли (а) виявлено з'єднаний пристрій ETA WandererAstro або (б) ви вручну "
+"позначили пункт **Платівка нахилу** на панелі інструментів Інспектора "
+"аберації. В іншому випадку панель рекомендацій залишається прихованою."
 
 #: ../../user_manual/ekos-tilt-correction.rst:201
 msgid "Focus module after a successful Aberration Inspector run"
@@ -490,6 +545,10 @@ msgid ""
 "(right). The ``Aberration Inspector`` button in the Tools section triggers "
 "the tiled measurement run."
 msgstr ""
+"Модуль фокусування після успішного запуску інспектора аберації: виявлено 56 "
+"зірок, РПП 1,32, R²=0,99. Сітку мозаїчної маски видно на зоряному полі "
+"(праворуч). Кнопка «Інспектор аберації» у розділі «Інструменти» запускає "
+"мозаїчне вимірювання."
 
 #: ../../user_manual/ekos-tilt-correction.rst:207
 msgid "Understanding the Results"
@@ -502,6 +561,10 @@ msgid ""
 "focus-aberration-inspector>` reference in the Focus documentation for the "
 "full description of every control.)"
 msgstr ""
+"Інспектор аберації показує таблицю для кожної плитки, набір зведених значень "
+"та графік V-подібної кривої для кількох плиток. (Повний опис кожного "
+"елемента керування див. у довідці :ref:`Інспектор аберації <ekos-focus-"
+"aberration-inspector>` у документації до модуля фокусування.)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:213
 msgid ""
@@ -510,6 +573,10 @@ msgid ""
 "centre tile, the ``Num Stars`` used vs. detected, and the ``R²`` goodness-of-"
 "fit."
 msgstr ""
+"**Таблиця плиток** — кожен рядок являє собою мозаїчну плитку (область "
+"датчика): фокус ``Розв'язку`` (кроки), ``Різниця (у поділках)`` та ``Різниця "
+"(у мкм)`` відносно центральної плитки, ``Кількість використаних зірок`` "
+"порівняно з виявленими, а також коефіцієнт відповідності ``R²``."
 
 #: ../../user_manual/ekos-tilt-correction.rst:217
 msgid "**Summary values**"
@@ -520,18 +587,21 @@ msgid ""
 "``Backfocus Δ`` — how far the sensor is from optimal backfocus distance (± "
 "µm)."
 msgstr ""
+"``Δ зворотного фокусування`` — наскільки далекий датчик від відстані "
+"оптимального зворотного фокусування (± мкм)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:220
 msgid "``Left-Right Tilt`` — tilt along the horizontal axis (µm and %)."
 msgstr ""
+"``Зсув ліворуч-праворуч`` — нахил уздовж горизонтальної вісі (у мкм та %)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:221
 msgid "``Top-Bottom Tilt`` — tilt along the vertical axis (µm and %)."
-msgstr ""
+msgstr "``Зсув згори-вниз`` — нахил уздовж вертикальної вісі (у мкм та %)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:222
 msgid "``Total Tilt`` — combined vector magnitude (µm and %)."
-msgstr ""
+msgstr "``Загальний зсув`` — комбінована векторна величина (у мкм та %)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:224
 msgid ""

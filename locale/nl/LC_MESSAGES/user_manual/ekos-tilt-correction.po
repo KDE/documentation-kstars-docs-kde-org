@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-08-23 13:34+0200\n"
+"PO-Revision-Date: 2026-08-24 12:37+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -230,16 +230,20 @@ msgid ""
 "The optical train set up in Ekos (sensor dimensions and pixel size are read "
 "automatically from the camera driver)."
 msgstr ""
+"De optische configuratie in Ekos (sensorafmetingen en pixelgrootte worden "
+"automatisch uit het camerastuurprogramma uitgelezen)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:84
 msgid ""
 "The ETA connected as an Auxiliary device in the Ekos profile (if using "
 "automated apply)."
 msgstr ""
+"De ETA is verbonden als hulpapparaat in het Ekos-profiel (bij gebruik van "
+"automatische toepassing)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:89
 msgid "Measuring Focuser Step Size"
-msgstr ""
+msgstr "De stapgrootte van de focuser meten"
 
 #: ../../user_manual/ekos-tilt-correction.rst:91
 msgid ""
@@ -249,10 +253,15 @@ msgid ""
 "wrong, the tilt magnitude will be scaled incorrectly (although the direction "
 "will still be correct)."
 msgstr ""
+"De stapgrootte van de focuser (micrometer per stap, µm/stap) is **cruciaal** "
+"voor nauwkeurige kantelmetingen. De Aberratie-inspecteur zet verschillen in "
+"focuser-stappen (ticks) tussen tegels om in een fysieke afstand "
+"(micrometer). Als deze waarde onjuist is, wordt de grootte van de kanteling "
+"verkeerd geschaald (hoewel de richting wel correct blijft)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:97
 msgid "Where to configure"
-msgstr ""
+msgstr "Waar te configureren"
 
 #: ../../user_manual/ekos-tilt-correction.rst:99
 msgid ""
@@ -358,35 +367,43 @@ msgstr "De stapgrootte van de focuser meten"
 
 #: ../../user_manual/ekos-tilt-correction.rst:132
 msgid ".. image:: /images/ekos_tilt_stepsize_diagram.png"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_stepsize_diagram.png"
 
 #: ../../user_manual/ekos-tilt-correction.rst:132
 msgid ""
 "Drive the focuser through its full travel, measure the physical distance, "
 "and divide by the step count."
 msgstr ""
+"Beweeg de focuser over het volledige bereik, meet de fysieke afstand en deel "
+"deze door het aantal stappen."
 
 #: ../../user_manual/ekos-tilt-correction.rst:136
 msgid "Why it matters"
-msgstr ""
+msgstr "Waarom is dat belangrijk"
 
 #: ../../user_manual/ekos-tilt-correction.rst:138
 msgid ""
 "Consider a sensor with 50 µm of tilt. The focus module might report a 20-"
 "tick difference between the left and right tiles."
 msgstr ""
+"Neem een ​​sensor met een kanteling van 50 µm. De focusmodule kan een verschil "
+"van 20 ticks rapporteren tussen de linker- en rechtertegels."
 
 #: ../../user_manual/ekos-tilt-correction.rst:141
 msgid ""
 "With the correct step size (2.5 µm/step): 20 × 2.5 = **50 µm** → correct "
 "advisory."
 msgstr ""
+"Met de juiste stapgrootte (2,5 µm/stap): 20 × 2,5 = **50 µm** → correct "
+"advies."
 
 #: ../../user_manual/ekos-tilt-correction.rst:142
 msgid ""
 "With a wrong step size (5.0 µm/step): 20 × 5.0 = **100 µm** → advisory "
 "overshoots 2×."
 msgstr ""
+"Bij een verkeerde stapgrootte (5,0 µm/stap): 20 × 5,0 = **100 µm** → "
+"overschrijdt de richtwaarde met een factor 2."
 
 #: ../../user_manual/ekos-tilt-correction.rst:144
 msgid ""
@@ -394,10 +411,14 @@ msgid ""
 "makes you overshoot or undershoot the magnitude on each iteration, requiring "
 "more passes to converge."
 msgstr ""
+"De *richting* van de correctie is hoe dan ook juist, maar een verkeerde "
+"stapgrootte zorgt ervoor dat u bij elke iteratie voorbij de juiste waarde "
+"schiet of er juist onder blijft, waardoor er meer stappen nodig zijn om tot "
+"convergentie te komen."
 
 #: ../../user_manual/ekos-tilt-correction.rst:150
 msgid "Running the Aberration Inspector"
-msgstr ""
+msgstr "De Aberratie-inspecteur uitvoeren"
 
 #: ../../user_manual/ekos-tilt-correction.rst:152
 msgid ""
@@ -407,6 +428,13 @@ msgid ""
 "the Aberration Inspector sweeps around the current focus position, so if you "
 "are far from focus the tiles will not produce usable data."
 msgstr ""
+"**Zorg eerst voor scherpstelling.** Voer, voordat u de Aberratie-inspecteur "
+"gebruikt, een **normale autofocus** uit op het volledige beeld (zonder "
+"mozaïekmasker) om de focuser dicht bij de juiste positie te brengen. U heeft "
+"een goede V-curve met een betrouwbaar resultaat nodig — de Aberratie-"
+"inspecteur scant rond de huidige focuspositie; als u dus ver van het "
+"focuspunt verwijderd bent, zullen de tegels geen bruikbare gegevens "
+"opleveren."
 
 #: ../../user_manual/ekos-tilt-correction.rst:157
 msgid ""
@@ -417,6 +445,14 @@ msgid ""
 "Adjust the tile size so each tile captures enough stars (tiles around 256–"
 "512 px work well for most setups)."
 msgstr ""
+"**Schakel over naar het mozaïekmasker.** U selecteert het masker in de "
+"instellingen van de Focus-module. Open de **Opties** van de Focus-module en "
+"zoek de instelling **Masker** op; hier kunt u kiezen uit *Alle sterren "
+"gebruiken* (volledig beeld, de standaardinstelling voor normale autofocus), "
+"*Ringmasker* en *Mozaïekmasker*. Kies **Mozaïekmasker** voor het meten van "
+"de kanteling (tilt). Pas de grootte van de tegels zo aan dat elke tegel "
+"voldoende sterren bevat (tegels van ongeveer 256–512 px werken goed voor de "
+"meeste opstellingen)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:162
 msgid ""
@@ -424,6 +460,9 @@ msgid ""
 "regions with few stars — you need multiple stars in every tile for reliable "
 "curve fits."
 msgstr ""
+"**Richt op een sterrenrijk veld.** Open sterrenhopen zijn ideaal. Vermijd "
+"nevels of gebieden met weinig sterren; u hebt meerdere sterren in elk "
+"deelgebied nodig voor betrouwbare kromme-fits."
 
 #: ../../user_manual/ekos-tilt-correction.rst:167
 msgid ""
@@ -438,6 +477,18 @@ msgid ""
 "balance point). A field at a moderate altitude, well away from these, tends "
 "to give more consistent star shapes for measurement."
 msgstr ""
+"**Een geschikte plek aan de hemel kiezen.** De kantelmeting is afhankelijk "
+"van zuivere, ronde stervormen en een stabiele volging tijdens de volledige "
+"scan. Voor het beste resultaat: kies een gebied met heldere, duidelijk "
+"gescheiden sterren en een goed contrast; zorg voor een goed presterende "
+"opstelling, aangezien volgfouten of drift tijdens de scan de HFR per "
+"deelgebied (tegel) kunnen vervormen; en vermijd gebieden waar de opstelling "
+"niet nauwkeurig volgt. Objecten zeer dicht bij het **zenit** of precies op "
+"de **meridiaan** kunnen problematisch zijn (nabij het zenit veroorzaken "
+"kleine volgbewegingen een grote schijnbare verplaatsing; op de meridiaan "
+"lopen sommige opstellingen minder soepel rond het balanspunt). Een beeldveld "
+"op gemiddelde hoogte, op voldoende afstand van deze posities, levert "
+"doorgaans consistentere stervormen op voor de meting."
 
 #: ../../user_manual/ekos-tilt-correction.rst:177
 msgid ""
@@ -446,6 +497,10 @@ msgid ""
 "autofocus run that sweeps through focus positions while measuring HFR in "
 "each mosaic tile independently."
 msgstr ""
+"**Klik op \"Aberratie-inspecteur\".** Klik in de sectie Hulpmiddelen van de "
+"module Focus op de knop ``Aberratie-inspecteur``. Hiermee wordt een speciale "
+"autofocus-procedure in tegels gestart, waarbij verschillende focusposities "
+"worden doorlopen en de HFR in elke mozaïektegel afzonderlijk wordt gemeten."
 
 #: ../../user_manual/ekos-tilt-correction.rst:183
 msgid ""
@@ -454,12 +509,20 @@ msgid ""
 "curves can look bumpy with small steps; larger steps produce smoother curves "
 "and more reliable tile solutions."
 msgstr ""
+"Overweeg een grotere stapgrootte te gebruiken voor de uitvoering van de "
+"Aberratie-inspecteur dan voor uw normale autofocus. Omdat elke "
+"'tile' (tegel) minder sterren bevat, kunnen de V-curves per tegel er bij "
+"kleine stappen onregelmatig uitzien; grotere stappen leveren vloeiendere "
+"curves en betrouwbaardere oplossingen per tegel op."
 
 #: ../../user_manual/ekos-tilt-correction.rst:188
 msgid ""
 "**Wait for completion.** When all tiles' V-curves are fit, the Aberration "
 "Inspector dialog appears automatically with the results."
 msgstr ""
+"**Wacht tot het proces is voltooid.** Zodra de V-krommen van alle tegels "
+"zijn berekend, verschijnt automatisch het dialoogvenster 'Aberratie-"
+"inspecteur' met de resultaten."
 
 #: ../../user_manual/ekos-tilt-correction.rst:193
 msgid ""
@@ -468,14 +531,19 @@ msgid ""
 "you manually enable the **Tilt Plate** checkbox in the Aberration Inspector "
 "toolbar. Otherwise the advisory panel stays hidden."
 msgstr ""
+"Het gedeelte met advies over kantelcorrectie (Tilt Correction Advisory) in "
+"de Aberratie-inspecteur is alleen zichtbaar wanneer (a) er een verbinding "
+"met een WandererAstro ETA wordt gedetecteerd, of (b) u handmatig het "
+"selectievakje **Kantelplaat** in de werkbalk van de Aberratie-inspecteur "
+"inschakelt. Anders blijft het adviespaneel verborgen."
 
 #: ../../user_manual/ekos-tilt-correction.rst:201
 msgid "Focus module after a successful Aberration Inspector run"
-msgstr ""
+msgstr "Focusmodule na een succesvolle uitvoering van de Aberratie-inspecteur"
 
 #: ../../user_manual/ekos-tilt-correction.rst:201
 msgid ".. image:: /images/ekos_tilt_focus_run.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_focus_run.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:201
 msgid ""
@@ -484,10 +552,14 @@ msgid ""
 "(right). The ``Aberration Inspector`` button in the Tools section triggers "
 "the tiled measurement run."
 msgstr ""
+"Focusmodule na een succesvolle uitvoering van de Aberratie-inspecteur: 56 "
+"sterren gedetecteerd, HFR 1,32, R²=0,99. Het mozaïekmasker-raster is "
+"zichtbaar op het sterrenveld (rechts). De knop ``Aberratie-inspecteur`` in "
+"de sectie Hulpmiddelen start de meetreeks in tegels."
 
 #: ../../user_manual/ekos-tilt-correction.rst:207
 msgid "Understanding the Results"
-msgstr ""
+msgstr "De resultaten begrijpen"
 
 #: ../../user_manual/ekos-tilt-correction.rst:209
 msgid ""
