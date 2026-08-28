@@ -1,0 +1,1916 @@
+# Translation of kstars_docs_user_manual___ekos-tilt-correction.po to Catalan
+# Copyright (C) 2026 This_file_is_part_of_KDE
+# Licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
+# This file is distributed under the same license as the KStars Handbook package.
+#
+# SPDX-FileCopyrightText: 2026 Josep M. Ferrer <txemaq@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: documentation-kstars-docs-kde-org\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-19 02:09+0000\n"
+"PO-Revision-Date: 2026-08-26 20:12+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.08.0\n"
+
+#: ../../user_manual/ekos-tilt-correction.rst:5
+msgid "Tilt Correction and the Tilt Correction Advisory"
+msgstr "Correcció d'inclinació i l'assessor de correcció d'inclinació"
+
+#: ../../user_manual/ekos-tilt-correction.rst:7
+msgid ""
+"This guide is a self-contained walk-through for measuring and correcting "
+"sensor tilt in Ekos, from initial setup through iterative correction to "
+"verification. It builds on the :ref:`Aberration Inspector <ekos-focus-"
+"aberration-inspector>` in the :doc:`Focus module <ekos-focus>` and focuses "
+"on the **Tilt Correction Advisory**, which translates measured tilt into "
+"concrete mechanical adjustments, and on its integration with motorized tilt "
+"plates such as the WandererAstro ETA M54."
+msgstr ""
+"Aquesta guia és un recorregut autocontingut per a mesurar i corregir la "
+"inclinació del sensor a l'Ekos, des de la configuració inicial a través de "
+"la correcció iterativa fins a la verificació. Es basa en l':ref:`Inspector "
+"d'aberració <ekos-focus-aberration-inspector>` en el :doc:`mòdul "
+"d'enfocament <ekos-focus>` i se centra en l'**Assessor de correcció "
+"d'inclinació**, que tradueix la inclinació mesurada en ajustos mecànics "
+"concrets, i en la seva integració amb plaques d'inclinació motoritzades com "
+"la WandererAstro ETA M54."
+
+#: ../../user_manual/ekos-tilt-correction.rst:17
+msgid "Contents"
+msgstr "Contingut"
+
+#: ../../user_manual/ekos-tilt-correction.rst:20
+msgid "Overview — What is Sensor Tilt?"
+msgstr "Vista general: Què és el sensor d'inclinació?"
+
+#: ../../user_manual/ekos-tilt-correction.rst:22
+msgid ""
+"When the imaging sensor is not perfectly perpendicular to the optical axis, "
+"different regions of the field come to focus at different distances from the "
+"flattener/corrector. This manifests as:"
+msgstr ""
+"Quan el sensor d'imatge no està perpendicular perfectament a l'eix òptic, "
+"diferents regions del camp arriben a enfocar-se a diferents distàncies de "
+"l'aplanador/corrector. Això es manifesta en:"
+
+#: ../../user_manual/ekos-tilt-correction.rst:26
+msgid "Stars in one corner appearing sharper than the opposite corner."
+msgstr ""
+"Les estrelles d'una cantonada apareixen més definides que a la cantonada "
+"oposada."
+
+#: ../../user_manual/ekos-tilt-correction.rst:27
+msgid "Uneven HFR values across the field after autofocus."
+msgstr ""
+"Desequilibra els valors HFR a través del camp després de l'enfocament "
+"automàtic."
+
+#: ../../user_manual/ekos-tilt-correction.rst:28
+msgid "One side of the image always appearing slightly out of focus."
+msgstr "Un costat de la imatge sempre apareix lleugerament desenfocat."
+
+#: ../../user_manual/ekos-tilt-correction.rst:29
+msgid ""
+"Uneven color-correction performance across the frame — because each region "
+"sits at a different distance from the correcting lens element, chromatic "
+"correction (and field flatness) is optimized for only part of the sensor, so "
+"color fringing can be stronger on the side that is furthest from the ideal "
+"focal plane."
+msgstr ""
+"Rendiment desigual de la correcció de color a través del fotograma; perquè "
+"cada regió es troba a una distància diferent de l'element de la lent "
+"correctora, la correcció cromàtica (i l'aplanament del camp) s'optimitza "
+"només per a una part del sensor, de manera que les franges de color poden "
+"ser més fortes al costat que està més allunyat del pla focal ideal."
+
+#: ../../user_manual/ekos-tilt-correction.rst:34
+msgid ""
+"The **Aberration Inspector** measures this tilt by running autofocus across "
+"multiple regions (tiles) of the sensor simultaneously. The focus-position "
+"difference between tiles, converted to physical microns using the focuser "
+"step size, reveals the tilt magnitude and direction. The **Tilt Correction "
+"Advisory** then translates these measurements into concrete mechanical "
+"adjustments — telling you which screws to turn, and by how much."
+msgstr ""
+"L'**Inspector d'aberració** mesura aquesta inclinació executant l'enfocament "
+"automàtic a través de diverses regions (tessel·les) del sensor "
+"simultàniament. La diferència de posició d'enfocament entre les tessel·les, "
+"convertides a micres físiques utilitzant la mida de pas de l'enfocador, "
+"revela la magnitud i la direcció de la inclinació. L'**Assessor de correcció "
+"d'inclinació** llavors tradueix aquestes mesures en ajustos mecànics "
+"concrets, dient-vos quins caragols s'han de girar, i quant."
+
+#: ../../user_manual/ekos-tilt-correction.rst:44
+msgid "Imaging train with WandererAstro ETA M54 tilt plate"
+msgstr "Tren d'imatges amb placa d'inclinació WandererAstro ETA M54"
+
+#: ../../user_manual/ekos-tilt-correction.rst:44
+msgid ".. image:: /images/ekos_tilt_equipment_train.jpg"
+msgstr ".. image:: /images/ekos_tilt_equipment_train.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:44
+msgid ""
+"Imaging train with a WandererAstro ETA M54 tilt plate installed between the "
+"focuser and the camera."
+msgstr ""
+"Tren d'obtenció d'imatges amb una placa d'inclinació WandererAstro ETA M54 "
+"instal·lada entre l'enfocador i la càmera."
+
+#: ../../user_manual/ekos-tilt-correction.rst:51
+msgid "WandererAstro ETA M54 close-up"
+msgstr "Primer pla de la WandererAstro ETA M54"
+
+#: ../../user_manual/ekos-tilt-correction.rst:51
+msgid ".. image:: /images/ekos_tilt_eta_closeup.jpg"
+msgstr ".. image:: /images/ekos_tilt_eta_closeup.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:51
+msgid ""
+"The WandererAstro ETA M54 Electronic Tilt Adjuster (front view). The three "
+"motorized adjustment points are labeled \"1\", \"2\", and \"3\"; each arm "
+"houses a stepper motor with an encoder. The M54 threaded side faces the "
+"telescope/focuser. The sensor side has 6 screw holes for bolting adapters "
+"directly (optional threaded adapters are available). In this photo a Pegasus "
+"Astro Indigo OAG with helical focuser is attached. Note that not all OAGs "
+"fit inside the ETA's central opening — the Svbony OAG neck, for example, is "
+"too wide, while the Pegasus Indigo OAG fits."
+msgstr ""
+"Ajustador d'inclinació electrònic WandererAstro ETA M54 (vista frontal). Els "
+"tres punts d'ajust motoritzats estan etiquetats amb «1», «2» i «3»; cada "
+"braç alberga un motor pas a pas amb un codificador. El costat amb fils de la "
+"M54 s'encara amb el telescopi/enfocador. El costat del sensor disposa de 6 "
+"forats de caragols per a caragolar directament adaptadors (hi ha disponibles "
+"adaptadors amb fils opcionals). En aquesta foto hi ha un OAG Pegasus Astro "
+"Indigo amb focus helicoidal adjuntat. Tingueu en compte que no tots els OAG "
+"s'ajusten dins de l'obertura central de l'ETA: el coll de l'OAG de Svbony, "
+"per exemple, és massa ample, mentre que l'OAG Pegasus Indigo s'ajusta."
+
+#: ../../user_manual/ekos-tilt-correction.rst:61
+msgid "Prerequisites"
+msgstr "Prerequisits"
+
+#: ../../user_manual/ekos-tilt-correction.rst:63
+msgid "**Hardware**"
+msgstr "**Maquinari**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:65
+msgid "A telescope with a field flattener/corrector."
+msgstr "Un telescopi amb un aplanador/corrector de camp."
+
+#: ../../user_manual/ekos-tilt-correction.rst:66
+msgid ""
+"An electronic (absolute) focuser, e.g. ZWO EAF, Pegasus FocusCube, MoonLite."
+msgstr ""
+"Un enfocador electrònic (absolut), p. ex. ZWO EAF, Pegasus FocusCube, "
+"MoonLite."
+
+#: ../../user_manual/ekos-tilt-correction.rst:67
+msgid "A tilt adjustment plate:"
+msgstr "Una placa d'ajust de la inclinació:"
+
+#: ../../user_manual/ekos-tilt-correction.rst:69
+msgid ""
+"**3-point motorized**: WandererAstro ETA M54 (recommended — allows automated "
+"apply)."
+msgstr ""
+"**Motoritzada de 3 punts**: WandererAstro ETA M54 (recomanat: permet aplicar-"
+"la automàticament)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:70
+msgid "**3-point manual**: Octopi, manual 3-screw tilt rings."
+msgstr ""
+"**Manual de 3 punts**: Octopi, anells manuals d'inclinació de 3 caragols."
+
+#: ../../user_manual/ekos-tilt-correction.rst:71
+msgid "**4-point manual**: ToupTek M42 Tilter and similar push/pull plates."
+msgstr ""
+"**Manual de 4 punts**: ToupTek M42 Tilter i plaques empènyer/estirar "
+"similars."
+
+#: ../../user_manual/ekos-tilt-correction.rst:73
+msgid ""
+"A star-rich field for measurement (open clusters work well: NGC 2516, M44, "
+"M67)."
+msgstr ""
+"Un camp ric en estrelles per a la mesura (els cúmuls oberts funcionen bé: "
+"NGC 2516, M44, M67)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:75
+msgid "**Software / configuration**"
+msgstr "**Programari / Configuració**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:77
+msgid ""
+"KStars 3.8.4 or later (the Tilt Correction Advisory and ETA integration are "
+"merged upstream)."
+msgstr ""
+"El KStars 3.8.4 o posterior (la integració de l'Assessor de correcció "
+"d'inclinació i l'ETA es fusionen a la font principal)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:79
+msgid "For ETA integration: the INDI driver ``indi_wanderer_eta``."
+msgstr "Per a la integració ETA: el controlador INDI ``indi_wanderer_eta``."
+
+#: ../../user_manual/ekos-tilt-correction.rst:80
+msgid "The **Mosaic Mask** enabled in the Focus module."
+msgstr "La **Màscara de mosaic** està activada en el mòdul d'enfocament."
+
+#: ../../user_manual/ekos-tilt-correction.rst:81
+msgid "**Focuser step size** correctly configured (see the next section)."
+msgstr ""
+"La **Mida de pas de l'enfocador** correctament configurada (vegeu la secció "
+"següent)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:82
+msgid ""
+"The optical train set up in Ekos (sensor dimensions and pixel size are read "
+"automatically from the camera driver)."
+msgstr ""
+"El tren òptic configurat a l'Ekos (les dimensions del sensor i la mida dels "
+"píxels es llegeixen automàticament des del controlador de la càmera)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:84
+msgid ""
+"The ETA connected as an Auxiliary device in the Ekos profile (if using "
+"automated apply)."
+msgstr ""
+"L'ETA connectada com a dispositiu auxiliar en el perfil de l'Ekos (si "
+"s'utilitza aplicació automatitzada)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:89
+msgid "Measuring Focuser Step Size"
+msgstr "Mesura de la mida de pas de l'enfocador"
+
+#: ../../user_manual/ekos-tilt-correction.rst:91
+msgid ""
+"The focuser step size (microns per step, µm/step) is **critical** for "
+"accurate tilt measurements. The Aberration Inspector converts focuser tick "
+"differences between tiles into physical distance (microns). If this value is "
+"wrong, the tilt magnitude will be scaled incorrectly (although the direction "
+"will still be correct)."
+msgstr ""
+"La mida del pas de l'enfocador (micres per pas, µm/pas) és **crítica** per a "
+"mesures precises d'inclinació. L'Inspector d'aberració converteix les "
+"diferències entre les tessel·les de l'enfocador en la distància física "
+"(micres). Si aquest valor és incorrecte, la magnitud de la inclinació "
+"s'escalarà incorrectament (tot i que la direcció encara serà correcta)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:97
+msgid "Where to configure"
+msgstr "On es configura"
+
+#: ../../user_manual/ekos-tilt-correction.rst:99
+msgid ""
+"In the Focus module, open the ``CFZ`` dialog (Critical Focus Zone). The "
+"**Step Size** field specifies how many micrometers the focuser moves per "
+"single step (tick)."
+msgstr ""
+"En el mòdul d'Enfocament, obriu el diàleg ``ZCE`` (Zona crítica "
+"d'enfocament). El camp **Mida de pas** especifica quants micròmetres mou "
+"l'enfocador per cada pas individual (marca)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:105
+msgid "Focus CFZ dialog showing the step size"
+msgstr "Diàleg ZCE d'enfocament mostrant la mida del pas"
+
+#: ../../user_manual/ekos-tilt-correction.rst:105
+msgid ".. image:: /images/ekos_tilt_cfz_stepsize.jpg"
+msgstr ".. image:: /images/ekos_tilt_cfz_stepsize.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:105
+msgid ""
+"The Focus CFZ dialog: step size is set to 2.754 µm for this ZWO EAF + Askar "
+"SQA130 combination. The CFZ calculation (18 µm = 7 steps) uses this value."
+msgstr ""
+"El diàleg ZCE d'enfocament: la mida del pas s'estableix a 2,754 µm per a "
+"aquesta combinació ZWO EAF + Askar SQA130. El càlcul del ZCE (18 µm = 7 "
+"passos) utilitza aquest valor."
+
+#: ../../user_manual/ekos-tilt-correction.rst:109
+msgid "How to measure"
+msgstr "Com mesurar"
+
+#: ../../user_manual/ekos-tilt-correction.rst:111
+msgid ""
+"If your focuser manufacturer publishes a specification, use it. Typical "
+"values:"
+msgstr ""
+"Si el fabricant del vostre enfocador publica una especificació, utilitzeu-"
+"la. Valors habituals:"
+
+#: ../../user_manual/ekos-tilt-correction.rst:113
+msgid "ZWO EAF: ~1.5–3.0 µm/step (depends on the scope's focuser mechanism)."
+msgstr ""
+"ZWO EAF: ~1,5–3,0 µm/pas (depèn del mecanisme d'enfocament del telescopi)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:114
+msgid "Pegasus FocusCube: ~2.0–5.0 µm/step."
+msgstr "Pegasus FocusCube: ~2,0–5,0 µm/pas."
+
+#: ../../user_manual/ekos-tilt-correction.rst:115
+msgid "MoonLite: varies by model."
+msgstr "MoonLite: varia segons el model."
+
+#: ../../user_manual/ekos-tilt-correction.rst:117
+msgid ""
+"If no specification is available, or you want to verify it, use the full-"
+"travel method:"
+msgstr ""
+"Si no hi ha cap especificació disponible, o voleu verificar-la, utilitzeu el "
+"mètode de recorregut complet:"
+
+#: ../../user_manual/ekos-tilt-correction.rst:119
+msgid ""
+"**Measure the physical travel.** With the focuser disconnected from the "
+"scope, use a digital caliper or dial indicator against the drawtube. Mark "
+"the fully retracted and fully extended positions and measure the total "
+"travel in mm."
+msgstr ""
+"**Mesura del recorregut físic.** Amb l'enfocador desconnectat del telescopi, "
+"utilitzeu un calibrador digital o indicador de dial sobre el tub "
+"d'enfocament. Marqueu la posició totalment retractada i totalment estesa i "
+"mesureu el recorregut total en mm."
+
+#: ../../user_manual/ekos-tilt-correction.rst:122
+msgid ""
+"**Count the total steps.** Drive the focuser from one end to the other using "
+"the INDI control panel and note the step count for the full travel."
+msgstr ""
+"**Compteu els passos totals.** Porteu l'enfocador d'un extrem a l'altre "
+"utilitzant el plafó de control de l'INDI i tingueu en compte el nombre de "
+"passos del recorregut complet."
+
+#: ../../user_manual/ekos-tilt-correction.rst:124
+msgid ""
+"**Calculate.** ``Step Size (µm/step) = (Total Travel in mm × 1000) / Total "
+"Steps``."
+msgstr ""
+"**Calculeu** ``Mida de la pista (µm/step) = (Recorregut total en mm × "
+"1000) / Passos totals``."
+
+#: ../../user_manual/ekos-tilt-correction.rst:126
+msgid ""
+"**Example** (ZWO EAF on Askar SQA130): total travel ~31 mm, total steps "
+"~11,250 → 31,000 µm / 11,250 = **2.76 µm/step**."
+msgstr ""
+"**Exemple** (ZWO EAF a Askar SQA130): recorregut total ~31 mm, passos totals "
+"~11.250 → 31.000 µm / 11.250 = **2,76 µm/pas**."
+
+#: ../../user_manual/ekos-tilt-correction.rst:132
+msgid "Measuring focuser step size"
+msgstr "Mesura de la mida del pas de l'enfocador"
+
+#: ../../user_manual/ekos-tilt-correction.rst:132
+msgid ".. image:: /images/ekos_tilt_stepsize_diagram.png"
+msgstr ".. image:: /images/ekos_tilt_stepsize_diagram.png"
+
+#: ../../user_manual/ekos-tilt-correction.rst:132
+msgid ""
+"Drive the focuser through its full travel, measure the physical distance, "
+"and divide by the step count."
+msgstr ""
+"Porteu l'enfocador pel seu recorregut complet, mesureu la distància física i "
+"dividiu pel nombre de passos."
+
+#: ../../user_manual/ekos-tilt-correction.rst:136
+msgid "Why it matters"
+msgstr "Per què importa"
+
+#: ../../user_manual/ekos-tilt-correction.rst:138
+msgid ""
+"Consider a sensor with 50 µm of tilt. The focus module might report a 20-"
+"tick difference between the left and right tiles."
+msgstr ""
+"Considereu un sensor amb 50 mm d'inclinació. El mòdul d'enfocament pot "
+"reportar una diferència de 20 marques entre les tessel·les de l'esquerra i "
+"la dreta."
+
+#: ../../user_manual/ekos-tilt-correction.rst:141
+msgid ""
+"With the correct step size (2.5 µm/step): 20 × 2.5 = **50 µm** → correct "
+"advisory."
+msgstr ""
+"Amb la mida del pas correcta (2,5 µm/pas): 20 × 2,5 = **50 µm** → assessor "
+"correcte."
+
+#: ../../user_manual/ekos-tilt-correction.rst:142
+msgid ""
+"With a wrong step size (5.0 µm/step): 20 × 5.0 = **100 µm** → advisory "
+"overshoots 2×."
+msgstr ""
+"Amb una mida de pas incorrecta (5,0 µm/step): 20 × 5.0 = **100 µm** → "
+"assessor té excés de 2×."
+
+#: ../../user_manual/ekos-tilt-correction.rst:144
+msgid ""
+"The *direction* of the correction is right either way, but a wrong step size "
+"makes you overshoot or undershoot the magnitude on each iteration, requiring "
+"more passes to converge."
+msgstr ""
+"La *direcció* de la correcció és correcta de qualsevol manera, però una mida "
+"de pas incorrecta fa que superi o redueixi la magnitud en cada iteració, "
+"necessitant més passos per convergir."
+
+#: ../../user_manual/ekos-tilt-correction.rst:150
+msgid "Running the Aberration Inspector"
+msgstr "Execució de l'inspector d'aberració"
+
+#: ../../user_manual/ekos-tilt-correction.rst:152
+msgid ""
+"**Achieve focus first.** Before using the Aberration Inspector, run a "
+"**normal autofocus** on the full image (no mosaic mask) to bring the focuser "
+"near the correct position. You need a good V-curve with a clean solution — "
+"the Aberration Inspector sweeps around the current focus position, so if you "
+"are far from focus the tiles will not produce usable data."
+msgstr ""
+"**Assoliu primer l'enfocament.** Abans d'utilitzar l'Inspector d'aberració, "
+"executeu un **enfocament automàtic normal** de la imatge completa (sense "
+"màscara de mosaic) per a acostar l'enfocador prop de la posició correcta. "
+"Necessiteu una corba V bona amb una solució neta: l'Inspector d'aberració "
+"escombra al voltant de la posició actual del focus, de manera que si esteu "
+"lluny d'enfocar les tessel·les no es produiran dades utilitzables."
+
+#: ../../user_manual/ekos-tilt-correction.rst:157
+msgid ""
+"**Switch to the Mosaic Mask.** The mask is selected in the Focus module's "
+"settings. Open the Focus **Options** and find the **Mask** selector — it "
+"offers *Use all stars* (full image, the default for normal autofocus), *Ring "
+"Mask*, and *Mosaic Mask*. Choose **Mosaic Mask** for tilt measurement. "
+"Adjust the tile size so each tile captures enough stars (tiles around 256–"
+"512 px work well for most setups)."
+msgstr ""
+"**Canvieu a la màscara de mosaic.** La màscara està seleccionada a la "
+"configuració del mòdul d'enfocament. Obriu les **Opcions** d'enfocament i "
+"cerqueu el selector **Màscara**: ofereix *Utilitza totes les estrelles* "
+"(imatge completa, la predeterminada per a l'enfocament automàtic normal), "
+"*Màscara d'anell* i *Màscara de mosaic*. Trieu **Màscara de mosaic** per a "
+"la mesura de la inclinació. Ajusteu la mida de la tessel·la perquè cada "
+"tessel·la capti prou estrelles (les tessel·les al voltant de 256-512 px "
+"funcionen bé a la majoria de configuracions)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:162
+msgid ""
+"**Point to a star-rich field.** Open clusters are ideal. Avoid nebulae or "
+"regions with few stars — you need multiple stars in every tile for reliable "
+"curve fits."
+msgstr ""
+"**Apunteu a un camp ric en estrelles.** Els clústers oberts són ideals. "
+"Eviteu nebuloses o regions amb poques estrelles: necessiteu diverses "
+"estrelles en cada tessel·la per a ajustar-se a corbes fiables."
+
+#: ../../user_manual/ekos-tilt-correction.rst:167
+msgid ""
+"**Choosing a good spot in the sky.** Tilt measurement depends on clean, "
+"round star shapes and steady tracking across the whole sweep. For best "
+"results: pick a region with clear, well-separated stars and good contrast; "
+"ensure good mount performance, since tracking errors or drift during the "
+"sweep distort the per-tile HFR; and avoid areas where the mount tracks "
+"poorly. Targets very close to the **zenith** or right on the **meridian** "
+"can be problematic (near the zenith, small tracking moves cause large "
+"apparent motion; on the meridian, some mounts track less smoothly near the "
+"balance point). A field at a moderate altitude, well away from these, tends "
+"to give more consistent star shapes for measurement."
+msgstr ""
+"**Tria d'un bon punt al cel.** La mesura de la inclinació depèn de formes "
+"d'estrelles netes i rodones i un seguiment constant a través de tot "
+"l'escombrat. Per obtenir els resultats millors: trieu una regió amb "
+"estrelles clares i ben separades i un bon contrast; assegureu un bon "
+"rendiment de la muntura, ja que els errors de seguiment o la deriva durant "
+"l'escombratge distorsionen l'HFR per tessel·la; i eviteu les zones on la "
+"muntura segueixi malament. Els objectius molt propers al **zenit** o a la "
+"dreta del **meridià** poden ser problemàtics (prop del zenit, petits "
+"moviments de seguiment causen un gran moviment aparent; al meridià, algunes "
+"muntures segueixen menys suaument prop del punt d'equilibri). Un camp a una "
+"altitud moderada, molt lluny d'aquests, tendeix a donar formes estel·lars "
+"més coherents per a la mesura."
+
+#: ../../user_manual/ekos-tilt-correction.rst:177
+msgid ""
+"**Click \"Aberration Inspector\".** In the Focus module's Tools section, "
+"click the ``Aberration Inspector`` button. This starts a dedicated tiled "
+"autofocus run that sweeps through focus positions while measuring HFR in "
+"each mosaic tile independently."
+msgstr ""
+"**Feu clic a l'«Inspector d'aberració».** A la secció Eines del mòdul "
+"d'enfocament, feu clic al botó ``Inspector d'aberració``. Això inicia una "
+"execució de l'enfocament automàtic dedicat amb tessel·les que escombra a "
+"través de les posicions d'enfocament mentre es mesura HFR en cada tessel·la "
+"de mosaic de forma independent."
+
+#: ../../user_manual/ekos-tilt-correction.rst:183
+msgid ""
+"Consider using a larger step size for the Aberration Inspector run than for "
+"your normal autofocus. Because each tile has fewer stars, the per-tile V-"
+"curves can look bumpy with small steps; larger steps produce smoother curves "
+"and more reliable tile solutions."
+msgstr ""
+"Considereu utilitzar una mida de pas més gran per a l'execució de "
+"l'inspector d'aberració que per a l'enfocament automàtic normal. Com que "
+"cada tessel·la té menys estrelles, les corbes V per tessel·la es poden veure "
+"amb passos petits; els passos més grans produeixen corbes més suaus i "
+"solucions de tessel·les més fiables."
+
+#: ../../user_manual/ekos-tilt-correction.rst:188
+msgid ""
+"**Wait for completion.** When all tiles' V-curves are fit, the Aberration "
+"Inspector dialog appears automatically with the results."
+msgstr ""
+"**Espereu la compleció.** Quan totes les corbes V de les tessel·les estiguin "
+"ajustades, apareix automàticament el diàleg de l'inspector d'aberració amb "
+"els resultats."
+
+#: ../../user_manual/ekos-tilt-correction.rst:193
+msgid ""
+"The Tilt Correction Advisory section within the Aberration Inspector is only "
+"visible when either (a) a WandererAstro ETA is detected as connected, or (b) "
+"you manually enable the **Tilt Plate** checkbox in the Aberration Inspector "
+"toolbar. Otherwise the advisory panel stays hidden."
+msgstr ""
+"La secció Assessor de correcció d'inclinació dins de l'inspector d'aberració "
+"només és visible quan (a) es detecta una ETA de WandererAstro connectada, o "
+"(b) activeu manualment la casella de selecció **Placa d'inclinació** a la "
+"barra d'eines de l'inspector d'aberració. En cas contrari, el panell "
+"d'assessorament roman ocult."
+
+#: ../../user_manual/ekos-tilt-correction.rst:201
+msgid "Focus module after a successful Aberration Inspector run"
+msgstr ""
+"Mòdul d'enfocament després d'una execució de l'inspector d'aberració amb èxit"
+
+#: ../../user_manual/ekos-tilt-correction.rst:201
+msgid ".. image:: /images/ekos_tilt_focus_run.jpg"
+msgstr ".. image:: /images/ekos_tilt_focus_run.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:201
+msgid ""
+"Focus module after a successful Aberration Inspector run: 56 stars detected, "
+"HFR 1.32, R²=0.99. The mosaic mask grid is visible on the star field "
+"(right). The ``Aberration Inspector`` button in the Tools section triggers "
+"the tiled measurement run."
+msgstr ""
+"Mòdul d'enfocament després d'una execució exitosa de l'Inspector "
+"d'aberració: 56 estrelles detectades, HFR 1,32, R²=0,99. La quadrícula de la "
+"màscara de mosaic és visible al camp estrelles (dreta). El botó ``Inspector "
+"d'aberració`` de la secció Eines activa l'execució de la mesura amb "
+"tessel·les."
+
+#: ../../user_manual/ekos-tilt-correction.rst:207
+msgid "Understanding the Results"
+msgstr "Entendre els resultats"
+
+#: ../../user_manual/ekos-tilt-correction.rst:209
+msgid ""
+"The Aberration Inspector presents a per-tile table, a set of summary values, "
+"and a multi-tile V-curve graph. (See the :ref:`Aberration Inspector <ekos-"
+"focus-aberration-inspector>` reference in the Focus documentation for the "
+"full description of every control.)"
+msgstr ""
+"L'Inspector d'aberració presenta una taula per tessel·la, un conjunt de "
+"valors de resum i un gràfic de corba V multitessel·la. (Vegeu la referència :"
+"ref:`Inspector d'aberració <ekos-focus-aberration-inspector>` a la "
+"documentació del Focus per a la descripció completa de cada control.)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:213
+msgid ""
+"**Tile table** — each row is a mosaic tile (region of the sensor): the focus "
+"``Solution`` (steps), ``Delta (ticks)`` and ``Delta (µm)`` relative to the "
+"centre tile, the ``Num Stars`` used vs. detected, and the ``R²`` goodness-of-"
+"fit."
+msgstr ""
+"**Taula de tessel·les**, cada fila és una tessel·la de mosaic (regió del "
+"sensor): la ``Solució`` d'enfocament (passos), ``Delta (marques)`` i ``Delta "
+"(µm)`` en relació a la tessel·la central, el ``Nombre d'estrelles`` "
+"utilitzat vs. detectades, i la bondat d'ajustament ``R²``."
+
+#: ../../user_manual/ekos-tilt-correction.rst:217
+msgid "**Summary values**"
+msgstr "**Valors de resum**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:219
+msgid ""
+"``Backfocus Δ`` — how far the sensor is from optimal backfocus distance (± "
+"µm)."
+msgstr ""
+"``Focus per darrera Δ``, a quina distància es troba el sensor des de la "
+"distància òptima de focus per darrera (± µm)."
+
+# skip-rule: t-sp_tpc
+#: ../../user_manual/ekos-tilt-correction.rst:220
+msgid "``Left-Right Tilt`` — tilt along the horizontal axis (µm and %)."
+msgstr ""
+"``Inclinació esquerra-dreta``, inclinació al llarg de l'eix horitzontal (µm "
+"i %)."
+
+# skip-rule: t-sp_tpc
+#: ../../user_manual/ekos-tilt-correction.rst:221
+msgid "``Top-Bottom Tilt`` — tilt along the vertical axis (µm and %)."
+msgstr ""
+"``Inclinació dalt-baix``, inclinació al llarg de l'eix vertical (µm i %)."
+
+# skip-rule: t-sp_tpc
+#: ../../user_manual/ekos-tilt-correction.rst:222
+msgid "``Total Tilt`` — combined vector magnitude (µm and %)."
+msgstr "``Inclinació total``, magnitud vectorial combinada (µm i %)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:224
+#, fuzzy
+msgid ""
+"**Multi-tile V-curve** — all tiles' V-curves overlaid. In a tilted sensor "
+"the curves are shifted horizontally relative to each other; the minimum of "
+"each curve occurs at a different focuser position."
+msgstr ""
+"**Curva en V de múltiples tessel·les** — totes les corbes en V de les  "
+"tessel·les superposades. En un sensor inclinat, les corbes es desplacen "
+"horitzontalment en relació entre si; el mínim de cada corba es produeix en "
+"una posició d'enfocador diferent."
+
+#: ../../user_manual/ekos-tilt-correction.rst:231
+msgid "Aberration Inspector multi-tile view"
+msgstr "Vista multitessel·la de l'inspector d'aberració"
+
+#: ../../user_manual/ekos-tilt-correction.rst:231
+msgid ".. image:: /images/ekos_tilt_abins_multitile.jpg"
+msgstr ".. image:: /images/ekos_tilt_abins_multitile.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:231
+#, fuzzy
+msgid ""
+"Aberration Inspector showing all 5 tiles (TL, TR, C, BL, BR). The TL curve "
+"(red) diverges significantly from the others, indicating the top-left region "
+"is further from ideal focus. Total tilt: 30 µm. The 3D visualization (right) "
+"shows the tilt plane."
+msgstr ""
+"Inspector d'aberració que mostra les 5 tessel·les (TL, TR, C, BL, BR). La "
+"corba TL (vermella) divergeix significativament de les altres, indicant que "
+"la regió de dalt a l'esquerra està més lluny del focus ideal. Inclinació "
+"total: 30  m. La visualització en 3D (dreta) mostra el pla inclinat."
+
+#: ../../user_manual/ekos-tilt-correction.rst:237
+msgid "Tilt Correction Advisory"
+msgstr "Assessor de correcció d'inclinació"
+
+#: ../../user_manual/ekos-tilt-correction.rst:239
+#, fuzzy
+msgid ""
+"Below the measurement results, the **Tilt Correction Advisory** translates "
+"the raw measurements into specific mechanical adjustments."
+msgstr ""
+"Per sota dels resultats de la mesura, el **Tilt Correction Advisory** "
+"tradueix les mesures en brut en ajustos mecànics específics."
+
+#: ../../user_manual/ekos-tilt-correction.rst:243
+msgid "Configuration"
+msgstr "Configuració"
+
+#: ../../user_manual/ekos-tilt-correction.rst:249
+msgid "Setting"
+msgstr "Paràmetre"
+
+#: ../../user_manual/ekos-tilt-correction.rst:250
+msgid "Description"
+msgstr "Descripció"
+
+#: ../../user_manual/ekos-tilt-correction.rst:251
+msgid "Example"
+msgstr "Exemple"
+
+#: ../../user_manual/ekos-tilt-correction.rst:252
+msgid "**Plate**"
+msgstr "**Placa**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:253
+#, fuzzy
+msgid "3-point or 4-point geometry"
+msgstr "Geometria de 3 o 4 punts"
+
+#: ../../user_manual/ekos-tilt-correction.rst:254
+#, fuzzy
+msgid "3-point"
+msgstr "3 punts"
+
+#: ../../user_manual/ekos-tilt-correction.rst:255
+msgid "**Radius**"
+msgstr "**Radi**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:256
+#, fuzzy
+msgid "Bolt-circle radius in mm (centre to screw)"
+msgstr "Radi de cercle de bolt en mm (centre a caragolar)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:257
+msgid "64.0 mm (ETA M54)"
+msgstr "64,0 mm (ETA M54)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:258
+msgid "**Thread**"
+msgstr "**Fil**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:259
+#, fuzzy
+msgid "Screw thread type (determines pitch)"
+msgstr "Tipus de fil d'execució (determina el to)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:260
+msgid "Wanderer ETA (0.50 mm)"
+msgstr "Wanderer ETA (0.50 mm)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:261
+msgid "**Pitch**"
+msgstr "**Capcineig**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:262
+#, fuzzy
+msgid "mm per full turn of the adjustment screw"
+msgstr "mm per torn complet del caragol d'ajust"
+
+#: ../../user_manual/ekos-tilt-correction.rst:263
+#: ../../user_manual/ekos-tilt-correction.rst:588
+#: ../../user_manual/ekos-tilt-correction.rst:667
+#, fuzzy
+msgid "0.50 mm/turn"
+msgstr "0,50 mm/gir"
+
+#: ../../user_manual/ekos-tilt-correction.rst:264
+msgid "**Rotation**"
+msgstr "**Gir**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:265
+#, fuzzy
+msgid "Camera body rotation (visual aid only)"
+msgstr "Rotació del cos de la càmera (només ajuda visual)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:266
+msgid "0° or 10°"
+msgstr "0° o 10°"
+
+#: ../../user_manual/ekos-tilt-correction.rst:267
+msgid "**Mode**"
+msgstr "**Mode**"
+
+#: ../../user_manual/ekos-tilt-correction.rst:268
+#, fuzzy
+msgid "How corrections are presented"
+msgstr "Com es presenten les correccions"
+
+#: ../../user_manual/ekos-tilt-correction.rst:269
+#, fuzzy
+msgid "Push-only (from zero) or Relative (± deltas)"
+msgstr "Push-only (a partir de zero) o Relative () deltas)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:273
+#, fuzzy
+msgid ""
+"**Setting the radius and thread for your plate.** The radius is the bolt-"
+"circle radius — the distance from the centre of the plate to an adjustment "
+"screw/motor. Known values are listed in `Supported Tilt Plates`_ below. If "
+"your plate is not listed, check the manufacturer's website for a technical "
+"drawing, or measure it yourself (centre to screw). The thread type sets the "
+"pitch (mm per turn), which is only used to convert the correction into a "
+"\"number of turns\" — an approximate radius still gives the correct "
+"direction and a close magnitude."
+msgstr ""
+"**Configuració del radi i del fil per a la placa.** El radi és el radi de "
+"cercle de forrellat — la distància des del centre de la placa fins a un "
+"caragol/motor d'ajust. Els valors coneguts es llisten a .Supported Tilt "
+"Plates. a continuació. Si la teva placa no està llistada, consulta el lloc "
+"web del fabricant per a un dibuix tècnic, o mesura'l tu mateix (centre a "
+"caragolar). El tipus de fil estableix el to (mm per torn), que només "
+"s'utilitza per convertir la correcció en un \"nombre de voltes\" - un radi "
+"aproximat encara dona la direcció correcta i una magnitud propera."
+
+#: ../../user_manual/ekos-tilt-correction.rst:282
+#, fuzzy
+msgid "Modes explained"
+msgstr "Modes explicats"
+
+#: ../../user_manual/ekos-tilt-correction.rst:284
+#, fuzzy
+msgid ""
+"**Push-only (from zero)** — all values are shifted positive (minimum = 0). "
+"Use when starting from a fully retracted / zeroed position. Recommended for "
+"first-time tuning and for push-only plates like the ETA that cannot go "
+"negative."
+msgstr ""
+"**Push-only (de zero)** — tots els valors es desplacen positius (mínim ). "
+"0). Utilitza quan comenci des d'una posició totalment retractada / zero. "
+"Recomanat per a la primera afinació i per a plaques només push com l'ETA que "
+"no poden anar en negatiu."
+
+#: ../../user_manual/ekos-tilt-correction.rst:287
+#, fuzzy
+msgid ""
+"**Relative (± deltas)** — signed values to apply on top of the current "
+"position; the values sum to zero (symmetric correction). Use for iterative "
+"fine-tuning when the screws are already mid-range."
+msgstr ""
+"**Relatiu ( the deltes)** — valors signats a aplicar a sobre de la posició "
+"actual; els valors sumen a zero (correcció simètrica). S'utilitza per a "
+"l'ajust fi iteratiu quan els caragols ja són de rang mitjà."
+
+#: ../../user_manual/ekos-tilt-correction.rst:292
+msgid "Visual diagram"
+msgstr "Diagrama visual"
+
+#: ../../user_manual/ekos-tilt-correction.rst:294
+#, fuzzy
+msgid ""
+"The diagram shows the tilt plate as seen from **behind the camera** (the "
+"side facing you when you stand behind the telescope). Points are color-"
+"coded: **red** = increase / push out; **blue** = decrease / pull in (4-point "
+"plates only). For 3-point plates (ETA): Point 1 is upper-right (rear view), "
+"Point 2 is bottom-centre, Point 3 is upper-left."
+msgstr ""
+"El diagrama mostra la placa inclinada com es veu des de **darrere de la "
+"càmera** (el costat que s'enfronta quan es troba darrere del telescopi). Els "
+"punts estan codificats en color: **vermell** ). augmenta / empeny; "
+"**blau** ). disminueix / tira només en plaques de 4 punts. Per a plaques de "
+"3 punts (ETA): el punt 1 és superior-dret (vista posterior), el punt 2 és "
+"inferior-centre, el punt 3 és superior-esquerra."
+
+#: ../../user_manual/ekos-tilt-correction.rst:302
+#, fuzzy
+msgid "Tilt Correction Advisory, first measurement"
+msgstr "Tilt Correction Advisory, primera mesura"
+
+#: ../../user_manual/ekos-tilt-correction.rst:302
+msgid ".. image:: /images/ekos_tilt_advisory_run1.jpg"
+msgstr ".. image:: /images/ekos_tilt_advisory_run1.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:302
+#, fuzzy
+msgid ""
+"Aberration Inspector Run 1: total tilt 29 µm. The Tilt Correction Advisory "
+"shows Point 1 (upper-right) +0.119 mm (+0.2 turns), Point 2 (bottom) +0.231 "
+"mm (+0.5 turns), Point 3 no change. The ``Apply to ETA`` button sends these "
+"corrections directly to the ETA."
+msgstr ""
+"Inspector d'aberració Run 1: inclinació total 29 μm. El Tilt Correction "
+"Advisory mostra el punt 1 (superior-dret) +0.119 mm (+0.2 girs), el punt 2 "
+"(inferior) +0.231 mm (+0.5 girs), el punt 3 sense canvi. El botó  TheAplica "
+"a ETA. envia aquestes correccions directament a l'ETA."
+
+#: ../../user_manual/ekos-tilt-correction.rst:307
+#, fuzzy
+msgid "4-point plate example"
+msgstr "Exemple de placa de 4 punts"
+
+#: ../../user_manual/ekos-tilt-correction.rst:309
+#, fuzzy
+msgid ""
+"For 4-point push/pull plates (e.g. the ToupTek M42 Tilter) the advisory "
+"shows corrections for all four corner screws. Each screw affects both tilt "
+"axes simultaneously because of the 45° corner geometry."
+msgstr ""
+"Per a plaques de 4 punts d'empenta/pagament (p. ex. el ToupTek M42 Tilter) "
+"l'assessorament mostra correccions per als quatre caragols de cantonada. "
+"Cada caragol afecta els dos eixos inclinats simultàniament a causa de la "
+"geometria de la cantonada de 45.."
+
+#: ../../user_manual/ekos-tilt-correction.rst:316
+#, fuzzy
+msgid "4-point plate advisory"
+msgstr "Assessorament de placa de 4 punts"
+
+#: ../../user_manual/ekos-tilt-correction.rst:316
+msgid ".. image:: /images/ekos_tilt_advisory_4point.jpg"
+msgstr ".. image:: /images/ekos_tilt_advisory_4point.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:316
+#, fuzzy
+msgid ""
+"Aberration Inspector with a 4-point plate selected (Radius 46.0 mm, Thread "
+"M4 fine 0.50 mm, Rotation 20°). All 5 tiles fit well (R² 0.91–0.98). Total "
+"tilt: 4 µm — nearly perfect. The advisory shows tiny corrections (Screw 1 "
+"top-left −0.012 mm, Screw 4 bottom-right +0.012 mm) and an \"apply all "
+"together, or Screw 1 alone −0.025 mm\" note."
+msgstr ""
+"Inspector d'aberració amb una placa de 4 punts seleccionada (Radi 46.0 mm, "
+"Fil M4 fi 0.50 mm, Rotació 20).). Totes 5 tessel·les s'ajusten bé (R2 0.91–"
+"0.98). Inclinació total: 4 μm - gairebé perfecta. L'assessorament mostra "
+"petites correccions (Screw 1 top-left 0.00.012 mm, Screw 4 bottom-right "
+"+0.012 mm) i una nota \"apply all together, or Screw 1 alone ,0.025 mm\"."
+
+#: ../../user_manual/ekos-tilt-correction.rst:323
+#, fuzzy
+msgid "Applying Corrections (WandererAstro ETA)"
+msgstr "Aplicació de correccions (WandererAstro ETA)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:326
+#, fuzzy
+msgid "The ETA M54 tilt plate"
+msgstr "La placa ETA M54"
+
+#: ../../user_manual/ekos-tilt-correction.rst:328
+#, fuzzy
+msgid ""
+"The WandererAstro ETA M54 is a motorized 3-point tilt adjuster with three "
+"independent stepper motors and encoder feedback, 0–1.200 mm travel per "
+"point, 0.50 mm/turn thread pitch, 0.002 mm (2 µm) positioning accuracy, and "
+"USB-serial control via INDI."
+msgstr ""
+"El WandererAstro ETA M54 és un ajustador motoritzat de 3 punts amb tres "
+"motors stepper independents i retroalimentació del codificador, recorregut "
+"de 0 a 1.200 mm per punt, 0.50 mm / gir de fil, 0.002 mm (2 mm) precisió de "
+"posicionament, i control USB-serial via INDI."
+
+#: ../../user_manual/ekos-tilt-correction.rst:333
+#, fuzzy
+msgid "INDI control panel"
+msgstr "Tauler de control INDI"
+
+#: ../../user_manual/ekos-tilt-correction.rst:335
+#, fuzzy
+msgid ""
+"When connected, the ETA appears in the INDI Control Panel with **Target "
+"Positions** (set each point 0.000–1.200 mm), **Current Positions** (real-"
+"time encoder readback), **Firmware** version, a **Zero All** action, and a "
+"**Backfocus Offset** that applies a uniform offset to all three points at "
+"once (handy for quickly compensating for the glass thickness of different "
+"filters)."
+msgstr ""
+"Quan està connectat, l'ETA apareix al Panell de Control INDI amb **posicions "
+"de giny** (estableix cada punt 0,000–1.200 mm), **posicions actuals** "
+"(retroalimentació del codificador en temps real), versió **Firmware**, una "
+"acció **Zero All**, i un **Compensació de focus** que aplica un desplaçament "
+"uniforme als tres punts alhora (mà per compensar ràpidament el gruix de "
+"vidre dels diferents filtres)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:344
+#, fuzzy
+msgid "ETA INDI control panel"
+msgstr "Panell de control INDI d'ETA"
+
+#: ../../user_manual/ekos-tilt-correction.rst:344
+msgid ".. image:: /images/ekos_tilt_eta_indi_panel.jpg"
+msgstr ".. image:: /images/ekos_tilt_eta_indi_panel.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:344
+#, fuzzy
+msgid ""
+"WandererAstro ETA M54 in the INDI Control Panel. Current positions show "
+"P1=0.200, P2=0.400, P3=0.000 mm; firmware version 20251123."
+msgstr ""
+"WandererAstro ETA M54 en el Panell de Control INDI. Les posicions actuals "
+"mostren P10.0.200, P2.0.400, P3.0.000 mm; versió de microprogramari 20251123."
+
+#: ../../user_manual/ekos-tilt-correction.rst:350
+#, fuzzy
+msgid "ETA after applying corrections"
+msgstr "ETA després d'aplicar correccions"
+
+#: ../../user_manual/ekos-tilt-correction.rst:350
+msgid ".. image:: /images/ekos_tilt_eta_applied.jpg"
+msgstr ".. image:: /images/ekos_tilt_eta_applied.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:350
+#, fuzzy
+msgid ""
+"ETA with a correction applied: P1=0.100, P2=0.330, P3=0.170 mm — different "
+"values per point to compensate for sensor tilt."
+msgstr ""
+"ETA amb correcció aplicada: P10.0.100, P2,0.330, P3,0.170 mm — valors "
+"diferents per punt per compensar la inclinació del sensor."
+
+#: ../../user_manual/ekos-tilt-correction.rst:354
+#, fuzzy
+msgid "Automated apply"
+msgstr "Aplicació automàtica"
+
+#: ../../user_manual/ekos-tilt-correction.rst:356
+#, fuzzy
+msgid ""
+"When the Aberration Inspector detects a connected ETA (and the plate is set "
+"to 3-point), the ``Apply to ETA`` button becomes active. Clicking it reads "
+"the current ETA positions, adds the advisory delta to each point, shifts all "
+"values to stay within 0.000–1.200 mm, and sends the targets sequentially "
+"(Point 1 → wait for arrival → Point 2 → …). A confirmation is displayed, e."
+"g. \"Applied to ETA: P1→X.XXX P2→X.XXX P3→X.XXX mm\"."
+msgstr ""
+"Quan l'Inspector d'aberració detecta un ETA connectat (i la placa "
+"s'estableix a 3 punts), el botó  theAplica a ETA. es torna actiu. En fer-hi "
+"clic es llegeixen les posicions actuals de l'ETA, s'afegeix el delta "
+"assessor a cada punt, es desplaça tots els valors per mantenir-se dins de "
+"0,000-1.200 mm, i s'envien els objectius seqüencialment (punt 1 . esperar "
+"l'arribada . punt 2 . ...). Es mostra una confirmació, p. ex. «Applied to "
+"ETA: P1\".X.XXX P2\".X.XXX P3\".X.XXX mm»."
+
+#: ../../user_manual/ekos-tilt-correction.rst:365
+#, fuzzy
+msgid "After Apply to ETA"
+msgstr "Després d'aplicar a l'ETA"
+
+#: ../../user_manual/ekos-tilt-correction.rst:365
+msgid ".. image:: /images/ekos_tilt_advisory_applied.jpg"
+msgstr ".. image:: /images/ekos_tilt_advisory_applied.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:365
+#, fuzzy
+msgid ""
+"After clicking ``Apply to ETA`` the status shows \"Applied to ETA: P1→0.119 "
+"P2→0.571 P3→0.065 mm. Run autofocus again to re-measure.\" and the button "
+"changes to \"Done\"."
+msgstr ""
+"Després de fer clic a  theAplica a ETA. l'estat mostra \"Aplicat a ETA: "
+"P1.0.119 P2.0.571 P3 P0.065 mm. Torneu a executar l'enfocament automàtic per "
+"a tornar a mesurar.\" i el botó canvia a «Fet»."
+
+#: ../../user_manual/ekos-tilt-correction.rst:370
+msgid "Iterative Workflow"
+msgstr "Flux de treball iteratiu"
+
+#: ../../user_manual/ekos-tilt-correction.rst:372
+#, fuzzy
+msgid ""
+"Tilt correction is iterative — one pass rarely achieves perfect correction, "
+"due to mechanical hysteresis, measurement noise, and the simplification of "
+"treating tilt as purely planar."
+msgstr ""
+"La correcció de la inclinació és iterativa: un pas rarament aconsegueix una "
+"correcció perfecta, a causa de la histèresi mecànica, el soroll de mesura i "
+"la simplificació de tractar la inclinació com a purament planar."
+
+#: ../../user_manual/ekos-tilt-correction.rst:377
+msgid "Recommended procedure"
+msgstr "Procediment recomanat"
+
+#: ../../user_manual/ekos-tilt-correction.rst:379
+#, fuzzy
+msgid ""
+"Start with the ETA at zero (or all screws fully retracted for manual plates)."
+msgstr ""
+"Comença amb l'ETA a zero (o tots els caragols totalment retractats per a les "
+"plaques manuals)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:380
+#, fuzzy
+msgid ""
+"**Run 1**: run the Aberration Inspector → read the tilt → apply the "
+"correction."
+msgstr ""
+"**Run 1**: executeu l'Inspector d'aberració  the llegiu la inclinació . "
+"apliqueu la correcció."
+
+#: ../../user_manual/ekos-tilt-correction.rst:381
+#, fuzzy
+msgid "**Run 2**: run again → the tilt should be significantly reduced."
+msgstr ""
+"**Run 2**: executa una altra vegada  the la inclinació s'ha de reduir "
+"significativament."
+
+#: ../../user_manual/ekos-tilt-correction.rst:382
+#, fuzzy
+msgid "**Run 3** (if needed): fine-tune to reach the target."
+msgstr "**Run 3** (si cal): afina per arribar a l'objectiu."
+
+#: ../../user_manual/ekos-tilt-correction.rst:385
+#, fuzzy
+msgid "Example — real-world convergence"
+msgstr "Exemple — convergència en el món real"
+
+#: ../../user_manual/ekos-tilt-correction.rst:391
+msgid "Run"
+msgstr "Execució"
+
+#: ../../user_manual/ekos-tilt-correction.rst:392
+#: ../../user_manual/ekos-tilt-correction.rst:423
+msgid "Total Tilt"
+msgstr "Inclinació total"
+
+#: ../../user_manual/ekos-tilt-correction.rst:393
+msgid "Action"
+msgstr "Acció"
+
+#: ../../user_manual/ekos-tilt-correction.rst:394
+msgid "1"
+msgstr "1"
+
+#: ../../user_manual/ekos-tilt-correction.rst:395
+msgid "29 µm"
+msgstr "29 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:396
+msgid "Applied P1=+0.119, P2=+0.231 mm"
+msgstr "Aplicat P1=+0,119, P2=+0,231 mm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:397
+msgid "2"
+msgstr "2"
+
+#: ../../user_manual/ekos-tilt-correction.rst:398
+msgid "6 µm"
+msgstr "6 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:399
+msgid "Applied P1=+0.024, P2=+0.046 mm"
+msgstr "Aplicat P1=+0,024, P2=+0,046 mm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:400
+msgid "3"
+msgstr "3"
+
+#: ../../user_manual/ekos-tilt-correction.rst:401
+msgid "0 µm"
+msgstr "0 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:402
+msgid "No change needed — perfect"
+msgstr "No cal cap canvi — perfecte"
+
+#: ../../user_manual/ekos-tilt-correction.rst:407
+msgid "Run 2, tilt reduced to 6 µm"
+msgstr "Execució 2, inclinació reduïda a 6 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:407
+msgid ".. image:: /images/ekos_tilt_run2.jpg"
+msgstr ".. image:: /images/ekos_tilt_run2.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:407
+#, fuzzy
+msgid ""
+"After the first correction, Run 2 shows total tilt reduced from 29 µm to "
+"just 6 µm. The advisory now suggests much smaller adjustments (P1=+0.024, P2="
+"+0.046 mm)."
+msgstr ""
+"Després de la primera correcció, Run 2 mostra la inclinació total reduïda de "
+"29 mm a només 6 µm. L'assessorament ara suggereix ajustos molt més petits "
+"(P1++0.024, P2,+0.046 mm)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:413
+#, fuzzy
+msgid "Run 3, 0 µm tilt achieved"
+msgstr "Execució 3, 0 µm inclinació assolida"
+
+#: ../../user_manual/ekos-tilt-correction.rst:413
+msgid ".. image:: /images/ekos_tilt_run3.jpg"
+msgstr ".. image:: /images/ekos_tilt_run3.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:413
+#, fuzzy
+msgid ""
+"Run 3: total tilt 0 µm. All three points show \"no change\" — the sensor is "
+"perpendicular to the optical axis. This is the target state."
+msgstr ""
+"Execució 3: inclinació total 0 .m. Els tres punts mostren \"sense canvi\": "
+"el sensor és perpendicular a l'eix òptic. Aquest és l'estat objectiu."
+
+#: ../../user_manual/ekos-tilt-correction.rst:417
+msgid "What counts as \"good\"?"
+msgstr "Què compta com a «bo»?"
+
+#: ../../user_manual/ekos-tilt-correction.rst:424
+msgid "Quality"
+msgstr "Qualitat"
+
+#: ../../user_manual/ekos-tilt-correction.rst:425
+#: ../../user_manual/ekos-tilt-correction.rst:584
+msgid "Notes"
+msgstr "Notes"
+
+#: ../../user_manual/ekos-tilt-correction.rst:426
+msgid "< 20 µm"
+msgstr "< 20 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:427
+msgid "Excellent"
+msgstr "Excel·lent"
+
+#: ../../user_manual/ekos-tilt-correction.rst:428
+msgid "Indistinguishable from perfect in most images"
+msgstr "Indistingible de perfecte en la majoria d'imatges"
+
+#: ../../user_manual/ekos-tilt-correction.rst:429
+msgid "20–50 µm"
+msgstr "20–50 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:430
+msgid "Good"
+msgstr "Bé"
+
+#: ../../user_manual/ekos-tilt-correction.rst:431
+msgid "Adequate for most setups"
+msgstr "Suficient per a la majoria de configuracions"
+
+#: ../../user_manual/ekos-tilt-correction.rst:432
+msgid "50–100 µm"
+msgstr "50–100 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:433
+msgid "Acceptable"
+msgstr "Acceptable"
+
+#: ../../user_manual/ekos-tilt-correction.rst:434
+msgid "OK for short focal length / fast scopes"
+msgstr "Bo per a telescopis de distància focal curta / ràpids"
+
+#: ../../user_manual/ekos-tilt-correction.rst:435
+msgid "> 100 µm"
+msgstr "> 100 µm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:436
+msgid "Needs correction"
+msgstr "Cal correcció"
+
+#: ../../user_manual/ekos-tilt-correction.rst:437
+msgid "Visible star-shape degradation in corners"
+msgstr "Degradació visible de les formes d'estrelles a les cantonades"
+
+#: ../../user_manual/ekos-tilt-correction.rst:440
+msgid "Tips for convergence"
+msgstr "Consells de convergència"
+
+#: ../../user_manual/ekos-tilt-correction.rst:442
+#, fuzzy
+msgid ""
+"Use the **same star field** for each iteration (different fields can "
+"introduce noise)."
+msgstr ""
+"Utilitzeu el **camp estrellat igual** per a cada iteració (camps diferents "
+"poden introduir soroll)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:443
+#, fuzzy
+msgid ""
+"Wait for **stable seeing** — poor seeing adds noise to the tile measurements."
+msgstr ""
+"Espereu a **veure estable** — veure malament afegeix soroll a les mesures de "
+"la tessel·la."
+
+#: ../../user_manual/ekos-tilt-correction.rst:444
+#, fuzzy
+msgid ""
+"Don't over-correct: if the advisory says 0.4 mm, consider applying 0.3 mm "
+"first."
+msgstr ""
+"No sobrecorrecte: si l'assessorament diu 0,4 mm, considereu aplicar 0,3 mm "
+"primer."
+
+#: ../../user_manual/ekos-tilt-correction.rst:445
+#, fuzzy
+msgid "Fix **backfocus first** if ``Backfocus Δ`` is large (> 50 µm)."
+msgstr ""
+"Esmenar el **foc enrere primer** si el ).focus ). és gran ( 50 50 ).m)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:446
+#, fuzzy
+msgid ""
+"Re-run after any mechanical change to the imaging train (camera rotation, "
+"filter swap)."
+msgstr ""
+"Torna a córrer després de qualsevol canvi mecànic al tren d'imatges (gir de "
+"la càmera, intercanvi de filtres)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:450
+#, fuzzy
+msgid "When Tilt Cannot Be Measured (Large Tilt)"
+msgstr "Quan la inclinació no es pot mesurar (gran inclinació)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:453
+#, fuzzy
+msgid "The problem"
+msgstr "El problema"
+
+#: ../../user_manual/ekos-tilt-correction.rst:455
+#, fuzzy
+msgid ""
+"When sensor tilt is very large (> ~100 µm), some mosaic tiles' focus falls "
+"entirely outside the autofocus sweep range. Their V-curve cannot be fit (R² "
+"= 0.00, Solution = 0), and the precise tilt calculation returns **N/A** — "
+"the Aberration Inspector cannot safely report a tilt value. This typically "
+"happens when setting up a new imaging train for the first time, after the "
+"ETA has been zeroed or the tilt plate removed/reinstalled, or after a major "
+"mechanical change (camera swap, rotator adjustment)."
+msgstr ""
+"Quan la inclinació del sensor és molt gran ( 100 100 )µm), el focus "
+"d'algunes tessel·les de mosaic cau completament fora del rang d'escombrat de "
+"l'enfocament automàtic. La seva corba V no pot ser ajustada (R2 , 0.00, "
+"Solució  the 0), i el càlcul precís de la inclinació retorna **N/A** — "
+"l'Inspector d'aberració no pot informar amb seguretat d'un valor "
+"d'inclinació. Això sol passar quan s'estableix un nou tren d'imatges per "
+"primera vegada, després que l'ETA s'hagi zero o la placa d'inclinació "
+"eliminada/reinstal·lada, o després d'un canvi mecànic important (intercanvi "
+"de càmeres, ajust del rotor)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:463
+#, fuzzy
+msgid "How it looks in the Aberration Inspector"
+msgstr "Com es veu en l'inspector d'aberració"
+
+#: ../../user_manual/ekos-tilt-correction.rst:465
+#, fuzzy
+msgid ""
+"Some tiles show \"Solution: 0, R²: 0.00\" and the Left-Right, Top-Bottom and "
+"Total Tilt all read **N/A**. The advisory diagram shows \"No tilt data\" and "
+"the ``Apply to ETA`` button is disabled."
+msgstr ""
+"Algunes tessel·les mostren \"Solució: 0, R2: 0,00\" i la inclinació esquerra-"
+"dreta, superior i total tot llegeix **N/A**. El diagrama d'assessorament "
+"mostra \"No hi ha dades inclinades\" i el botó  theAplica a ETA. està "
+"desactivat."
+
+#: ../../user_manual/ekos-tilt-correction.rst:472
+#, fuzzy
+msgid "Aberration Inspector, no tilt data (Run 6)"
+msgstr "Inspector d'aberració, sense dades d'inclinació (Run 6)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:472
+msgid ".. image:: /images/ekos_tilt_notiltdata_run6.jpg"
+msgstr ".. image:: /images/ekos_tilt_notiltdata_run6.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:472
+#, fuzzy
+msgid ""
+"Run 6: Top Left, Top Right and Bottom Right tiles failed to fit (Solution 0, "
+"R² 0.00, 0 usable stars). Only Centre (R²=0.50) and Bottom Left (R²=0.99) "
+"produced valid curves. All tilt values read \"N/A\" and the diagram shows "
+"\"No tilt data\"."
+msgstr ""
+"Executa 6: Les tessel·les superior esquerra, superior dreta i inferior dreta "
+"no s'han pogut ajustar (Solució 0, R2 0.00, 0 estrelles utilitzables). Només "
+"el centre (R20.0.50) i la part inferior esquerra (R2.0.99) van produir "
+"corbes vàlides. Tots els valors d'inclinació llegeixen \"N/A\" i el diagrama "
+"mostra \"No hi ha dades d'inclinació\"."
+
+#: ../../user_manual/ekos-tilt-correction.rst:479
+#, fuzzy
+msgid "Aberration Inspector, no tilt data with diverging curves (Run 8)"
+msgstr ""
+"Inspector d'aberració, sense dades inclinades amb corbes divergents (Run 8)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:479
+msgid ".. image:: /images/ekos_tilt_notiltdata_run8.jpg"
+msgstr ".. image:: /images/ekos_tilt_notiltdata_run8.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:479
+#, fuzzy
+msgid ""
+"Run 8: same \"No tilt data\" state, but here three tiles fit (Centre "
+"R²=1.00, Bottom Left R²=1.00, Bottom Right R²=0.79) while the two Top tiles "
+"still fail. Notice how the Bottom Right curve (red) bottoms out far to the "
+"right of the others — a clear visual signature of significant tilt, even "
+"though a precise value cannot be computed because the Top tiles never "
+"reached focus."
+msgstr ""
+"Executa 8: el mateix estat de \"No inclinar dades\", però aquí hi caben tres "
+"tessel·les (Centre R21.1.00, Baix Esquerra R2,1.00, Baix Esquerra R2.0.79) "
+"mentre que les dues tessel·les superiors encara fallen. Observeu com la "
+"corba de baix a la dreta (vermell) surt molt a la dreta dels altres - una "
+"signatura visual clara d'inclinació significativa, tot i que no es pot "
+"calcular un valor precís perquè les tessel·les superiors mai van arribar al "
+"focus."
+
+#: ../../user_manual/ekos-tilt-correction.rst:486
+#, fuzzy
+msgid "Guessing the direction from the focus sweep"
+msgstr "S'està calculant la direcció des de l'escombrat del focus"
+
+#: ../../user_manual/ekos-tilt-correction.rst:488
+#, fuzzy
+msgid ""
+"Even when a precise value is not available, you can often **guess the tilt "
+"direction by watching the focus sweep**. As the focuser moves through its "
+"range, the in-focus region of the sensor migrates across the field. If the "
+"sharp-star region moves from the upper part of the sensor to the lower part "
+"(or left to right) during the sweep, that tells you which edge reaches focus "
+"first — and therefore which way the sensor is tilted. The two frames below "
+"are from the **same sweep** at different focuser positions:"
+msgstr ""
+"Fins i tot quan un valor precís no està disponible, sovint podeu **convidar "
+"la direcció de la inclinació observant l'escombrat del focus**. A mesura que "
+"l'enfocador es mou a través del seu rang, la regió d'enfocament del sensor "
+"migra a través del camp. Si la regió de l'estrella afilada es mou des de la "
+"part superior del sensor a la part inferior (o d'esquerra a dreta) durant "
+"l'escombrat, això indica quina vora arriba al focus primer - i per tant, de "
+"quina manera s'inclina el sensor. Els dos fotogrames següents són del "
+"**mateix escombrat** a diferents posicions de l'enfocador:"
+
+#: ../../user_manual/ekos-tilt-correction.rst:498
+#, fuzzy
+msgid "Focus sweep, early — upper tiles in focus"
+msgstr ""
+"Ajustament de l'enfocament, primerenc — les tessel·les superiors en el focus"
+
+#: ../../user_manual/ekos-tilt-correction.rst:498
+msgid ".. image:: /images/ekos_tilt_sweep_early.jpg"
+msgstr ".. image:: /images/ekos_tilt_sweep_early.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:498
+#, fuzzy
+msgid ""
+"Early in the sweep (focuser ~6807): the sharp stars and their HFR values are "
+"concentrated in the **upper** tiles, while the lower tiles are still out of "
+"focus. The V-curve is just starting."
+msgstr ""
+"Al principi de l'escombrat (focuser 6807): les estrelles afilades i els seus "
+"valors HFR es concentren en les tessel·les **superiors**, mentre que les  "
+"tessel·les inferiors encara estan fora de focus. La corba V està començant."
+
+#: ../../user_manual/ekos-tilt-correction.rst:505
+#, fuzzy
+msgid "Focus sweep, later — centre/lower tiles in focus"
+msgstr ""
+"Ajust de l'enfocament, més tard — centre/baixa les tessel·les en el focus"
+
+#: ../../user_manual/ekos-tilt-correction.rst:505
+msgid ".. image:: /images/ekos_tilt_sweep_later.jpg"
+msgstr ".. image:: /images/ekos_tilt_sweep_later.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:505
+#, fuzzy
+msgid ""
+"Later in the same sweep (focuser ~6764): the sharp-star region has moved "
+"down into the **centre and lower** tiles and the V-curve is nearly complete. "
+"The in-focus band migrated from top to bottom, a strong hint that the sensor "
+"is tilted along the top-bottom axis and which side to raise."
+msgstr ""
+"Més tard en el mateix escombrat (focuser 6764): la regió de l'estrella "
+"afilada s'ha mogut cap avall a les tessel·les del **centre i inferior** i la "
+"corba V està gairebé completa. La banda d'enfocament va migrar de dalt a "
+"baix, un fort indici que el sensor s'inclina al llarg de l'eix de dalt a "
+"baix i quin costat elevar."
+
+#: ../../user_manual/ekos-tilt-correction.rst:511
+#, fuzzy
+msgid "What to do"
+msgstr "Què fer"
+
+#: ../../user_manual/ekos-tilt-correction.rst:513
+#, fuzzy
+msgid ""
+"The advisory needs valid data on enough tiles to compute a correction. When "
+"you are in the \"No tilt data\" state, reduce the tilt manually until the "
+"far tiles come back within the autofocus sweep:"
+msgstr ""
+"L'assessorament necessita dades vàlides sobre prou tessel·les per calcular "
+"una correcció. Quan estigueu en l'estat \"No inclinar dades\", reduïu la "
+"inclinació manualment fins que les tessel·les llunyanes tornin dins de "
+"l'enfocament automàtic:"
+
+#: ../../user_manual/ekos-tilt-correction.rst:517
+#, fuzzy
+msgid ""
+"**Estimate the direction** from the focus sweep (above) or from which "
+"corners are sharp vs. bloated in a full-frame image."
+msgstr ""
+"**Estimeu la direcció** des de l'escombrat del focus (a dalt) o des de "
+"quines cantonades són nítides vs. inflades en una imatge de fotograma "
+"complet."
+
+#: ../../user_manual/ekos-tilt-correction.rst:519
+#, fuzzy
+msgid ""
+"**Apply a small manual correction** to the ETA (or tilt screws) in that "
+"direction — move the point on the side that is furthest from focus."
+msgstr ""
+"**Apliqueu una petita correcció manual** a l'ETA (o caragols inclinats) en "
+"aquesta direcció — moveu el punt del costat que està més allunyat del focus."
+
+#: ../../user_manual/ekos-tilt-correction.rst:521
+#, fuzzy
+msgid ""
+"**Re-run the Aberration Inspector.** Once all tiles fit within the sweep, "
+"the precise tilt calculation returns and you can proceed with the normal "
+"iterative workflow above."
+msgstr ""
+"**Reexecuta l'inspector d'aberració.** Una vegada que totes les tessel·les "
+"encaixin dins de l'escombrat, el càlcul precís de la inclinació retorna i "
+"podeu continuar amb el flux de treball iteratiu normal anterior."
+
+#: ../../user_manual/ekos-tilt-correction.rst:526
+#, fuzzy
+msgid ""
+"An automated coarse pre-correction advisory (which estimates the direction "
+"for you when precise measurement fails) is under development but still needs "
+"more testing before it is documented here."
+msgstr ""
+"Un assessorament automàtic de pre-correcció gruixuda (que estima la direcció "
+"per a vostè quan falla la mesura precisa) està en desenvolupament, però "
+"encara necessita més proves abans que es documenti aquí."
+
+#: ../../user_manual/ekos-tilt-correction.rst:532
+#, fuzzy
+msgid "Verification with External Tools"
+msgstr "Verificació amb eines externes"
+
+#: ../../user_manual/ekos-tilt-correction.rst:534
+#, fuzzy
+msgid ""
+"After achieving good tilt correction in Ekos you can verify with external "
+"analysis tools that process full-frame images (CCDInspector, ASTAP, and "
+"similar). These measure HFD (Half Flux Diameter) across the entire frame and "
+"report a tilt metric. A well-corrected sensor shows uniform HFD across all "
+"corners, a tilt percentage under ~5% (typically < 3% for excellent "
+"correction), and off-axis aberration as the dominant remaining factor rather "
+"than tilt."
+msgstr ""
+"Després d'aconseguir una bona correcció de la inclinació a l'Ekos, podeu "
+"verificar amb eines d'anàlisi externes que processen imatges de fotograma "
+"complet (CCDInspector, ASTAP i similars). Aquests mesuren HFD (Diàmetre de "
+"mig flux) a través de tot el fotograma i informen d'una mètrica "
+"d'inclinació. Un sensor ben corregit mostra un HFD uniforme a totes les "
+"cantonades, un percentatge d'inclinació inferior al 5% (típicament ), 3% per "
+"a una correcció excel·lent), i l'aberració fora de l'eix com el factor "
+"restant dominant en lloc d'inclinació."
+
+#: ../../user_manual/ekos-tilt-correction.rst:544
+#, fuzzy
+msgid "Well-focused field after tilt correction"
+msgstr "Camp ben enfocat després de la correcció de la inclinació"
+
+#: ../../user_manual/ekos-tilt-correction.rst:544
+msgid ".. image:: /images/ekos_tilt_focus_wellfocused.jpg"
+msgstr ".. image:: /images/ekos_tilt_focus_wellfocused.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:544
+#, fuzzy
+msgid ""
+"After successful tilt correction: 100 detected stars with HFR 1.31 and "
+"uniform focus across the field — the end result of the iterative workflow."
+msgstr ""
+"Després d'una correcta correcció de la inclinació: 100 estrelles detectades "
+"amb HFR 1.31 i un enfocament uniforme a través del camp - el resultat final "
+"del flux de treball iteratiu."
+
+#: ../../user_manual/ekos-tilt-correction.rst:550
+#, fuzzy
+msgid "External tilt analysis"
+msgstr "Anàlisi inclinació externa"
+
+#: ../../user_manual/ekos-tilt-correction.rst:550
+msgid ".. image:: /images/ekos_tilt_external_analysis.jpg"
+msgstr ".. image:: /images/ekos_tilt_external_analysis.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:550
+#, fuzzy
+msgid ""
+"External analysis of a corrected frame: 1269 stars, median HFD 2.8, "
+"Tilt[HFD] 0.10 (3%, classified \"none\"), off-axis aberration 0.03. The per-"
+"tile median HFD values range only from 2.79 to 2.89 — extremely uniform."
+msgstr ""
+"Anàlisi externa d'un fotograma corregit: 1269 estrelles, mitjana HFD 2.8, "
+"Tilt[HFD] 0.10 (3%, classificada \"cap\"), aberració fora de l'eix 0.03. Els "
+"valors HFD mitjans per tessel·la varien només de 2,79 a 2,89 — extremadament "
+"uniformes."
+
+#: ../../user_manual/ekos-tilt-correction.rst:557
+#, fuzzy
+msgid "M31 frame with corner HFD values"
+msgstr "Marc M31 amb valors HFD de cantonada"
+
+#: ../../user_manual/ekos-tilt-correction.rst:557
+msgid ".. image:: /images/ekos_tilt_external_m31.jpg"
+msgstr ".. image:: /images/ekos_tilt_external_m31.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:557
+#, fuzzy
+msgid ""
+"M31 single frame with corner HFD values: TL 2.12, TR 2.14, Centre 2.16, BL "
+"2.15, BR 2.17. The 0.05 variation across the field is negligible — within "
+"seeing-limited uniformity."
+msgstr ""
+"M31 amb un sol fotograma amb els valors HFD de la cantonada: TL 2.12, TR "
+"2.14, Centre 2.16, BL 2.15, BR 2.17. La variació de 0,05 a través del camp "
+"és insignificant, dins d'una uniformitat limitada."
+
+#: ../../user_manual/ekos-tilt-correction.rst:563
+#, fuzzy
+msgid "Reference Tables"
+msgstr "Taules de referència"
+
+#: ../../user_manual/ekos-tilt-correction.rst:568
+#, fuzzy
+msgid "Supported Tilt Plates"
+msgstr "Plats de inclinació compatibles"
+
+#: ../../user_manual/ekos-tilt-correction.rst:570
+#, fuzzy
+msgid ""
+"**Any 3-point or 4-point tilt plate is supported** — you only need to tell "
+"the advisory the plate's bolt-circle radius and screw thread. The values "
+"below are known reference figures. For plates not listed (or to confirm any "
+"value), check the manufacturer's website for a technical drawing, or measure "
+"the plate yourself (centre of plate to an adjustment screw = radius)."
+msgstr ""
+"**Qualsevol placa d'inclinació de 3 o 4 punts està suportada** — només cal "
+"dir-li a l'assessorament el radi del cercle de forrellat i el fil de caragol "
+"de la placa. Els valors següents són figures de referència conegudes. Per a "
+"les plaques no llistades (o per confirmar qualsevol valor), consulteu el "
+"lloc web del fabricant per a un dibuix tècnic, o mesureu la placa vosaltres "
+"mateixos (centre de la placa a un caragol d'ajust ). radi)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:580
+msgid "Plate"
+msgstr "Placa"
+
+#: ../../user_manual/ekos-tilt-correction.rst:581
+msgid "Type"
+msgstr "Tipus"
+
+#: ../../user_manual/ekos-tilt-correction.rst:582
+msgid "Radius"
+msgstr "Radi"
+
+#: ../../user_manual/ekos-tilt-correction.rst:583
+msgid "Thread/Pitch"
+msgstr "Fil/Capcineig"
+
+#: ../../user_manual/ekos-tilt-correction.rst:585
+msgid "WandererAstro ETA M54"
+msgstr "WandererAstro ETA M54"
+
+#: ../../user_manual/ekos-tilt-correction.rst:586
+msgid "3-point motorized"
+msgstr "Motoritzat de 3 punts"
+
+#: ../../user_manual/ekos-tilt-correction.rst:587
+#: ../../user_manual/ekos-tilt-correction.rst:665
+msgid "64.0 mm"
+msgstr "64,0 mm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:589
+#, fuzzy
+msgid "Automated Apply; radius/pitch auto-locked when detected"
+msgstr ""
+"Aplicació automàtica; radi/punt bloquejat automàticament quan es detecta"
+
+#: ../../user_manual/ekos-tilt-correction.rst:590
+msgid "ZWO Tilt Plate (M42/M48/M54/M68)"
+msgstr "ZWO Tilt Plate (M42/M48/M54/M68)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:591
+#: ../../user_manual/ekos-tilt-correction.rst:601
+msgid "3-point manual"
+msgstr "Manual de 3 punts"
+
+#: ../../user_manual/ekos-tilt-correction.rst:592
+msgid "40.0 mm"
+msgstr "40,0 mm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:593
+#, fuzzy
+msgid "Check drawing"
+msgstr "Comprova el dibuix"
+
+#: ../../user_manual/ekos-tilt-correction.rst:594
+#, fuzzy
+msgid "Radius consistent across ZWO's thread sizes"
+msgstr "Radi consistent a través de les mides del fil de ZWO"
+
+#: ../../user_manual/ekos-tilt-correction.rst:595
+msgid "ToupTek M42 Tilter (Ø100 mm)"
+msgstr "ToupTek M42 Tilter (Ø100 mm)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:596
+#, fuzzy
+msgid "4-point push/pull"
+msgstr "4 punts d'empenta/empenta"
+
+#: ../../user_manual/ekos-tilt-correction.rst:597
+msgid "46.0 mm"
+msgstr "46,0 mm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:598
+#, fuzzy
+msgid "M4 push (0.70 mm)"
+msgstr "M4 push (0,70 mm)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:599
+#, fuzzy
+msgid "Screws on Ø92 mm circle; use the push-screw pitch"
+msgstr "Tripulació en cercle de  the92 mm; utilitza el to push-screw"
+
+#: ../../user_manual/ekos-tilt-correction.rst:600
+#, fuzzy
+msgid "Octopi tilt ring"
+msgstr "Anell inclinació octopi"
+
+#: ../../user_manual/ekos-tilt-correction.rst:602
+#, fuzzy
+msgid "Varies"
+msgstr "Varies"
+
+#: ../../user_manual/ekos-tilt-correction.rst:603
+msgid "M3 (0.50 mm)"
+msgstr "M3 (0,50 mm)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:604
+#, fuzzy
+msgid "Measure your specific unit"
+msgstr "Mesura la unitat específica"
+
+#: ../../user_manual/ekos-tilt-correction.rst:605
+#, fuzzy
+msgid "Generic 3-/4-screw plate"
+msgstr "Placa genèrica 3-/4-screw"
+
+#: ../../user_manual/ekos-tilt-correction.rst:606
+#, fuzzy
+msgid "3- or 4-point manual"
+msgstr "Manual de 3 o 4 punts"
+
+#: ../../user_manual/ekos-tilt-correction.rst:607
+msgid "Measure"
+msgstr "Mesura"
+
+#: ../../user_manual/ekos-tilt-correction.rst:608
+#, fuzzy
+msgid "Measure/drawing"
+msgstr "Mesura/dibuix"
+
+#: ../../user_manual/ekos-tilt-correction.rst:609
+#, fuzzy
+msgid "Any plate works — supply radius + pitch"
+msgstr "Qualsevol placa funciona — radi de subministrament + pitch"
+
+#: ../../user_manual/ekos-tilt-correction.rst:613
+#, fuzzy
+msgid ""
+"Manufacturer technical drawings usually give the screw positions in mm from "
+"the optical axis — that distance is exactly the radius the advisory needs. "
+"If no drawing is available, a caliper measurement from the plate centre to a "
+"screw is accurate enough (the correction direction is unaffected by small "
+"radius errors, and the magnitude scales gently)."
+msgstr ""
+"Els dibuixos tècnics del fabricant solen donar les posicions del caragol en "
+"mm des de l'eix òptic, aquesta distància és exactament el radi que necessita "
+"l'assessorament. Si no hi ha dibuix disponible, una mesura de calibrador des "
+"del centre de la placa fins a un caragol és prou precisa (la direcció de "
+"correcció no es veu afectada per petits errors de radi, i les escales de "
+"magnitud suaument)."
+
+#: ../../user_manual/ekos-tilt-correction.rst:620
+#, fuzzy
+msgid "Thread pitch reference"
+msgstr "Referència del to del fil"
+
+#: ../../user_manual/ekos-tilt-correction.rst:626
+msgid "Thread"
+msgstr "Fil"
+
+#: ../../user_manual/ekos-tilt-correction.rst:627
+msgid "Pitch (mm/turn)"
+msgstr "Capcineig (mm/volta)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:628
+msgid "M2.5"
+msgstr "M2.5"
+
+#: ../../user_manual/ekos-tilt-correction.rst:629
+msgid "0.45"
+msgstr "0,45"
+
+#: ../../user_manual/ekos-tilt-correction.rst:630
+msgid "M3"
+msgstr "M3"
+
+#: ../../user_manual/ekos-tilt-correction.rst:631
+#: ../../user_manual/ekos-tilt-correction.rst:637
+#: ../../user_manual/ekos-tilt-correction.rst:641
+#: ../../user_manual/ekos-tilt-correction.rst:645
+msgid "0.50"
+msgstr "0,50"
+
+#: ../../user_manual/ekos-tilt-correction.rst:632
+msgid "M3 fine"
+msgstr "M3 fine"
+
+#: ../../user_manual/ekos-tilt-correction.rst:633
+msgid "0.35"
+msgstr "0,35"
+
+#: ../../user_manual/ekos-tilt-correction.rst:634
+msgid "M4"
+msgstr "M4"
+
+#: ../../user_manual/ekos-tilt-correction.rst:635
+msgid "0.70"
+msgstr "0,70"
+
+#: ../../user_manual/ekos-tilt-correction.rst:636
+msgid "M4 fine"
+msgstr "M4 fine"
+
+#: ../../user_manual/ekos-tilt-correction.rst:638
+msgid "M5"
+msgstr "M5"
+
+#: ../../user_manual/ekos-tilt-correction.rst:639
+msgid "0.80"
+msgstr "0,80"
+
+#: ../../user_manual/ekos-tilt-correction.rst:640
+msgid "M5 fine"
+msgstr "M5 fine"
+
+#: ../../user_manual/ekos-tilt-correction.rst:642
+msgid "M6"
+msgstr "M6"
+
+#: ../../user_manual/ekos-tilt-correction.rst:643
+msgid "1.00"
+msgstr "1,00"
+
+#: ../../user_manual/ekos-tilt-correction.rst:644
+msgid "Wanderer ETA"
+msgstr "Wanderer ETA"
+
+#: ../../user_manual/ekos-tilt-correction.rst:648
+msgid "ETA M54 specifications"
+msgstr "Especificacions d'ETA M54"
+
+#: ../../user_manual/ekos-tilt-correction.rst:654
+msgid "Parameter"
+msgstr "Paràmetre"
+
+#: ../../user_manual/ekos-tilt-correction.rst:655
+msgid "Value"
+msgstr "Valor"
+
+#: ../../user_manual/ekos-tilt-correction.rst:656
+msgid "Connection"
+msgstr "Connexió"
+
+#: ../../user_manual/ekos-tilt-correction.rst:657
+msgid "USB 2.0 Type-B, CH340, 19200 baud"
+msgstr "USB 2.0 tipus B, CH340, 19200 bauds"
+
+#: ../../user_manual/ekos-tilt-correction.rst:658
+#, fuzzy
+msgid "Travel per point"
+msgstr "Viatja per punt"
+
+#: ../../user_manual/ekos-tilt-correction.rst:659
+msgid "0–1.200 mm"
+msgstr "0–1,200 mm"
+
+#: ../../user_manual/ekos-tilt-correction.rst:660
+msgid "Accuracy"
+msgstr "Precisió"
+
+#: ../../user_manual/ekos-tilt-correction.rst:661
+msgid "0.002 mm (2 µm)"
+msgstr "0,002 mm (2 µm)"
+
+#: ../../user_manual/ekos-tilt-correction.rst:662
+msgid "Motor resolution"
+msgstr "Resolució del motor"
+
+#: ../../user_manual/ekos-tilt-correction.rst:663
+msgid "0.3 µm/step"
+msgstr "0.3 µm/pas"
+
+#: ../../user_manual/ekos-tilt-correction.rst:664
+#, fuzzy
+msgid "Bolt-circle radius"
+msgstr "Radi del cercle de bolts"
+
+#: ../../user_manual/ekos-tilt-correction.rst:666
+#, fuzzy
+msgid "Thread pitch"
+msgstr "To del fil"
+
+#: ../../user_manual/ekos-tilt-correction.rst:668
+msgid "Weight"
+msgstr "Pes"
+
+#: ../../user_manual/ekos-tilt-correction.rst:669
+msgid "470 g"
+msgstr "470 g"
+
+#: ../../user_manual/ekos-tilt-correction.rst:670
+msgid "Operating temperature"
+msgstr "Temperatura d'operació"
+
+#: ../../user_manual/ekos-tilt-correction.rst:671
+msgid "-25°C to 50°C"
+msgstr "-25°C a 50°C"
+
+#: ../../user_manual/ekos-tilt-correction.rst:672
+msgid "Power"
+msgstr "Energia"
+
+#: ../../user_manual/ekos-tilt-correction.rst:673
+msgid "USB 5V 0.5A"
+msgstr "USB 5V 0,5A"
+
+#: ../../user_manual/ekos-tilt-correction.rst:674
+msgid "INDI driver"
+msgstr "Controlador INDI"
+
+#: ../../user_manual/ekos-tilt-correction.rst:675
+msgid "``indi_wanderer_eta``"
+msgstr "``indi_wanderer_eta``"
+
+#: ../../user_manual/ekos-tilt-correction.rst:676
+msgid "Device name"
+msgstr "Nom del dispositiu"
+
+#: ../../user_manual/ekos-tilt-correction.rst:677
+msgid "\"Wanderer ETA M54\""
+msgstr "«Wanderer ETA M54»"
