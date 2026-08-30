@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-08-26 19:20+0300\n"
+"PO-Revision-Date: 2026-08-28 17:20+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1069,7 +1069,7 @@ msgstr "Ніяких змін не потрібно — ідеально"
 
 #: ../../user_manual/ekos-tilt-correction.rst:407
 msgid "Run 2, tilt reduced to 6 µm"
-msgstr ""
+msgstr "Запуск 2, нахил зменшено до 6 мкм"
 
 #: ../../user_manual/ekos-tilt-correction.rst:407
 msgid ".. image:: /images/ekos_tilt_run2.jpg"
@@ -1081,6 +1081,9 @@ msgid ""
 "just 6 µm. The advisory now suggests much smaller adjustments (P1=+0.024, P2="
 "+0.046 mm)."
 msgstr ""
+"Після першого виправлення, другий запуск показує зменшення загального нахилу "
+"з 29 мкм до лише 6 мкм. Тепер у рекомендаціях пропонуються набагато менші "
+"виправлення (P1=+0,024, P2=+0,046 мм)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:413
 msgid "Run 3, 0 µm tilt achieved"
@@ -1095,6 +1098,8 @@ msgid ""
 "Run 3: total tilt 0 µm. All three points show \"no change\" — the sensor is "
 "perpendicular to the optical axis. This is the target state."
 msgstr ""
+"Запуск 3: загальний нахил 0 мкм. Усі три точки показують «без змін» — датчик "
+"перпендикулярний до оптичної осі. Це цільовий стан."
 
 #: ../../user_manual/ekos-tilt-correction.rst:417
 msgid "What counts as \"good\"?"
@@ -1166,31 +1171,41 @@ msgid ""
 "Use the **same star field** for each iteration (different fields can "
 "introduce noise)."
 msgstr ""
+"Використовуйте **одне й те саме зоряне поле** для кожної ітерації (різні "
+"поля можуть вносити шум)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:443
 msgid ""
 "Wait for **stable seeing** — poor seeing adds noise to the tile measurements."
 msgstr ""
+"Зачекайте **стабільної картинки** — погане зображення додає шуму до "
+"вимірювань плитки."
 
 #: ../../user_manual/ekos-tilt-correction.rst:444
 msgid ""
 "Don't over-correct: if the advisory says 0.4 mm, consider applying 0.3 mm "
 "first."
 msgstr ""
+"Не перестарайтеся з виправленням: якщо в рекомендації зазначено 0,4 мм, "
+"спочатку спробуйте застосувати 0,3 мм."
 
 #: ../../user_manual/ekos-tilt-correction.rst:445
 msgid "Fix **backfocus first** if ``Backfocus Δ`` is large (> 50 µm)."
 msgstr ""
+"**Спочатку виправте зворотне фокусування**, якщо ``Δ зворотного "
+"фокусування`` є великим (> 50 мкм)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:446
 msgid ""
 "Re-run after any mechanical change to the imaging train (camera rotation, "
 "filter swap)."
 msgstr ""
+"Повторно запускайте після будь-яких механічних змін у тракті обробки "
+"зображень (обертання камери, заміна фільтра)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:450
 msgid "When Tilt Cannot Be Measured (Large Tilt)"
-msgstr ""
+msgstr "Якщо нахил не можна виміряти (великий нахил)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:453
 msgid "The problem"
@@ -1206,6 +1221,14 @@ msgid ""
 "ETA has been zeroed or the tilt plate removed/reinstalled, or after a major "
 "mechanical change (camera swap, rotator adjustment)."
 msgstr ""
+"Коли нахил датчика дуже великий (> ~100 мкм), фокус деяких мозаїчних плиток "
+"повністю виходить за межі діапазону автофокусування. Їх V-криву неможливо "
+"підібрати (R² = 0,00, Розв'язок = 0), і точний розрахунок нахилу повертає "
+"**Н/Д** — інспектор аберацій не може безпечно повідомити значення нахилу. "
+"Зазвичай це трапляється під час першого налаштування нового тракту отримання "
+"зображень, після занулення ETA або вилучення/повторного встановлення "
+"пластини нахилу, або після суттєвих механічних змін (заміна камери, "
+"регулювання засобу обертання)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:463
 msgid "How it looks in the Aberration Inspector"
@@ -1217,10 +1240,14 @@ msgid ""
 "Total Tilt all read **N/A**. The advisory diagram shows \"No tilt data\" and "
 "the ``Apply to ETA`` button is disabled."
 msgstr ""
+"На деяких плитках буде показано «Розв'язок: 0, R²: 0,00», а для параметрів "
+"«Ліворуч-Праворуч», «Верх-Вниз» та «Загальний нахил» буде показано значення "
+"**Н/Д**. На діаграмі з рекомендаціями буде показано «Даних про нахил немає», "
+"а кнопка «Застосувати до ETA» буде неактивною."
 
 #: ../../user_manual/ekos-tilt-correction.rst:472
 msgid "Aberration Inspector, no tilt data (Run 6)"
-msgstr "Інспектор аберації, без даних щодо нахилу (Прохід 6)"
+msgstr "Інспектор аберації, без даних щодо нахилу (Запуск 6)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:472
 msgid ".. image:: /images/ekos_tilt_notiltdata_run6.jpg"
@@ -1233,11 +1260,16 @@ msgid ""
 "produced valid curves. All tilt values read \"N/A\" and the diagram shows "
 "\"No tilt data\"."
 msgstr ""
+"Запуск 6: плитки згори ліворуч, згори праворуч та внизу праворуч не "
+"помістилися (Розв'язок 0, R² 0,00, 0 придатних зірок). Тільки для "
+"центральних (R²=0,50) та нижніх лівих (R²=0,99) кривих було отримано "
+"коректні значення. Усі значення нахилу мають значення «Н/Д», а на діаграмі "
+"показано «Даних про нахил немає»."
 
 #: ../../user_manual/ekos-tilt-correction.rst:479
 msgid "Aberration Inspector, no tilt data with diverging curves (Run 8)"
 msgstr ""
-"Інспектор аберації, без даних щодо нахилу з розбіжними кривими (Прохід 8)"
+"Інспектор аберації, без даних щодо нахилу з розбіжними кривими (Запуск 8)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:479
 msgid ".. image:: /images/ekos_tilt_notiltdata_run8.jpg"
@@ -1252,6 +1284,12 @@ msgid ""
 "though a precise value cannot be computed because the Top tiles never "
 "reached focus."
 msgstr ""
+"Запуск 8: той самий стан «Немає даних про нахил», але тут три плитки "
+"підходять (центр R²=1.00, нижній лівий R²=1.00, нижній правий R²=0.79), тоді "
+"як дві верхні плитки все ще не підходять. Зверніть увагу, як крива нижнього "
+"правого краю (червона) опускається донизу далеко праворуч від інших — чітка "
+"візуальна ознака значного нахилу, хоча точне значення неможливо обчислити, "
+"оскільки верхні плитки так і не досягли фокусування."
 
 #: ../../user_manual/ekos-tilt-correction.rst:486
 msgid "Guessing the direction from the focus sweep"
@@ -1267,10 +1305,17 @@ msgid ""
 "first — and therefore which way the sensor is tilted. The two frames below "
 "are from the **same sweep** at different focuser positions:"
 msgstr ""
+"Навіть коли точне значення недоступне, ви часто можете **здогадатися про "
+"напрямок нахилу, спостерігаючи за фокусуванням**. Коли засіб фокусування "
+"рухається по своєму діапазону, область фокусування датчика мігрує по полю. "
+"Якщо область з зіркою високої різкості рухається з верхньої частини датчика "
+"до нижньої (або зліва направо) під час розгортки, це показує, який край "
+"першим потрапляє у фокус — і, отже, в який бік нахилено датчик. Два кадри "
+"нижче взяті з **того самого проходу** в різних положеннях засобу фокусування:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:498
 msgid "Focus sweep, early — upper tiles in focus"
-msgstr ""
+msgstr "Прохід фокусування, початок — верхні плитки у фокусі"
 
 #: ../../user_manual/ekos-tilt-correction.rst:498
 msgid ".. image:: /images/ekos_tilt_sweep_early.jpg"
@@ -1282,10 +1327,13 @@ msgid ""
 "concentrated in the **upper** tiles, while the lower tiles are still out of "
 "focus. The V-curve is just starting."
 msgstr ""
+"На початку проходу (засіб фокусування ~6807): різкі зірки та їхні значення "
+"РПП зосереджені у **верхніх** плитках, тоді як нижні плитки все ще не у "
+"фокусі. V-подібна крива тільки починається."
 
 #: ../../user_manual/ekos-tilt-correction.rst:505
 msgid "Focus sweep, later — centre/lower tiles in focus"
-msgstr ""
+msgstr "Прохід фокусування, пізніше — центральні/нижні плитки у фокусі"
 
 #: ../../user_manual/ekos-tilt-correction.rst:505
 msgid ".. image:: /images/ekos_tilt_sweep_later.jpg"
