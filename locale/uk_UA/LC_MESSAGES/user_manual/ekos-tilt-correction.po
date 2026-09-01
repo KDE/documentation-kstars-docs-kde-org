@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-08-28 17:20+0300\n"
+"PO-Revision-Date: 2026-08-30 21:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1346,6 +1346,11 @@ msgid ""
 "The in-focus band migrated from top to bottom, a strong hint that the sensor "
 "is tilted along the top-bottom axis and which side to raise."
 msgstr ""
+"Пізніше, під час того ж проходу (засіб фокусування ~6764): область з зірками "
+"високої різкості змістилася вниз, у **центральні та нижні** плитки, і V-"
+"подібна крива майже завершена. Смуга фокусування мігрувала згори вниз, що є "
+"чітким натяком на те, що датчик нахилений вздовж осі зверху вниз і в який "
+"бік його підняти."
 
 #: ../../user_manual/ekos-tilt-correction.rst:511
 msgid "What to do"
@@ -1357,18 +1362,25 @@ msgid ""
 "you are in the \"No tilt data\" state, reduce the tilt manually until the "
 "far tiles come back within the autofocus sweep:"
 msgstr ""
+"Для обчислення виправлення потрібні достовірні дані про достатню кількість "
+"плиток. Якщо ви перебуваєте в стані «Немає даних про нахил», зменшуйте нахил "
+"вручну, доки далекі плитки не повернуться в зону автофокусування:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:517
 msgid ""
 "**Estimate the direction** from the focus sweep (above) or from which "
 "corners are sharp vs. bloated in a full-frame image."
 msgstr ""
+"**Оцініть напрямок** за шкалою фокусування (вище) або за тим, які кути мають "
+"високу різкість, а які розмито на повнокадровому зображенні."
 
 #: ../../user_manual/ekos-tilt-correction.rst:519
 msgid ""
 "**Apply a small manual correction** to the ETA (or tilt screws) in that "
 "direction — move the point on the side that is furthest from focus."
 msgstr ""
+"**Застосуйте невелике ручне виправлення** до ETA (або гвинтів нахилу) у "
+"цьому напрямку — перемістіть точку з боку, який є найвіддаленішим від фокуса."
 
 #: ../../user_manual/ekos-tilt-correction.rst:521
 msgid ""
@@ -1376,6 +1388,9 @@ msgid ""
 "the precise tilt calculation returns and you can proceed with the normal "
 "iterative workflow above."
 msgstr ""
+"**Перезапустіть Інспектор аберації.** Щойно всі плитки помістяться в межах "
+"проходу, точний розрахунок нахилу повернеться, і ви зможете продовжити "
+"звичайний ітеративний робочий процес, описаний вище."
 
 #: ../../user_manual/ekos-tilt-correction.rst:526
 msgid ""
@@ -1383,6 +1398,10 @@ msgid ""
 "for you when precise measurement fails) is under development but still needs "
 "more testing before it is documented here."
 msgstr ""
+"Автоматизована груба попередня порада щодо виправлення (яка оцінює напрямок, "
+"коли точне вимірювання не вдалося визначити) перебуває на стадії розробки, "
+"але все ще потребує додаткового тестування, перш ніж вона буде "
+"задокументована тут."
 
 #: ../../user_manual/ekos-tilt-correction.rst:532
 msgid "Verification with External Tools"
@@ -1398,6 +1417,13 @@ msgid ""
 "correction), and off-axis aberration as the dominant remaining factor rather "
 "than tilt."
 msgstr ""
+"Після досягнення належного виправлення нахилу в Ekos ви можете перевірити "
+"результат за допомогою зовнішніх інструментів аналізу, які обробляють "
+"повнокадрові зображення (CCDInspector, ASTAP тощо). Вони вимірюють HFD "
+"(половину діаметра потоку) по всьому кадру та повідомляють про метрику "
+"нахилу. Добре скоригований сенсор показує рівномірний HFD на всіх кутах, "
+"відсоток нахилу менше ~5% (зазвичай < 3% для відмінного виправлення) та "
+"позаосьову аберацію як головний фактор, що залишився, а не сам нахил."
 
 #: ../../user_manual/ekos-tilt-correction.rst:544
 msgid "Well-focused field after tilt correction"
@@ -1412,6 +1438,9 @@ msgid ""
 "After successful tilt correction: 100 detected stars with HFR 1.31 and "
 "uniform focus across the field — the end result of the iterative workflow."
 msgstr ""
+"Після успішного виправлення нахилу: 100 виявлених зірок з РПП 1.31 та "
+"рівномірним фокусом по всьому полю — кінцевий результат ітеративного "
+"робочого процесу."
 
 #: ../../user_manual/ekos-tilt-correction.rst:550
 msgid "External tilt analysis"
@@ -1427,6 +1456,10 @@ msgid ""
 "Tilt[HFD] 0.10 (3%, classified \"none\"), off-axis aberration 0.03. The per-"
 "tile median HFD values range only from 2.79 to 2.89 — extremely uniform."
 msgstr ""
+"Зовнішній аналіз виправленого кадру: 1269 зірок, медіана ДПП 2.8, Нахил[ДПП] "
+"0.10 (3%, класифіковано як «немає»), позаосьова аберація — 0.03. Медіанні "
+"значення ДПП на плитку коливаються лише від 2.79 до 2.89 — надзвичайно "
+"рівномірно."
 
 #: ../../user_manual/ekos-tilt-correction.rst:557
 msgid "M31 frame with corner HFD values"
@@ -1442,6 +1475,9 @@ msgid ""
 "2.15, BR 2.17. The 0.05 variation across the field is negligible — within "
 "seeing-limited uniformity."
 msgstr ""
+"Одинарний кадр M31 з кутовими значеннями ДПП: ЗЛ 2.12, ЗП 2.14, Центр 2.16, "
+"НЛ 2.15, НП 2.17. Варіація 0.05 по полю незначна — в межах однорідності, "
+"обмеженої видимістю."
 
 #: ../../user_manual/ekos-tilt-correction.rst:563
 msgid "Reference Tables"
@@ -1459,6 +1495,13 @@ msgid ""
 "value), check the manufacturer's website for a technical drawing, or measure "
 "the plate yourself (centre of plate to an adjustment screw = radius)."
 msgstr ""
+"**Передбачено підтримку будь-яких 3- або 4-точкових пластин нахилу** — вам "
+"потрібно лише повідомити в рекомендаціях радіус кола болтів пластини та "
+"різьбу гвинта. Наведені нижче значення є відомими довідковими показниками. "
+"Для пластин, яких немає в списку (або для підтвердження будь-якого "
+"значення), перевірте технічне креслення на сайті виробника або виміряйте "
+"пластину самостійно (відстань від центру пластини до регулювального гвинта = "
+"радіус)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:580
 msgid "Plate"
@@ -1509,11 +1552,11 @@ msgstr "40.0 мм"
 
 #: ../../user_manual/ekos-tilt-correction.rst:593
 msgid "Check drawing"
-msgstr ""
+msgstr "За кресленням"
 
 #: ../../user_manual/ekos-tilt-correction.rst:594
 msgid "Radius consistent across ZWO's thread sizes"
-msgstr ""
+msgstr "Сумісний з розмірами різьби ZWO радіус"
 
 #: ../../user_manual/ekos-tilt-correction.rst:595
 msgid "ToupTek M42 Tilter (Ø100 mm)"
@@ -1521,7 +1564,7 @@ msgstr "ToupTek M42 Tilter (Ø100 мм)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:596
 msgid "4-point push/pull"
-msgstr ""
+msgstr "4-точкова штовхання-втягування"
 
 #: ../../user_manual/ekos-tilt-correction.rst:597
 msgid "46.0 mm"
@@ -1550,15 +1593,15 @@ msgstr "M3 (0.50 мм)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:604
 msgid "Measure your specific unit"
-msgstr ""
+msgstr "Виміряйте в натурі"
 
 #: ../../user_manual/ekos-tilt-correction.rst:605
 msgid "Generic 3-/4-screw plate"
-msgstr ""
+msgstr "Типова 3-/4-гвинтова пластина"
 
 #: ../../user_manual/ekos-tilt-correction.rst:606
 msgid "3- or 4-point manual"
-msgstr ""
+msgstr "3- або 4-точкова, вручну"
 
 #: ../../user_manual/ekos-tilt-correction.rst:607
 msgid "Measure"
@@ -1570,7 +1613,7 @@ msgstr "Вимірювання/Креслення"
 
 #: ../../user_manual/ekos-tilt-correction.rst:609
 msgid "Any plate works — supply radius + pitch"
-msgstr ""
+msgstr "Працює будь-яка пластина — надайте радіус і крок"
 
 #: ../../user_manual/ekos-tilt-correction.rst:613
 msgid ""
@@ -1580,6 +1623,11 @@ msgid ""
 "screw is accurate enough (the correction direction is unaffected by small "
 "radius errors, and the magnitude scales gently)."
 msgstr ""
+"На технічних кресленнях виробника положення гвинтів зазвичай вказано в мм "
+"від оптичної осі — ця відстань — саме той радіус, який потрібен для "
+"порадника. Якщо креслення недоступне, вимірювання штангенциркулем від центру "
+"пластини до гвинта буде достатньо точним (напрямок виправлення не залежить "
+"від невеликих похибок радіуса, а величина масштабується плавно)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:620
 msgid "Thread pitch reference"
@@ -1674,7 +1722,7 @@ msgstr "З'єднання"
 
 #: ../../user_manual/ekos-tilt-correction.rst:657
 msgid "USB 2.0 Type-B, CH340, 19200 baud"
-msgstr ""
+msgstr "USB 2.0 тип-B, CH340, 19200 бодів"
 
 #: ../../user_manual/ekos-tilt-correction.rst:658
 msgid "Travel per point"

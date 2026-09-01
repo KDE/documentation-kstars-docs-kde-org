@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-19 02:09+0000\n"
-"PO-Revision-Date: 2026-08-28 13:25+0200\n"
+"PO-Revision-Date: 2026-08-30 14:35+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1199,24 +1199,30 @@ msgid ""
 "Don't over-correct: if the advisory says 0.4 mm, consider applying 0.3 mm "
 "first."
 msgstr ""
+"Corrigeer niet te sterk: als het advies 0,4 mm luidt, overweeg dan om eerst "
+"0,3 mm toe te passen."
 
 #: ../../user_manual/ekos-tilt-correction.rst:445
 msgid "Fix **backfocus first** if ``Backfocus Δ`` is large (> 50 µm)."
 msgstr ""
+"Corrigeer **eerst de backfocus** als ``Backfocus Δ`` groot is (> 50 µm)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:446
 msgid ""
 "Re-run after any mechanical change to the imaging train (camera rotation, "
 "filter swap)."
 msgstr ""
+"Voer de procedure opnieuw uit na elke mechanische wijziging aan de "
+"beeldvormingslijn (zoals het draaien van de camera of het wisselen van "
+"filters)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:450
 msgid "When Tilt Cannot Be Measured (Large Tilt)"
-msgstr ""
+msgstr "Wanneer kanteling niet kan worden gemeten (grote kanteling)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:453
 msgid "The problem"
-msgstr ""
+msgstr "Het probleem"
 
 #: ../../user_manual/ekos-tilt-correction.rst:455
 msgid ""
@@ -1228,10 +1234,19 @@ msgid ""
 "ETA has been zeroed or the tilt plate removed/reinstalled, or after a major "
 "mechanical change (camera swap, rotator adjustment)."
 msgstr ""
+"Wanneer de kanteling van de sensor zeer groot is (> ~100 µm), valt de focus "
+"van sommige mozaïektegels volledig buiten het bereik van de autofocus-scan. "
+"Hun V-curve kan niet worden gefit (R² = 0,00, Solution = 0) en de berekening "
+"van de exacte kanteling levert **N.v.t.** op; de Aberratie-inspecteur kan "
+"geen betrouwbare kantelwaarde rapporteren. Dit gebeurt doorgaans bij het "
+"voor het eerst opzetten van een nieuwe beeldvormingsopstelling, nadat de ETA "
+"op nul is gezet, de kantelplaat is verwijderd of opnieuw gemonteerd, of na "
+"een ingrijpende mechanische wijziging (zoals het wisselen van de camera of "
+"het aanpassen van de rotator)."
 
 #: ../../user_manual/ekos-tilt-correction.rst:463
 msgid "How it looks in the Aberration Inspector"
-msgstr ""
+msgstr "Hoe het eruitziet in de Aberratie-inspecteur"
 
 #: ../../user_manual/ekos-tilt-correction.rst:465
 msgid ""
@@ -1239,14 +1254,18 @@ msgid ""
 "Total Tilt all read **N/A**. The advisory diagram shows \"No tilt data\" and "
 "the ``Apply to ETA`` button is disabled."
 msgstr ""
+"Sommige tegels tonen \"Oplossing: 0, R²: 0,00\" en de waarden voor kanteling "
+"(links-rechts, boven-onder en totaal) staan ​​allemaal op **N.v.t.** Het "
+"adviesdiagram toont \"Geen kantelgegevens\" en de knop ``Toepassen op ETA`` "
+"is uitgeschakeld."
 
 #: ../../user_manual/ekos-tilt-correction.rst:472
 msgid "Aberration Inspector, no tilt data (Run 6)"
-msgstr ""
+msgstr "Aberratie-inspecteur, geen kantelgegevens (Ronde 6)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:472
 msgid ".. image:: /images/ekos_tilt_notiltdata_run6.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_notiltdata_run6.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:472
 msgid ""
@@ -1255,14 +1274,19 @@ msgid ""
 "produced valid curves. All tilt values read \"N/A\" and the diagram shows "
 "\"No tilt data\"."
 msgstr ""
+"Ronde 6: De tegels linksboven, rechtsboven en rechtsonder pasten niet "
+"(oplossing 0, R² 0,00, 0 bruikbare sterren). Alleen het midden (R²=0,50) en "
+"linksonder (R²=0,99) leverden geldige krommen op. Bij alle kantelwaarden "
+"stond \"N.v.t.\" en het diagram toonde \"Geen kantelgegevens\"."
 
 #: ../../user_manual/ekos-tilt-correction.rst:479
 msgid "Aberration Inspector, no tilt data with diverging curves (Run 8)"
 msgstr ""
+"Aberratie-inspecteur, geen kantelgegevens bij divergerende krommen (Ronde 8)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:479
 msgid ".. image:: /images/ekos_tilt_notiltdata_run8.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_notiltdata_run8.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:479
 msgid ""
@@ -1273,10 +1297,17 @@ msgid ""
 "though a precise value cannot be computed because the Top tiles never "
 "reached focus."
 msgstr ""
+"Ronde 8: dezelfde status van \"geen kantelgegevens\" (No tilt data), maar "
+"hier voldoen drie tegels (midden R²=1,00, linksonder R²=1,00, rechtsonder "
+"R²=0,79), terwijl de twee bovenste tegels nog steeds niet voldoen. Merk op "
+"dat de kromme voor rechtsonder (rood) zijn diepste punt ver naar rechts ten "
+"opzichte van de andere curves bereikt – een duidelijk visueel kenmerk van "
+"aanzienlijke kanteling, ook al kan er geen exacte waarde worden berekend "
+"omdat de bovenste tegels nooit scherp werden gesteld."
 
 #: ../../user_manual/ekos-tilt-correction.rst:486
 msgid "Guessing the direction from the focus sweep"
-msgstr ""
+msgstr "De richting afleiden uit de focus-sweep"
 
 #: ../../user_manual/ekos-tilt-correction.rst:488
 msgid ""
@@ -1288,14 +1319,23 @@ msgid ""
 "first — and therefore which way the sensor is tilted. The two frames below "
 "are from the **same sweep** at different focuser positions:"
 msgstr ""
+"Zelfs als er geen exacte waarde beschikbaar is, kunt u de **kantelrichting "
+"vaak afleiden door naar het verloop van de scherpstelling te kijken**. "
+"Terwijl de focuser zijn bereik doorloopt, verschuift het gebied van de "
+"sensor dat scherp is over het beeldveld. Als het gebied met scherpe sterren "
+"tijdens dit proces van de bovenkant naar de onderkant van de sensor (of van "
+"links naar rechts) beweegt, zie je welke rand als eerste scherp wordt – en "
+"dus in welke richting de sensor gekanteld staat. De twee onderstaande "
+"opnames zijn afkomstig van **dezelfde reeks** bij verschillende "
+"focuserposities:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:498
 msgid "Focus sweep, early — upper tiles in focus"
-msgstr ""
+msgstr "Focus-scan, vroeg — bovenste tegels scherp"
 
 #: ../../user_manual/ekos-tilt-correction.rst:498
 msgid ".. image:: /images/ekos_tilt_sweep_early.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_sweep_early.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:498
 msgid ""
@@ -1303,14 +1343,17 @@ msgid ""
 "concentrated in the **upper** tiles, while the lower tiles are still out of "
 "focus. The V-curve is just starting."
 msgstr ""
+"Aan het begin van de scan (focusser ~6807): de scherpe sterren en hun HFR-"
+"waarden zijn geconcentreerd in de **bovenste** tegels, terwijl de onderste "
+"tegels nog onscherp zijn. De V-kromme begint net."
 
 #: ../../user_manual/ekos-tilt-correction.rst:505
 msgid "Focus sweep, later — centre/lower tiles in focus"
-msgstr ""
+msgstr "Focus-scan, later — middelste/onderste tegels scherp"
 
 #: ../../user_manual/ekos-tilt-correction.rst:505
 msgid ".. image:: /images/ekos_tilt_sweep_later.jpg"
-msgstr ""
+msgstr ".. image:: /images/ekos_tilt_sweep_later.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:505
 msgid ""
@@ -1319,10 +1362,15 @@ msgid ""
 "The in-focus band migrated from top to bottom, a strong hint that the sensor "
 "is tilted along the top-bottom axis and which side to raise."
 msgstr ""
+"Later in dezelfde scan (focuser ~6764): het gebied met scherpe sterren is "
+"naar beneden verschoven, naar de **centrale en onderste** tegels, en de V-"
+"kromme is bijna voltooid. De zone met scherpe focus is van boven naar "
+"beneden gewandeld; dit is een sterke aanwijzing dat de sensor gekanteld is "
+"langs de as van boven naar beneden, en geeft aan welke kant omhoog moet."
 
 #: ../../user_manual/ekos-tilt-correction.rst:511
 msgid "What to do"
-msgstr ""
+msgstr "Wat te doen"
 
 #: ../../user_manual/ekos-tilt-correction.rst:513
 msgid ""
@@ -1330,12 +1378,19 @@ msgid ""
 "you are in the \"No tilt data\" state, reduce the tilt manually until the "
 "far tiles come back within the autofocus sweep:"
 msgstr ""
+"Het adviessysteem heeft geldige gegevens van voldoende tegels nodig om een ​​"
+"correctie te berekenen. Wanneer de status \"Geen kantelgegevens\" (No tilt "
+"data) actief is, verminder dan handmatig de kanteling totdat de verre tegels "
+"weer binnen het bereik van de autofocus-scan vallen:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:517
 msgid ""
 "**Estimate the direction** from the focus sweep (above) or from which "
 "corners are sharp vs. bloated in a full-frame image."
 msgstr ""
+"**Schat de richting** op basis van de focus-scan (hierboven) of door te "
+"kijken welke hoeken scherp zijn en welke opgeblazen lijken in een full-frame "
+"beeld."
 
 #: ../../user_manual/ekos-tilt-correction.rst:519
 msgid ""
