@@ -434,8 +434,40 @@ Startup Procedure
             *lead* time is 5 minutes before *startup* time). Once the
             startup procedure is completed successfully, the scheduler
             picks the Scheduler job target and starts the sequence
-            process. If a startup script is specified, it shall be
-            executed first.
+            process.
+
+            The startup and shutdown procedures are made of four task
+            queues (see :doc:`Task Queue System <ekos-scheduler-taskqueue>`).
+            They run at fixed points and come in pairs, each queue undoing
+            what its counterpart did:
+
+               1. **Pre-Startup Queue**: runs *before* the Ekos profile is
+                  started, for example to power on equipment. Undone by the
+                  Post-Shutdown Queue.
+
+               2. The Ekos profile is started and INDI devices are connected
+                  (skipped if Ekos is already running).
+
+               3. **Post-Startup Queue**: runs once the devices are ready,
+                  for example to open the dome, unpark the mount and open the
+                  dust cap. Undone by the Pre-Shutdown Queue.
+
+               4. Jobs run.
+
+               5. **Pre-Shutdown Queue**: runs *before* the Ekos profile is
+                  stopped, for example to close the dust cap, park the mount
+                  and close the dome.
+
+               6. The Ekos profile is stopped.
+
+               7. **Post-Shutdown Queue**: runs *after* the Ekos profile is
+                  stopped, for example to power off equipment.
+
+            A weather soft shutdown (see :ref:`ekos-scheduler-weather-monitoring`)
+            only runs the Pre-Shutdown Queue and keeps Ekos running, so
+            recovering from it only runs the Post-Startup Queue. The
+            Pre-Startup Queue runs again only after the Post-Shutdown Queue
+            has run.
 
 .. _ekos-scheduler-data-acquisition:
 
@@ -493,8 +525,9 @@ Shutdown
             startup procedure again when the target is due.
 
             If an unrecoverable error occurs, the observatory initiates
-            shutdown procedure. If there is a shutdown script, it will
-            be executed last.
+            shutdown procedure. A full shutdown runs the Pre-Shutdown Queue,
+            stops the Ekos profile, and then runs the Post-Shutdown Queue
+            (see :ref:`ekos-scheduler-startup-procedure`).
 
             The following video demonstrates an earlier version of the
             scheduler, but the basic principles still apply today:
@@ -567,8 +600,9 @@ Weather Alert Response
                1. A configurable delay period (default: 10 seconds) prevents
                   reaction to momentary sensor issues
 
-               2. If the alert persists, the current scheduler job is aborted
-                  (marked ABORTED, not ERROR, so it can restart later)
+               2. If the alert persists, the current scheduler job is stopped.
+                  It stays in the schedule and is evaluated again against its
+                  constraints before it can restart.
 
                3. The Pre-Shutdown Queue executes to protect equipment
                   (typically closes dust caps, parks mount, closes dome)
@@ -576,6 +610,12 @@ Weather Alert Response
                4. Ekos and INDI remain running for faster recovery
 
                5. The scheduler enters a grace period to wait for weather improvement
+
+            The same applies if the alert is already active when the scheduler
+            starts: if Ekos is already running, the Pre-Shutdown Queue runs
+            before any job starts. If Ekos is not running yet, nothing needs
+            protecting, and the scheduler simply waits before starting the
+            observatory.
 
 .. _ekos-scheduler-weather-grace-period:
 
@@ -601,11 +641,12 @@ Weather Grace Period
                -  Equipment is protected immediately (pre-shutdown queue runs:
                   park mount, close dome, etc.)
                -  Ekos and INDI **remain running** — no full shutdown occurs
-               -  The scheduler monitors weather every 5 minutes as a safety net,
-                  and recovers **immediately** (within 10 ms) when the weather
+               -  The scheduler recovers **immediately** when the weather
                   sensor reports OK
-               -  Jobs are left in **ABORTED** state (not ERROR) so they will
-                  restart automatically once conditions improve
+               -  Every 5 minutes, the scheduler also re-evaluates the jobs,
+                  without starting any. If no job can run any more (for example
+                  its end-at time or the dawn limit has passed), it runs the
+                  full shutdown right away, even though the alert is still active
                -  The log will show: *"Observatory scheduled for soft shutdown.
                   Monitoring weather indefinitely until safety improves."*
 
@@ -641,12 +682,18 @@ Automatic Weather Recovery
 
                1. Weather status changes from Alert to Ok
 
-               2. The Post-Startup Queue executes to reverse protective actions
-                  (opens dome, unparks mount, opens dust caps)
+               2. The scheduler re-evaluates the jobs *before* opening anything
 
-               3. The scheduler resumes normal operation
+               3. If a job can run now, the Post-Startup Queue executes to reverse
+                  protective actions (opens dome, unparks mount, opens dust caps)
+                  and the job starts
 
-               4. The aborted job can restart if its constraints are still met
+               4. If the next job is later (for example the next night), the
+                  scheduler sleeps until then with the observatory still closed,
+                  and runs the Post-Startup Queue when the job is due
+
+               5. If no job can run any more, the scheduler runs the full
+                  shutdown instead
 
             **Queue Usage During Weather Events:**
 
