@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: kstars_fitsviewer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2010-11-26 16:12+0300\n"
-"Last-Translator: Alexandr Gudulin <sagodphp@gmail.com>\n"
+"PO-Revision-Date: 2026-09-27 14:25+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -28,14 +28,10 @@ msgstr ""
 
 #: ../../user_manual/fits-viewer-solver.rst:3
 #: ../../user_manual/fits-viewer-solver.rst:92
-#, fuzzy
-#| msgid "FITS Viewer Tool"
 msgid "FITS Viewer Solver"
-msgstr "Просмотр FITS"
+msgstr "Решатель средства просмотра FITS"
 
 #: ../../user_manual/fits-viewer-solver.rst:5
-#, fuzzy
-#| msgid "FITS Viewer Tool"
 msgid "|FITS Viewer Solver|"
 msgstr "Просмотр FITS"
 
@@ -49,12 +45,21 @@ msgid ""
 "displayed can be generally useful. The controls and displays are described "
 "below."
 msgstr ""
+"Решатель средства просмотра FITS выполняет астрометрическую привязку "
+"изображения, загруженного на вкладку средства просмотра FITS. Он работает "
+"только со встроенным StellarSolver. Вы получаете координаты RA и DEC центра "
+"изображения, его масштаб, угол поворота и число обнаруженных на изображении "
+"звёзд. Основное назначение — отладка проблем привязки в Ekos, хотя "
+"показанные сведения полезны и сами по себе. Элементы управления и "
+"показываемые данные описаны ниже."
 
 #: ../../user_manual/fits-viewer-solver.rst:16
 msgid ""
 "Solve Button. Pressing this button starts plate solving. When the system is "
 "plate solving, the button becomes an abort button."
 msgstr ""
+"Кнопка привязки. Её нажатие запускает астрометрическую привязку. Во время "
+"привязки кнопка становится кнопкой прерывания."
 
 #: ../../user_manual/fits-viewer-solver.rst:20
 msgid ""
@@ -65,6 +70,11 @@ msgid ""
 "successfully completes, it replaces the value in the box with solution's "
 "scale."
 msgstr ""
+"Масштаб: флажок «Использовать масштаб» заставляет решатель использовать "
+"примерно заданный масштаб пиксела или изображения. Масштаб вводится в поле, "
+"а единицы выбираются из ширины изображения в градусах, ширины изображения в "
+"угловых минутах и угловых секунд на пиксел. После успешной привязки значение "
+"в поле заменяется масштабом из решения."
 
 #: ../../user_manual/fits-viewer-solver.rst:28
 msgid ""
@@ -76,12 +86,21 @@ msgid ""
 "DEC boxes with solution's coordinates. In addition it fills in the Angle "
 "field with the solutions angle value in degrees."
 msgstr ""
+"Положение: флажок «Использовать положение» заставляет решатель искать вблизи "
+"заданных координат RA и DEC. Размер области поиска задаётся в поле «Радиус» "
+"в градусах. Обратите внимание, что RA вводится в часах, минутах и секундах "
+"(например, 13h), а DEC — в градусах, минутах и секундах (например, 85). "
+"После успешной привязки значения в полях RA и DEC заменяются координатами из "
+"решения. Кроме того, поле «Угол» заполняется значением угла из решения в "
+"градусах."
 
 #: ../../user_manual/fits-viewer-solver.rst:39
 msgid ""
 "Use SkyMap Position: There is a button just below the Use Position checkbox "
 "that fills in RA and DEC boxes with the current center of the SkyMap display."
 msgstr ""
+"Использовать положение с карты неба: кнопка под флажком «Использовать "
+"положение» заполняет поля RA и DEC текущим центром карты неба."
 
 #: ../../user_manual/fits-viewer-solver.rst:43
 msgid ""
@@ -89,6 +108,9 @@ msgid ""
 "used in the Ekos Align module, should be used for plate solving. This is "
 "further discussed below."
 msgstr ""
+"Профиль: меню «Профиль» выбирает, какой предустановленный профиль "
+"StellarSolver из применяемых в модуле выравнивания Ekos использовать для "
+"привязки. Подробнее об этом ниже."
 
 #: ../../user_manual/fits-viewer-solver.rst:48
 msgid ""
@@ -96,6 +118,9 @@ msgid ""
 "the time taken to solve. The solution values for RA, DEC, Scale and Angle "
 "are displayed in those boxes above."
 msgstr ""
+"Решение: в разделе «Решение» показываются число найденных звёзд и время "
+"привязки. Значения RA, DEC, масштаба и угла из решения показываются в полях "
+"выше."
 
 #: ../../user_manual/fits-viewer-solver.rst:53
 msgid ""
@@ -103,33 +128,40 @@ msgid ""
 "activated above the image display, then the detected stars are circled in "
 "red."
 msgstr ""
+"Изображение: если на изображении обнаружены звёзды и над областью показа "
+"включена кнопка «Отметить звёзды», обнаруженные звёзды обводятся красным."
 
 #: ../../user_manual/fits-viewer-solver.rst:57
-#, fuzzy
-#| msgid "FITS Viewer features:"
 msgid "|FITS Viewer Mark Stars Button|"
 msgstr "Возможности просмотра FITS:"
 
 #: ../../user_manual/fits-viewer-solver.rst:59
 msgid "Using this tool the user can try and debug solving issues as follows."
 msgstr ""
+"С помощью этого средства проблемы привязки возможно отлаживать следующим "
+"образом."
 
 #: ../../user_manual/fits-viewer-solver.rst:62
 msgid ""
 "He/she might have the KStars -> Settings -> Developer -> :doc:`Save Failed "
 "Align Images checkbox <developer>` enabled."
 msgstr ""
+"Пользователь может включить :doc:`флажок сохранения неудачных изображений "
+"выравнивания <developer>` в KStars → «Настройка» → «Разработка»."
 
 #: ../../user_manual/fits-viewer-solver.rst:66
 msgid ""
 "Then a difficult image (for whom alignment failed) :doc:`could be located "
 "<developer>` and loaded into the fitsviewer."
 msgstr ""
+"Затем сложное изображение, для которого выравнивание не удалось, :doc:"
+"`возможно найти <developer>` и загрузить в средство просмотра FITS."
 
 #: ../../user_manual/fits-viewer-solver.rst:70
 msgid ""
 "The image could be inspected to see if there were obvious visual issues."
 msgstr ""
+"Изображение возможно осмотреть на предмет очевидных визуальных дефектов."
 
 #: ../../user_manual/fits-viewer-solver.rst:73
 msgid ""
@@ -137,12 +169,17 @@ msgid ""
 "detected, and the user could then decide if it is a star detection issue and "
 "experiment with adjusting the profile or star-detection parameters."
 msgstr ""
+"Нажатие кнопки привязки для этого изображения покажет, сколько звёзд "
+"обнаружено, после чего возможно решить, связана ли проблема с обнаружением "
+"звёзд, и поэкспериментировать с профилем или параметрами обнаружения звёзд."
 
 #: ../../user_manual/fits-viewer-solver.rst:78
 msgid ""
 "The user could manually upload the image to astrometry.net to get scale and "
 "position values (or just see if it is a problematic image)."
 msgstr ""
+"Изображение возможно вручную отправить на astrometry.net, чтобы получить "
+"значения масштаба и положения (или просто выяснить, проблемное ли оно)."
 
 #: ../../user_manual/fits-viewer-solver.rst:82
 msgid ""
@@ -150,6 +187,10 @@ msgid ""
 "values for those constraints (or disabling them) to see if those were the "
 "problem, or adjust the parameters in the align profile being used."
 msgstr ""
+"Возможно поэкспериментировать с параметрами «Использовать положение» и "
+"«Использовать масштаб», задавая точные значения этих ограничений (или "
+"отключая их), чтобы понять, в них ли дело, либо изменить параметры "
+"используемого профиля выравнивания."
 
 #: ../../user_manual/fits-viewer-solver.rst:87
 msgid ""
@@ -158,20 +199,22 @@ msgid ""
 "right Options profile is selected, and click the pencil to view or edit that "
 "profile."
 msgstr ""
+"Чтобы просмотреть или изменить профиль, откройте вкладку выравнивания в "
+"Ekos, перейдите в меню параметров, выберите вкладку параметров "
+"StellarSolver, убедитесь, что выбран нужный профиль параметров, и нажмите "
+"значок карандаша для просмотра или изменения профиля."
 
 #: ../../user_manual/fits-viewer-solver.rst:92
 msgid ".. image:: /images/fitsviewer-solver.png"
-msgstr ""
+msgstr ".. image:: /images/fitsviewer-solver.png"
 
 #: ../../user_manual/fits-viewer-solver.rst:93
-#, fuzzy
-#| msgid "FITS Viewer features:"
 msgid "FITS Viewer Mark Stars Button"
 msgstr "Возможности просмотра FITS:"
 
 #: ../../user_manual/fits-viewer-solver.rst:93
 msgid ".. image:: /images/fitsviewer-mark-stars.png"
-msgstr ""
+msgstr ".. image:: /images/fitsviewer-mark-stars.png"
 
 #, fuzzy
 #~| msgid "<acronym>FITS</acronym> Viewer Tool"
