@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-29 02:18+0000\n"
-"PO-Revision-Date: 2026-03-04 07:04+0100\n"
+"PO-Revision-Date: 2026-09-29 07:29+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ../../user_manual/ekos-scheduler.rst:3
 msgid "Scheduler"
@@ -761,14 +761,6 @@ msgid "etc."
 msgstr "itd."
 
 #: ../../user_manual/ekos-scheduler.rst:432
-#, fuzzy
-#| msgid ""
-#| "Ekos Scheduler only initiates the startup procedure once the startup time "
-#| "for the first Scheduler job is close (default *lead* time is 5 minutes "
-#| "before *startup* time). Once the startup procedure is completed "
-#| "successfully, the scheduler picks the Scheduler job target and starts the "
-#| "sequence process. If a startup script is specified, it shall be executed "
-#| "first."
 msgid ""
 "Ekos Scheduler only initiates the startup procedure once the startup time "
 "for the first Scheduler job is close (default *lead* time is 5 minutes "
@@ -780,7 +772,7 @@ msgstr ""
 "opravila razporejevalnika izteče (privzeti *čas pred zagonom* je 5 minut "
 "pred časom *zagona*). Ko je postopek zagona uspešno zaključen, "
 "razporejevalnik izbere cilj opravila razporejevalnika in zažene postopek "
-"zaporedja. Če je določen zagonski skript, se ta izvede najprej."
+"zaporedja."
 
 #: ../../user_manual/ekos-scheduler.rst:439
 msgid ""
@@ -788,18 +780,26 @@ msgid ""
 "`Task Queue System <ekos-scheduler-taskqueue>`). They run at fixed points "
 "and come in pairs, each queue undoing what its counterpart did:"
 msgstr ""
+"Postopki zagona in zaustavitve so sestavljeni iz štirih čakalnih vrst "
+"opravil (glejte :doc:`Sistem čakalnih vrst opravil <ekos-scheduler-"
+"taskqueue>`). Izvajajo se na fiksnih točkah in prihajajo v parih, pri čemer "
+"vsaka čakalna vrsta razveljavi, kar je storila njena nasprotna vrsta:"
 
 #: ../../user_manual/ekos-scheduler.rst:444
 msgid ""
 "**Pre-Startup Queue**: runs *before* the Ekos profile is started, for "
 "example to power on equipment. Undone by the Post-Shutdown Queue."
 msgstr ""
+"**Čakalna vrsta pred zagonom**: se zažene *pred* zagonom profila Ekos, na "
+"primer za vklop opreme. To se razveljavi s čakalno vrsto po izklopu."
 
 #: ../../user_manual/ekos-scheduler.rst:448
 msgid ""
 "The Ekos profile is started and INDI devices are connected (skipped if Ekos "
 "is already running)."
 msgstr ""
+"Profil Ekos se zažene in naprave INDI se povežejo (se preskoči, če Ekos že "
+"teče)."
 
 #: ../../user_manual/ekos-scheduler.rst:451
 msgid ""
@@ -807,32 +807,34 @@ msgid ""
 "the dome, unpark the mount and open the dust cap. Undone by the Pre-Shutdown "
 "Queue."
 msgstr ""
+"**Čakalna vrsta po zagonu**: se zažene, ko so naprave pripravljene, na "
+"primer za odpiranje kupole, odparkiranje montaže in odpiranje protiprašnega "
+"pokrova. To se razveljavi s čakalno vrsto pred izklopom."
 
 #: ../../user_manual/ekos-scheduler.rst:455
 msgid "Jobs run."
-msgstr ""
+msgstr "Opravila tečejo."
 
 #: ../../user_manual/ekos-scheduler.rst:457
-#, fuzzy
-#| msgid ""
-#| "The Pre-Shutdown Queue executes to protect equipment (typically closes "
-#| "dust caps, parks mount, closes dome)"
 msgid ""
 "**Pre-Shutdown Queue**: runs *before* the Ekos profile is stopped, for "
 "example to close the dust cap, park the mount and close the dome."
 msgstr ""
-"Pred-izklopna čakalna vrsta se izvede za zaščito opreme (običajno zapre "
-"protiprašne pokrove, parkira montažo, zapre kupolo)"
+"**Čakalna vrsta pred zaustavitvijo**: se zažene *preden* se profil Ekos "
+"zaustavi, na primer za zapiranje protiprašnega pokrova, parkiranje montaže "
+"in zapiranje kupole."
 
 #: ../../user_manual/ekos-scheduler.rst:461
 msgid "The Ekos profile is stopped."
-msgstr ""
+msgstr "Profil Ekos je ustavljen."
 
 #: ../../user_manual/ekos-scheduler.rst:463
 msgid ""
 "**Post-Shutdown Queue**: runs *after* the Ekos profile is stopped, for "
 "example to power off equipment."
 msgstr ""
+"**Čakalna vrsta po zaustavitvi**: se zažene *po* zaustavitvi profila Ekos, "
+"na primer za izklop opreme."
 
 #: ../../user_manual/ekos-scheduler.rst:466
 msgid ""
@@ -841,6 +843,11 @@ msgid ""
 "only runs the Post-Startup Queue. The Pre-Startup Queue runs again only "
 "after the Post-Shutdown Queue has run."
 msgstr ""
+"Mehka zaustavitev zaradi vremena (glejte :ref:`ekos-scheduler-weather-"
+"monitoring`) zažene samo čakalno vrsto pred zaustavitvijo in ohrani "
+"delovanje Ekosa, zato okrevanje po njej zažene samo čakalno vrsto po zagonu. "
+"Čakalna vrsta pred zagonom se ponovno zažene šele po tem, ko se zažene "
+"čakalna vrsta po zaustavitvi."
 
 #: ../../user_manual/ekos-scheduler.rst:475
 msgid "Data Acquisition"
@@ -939,10 +946,6 @@ msgstr ""
 "zagona, ko je cilj predviden."
 
 #: ../../user_manual/ekos-scheduler.rst:527
-#, fuzzy
-#| msgid ""
-#| "If an unrecoverable error occurs, the observatory initiates shutdown "
-#| "procedure. If there is a shutdown script, it will be executed last."
 msgid ""
 "If an unrecoverable error occurs, the observatory initiates shutdown "
 "procedure. A full shutdown runs the Pre-Shutdown Queue, stops the Ekos "
@@ -950,7 +953,9 @@ msgid ""
 "startup-procedure`)."
 msgstr ""
 "Če pride do nepopravljive napake, observatorij sproži postopek zaustavitve. "
-"Če obstaja skript za zaustavitev, bo ta izveden zadnji."
+"Popolna zaustavitev zažene čakalno vrsto pred zaustavitvijo, ustavi profil "
+"Ekos in nato zažene čakalno vrsto po zaustavitvi (glejte :ref:`ekos-"
+"scheduler-startup-procedure`)."
 
 #: ../../user_manual/ekos-scheduler.rst:532
 msgid ""
@@ -1102,18 +1107,13 @@ msgstr ""
 "trenutne težave s senzorjem"
 
 #: ../../user_manual/ekos-scheduler.rst:603
-#, fuzzy
-#| msgid ""
-#| "If the alert persists, the current scheduler job is aborted (marked "
-#| "ABORTED, not ERROR, so it can restart later)"
 msgid ""
 "If the alert persists, the current scheduler job is stopped. It stays in the "
 "schedule and is evaluated again against its constraints before it can "
 "restart."
 msgstr ""
-"Če opozorilo vztraja, se trenutno opravilo razporejevalnika prekine "
-"(označeno kot PREKINJENO, ne kot NAPAKA, zato da se lahko pozneje znova "
-"zažene)."
+"Če opozorilo vztraja, se trenutno opravilo razporejevalnika ustavi. Ostane v "
+"razporedu in se pred ponovnim zagonom ponovno oceni glede na omejitve."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
@@ -1139,6 +1139,10 @@ msgid ""
 "starts. If Ekos is not running yet, nothing needs protecting, and the "
 "scheduler simply waits before starting the observatory."
 msgstr ""
+"Enako velja, če je opozorilo že aktivno, ko se razporejevalnik zažene: če "
+"Ekos že deluje, se čakalna vrsta pred zaustavitvijo zažene, preden se zažene "
+"katero koli opravilo. Če Ekos še ne deluje, ni treba ničesar zaščititi in "
+"razporejevalnik preprosto počaka, da se zažene observatorij."
 
 #: ../../user_manual/ekos-scheduler.rst:623
 msgid "Weather Grace Period"
@@ -1191,15 +1195,11 @@ msgid "Ekos and INDI **remain running** — no full shutdown occurs"
 msgstr "Ekos in INDI **še naprej delujeta** – ni prišlo do popolne zaustavitve"
 
 #: ../../user_manual/ekos-scheduler.rst:644
-#, fuzzy
-#| msgid ""
-#| "The scheduler monitors weather every 5 minutes as a safety net, and "
-#| "recovers **immediately** (within 10 ms) when the weather sensor reports OK"
 msgid ""
 "The scheduler recovers **immediately** when the weather sensor reports OK"
 msgstr ""
-"Razporejevalnik spremlja vreme vsakih 5 minut kot varnostno mrežo in se "
-"**takoj** obnovi (v 10 ms), ko vremenski senzor sporoči, da je vse v redu."
+"Razporejevalnik se **takoj** obnovi, ko vremenski senzor sporoči, da je vse "
+"v redu"
 
 #: ../../user_manual/ekos-scheduler.rst:646
 msgid ""
@@ -1208,6 +1208,10 @@ msgid ""
 "limit has passed), it runs the full shutdown right away, even though the "
 "alert is still active"
 msgstr ""
+"Vsakih 5 minut razporejevalnik ponovno oceni opravila, ne da bi jih zagnal. "
+"Če se nobeno opravilo ne more več izvajati (na primer, če je potekel njegov "
+"čas konca ali omejitev začetka delovanja), takoj izvede popolno zaustavitev, "
+"čeprav je opozorilo še vedno aktivno."
 
 #: ../../user_manual/ekos-scheduler.rst:650
 msgid ""
@@ -1283,22 +1287,17 @@ msgid "Weather status changes from Alert to Ok"
 msgstr "Spremembe stanja vremena iz Opozorila v V redu"
 
 #: ../../user_manual/ekos-scheduler.rst:685
-#, fuzzy
-#| msgid "The scheduler resumes normal operation"
 msgid "The scheduler re-evaluates the jobs *before* opening anything"
-msgstr "Razporejevalnik nadaljuje z normalnim delovanjem"
+msgstr "Razporejevalnik ponovno oceni opravila, *preden* karkoli odpre"
 
 #: ../../user_manual/ekos-scheduler.rst:687
-#, fuzzy
-#| msgid ""
-#| "The Post-Startup Queue executes to reverse protective actions (opens "
-#| "dome, unparks mount, opens dust caps)"
 msgid ""
 "If a job can run now, the Post-Startup Queue executes to reverse protective "
 "actions (opens dome, unparks mount, opens dust caps) and the job starts"
 msgstr ""
-"Pozagonska čakalna vrsta se izvede za razveljavitev zaščitnih dejanj (odpre "
-"kupolo, odparkira montažo, odpre protiprašne pokrove)."
+"Če se opravilo lahko zdaj zažene, se čakalna vrsta po zagonu izvede, da "
+"obrne zaščitna dejanja (odpre kupolo, odparkira montažo, odpre protiprašne "
+"pokrove) in začne opravilo."
 
 #: ../../user_manual/ekos-scheduler.rst:691
 msgid ""
@@ -1306,11 +1305,16 @@ msgid ""
 "until then with the observatory still closed, and runs the Post-Startup "
 "Queue when the job is due"
 msgstr ""
+"Če je naslednje opravilo kasneje (na primer naslednjo noč), razporejevalnik "
+"do takrat spi, medtem ko je observatorij še vedno zaprt, in zažene čakalno "
+"vrsto po zagonu, ko je opravilo predvideno."
 
 #: ../../user_manual/ekos-scheduler.rst:695
 msgid ""
 "If no job can run any more, the scheduler runs the full shutdown instead"
 msgstr ""
+"Če se nobeno opravilo ne more več izvajati, razporejevalnik namesto tega "
+"izvede popolno zaustavitev"
 
 #: ../../user_manual/ekos-scheduler.rst:698
 msgid "**Queue Usage During Weather Events:**"

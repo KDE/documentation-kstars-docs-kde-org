@@ -1,19 +1,19 @@
 #
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2019-2026 Freek de Kruijf <freekdekruijf@kde.nl>
 # Jaap Woldringh <jjhwoldringh@kde.nl>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-29 02:18+0000\n"
-"PO-Revision-Date: 2026-03-04 12:01+0100\n"
+"PO-Revision-Date: 2026-09-29 12:42+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../user_manual/ekos-scheduler.rst:3
@@ -775,14 +775,6 @@ msgid "etc."
 msgstr "etc."
 
 #: ../../user_manual/ekos-scheduler.rst:432
-#, fuzzy
-#| msgid ""
-#| "Ekos Scheduler only initiates the startup procedure once the startup time "
-#| "for the first Scheduler job is close (default *lead* time is 5 minutes "
-#| "before *startup* time). Once the startup procedure is completed "
-#| "successfully, the scheduler picks the Scheduler job target and starts the "
-#| "sequence process. If a startup script is specified, it shall be executed "
-#| "first."
 msgid ""
 "Ekos Scheduler only initiates the startup procedure once the startup time "
 "for the first Scheduler job is close (default *lead* time is 5 minutes "
@@ -793,8 +785,7 @@ msgstr ""
 "De planner van Ekos begint pas aan de opstartprocedure wanneer opstarttijd "
 "voor de eerste plannertaak nabij is (standaard is de *voorloop* tijd 5 "
 "minuten voor de *opstart* tijd). Zodra het opstarten met succes is voltooid, "
-"kiest de planner de plannertaak en wordt de eerste waarneemreeks gestart. "
-"Indien een opstartscript werd opgegeven, wordt die eerst uitgevoerd."
+"kiest de planner de plannertaak en wordt de eerste waarneemreeks gestart."
 
 #: ../../user_manual/ekos-scheduler.rst:439
 msgid ""
@@ -802,18 +793,27 @@ msgid ""
 "`Task Queue System <ekos-scheduler-taskqueue>`). They run at fixed points "
 "and come in pairs, each queue undoing what its counterpart did:"
 msgstr ""
+"De opstart- en afsluitprocedures bestaan ​​uit vier taakwachtrijen (zie :doc:"
+"`Takenwachtrijsysteem <ekos-scheduler-taskqueue>`). Ze worden op vaste "
+"momenten uitgevoerd en vormen paren, waarbij elke wachtrij ongedaan maakt "
+"wat de tegenhanger ervan heeft gedaan:"
 
 #: ../../user_manual/ekos-scheduler.rst:444
 msgid ""
 "**Pre-Startup Queue**: runs *before* the Ekos profile is started, for "
 "example to power on equipment. Undone by the Post-Shutdown Queue."
 msgstr ""
+"**Pre-opstartwachtrij**: wordt uitgevoerd *voordat* het Ekos-profiel wordt "
+"gestart, bijvoorbeeld om apparatuur in te schakelen. Wordt ongedaan gemaakt "
+"door de wachtrij voor na het afsluiten (Post-afsluitwachtrij)."
 
 #: ../../user_manual/ekos-scheduler.rst:448
 msgid ""
 "The Ekos profile is started and INDI devices are connected (skipped if Ekos "
 "is already running)."
 msgstr ""
+"Het Ekos-profiel wordt gestart en INDI-apparaten worden verbonden (wordt "
+"overgeslagen als Ekos al draait)."
 
 #: ../../user_manual/ekos-scheduler.rst:451
 msgid ""
@@ -821,33 +821,35 @@ msgid ""
 "the dome, unpark the mount and open the dust cap. Undone by the Pre-Shutdown "
 "Queue."
 msgstr ""
+"**Post-opstartwachtrij**: wordt uitgevoerd zodra de apparatuur gereed is, "
+"bijvoorbeeld om de koepel te openen, de opstelling uit de parkeerstand te "
+"halen en de stofkap te verwijderen. Wordt ongedaan gemaakt door de Pre-"
+"afsluitwachtrij."
 
 #: ../../user_manual/ekos-scheduler.rst:455
 msgid "Jobs run."
-msgstr ""
+msgstr "Taken draaien."
 
 #: ../../user_manual/ekos-scheduler.rst:457
-#, fuzzy
-#| msgid ""
-#| "The Pre-Shutdown Queue executes to protect equipment (typically closes "
-#| "dust caps, parks mount, closes dome)"
 msgid ""
 "**Pre-Shutdown Queue**: runs *before* the Ekos profile is stopped, for "
 "example to close the dust cap, park the mount and close the dome."
 msgstr ""
-"De wachtrij vóór afsluiten wordt uitgevoerd om apparatuur te beschermen "
-"(meestal sluit dit de stofkappen, vergrendeld de opstelling en sluit de "
-"koepel)."
+"**Pre-afsluitwachtrij**: wordt uitgevoerd *voordat* het Ekos-profiel wordt "
+"gestopt, bijvoorbeeld om de stofkap te sluiten, de opstelling te parkeren en "
+"de koepel te sluiten."
 
 #: ../../user_manual/ekos-scheduler.rst:461
 msgid "The Ekos profile is stopped."
-msgstr ""
+msgstr "Het Ekos-profiel is gestopt."
 
 #: ../../user_manual/ekos-scheduler.rst:463
 msgid ""
 "**Post-Shutdown Queue**: runs *after* the Ekos profile is stopped, for "
 "example to power off equipment."
 msgstr ""
+"**Post-afsluitwachtrij**: wordt uitgevoerd *nadat* het Ekos-profiel is "
+"gestopt, bijvoorbeeld om apparatuur uit te schakelen."
 
 #: ../../user_manual/ekos-scheduler.rst:466
 msgid ""
@@ -856,6 +858,11 @@ msgid ""
 "only runs the Post-Startup Queue. The Pre-Startup Queue runs again only "
 "after the Post-Shutdown Queue has run."
 msgstr ""
+"Bij een zachte afsluiting op basis van het weer (zie :ref:`ekos-scheduler-"
+"weather-monitoring`) wordt alleen de Pre-afsluitwachtrij uitgevoerd en "
+"blijft Ekos actief; bij hervatting wordt daarom alleen de Post-"
+"opstartwachtrij uitgevoerd. De Pre-opstartwachtrij wordt pas opnieuw "
+"uitgevoerd nadat de Post-afsluitwachtrij is afgewerkt."
 
 #: ../../user_manual/ekos-scheduler.rst:475
 msgid "Data Acquisition"
@@ -955,19 +962,17 @@ msgstr ""
 "uit, als doel zover is."
 
 #: ../../user_manual/ekos-scheduler.rst:527
-#, fuzzy
-#| msgid ""
-#| "If an unrecoverable error occurs, the observatory initiates shutdown "
-#| "procedure. If there is a shutdown script, it will be executed last."
 msgid ""
 "If an unrecoverable error occurs, the observatory initiates shutdown "
 "procedure. A full shutdown runs the Pre-Shutdown Queue, stops the Ekos "
 "profile, and then runs the Post-Shutdown Queue (see :ref:`ekos-scheduler-"
 "startup-procedure`)."
 msgstr ""
-"Indien een onherstelbare fout optreedt, zal de waarneemstation een "
-"afsluitprocedure beginnen. Als er een script is voor afsluiten, wordt die "
-"het laatst uitgevoerd."
+"Als er een onherstelbare fout optreedt, start het observatorium de "
+"afsluitprocedure. Bij een volledige afsluiting wordt de wachtrij voor "
+"afsluiting (Pre-afsluitwachtrij) uitgevoerd, het Ekos-profiel gestopt en "
+"vervolgens de wachtrij na afsluiting (Post-afsluitwachtrij) uitgevoerd (zie :"
+"ref:`ekos-scheduler-startup-procedure`)."
 
 #: ../../user_manual/ekos-scheduler.rst:532
 msgid ""
@@ -1125,18 +1130,14 @@ msgstr ""
 "op kortstondige problemen met de sensor."
 
 #: ../../user_manual/ekos-scheduler.rst:603
-#, fuzzy
-#| msgid ""
-#| "If the alert persists, the current scheduler job is aborted (marked "
-#| "ABORTED, not ERROR, so it can restart later)"
 msgid ""
 "If the alert persists, the current scheduler job is stopped. It stays in the "
 "schedule and is evaluated again against its constraints before it can "
 "restart."
 msgstr ""
-"Als de waarschuwing aanhoudt, wordt de huidige planner-taak afgebroken "
-"(gemarkeerd als AFGEBROKEN, niet als FOUT, zodat deze later opnieuw kan "
-"worden gestart)."
+"Als de waarschuwing blijft bestaan, wordt de huidige planner-taak gestopt. "
+"Deze blijft in de planning staan ​​en wordt opnieuw aan de hand van de "
+"bijbehorende beperkingen beoordeeld voordat de taak opnieuw kan starten."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
@@ -1163,6 +1164,11 @@ msgid ""
 "starts. If Ekos is not running yet, nothing needs protecting, and the "
 "scheduler simply waits before starting the observatory."
 msgstr ""
+"Hetzelfde geldt als de waarschuwing al actief is wanneer de planner start: "
+"als Ekos al draait, wordt de Pre-afsluitwachtrij uitgevoerd voordat er een "
+"taak van start gaat. Als Ekos nog niet draait, hoeft er niets te worden "
+"beschermd en wacht de planner simpelweg met het opstarten van het "
+"observatorium."
 
 #: ../../user_manual/ekos-scheduler.rst:623
 msgid "Weather Grace Period"
@@ -1218,16 +1224,11 @@ msgstr ""
 "uitgevoerd"
 
 #: ../../user_manual/ekos-scheduler.rst:644
-#, fuzzy
-#| msgid ""
-#| "The scheduler monitors weather every 5 minutes as a safety net, and "
-#| "recovers **immediately** (within 10 ms) when the weather sensor reports OK"
 msgid ""
 "The scheduler recovers **immediately** when the weather sensor reports OK"
 msgstr ""
-"De planner controleert elke 5 minuten het weer als vangnet en herstelt zich "
-"**onmiddellijk** (binnen 10 ms) wanneer de weersensor aangeeft dat het weer "
-"in orde is"
+"De planner herstelt **onmiddellijk** wanneer de weersensor de status OK "
+"meldt."
 
 #: ../../user_manual/ekos-scheduler.rst:646
 msgid ""
@@ -1236,6 +1237,11 @@ msgid ""
 "limit has passed), it runs the full shutdown right away, even though the "
 "alert is still active"
 msgstr ""
+"Elke 5 minuten beoordeelt de planner de taken opnieuw, zonder er "
+"daadwerkelijk een te starten. Als er geen enkele taak meer kan worden "
+"uitgevoerd (bijvoorbeeld omdat de eindtijd of de limiet voor zonsopgang is "
+"verstreken), wordt direct de volledige afsluitprocedure gestart, ook al is "
+"de waarschuwing nog steeds actief."
 
 #: ../../user_manual/ekos-scheduler.rst:650
 msgid ""
@@ -1313,22 +1319,17 @@ msgid "Weather status changes from Alert to Ok"
 msgstr "De weerstatus verandert van Waarschuwing naar Ok"
 
 #: ../../user_manual/ekos-scheduler.rst:685
-#, fuzzy
-#| msgid "The scheduler resumes normal operation"
 msgid "The scheduler re-evaluates the jobs *before* opening anything"
-msgstr "De planner hervat de normale werking"
+msgstr "De planner evalueert de taken opnieuw *voordat* er iets wordt geopend"
 
 #: ../../user_manual/ekos-scheduler.rst:687
-#, fuzzy
-#| msgid ""
-#| "The Post-Startup Queue executes to reverse protective actions (opens "
-#| "dome, unparks mount, opens dust caps)"
 msgid ""
 "If a job can run now, the Post-Startup Queue executes to reverse protective "
 "actions (opens dome, unparks mount, opens dust caps) and the job starts"
 msgstr ""
-"De wachtrij ná opstarten voert de beveiligingsacties uit (opent de koepel, "
-"ontgrendelt de opstelling, opent de stofkappen)."
+"Als een taak nu kan worden uitgevoerd, wordt de Post-opstartwachtrij "
+"verwerkt om beschermende acties terug te draaien (koepel openen, opstelling "
+"uit de parkeerstand halen, stofkappen openen) en start de taak."
 
 #: ../../user_manual/ekos-scheduler.rst:691
 msgid ""
@@ -1336,11 +1337,16 @@ msgid ""
 "until then with the observatory still closed, and runs the Post-Startup "
 "Queue when the job is due"
 msgstr ""
+"Als de volgende taak pas later plaatsvindt (bijvoorbeeld de volgende nacht), "
+"wacht de planner tot dat moment terwijl het observatorium gesloten blijft, "
+"en voert hij de Post-opstartwachtrij uit zodra de taak aan de beurt is."
 
 #: ../../user_manual/ekos-scheduler.rst:695
 msgid ""
 "If no job can run any more, the scheduler runs the full shutdown instead"
 msgstr ""
+"Als er geen taken meer kunnen worden uitgevoerd, voert de planner in plaats "
+"daarvan de volledige afsluitprocedure uit"
 
 #: ../../user_manual/ekos-scheduler.rst:698
 msgid "**Queue Usage During Weather Events:**"

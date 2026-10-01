@@ -1,19 +1,19 @@
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2019.
-# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-29 02:18+0000\n"
-"PO-Revision-Date: 2026-03-04 06:41-0300\n"
+"PO-Revision-Date: 2026-09-29 06:15-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../../user_manual/ekos-scheduler.rst:3
@@ -782,14 +782,6 @@ msgid "etc."
 msgstr "etc."
 
 #: ../../user_manual/ekos-scheduler.rst:432
-#, fuzzy
-#| msgid ""
-#| "Ekos Scheduler only initiates the startup procedure once the startup time "
-#| "for the first Scheduler job is close (default *lead* time is 5 minutes "
-#| "before *startup* time). Once the startup procedure is completed "
-#| "successfully, the scheduler picks the Scheduler job target and starts the "
-#| "sequence process. If a startup script is specified, it shall be executed "
-#| "first."
 msgid ""
 "Ekos Scheduler only initiates the startup procedure once the startup time "
 "for the first Scheduler job is close (default *lead* time is 5 minutes "
@@ -802,8 +794,7 @@ msgstr ""
 "tempo de espera padrão é 5 minutos antes do horário de *inicialização*). "
 "Assim que o procedimento de inicialização for concluído com sucesso, o "
 "agendador seleciona a tarefa de destino do agendador e inicia o processo de "
-"sequência. Se um script de inicialização for especificado, ele deverá ser "
-"executado primeiro."
+"sequência."
 
 #: ../../user_manual/ekos-scheduler.rst:439
 msgid ""
@@ -811,18 +802,27 @@ msgid ""
 "`Task Queue System <ekos-scheduler-taskqueue>`). They run at fixed points "
 "and come in pairs, each queue undoing what its counterpart did:"
 msgstr ""
+"Os procedimentos de inicialização e encerramento são compostos por quatro "
+"filas de tarefas (veja :doc:`Sistema de filas de tarefas <ekos-scheduler-"
+"taskqueue>`). Elas são executadas em momentos fixos e funcionam em pares, "
+"com cada fila desfazendo o que a sua contraparte realizou:"
 
 #: ../../user_manual/ekos-scheduler.rst:444
 msgid ""
 "**Pre-Startup Queue**: runs *before* the Ekos profile is started, for "
 "example to power on equipment. Undone by the Post-Shutdown Queue."
 msgstr ""
+"**Fila de pré-inicialização**: é executada *antes* de o perfil do Ekos ser "
+"iniciado, por exemplo, para ligar os equipamentos. As ações são revertidas "
+"pela fila de pós-encerramento."
 
 #: ../../user_manual/ekos-scheduler.rst:448
 msgid ""
 "The Ekos profile is started and INDI devices are connected (skipped if Ekos "
 "is already running)."
 msgstr ""
+"O perfil do Ekos é iniciado e os dispositivos INDI são conectados (etapa "
+"ignorada se o Ekos já estiver em execução)."
 
 #: ../../user_manual/ekos-scheduler.rst:451
 msgid ""
@@ -830,33 +830,35 @@ msgid ""
 "the dome, unpark the mount and open the dust cap. Undone by the Pre-Shutdown "
 "Queue."
 msgstr ""
+"**Fila de pós-inicialização**: é executada assim que os dispositivos estão "
+"prontos; serve, por exemplo, para abrir a cúpula, retirar a montagem da "
+"posição de repouso e abrir a tampa de proteção contra poeira. As ações são "
+"revertidas pela fila de pré-encerramento."
 
 #: ../../user_manual/ekos-scheduler.rst:455
 msgid "Jobs run."
-msgstr ""
+msgstr "Tarefas são executadas."
 
 #: ../../user_manual/ekos-scheduler.rst:457
-#, fuzzy
-#| msgid ""
-#| "The Pre-Shutdown Queue executes to protect equipment (typically closes "
-#| "dust caps, parks mount, closes dome)"
 msgid ""
 "**Pre-Shutdown Queue**: runs *before* the Ekos profile is stopped, for "
 "example to close the dust cap, park the mount and close the dome."
 msgstr ""
-"A fila de pré-desligamento é executada para proteger o equipamento "
-"(normalmente fecha as tampas anti-poeira, bloqueia a montagem, fecha a "
-"cúpula)"
+"**Fila de pré-encerramento**: é executada *antes* de o perfil do Ekos ser "
+"encerrado; serve, por exemplo, para fechar a tampa contra poeira, estacionar "
+"a montagem e fechar a cúpula."
 
 #: ../../user_manual/ekos-scheduler.rst:461
 msgid "The Ekos profile is stopped."
-msgstr ""
+msgstr "O perfil Ekos está parado."
 
 #: ../../user_manual/ekos-scheduler.rst:463
 msgid ""
 "**Post-Shutdown Queue**: runs *after* the Ekos profile is stopped, for "
 "example to power off equipment."
 msgstr ""
+"**Fila de pós-encerramento**: é executada *após* a interrupção do perfil do "
+"Ekos, por exemplo, para desligar equipamentos."
 
 #: ../../user_manual/ekos-scheduler.rst:466
 msgid ""
@@ -865,6 +867,11 @@ msgid ""
 "only runs the Post-Startup Queue. The Pre-Startup Queue runs again only "
 "after the Post-Shutdown Queue has run."
 msgstr ""
+"Um encerramento suave por condições meteorológicas (veja :ref:`ekos-"
+"scheduler-weather-monitoring`) executa apenas a fila de pré-encerramento e "
+"mantém o Ekos em execução; portanto, a recuperação desse estado executa "
+"apenas a fila de pós-inicialização. A fila de pré-inicialização só é "
+"executada novamente após a conclusão da fila de pós-encerramento."
 
 #: ../../user_manual/ekos-scheduler.rst:475
 msgid "Data Acquisition"
@@ -966,10 +973,6 @@ msgstr ""
 "quando o alvo estiver mais próximo."
 
 #: ../../user_manual/ekos-scheduler.rst:527
-#, fuzzy
-#| msgid ""
-#| "If an unrecoverable error occurs, the observatory initiates shutdown "
-#| "procedure. If there is a shutdown script, it will be executed last."
 msgid ""
 "If an unrecoverable error occurs, the observatory initiates shutdown "
 "procedure. A full shutdown runs the Pre-Shutdown Queue, stops the Ekos "
@@ -977,8 +980,9 @@ msgid ""
 "startup-procedure`)."
 msgstr ""
 "Se ocorrer um erro irrecuperável, o observatório inicia o procedimento de "
-"desligamento. Se houver um script de desligamento, ele será executado por "
-"último."
+"desligamento. Um desligamento completo executa a fila de pré-desligamento, "
+"interrompe o perfil do Ekos e, em seguida, executa a fila de pós-"
+"desligamento (consulte :ref:`ekos-scheduler-startup-procedure`)."
 
 #: ../../user_manual/ekos-scheduler.rst:532
 msgid ""
@@ -1138,17 +1142,14 @@ msgstr ""
 "problemas momentâneos do sensor"
 
 #: ../../user_manual/ekos-scheduler.rst:603
-#, fuzzy
-#| msgid ""
-#| "If the alert persists, the current scheduler job is aborted (marked "
-#| "ABORTED, not ERROR, so it can restart later)"
 msgid ""
 "If the alert persists, the current scheduler job is stopped. It stays in the "
 "schedule and is evaluated again against its constraints before it can "
 "restart."
 msgstr ""
-"Se o alerta persistir, a tarefa agendada atual será cancelada (marcada como "
-"CANCELADA, e não como ERRO, para que possa ser reiniciada posteriormente)."
+"Se o alerta persistir, a tarefa de agendamento atual é interrompida. Ela "
+"permanece no agendamento e é reavaliada em relação às suas restrições antes "
+"de poder ser reiniciada."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
@@ -1176,6 +1177,11 @@ msgid ""
 "starts. If Ekos is not running yet, nothing needs protecting, and the "
 "scheduler simply waits before starting the observatory."
 msgstr ""
+"O mesmo se aplica se o alerta já estiver ativo quando o agendador for "
+"iniciado: se o Ekos já estiver em execução, a fila de pré-desligamento é "
+"executada antes do início de qualquer tarefa. Se o Ekos ainda não estiver em "
+"execução, não há nada a proteger, e o agendador simplesmente aguarda antes "
+"de iniciar o observatório."
 
 #: ../../user_manual/ekos-scheduler.rst:623
 msgid "Weather Grace Period"
@@ -1231,16 +1237,11 @@ msgstr ""
 "Ekos e INDI **continuam em operação** — não ocorre um desligamento completo"
 
 #: ../../user_manual/ekos-scheduler.rst:644
-#, fuzzy
-#| msgid ""
-#| "The scheduler monitors weather every 5 minutes as a safety net, and "
-#| "recovers **immediately** (within 10 ms) when the weather sensor reports OK"
 msgid ""
 "The scheduler recovers **immediately** when the weather sensor reports OK"
 msgstr ""
-"O agendador monitora as condições meteorológicas a cada 5 minutos como "
-"medida de segurança e se recupera **imediatamente** (em até 10 ms) quando o "
-"sensor meteorológico indica que está tudo bem."
+"O agendador é recuperado **imediatamente** quando o sensor meteorológico "
+"indica \"OK\"."
 
 #: ../../user_manual/ekos-scheduler.rst:646
 msgid ""
@@ -1249,6 +1250,10 @@ msgid ""
 "limit has passed), it runs the full shutdown right away, even though the "
 "alert is still active"
 msgstr ""
+"A cada 5 minutos, o agendador também reavalia as tarefas, sem iniciar "
+"nenhuma delas. Se nenhuma tarefa puder mais ser executada (por exemplo, se o "
+"horário de término ou o limite do amanhecer já tiverem passado), ele executa "
+"o desligamento completo imediatamente, mesmo que o alerta ainda esteja ativo."
 
 #: ../../user_manual/ekos-scheduler.rst:650
 msgid ""
@@ -1327,22 +1332,17 @@ msgid "Weather status changes from Alert to Ok"
 msgstr "A situação meteorológica mudou de \"Alerta\" para \"OK\""
 
 #: ../../user_manual/ekos-scheduler.rst:685
-#, fuzzy
-#| msgid "The scheduler resumes normal operation"
 msgid "The scheduler re-evaluates the jobs *before* opening anything"
-msgstr "O agendador retoma a operação normal"
+msgstr "O agendador reavalia as tarefas *antes* de abrir qualquer coisa."
 
 #: ../../user_manual/ekos-scheduler.rst:687
-#, fuzzy
-#| msgid ""
-#| "The Post-Startup Queue executes to reverse protective actions (opens "
-#| "dome, unparks mount, opens dust caps)"
 msgid ""
 "If a job can run now, the Post-Startup Queue executes to reverse protective "
 "actions (opens dome, unparks mount, opens dust caps) and the job starts"
 msgstr ""
-"A fila pós-inicialização é executada para reverter as ações de proteção "
-"(abre a cúpula, desbloqueia a montagem, abre as tampas anti-poeira)"
+"Se uma tarefa puder ser executada imediatamente, a fila de pós-inicialização "
+"é processada para reverter ações de proteção (abre a cúpula, libera a "
+"montagem, remove as tampas contra poeira) e a tarefa é iniciada."
 
 #: ../../user_manual/ekos-scheduler.rst:691
 msgid ""
@@ -1350,11 +1350,17 @@ msgid ""
 "until then with the observatory still closed, and runs the Post-Startup "
 "Queue when the job is due"
 msgstr ""
+"Se a próxima tarefa estiver programada para mais tarde (por exemplo, na "
+"noite seguinte), o agendador permanece em espera até esse momento com o "
+"observatório ainda fechado e executa a fila de pós-inicialização quando "
+"chegar a hora da tarefa."
 
 #: ../../user_manual/ekos-scheduler.rst:695
 msgid ""
 "If no job can run any more, the scheduler runs the full shutdown instead"
 msgstr ""
+"Se nenhuma tarefa puder mais ser executada, o agendador executa o "
+"desligamento completo."
 
 #: ../../user_manual/ekos-scheduler.rst:698
 msgid "**Queue Usage During Weather Events:**"

@@ -5,14 +5,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-29 02:18+0000\n"
-"PO-Revision-Date: 2026-07-21 13:23+0200\n"
+"PO-Revision-Date: 2026-09-29 21:51+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../user_manual/ekos-scheduler.rst:3
@@ -762,14 +762,6 @@ msgid "etc."
 msgstr "etc."
 
 #: ../../user_manual/ekos-scheduler.rst:432
-#, fuzzy
-#| msgid ""
-#| "Ekos Scheduler only initiates the startup procedure once the startup time "
-#| "for the first Scheduler job is close (default *lead* time is 5 minutes "
-#| "before *startup* time). Once the startup procedure is completed "
-#| "successfully, the scheduler picks the Scheduler job target and starts the "
-#| "sequence process. If a startup script is specified, it shall be executed "
-#| "first."
 msgid ""
 "Ekos Scheduler only initiates the startup procedure once the startup time "
 "for the first Scheduler job is close (default *lead* time is 5 minutes "
@@ -781,7 +773,7 @@ msgstr ""
 "första schemaläggningsjobbet närmar sig (normal *ledtid* är 5 minuter innan "
 "*starttiden*). När väl startproceduren har slutförts med lyckat resultat, "
 "väljer schemaläggningen schemaläggningsjobbets mål och startar "
-"sekvensprocessen. Om ett startskript anges, ska det köras först."
+"sekvensprocessen."
 
 #: ../../user_manual/ekos-scheduler.rst:439
 msgid ""
@@ -789,18 +781,26 @@ msgid ""
 "`Task Queue System <ekos-scheduler-taskqueue>`). They run at fixed points "
 "and come in pairs, each queue undoing what its counterpart did:"
 msgstr ""
+"Procedurerna för start och avstängning består av fyra uppgiftsköer (se :doc:"
+"`Uppgiftskösystem <ekos-scheduler-taskqueue>`). De körs vid fastställda "
+"tidpunkter och förekommer i par, där varje kö återställer det som dess "
+"motsvarighet utförde:"
 
 #: ../../user_manual/ekos-scheduler.rst:444
 msgid ""
 "**Pre-Startup Queue**: runs *before* the Ekos profile is started, for "
 "example to power on equipment. Undone by the Post-Shutdown Queue."
 msgstr ""
+"**Kö före start**: körs *innan* Ekos-profilen startas, till exempel för att "
+"sätta på utrustning. Ångras av Kö efter start."
 
 #: ../../user_manual/ekos-scheduler.rst:448
 msgid ""
 "The Ekos profile is started and INDI devices are connected (skipped if Ekos "
 "is already running)."
 msgstr ""
+"Ekos-profilen startas och INDI-enheter ansluts (hoppas över om Ekos redan "
+"kör)."
 
 #: ../../user_manual/ekos-scheduler.rst:451
 msgid ""
@@ -808,32 +808,33 @@ msgid ""
 "the dome, unpark the mount and open the dust cap. Undone by the Pre-Shutdown "
 "Queue."
 msgstr ""
+"**Kö efter start**: körs när enheterna är redo, till exempel för att öppna "
+"kupolen, frigöra stativet och öppna dammskyddet. Ångras av Kö före "
+"avstängning."
 
 #: ../../user_manual/ekos-scheduler.rst:455
 msgid "Jobs run."
-msgstr ""
+msgstr "Körda jobb."
 
 #: ../../user_manual/ekos-scheduler.rst:457
-#, fuzzy
-#| msgid ""
-#| "The Pre-Shutdown Queue executes to protect equipment (typically closes "
-#| "dust caps, parks mount, closes dome)"
 msgid ""
 "**Pre-Shutdown Queue**: runs *before* the Ekos profile is stopped, for "
 "example to close the dust cap, park the mount and close the dome."
 msgstr ""
-"Kön före avstängning körs för att skydda utrustning (stänger vanligtvis "
-"dammskydd, parkerar stativet, stänger kupolen)"
+"**Kö före avstängning** körs *innan* Ekos-profilen stoppas, för att "
+"exempelvis stänga dammskydd, parkerar stativet och stänger kupolen."
 
 #: ../../user_manual/ekos-scheduler.rst:461
 msgid "The Ekos profile is stopped."
-msgstr ""
+msgstr "Ekos-profilen stoppas."
 
 #: ../../user_manual/ekos-scheduler.rst:463
 msgid ""
 "**Post-Shutdown Queue**: runs *after* the Ekos profile is stopped, for "
 "example to power off equipment."
 msgstr ""
+"**Kö efter avstängning**: körs *efter* Ekos-profilen har stoppats, till "
+"exempel för att stänga av utrustning."
 
 #: ../../user_manual/ekos-scheduler.rst:466
 msgid ""
@@ -842,6 +843,10 @@ msgid ""
 "only runs the Post-Startup Queue. The Pre-Startup Queue runs again only "
 "after the Post-Shutdown Queue has run."
 msgstr ""
+"En mjuk avstängning på grund av väder (se :ref:`ekos-scheduler-weather-"
+"monitoring`) kör endast Kö före avstängning och håller Ekos igång; "
+"återställning från läget innebär därför att endast Kö efter start körs. Kö "
+"före start körs bara igen efter att Kö efter avstängning har körts."
 
 #: ../../user_manual/ekos-scheduler.rst:475
 msgid "Data Acquisition"
@@ -941,10 +946,6 @@ msgstr ""
 "bevara resurser, och utför startproceduren igen när det är dags för målet."
 
 #: ../../user_manual/ekos-scheduler.rst:527
-#, fuzzy
-#| msgid ""
-#| "If an unrecoverable error occurs, the observatory initiates shutdown "
-#| "procedure. If there is a shutdown script, it will be executed last."
 msgid ""
 "If an unrecoverable error occurs, the observatory initiates shutdown "
 "procedure. A full shutdown runs the Pre-Shutdown Queue, stops the Ekos "
@@ -952,7 +953,9 @@ msgid ""
 "startup-procedure`)."
 msgstr ""
 "Om ett oåterkalleligt fel uppstår, initierar observatoriet "
-"avstängningsproceduren. Om det finns ett avstängningsskript körs det sist."
+"avstängningsproceduren. En fullständig avstängning kör Kön före avstängning, "
+"stoppar Ekos-profilen och kör sedan Kön efter avstängning (se :ref:`ekos-"
+"scheduler-startup-procedure`)."
 
 #: ../../user_manual/ekos-scheduler.rst:532
 msgid ""
@@ -1106,17 +1109,14 @@ msgstr ""
 "förhindrar reaktion på tillfälliga sensorproblem"
 
 #: ../../user_manual/ekos-scheduler.rst:603
-#, fuzzy
-#| msgid ""
-#| "If the alert persists, the current scheduler job is aborted (marked "
-#| "ABORTED, not ERROR, so it can restart later)"
 msgid ""
 "If the alert persists, the current scheduler job is stopped. It stays in the "
 "schedule and is evaluated again against its constraints before it can "
 "restart."
 msgstr ""
-"Om larmet kvarstår avbryts det aktuella schemalagda jobbet (markeras som "
-"AVBRUTET, inte FEL, så det kan startas om senare)"
+"Om larmet kvarstår avbryts det aktuella schemalagda jobbet. Det förblir i "
+"schemat och utvärderas igen enligt dess begränsningar innan det kan startas "
+"om."
 
 #: ../../user_manual/ekos-scheduler.rst:607
 msgid ""
@@ -1142,6 +1142,10 @@ msgid ""
 "starts. If Ekos is not running yet, nothing needs protecting, and the "
 "scheduler simply waits before starting the observatory."
 msgstr ""
+"Detsamma gäller om larmet redan är aktiv när schemaläggning startar: om Ekos "
+"redan körs, körs Kö före avstängning innan något jobb påbörjas. Om Ekos ännu "
+"inte körs finns det inget som behöver skyddas, och schemaläggningen väntar "
+"helt enkelt med att starta observatoriet."
 
 #: ../../user_manual/ekos-scheduler.rst:623
 msgid "Weather Grace Period"
@@ -1194,15 +1198,10 @@ msgid "Ekos and INDI **remain running** — no full shutdown occurs"
 msgstr "Ekos och INDI **fortsätter köra**: ingen fullständig avstängning sker"
 
 #: ../../user_manual/ekos-scheduler.rst:644
-#, fuzzy
-#| msgid ""
-#| "The scheduler monitors weather every 5 minutes as a safety net, and "
-#| "recovers **immediately** (within 10 ms) when the weather sensor reports OK"
 msgid ""
 "The scheduler recovers **immediately** when the weather sensor reports OK"
 msgstr ""
-"Schemaläggningen övervakar vädret var 5:e minut som ett skyddsnät och "
-"återstartar **omedelbart** (inom 10 ms) när vädersensorn rapporterar ok."
+"Schemaläggningen återstartar **omedelbart** när vädersensorn rapporterar ok."
 
 #: ../../user_manual/ekos-scheduler.rst:646
 msgid ""
@@ -1211,6 +1210,10 @@ msgid ""
 "limit has passed), it runs the full shutdown right away, even though the "
 "alert is still active"
 msgstr ""
+"Var femte minut utvärderar schemaläggningen även jobben, utan att starta "
+"några. Om inget jobb längre kan köras (till exempel för att sluttiden eller "
+"gränsen för gryning har passerats) genomförs en fullständig avstängning "
+"omedelbart, även om larmet fortfarande är aktivt."
 
 #: ../../user_manual/ekos-scheduler.rst:650
 msgid ""
@@ -1286,22 +1289,17 @@ msgid "Weather status changes from Alert to Ok"
 msgstr "Väderstatus ändras från larm till ok"
 
 #: ../../user_manual/ekos-scheduler.rst:685
-#, fuzzy
-#| msgid "The scheduler resumes normal operation"
 msgid "The scheduler re-evaluates the jobs *before* opening anything"
-msgstr "Schemaläggningen återupptar normal drift"
+msgstr "Schemaläggningen utvärderar jobben *innan* något öppnas"
 
 #: ../../user_manual/ekos-scheduler.rst:687
-#, fuzzy
-#| msgid ""
-#| "The Post-Startup Queue executes to reverse protective actions (opens "
-#| "dome, unparks mount, opens dust caps)"
 msgid ""
 "If a job can run now, the Post-Startup Queue executes to reverse protective "
 "actions (opens dome, unparks mount, opens dust caps) and the job starts"
 msgstr ""
-"Kön efter start kör för att omvända skyddsåtgärder (öppnar kupolen, lösgör "
-"stativet, öppnar dammskydd)"
+"Om ett jobb kan utföras nu, körs Kön efter start kör för att omvända "
+"skyddsåtgärder (öppnar kupolen, frigör stativet, öppnar dammskydd) och "
+"jobbet startar"
 
 #: ../../user_manual/ekos-scheduler.rst:691
 msgid ""
@@ -1309,11 +1307,16 @@ msgid ""
 "until then with the observatory still closed, and runs the Post-Startup "
 "Queue when the job is due"
 msgstr ""
+"Om nästa jobb ska utföras senare (till exempel nästa natt) väntar "
+"schemaläggningen till dess med observatoriet fortsatt stängt, och kör Kö "
+"efter start när det är dags för jobbet"
 
 #: ../../user_manual/ekos-scheduler.rst:695
 msgid ""
 "If no job can run any more, the scheduler runs the full shutdown instead"
 msgstr ""
+"Om inget jobb kan köras längre, utför schemaläggningen istället en "
+"fullständig avstängning"
 
 #: ../../user_manual/ekos-scheduler.rst:698
 msgid "**Queue Usage During Weather Events:**"
