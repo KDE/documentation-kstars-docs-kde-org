@@ -36,6 +36,8 @@ quality.
 Each section of the Live Stacker input / output widgets are enclosed within a
 minimize widget that allows the block to be either expanded or minimized.
 
+You can open Live Stacker from the "File" menu.
+
 Following is a description of the UI widgets:
 
     -  Stack Directory: This is the directory that Live Stacker will watch.
