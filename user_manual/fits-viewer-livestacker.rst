@@ -427,12 +427,15 @@ Green and Blue to the Oxygen directory.
 Running Live Stackers
 =====================
 
+Live Stacker is started by selecting "Live Stacker..." from the File menu on the KStars Skymap...
+
+        |FITS Viewer Live Stacker Launch|
+
 It's possible to run more than 1 Live Stacker to monitor multiple directories. This would
 be useful if you are imaging multiple targets or filters and want to keep an eye on
 everything without having to reset the Live Stacker to a new directory periodically.
 
-Live Stacker is started by selecting "Live Stacker..." from the KStars Skymap. Selecting
-"Live Stacker..." a second time will launch another Live Stacker. Depending on how
+Selecting "Live Stacker..." a second time will launch another Live Stacker. Depending on how
 FITS Viewer is configured will determine whether multiple Live Stacker windows are started
 ("Single Window Capture" unchecked) or whether multiple tabs within a single Live Stacker
 window are started ("Single Window Capture" checked).
@@ -492,4 +495,5 @@ manual for more information.
 .. |FITS Viewer Live Stacker Webcast| image:: /images/fitsviewer-livestacker-webcast.png
 .. |FITS Viewer Live Stacker Monitor| image:: /images/fitsviewer-livestacker-monitor.png
 .. |FITS Viewer Live Stacker MultiChannel| image:: /images/fitsviewer-livestacker-mchan.png
+.. |FITS Viewer Live Stacker Launch| image:: /images/fitsviewer-livestacker-launch.png
 .. |FITS Viewer Live Stacker Options| image:: /images/fitsviewer-livestacker-options.png
