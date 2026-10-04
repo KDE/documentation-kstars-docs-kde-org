@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-29 02:18+0000\n"
-"PO-Revision-Date: 2026-08-26 09:50+0200\n"
+"PO-Revision-Date: 2026-10-02 18:54+0200\n"
 "Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -245,7 +245,7 @@ msgid ""
 "run during the next 48 hours in the log panel at the bottom of the window. "
 "See the screenshot of the scheduler window at the top of this section."
 msgstr ""
-"L'algoritme mostra les hores d'inici i les hores de parada previstes per a "
+"L'algorisme mostra les hores d'inici i les hores de parada previstes per a "
 "totes les tasques en la taula del programador. També mostra la seua "
 "estimació de les vegades que les tasques s'executaran durant les properes 48 "
 "hores en el quadro de registre a la part inferior de la finestra. Vegeu la "
@@ -331,7 +331,7 @@ msgstr ""
 "``Nom i coordenades de l'objectiu``: seleccioneu l'objectiu en el :ref:"
 "`diàleg Busca <skyobjects-finding-objects>` o afegiu-lo des del :doc:"
 "`Planificador d'observacions <tool-obsplanner>`. També podeu introduir un "
-"nom personalitzat. Les coordenades també es poden copiar del mapa celeste "
+"nom personalitzat. Les coordenades també es poden copiar del mapa celest "
 "mitjançant el botó que hi ha just a la dreta de les coordenades."
 
 #: ../../user_manual/ekos-scheduler.rst:172
@@ -617,7 +617,7 @@ msgstr ""
 "clic damunt d'una tasca, canvieu els atributs desitjats i cliqueu damunt de "
 "la casella de selecció per a finalitzar el canvi. Si editeu la tasca en "
 "execució, es reiniciarà (és a dir, es tornaran a fer els passos d'inici "
-"(orienta, enfoca, alinea i guia). També es poden moure les tasques cap amunt "
+"(apunta, enfoca, alinea i guia). També es poden moure les tasques cap amunt "
 "i cap avall per a establir la prioritat, afegir tasques noves o suprimir-ne "
 "les existents. No es podrà suprimir la tasca en execució."
 
@@ -787,14 +787,6 @@ msgid "etc."
 msgstr "etc."
 
 #: ../../user_manual/ekos-scheduler.rst:432
-#, fuzzy
-#| msgid ""
-#| "Ekos Scheduler only initiates the startup procedure once the startup time "
-#| "for the first Scheduler job is close (default *lead* time is 5 minutes "
-#| "before *startup* time). Once the startup procedure is completed "
-#| "successfully, the scheduler picks the Scheduler job target and starts the "
-#| "sequence process. If a startup script is specified, it shall be executed "
-#| "first."
 msgid ""
 "Ekos Scheduler only initiates the startup procedure once the startup time "
 "for the first Scheduler job is close (default *lead* time is 5 minutes "
@@ -806,8 +798,7 @@ msgstr ""
 "temps d'inici de la primera tasca del programador és proper (el temps de "
 "*lliurament* predeterminat és de 5 minuts abans del temps d'*inici*). Una "
 "vegada finalitzat el procediment d'inici, el programador triarà l'objectiu "
-"de la tasca del programador i iniciarà el procés de la seqüència. Si "
-"s'especifica un script d'inici, este s'executarà primer."
+"de la tasca del programador i iniciarà el procés de la seqüència."
 
 #: ../../user_manual/ekos-scheduler.rst:439
 msgid ""
@@ -815,18 +806,27 @@ msgid ""
 "`Task Queue System <ekos-scheduler-taskqueue>`). They run at fixed points "
 "and come in pairs, each queue undoing what its counterpart did:"
 msgstr ""
+"Els procediments de posada d'inici i de tancament consten de quatre cues de "
+"tasques (vegeu el :doc:`Sistema «Cua de tasques» <ekos-scheduler-"
+"taskqueue>`). S'executen en moments concrets i funcionen per parelles, de "
+"manera que cada cua desfà el que ha fet la seua contrapart:"
 
 #: ../../user_manual/ekos-scheduler.rst:444
 msgid ""
 "**Pre-Startup Queue**: runs *before* the Ekos profile is started, for "
 "example to power on equipment. Undone by the Post-Shutdown Queue."
 msgstr ""
+"**Cua prèvia a l'inici**: s'executa *abans* d'iniciar el perfil d'Ekos, per "
+"exemple, per a encendre l'equip. La cua posterior al tancament en desfà les "
+"accions."
 
 #: ../../user_manual/ekos-scheduler.rst:448
 msgid ""
 "The Ekos profile is started and INDI devices are connected (skipped if Ekos "
 "is already running)."
 msgstr ""
+"S'inicia el perfil d'Ekos i es connecten els dispositius INDI (s'omet si "
+"Ekos ja s'està executant)."
 
 #: ../../user_manual/ekos-scheduler.rst:451
 msgid ""
@@ -834,33 +834,35 @@ msgid ""
 "the dome, unpark the mount and open the dust cap. Undone by the Pre-Shutdown "
 "Queue."
 msgstr ""
+"**Cua posterior a l'inici**: s'executa una vegada els dispositius estan "
+"llestos, per exemple, per a obrir la cúpula, desaparcar la muntura i obrir "
+"la tapa per la pols. La cua prèvia al tancament en desfà les accions."
 
 #: ../../user_manual/ekos-scheduler.rst:455
 msgid "Jobs run."
-msgstr ""
+msgstr "S'executen les tasques."
 
 # skip-rule: punctuation-period-no
 #: ../../user_manual/ekos-scheduler.rst:457
-#, fuzzy
-#| msgid ""
-#| "The Pre-Shutdown Queue executes to protect equipment (typically closes "
-#| "dust caps, parks mount, closes dome)"
 msgid ""
 "**Pre-Shutdown Queue**: runs *before* the Ekos profile is stopped, for "
 "example to close the dust cap, park the mount and close the dome."
 msgstr ""
-"S'executa la cua prèvia al tancament per a protegir l'equip (normalment "
-"tanca els taps per la pols, aparca la muntura i tanca la cúpula)."
+"**Cua prèvia al tancament**: s'executa *abans* de parar el perfil d'Ekos, "
+"per exemple, per a tancar la tapa per la pols, aparcar la muntura i tancar "
+"la cúpula."
 
 #: ../../user_manual/ekos-scheduler.rst:461
 msgid "The Ekos profile is stopped."
-msgstr ""
+msgstr "Es para el perfil d'Ekos."
 
 #: ../../user_manual/ekos-scheduler.rst:463
 msgid ""
 "**Post-Shutdown Queue**: runs *after* the Ekos profile is stopped, for "
 "example to power off equipment."
 msgstr ""
+"**Cua posterior al tancament**: s'executa *després* de parar el perfil "
+"d'Ekos, per exemple, per a apagar l'equip."
 
 #: ../../user_manual/ekos-scheduler.rst:466
 msgid ""
@@ -869,6 +871,11 @@ msgid ""
 "only runs the Post-Startup Queue. The Pre-Startup Queue runs again only "
 "after the Post-Shutdown Queue has run."
 msgstr ""
+"Un tancament suau per meteorologia (vegeu :ref:`ekos-scheduler-weather-"
+"monitoring`) només executa la cua prèvia al tancament i manté Ekos en "
+"funcionament, de manera que per a recuperar-se d'esta situació només cal "
+"executar la cua posterior a l'inici. La cua prèvia a l'inici només es torna "
+"a executar després que s'haja executat la cua posterior al tancament."
 
 #: ../../user_manual/ekos-scheduler.rst:475
 msgid "Data Acquisition"
@@ -887,8 +894,8 @@ msgid ""
 "Slew mount to target. If a FITS file was specified, it first solves the "
 "files and slew to the file coordinates."
 msgstr ""
-"Orientarà la muntura cap a l'objectiu. Si s'ha especificat un fitxer FITS, "
-"primer resoldrà els fitxers i orientarà cap a les coordenades del fitxer."
+"Apuntarà la muntura cap a l'objectiu. Si s'ha especificat un fitxer FITS, "
+"primer resoldrà els fitxers i apuntarà cap a les coordenades del fitxer."
 
 #: ../../user_manual/ekos-scheduler.rst:484
 msgid ""
@@ -902,8 +909,8 @@ msgstr ""
 #: ../../user_manual/ekos-scheduler.rst:488
 msgid "Perform plate solving, sync mount, and slew to target coordinates."
 msgstr ""
-"Realitzarà la resolució de la placa, sincronitzarà la muntura i orientarà "
-"cap a les coordenades de l'objectiu."
+"Realitzarà la resolució de la placa, sincronitzarà la muntura i apuntarà cap "
+"a les coordenades de l'objectiu."
 
 #: ../../user_manual/ekos-scheduler.rst:491
 msgid ""
@@ -970,10 +977,6 @@ msgstr ""
 "recursos i tornarà a executar el procediment d'inici quan vença l'objectiu."
 
 #: ../../user_manual/ekos-scheduler.rst:527
-#, fuzzy
-#| msgid ""
-#| "If an unrecoverable error occurs, the observatory initiates shutdown "
-#| "procedure. If there is a shutdown script, it will be executed last."
 msgid ""
 "If an unrecoverable error occurs, the observatory initiates shutdown "
 "procedure. A full shutdown runs the Pre-Shutdown Queue, stops the Ekos "
@@ -981,7 +984,9 @@ msgid ""
 "startup-procedure`)."
 msgstr ""
 "Si es produïx un error irrecuperable, l'observatori iniciarà el procediment "
-"de tancament. Si hi ha un script de tancament, s'executarà l'últim."
+"de tancament. Un tancament complet executarà la cua prèvia al tancament, "
+"pararà el perfil d'Ekos i, a continuació, executarà la cua posterior al "
+"tancament (vegeu el :ref:`ekos-scheduler-startup-procedure`)."
 
 #: ../../user_manual/ekos-scheduler.rst:532
 msgid ""
@@ -1028,13 +1033,13 @@ msgid ""
 "operational. The exact behavior to take under Warning status can be "
 "configured."
 msgstr ""
-"**Avís**: les condicions meteorològiques no són clares, la qualitat de visió "
-"és insatisfactòria o està parcialment obstruïda, i no és adequada per a "
-"l'obtenció de les imatges. Qualsevol altre procés d'obtenció de les imatges "
-"serà suspés fins que millore el temps. L'avís de l'estat de la meteorologia "
-"no suposa cap perill per a l'equip de l'observatori, de manera que es "
-"mantindrà operatiu. El comportament exacte davall l'estat d'avís es pot "
-"configurar."
+"**Avís**: les condicions meteorològiques no són clares, l'estabilitat "
+"atmosfèrica és insatisfactòria o està parcialment obstruïda, i no és "
+"adequada per a l'obtenció de les imatges. Qualsevol altre procés d'obtenció "
+"de les imatges serà suspés fins que millore el temps. L'avís de l'estat de "
+"la meteorologia no suposa cap perill per a l'equip de l'observatori, de "
+"manera que es mantindrà operatiu. El comportament exacte davall l'estat "
+"d'avís es pot configurar."
 
 #: ../../user_manual/ekos-scheduler.rst:563
 msgid ""
@@ -1148,17 +1153,14 @@ msgstr ""
 
 # skip-rule: punctuation-period-no
 #: ../../user_manual/ekos-scheduler.rst:603
-#, fuzzy
-#| msgid ""
-#| "If the alert persists, the current scheduler job is aborted (marked "
-#| "ABORTED, not ERROR, so it can restart later)"
 msgid ""
 "If the alert persists, the current scheduler job is stopped. It stays in the "
 "schedule and is evaluated again against its constraints before it can "
 "restart."
 msgstr ""
-"Si l'alerta persistix, s'interromp la tasca actual del programador (marcada "
-"INTERROMPUDA, no ERROR, de manera que es puga reiniciar més avant)."
+"Si l'alerta persistix, s'interromprà la tasca actual del programador. Esta "
+"es mantindrà a la planificació i es tornarà a avaluar respecte a les seues "
+"restriccions abans que es puga tornar a iniciar."
 
 # skip-rule: punctuation-period-no
 #: ../../user_manual/ekos-scheduler.rst:607
@@ -1167,7 +1169,7 @@ msgid ""
 "caps, parks mount, closes dome)"
 msgstr ""
 "S'executa la cua prèvia al tancament per a protegir l'equip (normalment "
-"tanca els taps per la pols, aparca la muntura i tanca la cúpula)."
+"tanca les tapes per la pols, aparca la muntura i tanca la cúpula)."
 
 # skip-rule: punctuation-period-no
 #: ../../user_manual/ekos-scheduler.rst:610
@@ -1189,6 +1191,10 @@ msgid ""
 "starts. If Ekos is not running yet, nothing needs protecting, and the "
 "scheduler simply waits before starting the observatory."
 msgstr ""
+"El mateix s'aplica si l'alerta ja està activa quan s'inicia el planificador: "
+"si Ekos ja s'està executant, la cua prèvia al tancament s'executa abans que "
+"comence cap tasca. Si Ekos encara no s'està executant, no cal protegir res, "
+"i el planificador senzillament espera abans d'iniciar l'observatori."
 
 #: ../../user_manual/ekos-scheduler.rst:623
 msgid "Weather Grace Period"
@@ -1247,17 +1253,13 @@ msgstr ""
 
 # skip-rule: punctuation-period-no
 #: ../../user_manual/ekos-scheduler.rst:644
-#, fuzzy
-#| msgid ""
-#| "The scheduler monitors weather every 5 minutes as a safety net, and "
-#| "recovers **immediately** (within 10 ms) when the weather sensor reports OK"
 msgid ""
 "The scheduler recovers **immediately** when the weather sensor reports OK"
 msgstr ""
-"El programador supervisarà el clima cada 5 minuts com a xarxa de seguretat i "
-"es recuperarà **immediatament** (en un termini de 10 ms) quan el sensor "
-"meteorològic informe que és correcte."
+"El planificador es recuperarà **immediatament** quan el sensor meteorològic "
+"informe d'un estat correcte (Bé)."
 
+# skip-rule: punctuation-period-no
 #: ../../user_manual/ekos-scheduler.rst:646
 msgid ""
 "Every 5 minutes, the scheduler also re-evaluates the jobs, without starting "
@@ -1265,6 +1267,10 @@ msgid ""
 "limit has passed), it runs the full shutdown right away, even though the "
 "alert is still active"
 msgstr ""
+"Cada 5 minuts, el planificador també torna a avaluar les tasques, sense "
+"iniciar-ne cap. Si ja no es pot executar cap tasca (per exemple, perquè s'ha "
+"superat la seua hora de finalització o el límit de l'alba), executa el "
+"tancament complet immediatament, tot i que l'alerta encara estiga activa."
 
 # skip-rule: t-com_pu
 #: ../../user_manual/ekos-scheduler.rst:650
@@ -1346,35 +1352,37 @@ msgstr "L'estat de la meteorologia canvia d'«Alerta» a «BONA»."
 
 # skip-rule: punctuation-period-no
 #: ../../user_manual/ekos-scheduler.rst:685
-#, fuzzy
-#| msgid "The scheduler resumes normal operation"
 msgid "The scheduler re-evaluates the jobs *before* opening anything"
-msgstr "El programador reprén el funcionament normal."
+msgstr "El programador tornarà a avaluar les tasques *abans* d'obrir res."
 
 # skip-rule: punctuation-period-no
 #: ../../user_manual/ekos-scheduler.rst:687
-#, fuzzy
-#| msgid ""
-#| "The Post-Startup Queue executes to reverse protective actions (opens "
-#| "dome, unparks mount, opens dust caps)"
 msgid ""
 "If a job can run now, the Post-Startup Queue executes to reverse protective "
 "actions (opens dome, unparks mount, opens dust caps) and the job starts"
 msgstr ""
-"La cua posterior a l'inici s'executa per a revertir les accions de protecció "
-"(obri la cúpula, desaparca la muntura i obri els taps per la pols)."
+"Si una tasca es pot executar ara, la cua posterior a l'inici s'executarà per "
+"a revertir les accions de protecció (obri la cúpula, desaparca la montura i "
+"obri les tapes per la pols) i la tasca començarà."
 
+# skip-rule: punctuation-period-no
 #: ../../user_manual/ekos-scheduler.rst:691
 msgid ""
 "If the next job is later (for example the next night), the scheduler sleeps "
 "until then with the observatory still closed, and runs the Post-Startup "
 "Queue when the job is due"
 msgstr ""
+"Si la tasca següent és més tard (per exemple, la nit següent), el "
+"planificador es queda en espera fins aleshores amb l'observatori tancat, i "
+"executa la cua posterior a l'inici quan arribe l'hora de la tasca."
 
+# skip-rule: punctuation-period-no
 #: ../../user_manual/ekos-scheduler.rst:695
 msgid ""
 "If no job can run any more, the scheduler runs the full shutdown instead"
 msgstr ""
+"Si ja no es pot executar cap tasca, el planificador executa el tancament "
+"complet en el seu lloc."
 
 #: ../../user_manual/ekos-scheduler.rst:698
 msgid "**Queue Usage During Weather Events:**"
@@ -1775,7 +1783,7 @@ msgstr ""
 "en el planificador, cliqueu damunt del botó ``Planificador del mosaic`` en "
 "el «Programador» d'Ekos o en la barra d'eines INDI de KStars, tal com "
 "s'il·lustra en la captura de pantalla. El planificador dibuixa el Quadro del "
-"mosaic directament davall el mapa celeste. Es recomana activar la "
+"mosaic directament davall el mapa celest. Es recomana activar la "
 "superposició HiPS per a una millor experiència. El planificador està format "
 "per quatre etapes:"
 
@@ -1811,7 +1819,7 @@ msgid ""
 msgstr ""
 "**Ajusta la quadrícula**: seleccioneu la dimensió del quadro del mosaic i el "
 "percentatge de superposició. El quadro del mosaic s'actualitzarà en "
-"conseqüència en el mapa celeste. Ajusteu l'angle de posició perquè "
+"conseqüència en el mapa celest. Ajusteu l'angle de posició perquè "
 "coincidisca amb l'orientació desitjada en el mosaic en el cel. Si l'angle de "
 "posició és diferent de l'orientació habitual de la càmera, és possible que "
 "hàgeu de girar la càmera manualment o mitjançant un rotor mecanitzat quan "
@@ -1819,7 +1827,7 @@ msgstr ""
 "manera predeterminada es calcula automàticament, però es pot desactivar i "
 "ajustar manualment. Per a calcular el camp del mosaic a partir del nombre de "
 "tessel·les, cliqueu damunt del botó ``Cobertura de CDV``. El quadro del "
-"mosaic es pot centrar en el mapa celeste clicant damunt del botó ``Torna a "
+"mosaic es pot centrar en el mapa celest clicant damunt del botó ``Torna a "
 "centrar``."
 
 #: ../../user_manual/ekos-scheduler.rst:926
@@ -1878,7 +1886,7 @@ msgstr ""
 "celeste, observareu que les subfinestres representades començaran a rotar "
 "visiblement a causa de la seua posició horitzontal o d'una declinació alta. "
 "Utilitzeu la ``Superposició`` per a assegurar-vos que les subfinestres "
-"cobrisquen correctament l'extensió desitjada del fotograma."
+"cobrisquen correctament l'extensió de l'enquadrament desitjat."
 
 #: ../../user_manual/ekos-scheduler.rst:961
 msgid "|Scheduler Mosaic Tool - Large rotation|"
@@ -2048,17 +2056,3 @@ msgstr "Crea tasques"
 #: ../../user_manual/ekos-scheduler.rst:1006
 msgid ".. image:: /images/mosaic_create_jobs.png"
 msgstr ".. image:: /images/mosaic_create_jobs.png"
-
-# skip-rule: punctuation-period-no
-#~ msgid ""
-#~ "Jobs are left in **ABORTED** state (not ERROR) so they will restart "
-#~ "automatically once conditions improve"
-#~ msgstr ""
-#~ "Les tasques es deixaran en estat **INTERROMPUDA** (no ERROR), de manera "
-#~ "que es reiniciaran automàticament una vegada milloren les condicions."
-
-# skip-rule: punctuation-period-no
-#~ msgid "The aborted job can restart if its constraints are still met"
-#~ msgstr ""
-#~ "La tasca interrompuda es pot reiniciar si ja es complixen les seues "
-#~ "restriccions."
