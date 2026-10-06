@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-17 08:59+0000\n"
-"PO-Revision-Date: 2026-07-03 11:50+0200\n"
+"PO-Revision-Date: 2026-10-03 19:37+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../../user_manual/ekos-focus.rst:3
@@ -1741,6 +1741,17 @@ msgid ""
 "through focus, so the exposure is scaled upwards to 8s for the last "
 "datapoint."
 msgstr ""
+"``Dilazione temporale x``: questa funzionalità scala il tempo di esposizione "
+"durante la messa a fuoco automatica dal valore inserito nel campo "
+"``Esposizione`` per i punti dati più lontani dalla messa a fuoco. I punti "
+"dati vicino alla messa a fuoco vengono scattati con un'esposizione non "
+"scalata. Per esempio, se la messa a fuoco è configurata con un'esposizione "
+"di 2s e la dilazione temporale x è impostata a 4, allora quando la messa a "
+"fuoco automatica si sposta per scattare il suo primo punto dati viene "
+"utilizzata un'esposizione di 2s \\* 4 = 8s. Su ciascun successivo punto dati "
+"l'esposizione viene ridotta a 2s attorno al punto di messa a fuoco ottimale. "
+"Poiché il focheggiatore si sposta attraverso il fuoco, allora l'esposizione "
+"viene scalata verso l'alto a 8s per l'ultimo punto dati."
 
 #: ../../user_manual/ekos-focus.rst:397
 msgid ""
@@ -1748,6 +1759,10 @@ msgid ""
 "datapoints which will be dimmer than in-focus datapoints and therefore "
 "harder for star detection to resolve from the background noise."
 msgstr ""
+"Lo scopo di questa funzionalità è aumentare la luminosità dei punti dati "
+"fuori fuoco che risulterebbero più offuscati di quelli a fuoco e quindi più "
+"difficili da risolvere per il rilevamento stelle partendo dal rumore di "
+"fondo."
 
 #: ../../user_manual/ekos-focus.rst:399
 msgid ""
@@ -1756,6 +1771,11 @@ msgid ""
 "the value the more outliers will be excluded from the curve fitting "
 "process.  The default value is 0.2."
 msgstr ""
+"``Scarto dei valori anomali``: fattore per ridimensionare l'aggressività "
+"dell'algoritmo di scarto dei valori anomali quando quando è attivata "
+"l'opzione *Perfeziona adattamento della curva*. Più alto è il valore, "
+"maggiori saranno i valori anomali esclusi dal processo di adattamento della "
+"curva. Il valore predefinito è 0,2."
 
 #: ../../user_manual/ekos-focus.rst:401
 msgid ""
@@ -1763,6 +1783,9 @@ msgid ""
 "Fixed and CFZ Shuffle, curves fits of Hyperbola and Parabola, and focus "
 "measures of: HFR, HFR Adj and FWHM."
 msgstr ""
+"``Scansiona per la posizione di inizio`` è disponibile soltanto per Lineare "
+"a un passo, Passi fissi e CFZ casuale, curve di adattamento di iperbole e "
+"parabola, e misure di messa a fuoco di: HFR, HFR regolato e FWHM."
 
 #: ../../user_manual/ekos-focus.rst:403
 msgid ""
@@ -1771,6 +1794,11 @@ msgid ""
 "that Autofocus starts near to the focus position. The following sub-options "
 "are available:"
 msgstr ""
+"Spunta questa opzione in modo che la messa a fuoco scansioni attorno alla "
+"posizione del focheggiatore attivo in modo da trovare una posizione di messa "
+"a fuoco approssimata ottimale. Lo scopo è garantire che la messa a fuoco "
+"automatica parta vicino alla posizione di messa a fuoco. Sono disponibili le "
+"seguenti opzioni secondarie:"
 
 #: ../../user_manual/ekos-focus.rst:405
 msgid ""
@@ -1778,24 +1806,35 @@ msgid ""
 "start of Autofocus. When unchecked, it is only run when Autofocus fails and "
 "is rerun."
 msgstr ""
+"``Sempre attivo``: se attivata, ``Scansiona per la posizione di inizio`` "
+"viene sempre eseguita all'inizio della Messa a fuoco automatica. Se "
+"disattivata, verrà eseguita solo quando la Messa a fuoco automatica fallisce "
+"e viene rieseguita."
 
 #: ../../user_manual/ekos-focus.rst:407
 msgid ""
 "``Num Datapoints``: The number of datapoints to use in each scan. 5 is a "
 "good place to start."
 msgstr ""
+"``Num. di punti dati``: il numero di punti dati da utilizzare in ciascuna "
+"scansione. 5 è un buon punto di partenza."
 
 #: ../../user_manual/ekos-focus.rst:409
 msgid ""
 "``Initial Step size x``: A multiplicative factor to apply to the Initial "
 "Step size for use in the Scan for Start Position. Default is 1.0."
 msgstr ""
+"``Dimensione iniziale del passo x``: fattore di moltiplicazione per "
+"applicare la dimensione del Passo iniziale da utilizzare nell'opzione "
+"«Scansiona per la posizione di inizio». Il valore predefinito è 1,0."
 
 #: ../../user_manual/ekos-focus.rst:411
 msgid ""
 "If ``Detection`` is set to Threshold then the following additional field is "
 "available:"
 msgstr ""
+"Se il ``Rilevamento`` è impostato a Soglia, allora è disponibile "
+"quest'ulteriore campo:"
 
 #: ../../user_manual/ekos-focus.rst:413
 msgid ""
@@ -1803,36 +1842,51 @@ msgid ""
 "using the *Threshold* detection algorithm. Increase to restrict the centroid "
 "to bright cores. Decrease to enclose fuzzy stars."
 msgstr ""
+"``Soglia``: valore percentuale usato per il rilevamento stelle che utilizza "
+"l'algoritmo di rilevamento della *soglia*. Aumenta per limitare il "
+"baricentro ai nuclei luminosi. Riduci per includere le stelle sfocate."
 
 #: ../../user_manual/ekos-focus.rst:415
 msgid ""
 "If ``Detection`` is set to Bahtinov then the following additional widgets "
 "are available:"
 msgstr ""
+"Se il ``Rilevamento`` è impostato a Bahtinov, allora sono disponibili gli "
+"ulteriori oggetti:"
 
 #: ../../user_manual/ekos-focus.rst:417
 msgid ""
 "``Num. of rows``: The number of lines displayed on screen when using a "
 "Bahtinov mask."
 msgstr ""
+"``Num. di righe``: numero di righe visualizzate sullo schermo quando si "
+"utilizza una maschera di Bahtinov."
 
 #: ../../user_manual/ekos-focus.rst:419
 msgid ""
 "``Sigma``: The sigma of the gaussian blur applied to the image before "
 "applying Bahtinov edge detection."
 msgstr ""
+"``Deviazione standard (σ)``: la deviazione standard della sfocatura "
+"gaussiana applicata all'immagine prima di applicare il rilevamento dei bordi "
+"Bahtinov."
 
 #: ../../user_manual/ekos-focus.rst:421
 msgid ""
 "``Kernel Size``: The kernel size of the gaussian blur applied to the image "
 "before applying Bahtinov edge detection."
 msgstr ""
+"``Dimensione del nocciolo``: la dimensione del nocciolo della sfocatura "
+"gaussiana applicata all'immagine prima di applicare il rilevamento dei bordi "
+"Bahtinov."
 
 #: ../../user_manual/ekos-focus.rst:423
 msgid ""
 "If ``Algorithm`` is set to Linear or Iterative then the following additional "
 "widget is available:"
 msgstr ""
+"Se ``Algoritmo`` è impostato a Lineare o Iterativo, allora è disponibile "
+"l'ulteriore oggetto:"
 
 #: ../../user_manual/ekos-focus.rst:425
 msgid ""
@@ -1844,12 +1898,24 @@ msgid ""
 "HFR. Decrease the value to narrow the optimal focus point solution radius. "
 "Increase to expand solution radius."
 msgstr ""
+"``Tolleranza``: il valore percentuale della tolleranza viene utilizzato per "
+"aiutare a decidere quando la procedura di messa a fuoco automatica debba "
+"fermarsi. Durante la procedura di messa a fuoco automatica vengono "
+"registrati i valori HFR e, una volta che il focheggiatore si trova vicino "
+"alla posizione ottimale, parte la misurazione dei valori HFR rispetto al HFR "
+"minimo registrato nella sessione e si ferma ogniqualvolta un valore HFR "
+"misurato si trova all'interno della % di differenza del HFR minimo "
+"registrato. Riduci il valore per restringere il raggio di risoluzione del "
+"punto focale ottimale. Aumenta per espandere il raggio di risoluzione."
 
 #: ../../user_manual/ekos-focus.rst:429
 msgid ""
 "Setting the Tolerance value too low might result in a repetitive loop and "
 "would most likely result in a failed Autofocus process."
 msgstr ""
+"Impostando un valore di tolleranza troppo basso produrrai un ciclo continuo "
+"che molto probabilmente genererà un errore della procedura di messa a fuoco "
+"automatica."
 
 #: ../../user_manual/ekos-focus.rst:434 ../../user_manual/ekos-focus.rst:2168
 msgid "Focus Mechanics"
@@ -1861,7 +1927,7 @@ msgstr "|Focus Mechanics|"
 
 #: ../../user_manual/ekos-focus.rst:440
 msgid "Focus Mechanics Parameters:"
-msgstr ""
+msgstr "Parametri della meccanica di messa a fuoco:"
 
 #: ../../user_manual/ekos-focus.rst:442
 msgid ""
@@ -1869,6 +1935,9 @@ msgid ""
 "sweep to produce the V-Curve from which the focus solution will be "
 "calculated."
 msgstr ""
+"``Cammino``: definisce il modo in cui la messa a fuoco automatica "
+"\"percorrerà\" verso l'interno la sua ricerca per generare la curva V da cui "
+"sarà calcolata la risoluzione di messa a fuoco."
 
 #: ../../user_manual/ekos-focus.rst:444
 msgid "The following are available:"
@@ -1881,6 +1950,11 @@ msgid ""
 "includes logic to determine when to stop that makes the exact number of "
 "steps unpredictable but it will be about 2 \\* (``Out Step Multiple``) + 1."
 msgstr ""
+"**Classico**: impostazione consigliata. La ricerca interna segue una serie "
+"di passi di dimensione uguale (``Dimensione iniziale del passo``). "
+"L'algoritmo include la logica di determinare quando fermarsi, che rende "
+"imprevedibile il numero esatto di passi ma sarà circa 2 \\* (``Multiplo "
+"fuori passo``) + 1."
 
 #: ../../user_manual/ekos-focus.rst:448
 msgid ""
@@ -1889,6 +1963,11 @@ msgid ""
 "tolerant of not being started near to focus so is a good choice for the "
 "initial Autofocus run."
 msgstr ""
+"Questo \"cammino\" tollera eventuali errori dell'adattamento della curva "
+"nell'ultimo passo, in cui eseguirà un ulteriore passo e riproverà a "
+"risolvere. È inoltre abbastanza tollerante riguardo la posizione di partenza "
+"(non richiede di iniziare in prossimità del fuoco), pertanto è una buona "
+"scelta per l'esecuzione della messa a fuoco automatica iniziale."
 
 #: ../../user_manual/ekos-focus.rst:450
 msgid ""
@@ -1896,6 +1975,10 @@ msgid ""
 "conservative option to chose, but comes at the expense of extra steps and "
 "therefore extra time in the Autofocus process."
 msgstr ""
+"Poiché la \"tolleranza\" di questo Cammino, lungi dall'essere è una "
+"configurazione perfetta, è un'opzione prudente da scegliere, tuttavia "
+"comporta un maggior numero di passi e quindi tempi più lunghi per la "
+"procedura di messa a fuoco automatica."
 
 #: ../../user_manual/ekos-focus.rst:452
 msgid ""
@@ -1903,6 +1986,9 @@ msgid ""
 "``Algorithm``. It is quite similar to Classic but ``Fixed Steps`` is used to "
 "control the total number of steps taken."
 msgstr ""
+"**Passi fissi**: questa opzione è disponibile nell'algoritmo ``Lineare a 1 "
+"passo``. Molto simile all'opzione *Classico* ma ``Passi fissi`` è utilizzata "
+"per controllare il numero totale dei passi intrapresi."
 
 #: ../../user_manual/ekos-focus.rst:454
 msgid ""
@@ -1910,11 +1996,16 @@ msgid ""
 "number of steps (so will be faster), but is less tolerant of issues curve "
 "fitting the last data point and needs to be started near to focus."
 msgstr ""
+"Questo algoritmo è più prevedibile dell'opzione *Classico*, nel senso che "
+"considera un numero definito di passi (dunque risulterà più veloce), ma è "
+"meno tollerante riguardo i problemi di adattamento della curva all'ultimo "
+"punto dati e richiede di essere avviato vicino al fuoco."
 
 #: ../../user_manual/ekos-focus.rst:456
 msgid ""
 "When selected, the ``Out Steps Multiple`` is replaced by ``Fixed Steps``:"
 msgstr ""
+"Quando selezionata, ``Multiplo fuori passo`` è sostituita da ``Passi fissi``:"
 
 #: ../../user_manual/ekos-focus.rst:459
 msgid "|image4|"
@@ -1926,6 +2017,9 @@ msgid ""
 "``Algorithm``. It is a variation on Fixed Steps so the comments on that Walk "
 "are applicable here as well."
 msgstr ""
+"**CFZ casuale**: questa funzionalità è disponibile nell'algoritmo ``Lineare "
+"a 1 passo``. È una variante di Passi fissi, pertanto i commenti relativi al "
+"Cammino sono applicabili anche qui."
 
 #: ../../user_manual/ekos-focus.rst:464
 msgid ""
@@ -1933,6 +2027,10 @@ msgid ""
 "of the sweep (which should be around the Critical Focus Zone (CFZ)) the "
 "algorithm takes steps of half the specified size."
 msgstr ""
+"La differenza tra CFZ casuale e Passi fissi è che vicino al centro della "
+"ricerca/percorso (che dovrebbe essere attorno alla *Zona della messa a fuoco "
+"critica*, Critical Focus Zone (CFZ)) l'algoritmo intraprende passi che sono "
+"metà della dimensione specificata."
 
 #: ../../user_manual/ekos-focus.rst:466
 msgid ""
@@ -1982,6 +2080,8 @@ msgid ""
 "``Driver Backlash``: See the section on :ref:`Backlash <ekos-focus-focus-"
 "backlash>`."
 msgstr ""
+"``Gioco del driver``: vedi il paragrafo :ref:`Gioco <ekos-focus-focus-"
+"backlash>`."
 
 #: ../../user_manual/ekos-focus.rst:480 ../../user_manual/ekos-focus.rst:490
 msgid "There are 2 schemes that can be used:"
@@ -2350,10 +2450,8 @@ msgid "``Close``: Press this button to close the ``Focus Advisor`` dialog."
 msgstr ""
 
 #: ../../user_manual/ekos-focus.rst:743
-#, fuzzy
-#| msgid "The following controls are available:"
 msgid "The following checkbox options are available:"
-msgstr "Sono disponibili i seguenti controlli:"
+msgstr "Sono disponibili le seguenti opzioni tramite caselle di controllo:"
 
 #: ../../user_manual/ekos-focus.rst:745
 msgid ""
