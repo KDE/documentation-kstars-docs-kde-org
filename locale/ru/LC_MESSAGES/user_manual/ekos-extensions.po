@@ -1,0 +1,231 @@
+# Translation of kstars_docs_user_manual___ekos-extensions into Russian.
+# Copyright (C) licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
+# This file is distributed under the same license as the KStars Handbook package.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars_docs_user_manual___ekos-extensions\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-17 08:59+0000\n"
+"PO-Revision-Date: 2026-10-10 16:02+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: ../../user_manual/ekos-extensions.rst:3
+msgid "Extensions"
+msgstr "Расширения"
+
+#: ../../user_manual/ekos-extensions.rst:8
+msgid "Introduction"
+msgstr "Введение"
+
+#: ../../user_manual/ekos-extensions.rst:10
+msgid ""
+"Extensions are small programs that can be added to interact with Kstars/Ekos/"
+"INDI in order to provide extra functions and features."
+msgstr ""
+"Расширения — это небольшие программы, которые можно добавить для "
+"взаимодействия с KStars/Ekos/INDI, чтобы предоставить дополнительные функции "
+"и возможности."
+
+#: ../../user_manual/ekos-extensions.rst:14
+msgid ""
+"Extensions are separate from Kstars/Ekos/INDI. They are not provided as part "
+"of this software. Only a means to call them is provided for convenience. "
+"Make sure that you understand the requirements and risks of using an "
+"extension."
+msgstr ""
+"Расширения не входят в состав KStars/Ekos/INDI и не поставляются вместе с "
+"этим программным обеспечением. Для удобства предусмотрена лишь возможность "
+"их вызова. Важно понимать требования и риски, связанные с использованием "
+"расширения."
+
+#: ../../user_manual/ekos-extensions.rst:19
+msgid "Requirements"
+msgstr "Требования"
+
+#: ../../user_manual/ekos-extensions.rst:21
+msgid ""
+"Each extension must consist of at least 2 files, with an optional third icon "
+"file."
+msgstr ""
+"Каждое расширение должно состоять как минимум из двух файлов; третий файл — "
+"значок — необязателен."
+
+#: ../../user_manual/ekos-extensions.rst:23
+msgid ""
+"The program file. This is any executable file that will run on the users "
+"system. The user under which KStars is running must have execute permission "
+"on this file."
+msgstr ""
+"Файл программы. Это любой исполняемый файл, который будет запущен в системе "
+"пользователя. Пользователь, от имени которого запущена программа KStars, "
+"должен иметь право на выполнение этого файла."
+
+#: ../../user_manual/ekos-extensions.rst:25
+msgid ""
+"The configuration file. This is a plain text file that defines the required "
+"and optional inputs for the extension. It must be named the same as the "
+"extension executable with the addition of a .conf file name extension."
+msgstr ""
+"Файл конфигурации. Это простой текстовый файл, в котором определяются "
+"обязательные и необязательные входные данные для расширения. Его имя должно "
+"совпадать с именем исполняемого файла расширения с добавлением расширения "
+"имени файла .conf."
+
+#: ../../user_manual/ekos-extensions.rst:27
+msgid ""
+"It is mandatory that the configuration file contains a line starting with "
+"**minimum_kstars_version=n.n.n** where n.n.n is the lowest version of KStars "
+"that supports the extension e.g. 3.7.3"
+msgstr ""
+"Файл конфигурации обязательно должен содержать строку, начинающуюся с "
+"**minimum_kstars_version=n.n.n**, где n.n.n — минимальная версия KStars, "
+"поддерживающая расширение, например 3.7.3"
+
+#: ../../user_manual/ekos-extensions.rst:29
+msgid ""
+"Optionally (and non-preferred) the configuration file may contain a line "
+"starting with **runDetached=true**.  If present this line makes the "
+"extension run independently from KStars. Once it has been started the "
+"extension can not pass status information back to Ekos. This should only be "
+"used by extensions that are required to continue to run after KStars has "
+"closed.  The extension must also provide its own user interface."
+msgstr ""
+"Дополнительно (но это не рекомендуется) файл конфигурации может содержать "
+"строку, начинающуюся с **runDetached=true**. Если такая строка присутствует, "
+"расширение запускается независимо от KStars. После запуска расширение не "
+"может передавать информацию о состоянии обратно в Ekos. Это следует "
+"использовать только для расширений, которые должны продолжать работу после "
+"закрытия KStars. Кроме того, расширение должно предоставлять собственный "
+"пользовательский интерфейс."
+
+#: ../../user_manual/ekos-extensions.rst:31
+msgid ""
+"Additionally the configuration file can contain any other parameters that "
+"the extension author decides and free text."
+msgstr ""
+"Кроме того, в файле конфигурации допускаются любые другие параметры, "
+"определяемые автором расширения, а также произвольный текст."
+
+#: ../../user_manual/ekos-extensions.rst:33
+msgid ""
+"The icon file, if present, must be named the same as the extension "
+"executable with the addition of the appropriate file name extension for the "
+"image format, .jpg, .bmp, .gif, .png and .svg are supported. If provided "
+"this icon will be used in the extension selection ComboBox. If an icon is "
+"not provided a default icon will be used instead."
+msgstr ""
+"Файл значка, если он присутствует, должен называться так же, как исполняемый "
+"файл расширения, с добавлением соответствующего расширения имени файла для "
+"формата изображения; поддерживаются .jpg, .bmp, .gif, .png и .svg. Если "
+"значок указан, он используется в раскрывающемся списке выбора расширения. "
+"Если значок не указан, вместо него используется значок по умолчанию."
+
+#: ../../user_manual/ekos-extensions.rst:35
+msgid ""
+"All files of the extension (executable, configuration, and optional icon) "
+"must be copied into the KStars writable data location /extensions e.g. ``~/."
+"local/share/kstars/extensions``"
+msgstr ""
+"Все файлы расширения (исполняемый файл, файл конфигурации и дополнительный "
+"значок) необходимо скопировать в доступный для записи каталог данных KStars /"
+"extensions, например ``~/.local/share/kstars/extensions``"
+
+#: ../../user_manual/ekos-extensions.rst:37
+msgid ""
+"Extensions that are present, have a valid configuration file, and have a "
+"minimum KStars version no higher than the current installation will be "
+"detected when Ekos is started.  If there are no valid extensions detected "
+"the extension UI element will not be displayed. The extension UI elements "
+"are a ComboBox showing the name and icon of each detected extension, and a "
+"start/stop button. If the extension fails to close within 10 seconds of the "
+"stop button being clicked, it becomes re-enabled as an abort button that "
+"will force close the extension. Only one extension can be used at a time."
+msgstr ""
+"При запуске Ekos обнаруживаются расширения, которые присутствуют, имеют "
+"допустимый файл конфигурации, а их минимальная версия KStars не выше текущей "
+"установленной. Если допустимые расширения не обнаружены, элемент интерфейса "
+"расширений не показывается. Элементы интерфейса расширений — это "
+"раскрывающийся список с именем и значком каждого обнаруженного расширения и "
+"кнопка запуска/остановки. Если расширение не закрывается в течение 10 секунд "
+"после нажатия кнопки остановки, она снова активируется как кнопка "
+"прерывания, которая принудительно закрывает расширение. Одновременно можно "
+"использовать только одно расширение."
+
+#: ../../user_manual/ekos-extensions.rst:42
+msgid "Development"
+msgstr "Разработка"
+
+#: ../../user_manual/ekos-extensions.rst:44
+msgid "The following describes additional points for developers of extensions."
+msgstr "Ниже описаны дополнительные моменты для разработчиков расширений."
+
+#: ../../user_manual/ekos-extensions.rst:46
+msgid ""
+"Some extension sources including an example skeleton extension are available "
+"in the `KStars Extension Github <https://github.com/LuckyEddie47/"
+"kstars_extensions>`__"
+msgstr ""
+"Исходные коды некоторых расширений, включая пример скелета расширения, "
+"доступны в `KStars Extension Github <https://github.com/LuckyEddie47/"
+"kstars_extensions>`__"
+
+#: ../../user_manual/ekos-extensions.rst:48
+msgid ""
+"Each extension must check for the existence and validity of its own "
+"configuration file. The minimum_kstars_version configuration file entry must "
+"be checked against an internal reference to confirm that the configuration "
+"file matches the extension requirements. See the skeleton example."
+msgstr ""
+"Каждое расширение должно проверять наличие и корректность собственного файла "
+"конфигурации. Запись minimum_kstars_version в файле конфигурации должна "
+"сверяться с внутренним эталоном, чтобы подтвердить соответствие файла "
+"конфигурации требованиям расширения. См. пример скелета."
+
+#: ../../user_manual/ekos-extensions.rst:50
+msgid ""
+"The calling KStars version is passed to the extension as arg(1) in the "
+"launching QProcess call."
+msgstr ""
+"Версия KStars, из которой вызывается расширение, передаётся расширению как "
+"arg(1) в вызове QProcess при запуске."
+
+#: ../../user_manual/ekos-extensions.rst:52
+msgid ""
+"All interaction with KStars/Ekos/INDI should be via the DBus interface. See "
+"the skeleton example. Useful tools for interrogating, monitoring and "
+"understanding DBus include `D-Feet <https://wiki.gnome.org/Apps/DFeet>`__ "
+"and `Bustle <https://gitlab.freedesktop.org/bustle/bustle>`__"
+msgstr ""
+"Всё взаимодействие с KStars/Ekos/INDI должно происходить через интерфейс "
+"DBus. См. пример скелета. Полезные инструменты для исследования, мониторинга "
+"и понимания DBus — `D-Feet <https://wiki.gnome.org/Apps/DFeet>`__ и `Bustle "
+"<https://gitlab.freedesktop.org/bustle/bustle>`__"
+
+#: ../../user_manual/ekos-extensions.rst:54
+msgid ""
+"It may appear on initial investigation that using the Qt DBus Adaptors "
+"system would be much easier than direct use of the Qt DBus Interfaces/"
+"Messages and KStars does provide the required xml definitions.  However "
+"currently there is heavy use of custom types, the definitions of which are "
+"combined with other information in the KStars sources. This results in a "
+"large set of files from KStars that require inclusion within an extension in "
+"order to make use of the Qt DBus Adaptors. Hopefully this will be addressed "
+"in the future."
+msgstr ""
+"При первоначальном рассмотрении может показаться, что использование системы "
+"адаптеров Qt DBus намного проще, чем прямое использование интерфейсов и "
+"сообщений Qt DBus, и KStars действительно предоставляет необходимые "
+"определения XML. Однако в настоящее время активно используются "
+"пользовательские типы, определения которых объединены с другой информацией в "
+"исходных кодах KStars. Это приводит к тому, что для использования адаптеров "
+"Qt DBus в расширение требуется включить большой набор файлов из KStars. "
+"Возможно, в будущем это будет исправлено."

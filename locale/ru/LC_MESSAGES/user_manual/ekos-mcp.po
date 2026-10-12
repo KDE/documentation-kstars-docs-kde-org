@@ -1,0 +1,566 @@
+# Translation of kstars_docs_user_manual___ekos-mcp into Russian.
+# Copyright (C) licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
+# This file is distributed under the same license as the KStars Handbook package.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars_docs_user_manual___ekos-mcp\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-18 02:07+0000\n"
+"PO-Revision-Date: 2026-10-10 16:02+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: ../../user_manual/ekos-mcp.rst:-1
+msgid "Ekos MCP options tab"
+msgstr "Вкладка параметров Ekos MCP"
+
+#: ../../user_manual/ekos-mcp.rst:-1
+msgid ".. image:: /images/ekos_mcp_options.png"
+msgstr ".. image:: /images/ekos_mcp_options.png"
+
+#: ../../user_manual/ekos-mcp.rst:-1
+msgid "Available tools tree with per-tool checkboxes"
+msgstr "Дерево доступных инструментов с флажками для каждого инструмента"
+
+#: ../../user_manual/ekos-mcp.rst:-1
+msgid ".. image:: /images/ekos_mcp_tools_tree.png"
+msgstr ".. image:: /images/ekos_mcp_tools_tree.png"
+
+#: ../../user_manual/ekos-mcp.rst:3
+msgid "AI Assistant (MCP)"
+msgstr "ИИ-помощник (MCP)"
+
+#: ../../user_manual/ekos-mcp.rst:8
+msgid "Introduction"
+msgstr "Введение"
+
+#: ../../user_manual/ekos-mcp.rst:10
+msgid ""
+"Ekos embeds a Model Context Protocol (MCP) server. MCP is an open standard "
+"that lets AI assistants and agents discover and call tools exposed by an "
+"application. With the MCP server enabled, an AI assistant can observe your "
+"rig — connection status, mount position, the last captured image — and, if "
+"you allow it, operate the mount and focuser, resolve catalog targets, and "
+"more."
+msgstr ""
+"Ekos содержит встроенный сервер Model Context Protocol (MCP). MCP — открытый "
+"стандарт, позволяющий помощникам и агентам ИИ обнаруживать и вызывать "
+"инструменты, которые предоставляет приложение. Если сервер MCP включён, "
+"помощник ИИ сможет наблюдать за оборудованием — состоянием подключения, "
+"положением монтировки, последним снятым кадром — и, если разрешено, "
+"управлять монтировкой и фокусёром, отождествлять объекты каталога и многое "
+"другое."
+
+#: ../../user_manual/ekos-mcp.rst:12
+msgid ""
+"Any MCP-capable client can consume the server out of the box: it speaks "
+"standard JSON-RPC 2.0 over HTTP, with the usual ``initialize``, ``tools/"
+"list`` and ``tools/call`` methods. No KStars-specific client code is "
+"required."
+msgstr ""
+"Любой клиент с поддержкой MCP может работать с сервером без дополнительной "
+"настройки: обмен данными ведётся по стандартному протоколу JSON-RPC 2.0 "
+"через HTTP с использованием обычных методов ``initialize``, ``tools/list`` и "
+"``tools/call``. Клиентский код, специфичный для KStars, не требуется."
+
+#: ../../user_manual/ekos-mcp.rst:21
+msgid "Enabling the Server"
+msgstr "Включение сервера"
+
+#: ../../user_manual/ekos-mcp.rst:23
+msgid ""
+"The server is configured in the Ekos settings dialog, in the :guilabel:`MCP` "
+"tab."
+msgstr ""
+"Сервер настраивается в диалоговом окне параметров Ekos на вкладке :guilabel:"
+"`MCP`."
+
+#: ../../user_manual/ekos-mcp.rst:25
+msgid ""
+"Check :guilabel:`Enable MCP server` to start it. The server starts "
+"automatically with Ekos whenever this option is enabled."
+msgstr ""
+"Чтобы запустить сервер, установите флажок :guilabel:`Включать сервер MCP`. "
+"Сервер запускается автоматически вместе с Ekos, если этот параметр включён."
+
+#: ../../user_manual/ekos-mcp.rst:27
+msgid ""
+":guilabel:`Port` selects the TCP port to listen on. The default is 8765; any "
+"port between 1024 and 65535 may be used."
+msgstr ""
+":guilabel:`Порт` задаёт TCP-порт для прослушивания. По умолчанию "
+"используется 8765; можно использовать любой порт в диапазоне от 1024 до "
+"65535."
+
+#: ../../user_manual/ekos-mcp.rst:29
+msgid ""
+"The status LED next to the port shows whether the server is currently "
+"listening."
+msgstr ""
+"Светодиод состояния рядом с портом показывает, прослушивает ли сервер "
+"подключения в настоящий момент."
+
+#: ../../user_manual/ekos-mcp.rst:33
+msgid ""
+"The server only listens on the local machine (127.0.0.1). It is not "
+"reachable from the network. To use it from another machine, you need to set "
+"up your own tunnel (for example an SSH port forward) and understand the "
+"security implications of doing so."
+msgstr ""
+"Сервер прослушивает только локальную машину (127.0.0.1). Из сети он "
+"недоступен. Чтобы использовать его с другой машины, потребуется настроить "
+"собственный туннель (например, перенаправление порта по SSH) и осознавать "
+"связанные с этим последствия для безопасности."
+
+#: ../../user_manual/ekos-mcp.rst:38
+msgid "Authentication and Tokens"
+msgstr "Аутентификация и маркеры"
+
+#: ../../user_manual/ekos-mcp.rst:40
+msgid ""
+"Every request must carry a bearer token. Two tokens are managed in the :"
+"guilabel:`MCP` tab, each with show, copy and :guilabel:`Regenerate` buttons:"
+msgstr ""
+"Каждый запрос должен содержать токен на предъявителя. Вкладка :guilabel:"
+"`MCP` позволяет управлять двумя токенами, для каждого из которых "
+"предусмотрены кнопки показа, копирования и :guilabel:`Пересоздать`:"
+
+#: ../../user_manual/ekos-mcp.rst:42
+msgid ""
+"The :guilabel:`Token` field holds the full-access token. Clients presenting "
+"it can call every enabled tool."
+msgstr ""
+"Поле :guilabel:`Токен` содержит токен полного доступа. Клиенты, предъявившие "
+"его, могут вызывать любой включённый инструмент."
+
+#: ../../user_manual/ekos-mcp.rst:44
+msgid ""
+"The :guilabel:`Read-only token` field holds a separate token restricted to "
+"read-only tools. Give this one to assistants that should observe the rig but "
+"never move hardware."
+msgstr ""
+"Поле :guilabel:`Токен только для чтения` содержит отдельный токен, дающий "
+"доступ только к инструментам чтения. Его следует передавать помощникам, "
+"которые должны наблюдать за оборудованием, но не управлять им."
+
+#: ../../user_manual/ekos-mcp.rst:46
+msgid ""
+"Tokens are stored in your system keychain (under the service name "
+"``kstars``), never in plain-text configuration files. Regenerating a token "
+"immediately invalidates the previous one."
+msgstr ""
+"Токены хранятся в системной связке ключей (под именем службы ``kstars``), а "
+"не в файлах конфигурации в виде открытого текста. Повторное создание токена "
+"немедленно делает предыдущий недействительным."
+
+#: ../../user_manual/ekos-mcp.rst:48
+msgid ""
+"To connect a client, point it at ``http://127.0.0.1:8765/mcp`` and pass the "
+"token as a standard HTTP bearer credential. Requests are JSON-RPC 2.0 "
+"messages sent with ``POST``. For example, calling the ``ekos_status`` tool "
+"with curl:"
+msgstr ""
+"Чтобы подключить клиент, укажите ему адрес ``http://127.0.0.1:8765/mcp`` и "
+"передайте токен как стандартные учётные данные предъявителя HTTP. Запросы — "
+"это сообщения JSON-RPC 2.0, отправляемые методом ``POST``. Например, вызов "
+"инструмента ``ekos_status`` с помощью curl:"
+
+#: ../../user_manual/ekos-mcp.rst:50
+msgid ""
+"curl -s http://127.0.0.1:8765/mcp \\\n"
+"  -H \"Authorization: Bearer <your token>\" \\\n"
+"  -H \"Content-Type: application/json\" \\\n"
+"  -d '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"tools/call\",\n"
+"       \"params\": {\"name\": \"ekos_status\", \"arguments\": {}}}'"
+msgstr ""
+"curl -s http://127.0.0.1:8765/mcp \\\n"
+"  -H \"Authorization: Bearer <your token>\" \\\n"
+"  -H \"Content-Type: application/json\" \\\n"
+"  -d '{\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"tools/call\",\n"
+"       \"params\": {\"name\": \"ekos_status\", \"arguments\": {}}}'"
+
+#: ../../user_manual/ekos-mcp.rst:58
+msgid ""
+"The response is a JSON-RPC envelope whose ``result`` carries the tool output "
+"— here the INDI connection state, the active profile, and the connected "
+"devices."
+msgstr ""
+"Ответ представляет собой конверт JSON-RPC, в поле ``result`` которого "
+"содержится вывод инструмента — в данном случае состояние подключения INDI, "
+"активный профиль и подключённые устройства."
+
+#: ../../user_manual/ekos-mcp.rst:60
+msgid ""
+"A Server-Sent Events stream is available at ``/mcp/stream``. Each connection "
+"is rate-limited to 60 requests."
+msgstr ""
+"Поток Server-Sent Events доступен по адресу ``/mcp/stream``. Каждое "
+"подключение ограничено 60 запросами."
+
+#: ../../user_manual/ekos-mcp.rst:65
+msgid "Safety Controls"
+msgstr "Управление безопасностью"
+
+#: ../../user_manual/ekos-mcp.rst:69
+msgid ""
+"A full-access token allows an AI agent to move your mount and focuser. On a "
+"live rig, treat that token like a password: prefer the read-only token "
+"whenever observation is enough, and review which tools are enabled before "
+"handing control to an agent."
+msgstr ""
+"Токен с полным доступом позволяет агенту ИИ управлять монтировкой и "
+"фокусёром. На действующем оборудовании относитесь к такому токену как к "
+"паролю: если достаточно наблюдения, отдавайте предпочтение токену только для "
+"чтения, а перед передачей управления агенту проверьте, какие инструменты "
+"включены."
+
+#: ../../user_manual/ekos-mcp.rst:71
+msgid "Three mechanisms limit what a connected client can do:"
+msgstr "Возможности подключённого клиента ограничивают три механизма:"
+
+#: ../../user_manual/ekos-mcp.rst:73
+msgid ""
+":guilabel:`Read-only mode (refuse rig control tools)`. When checked, the "
+"server refuses every mutating tool for all clients, regardless of which "
+"token they present."
+msgstr ""
+":guilabel:`Режим только для чтения (запрет запросов инструментов управления "
+"оборудованием)`. Если флажок установлен, сервер отклоняет для всех клиентов "
+"любые инструменты, изменяющие состояние, независимо от предъявленного токена."
+
+#: ../../user_manual/ekos-mcp.rst:75
+msgid ""
+"The read-only token. Clients authenticating with it can only call tools "
+"marked read-only, even when read-only mode is off."
+msgstr ""
+"Токен только для чтения. Клиенты, предъявившие его, могут вызывать только "
+"инструменты, помеченные как доступные только для чтения, даже если режим "
+"только для чтения отключён."
+
+#: ../../user_manual/ekos-mcp.rst:77
+msgid ""
+"The :guilabel:`Available tools` tree. Every tool the server exposes is "
+"listed here, grouped by family, with a checkbox per tool and per family. "
+"Unchecked tools are hidden from clients entirely: they disappear from "
+"``tools/list`` and calls to them are rejected."
+msgstr ""
+"Дерево :guilabel:`Доступные инструменты`. Здесь перечислены все инструменты, "
+"предоставляемые сервером, сгруппированные по семействам, с флажком для "
+"каждого инструмента и каждого семейства. Инструменты со снятыми флажками "
+"полностью скрываются от клиентов: они исчезают из ``tools/list``, а их "
+"вызовы отклоняются."
+
+#: ../../user_manual/ekos-mcp.rst:83
+msgid ""
+"In the tree, a lock icon marks read-only tools and a gear icon marks tools "
+"that change the state of the rig. Tooltips also indicate tools whose effect "
+"is hard to undo (such as ``mount_sync``), following the annotation hints of "
+"the MCP specification."
+msgstr ""
+"В дереве значок замка отмечает инструменты только для чтения, а значок "
+"шестерёнки — инструменты, изменяющие состояние оборудования. Всплывающие "
+"подсказки также указывают на инструменты, действие которых трудно отменить "
+"(например, ``mount_sync``), в соответствии с подсказками аннотаций "
+"спецификации MCP."
+
+#: ../../user_manual/ekos-mcp.rst:88
+msgid "Tool Reference"
+msgstr "Описание инструментов"
+
+#: ../../user_manual/ekos-mcp.rst:90
+msgid ""
+"The tables below list the tools currently shipped with KStars. The *Access* "
+"column shows *read* for tools that only observe the rig and *control* for "
+"tools that change its state."
+msgstr ""
+"В таблицах ниже перечислены инструменты, в настоящее время входящие в состав "
+"KStars. Столбец *Доступ* показывает *чтение* для инструментов, которые "
+"только наблюдают за оборудованием, и *управление* для инструментов, которые "
+"изменяют его состояние."
+
+#: ../../user_manual/ekos-mcp.rst:95
+msgid "Ekos Status"
+msgstr "Состояние Ekos"
+
+#: ../../user_manual/ekos-mcp.rst:101 ../../user_manual/ekos-mcp.rst:117
+#: ../../user_manual/ekos-mcp.rst:133 ../../user_manual/ekos-mcp.rst:179
+#: ../../user_manual/ekos-mcp.rst:206
+msgid "Tool"
+msgstr "Инструмент"
+
+#: ../../user_manual/ekos-mcp.rst:102 ../../user_manual/ekos-mcp.rst:118
+#: ../../user_manual/ekos-mcp.rst:134 ../../user_manual/ekos-mcp.rst:180
+#: ../../user_manual/ekos-mcp.rst:207
+msgid "Purpose"
+msgstr "Назначение"
+
+#: ../../user_manual/ekos-mcp.rst:103 ../../user_manual/ekos-mcp.rst:119
+#: ../../user_manual/ekos-mcp.rst:135 ../../user_manual/ekos-mcp.rst:181
+#: ../../user_manual/ekos-mcp.rst:208
+msgid "Access"
+msgstr "Доступ"
+
+#: ../../user_manual/ekos-mcp.rst:104
+msgid "``ekos_status``"
+msgstr "``ekos_status``"
+
+#: ../../user_manual/ekos-mcp.rst:105
+msgid ""
+"Current INDI/Ekos connection status, active profile, and connected device "
+"names."
+msgstr ""
+"Текущее состояние подключения INDI/Ekos, активный профиль и имена "
+"подключённых устройств."
+
+#: ../../user_manual/ekos-mcp.rst:106 ../../user_manual/ekos-mcp.rst:122
+#: ../../user_manual/ekos-mcp.rst:138 ../../user_manual/ekos-mcp.rst:141
+#: ../../user_manual/ekos-mcp.rst:184 ../../user_manual/ekos-mcp.rst:211
+#: ../../user_manual/ekos-mcp.rst:214
+msgid "read"
+msgstr "чтение"
+
+#: ../../user_manual/ekos-mcp.rst:111
+msgid "Catalog"
+msgstr "Каталог"
+
+#: ../../user_manual/ekos-mcp.rst:120
+msgid "``catalog_search``"
+msgstr "``catalog_search``"
+
+#: ../../user_manual/ekos-mcp.rst:121
+msgid ""
+"Search the KStars catalogs by name. Returns matching objects with canonical "
+"names, types, J2000 coordinates and magnitudes. Supports substring or exact "
+"match, a type filter, and a magnitude limit. Use it to resolve a name like "
+"\"M42\" to the canonical \"M 42\" before slewing."
+msgstr ""
+"Выполняет поиск в каталогах KStars по имени. Возвращает совпадающие объекты "
+"с каноническими именами, типами, координатами J2000 и звёздными величинами. "
+"Поддерживает поиск по подстроке или точное совпадение, фильтр по типу и "
+"ограничение по звёздной величине. Позволяет отождествить имя, например "
+"«M42», с каноническим «M 42» перед наведением."
+
+#: ../../user_manual/ekos-mcp.rst:127
+msgid "Mount"
+msgstr "Монтировка"
+
+#: ../../user_manual/ekos-mcp.rst:136
+msgid "``mount_coords``"
+msgstr "``mount_coords``"
+
+#: ../../user_manual/ekos-mcp.rst:137
+msgid "Current RA/Dec, Alt/Az, hour angle, pier side and tracking status."
+msgstr ""
+"Текущие прямое восхождение и склонение, высота и азимут, часовой угол, "
+"сторона колонны и состояние слежения."
+
+#: ../../user_manual/ekos-mcp.rst:139
+msgid "``mount_get_slew_rates``"
+msgstr "``mount_get_slew_rates``"
+
+#: ../../user_manual/ekos-mcp.rst:140
+msgid ""
+"List the slew rates supported by the driver and the currently selected one."
+msgstr ""
+"Перечисляет скорости наведения, поддерживаемые драйвером, и текущую "
+"выбранную."
+
+#: ../../user_manual/ekos-mcp.rst:142
+msgid "``mount_goto``"
+msgstr "``mount_goto``"
+
+#: ../../user_manual/ekos-mcp.rst:143
+msgid "Slew to equatorial coordinates (RA in hours, Dec in degrees)."
+msgstr ""
+"Наводит монтировку на экваториальные координаты (прямое восхождение в часах, "
+"склонение в градусах)."
+
+#: ../../user_manual/ekos-mcp.rst:144 ../../user_manual/ekos-mcp.rst:147
+#: ../../user_manual/ekos-mcp.rst:150 ../../user_manual/ekos-mcp.rst:153
+#: ../../user_manual/ekos-mcp.rst:156 ../../user_manual/ekos-mcp.rst:159
+#: ../../user_manual/ekos-mcp.rst:162 ../../user_manual/ekos-mcp.rst:165
+#: ../../user_manual/ekos-mcp.rst:168 ../../user_manual/ekos-mcp.rst:187
+#: ../../user_manual/ekos-mcp.rst:190 ../../user_manual/ekos-mcp.rst:193
+msgid "control"
+msgstr "управление"
+
+#: ../../user_manual/ekos-mcp.rst:145
+msgid "``mount_goto_target``"
+msgstr "``mount_goto_target``"
+
+#: ../../user_manual/ekos-mcp.rst:146
+msgid ""
+"Slew to a named object, resolved by KStars (canonical name, e.g. \"M 42\")."
+msgstr ""
+"Наводит монтировку на именованный объект, распознаваемый KStars "
+"(каноническое имя, например «M 42»)."
+
+#: ../../user_manual/ekos-mcp.rst:148
+msgid "``mount_sync``"
+msgstr "``mount_sync``"
+
+#: ../../user_manual/ekos-mcp.rst:149
+msgid ""
+"Sync the mount pointing model to the given coordinates. Hard to undo — a "
+"wrong sync corrupts the pointing model."
+msgstr ""
+"Синхронизирует модель наведения монтировки с заданными координатами. Трудно "
+"отменить — ошибочная синхронизация повреждает модель наведения."
+
+#: ../../user_manual/ekos-mcp.rst:151
+msgid "``mount_park`` / ``mount_unpark``"
+msgstr "``mount_park`` / ``mount_unpark``"
+
+#: ../../user_manual/ekos-mcp.rst:152
+msgid "Park the mount at its park position, or unpark it for operation."
+msgstr ""
+"Устанавливает монтировку в парковочное положение или снимает её с парковки "
+"для работы."
+
+#: ../../user_manual/ekos-mcp.rst:154
+msgid "``mount_abort``"
+msgstr "``mount_abort``"
+
+#: ../../user_manual/ekos-mcp.rst:155
+msgid "Immediately stop all mount motion."
+msgstr "Немедленно останавливает все движения монтировки."
+
+#: ../../user_manual/ekos-mcp.rst:157
+msgid "``mount_set_tracking``"
+msgstr "``mount_set_tracking``"
+
+#: ../../user_manual/ekos-mcp.rst:158
+msgid "Enable or disable sidereal tracking."
+msgstr "Включает или отключает звёздное слежение."
+
+#: ../../user_manual/ekos-mcp.rst:160
+msgid "``mount_set_track_mode``"
+msgstr "``mount_set_track_mode``"
+
+#: ../../user_manual/ekos-mcp.rst:161
+msgid "Select the tracking rate: sidereal, lunar, solar or custom."
+msgstr ""
+"Выбирает скорость слежения: звёздная, лунная, солнечная или пользовательская."
+
+#: ../../user_manual/ekos-mcp.rst:163
+msgid "``mount_set_slew_rate``"
+msgstr "``mount_set_slew_rate``"
+
+#: ../../user_manual/ekos-mcp.rst:164
+msgid "Select a slew rate by index into the driver's list."
+msgstr "Выбирает скорость наведения по индексу в списке драйвера."
+
+#: ../../user_manual/ekos-mcp.rst:166
+msgid "``mount_set_meridian_flip``"
+msgstr "``mount_set_meridian_flip``"
+
+#: ../../user_manual/ekos-mcp.rst:167
+msgid ""
+"Enable or disable the automatic meridian flip and set its hour-angle offset."
+msgstr ""
+"Включает или отключает автоматический переворот через меридиан и задаёт "
+"смещение по часовому углу."
+
+#: ../../user_manual/ekos-mcp.rst:173
+msgid "Focuser"
+msgstr "Фокусёр"
+
+#: ../../user_manual/ekos-mcp.rst:182
+msgid "``focuser_status``"
+msgstr "``focuser_status``"
+
+#: ../../user_manual/ekos-mcp.rst:183
+msgid ""
+"Focuser name, current and maximum position, and capability flags. An "
+"optional ``name`` parameter selects a device on multi-focuser rigs; all "
+"focuser tools accept it."
+msgstr ""
+"Имя фокусёра, текущее и максимальное положение, а также флаги возможностей. "
+"Необязательный параметр ``name`` выбирает устройство на оборудовании с "
+"несколькими фокусёрами; его принимают все инструменты фокусёра."
+
+#: ../../user_manual/ekos-mcp.rst:185
+msgid "``focuser_move_absolute``"
+msgstr "``focuser_move_absolute``"
+
+#: ../../user_manual/ekos-mcp.rst:186
+msgid ""
+"Move to an absolute step position, validated against the driver's maximum. "
+"Must not be called while Ekos autofocus is running."
+msgstr ""
+"Перемещает в абсолютное положение (в шагах) с проверкой по максимальному "
+"значению драйвера. Нельзя вызывать во время работы автофокусировки Ekos."
+
+#: ../../user_manual/ekos-mcp.rst:188
+msgid "``focuser_move_relative``"
+msgstr "``focuser_move_relative``"
+
+#: ../../user_manual/ekos-mcp.rst:189
+msgid ""
+"Move by a signed number of steps (positive outward, negative inward; "
+"direction is driver-dependent). Must not be called while Ekos autofocus is "
+"running."
+msgstr ""
+"Перемещает на заданное число шагов со знаком (положительное значение — "
+"наружу, отрицательное — внутрь; направление зависит от драйвера). Нельзя "
+"вызывать во время работы автофокусировки Ekos."
+
+#: ../../user_manual/ekos-mcp.rst:191
+msgid "``focuser_abort_move``"
+msgstr "``focuser_abort_move``"
+
+#: ../../user_manual/ekos-mcp.rst:192
+msgid "Stop any in-flight focuser motion."
+msgstr "Останавливает любое текущее движение фокусёра."
+
+#: ../../user_manual/ekos-mcp.rst:198
+msgid "Image Access"
+msgstr "Доступ к изображениям"
+
+#: ../../user_manual/ekos-mcp.rst:200
+msgid ""
+"These tools see frames from every producer: the Capture queue, Focus, Align, "
+"polar alignment, and ad-hoc captures. On a multi-camera rig, an optional "
+"``camera`` parameter selects a device; by default the most recent frame "
+"across all cameras is returned."
+msgstr ""
+"Эти инструменты получают кадры от всех источников: очереди съёмки, "
+"фокусировки, выравнивания, выравнивания по полярной оси и разовых снимков. "
+"На оборудовании с несколькими камерами необязательный параметр ``camera`` "
+"выбирает устройство; по умолчанию возвращается самый последний кадр со всех "
+"камер."
+
+#: ../../user_manual/ekos-mcp.rst:209
+msgid "``image_last_info``"
+msgstr "``image_last_info``"
+
+#: ../../user_manual/ekos-mcp.rst:210
+msgid ""
+"Metadata of the most recently captured frame: file path, camera, exposure, "
+"filter, target, timestamp, sensor temperature, HFR, star count and "
+"dimensions."
+msgstr ""
+"Метаданные последнего снятого кадра: путь к файлу, камера, экспозиция, "
+"светофильтр, цель, отметка времени, температура сенсора, HFR, число звёзд и "
+"размеры."
+
+#: ../../user_manual/ekos-mcp.rst:212
+msgid "``image_last_thumbnail``"
+msgstr "``image_last_thumbnail``"
+
+#: ../../user_manual/ekos-mcp.rst:213
+msgid ""
+"A base64-encoded JPEG preview of the most recent frame, sized for vision-"
+"capable models (default 512 pixels on the long edge, at most 1024)."
+msgstr ""
+"Предварительный просмотр последнего кадра в формате JPEG, закодированный в "
+"base64; размер рассчитан на модели, способные воспринимать изображения (по "
+"умолчанию 512 пикселей по длинной стороне, не более 1024)."

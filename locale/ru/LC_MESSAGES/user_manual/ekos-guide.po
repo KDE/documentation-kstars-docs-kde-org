@@ -1,0 +1,2104 @@
+# Translation of kstars_docs_user_manual___ekos-guide into Russian.
+# Copyright (C) licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
+# This file is distributed under the same license as the KStars Handbook package.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars_docs_user_manual___ekos-guide\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-19 02:09+0000\n"
+"PO-Revision-Date: 2026-10-10 16:02+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: ../../user_manual/ekos-guide.rst:3
+msgid "Guide"
+msgstr "Гидирование"
+
+#: ../../user_manual/ekos-guide.rst:5
+msgid "|Ekos Guide Module|"
+msgstr "|Модуль «Гидирование» Ekos|"
+
+#: ../../user_manual/ekos-guide.rst:10
+msgid "Introduction"
+msgstr "Введение"
+
+#: ../../user_manual/ekos-guide.rst:12
+msgid ""
+"The Ekos Guide Module performs autoguiding using either the powerful built-"
+"in guider, or at your option, external guiding via `PHD2 <https://"
+"openphdguiding.org/>`__ or `lin_guider <https://sourceforge.net/projects/"
+"linguider/>`__. Using the internal guiding, guider camera frames are "
+"captured and sent to Ekos for analysis. Depending on the deviations of the "
+"stars from their lock positions, guiding pulses corrections are sent to your "
+"mount's RA and DEC axes motors. Most of the GUI options in the Guide Module "
+"are well documented so just hover your mouse over an item and a tooltip will "
+"popup with helpful information."
+msgstr ""
+"Модуль «Гидирование» Ekos выполняет автогидирование либо с помощью мощного "
+"встроенного гида, либо, по выбору, внешнего гидирования через `PHD2 <https://"
+"openphdguiding.org/>`__ или `lin_guider <https://sourceforge.net/projects/"
+"linguider/>`__. При внутреннем гидировании кадры с камеры гида захватываются "
+"и отправляются в Ekos для анализа. В зависимости от отклонений звёзд от "
+"положений фиксации на двигатели осей прямого восхождения и склонения "
+"монтировки отправляются корректирующие импульсы гидирования. Большинство "
+"параметров графического интерфейса модуля «Гидирование» хорошо "
+"документированы, поэтому достаточно навести указатель мыши на элемент, и "
+"появится всплывающая подсказка с полезной информацией."
+
+#: ../../user_manual/ekos-guide.rst:27
+msgid "Setup"
+msgstr "Настройка"
+
+#: ../../user_manual/ekos-guide.rst:29
+msgid "|Ekos Profile Guider Selection|"
+msgstr "|Выбор гида в профиле Ekos|"
+
+#: ../../user_manual/ekos-guide.rst:31
+msgid ""
+"To perform guiding, you need (one time) to select a Guider in the Profile "
+"Editor for the profile you will be using. In the profile editor, choose "
+"Internal for the Ekos internal guider, or PHD2."
+msgstr ""
+"Для гидирования один раз нужно выбрать гид в редакторе используемого "
+"профиля. В редакторе профиля выберите «Внутренний» для внутреннего гида Ekos "
+"или PHD2."
+
+#: ../../user_manual/ekos-guide.rst:36
+msgid "|Ekos Guider Optical Train|"
+msgstr "|Оптическая система гида Ekos|"
+
+#: ../../user_manual/ekos-guide.rst:38
+msgid ""
+"To perform guiding, you also need to set up your guiding optical train. This "
+"2nd optical train is almost always different from the one you are using with "
+"capture/align/focus. See the image above for an example guider optical train "
+"configuration. Note that the telescope chosen is the guiding scope, which "
+"may be the same as your main telescope if you are using an OAG (off-axis-"
+"guiding) or ONAG guiding scheme. The camera selected is, of course, your "
+"guiding camera. The Guide Via should be your mount, assuming you are sending "
+"guide pulses directly to your mount, or the name of the ST4 device (e.g. "
+"your camera) should you be using ST4 guide pulses."
+msgstr ""
+"Для гидирования также требуется настроить оптическую систему гида. Эта "
+"вторая оптическая система почти всегда отличается от той, что используется "
+"для съёмки, выравнивания и фокусировки. Пример конфигурации оптической "
+"системы гида показан на изображении выше. Обратите внимание: выбранный "
+"телескоп — это телескоп для гидирования, который может совпадать с основным "
+"телескопом, если используется схема гидирования OAG (внеосевое гидирование) "
+"или ONAG. Выбранная камера — это, разумеется, камера гида. В параметре "
+"«Ведение с помощью» следует указать монтировку, если импульсы гидирования "
+"подаются напрямую на монтировку, либо название устройства ST4 (например, "
+"камеры), если используются импульсы гидирования ST4."
+
+#: ../../user_manual/ekos-guide.rst:51
+msgid ""
+"Please look at the main guider page shown at the start of this Guider "
+"section. There are many parameters that also can be adjusted, some of which "
+"are listed below."
+msgstr ""
+"Обратите внимание на главную страницу гида, показанную в начале этого "
+"раздела о гидировании. Многие параметры также можно настроить, некоторые из "
+"них перечислены ниже."
+
+#: ../../user_manual/ekos-guide.rst:55
+msgid ""
+"``Exposure``: On the main guiding page you can adjust the guiding exposure "
+"time. After the guide-camera completes the exposure, the guide algorithm "
+"computes and sends the guide pulses to the mount, then it waits a user-"
+"configurable delay, and then then begins its next exposure."
+msgstr ""
+"``Экспозиция``: на главной странице гидирования можно настроить время "
+"экспозиции при гидировании. После того как камера гида завершит экспозицию, "
+"алгоритм гидирования вычисляет и отправляет импульсы гидирования на "
+"монтировку, затем выдерживает настраиваемую пользователем задержку и "
+"начинает следующую экспозицию."
+
+#: ../../user_manual/ekos-guide.rst:62
+msgid ""
+"``Binning``: Pixel binning for the guide image. It usually makes sense to "
+"bin the pixels 2x2. The algorithms can still find sub-pixel star positions "
+"and send proper guide pulses to the mount."
+msgstr ""
+"``Биннинг``: биннинг для изображения гидирования. Обычно имеет смысл "
+"использовать биннинг 2x2. Алгоритмы по-прежнему способны определять "
+"субпиксельное положение звёзд и отправлять на монтировку правильные импульсы "
+"гидирования."
+
+#: ../../user_manual/ekos-guide.rst:67
+msgid ""
+"``Box``: This only is applicable to guide algorithms other than MultiStar, "
+"and MultiStar is the recommended guiding scheme. Size of the box enclosing "
+"the guide star. Select a suitable size that is neither too large or too "
+"small for the selected star."
+msgstr ""
+"``Box``: применимо только к алгоритмам гидирования, отличным от MultiStar; "
+"MultiStar — рекомендуемая схема гидирования. Размер рамки, охватывающей "
+"гидирующую звезду. Выберите подходящий размер — не слишком большой и не "
+"слишком малый для выбранной звезды."
+
+#: ../../user_manual/ekos-guide.rst:73
+msgid ""
+"``Directions``: Typically you want to keep all the directions boxes checked. "
+"Unchecking them will disable guiding in those directions. For instance it is "
+"possible to disable DEC guiding in the North direction."
+msgstr ""
+"``Directions``: обычно все флажки направлений следует оставлять включёнными. "
+"Их снятие отключает гидирование в этих направлениях. Например, можно "
+"отключить гидирование по DEC в северном направлении."
+
+#: ../../user_manual/ekos-guide.rst:79
+msgid ""
+"``Dark``: Check this to enable dark-frame corrections to your guiding image. "
+"See below."
+msgstr ""
+"``Dark``: установите этот флажок, чтобы включить коррекцию темновыми кадрами "
+"для изображения гидирования. См. ниже."
+
+#: ../../user_manual/ekos-guide.rst:82
+msgid ""
+"``Clear Calibration``: Check this to delete your calibration data. See the "
+"calibration section below."
+msgstr ""
+"``Clear Calibration``: установите этот флажок, чтобы удалить данные "
+"калибровки. См. раздел о калибровке ниже."
+
+#: ../../user_manual/ekos-guide.rst:85
+msgid ""
+"``Subframe, AutoStar``: These only apply to guide algorithms other than "
+"MultiStar, and MultiStar is the recommended guiding scheme."
+msgstr ""
+"``Subframe, AutoStar``: эти параметры применяются только к алгоритмам "
+"гидирования, отличным от MultiStar, а MultiStar — рекомендуемая схема "
+"гидирования."
+
+#: ../../user_manual/ekos-guide.rst:92
+msgid "Calibration"
+msgstr "Калибровка"
+
+#: ../../user_manual/ekos-guide.rst:94
+msgid "|Calibration Settings|"
+msgstr "|Параметры калибровки|"
+
+#: ../../user_manual/ekos-guide.rst:96
+msgid ""
+"Autoguiding is a two-step process: Calibration & Guiding. Calibration is "
+"needed for the scheme to understand the camera's orientation, relative to "
+"the RA and DEC axes, and also the effects of guide pulses (e.g. how much a "
+"100ms RA guide pulse will typically move the RA axis). Once it estimates "
+"these values, the guider can correct the mount's position effectively. You "
+"can see calibrated values for those parameters in the above image in the "
+"\"Calibrated Values\" section."
+msgstr ""
+"Автогидирование — процесс из двух этапов: калибровка и гидирование. "
+"Калибровка нужна, чтобы схема определила ориентацию камеры относительно осей "
+"прямого восхождения и склонения, а также эффекты импульсов гидирования "
+"(например, насколько импульс гидирования по оси прямого восхождения "
+"длительностью 100 мс обычно смещает эту ось). Оценив эти значения, гид "
+"сможет эффективно корректировать положение монтировки. Калиброванные "
+"значения этих параметров приведены на изображении выше в разделе "
+"«Калиброванные значения»."
+
+#: ../../user_manual/ekos-guide.rst:106
+msgid ""
+"Similar to other guiders, we recommend that you carefully calibrate once, "
+"and then only re-calibrate when necessary. It is necessary to re-calibrate "
+"when the camera is moved (e.g. rotate) relative to the mount. It should not "
+"be necessary to calibrate every time you slew the mount. You should "
+"calibrate when pointing near the Meridian and along the Celestial Equator "
+"(probably just West of it). Guiding (and guide calibration) is problematic "
+"near the pole--it probably won't work. `This slide show <https://"
+"openphdguiding.org/PHD2_BestPractices_2019-12.pdf>`__ contains good advice "
+"on how to calibrate the Internal Guider and/or PHD2."
+msgstr ""
+"Как и в случае других гидов, рекомендуется один раз тщательно выполнить "
+"калибровку, а затем повторять её только при необходимости. Повторная "
+"калибровка необходима при смещении камеры относительно монтировки (например, "
+"при повороте). Калибровка не требуется при каждом наведении монтировки. "
+"Калибровку следует выполнять при наведении вблизи меридиана и вдоль "
+"небесного экватора (вероятно, чуть западнее него). Вблизи полюса гидирование "
+"(и калибровка гидирования) затруднено — скорее всего, оно не будет работать. "
+"`Это слайд-шоу <https://openphdguiding.org/PHD2_BestPractices_2019-12."
+"pdf>`__ содержит полезные рекомендации по калибровке внутреннего гида и "
+"(или) PHD2."
+
+#: ../../user_manual/ekos-guide.rst:119
+msgid "The important options on the calibration options page (above) are:"
+msgstr "Важные параметры на странице параметров калибровки (выше):"
+
+#: ../../user_manual/ekos-guide.rst:122
+msgid "``Pulse Size``: should be large enough to move your image a few pixels."
+msgstr ""
+"``Pulse Size``: должен быть достаточно большим, чтобы сместить изображение "
+"на несколько пикселей."
+
+#: ../../user_manual/ekos-guide.rst:125
+msgid ""
+"``Re-using Calibration``: There are two checkboxes related to keeping your "
+"calibration. We recommend checking \"Store and re-use guide calibration when "
+"possible\", and un-checking \"Reset Guide Calibration After Each Mount Slew"
+"\"."
+msgstr ""
+"``Re-using Calibration``: с сохранением калибровки связаны два флажка. "
+"Рекомендуется установить флажок «Сохранять и повторно использовать "
+"калибровку гидирования, когда возможно» и снять флажок «Сбрасывать "
+"калибровку гидирования после каждого наведения монтировки»."
+
+#: ../../user_manual/ekos-guide.rst:131
+msgid ""
+"``Reverse DEC...``: It is also important to check or un-check (it is mount "
+"dependent) \"Reverse DEC on pier-side change when re-using calibration\". To "
+"find out the right setting for your mount, you need to successfully "
+"calibrate on one pier side, make sure guiding is working well on that side, "
+"then switch to the other side. Guide for a minute or two. If DEC runs away, "
+"then you probably have the wrong setting for the \"Reverse DEC...\" checkbox."
+msgstr ""
+"``Reverse DEC...``: также важно установить или снять флажок «Реверс DEC при "
+"смене стороны опорной колонны при повторном использовании "
+"калибровки» (зависит от монтировки). Чтобы определить правильный параметр "
+"для своей монтировки, нужно успешно откалиброваться на одной стороне опорной "
+"колонны, убедиться, что гидирование на этой стороне работает хорошо, а затем "
+"перейти на другую сторону. Выполняйте гидирование в течение одной-двух "
+"минут. Если DEC уходит, вероятно, для флажка «Реверс DEC…» задан неверный "
+"параметр."
+
+#: ../../user_manual/ekos-guide.rst:141
+msgid ""
+"``Max Move, Iterations``: We recommend you keep iterations large (e.g. 10) "
+"and Max Move large (e.g. 20+ pixels). This way you should get a good "
+"estimate of the guiding calibration parameters. Calibration should be "
+"something you do rarely, so it is best to take a little extra time and get "
+"right."
+msgstr ""
+"``Max Move, Iterations``: рекомендуется задавать большое число итераций "
+"(например, 10) и большое значение Max Move (например, 20+ пикселей). Так "
+"можно получить хорошую оценку параметров калибровки гидирования. Калибровка "
+"выполняется редко, поэтому лучше потратить немного больше времени и "
+"выполнить её правильно."
+
+#: ../../user_manual/ekos-guide.rst:148
+msgid ""
+"To (re)calibrate, clear your calibration on the main guiding page, and then "
+"simply click on the Guide button. Note that if calibration was already "
+"completed successfully before, and you didn't clear the calibration, and you "
+"are re-using calibrations, then the autoguiding process will begin "
+"immediately, otherwise, it will start the calibration process."
+msgstr ""
+"Чтобы выполнить (повторную) калибровку, сбросьте калибровку на главной "
+"странице гидирования, а затем просто нажмите кнопку «Гидирование». Обратите "
+"внимание: если калибровка уже была успешно завершена ранее, не была сброшена "
+"и используется повторно, процесс автогидирования начнётся сразу; в противном "
+"случае запустится процесс калибровки."
+
+#: ../../user_manual/ekos-guide.rst:156
+msgid ""
+"Ekos begins the calibration process by sending pulses to move the mount in "
+"RA and DEC. It pulses out the RA axis, then pulses it back in. After that it "
+"moves a little in DEC to clear and backlash that might exist, and then "
+"pulses out and back in for DEC. To view this graphically, click on the "
+"\"Calibration Plot\" subtab on the main guiding page."
+msgstr ""
+"Ekos начинает процесс калибровки, отправляя импульсы для перемещения "
+"монтировки по осям RA и DEC. Сначала импульсы подаются по оси RA в одну "
+"сторону, затем в обратную. После этого монтировка немного смещается по DEC, "
+"чтобы устранить возможный люфт, а затем импульсы подаются по DEC в одну "
+"сторону и обратно. Чтобы увидеть это графически, перейдите на подвкладку "
+"«График калибровки» на главной странице гидирования."
+
+#: ../../user_manual/ekos-guide.rst:166
+msgid "Calibration Failures"
+msgstr "Ошибки калибровки"
+
+#: ../../user_manual/ekos-guide.rst:168
+msgid ""
+"Calibration can fail for a variety of reasons. To improve the chances of "
+"success, try the tips below."
+msgstr ""
+"Калибровка может не удаться по разным причинам. Чтобы повысить вероятность "
+"успеха, воспользуйтесь приведёнными ниже советами."
+
+#: ../../user_manual/ekos-guide.rst:171
+msgid ""
+"Bad sky conditions. If your sky condition are not great, it may not be worth "
+"fighting guiding/calibration."
+msgstr ""
+"Плохие условия неба. Если условия неба неблагоприятны, возможно, не стоит "
+"тратить силы на гидирование и калибровку."
+
+#: ../../user_manual/ekos-guide.rst:175
+msgid "Guide camera focus."
+msgstr "Фокусировка камеры гида"
+
+#: ../../user_manual/ekos-guide.rst:177
+msgid ""
+"Leave algorithm to the default value (``SEP MultiStar``) in the Guide Option "
+"tab."
+msgstr ""
+"Оставьте для алгоритма значение по умолчанию (``SEP MultiStar``) на вкладке "
+"«Параметры гидирования»."
+
+#: ../../user_manual/ekos-guide.rst:180
+msgid ""
+"Try the \"Guide-Default\" SEP star-detection parameters (in the Guide Option "
+"tab) and adjust them if necessary."
+msgstr ""
+"Попробуйте параметры обнаружения звёзд SEP «Guide-Default» (на вкладке "
+"параметров гидирования) и при необходимости скорректируйте их."
+
+#: ../../user_manual/ekos-guide.rst:184
+msgid ""
+"``Better Polar Alignment``: This is critical to the success of any "
+"astrophotography session. Use the Ekos :ref:`Polar Alignment procedure  "
+"<ekos-align-polar-align>` in the Align module."
+msgstr ""
+"``Better Polar Alignment``: это критически важно для успеха любого сеанса "
+"астрофотографии. Используйте :ref:`процедуру выравнивания по полярной оси  "
+"<ekos-align-polar-align>` Ekos в модуле «Выравнивание»."
+
+#: ../../user_manual/ekos-guide.rst:190
+msgid ""
+"``Set binning to 2x2``: Binning improves SNR and is often very important to "
+"the success of the calibration and guiding procedures."
+msgstr ""
+"``Set binning to 2x2``: биннинг повышает отношение сигнал/шум и часто имеет "
+"большое значение для успешного выполнения калибровки и гидирования."
+
+#: ../../user_manual/ekos-guide.rst:194
+msgid "Take dark frames to reduce noise."
+msgstr "Снимайте темновые кадры для снижения шума."
+
+#: ../../user_manual/ekos-guide.rst:199
+msgid "Guiding"
+msgstr "Гидирование"
+
+#: ../../user_manual/ekos-guide.rst:201
+msgid ""
+"Once the calibration process is completed successfully, guiding begins "
+"automatically. The guiding performance is displayed in the ``Drift "
+"Graphics`` region where ``Green`` reflects deviations in RA and ``Blue`` "
+"deviations in DEC. The colors of the RA/DE lines can be changed in :doc:"
+"`KStars color scheme  <colors>` in KStars settings dialog. The vertical axis "
+"denotes the deviation in arcsecs from the lock position and the horizontal "
+"axis denotes time. You can hover over the line to get the exact deviation at "
+"this particular point in time. You can also zoom and drag/pan the graph to "
+"inspect a specific region of the graph. Another convenient place to examine "
+"guiding performance is in the Analyze tab."
+msgstr ""
+"После успешного завершения процесса калибровки гидирование начинается "
+"автоматически. Показатели гидирования показываются в области ``Drift "
+"Graphics``, где ``Green`` отражает отклонения по RA, а ``Blue`` — по DEC. "
+"Цвета линий RA/DEC можно изменить в :doc:`цветовой схеме KStars <colors>` в "
+"диалоге параметров KStars. По вертикальной оси откладывается отклонение от "
+"положения фиксации в угловых секундах, по горизонтальной — время. При "
+"наведении указателя на линию показывается точное отклонение в этот момент "
+"времени. График можно также масштабировать и перетаскивать, чтобы "
+"рассмотреть отдельный его участок. Ещё одно удобное место для оценки "
+"показателей гидирования — вкладка «Анализ»."
+
+#: ../../user_manual/ekos-guide.rst:214
+msgid "|Guide Settings|"
+msgstr "|Параметры гидирования|"
+
+#: ../../user_manual/ekos-guide.rst:216
+msgid ""
+"There are two types of algorithms used in the internal guider, and you have "
+"choices of which variations to use for both. The first is the ``Star "
+"Detection`` algorithm. The guider captures images of the sky and "
+"automatically detects stars in these images. Once this is done, it can "
+"determine your mount's drift in RA and DEC from its original position. The "
+"second type of algorithm is the ``Guiding Algorithm`` used to compute the RA "
+"and DEC guide pulses that should be sent to your mount to correct that drift."
+msgstr ""
+"Во внутреннем гиде используются два типа алгоритмов, и для каждого из них "
+"можно выбрать вариант. Первый — алгоритм ``Star Detection``. Гид захватывает "
+"изображения неба и автоматически обнаруживает на них звёзды. После этого он "
+"определяет смещение монтировки по прямому восхождению и склонению "
+"относительно исходного положения. Второй тип алгоритма — ``Guiding "
+"Algorithm``, используемый для вычисления импульсов гидирования по прямому "
+"восхождению и склонению, которые следует отправить на монтировку для "
+"коррекции этого смещения."
+
+#: ../../user_manual/ekos-guide.rst:224
+msgid ""
+"You can find star-detection algorithm choices in the Guide Settings page "
+"(above image) at the top of the ``Other Settings`` section. By far the most "
+"accurate is the (default) SEP MultiStar algorithm. It uses the detected "
+"position of many stars (in the above settings, up to 50) to determine its "
+"best estimate for the current drift. It is dependent on accurate star "
+"detection. Thus, it may be important to adjust star-detection parameters. "
+"Start with the default Guide-Default SEP profile, and optionally edit its "
+"parameters if you feel stars are not being detected accurately. Pretty much "
+"the only reason not to use SEP MultiStar would be if you can't get your SEP "
+"star-detection to perform adequately."
+msgstr ""
+"Выбор алгоритма обнаружения звёзд доступен на странице параметров "
+"гидирования (изображение выше) в верхней части раздела ``Другие параметры``. "
+"Безусловно, наиболее точным является алгоритм SEP MultiStar (используется по "
+"умолчанию). Он использует обнаруженные положения множества звёзд (в "
+"приведённых выше параметрах — до 50), чтобы определить наилучшую оценку "
+"текущего дрейфа. Его работа зависит от точного обнаружения звёзд. Поэтому "
+"может потребоваться настроить параметры обнаружения звёзд. Начните с "
+"используемого по умолчанию профиля SEP «Guide-Default» и при необходимости "
+"измените его параметры, если звёзды обнаруживаются недостаточно точно. "
+"Практически единственная причина отказаться от SEP MultiStar — невозможность "
+"добиться приемлемой работы обнаружения звёзд SEP."
+
+#: ../../user_manual/ekos-guide.rst:236
+msgid ""
+"Guiding algorithm choices are made at the top of the settings page. You can "
+"choose separate algorithms for RA and DEC. Here are the possibilities:"
+msgstr ""
+"Алгоритмы гидирования выбираются в верхней части страницы параметров. Для RA "
+"и DEC можно задать разные алгоритмы. Возможны следующие варианты:"
+
+#: ../../user_manual/ekos-guide.rst:240
+msgid ""
+"Standard: The traditional proportional guide algorithm. It computes a pulse "
+"to correct the computed guide drift. The aggressiveness parameter decides "
+"what proportion of the error is corrected. Integral gain can be used but is "
+"not recommended. Errors smaller than MinError won't be corrected. Max "
+"response limits the largest correction. The hysteresis parameter is not used."
+msgstr ""
+"Standard: традиционный пропорциональный алгоритм гидирования. Он вычисляет "
+"импульс для коррекции вычисленного дрейфа гидирования. Параметр "
+"агрессивности определяет, какая доля ошибки корректируется. Интегральное "
+"усиление можно использовать, но это не рекомендуется. Ошибки меньше MinError "
+"не корректируются. Максимальный отклик ограничивает наибольшую коррекцию. "
+"Параметр гистерезиса не используется."
+
+#: ../../user_manual/ekos-guide.rst:247
+msgid ""
+"Hysteresis: Hysteresis is like the standard algorithm but weights in the "
+"previous correction according to the hysteresis parameter."
+msgstr ""
+"Гистерезис: аналогичен стандартному алгоритму, но учитывает предыдущую "
+"коррекцию с весом, определяемым параметром гистерезиса."
+
+#: ../../user_manual/ekos-guide.rst:250
+msgid ""
+"Linear: This is similar to the PHD2 Lowpass2 algorithm. It computes the "
+"error pulses based on a short history of recent errors. This may be "
+"applicable to very stable mounts and is similar to the PHD2 LowPass2 "
+"algorithm."
+msgstr ""
+"Linear: аналогично алгоритму Lowpass2 в PHD2. Импульсы коррекции ошибки "
+"вычисляются на основе краткой истории последних ошибок. Может применяться "
+"для очень стабильных монтировок; аналогично алгоритму LowPass2 в PHD2."
+
+#: ../../user_manual/ekos-guide.rst:254
+msgid ""
+"GPG: (RA Only) The GPG algorithm tries to predict periodic error and linear "
+"drifts. It uses the aggressiveness, min and max parameters here, and more "
+"parameters on the separate GPG tab. It is very similar to the PHD2 PPEC "
+"algorithm. For technical details see `this paper <https://www.researchgate."
+"net/publication/276459268_Gaussian_Process-"
+"Based_Predictive_Control_for_Periodic_Error_Correction>`__. There is more "
+"detail on GPG below."
+msgstr ""
+"GPG: (только прямое восхождение) Алгоритм GPG пытается предсказать "
+"периодическую ошибку и линейные дрейфы. Здесь используются параметры "
+"агрессивности, минимума и максимума, а дополнительные параметры задаются на "
+"отдельной вкладке GPG. Он очень похож на алгоритм PPEC в PHD2. Технические "
+"подробности приведены в `этой статье <https://www.researchgate.net/"
+"publication/276459268_Gaussian_Process-"
+"Based_Predictive_Control_for_Periodic_Error_Correction>`__. Ниже приведены "
+"более подробные сведения о GPG."
+
+#: ../../user_manual/ekos-guide.rst:260
+msgid ""
+"AI Guider: (Experimental) Adds trained, mount-specific feed-forward "
+"predictions on top of the Standard algorithm, which keeps running "
+"underneath. It requires a one-time training session with the AI Guiding "
+"Assistant before it can be selected. See :ref:`AI Guiding Assistant <ekos-"
+"guide-ai-guiding-assistant>` below."
+msgstr ""
+"Гид с ИИ: (экспериментально) добавляет к стандартному алгоритму обученные "
+"прогнозы с прямой связью для конкретной монтировки; стандартный алгоритм при "
+"этом продолжает работать. Чтобы выбрать этот алгоритм, требуется однократный "
+"сеанс обучения с помощником гидирования с ИИ. См. :ref:`Помощник гидирования "
+"с ИИ <ekos-guide-ai-guiding-assistant>` ниже."
+
+#: ../../user_manual/ekos-guide.rst:266
+msgid ""
+"A good starting choice is ``Standard`` or ``Hysteresis`` (with a 0.1 "
+"hysteresis parameter). You may want to use ``GPG`` for RA, as it is probably "
+"the best performing algorithm for many mounts, however it is more complex to "
+"set up (see below). ``Linear`` is recommended for some high-performance "
+"mounts."
+msgstr ""
+"Хорошим начальным выбором является ``Standard`` или ``Гистерезис`` (с "
+"параметром гистерезиса 0,1). Для прямого восхождения (RA) можно использовать "
+"``GPG`` — вероятно, это наиболее эффективный алгоритм для многих монтировок, "
+"однако его сложнее настроить (см. ниже). Для некоторых "
+"высокопроизводительных монтировок рекомендуется ``Линейный``."
+
+#: ../../user_manual/ekos-guide.rst:271
+msgid ""
+"Good advice in choosing parameters is available on the internet, e.g. from "
+"`the above slideshow <https://openphdguiding.org/PHD2_BestPractices_2019-12."
+"pdf>`__."
+msgstr ""
+"Полезные советы по выбору параметров можно найти в Интернете, например в "
+"`приведённой выше презентации <https://openphdguiding.org/"
+"PHD2_BestPractices_2019-12.pdf>`__."
+
+#: ../../user_manual/ekos-guide.rst:275
+msgid ""
+"The main parameter choices you have are below. They are applicable to all "
+"the guiding algorithms."
+msgstr ""
+"Основные параметры, доступные для выбора, приведены ниже. Они применимы ко "
+"всем алгоритмам гидирования."
+
+#: ../../user_manual/ekos-guide.rst:278
+msgid ""
+"Aggressiveness. This controls how quickly you want the guider to correct the "
+"error. Values of 0.5 to 0.7 are usually best (i.e. correcting roughly half "
+"the observed error). Unintuitively, it seems that correcting 100% of the "
+"error can cause poor performance as the guider may oscillate with "
+"overcorrections."
+msgstr ""
+"Агрессивность. Определяет, насколько быстро гид должен корректировать "
+"ошибку. Обычно оптимальны значения от 0,5 до 0,7 (то есть корректируется "
+"примерно половина наблюдаемой ошибки). Как ни странно, коррекция 100 % "
+"ошибки может ухудшить качество гидирования, поскольку гид может колебаться "
+"из-за избыточных коррекций."
+
+#: ../../user_manual/ekos-guide.rst:285
+msgid ""
+"Min error. This controls the minimum deviation (in arc-seconds) for which a "
+"correction will be made. Adjusting this can avoid chasing the seeing."
+msgstr ""
+"Минимальная ошибка. Задаёт минимальное отклонение (в угловых секундах), при "
+"котором вносится коррекция. Изменение этого параметра позволяет избежать "
+"погони за сиингом."
+
+#: ../../user_manual/ekos-guide.rst:292
+msgid "Dithering"
+msgstr "Смещение между кадрами"
+
+#: ../../user_manual/ekos-guide.rst:294
+msgid "|Dithering Settings|"
+msgstr "|Параметры смещения между кадрами|"
+
+#: ../../user_manual/ekos-guide.rst:296
+msgid ""
+"To enable automatic dithering between frames, make sure to check the "
+"``Dither`` checkbox. By default, Ekos should dither (i.e. move) the guiding "
+"box by up to 3 pixels after every N frames captured in :doc:`Ekos Capture "
+"Module  <ekos-capture>`. The motion duration and direction are randomized. "
+"Since the guiding performance can oscillate immediately after dithering, you "
+"can set the appropriate ``Settle`` duration to wait after dither is complete "
+"before resuming the capture process. In rare cases where the dithering "
+"process can get stuck in an endless loop, set the appropriate ``Timeout`` to "
+"abort the process. But even if dithering fails, you can select whether this "
+"failure should terminate the autoguiding process or not. Toggle ``Abort "
+"Autoguide on failure`` to select the desired behavior."
+msgstr ""
+"Чтобы включить автоматическое смещение между кадрами, установите флажок "
+"``Размывание``. По умолчанию Ekos смещает (то есть перемещает) рамку "
+"гидирования на расстояние до 3 пикселей после каждых N кадров, снятых в :doc:"
+"`модуле «Съёмка» Ekos <ekos-capture>`. Длительность и направление смещения "
+"выбираются случайным образом. Поскольку показатели гидирования могут "
+"колебаться сразу после смещения, можно задать подходящую длительность "
+"``Стабилизация`` — время ожидания после завершения смещения перед "
+"возобновлением процесса съёмки. В редких случаях, когда процесс смещения "
+"может зациклиться, задайте подходящее значение ``Timeout`` для прерывания "
+"процесса. Но даже если смещение не удалось, можно выбрать, должно ли это "
+"прерывать процесс автогидирования. Переключите ``Прерывать ведение при "
+"ошибке``, чтобы выбрать нужное поведение."
+
+#: ../../user_manual/ekos-guide.rst:311
+msgid ""
+"Dithering does not result in a long wander from the original target "
+"position. Ekos keeps track of the original and current target positions, and "
+"moves the target back towards the original target should the position have "
+"drifted too far."
+msgstr ""
+"Смещение между кадрами не приводит к длительному уходу от исходного "
+"положения цели. Ekos отслеживает исходное и текущее положения цели и, если "
+"положение сместилось слишком далеко, возвращает цель к исходному положению."
+
+#: ../../user_manual/ekos-guide.rst:317
+msgid ""
+"One-pulse dithering is an interesting quicker option which sends a pulse to "
+"dither, but does not verify that the dither reached its desired location. It "
+"is possible that the dithering for any given dither isn't as much as "
+"desired, but the overall effect should be good."
+msgstr ""
+"Одноимпульсное смещение между кадрами — интересная, более быстрая "
+"возможность: импульс для смещения отправляется, но не проверяется, достигло "
+"ли смещение нужного положения. Возможно, что при любом отдельном смещении "
+"величина окажется меньше желаемой, но общий эффект должен быть хорошим."
+
+#: ../../user_manual/ekos-guide.rst:323
+msgid ""
+"Non-guide dithering is also supported. This is useful when no guide camera "
+"is available or when performing short exposures. In this case, the mount can "
+"be commanded to dither in a random direction for up to the pulse specified "
+"in the ``Non-Guide Dither Pulse`` option."
+msgstr ""
+"Смещение между кадрами без гидирования также поддерживается. Это полезно, "
+"когда камера гида недоступна или выполняются короткие экспозиции. В этом "
+"случае монтировке можно подать команду на смещение в случайном направлении "
+"на время, не превышающее импульс, указанный в параметре ``Смещение между "
+"кадрами без ведения``."
+
+#: ../../user_manual/ekos-guide.rst:332 ../../user_manual/ekos-guide.rst:960
+msgid "Drift Graphics"
+msgstr "График дрейфа"
+
+#: ../../user_manual/ekos-guide.rst:334
+msgid "|Drift Graphics|"
+msgstr "|График дрейфа|"
+
+#: ../../user_manual/ekos-guide.rst:336
+msgid ""
+"The drift graphics is a very useful tool to monitor the guiding performance. "
+"It is a 2D plot of guiding *deviations* and *corrections*. By default, only "
+"the guiding deviations in RA and DE are displayed. The horizontal axis is "
+"the time in seconds since the autoguiding process was started while the "
+"vertical axis plots the guiding drift/deviation in arcsecs for each axis. "
+"Guiding corrections (pulses) can also be plotted in the same graph and you "
+"can enable them by checking the ``Corr`` checkbox below each Axis. The "
+"corrections are plotted as shaded areas in the background with the same "
+"color as that of the axis."
+msgstr ""
+"График дрейфа — очень полезный инструмент для контроля показателей "
+"гидирования. Это двумерный график *отклонений* и *коррекций* гидирования. По "
+"умолчанию показываются только отклонения гидирования по RA и DE. По "
+"горизонтальной оси откладывается время в секундах с момента запуска процесса "
+"автогидирования, а по вертикальной — смещение/отклонение гидирования в "
+"угловых секундах для каждой оси. Корректирующие импульсы гидирования также "
+"можно выводить на том же графике; чтобы включить их, установите флажок "
+"``Корр`` под каждой осью. Коррекции показываются в виде затенённых областей "
+"на заднем плане цветом, совпадающим с цветом соответствующей оси."
+
+#: ../../user_manual/ekos-guide.rst:348
+msgid ""
+"You can pan and zoom the plot, and when hovering the mouse over the graph, a "
+"tooltip is displayed containing information about this specific point in "
+"time. It contains the guiding drift and any corrections made, in addition to "
+"the local time, this event was recorded. A vertical slider to the right of "
+"the image can be used to adjust the height of the secondary Y-axis for "
+"pulses corrections."
+msgstr ""
+"График можно перетаскивать и масштабировать, а при наведении указателя мыши "
+"на график показывается всплывающая подсказка с информацией об этой "
+"конкретной точке времени. Она содержит смещение гидирования и внесённые "
+"коррекции, а также местное время записи этого события. Вертикальный ползунок "
+"справа от изображения позволяет настроить высоту вспомогательной оси Y для "
+"корректирующих импульсов."
+
+#: ../../user_manual/ekos-guide.rst:356
+msgid ""
+"The ``Trace`` horizontal slider at the bottom can be used to scroll through "
+"the guide history. Alternatively, you can click the ``Max`` checkbox to lock "
+"the graph onto the latest point so that the drift graphics autoscrolls. The "
+"buttons to the right of the slider are used for autoscaling the graphs, "
+"exporting the guide data to a CSV file, clearing all the guide data, and for "
+"scaling the target in the ``Drift Plot``. Furthermore, the guide graph "
+"includes a label to indicate when a dither occurred so the user knows "
+"guiding was not bad at those points."
+msgstr ""
+"Горизонтальный ползунок ``Трасса`` в нижней части позволяет прокручивать "
+"историю гидирования. Кроме того, можно установить флажок ``Макс.``, чтобы "
+"закрепить график на последней точке — тогда график смещения будет "
+"прокручиваться автоматически. Кнопки справа от ползунка служат для "
+"автоматического масштабирования графиков, экспорта данных гидирования в файл "
+"CSV, очистки всех данных гидирования и масштабирования цели в ``Drift "
+"Plot``. Кроме того, на графике гидирования есть метка, указывающая, когда "
+"произошло смещение между кадрами, чтобы пользователь понимал, что в этих "
+"точках гидирование не было плохим."
+
+#: ../../user_manual/ekos-guide.rst:367
+msgid ""
+"The colors of each axis can be customized in :doc:`KStars Settings color "
+"scheme  <colors>`."
+msgstr ""
+"Цвета каждой оси можно настроить в :doc:`цветовой схеме параметров KStars  "
+"<colors>`."
+
+#: ../../user_manual/ekos-guide.rst:373
+msgid "Drift Plot"
+msgstr "Диаграмма дрейфа"
+
+#: ../../user_manual/ekos-guide.rst:375
+msgid ""
+"A bulls-eye scatter plot can be used to gauge the *accuracy* of the overall "
+"guiding performance. It is composed of three concentric rings of varying "
+"radii with the central green ring having a default radius of 2 arcsecs. The "
+"last RMS value is plotted as |image2| with its color reflecting which "
+"concentric ring it falls within. You can change the radius of the innermost "
+"green circle by adjusting the drift plot accuracy."
+msgstr ""
+"Для оценки *точности* гидирования в целом можно использовать диаграмму "
+"рассеяния в виде мишени. Она состоит из трёх концентрических колец разного "
+"радиуса, при этом радиус центрального зелёного кольца по умолчанию равен 2 "
+"угловым секундам. Последнее значение RMS откладывается в виде |image2|, а "
+"его цвет показывает, в какое из концентрических колец оно попадает. Радиус "
+"самого внутреннего зелёного круга можно изменить, настроив точность "
+"диаграммы дрейфа."
+
+#: ../../user_manual/ekos-guide.rst:386
+msgid "Guiding with Multiple Stars"
+msgstr "Гидирование по нескольким звёздам"
+
+#: ../../user_manual/ekos-guide.rst:388
+msgid "|Guiding with MultiStar|"
+msgstr "|Гидирование с MultiStar|"
+
+#: ../../user_manual/ekos-guide.rst:390
+msgid ""
+"In standard guiding the system selects a guiding star. In non-MultiStar "
+"systems, the measured movements of that star relative to its original "
+"positional measurements are converted to RA and DEC offsets which are the "
+"guiding drift errors. In MultiStar guiding the system selects many reference "
+"stars and measures all their offsets relative to their initial positions. "
+"The guiding error is computed as the median displacement of the individual "
+"reference stars from their original positions. The magic the system needs to "
+"perform is to find this noisy 2-dimensional pattern of reference stars in "
+"the guide image, but finding this pattern is more robust than finding a "
+"single guide star that may have moved significantly or may not have been "
+"detected at all. We recommended you choose this way to guide by selecting "
+"the guide Algorithm SEP Multi Star."
+msgstr ""
+"При стандартном гидировании система выбирает гидирующую звезду. В системах, "
+"отличных от MultiStar, измеренные перемещения этой звезды относительно её "
+"исходных измерений положения преобразуются в смещения по прямому восхождению "
+"и склонению, которые представляют собой ошибки дрейфа гидирования. При "
+"гидировании MultiStar система выбирает множество опорных звёзд и измеряет "
+"все их смещения относительно исходных положений. Ошибка гидирования "
+"вычисляется как медианное смещение отдельных опорных звёзд от их исходных "
+"положений. Самое сложное для системы — найти это зашумлённое двумерное "
+"расположение опорных звёзд на изображении гидирования, однако найти такое "
+"расположение надёжнее, чем найти одну гидирующую звезду, которая могла "
+"значительно сместиться или вообще не быть обнаружена. Рекомендуется выбрать "
+"этот способ гидирования, указав алгоритм гидирования SEP MultiStar."
+
+#: ../../user_manual/ekos-guide.rst:406
+msgid ""
+"There are a few options you may wish to consider. Max MultiStar Ref Stars is "
+"the maximum number of reference stars the system can use. The main reason to "
+"limit this is computation cost, thought it is not a very expensive "
+"computation. 50 is a good choice. The setting Min MultiStar Star Detections "
+"tells the system to fallback to a single guide star if there are fewer than "
+"that many star detections. Invent Multi-Star Guide Star should be left "
+"checked, and Max MultiStar HFR is an old parameter that likely has little "
+"effect anymore."
+msgstr ""
+"Есть несколько параметров, которые стоит учесть. Max MultiStar Ref Stars — "
+"максимальное число опорных звёзд, которое может использовать система. "
+"Основная причина такого ограничения — вычислительные затраты, хотя эти "
+"вычисления не слишком ресурсоёмки. Хорошим выбором будет 50. Параметр Min "
+"MultiStar Star Detections указывает системе переключиться на одну гидирующую "
+"звезду, если обнаружено меньше звёзд, чем задано. Флажок Invent Multi-Star "
+"Guide Star следует оставить включённым, а Max MultiStar HFR — старый "
+"параметр, который, вероятно, уже почти не оказывает влияния."
+
+#: ../../user_manual/ekos-guide.rst:420 ../../user_manual/ekos-guide.rst:963
+msgid "Guiding with GPG"
+msgstr "Гидирование с GPG"
+
+#: ../../user_manual/ekos-guide.rst:422
+msgid "|Guiding with GPG|"
+msgstr "|Гидирование с GPG|"
+
+#: ../../user_manual/ekos-guide.rst:424
+msgid ""
+"With GPG guiding, the internal guider uses predictive and adaptive guiding "
+"for the RA axis. This adaptively models the periodic error of the mount, and "
+"adds its predicted contribution to each guide pulse."
+msgstr ""
+"При гидировании GPG внутренний гид использует прогнозирующее и адаптивное "
+"гидирование по оси прямого восхождения. Периодическая ошибка монтировки "
+"моделируется адаптивно, а её прогнозируемый вклад добавляется в каждый "
+"импульс гидирования."
+
+#: ../../user_manual/ekos-guide.rst:429
+msgid ""
+"The main settings to consider are Major Period and Estimate Period. If you "
+"know the worm period for your mount, perhaps by examining `this table "
+"<https://github.com/OpenPHDGuiding/phd2/wiki/Mount-Worm-Period-Info>`__, "
+"then uncheck Estimate Period and enter your known Major Period. If not, then "
+"check Estimate Period. Intra-frame dark guiding can be used to \"spread out "
+"the GPG prediction. For instance, if you guide at 5s, you can set the dark "
+"guiding interval to 1s and its prediction is pulsed every second, but the "
+"guiding drift correction would be sent every 5s. In this way, it outputs the "
+"predicted corrections much faster than the guide camera exposure rate, "
+"effectively performing periodic error correction and allowing longer guide "
+"camera exposures. All the other parameters are best left to defaults."
+msgstr ""
+"Основные параметры, которые следует учитывать, — это «Основной период» и "
+"«Оценивать период». Если период червячной передачи монтировки известен, "
+"например, из `этой таблицы <https://github.com/OpenPHDGuiding/phd2/wiki/"
+"Mount-Worm-Period-Info>`__, снимите флажок «Оценивать период» и введите "
+"известный основной период. В противном случае установите флажок «Оценивать "
+"период». Внутрикадровое темновое гидирование позволяет «растянуть» "
+"предсказание GPG по времени. Например, если гидирование выполняется с "
+"экспозициями 5 с, можно задать интервал темнового гидирования 1 с, и его "
+"предсказание будет выдаваться импульсами каждую секунду, но коррекция "
+"смещения гидирования будет отправляться каждые 5 с. Таким образом, "
+"предсказанные коррекции выводятся гораздо быстрее, чем частота экспозиций "
+"камеры гида, что фактически обеспечивает коррекцию периодической ошибки и "
+"позволяет увеличить длительность экспозиций камеры гида. Все остальные "
+"параметры лучше оставить по умолчанию."
+
+#: ../../user_manual/ekos-guide.rst:448
+msgid "Streaming Guide"
+msgstr "Потоковое гидирование"
+
+#: ../../user_manual/ekos-guide.rst:450
+msgid "|Guide Stream Settings|"
+msgstr "|Параметры потока гидирования|"
+
+#: ../../user_manual/ekos-guide.rst:452
+msgid ""
+"In streaming guide mode the internal guider captures guide frames from the "
+"camera's continuous video stream instead of taking a separate exposure for "
+"each guide frame. Frames arrive continuously and the guider always works "
+"from the most recent one (\"latest frame wins\"), which removes the readout/"
+"download dead time between exposures. The result is a faster, lower-latency "
+"guide cadence — useful for the higher guide rates (roughly 2–5 Hz) that some "
+"mounts, especially harmonic/strain-wave drives, benefit from."
+msgstr ""
+"В режиме потокового гидирования внутренний гид захватывает кадры гидирования "
+"из непрерывного видеопотока камеры, а не выполняет отдельную экспозицию для "
+"каждого кадра гидирования. Кадры поступают непрерывно, и гид всегда работает "
+"с самым последним из них («побеждает последний кадр»), что устраняет простой "
+"на считывание и загрузку между экспозициями. В результате гидирование "
+"становится быстрее и с меньшей задержкой — это полезно при повышенных "
+"частотах гидирования (примерно 2–5 Гц), которые выгодны для некоторых "
+"монтировок, особенно с гармоническими/волновыми приводами."
+
+#: ../../user_manual/ekos-guide.rst:464
+msgid "Single-frame versus streaming guide timing"
+msgstr ""
+"Сравнение времени гидирования при одиночных кадрах и потоковой передаче"
+
+#: ../../user_manual/ekos-guide.rst:464
+msgid ".. image:: /images/ekos_guide_stream_timing.png"
+msgstr ".. image:: /images/ekos_guide_stream_timing.png"
+
+#: ../../user_manual/ekos-guide.rst:464
+msgid ""
+"Why streaming helps. In single-frame guiding (top) each exposure is followed "
+"by readout/download/detection *dead time*, during which the mount keeps "
+"drifting with no new measurement and no correction, so the pointing error "
+"grows uncorrected and peaks just before each pulse. The pulse itself is "
+"based on the star position measured during the *previous* exposure, so the "
+"correction is already a couple of seconds old by the time it reaches the "
+"mount. Streaming guiding (bottom) delivers frames back-to-back with no dead "
+"time (\"latest frame wins\"), so corrections are more frequent and fresher "
+"and far less error accumulates between them."
+msgstr ""
+"Почему потоковое гидирование помогает. При покадровом гидировании (вверху) "
+"за каждой экспозицией следует *мёртвое время* считывания, загрузки и "
+"обнаружения, в течение которого монтировка продолжает смещаться без новых "
+"измерений и без коррекции, поэтому ошибка наведения растёт без исправления и "
+"достигает максимума непосредственно перед каждым импульсом. Сам импульс "
+"основан на положении звезды, измеренном во время *предыдущей* экспозиции, "
+"поэтому к моменту, когда коррекция доходит до монтировки, она уже устарела "
+"на пару секунд. Потоковое гидирование (внизу) выдаёт кадры один за другим "
+"без мёртвого времени («побеждает последний кадр»), поэтому коррекции "
+"выполняются чаще и оказываются свежее, а между ними накапливается гораздо "
+"меньшая ошибка."
+
+#: ../../user_manual/ekos-guide.rst:474
+msgid ""
+"Streaming affects only *how* frames are delivered to the guider; the guiding "
+"algorithms, calibration, dithering, and lost-star handling all behave as "
+"usual. It works with the :guilabel:`Standard`/MultiStar and :guilabel:`GPG` "
+"algorithms as well as the experimental :ref:`AI Guider <ekos-guide-ai-"
+"guiding-assistant>`."
+msgstr ""
+"Потоковая передача влияет только на то, *как* кадры доставляются гиду; "
+"алгоритмы гидирования, калибровка, смещение между кадрами и обработка потери "
+"звезды работают как обычно. Потоковая передача работает с алгоритмами :"
+"guilabel:`Стандартный`/MultiStar и :guilabel:`GPG`, а также с "
+"экспериментальным :ref:`гидированием с ИИ <ekos-guide-ai-guiding-assistant>`."
+
+#: ../../user_manual/ekos-guide.rst:483
+msgid "Requirements"
+msgstr "Требования"
+
+#: ../../user_manual/ekos-guide.rst:485
+msgid "The **internal guider** (streaming is not used with external PHD2)."
+msgstr ""
+"**Внутренний гид** (потоковая передача не используется с внешним PHD2)."
+
+#: ../../user_manual/ekos-guide.rst:486
+msgid "A guide camera that supports INDI **video streaming**."
+msgstr "Камера гида, поддерживающая **потоковое видео** INDI."
+
+#: ../../user_manual/ekos-guide.rst:487
+msgid ""
+"A completed, successful calibration — calibration itself always runs with "
+"single frames (see below)."
+msgstr ""
+"Завершённая успешная калибровка — сама калибровка всегда выполняется с "
+"одиночными кадрами (см. ниже)."
+
+#: ../../user_manual/ekos-guide.rst:493
+msgid "Enabling Streaming Guide"
+msgstr "Включение потокового гидирования"
+
+#: ../../user_manual/ekos-guide.rst:495
+msgid ""
+"Check the :guilabel:`Stream` box on the main Guide page, next to the :"
+"guilabel:`Exp` and :guilabel:`Delay` controls, before you start guiding."
+msgstr ""
+"Перед началом гидирования установите флажок :guilabel:`Stream` на главной "
+"странице гидирования рядом с элементами управления :guilabel:`Exp` и :"
+"guilabel:`Задержка`."
+
+#: ../../user_manual/ekos-guide.rst:498
+msgid ""
+"The guide :guilabel:`Exp` (exposure), :guilabel:`Gain`, and :guilabel:`Bin` "
+"controls apply to the streamed frames exactly as they do to single "
+"exposures; a gain change takes effect immediately while streaming."
+msgstr ""
+"Элементы управления :guilabel:`Exp` (экспозиция), :guilabel:`Усиление` и :"
+"guilabel:`Bin` применяются к потоковым кадрам точно так же, как и к "
+"одиночным экспозициям; изменение усиления вступает в силу немедленно при "
+"потоковой передаче."
+
+#: ../../user_manual/ekos-guide.rst:504
+msgid ""
+"Calibration always runs with single frames for stability, regardless of the :"
+"guilabel:`Stream` setting. Streaming begins automatically only once guiding "
+"starts (and only if :guilabel:`Stream` is checked), and stops again when "
+"guiding stops. This keeps calibration clean and settled while still giving "
+"you the streamed, dead-time-free cadence during guiding."
+msgstr ""
+"Калибровка всегда выполняется с одиночными кадрами для обеспечения "
+"стабильности, независимо от параметра :guilabel:`Stream`. Потоковая передача "
+"начинается автоматически только после запуска гидирования (и только если "
+"установлен флажок :guilabel:`Stream`) и снова останавливается при остановке "
+"гидирования. Благодаря этому калибровка остаётся чистой и стабильной, а во "
+"время гидирования обеспечивается потоковый режим без простоев."
+
+#: ../../user_manual/ekos-guide.rst:513
+msgid "16-bit Stream Depth (INDI)"
+msgstr "Глубина потока 16 бит (INDI)"
+
+#: ../../user_manual/ekos-guide.rst:515
+msgid "|Guide Stream Depth|"
+msgstr "|Глубина потока гидирования|"
+
+#: ../../user_manual/ekos-guide.rst:517
+msgid ""
+"The bit depth of the video stream is set on the camera driver, not in the "
+"Guide module. Open the INDI Control Panel, select your guide camera, and go "
+"to the :guilabel:`Streaming` tab:"
+msgstr ""
+"Разрядность видеопотока задаётся в драйвере камеры, а не в модуле "
+"«Гидирование». Откройте панель управления INDI, выберите камеру гида и "
+"перейдите на вкладку :guilabel:`Потоковое вещание`:"
+
+#: ../../user_manual/ekos-guide.rst:521
+msgid ""
+"Set :guilabel:`Stream Depth` to :guilabel:`16-bit`. This is **highly "
+"recommended** for guiding: 16-bit (RAW16) frames preserve the full sensor "
+"bit depth, which gives better centroiding and faint-star detection than 8-"
+"bit."
+msgstr ""
+"Установите для параметра :guilabel:`Stream Depth` значение :guilabel:`16 "
+"бит`. Это **настоятельно рекомендуется** при гидировании: 16-битные кадры "
+"(RAW16) сохраняют полную разрядность сенсора, что обеспечивает лучшее "
+"определение центроида и обнаружение слабых звёзд, чем 8-битные."
+
+#: ../../user_manual/ekos-guide.rst:525
+msgid ""
+"Make sure the :guilabel:`Encoder` is set to :guilabel:`RAW` (not MJPEG)."
+msgstr ""
+"Убедитесь, что для параметра :guilabel:`Энкодер` установлено значение :"
+"guilabel:`RAW` (а не MJPEG)."
+
+#: ../../user_manual/ekos-guide.rst:526
+msgid ""
+"Save the setting to the driver configuration (from the :guilabel:`Options` "
+"tab) so it persists across sessions — otherwise the stream may revert to 8-"
+"bit the next time the camera connects."
+msgstr ""
+"Сохраните параметр в конфигурации драйвера (на вкладке :guilabel:"
+"`Параметры`), чтобы он сохранялся между сеансами, — иначе при следующем "
+"подключении камеры поток может вернуться к 8-битному режиму."
+
+#: ../../user_manual/ekos-guide.rst:533
+msgid "Examples"
+msgstr "Примеры"
+
+#: ../../user_manual/ekos-guide.rst:535
+msgid "|Guide Stream GPG|"
+msgstr "|GPG потока гидирования|"
+
+#: ../../user_manual/ekos-guide.rst:537
+msgid ""
+"Streaming guide with the :guilabel:`GPG` algorithm on RA and :guilabel:"
+"`Linear` on DEC, at 0.7 s exposure and 2×2 binning on a harmonic-drive mount "
+"— total RMS around 0.46″ with 100 detected stars."
+msgstr ""
+"Потоковое гидирование с алгоритмом :guilabel:`GPG` по прямому восхождению и :"
+"guilabel:`Линейный` по склонению, при экспозиции 0,7 с и биннинге 2×2 на "
+"монтировке с гармоническим приводом — суммарная RMS около 0,46″ при 100 "
+"обнаруженных звёздах."
+
+#: ../../user_manual/ekos-guide.rst:541
+msgid "|Guide Stream AI|"
+msgstr "|ИИ потока гидирования|"
+
+#: ../../user_manual/ekos-guide.rst:543
+msgid ""
+"Streaming guide combined with the experimental AI Guider. Because streaming "
+"supplies frames with no inter-frame dead time, it pairs naturally with the "
+"higher guide rates that harmonic drives and the AI predictor work best at."
+msgstr ""
+"Потоковое гидирование в сочетании с экспериментальным гидированием с ИИ. "
+"Поскольку потоковая передача предоставляет кадры без простоя между кадрами, "
+"она естественно сочетается с повышенными частотами гидирования, при которых "
+"лучше всего работают гармонические приводы и ИИ-прогнозирование."
+
+#: ../../user_manual/ekos-guide.rst:550
+msgid "Notes and Limitations"
+msgstr "Примечания и ограничения"
+
+#: ../../user_manual/ekos-guide.rst:552
+msgid ""
+"**Dark-frame subtraction works in streaming mode.** The :guilabel:`Dark` "
+"checkbox applies a matched dark frame (and defect map) to each streamed "
+"guide frame, just as in single-frame guiding — useful for removing amplifier "
+"glow or hot pixels on some guide sensors. As always, a suitable dark must "
+"exist in the Dark Library for the current guide exposure, gain, and binning "
+"(see :ref:`Dark Frames <ekos-guide-dark-frames>`). Note that removing a "
+"smooth glow gradient requires actual dark *subtraction*: set the Dark "
+"Library to *Prefer Darks* rather than *Prefer Defects*, since the defect map "
+"only repairs isolated hot/cold pixels and will not remove glow."
+msgstr ""
+"**Вычитание темнового кадра работает в потоковом режиме.** Флажок :guilabel:"
+"`Dark` применяет соответствующий темновой кадр (и карту дефектов) к каждому "
+"потоковому кадру гидирования — так же, как при гидировании по одиночным "
+"кадрам; это позволяет удалить свечение усилителя или горячие пиксели на "
+"некоторых датчиках гидирования. Как всегда, в библиотеке темновых кадров "
+"должен быть подходящий темновой кадр для текущей экспозиции гидирования, "
+"усиления и биннинга (см. :ref:`Темновые кадры <ekos-guide-dark-frames>`). "
+"Удаление плавного градиента свечения требует именно *вычитания* темнового "
+"кадра: установите в библиотеке темновых кадров режим *Предпочитать темновые "
+"кадры*, а не *Предпочитать дефекты*, поскольку карта дефектов исправляет "
+"только отдельные горячие/холодные пиксели и не удаляет свечение."
+
+#: ../../user_manual/ekos-guide.rst:561
+msgid ""
+"Streaming requires a camera and driver with working INDI video streaming; if "
+"the camera does not support it, the guider falls back to single-frame "
+"captures."
+msgstr ""
+"Для потоковой передачи требуются камера и драйвер с работающим потоковым "
+"видео INDI; если камера его не поддерживает, гид переходит к съёмке "
+"одиночными кадрами."
+
+#: ../../user_manual/ekos-guide.rst:564
+msgid ""
+"As with any guide configuration, verify your results: streaming changes the "
+"cadence, not the fundamentals, so good polar alignment, balance, and "
+"calibration still matter most."
+msgstr ""
+"Как и при любой конфигурации гидирования, проверяйте результаты: потоковая "
+"передача меняет частоту, а не основы, поэтому качественное выравнивание по "
+"полярной оси, балансировка и калибровка по-прежнему важнее всего."
+
+#: ../../user_manual/ekos-guide.rst:571
+msgid "AI Guiding Assistant (Experimental)"
+msgstr "Помощник гидирования с ИИ (экспериментальный)"
+
+#: ../../user_manual/ekos-guide.rst:573
+msgid "|AI Guiding Menu|"
+msgstr "|Меню гидирования с ИИ|"
+
+#: ../../user_manual/ekos-guide.rst:575
+msgid ""
+"The AI Guiding Assistant adds a trained, mount-specific *feed-forward* "
+"predictor to the internal guider. After a one-time training session, the AI "
+"learns the repeatable part of your mount's tracking error — such as periodic "
+"error and slow drift — and adds a predicted correction to each guide pulse "
+"*before* the error becomes visible in the guide image. The standard guiding "
+"algorithm keeps running underneath at all times and corrects whatever the "
+"prediction misses."
+msgstr ""
+"Помощник гидирования с ИИ добавляет во внутренний гид обученный модуль "
+"прогнозирования с прямой связью для конкретной монтировки. После "
+"однократного сеанса обучения ИИ изучает повторяющуюся часть ошибки слежения "
+"монтировки — например, периодическую ошибку и медленный дрейф — и добавляет "
+"прогнозируемую коррекцию в каждый импульс гидирования *до того*, как ошибка "
+"станет заметна на изображении гида. Стандартный алгоритм гидирования при "
+"этом постоянно продолжает работать и корректирует всё, что не учёл прогноз."
+
+#: ../../user_manual/ekos-guide.rst:583
+msgid ""
+"The entry point is the :guilabel:`AI Guiding (Experimental)` menu button on "
+"the main Guide page, just below :guilabel:`Clear Calibration`. It offers two "
+"actions: :guilabel:`AI Guiding Assistant...`, which opens the data-"
+"collection wizard described below, and :guilabel:`Load Weights...`, which "
+"loads a previously trained model file. This feature is unrelated to the :doc:"
+"`AI Assistant (MCP) <ekos-mcp>` interface, which connects KStars to external "
+"chat assistants."
+msgstr ""
+"Точка входа — кнопка меню :guilabel:`Ведение с ИИ (экспериментально)` на "
+"главной странице гидирования, сразу под :guilabel:`Clear Calibration`. "
+"Доступны два действия: :guilabel:`Помощник ведения с ИИ…`, который открывает "
+"описанный ниже мастер сбора данных, и :guilabel:`Загрузка…`, который "
+"загружает файл ранее обученной модели. Эта функция не связана с интерфейсом :"
+"doc:`«Помощник ИИ (MCP)» <ekos-mcp>`, который подключает KStars к внешним "
+"чат-помощникам."
+
+#: ../../user_manual/ekos-guide.rst:593
+msgid ""
+"The AI Guiding Assistant is an **experimental** feature under active "
+"development. Trained models are tied to your specific mount, camera, and "
+"guide settings. Always verify your guiding performance after enabling it, "
+"and be prepared to switch back to the :guilabel:`Standard` or :guilabel:"
+"`GPG` algorithms if your results are not better with the AI."
+msgstr ""
+"Помощник гидирования с ИИ — это **экспериментальная** функция, находящаяся в "
+"активной разработке. Обученные модели привязаны к конкретной монтировке, "
+"камере и параметрам гидирования. После включения обязательно проверяйте "
+"качество гидирования и будьте готовы вернуться к алгоритмам :guilabel:"
+"`Стандартный` или :guilabel:`GPG`, если результаты с ИИ окажутся не лучше."
+
+#: ../../user_manual/ekos-guide.rst:602
+msgid "Expectations and Prerequisites"
+msgstr "Ожидания и предварительные требования"
+
+#: ../../user_manual/ekos-guide.rst:604
+msgid ""
+"Please read this part carefully before investing time in training a model — "
+"it will save you from disappointment later."
+msgstr ""
+"Прежде чем тратить время на обучение модели, внимательно прочитайте этот "
+"раздел — это избавит от разочарования впоследствии."
+
+#: ../../user_manual/ekos-guide.rst:609
+msgid ""
+"AI guiding **augments** a well-functioning guiding setup — it does not "
+"repair a poorly functioning one. It predicts the *repeatable* part of your "
+"mount's error and layers that prediction on top of the standard guiding "
+"algorithm. It will **not** fix:"
+msgstr ""
+"Гидирование с ИИ **дополняет** хорошо работающую систему гидирования — оно "
+"не восстанавливает плохо работающую. Оно предсказывает *повторяющуюся* часть "
+"ошибки монтировки и накладывает этот прогноз поверх стандартного алгоритма "
+"гидирования. Оно **не** устраняет:"
+
+#: ../../user_manual/ekos-guide.rst:614
+msgid "poor polar alignment,"
+msgstr "плохое выравнивание по полярной оси,"
+
+#: ../../user_manual/ekos-guide.rst:615
+msgid "imbalance, cable drag, or differential flexure,"
+msgstr "разбалансировку, натяжение кабеля или дифференциальный изгиб,"
+
+#: ../../user_manual/ekos-guide.rst:616
+msgid "wind gusts, vibrations, or bad seeing,"
+msgstr "порывы ветра, вибрации или плохой сиинг,"
+
+#: ../../user_manual/ekos-guide.rst:617
+msgid "a mount or guide system that is not already well tuned."
+msgstr ""
+"монтировку или систему гидирования, которые ещё не настроены должным образом."
+
+#: ../../user_manual/ekos-guide.rst:619
+msgid ""
+"None of these are repeatable errors, so no amount of training can predict "
+"them. If standard guiding does not work well on your system, fix that first. "
+"The improvement from AI guiding varies considerably from mount to mount, and "
+"on some mounts you may see no measurable benefit at all."
+msgstr ""
+"Ни одна из этих ошибок не является повторяющейся, поэтому предсказать их "
+"обучением невозможно. Если стандартное гидирование плохо работает в системе, "
+"сначала исправьте это. Улучшение от гидирования с ИИ сильно различается от "
+"монтировки к монтировке, а на некоторых монтировках измеримого улучшения "
+"можно не заметить вовсе."
+
+#: ../../user_manual/ekos-guide.rst:625
+msgid "Before running the assistant, make sure that:"
+msgstr "Перед запуском помощника убедитесь, что:"
+
+#: ../../user_manual/ekos-guide.rst:627
+msgid ""
+"You are using the **internal guider**, with a working guide camera and a "
+"completed, successful calibration."
+msgstr ""
+"Используется **внутренний гид** с работающей камерой гида и завершённой "
+"успешной калибровкой."
+
+#: ../../user_manual/ekos-guide.rst:629
+msgid ""
+"Ordinary guiding with the :guilabel:`Standard` algorithm already works "
+"reliably on your setup."
+msgstr ""
+"Обычное гидирование с алгоритмом :guilabel:`Стандартный` уже надёжно "
+"работает в имеющейся конфигурации."
+
+#: ../../user_manual/ekos-guide.rst:631
+msgid "Your mount is well polar-aligned, balanced, and free of cable snags."
+msgstr ""
+"Монтировка хорошо выровнена по полярной оси, сбалансирована, кабели не "
+"зацепляются."
+
+#: ../../user_manual/ekos-guide.rst:632
+msgid ""
+"You know your mount's drive type: worm gear (most equatorial mounts), "
+"harmonic/strain-wave drive, or direct drive."
+msgstr ""
+"Тип привода монтировки известен: червячная передача (у большинства "
+"экваториальных монтировок), гармонический/волновой привод или прямой привод."
+
+#: ../../user_manual/ekos-guide.rst:634
+msgid ""
+"Your guide exposure is the one you intend to keep using: the model is "
+"trained *and locked* to the guide exposure, binning, and guide settings used "
+"during data collection."
+msgstr ""
+"Экспозиция гидирования должна быть той, которую планируется использовать в "
+"дальнейшем: модель обучается *и фиксируется* на экспозиции гидирования, "
+"биннинге и параметрах гидирования, применённых при сборе данных."
+
+#: ../../user_manual/ekos-guide.rst:637
+msgid ""
+"You have 20–45 minutes of clear, reasonably steady sky to spend on data "
+"collection, depending on the mount type."
+msgstr ""
+"На сбор данных отводится 20–45 минут ясного, достаточно спокойного неба — в "
+"зависимости от типа монтировки."
+
+#: ../../user_manual/ekos-guide.rst:643
+msgid "Data Collection with the AI Guiding Assistant"
+msgstr "Сбор данных с помощью помощника гидирования с ИИ"
+
+#: ../../user_manual/ekos-guide.rst:645
+msgid ""
+"Training a model starts with a *system identification* session: the "
+"assistant points the mount at a few positions in the sky and records how the "
+"guide star drifts, both with guiding running and with guiding deliberately "
+"paused (\"free drift\"), so that the mount's raw error signature can be "
+"measured. Click :guilabel:`AI Guiding (Experimental)` → :guilabel:`AI "
+"Guiding Assistant...` on the Guide page to start the wizard."
+msgstr ""
+"Обучение модели начинается с сеанса *идентификации системы*: помощник "
+"наводит монтировку на несколько положений в небе и записывает, как дрейфует "
+"гидирующая звезда — как при работающем гидировании, так и при намеренно "
+"приостановленном гидировании («свободный дрейф»), — чтобы можно было "
+"измерить исходный характер ошибок монтировки. Чтобы запустить мастер, "
+"нажмите на странице гидирования :guilabel:`Ведение с ИИ (экспериментально)` "
+"→ :guilabel:`Помощник ведения с ИИ…`."
+
+#: ../../user_manual/ekos-guide.rst:653
+msgid "|AI Wizard Mount Page|"
+msgstr "|Страница монтировки мастера ИИ|"
+
+#: ../../user_manual/ekos-guide.rst:655
+msgid ""
+"**Page 1 — Mount Identification.** Verify the detected mount type: :guilabel:"
+"`Worm Gear`, :guilabel:`Harmonic Drive`, or :guilabel:`Direct Drive`. The "
+"wizard also recommends a guide exposure per drive type — 2.0 s for worm "
+"gears, 0.5–1.0 s for harmonic drives (depending on guide star signal), and "
+"1.0–3.0 s for direct drives. Set your exposure *before* proceeding: the "
+"trained model is locked to it."
+msgstr ""
+"**Страница 1 — определение монтировки.** Проверьте распознанный тип "
+"монтировки: :guilabel:`Червячная передача`, :guilabel:`Волновая передача` "
+"или :guilabel:`Прямой привод`. Мастер также рекомендует экспозицию "
+"гидирования для каждого типа привода — 2,0 с для червячных передач, 0,5–1,0 "
+"с для гармонических приводов (в зависимости от сигнала гидирующей звезды) и "
+"1,0–3,0 с для прямых приводов. Задайте экспозицию *до* начала работы: "
+"обученная модель привязана к ней."
+
+#: ../../user_manual/ekos-guide.rst:662
+msgid "|AI Wizard Protocol Page|"
+msgstr "|Страница протокола мастера ИИ|"
+
+#: ../../user_manual/ekos-guide.rst:664
+msgid ""
+"**Page 2 — Protocol Preview.** The wizard shows the measurement protocol it "
+"is about to run. During data collection your guiding settings are "
+"temporarily switched to the :guilabel:`Standard` algorithm on both axes with "
+"all guide directions enabled; your original settings are restored when the "
+"wizard finishes. The protocol depends on the mount type:"
+msgstr ""
+"**Страница 2 — предварительный просмотр протокола.** Мастер показывает "
+"протокол измерений, который собирается выполнить. Во время сбора данных "
+"параметры гидирования временно переключаются на алгоритм :guilabel:"
+"`Стандартный` по обеим осям со всеми включёнными направлениями гидирования; "
+"исходные параметры восстанавливаются по завершении работы мастера. Протокол "
+"зависит от типа монтировки:"
+
+#: ../../user_manual/ekos-guide.rst:670
+msgid ""
+"**Worm Gear** (~45 minutes): three pointings at high, lower, and high "
+"altitude, each combining standard guiding with several minutes of free "
+"drift. The long free-drift phases capture roughly three full worm cycles, "
+"which is what allows the periodic error to be measured."
+msgstr ""
+"**Червячная передача** (~45 минут): три наведения на большой, меньшей и "
+"снова большой высоте, каждое из которых сочетает стандартное гидирование с "
+"несколькими минутами свободного дрейфа. Длительные фазы свободного дрейфа "
+"охватывают примерно три полных цикла червячной передачи, что и позволяет "
+"измерить периодическую ошибку."
+
+#: ../../user_manual/ekos-guide.rst:674
+msgid ""
+"**Harmonic Drive** (~35 minutes): free drift and standard guiding at two "
+"pointings, plus a series of short pulse-response tests (50, 100, and 200 ms "
+"pulses in all four directions) that measure how the drive reacts to "
+"corrections."
+msgstr ""
+"**Волновая передача** (~35 минут): свободный дрейф и стандартное гидирование "
+"в двух положениях наведения, а также серия коротких испытаний отклика на "
+"импульсы (импульсы длительностью 50, 100 и 200 мс во всех четырёх "
+"направлениях), которые измеряют, как привод реагирует на коррекции."
+
+#: ../../user_manual/ekos-guide.rst:678
+msgid ""
+"**Direct Drive** (~20 minutes): short guiding and free-drift phases at three "
+"different altitudes."
+msgstr ""
+"**Прямой привод** (~20 минут): короткие фазы гидирования и свободного дрейфа "
+"на трёх разных высотах."
+
+#: ../../user_manual/ekos-guide.rst:681
+msgid "|AI Wizard Progress Page|"
+msgstr "|Страница хода выполнения мастера ИИ|"
+
+#: ../../user_manual/ekos-guide.rst:683
+msgid ""
+"**Page 3 — System Identification Progress.** The assistant slews, guides, "
+"and drifts on its own. Leave the system alone while it runs — interrupting "
+"the process invalidates the affected phase. Use :guilabel:`Stop` only if "
+"something goes wrong."
+msgstr ""
+"**Страница 3 — ход определения системы.** Помощник самостоятельно выполняет "
+"наведение, гидирование и дрейф. Пока он работает, не вмешивайтесь в работу "
+"системы — прерывание процесса делает соответствующую фазу недействительной. "
+"Используйте :guilabel:`Стоп` только если что-то пошло не так."
+
+#: ../../user_manual/ekos-guide.rst:688
+msgid "|AI Wizard Complete Page|"
+msgstr "|Страница завершения мастера ИИ|"
+
+#: ../../user_manual/ekos-guide.rst:690
+msgid ""
+"**Page 4 — Data Collection Complete.** The measured data is saved, and you "
+"choose how to train the model: :guilabel:`Train in EkosLive` uploads the "
+"data to EkosLive Cloud and returns a ready-to-use model (next section), "
+"while :guilabel:`Export for offline training` writes a ``sysid_data.json`` "
+"file for the Python trainer (see :ref:`below <ekos-guide-ai-offline-"
+"training>`)."
+msgstr ""
+"**Страница 4 — сбор данных завершён.** Измеренные данные сохранены, а способ "
+"обучения модели выбирается: :guilabel:`Обучить в EkosLive` загружает данные "
+"в облако EkosLive и возвращает готовую к использованию модель (следующий "
+"раздел), тогда как :guilabel:`Экспортировать для автономного обучения` "
+"записывает файл ``sysid_data.json`` для программы обучения на Python (см. :"
+"ref:`ниже <ekos-guide-ai-offline-training>`)."
+
+#: ../../user_manual/ekos-guide.rst:700
+msgid "Training via EkosLive"
+msgstr "Обучение через EkosLive"
+
+#: ../../user_manual/ekos-guide.rst:702
+msgid ""
+"The easiest way to train the model is with an `EkosLive <https://ekoslive."
+"com>`__ account: click :guilabel:`Train in EkosLive` on wizard page 4. The "
+"data is uploaded, the model is trained in the cloud, and the resulting "
+"weights are automatically saved (as ``ai_guider_weights.json`` in the KStars "
+"data folder, ``~/.local/share/kstars/`` on Linux) and set as the active "
+"weights file — no further steps are needed."
+msgstr ""
+"Проще всего обучить модель с учётной записью `EkosLive <https://ekoslive."
+"com>`__: нажмите :guilabel:`Обучить в EkosLive` на странице 4 мастера. "
+"Данные отправляются, модель обучается в облаке, а полученные веса "
+"автоматически сохраняются (как ``ai_guider_weights.json`` в папке данных "
+"KStars, ``~/.local/share/kstars/`` в Linux) и устанавливаются в качестве "
+"активного файла весов — никаких дополнительных действий не требуется."
+
+#: ../../user_manual/ekos-guide.rst:712
+msgid ""
+"The uploaded system-identification data contains **no sky coordinates**: "
+"only altitude, azimuth, and parallactic angle, together with pixel drift "
+"measurements, star signal-to-noise ratios, and the guide pulses that were "
+"sent. It does, however, include your mount's name and camera device names. "
+"If you prefer not to upload anything, use offline training instead — it "
+"produces identical weights."
+msgstr ""
+"Загруженные данные идентификации системы не содержат **небесных координат**: "
+"только высоту, азимут и параллактический угол вместе с измерениями дрейфа в "
+"пикселях, отношениями сигнал/шум звёзд и отправленными импульсами "
+"гидирования. При этом они включают название монтировки и названия устройств "
+"камер. Чтобы ничего не загружать, воспользуйтесь обучением в автономном "
+"режиме — оно даёт такие же веса."
+
+#: ../../user_manual/ekos-guide.rst:723
+msgid "Training the Model Offline"
+msgstr "Обучение модели в автономном режиме"
+
+#: ../../user_manual/ekos-guide.rst:725
+msgid ""
+"You do not need EkosLive to train a model — the trainer is a small set of "
+"Python scripts that runs on any ordinary computer. Training uses only the "
+"CPU and finishes in under ten minutes; no GPU is required."
+msgstr ""
+"Для обучения модели EkosLive не требуется — программа обучения представляет "
+"собой небольшой набор сценариев Python, работающих на любом обычном "
+"компьютере. Обучение задействует только центральный процессор и завершается "
+"менее чем за десять минут; графический процессор не нужен."
+
+#: ../../user_manual/ekos-guide.rst:729
+msgid ""
+"On wizard page 4, click :guilabel:`Export for offline training` and save "
+"``sysid_data.json``."
+msgstr ""
+"На странице 4 мастера нажмите :guilabel:`Экспортировать для автономного "
+"обучения` и сохраните ``sysid_data.json``."
+
+#: ../../user_manual/ekos-guide.rst:731
+msgid ""
+"Copy the file to the computer where you want to train (it can be the "
+"observatory computer itself, but a desktop or laptop is usually more "
+"convenient)."
+msgstr ""
+"Скопируйте файл на компьютер, на котором будет выполняться обучение (это "
+"может быть сам компьютер обсерватории, но обычно удобнее использовать "
+"настольный компьютер или ноутбук)."
+
+#: ../../user_manual/ekos-guide.rst:734
+msgid ""
+"Get the trainer scripts from the ``kstars/ekos/guide/offlinetrainer/`` "
+"directory of the `KStars source repository <https://invent.kde.org/education/"
+"kstars/-/tree/master/kstars/ekos/guide/offlinetrainer>`__."
+msgstr ""
+"Возьмите сценарии обучения из каталога ``kstars/ekos/guide/offlinetrainer/`` "
+"в `репозитории исходного кода KStars <https://invent.kde.org/education/"
+"kstars/-/tree/master/kstars/ekos/guide/offlinetrainer>`__."
+
+#: ../../user_manual/ekos-guide.rst:737
+msgid "In that directory, create a Python environment and run the trainer:"
+msgstr "В этом каталоге создайте среду Python и запустите сценарий обучения:"
+
+#: ../../user_manual/ekos-guide.rst:739
+msgid ""
+"python3 -m venv venv\n"
+"source venv/bin/activate\n"
+"pip install numpy scipy torch\n"
+"python train.py --sysid-data ./sysid_data.json --output ./weights.json"
+msgstr ""
+"python3 -m venv venv\n"
+"source venv/bin/activate\n"
+"pip install numpy scipy torch\n"
+"python train.py --sysid-data ./sysid_data.json --output ./weights.json"
+
+#: ../../user_manual/ekos-guide.rst:746
+msgid ""
+"The trainer auto-detects your mount type from the data and picks the "
+"matching model. Should the detection ever be wrong, it can be overridden "
+"with ``--mount-type WORM_GEAR|HARMONIC_DRIVE|DIRECT_DRIVE``."
+msgstr ""
+"Программа обучения автоматически определяет тип монтировки по данным и "
+"подбирает подходящую модель. Если определение окажется неверным, его можно "
+"переопределить с помощью ``--mount-type WORM_GEAR|HARMONIC_DRIVE|"
+"DIRECT_DRIVE``."
+
+#: ../../user_manual/ekos-guide.rst:750
+msgid ""
+"Finally, copy the resulting ``weights.json`` back to the observatory "
+"computer and load it in KStars via :guilabel:`AI Guiding (Experimental)` → :"
+"guilabel:`Load Weights...` on the Guide page (or set the :guilabel:`Weights "
+"File` on the :guilabel:`AI Guider` options page). The weights are applied "
+"the next time guiding starts."
+msgstr ""
+"Наконец, скопируйте полученный файл ``weights.json`` обратно на компьютер "
+"обсерватории и загрузите его в KStars через :guilabel:`Ведение с ИИ "
+"(экспериментально)` → :guilabel:`Загрузка…` на странице гидирования (или "
+"задайте :guilabel:`Weights File` на странице параметров :guilabel:`Гид с "
+"ИИ`). Веса применяются при следующем запуске гидирования."
+
+#: ../../user_manual/ekos-guide.rst:759
+msgid "Activating AI Guiding and Options"
+msgstr "Активация гидирования с ИИ и параметров"
+
+#: ../../user_manual/ekos-guide.rst:761
+msgid "|AI Guider Options|"
+msgstr "|Параметры гида с ИИ|"
+
+#: ../../user_manual/ekos-guide.rst:763
+msgid ""
+"With a weights file loaded, select :guilabel:`AI Guider` as the guiding "
+"algorithm for RA and/or DEC in the guider options, and start guiding as "
+"usual. The AI-related settings live on the :guilabel:`AI Guider` page of the "
+"guide settings dialog:"
+msgstr ""
+"После загрузки файла весов выберите :guilabel:`Гид с ИИ` в качестве "
+"алгоритма гидирования для RA и/или DEC в параметрах гида и запустите "
+"гидирование как обычно. Параметры, относящиеся к ИИ, находятся на странице :"
+"guilabel:`Гид с ИИ` диалогового окна параметров гидирования:"
+
+#: ../../user_manual/ekos-guide.rst:768
+msgid ":guilabel:`Weights File`: path to the trained model weights (JSON)."
+msgstr ":guilabel:`Weights File`: путь к весам обученной модели (JSON)."
+
+#: ../../user_manual/ekos-guide.rst:769
+msgid ""
+":guilabel:`AI Prediction Gain` (default 0.5): how strongly the AI prediction "
+"is blended into the guide pulses. 0.0 ignores the AI entirely; 1.0 applies "
+"its full prediction. Start at the default and increase gradually if guiding "
+"improves."
+msgstr ""
+":guilabel:`AI Prediction Gain` (по умолчанию 0,5): насколько сильно "
+"предсказание ИИ подмешивается в импульсы гидирования. Значение 0,0 полностью "
+"игнорирует ИИ; 1,0 применяет его предсказание целиком. Начните со значения "
+"по умолчанию и постепенно увеличивайте его, если гидирование улучшается."
+
+#: ../../user_manual/ekos-guide.rst:773
+msgid ""
+":guilabel:`Scale Down Proportional Gain During AI Correction` (default off): "
+"reduces the standard proportional response by up to half when the AI is "
+"highly confident, to avoid the two controllers over-correcting the same "
+"error."
+msgstr ""
+":guilabel:`Уменьшать пропорциональный коэффициент усиления при коррекции ИИ` "
+"(по умолчанию выключено): когда уверенность ИИ высока, уменьшает стандартный "
+"пропорциональный отклик вплоть до половины, чтобы два регулятора не "
+"корректировали одну и ту же ошибку слишком сильно."
+
+#: ../../user_manual/ekos-guide.rst:777
+msgid ""
+":guilabel:`Enable Predictive Dark Guiding` (default off): keeps emitting "
+"predicted corrections during gaps in guide star measurements — dither "
+"settling, autofocus runs, or camera downloads — by extrapolating the "
+"periodic error forward in time."
+msgstr ""
+":guilabel:`Включать прогнозирующее ведение по темновым кадрам` (по умолчанию "
+"выключено): продолжает выдавать прогнозируемые коррекции во время перерывов "
+"в измерениях гидирующей звезды — успокоение после смещения между кадрами, "
+"сеансы автофокусировки или загрузка кадров с камеры — экстраполируя "
+"периодическую ошибку вперёд по времени."
+
+#: ../../user_manual/ekos-guide.rst:781
+msgid ""
+":guilabel:`Dark Guiding Interval` (default 1.0 s): seconds between predicted "
+"pulses when no guide-star measurement is available."
+msgstr ""
+":guilabel:`Интервал ведения в темноте` (по умолчанию 1,0 с): число секунд "
+"между прогнозируемыми импульсами при отсутствии измерений гидирующей звезды."
+
+#: ../../user_manual/ekos-guide.rst:786
+msgid ""
+"A weights file only works with the guide settings it was trained with. When "
+"guiding starts, the file's fingerprint is checked against your current guide "
+"exposure, binning, gains, minimum/maximum pulse, and hysteresis settings. On "
+"a mismatch, guiding aborts with an explanatory message — either restore the "
+"settings you used during data collection, re-run the assistant to train new "
+"weights, or switch the algorithm back to :guilabel:`Standard`."
+msgstr ""
+"Файл весов работает только с теми параметрами гидирования, с которыми он был "
+"обучен. При запуске гидирования отпечаток файла сверяется с текущими "
+"параметрами гидирования: экспозицией, биннингом, усилением, минимальным/"
+"максимальным импульсом и гистерезисом. При несовпадении гидирование "
+"прерывается с пояснительным сообщением — либо восстановите параметры, "
+"использованные при сборе данных, либо повторно запустите помощника для "
+"обучения новых весов, либо переключите алгоритм обратно на :guilabel:"
+"`Стандартный`."
+
+#: ../../user_manual/ekos-guide.rst:797
+msgid "Monitoring AI Guiding"
+msgstr "Мониторинг гидирования с ИИ"
+
+#: ../../user_manual/ekos-guide.rst:799
+msgid ""
+"The guide state display shows what the AI is doing. After guiding starts, "
+"the AI is in a *warm-up* phase (shown as :guilabel:`Warm up`) while it "
+"synchronizes its model with the live mount — about 50 guide frames for worm "
+"gears, 30 for harmonic drives, and 10 for direct drives. During warm-up, "
+"guiding is handled entirely by the standard algorithm. Once its predictions "
+"are verified against real measurements, the AI becomes :guilabel:`Active` "
+"and its corrections are blended in."
+msgstr ""
+"Индикатор состояния гидирования показывает, что делает ИИ. После начала "
+"гидирования ИИ находится в фазе *прогрева* (показывается как :guilabel:"
+"`Прогреть`), во время которой он синхронизирует свою модель с реальной "
+"монтировкой — около 50 кадров гидирования для червячных передач, 30 для "
+"гармонических приводов и 10 для прямых приводов. Во время прогрева "
+"гидирование полностью выполняет стандартный алгоритм. Как только прогнозы ИИ "
+"подтверждаются реальными измерениями, он переходит в состояние :guilabel:"
+"`Активный`, и его коррекции начинают подмешиваться."
+
+#: ../../user_manual/ekos-guide.rst:807
+msgid ""
+"The blend is weighted by a live *confidence* score. Confidence requires a "
+"reasonably bright guide star (it reaches its maximum around a signal-to-"
+"noise ratio of 30 and drops to zero below 10) and falls whenever the AI's "
+"predictions stop matching what the mount actually does. When confidence is "
+"low, the standard guiding algorithm does most of the work — an "
+"underperforming model degrades gracefully instead of ruining your subframes."
+msgstr ""
+"Смешивание взвешивается по текущей оценке *уверенности*. Для уверенности "
+"требуется достаточно яркая гидирующая звезда (она достигает максимума при "
+"отношении сигнал/шум около 30 и падает до нуля ниже 10) и снижается всякий "
+"раз, когда прогнозы ИИ перестают совпадать с фактическим поведением "
+"монтировки. При низкой уверенности основную работу выполняет стандартный "
+"алгоритм гидирования — недостаточно эффективная модель деградирует плавно, а "
+"не портит субкадры."
+
+#: ../../user_manual/ekos-guide.rst:815
+msgid ""
+"Several safeguards apply at all times: every pulse respects your configured "
+"maximum pulse limits plus a hard 5-second ceiling; AI predictions are "
+"suspended during dithering; a meridian flip resets the AI's internal state "
+"for re-warm-up; and a lost guide star triggers the guider's normal "
+"reacquisition logic."
+msgstr ""
+"Постоянно действует несколько защитных механизмов: каждый импульс ограничен "
+"заданными максимальными пределами импульса и жёстким ограничением в 5 "
+"секунд; во время смещения между кадрами прогнозы ИИ приостанавливаются; "
+"переворот через меридиан сбрасывает внутреннее состояние ИИ для повторного "
+"прогрева; а потеря гидирующей звезды запускает штатную логику повторного "
+"захвата гида."
+
+#: ../../user_manual/ekos-guide.rst:824
+msgid "How It Works"
+msgstr "Принцип работы"
+
+#: ../../user_manual/ekos-guide.rst:826
+msgid ""
+"A mount's tracking error has two parts. The *repeatable* part comes from its "
+"mechanics — the worm gear's periodic error, gear imperfections, atmospheric "
+"refraction, and the slow drift from residual polar-alignment error. The "
+"*random* part comes from seeing, wind, and measurement noise. A conventional "
+"guider is purely reactive: it can only correct an error after the star has "
+"already moved. A feed-forward guider, by contrast, predicts the repeatable "
+"part and cancels it as it happens — but it can do that only for errors that "
+"repeat, which is why data collection matters and why the random part remains "
+"the standard algorithm's job."
+msgstr ""
+"Ошибка слежения монтировки состоит из двух частей. *Повторяющаяся* часть "
+"обусловлена её механикой — периодической ошибкой червячной передачи, "
+"погрешностями зубчатых передач, атмосферной рефракцией и медленным дрейфом "
+"из-за остаточной ошибки выравнивания по полярной оси. *Случайная* часть "
+"возникает из-за сиинга, ветра и шума измерений. Обычный гид действует чисто "
+"реактивно: он способен исправить ошибку лишь после того, как звезда уже "
+"сместилась. Гид с прямой связью, напротив, предсказывает повторяющуюся часть "
+"и компенсирует её по мере возникновения — но это возможно только для "
+"повторяющихся ошибок, поэтому так важен сбор данных и поэтому случайная "
+"часть остаётся задачей стандартного алгоритма."
+
+#: ../../user_manual/ekos-guide.rst:836
+msgid ""
+"The AI Guider is deliberately conservative in how it uses its predictions. "
+"Each guide cycle, the standard controller computes its normal correction "
+"from the measured drift. In parallel, the AI model computes a predicted "
+"correction, which is scaled by the live confidence score and your prediction "
+"gain, and added on top. The summed pulse then passes through the safety "
+"clamps before being sent to the mount. If the AI contributes nothing useful, "
+"its term simply fades to zero and you are left with plain standard guiding."
+msgstr ""
+"Гидирование с ИИ намеренно осторожно использует свои прогнозы. В каждом "
+"цикле гидирования стандартный регулятор вычисляет свою обычную коррекцию по "
+"измеренному дрейфу. Параллельно модель ИИ вычисляет прогнозируемую "
+"коррекцию, которая масштабируется текущей оценкой достоверности и усилением "
+"прогнозирования и прибавляется сверху. Затем суммарный импульс проходит "
+"через защитные ограничители, прежде чем отправиться на монтировку. Если ИИ "
+"не даёт ничего полезного, его вклад просто сводится к нулю, и остаётся "
+"обычное стандартное гидирование."
+
+#: ../../user_manual/ekos-guide.rst:845
+msgid ""
+"The model itself is chosen to match the mount's physics rather than being "
+"one large neural network:"
+msgstr ""
+"Сама модель подбирается в соответствии с физикой монтировки, а не "
+"представляет собой одну большую нейронную сеть:"
+
+#: ../../user_manual/ekos-guide.rst:848
+msgid ""
+"**Worm gear** mounts use a physics model of the periodic error, refraction, "
+"and polar drift, with its phase tracked live while guiding, plus a tiny "
+"neural network (about 200 parameters) that learns the leftover, mount-"
+"specific residuals."
+msgstr ""
+"Монтировки с **червячной передачей** используют физическую модель "
+"периодической ошибки, рефракции и полярного дрейфа, фаза которой "
+"отслеживается в реальном времени во время гидирования, а также небольшую "
+"нейронную сеть (около 200 параметров), которая изучает остаточные невязки, "
+"специфичные для конкретной монтировки."
+
+#: ../../user_manual/ekos-guide.rst:852
+msgid ""
+"**Harmonic drive** mounts use a Kalman-filter model of the drive's spring "
+"wind-up and periodic error, with a small neural network correcting its "
+"predictions."
+msgstr ""
+"В монтировках с **гармоническим приводом** применяется модель на основе "
+"фильтра Калмана для упругого закручивания привода и периодической ошибки, а "
+"небольшая нейронная сеть корректирует её прогнозы."
+
+#: ../../user_manual/ekos-guide.rst:855
+msgid ""
+"**Direct drive** mounts have almost no mechanical error, so only refraction "
+"and drift are modeled analytically — no neural network is involved."
+msgstr ""
+"У монтировок с **прямым приводом** почти отсутствуют механические ошибки, "
+"поэтому аналитически моделируются только рефракция и дрейф — нейронная сеть "
+"не участвует."
+
+#: ../../user_manual/ekos-guide.rst:862
+msgid "Troubleshooting and Notes"
+msgstr "Устранение неполадок и примечания"
+
+#: ../../user_manual/ekos-guide.rst:864
+msgid ""
+"*Guiding aborts immediately with a weights error.* The weights file failed "
+"to load or its fingerprint does not match your current guide settings. "
+"Restore the settings used during data collection, retrain, or switch the "
+"algorithm back to :guilabel:`Standard`."
+msgstr ""
+"*Гидирование немедленно прерывается с ошибкой весов.* Не удалось загрузить "
+"файл весов или его отпечаток не совпадает с текущими параметрами "
+"гидирования. Восстановите параметры, использованные при сборе данных, "
+"повторите обучение или переключите алгоритм обратно на :guilabel:"
+"`Стандартный`."
+
+#: ../../user_manual/ekos-guide.rst:868
+msgid ""
+"*The AI stays in warm-up or never becomes active.* This is usually caused by "
+"a faint guide star (low signal-to-noise) or by predictions that do not match "
+"your mount's current behavior. Guiding continues normally on the standard "
+"algorithm either way; consider retraining under better conditions."
+msgstr ""
+"*ИИ остаётся в фазе прогрева или так и не становится активным.* Обычно это "
+"вызвано слабой гидирующей звездой (низкое отношение сигнал/шум) либо "
+"прогнозами, не соответствующими текущему поведению монтировки. В любом "
+"случае гидирование продолжается штатно по стандартному алгоритму; стоит "
+"повторить обучение в более благоприятных условиях."
+
+#: ../../user_manual/ekos-guide.rst:873
+msgid ""
+"*No visible improvement.* This is a realistic outcome on some mounts — "
+"especially ones with little periodic error or dominated by non-repeatable "
+"errors. Compare a few guiding sessions with the AI enabled and disabled "
+"under similar conditions before drawing conclusions."
+msgstr ""
+"*Видимого улучшения нет.* Это вполне реальный исход для некоторых монтировок "
+"— особенно тех, у которых мала периодическая ошибка или преобладают "
+"неповторяющиеся ошибки. Прежде чем делать выводы, сравните несколько сеансов "
+"гидирования с включённым и отключённым ИИ в сходных условиях."
+
+#: ../../user_manual/ekos-guide.rst:878
+msgid ""
+"*When to retrain:* after changing the guide camera, guide exposure, binning, "
+"guide optical train, mount, or any fingerprinted guide setting — and "
+"whenever guiding performance degrades noticeably after a remesh or "
+"mechanical adjustment."
+msgstr ""
+"*Когда требуется повторное обучение:* после смены камеры гида, экспозиции "
+"гидирования, биннинга, оптической системы гида, монтировки или любого "
+"параметра гидирования, входящего в отпечаток, — а также при заметном "
+"ухудшении качества гидирования после повторной регулировки зацепления или "
+"механической настройки."
+
+#: ../../user_manual/ekos-guide.rst:882
+msgid ""
+"*Reporting problems:* the wizard's :guilabel:`Export Logs` button bundles "
+"the AI debug logs and guide logs into a single archive that you can attach "
+"to a bug report or forum post."
+msgstr ""
+"*Сообщение о проблемах:* кнопка :guilabel:`Export Logs` мастера объединяет "
+"отладочные журналы ИИ и журналы гидирования в единый архив, который можно "
+"приложить к отчёту об ошибке или сообщению на форуме."
+
+#: ../../user_manual/ekos-guide.rst:889
+msgid "Dark Frames"
+msgstr "Темновые кадры"
+
+#: ../../user_manual/ekos-guide.rst:891
+msgid ""
+"Dark frames can be helpful to reduce noise in your guide frames. If you "
+"choose to use this option, then it is recommended that you take dark frames "
+"before you begin your calibration or guiding procedure. To take a dark "
+"frame, check the ``Dark`` checkbox and then click ``Capture``. For the first "
+"time this is performed, Ekos will ask you about your camera shutter. If your "
+"camera does not have a shutter, then Ekos will warn you anytime you take a "
+"dark frame to cover your camera/telescope before proceeding with the "
+"capture. On the other hand, if the camera already includes a shutter, then "
+"Ekos will directly proceed with taking the dark frame. All dark frames are "
+"automatically saved to Ekos Dark Frame Library. By default, the Dark Library "
+"keeps reusing dark frames for 30 days after which it will capture new dark "
+"frames. This value is configurable and can be adjusted in :doc:`Ekos "
+"settings  <ekos>` in the KStars settings dialog."
+msgstr ""
+"Темновые кадры помогают уменьшить шум в кадрах гидирования. При "
+"использовании этого параметра рекомендуется снять темновые кадры до начала "
+"калибровки или гидирования. Чтобы снять темновой кадр, установите флажок "
+"``Dark`` и нажмите ``Capture``. При первом выполнении этой операции Ekos "
+"запросит сведения о затворе камеры. Если в камере нет затвора, Ekos будет "
+"предупреждать при каждом снятии темнового кадра о необходимости закрыть "
+"камеру или телескоп перед продолжением съёмки. Если же затвор в камере уже "
+"есть, Ekos сразу приступит к съёмке темнового кадра. Все темновые кадры "
+"автоматически сохраняются в библиотеке темновых кадров Ekos. По умолчанию "
+"библиотека темновых кадров повторно использует темновые кадры в течение 30 "
+"дней, после чего снимает новые. Это значение настраивается и может быть "
+"изменено в :doc:`параметрах Ekos  <ekos>` в диалоге параметров KStars."
+
+#: ../../user_manual/ekos-guide.rst:908
+msgid "|Ekos Dark frames library|"
+msgstr "|Библиотека темновых кадров Ekos|"
+
+#: ../../user_manual/ekos-guide.rst:910
+msgid ""
+"It is recommended to take dark frames covering several binning and exposure "
+"values so that they may be reused transparently by Ekos whenever needed."
+msgstr ""
+"Рекомендуется снимать темновые кадры для нескольких значений биннинга и "
+"экспозиции, чтобы Ekos мог при необходимости прозрачно использовать их "
+"повторно."
+
+#: ../../user_manual/ekos-guide.rst:917
+msgid "PHD2 Support"
+msgstr "Поддержка PHD2"
+
+#: ../../user_manual/ekos-guide.rst:919
+msgid ""
+"You can opt to select external PHD2 application to perform guiding instead "
+"of the built-in guider."
+msgstr ""
+"Для выполнения гидирования вместо встроенного гида можно выбрать внешнее "
+"приложение PHD2."
+
+#: ../../user_manual/ekos-guide.rst:922
+msgid "|Ekos Guide PHD2 settings|"
+msgstr "|Параметры PHD2 для гидирования Ekos|"
+
+#: ../../user_manual/ekos-guide.rst:924
+msgid ""
+"If PHD2 is selected, the ``Connect`` and ``Disconnect`` buttons are enabled "
+"to allow you to establish a connection with the PHD2 server. You can control "
+"PHD2 exposure and DEC guide settings. When clicking ``Guide``, PHD2 should "
+"perform all the required actions to start the guiding process. PHD2 **must** "
+"be started and configured *before* Ekos."
+msgstr ""
+"Если выбран PHD2, становятся доступны кнопки ``Соединиться`` и "
+"``Отсоединиться``, позволяющие установить подключение к серверу PHD2. Можно "
+"управлять параметрами экспозиции и гидирования по DEC в PHD2. При нажатии "
+"кнопки ``Гидирование`` PHD2 выполняет все необходимые действия для запуска "
+"процесса гидирования. PHD2 **должен** быть запущен и настроен *до* Ekos."
+
+#: ../../user_manual/ekos-guide.rst:931
+msgid ""
+"After launching PHD2, select your INDI equipment and set their options. From "
+"Ekos, connect to PHD2 by clicking the ``Connect`` button. On startup, Ekos "
+"will attempt to automatically connect to PHD2. Once the connection is "
+"established, you may begin the guiding immediately by click on the ``Guide`` "
+"button. PHD2 performs calibration if necessary. If dithering is selected, "
+"PHD2 is commanded to dither given the offset pixels indicated, and once "
+"guiding is settled and stable, the capture process in Ekos resumes."
+msgstr ""
+"После запуска PHD2 выберите оборудование INDI и задайте его параметры. В "
+"Ekos подключитесь к PHD2, нажав кнопку ``Соединиться``. При запуске Ekos "
+"попытается автоматически подключиться к PHD2. После установки подключения "
+"можно сразу начать гидирование, нажав кнопку ``Гидирование``. При "
+"необходимости PHD2 выполняет калибровку. Если выбрано смещение между "
+"кадрами, PHD2 получает команду выполнить смещение на указанное число "
+"пикселей, и как только гидирование успокоится и стабилизируется, процесс "
+"съёмки в Ekos возобновляется."
+
+#: ../../user_manual/ekos-guide.rst:944
+msgid "Guiding Logs"
+msgstr "Журналы гидирования"
+
+#: ../../user_manual/ekos-guide.rst:946
+msgid ""
+"Ekos' internal guider saves a CSV guide log in PHD2 format data that can be "
+"useful for analysis of the mount's performance. In Linux this is stored "
+"under ``~/.local/share/kstars/guidelogs/``. This log is only available when "
+"using Ekos' internal guider. It should be compatible with `PHD2's guide log "
+"viewer <https://openphdguiding.org/phd2-log-viewer/>`__."
+msgstr ""
+"Внутренний гид Ekos сохраняет журнал гидирования в формате CSV (данные в "
+"формате PHD2), полезный для анализа работы монтировки. В Linux он хранится в "
+"``~/.local/share/kstars/guidelogs/``. Этот журнал доступен только при "
+"использовании внутреннего гида Ekos. Он должен быть совместим со `средством "
+"просмотра журналов гидирования PHD2 <https://openphdguiding.org/phd2-log-"
+"viewer/>`__."
+
+#: ../../user_manual/ekos-guide.rst:954
+msgid "Ekos Guide Module"
+msgstr "Модуль «Гидирование» Ekos"
+
+#: ../../user_manual/ekos-guide.rst:954
+msgid ".. image:: /images/ekos_guide.png"
+msgstr ".. image:: /images/ekos_guide.png"
+
+#: ../../user_manual/ekos-guide.rst:955
+msgid "Ekos Profile Guider Selection"
+msgstr "Выбор гида в профиле Ekos"
+
+#: ../../user_manual/ekos-guide.rst:955
+msgid ".. image:: /images/ekos_profile_guide.png"
+msgstr ".. image:: /images/ekos_profile_guide.png"
+
+#: ../../user_manual/ekos-guide.rst:956
+msgid "Ekos Guider Optical Train"
+msgstr "Оптическая система гида Ekos"
+
+#: ../../user_manual/ekos-guide.rst:956
+msgid ".. image:: /images/ekos_guide_optical_train.png"
+msgstr ".. image:: /images/ekos_guide_optical_train.png"
+
+#: ../../user_manual/ekos-guide.rst:957
+msgid "Calibration Settings"
+msgstr "Параметры калибровки"
+
+#: ../../user_manual/ekos-guide.rst:957
+msgid ".. image:: /images/guide_calibration_settings.png"
+msgstr ".. image:: /images/guide_calibration_settings.png"
+
+#: ../../user_manual/ekos-guide.rst:958
+msgid "Guide Settings"
+msgstr "Параметры гидирования"
+
+#: ../../user_manual/ekos-guide.rst:958
+msgid ".. image:: /images/guide_guide_settings.png"
+msgstr ".. image:: /images/guide_guide_settings.png"
+
+#: ../../user_manual/ekos-guide.rst:959
+msgid "Dithering Settings"
+msgstr "Параметры смещения между кадрами"
+
+#: ../../user_manual/ekos-guide.rst:959
+msgid ".. image:: /images/ekos_guide_dithering_settings.png"
+msgstr ".. image:: /images/ekos_guide_dithering_settings.png"
+
+#: ../../user_manual/ekos-guide.rst:960
+msgid ".. image:: /images/guide_drift_graphics.png"
+msgstr ".. image:: /images/guide_drift_graphics.png"
+
+#: ../../user_manual/ekos-guide.rst:961
+msgid "image2"
+msgstr "image2"
+
+#: ../../user_manual/ekos-guide.rst:961
+msgid ".. image:: /images/add-circle.png"
+msgstr ".. image:: /images/add-circle.png"
+
+#: ../../user_manual/ekos-guide.rst:962
+msgid "Guiding with MultiStar"
+msgstr "Гидирование с MultiStar"
+
+#: ../../user_manual/ekos-guide.rst:962
+msgid ".. image:: /images/ekos_guide_multistar_settings.png"
+msgstr ".. image:: /images/ekos_guide_multistar_settings.png"
+
+#: ../../user_manual/ekos-guide.rst:963
+msgid ".. image:: /images/ekos_guide_gpg_settings.png"
+msgstr ".. image:: /images/ekos_guide_gpg_settings.png"
+
+#: ../../user_manual/ekos-guide.rst:964
+msgid "Ekos Dark frames library"
+msgstr "Библиотека темновых кадров Ekos"
+
+#: ../../user_manual/ekos-guide.rst:964
+msgid ".. image:: /images/dark_library.png"
+msgstr ".. image:: /images/dark_library.png"
+
+#: ../../user_manual/ekos-guide.rst:965
+msgid "Ekos Guide PHD2 settings"
+msgstr "Параметры PHD2 для гидирования Ekos"
+
+#: ../../user_manual/ekos-guide.rst:965
+msgid ".. image:: /images/ekos_guide_phd2.png"
+msgstr ".. image:: /images/ekos_guide_phd2.png"
+
+#: ../../user_manual/ekos-guide.rst:966
+msgid "AI Guiding Menu"
+msgstr "Меню гидирования с ИИ"
+
+#: ../../user_manual/ekos-guide.rst:966
+msgid ".. image:: /images/ekos_guide_ai_menu.png"
+msgstr ".. image:: /images/ekos_guide_ai_menu.png"
+
+#: ../../user_manual/ekos-guide.rst:967
+msgid "AI Wizard Mount Page"
+msgstr "Страница монтировки мастера ИИ"
+
+#: ../../user_manual/ekos-guide.rst:967
+msgid ".. image:: /images/ekos_guide_ai_wizard_mount.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_mount.png"
+
+#: ../../user_manual/ekos-guide.rst:968
+msgid "AI Wizard Protocol Page"
+msgstr "Страница протокола мастера ИИ"
+
+#: ../../user_manual/ekos-guide.rst:968
+msgid ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_protocol.png"
+
+#: ../../user_manual/ekos-guide.rst:969
+msgid "AI Wizard Progress Page"
+msgstr "Страница хода выполнения мастера ИИ"
+
+#: ../../user_manual/ekos-guide.rst:969
+msgid ".. image:: /images/ekos_guide_ai_wizard_progress.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_progress.png"
+
+#: ../../user_manual/ekos-guide.rst:970
+msgid "AI Wizard Complete Page"
+msgstr "Страница завершения мастера ИИ"
+
+#: ../../user_manual/ekos-guide.rst:970
+msgid ".. image:: /images/ekos_guide_ai_wizard_complete.png"
+msgstr ".. image:: /images/ekos_guide_ai_wizard_complete.png"
+
+#: ../../user_manual/ekos-guide.rst:971
+msgid "AI Guider Options"
+msgstr "Параметры гида с ИИ"
+
+#: ../../user_manual/ekos-guide.rst:971
+msgid ".. image:: /images/ekos_guide_ai_options.png"
+msgstr ".. image:: /images/ekos_guide_ai_options.png"
+
+#: ../../user_manual/ekos-guide.rst:972
+msgid "Guide Stream Settings"
+msgstr "Параметры потока гидирования"
+
+#: ../../user_manual/ekos-guide.rst:972
+msgid ".. image:: /images/ekos_guide_stream_settings.jpg"
+msgstr ".. image:: /images/ekos_guide_stream_settings.jpg"
+
+#: ../../user_manual/ekos-guide.rst:973
+msgid "Guide Stream Depth"
+msgstr "Глубина потока гидирования"
+
+#: ../../user_manual/ekos-guide.rst:973
+msgid ".. image:: /images/ekos_guide_stream_depth.jpg"
+msgstr ".. image:: /images/ekos_guide_stream_depth.jpg"
+
+#: ../../user_manual/ekos-guide.rst:974
+msgid "Guide Stream GPG"
+msgstr "GPG потока гидирования"
+
+#: ../../user_manual/ekos-guide.rst:974
+msgid ".. image:: /images/ekos_guide_stream_gpg.jpg"
+msgstr ".. image:: /images/ekos_guide_stream_gpg.jpg"
+
+#: ../../user_manual/ekos-guide.rst:975
+msgid "Guide Stream AI"
+msgstr "ИИ потока гидирования"
+
+#: ../../user_manual/ekos-guide.rst:975
+msgid ".. image:: /images/ekos_guide_stream_ai.jpg"
+msgstr ".. image:: /images/ekos_guide_stream_ai.jpg"

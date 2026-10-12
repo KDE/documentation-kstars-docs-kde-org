@@ -1,0 +1,1992 @@
+# Translation of kstars_docs_user_manual___ekos-scheduler into Russian.
+# Copyright (C) licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
+# This file is distributed under the same license as the KStars Handbook package.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kstars_docs_user_manual___ekos-scheduler\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-29 02:18+0000\n"
+"PO-Revision-Date: 2026-10-10 16:02+0200\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: ../../user_manual/ekos-scheduler.rst:3
+msgid "Scheduler"
+msgstr "Планировщик"
+
+#: ../../user_manual/ekos-scheduler.rst:5
+msgid "|Ekos Scheduler Module|"
+msgstr "|Модуль планировщика Ekos|"
+
+#: ../../user_manual/ekos-scheduler.rst:10
+msgid "Introduction"
+msgstr "Введение"
+
+#: ../../user_manual/ekos-scheduler.rst:12
+msgid ""
+"The Ekos Scheduler is an important component of your imaging workflow. It "
+"connects to INDI, starts and stops all the other Ekos modules, schedules "
+"jobs according to their constraints and priorities, monitors those jobs as "
+"they execute, and then safely brings down the system when jobs are done, or "
+"before dawn. Whether you are running multi-day imaging sessions for multiple "
+"targets, or simply trying to image a single target for a few hours, it is "
+"advisable to have the Scheduler control your imaging sessions."
+msgstr ""
+"Планировщик Ekos — важный компонент процесса съёмки. Он подключается к INDI, "
+"запускает и останавливает все остальные модули Ekos, планирует задания с "
+"учётом их ограничений и приоритетов, следит за выполнением этих заданий, а "
+"затем безопасно завершает работу системы, когда задания выполнены или перед "
+"рассветом. Независимо от того, проводятся ли многодневные сеансы съёмки "
+"нескольких объектов или требуется снять один объект в течение нескольких "
+"часов, управление сеансами съёмки рекомендуется поручить планировщику."
+
+#: ../../user_manual/ekos-scheduler.rst:25
+msgid "Scheduler Table"
+msgstr "Таблица планировщика"
+
+#: ../../user_manual/ekos-scheduler.rst:27
+msgid ""
+"The heart of the Scheduler is a table displaying the list of Scheduler jobs "
+"the user wants to run. Associated with each jobs are attributes (mostly "
+"described in the settings section below). The attributes describe the name "
+"of the job, where the telescope should be pointed when imaging that job, a "
+"description of what types of images should be captured, constraints about "
+"when the jobs should run (e.g. altitude, twilight, moon, landscape "
+"blockages, etc.), things that need to be done before and after the job is "
+"run, and strategies for dealing with errors."
+msgstr ""
+"Ядром планировщика является таблица, показывающая список заданий, которые "
+"пользователь хочет выполнить. С каждым заданием связаны атрибуты (в основном "
+"описанные в разделе параметров ниже). Атрибуты описывают имя задания, точку "
+"наведения телескопа при съёмке этого задания, описание типов получаемых "
+"изображений, ограничения на время выполнения заданий (например, высота, "
+"сумерки, Луна, перекрытия рельефа и т. д.), действия, которые необходимо "
+"выполнить до и после запуска задания, а также стратегии обработки ошибок."
+
+#: ../../user_manual/ekos-scheduler.rst:38
+msgid ""
+"You can add, delete, modify or change the order of rows in the Scheduler "
+"table."
+msgstr ""
+"В таблице планировщика можно добавлять, удалять, изменять строки и менять их "
+"порядок."
+
+#: ../../user_manual/ekos-scheduler.rst:41
+msgid ""
+"You can add a Scheduler job row into the table by clicking the ``+`` control "
+"above the table, if all required attributes are filled out (name, position, "
+"and sequence file)."
+msgstr ""
+"Строку задания планировщика можно добавить в таблицу, нажав на элемент "
+"управления ``+`` над таблицей, если заполнены все обязательные атрибуты "
+"(имя, положение и файл последовательности)."
+
+#: ../../user_manual/ekos-scheduler.rst:46
+msgid ""
+"If you click on a row, you can then click the ``-`` control above the table "
+"to delete that row."
+msgstr ""
+"Если щёлкнуть по строке, а затем нажать элемент управления ``-`` над "
+"таблицей, эта строка будет удалена."
+
+#: ../../user_manual/ekos-scheduler.rst:49
+msgid ""
+"If you click on a row, you can then click the ``^`` or ``v`` controls to "
+"move those rows up or down in the job list."
+msgstr ""
+"Если щёлкнуть по строке, можно затем нажать элементы управления ``^`` или "
+"``v``, чтобы переместить эти строки вверх или вниз в списке заданий."
+
+#: ../../user_manual/ekos-scheduler.rst:53
+msgid ""
+"If you double click on a row, the attributes of that job are filled in to "
+"the various settings on the Scheduler page. You can then change one or more "
+"of those attributes, and then click the checkmark above the table (after "
+"your double-click, the ``+`` became a ``checkmark``), and the new attributes "
+"are assigned to that job."
+msgstr ""
+"При двойном щелчке по строке различные параметры на странице планировщика "
+"заполняются атрибутами этого задания. Затем можно изменить один или "
+"несколько таких атрибутов и щёлкнуть по галочке над таблицей (после двойного "
+"щелчка ``+`` превратился в ``checkmark``), после чего заданию будут "
+"назначены новые атрибуты."
+
+#: ../../user_manual/ekos-scheduler.rst:64
+msgid "Scheduler Graph"
+msgstr "График планировщика"
+
+#: ../../user_manual/ekos-scheduler.rst:66
+msgid ""
+"Associated with the scheduler table is a graph that represents the planned "
+"execution of scheduler jobs. Each graph line corresponds to a row in the "
+"scheduler table, plotting that scheduler job's altitude as a function of "
+"time for tonight."
+msgstr ""
+"С таблицей планировщика связан график, показывающий планируемое выполнение "
+"заданий планировщика. Каждая линия графика соответствует строке таблицы "
+"планировщика и показывает высоту задания планировщика в зависимости от "
+"времени на текущую ночь."
+
+#: ../../user_manual/ekos-scheduler.rst:71
+msgid ""
+"If a job is scheduled to run tonight, its graph line is highlighted in green "
+"during its expected run times."
+msgstr ""
+"Если задание запланировано на текущую ночь, его линия на графике выделяется "
+"зелёным цветом в ожидаемое время выполнения."
+
+#: ../../user_manual/ekos-scheduler.rst:74
+msgid ""
+"There are arrows to the right (and possibly) left of the graph to change the "
+"display to \"tomorrow night\" and \"the night after\", or to move it back to "
+"the current night."
+msgstr ""
+"Справа (а возможно, и слева) от графика расположены стрелки, позволяющие "
+"переключить показ на «завтрашнюю ночь» и «ночь после неё» либо вернуться к "
+"текущей ночи."
+
+#: ../../user_manual/ekos-scheduler.rst:78
+msgid ""
+"If you click on a scheduler table row, the associated graph line is "
+"highlighted. One can also identify graph lines by hovering the mouse over "
+"them."
+msgstr ""
+"При щелчке по строке таблицы планировщика выделяется соответствующая линия "
+"графика. Линии графика можно также опознать, наведя на них указатель мыши."
+
+#: ../../user_manual/ekos-scheduler.rst:82
+msgid ""
+"Clicking in the graph will display the time and altitude for the selected "
+"scheduler job."
+msgstr ""
+"При щелчке по графику показываются время и высота для выбранного задания "
+"планировщика."
+
+#: ../../user_manual/ekos-scheduler.rst:85
+msgid ""
+"The scheduler graph can be expanded or diminished by using the mouse to grab "
+"and drag the dotted separator between the scheduler graph and scheduler "
+"table."
+msgstr ""
+"Размер графика планировщика можно увеличить или уменьшить, перетаскивая "
+"мышью пунктирный разделитель между графиком планировщика и таблицей "
+"планировщика."
+
+#: ../../user_manual/ekos-scheduler.rst:92
+msgid "Scheduling Algorithm"
+msgstr "Алгоритм планирования"
+
+#: ../../user_manual/ekos-scheduler.rst:94
+msgid ""
+"The Scheduler table (above) lists jobs in order of priority, with higher "
+"jobs (on lower-numbered rows) having higher priority than jobs further down "
+"the list (with higher-numbered rows)."
+msgstr ""
+"В таблице планировщика (см. выше) задания перечислены в порядке приоритета: "
+"задания в верхних строках (с меньшими номерами) имеют более высокий "
+"приоритет, чем задания ниже в списке (с большими номерами)."
+
+#: ../../user_manual/ekos-scheduler.rst:99
+msgid ""
+"The Scheduler regularly plans (and re-plans) which jobs should be run, and "
+"when. It can start executing a given job, and then later preempt that job "
+"for a new one. It can become idle if no jobs can be run (e.g. in daylight), "
+"and sleep until such a time that it becomes active again. Its aim is to keep "
+"the equipment as busy as possible, while respecting the scheduler-table's "
+"priorities. Here's how it works."
+msgstr ""
+"Планировщик регулярно планирует (и перепланирует), какие задания следует "
+"выполнять и когда. Он может начать выполнение задания, а затем прервать его "
+"ради нового. Если ни одно задание не может быть выполнено (например, в "
+"светлое время суток), планировщик переходит в режим простоя и спит до тех "
+"пор, пока снова не станет активным. Его цель — максимально загрузить "
+"оборудование, соблюдая приоритеты таблицы планировщика. Далее описано, как "
+"он работает."
+
+#: ../../user_manual/ekos-scheduler.rst:107
+msgid ""
+"When the scheduler starts (or when it replans, which it does every second "
+"while active), it looks through the entire list of jobs, starting at the "
+"highest priority job, and working its way down to the lowest priority one if "
+"necessary. When it finds a job that can run, it starts that job, possibly "
+"preempting the currently running job. A jobs can run if its constraints are "
+"met, e.g. the target is not blocked by the local terrain, it meets the "
+"minimum altitude constraint, it has not already completed all the desired "
+"imaging, ..."
+msgstr ""
+"При запуске планировщика (или при повторном планировании, которое "
+"выполняется каждую секунду во время работы) он просматривает весь список "
+"заданий, начиная с задания с наивысшим приоритетом и при необходимости "
+"доходя до задания с наименьшим приоритетом. Найдя задание, которое можно "
+"выполнить, он запускает его, возможно, прерывая текущее выполняемое задание. "
+"Задание может выполняться, если соблюдены его ограничения, например: цель не "
+"перекрыта рельефом, соблюдено ограничение минимальной высоты, ещё не "
+"завершена вся требуемая съёмка, …"
+
+#: ../../user_manual/ekos-scheduler.rst:117
+msgid ""
+"The algorithm shows its projected next start times and stop times for all "
+"job in the Scheduler table. It also shows its estimate of times jobs will "
+"run during the next 48 hours in the log panel at the bottom of the window. "
+"See the screenshot of the scheduler window at the top of this section."
+msgstr ""
+"Алгоритм показывает прогнозируемое время следующего запуска и остановки для "
+"всех заданий в таблице планировщика. Он также показывает оценку времени "
+"выполнения заданий в течение следующих 48 часов на панели журнала в нижней "
+"части окна. См. снимок окна планировщика в начале этого раздела."
+
+#: ../../user_manual/ekos-scheduler.rst:124
+msgid ""
+"The scheduling algorithm described in the above paragraph is known as the "
+"Greedy Scheduling algorithm. It is the recommended one to use. In previous "
+"versions of Ekos, there was another \"Classic scheduling algorithm\" which "
+"is no longer in Ekos. That scheme could not preempt running jobs, and thus "
+"did not make as much use of the equipment as the Greedy Algorithm."
+msgstr ""
+"Описанный в предыдущем абзаце алгоритм планирования известен как алгоритм "
+"жадного планирования. Именно его рекомендуется использовать. В предыдущих "
+"версиях Ekos существовал ещё один «классический алгоритм планирования», "
+"которого в Ekos больше нет. Такая схема не могла прерывать выполняющиеся "
+"задания и потому использовала оборудование не так полно, как жадный алгоритм."
+
+#: ../../user_manual/ekos-scheduler.rst:132
+msgid ""
+"There is a checkbox option in the scheduler options menu called ``Use greedy "
+"scheduling`` which defaults to being checked. The system works as described "
+"above when it is checked. When it is unchecked the scheduler is prevented "
+"from scheduling lower priority jobs when uncompleted higher priority jobs "
+"cannot run. This results in less efficient use of the system, but may give "
+"you more control over scheduling."
+msgstr ""
+"В меню параметров планировщика есть флажок ``Использовать жадное "
+"планирование``, который по умолчанию установлен. При установленном флажке "
+"система работает так, как описано выше. Если флажок снят, планировщик не "
+"станет планировать задания с более низким приоритетом, когда незавершённые "
+"задания с более высоким приоритетом выполнить невозможно. Это приводит к "
+"менее эффективному использованию системы, но позволяет точнее управлять "
+"планированием."
+
+#: ../../user_manual/ekos-scheduler.rst:144
+msgid "Scheduler Files (.esl)"
+msgstr "Файлы планировщика (.esl)"
+
+#: ../../user_manual/ekos-scheduler.rst:146
+msgid ""
+"The scheduler table with its list of jobs and attributes can be saved onto "
+"disk and read back in. It writes an .esl file. Controls for writing the "
+"current Scheduler table to disk, and reading back other .esl files are "
+"located above the table to the right."
+msgstr ""
+"Таблицу планировщика со списком заданий и атрибутов можно сохранить на диск "
+"и прочитать обратно. При этом создаётся файл .esl. Элементы управления для "
+"записи текущей таблицы планировщика на диск и чтения других файлов .esl "
+"расположены над таблицей справа."
+
+#: ../../user_manual/ekos-scheduler.rst:155
+msgid "Settings"
+msgstr "Параметры"
+
+#: ../../user_manual/ekos-scheduler.rst:157
+msgid ""
+"Ekos Scheduler provides a simple interface to aid the user in setting the "
+"conditions and constraints required for an Scheduler job. You must select "
+"the ``Target``, its coordinates, and the ``Sequence`` before you can add a "
+"job to the Scheduler."
+msgstr ""
+"Планировщик Ekos предоставляет простой интерфейс для задания условий и "
+"ограничений, необходимых для задания планировщика. Чтобы добавить задание в "
+"планировщик, необходимо выбрать ``Цель``, её координаты и "
+"``Последовательность``."
+
+#: ../../user_manual/ekos-scheduler.rst:162
+msgid "Each Scheduler job is composed of the following:"
+msgstr "Каждое задание планировщика состоит из следующего:"
+
+#: ../../user_manual/ekos-scheduler.rst:164
+msgid ""
+"``Target name and coordinates``: Select target from the :ref:`Find Dialog  "
+"<skyobjects-finding-objects>` or ``Add`` it from :doc:`Observation Planner  "
+"<tool-obsplanner>`. You can also enter a custom name. Coordinates can also "
+"be copied from the SkyMap using the button just to the right of the "
+"coordinates."
+msgstr ""
+"``Target name and coordinates``: выберите объект в :ref:`диалоговом окне "
+"поиска  <skyobjects-finding-objects>` или добавьте его кнопкой ``Добавить`` "
+"из :doc:`планировщика наблюдений  <tool-obsplanner>`. Также можно ввести "
+"собственное имя. Координаты можно скопировать с карты неба, нажав кнопку "
+"справа от координат."
+
+#: ../../user_manual/ekos-scheduler.rst:172
+msgid ""
+"Optional ``PA``: The position angle (or image rotation) can be specified for "
+"systems with camera rotation hardware."
+msgstr ""
+"Необязательный параметр ``ПА``: позиционный угол (или поворот изображения) "
+"можно задать для систем с поворотным устройством камеры."
+
+#: ../../user_manual/ekos-scheduler.rst:176
+msgid ""
+"Optional ``FITS File``: If a FITS file is specified, the astrometry solver "
+"solves the file and use the central RA/DEC as the target coordinates."
+msgstr ""
+"Необязательный параметр ``Файл FITS``: если указан файл FITS, выполняется "
+"его астрометрическая привязка, а центральные координаты RA/DEC используются "
+"в качестве координат цели."
+
+#: ../../user_manual/ekos-scheduler.rst:180
+msgid ""
+"``Sequence`` file: The sequence file is constructed in the Ekos :doc:"
+"`Capture Module  <ekos-capture>`. It has a list of capture specifications, "
+"where each spec details the number of images to capture, which filter to "
+"use, the exposure length, the gain, file naming details, temperature "
+"settings, prefixes, download directory, etc."
+msgstr ""
+"Файл ``Последовательность``: файл последовательности создаётся в :doc:"
+"`модуле «Съёмка»  <ekos-capture>` Ekos. Он содержит список спецификаций "
+"съёмки, где каждая спецификация описывает количество снимаемых изображений, "
+"используемый светофильтр, длительность экспозиции, усиление, параметры "
+"именования файлов, температуры, префиксы, папку загрузки и т. д."
+
+#: ../../user_manual/ekos-scheduler.rst:188
+msgid ""
+"``Profile``: Select which equipment profile to utilize when starting Ekos. "
+"If Ekos & INDI are already started and online, this selection is ignored."
+msgstr ""
+"``Профиль``: выберите профиль оборудования, используемый при запуске Ekos. "
+"Если Ekos и INDI уже запущены и подключены, этот выбор игнорируется."
+
+#: ../../user_manual/ekos-scheduler.rst:192
+msgid ""
+"``Steps``: The user selects what steps should be taken at the start of the "
+"job. The possibilities are: (1) Start mount tracking, (2) autofocus, (3) run "
+"a plate solving alignment, (4) start the auto-guider. One or more can be "
+"chosen."
+msgstr ""
+"``Шаги``: пользователь выбирает, какие шаги выполнить в начале задания. "
+"Возможные варианты: (1) запуск слежения монтировки, (2) автофокусировка, (3) "
+"выравнивание с астрометрической привязкой, (4) запуск автогидирования. Можно "
+"выбрать один или несколько вариантов."
+
+#: ../../user_manual/ekos-scheduler.rst:198
+msgid ""
+"``Startup Conditions``: Conditions that must be met **before** the Scheduler "
+"job is started. Currently, the user may select to start as soon as possible, "
+"``ASAP``, or when the target is near or past culmination, or at a specific "
+"time."
+msgstr ""
+"``Startup Conditions``: условия, которые должны быть выполнены **до** "
+"запуска задания планировщика. В настоящее время можно выбрать запуск как "
+"можно скорее (``Как можно скорее``), либо когда цель приближается к "
+"кульминации или миновала её, либо в определённое время."
+
+#: ../../user_manual/ekos-scheduler.rst:204
+msgid ""
+"``Constraints``: These are conditions that must be met **at all times** "
+"during the Scheduler job execution process. These include minimum target "
+"altitude, minimum moon separation, twilight observation, artificial horizon "
+"altitude constraints, and weather monitoring."
+msgstr ""
+"``Constraints``: это условия, которые должны соблюдаться **всегда** в "
+"процессе выполнения задания планировщика. К ним относятся минимальная высота "
+"цели, минимальное угловое расстояние до Луны, наблюдение в сумерках, "
+"ограничения по высоте искусственного горизонта и контроль погодных условий."
+
+#: ../../user_manual/ekos-scheduler.rst:211
+msgid ""
+"``Completion Conditions``: Conditions that trigger completion of the "
+"Scheduler job. The default selection is to simply mark the Scheduler job as "
+"complete once the sequence process is complete. Additional conditions enable "
+"the user to repeat the sequence process a number of times or indefinitely, "
+"or up until a specific time."
+msgstr ""
+"``Completion Conditions``: условия, по достижении которых задание "
+"планировщика считается завершённым. По умолчанию задание помечается как "
+"завершённое, как только завершена последовательность съёмки. Дополнительные "
+"условия позволяют повторять последовательность несколько раз, бесконечно или "
+"до определённого времени."
+
+#: ../../user_manual/ekos-scheduler.rst:222
+msgid "Other options"
+msgstr "Другие параметры"
+
+#: ../../user_manual/ekos-scheduler.rst:224
+msgid ""
+"There are several other options to control how the Scheduler behaves. These "
+"are found in the Scheduler options menu, shown below, which opens with the "
+"``Options...`` button located in the lower right of the Scheduler."
+msgstr ""
+"Для управления поведением планировщика предусмотрено несколько других "
+"параметров. Они находятся в меню параметров планировщика, показанном ниже; "
+"это меню открывается кнопкой ``Параметры...``, расположенной в правом нижнем "
+"углу планировщика."
+
+#: ../../user_manual/ekos-scheduler.rst:229
+msgid ""
+"|Scheduler Offset Settings| |Scheduler Alignment Settings| |Scheduler Jobs "
+"Settings| |Scheduler Scripts Settings|"
+msgstr ""
+"|Параметры смещения планировщика| |Параметры выравнивания планировщика| |"
+"Параметры заданий планировщика| |Параметры сценариев планировщика|"
+
+#: ../../user_manual/ekos-scheduler.rst:237
+msgid "Remember job progress"
+msgstr "Запоминать ход выполнения задания"
+
+#: ../../user_manual/ekos-scheduler.rst:239
+msgid ""
+"Among the settings shown above, one important one is known as ``Remember job "
+"progress``. When this box is checked and a job is running, the Scheduler "
+"looks at the job's images already captured on disk, and doesn't re-capture "
+"the ones that are already there. The benefit is that if a job is restarted, "
+"or re-run another night, or if multiple jobs are being run together, "
+"stopping and starting when they are runnable, then jobs re-start right where "
+"they left off. This works well with the ``Repeat until terminated`` job-"
+"completion option. If ``Remember job progress`` is unchecked, jobs would "
+"restart from the start of their sequence specification each time, which "
+"probably isn't what you want. Unfortunately, if the images are not stored on "
+"the same computer that Ekos is running on, then this feature doesn't work "
+"and the jobs restart from their beginning."
+msgstr ""
+"Среди показанных выше параметров особо важен один — ``Запоминать ход "
+"выполнения задания``. Когда этот флажок установлен и задание выполняется, "
+"планировщик просматривает уже снятые изображения задания на диске и не "
+"снимает повторно те, что уже есть. Благодаря этому при перезапуске задания, "
+"его повторном выполнении в другую ночь или одновременном выполнении "
+"нескольких заданий, которые останавливаются и запускаются, когда их можно "
+"выполнить, задания возобновляются с того места, где были прерваны. Это "
+"хорошо сочетается с параметром завершения задания ``Повторять до "
+"завершения``. Если флажок ``Запоминать ход выполнения задания`` снят, "
+"задания будут каждый раз перезапускаться с начала своей последовательности, "
+"что, вероятно, нежелательно. К сожалению, если изображения хранятся не на "
+"том же компьютере, на котором работает Ekos, эта функция не работает, и "
+"задания перезапускаются с начала."
+
+#: ../../user_manual/ekos-scheduler.rst:256
+msgid ""
+"A possibly confusing side-effect of ``Remember job progress`` is that if "
+"you've run a job using the (default) Sequence Completion finish condition, "
+"and it has captured all its images, and now you want to run the job again, "
+"the Scheduler won't schedule the job because it believes that all the images "
+"have already been captured. You'd either need to move those images elsewhere "
+"on disk, or change the finish condition to Repeat for N Times, or Repeat "
+"Until Terminated."
+msgstr ""
+"Возможно, неочевидный побочный эффект ``Запоминать ход выполнения задания`` "
+"заключается в следующем: если задание было выполнено с условием завершения "
+"«Завершение последовательности» (по умолчанию) и все его изображения уже "
+"получены, а теперь задание требуется выполнить снова, планировщик не "
+"запланирует его, так как считает, что все изображения уже получены. В этом "
+"случае потребуется либо переместить эти изображения в другое место на диске, "
+"либо изменить условие завершения на «Повторять в течение» или «Повторять до "
+"завершения»."
+
+#: ../../user_manual/ekos-scheduler.rst:269
+msgid "Group repeats"
+msgstr "Группировать повторы"
+
+#: ../../user_manual/ekos-scheduler.rst:271
+msgid ""
+"This feature allows you to run two or more scheduler jobs at roughly the "
+"same priority, such that if they were both runnable, they would progress at "
+"roughly the same rate. This may be applicable, for example, to jobs imaging "
+"the multiple tiles in a mosaic, but is generally applicable to any set of "
+"jobs."
+msgstr ""
+"Эта функция позволяет запускать два или более задания планировщика с "
+"примерно одинаковым приоритетом, так что если оба задания можно выполнить, "
+"они будут продвигаться примерно с одинаковой скоростью. Это применимо, "
+"например, к заданиям съёмки нескольких фрагментов мозаики, но в целом "
+"подходит для любого набора заданий."
+
+#: ../../user_manual/ekos-scheduler.rst:278
+msgid ""
+"Normally the (Greedy) scheduler's job priority is set by the row the job is "
+"listed in the Scheduler's job table. Jobs on rows closer to the top run with "
+"higher priority than jobs lower down. Thus, if a job on row 2 (Job2) uses "
+"``Repeat Until Terminated``, and that job's running constraints are "
+"satisfied, a lower down job (e.g. Job3) will not be scheduled to run."
+msgstr ""
+"Обычно приоритет задания (жадного) планировщика определяется строкой, в "
+"которой задание указано в таблице заданий планировщика. Задания в строках "
+"ближе к верху выполняются с более высоким приоритетом, чем задания ниже. "
+"Так, если задание во второй строке (Job2) использует ``Повторять до "
+"завершения`` и ограничения на его выполнение соблюдены, задание ниже "
+"(например, Job3) не будет запланировано к выполнению."
+
+#: ../../user_manual/ekos-scheduler.rst:286
+msgid ""
+"If you wish to alternate jobs, you can assign each of the jobs the same "
+"``group`` name, and give the jobs one of the repeating finish conditions (e."
+"g. Repeat for N times, or Repeat Until Terminated). With that setup, jobs in "
+"the same group will cede to each other if they have completed more 'Repeat "
+"Iterations' than the other job. So, if Job2 with group \"MyGroup\" completes "
+"its 2nd iteration, and Job3 with the same group name has only completed 0 or "
+"1 iterations, when the time comes to schedule Job2, Job3 will run instead."
+msgstr ""
+"Чтобы чередовать задания, можно назначить всем заданиям одно и то же имя в "
+"поле ``Группа`` и задать для них одно из условий завершения с повтором "
+"(например, «Повторять в течение» N раз или «Повторять до завершения»). При "
+"такой настройке задания из одной группы уступают друг другу, если у одного "
+"из них выполнено больше «итераций повтора», чем у другого. Так, если задание "
+"Job2 из группы «MyGroup» завершило вторую итерацию, а задание Job3 с тем же "
+"именем группы выполнило всего 0 или 1 итерацию, то когда придёт время "
+"планировать Job2, вместо него будет запущено Job3."
+
+#: ../../user_manual/ekos-scheduler.rst:297
+msgid ""
+"Practically speaking, imagine you had a 6-panel mosaic you wanted to "
+"alternate. You might give all of those jobs the same group name, make them "
+"all e.g. \"Repeat for 5 times\". Then, they would run in lock-step. The "
+"cadence of job switching would be controlled by the length of the sequence "
+"file assigned to each of those jobs. You wouldn't want to make the cadence "
+"too short (e.g. capturing one 2-minute image), as there is overhead in "
+"switching jobs. For instance, starting jobs may involved aligning, starting "
+"guiding, and even focusing."
+msgstr ""
+"На практике представьте мозаику из 6 панелей, которые требуется снимать "
+"поочерёдно. Всем этим заданиям можно дать одно и то же имя группы и задать "
+"для них, например, «Повторять в течение 5 раз». Тогда они будут выполняться "
+"синхронно. Периодичность переключения заданий определяется длиной файла "
+"последовательности, назначенного каждому из этих заданий. Не следует делать "
+"периодичность слишком короткой (например, съёмка одного изображения с 2-"
+"минутной экспозицией), поскольку переключение заданий связано с накладными "
+"расходами. Например, при запуске задания может потребоваться выравнивание, "
+"запуск гидирования и даже фокусировка."
+
+#: ../../user_manual/ekos-scheduler.rst:311
+msgid "Repeat all jobs"
+msgstr "Повторять все задания"
+
+#: ../../user_manual/ekos-scheduler.rst:313
+msgid ""
+"There is a checkbox and number input right below the Scheduler jobs table "
+"that allows you to repeat the entire schedule N times. This can be used to "
+"alternate a few jobs. You can just list the jobs on the scheduler, set it to "
+"repeat N times, and the jobs will repeat. However, this change is "
+"incompatible with 'Remember job progress (above) and unavailable if Remember "
+"Job Progress is checked. (Note: Remember Job Progress is recommended.)"
+msgstr ""
+"Непосредственно под таблицей заданий планировщика расположены флажок и поле "
+"ввода числа, позволяющие повторить всё расписание N раз. Это можно "
+"использовать для чередования нескольких заданий. Достаточно перечислить "
+"задания в планировщике и задать повтор N раз — задания будут повторяться. "
+"Однако этот параметр несовместим с «Запоминать ход выполнения задания» (см. "
+"выше) и недоступен, если этот флажок установлен. (Примечание: рекомендуется "
+"использовать «Запоминать ход выполнения задания».)"
+
+#: ../../user_manual/ekos-scheduler.rst:325
+msgid "Editing running jobs"
+msgstr "Редактирование выполняемых заданий"
+
+#: ../../user_manual/ekos-scheduler.rst:327
+msgid ""
+"It is possible to edit the scheduler's job table, and attributes of "
+"individual jobs, while the scheduler is running. As always, you double click "
+"on a job, change the desired attributes, and click the checkbox to finalize "
+"the change. If you edit the running job it will be restarted (i.e. the "
+"startup steps (slew, focus, align, guide) will be re-done. You can also move "
+"jobs up and down in priority, add new jobs, or deleted existing ones. You "
+"cannot delete the running job."
+msgstr ""
+"Во время работы планировщика можно редактировать таблицу заданий и атрибуты "
+"отдельных заданий. Как обычно, дважды щёлкните по заданию, измените нужные "
+"атрибуты и щёлкните по флажку, чтобы завершить изменение. Если изменить "
+"выполняемое задание, оно будет перезапущено (то есть начальные шаги "
+"(наведение, фокусировка, выравнивание, гидирование) будут выполнены заново). "
+"Также можно перемещать задания вверх и вниз по приоритету, добавлять новые "
+"задания и удалять существующие. Удалить выполняемое задание нельзя."
+
+#: ../../user_manual/ekos-scheduler.rst:337
+msgid ""
+"One important attribute of scheduler jobs is their sequence file (.esq) "
+"which controls the capture module while the job is running. For example, it "
+"sets number of captures, filters used, gain/ISO, etc. The .esq is normally "
+"created and edited in the capture tab, but that cannot be done while the "
+"scheduler is running. If you desire to make changes to a .esq file while the "
+"scheduler is running, or create a new one, the scheduler provides a tool "
+"called the Capture Sequence Editor."
+msgstr ""
+"Важное свойство заданий планировщика — их файл последовательности (.esq), "
+"который управляет модулем «Съёмка» во время выполнения задания. Например, в "
+"нём задаются количество снимков, используемые светофильтры, усиление/ISO и "
+"т. д. Обычно файл .esq создаётся и редактируется в модуле «Съёмка», но это "
+"невозможно, пока планировщик работает. Если требуется изменить файл .esq во "
+"время работы планировщика или создать новый, планировщик предоставляет "
+"инструмент «Редактор последовательности съёмки»."
+
+#: ../../user_manual/ekos-scheduler.rst:350
+#: ../../user_manual/ekos-scheduler.rst:999
+msgid "Capture Sequence Editor"
+msgstr "Редактор последовательности съёмки"
+
+#: ../../user_manual/ekos-scheduler.rst:352
+msgid ""
+"The Capture Sequence Editor is a tool to create and edit capture sequence "
+"files (.esq) which can be started by clicking the edit (pencil) icon just "
+"above the scheduler table. A screenshot is shown below."
+msgstr ""
+"Редактор последовательности съёмки — инструмент для создания и "
+"редактирования файлов последовательности съёмки (.esq), который можно "
+"запустить, нажав на значок редактирования (карандаш) прямо над таблицей "
+"планировщика. Ниже показан снимок экрана."
+
+#: ../../user_manual/ekos-scheduler.rst:357
+msgid "|Capture Sequence Editor|"
+msgstr "|Редактор последовательности съёмки|"
+
+#: ../../user_manual/ekos-scheduler.rst:359
+msgid ""
+"The editor is very similar in use and layout to the capture tab--though it "
+"is missing all the controls to actually capture image. You edit jobs the "
+"same way you do in capture, and load or save sequence queues the same way "
+"too (though there are additional Load and Save-To buttons provided in the "
+"editor)."
+msgstr ""
+"Редактор очень похож по использованию и компоновке на модуль «Съёмка», хотя "
+"в нём отсутствуют все элементы управления для самой съёмки изображений. "
+"Задания редактируются так же, как в модуле «Съёмка», а очереди "
+"последовательностей загружаются и сохраняются тем же способом (хотя в "
+"редакторе предусмотрены дополнительные кнопки «Загрузить» и «Сохранить в»)."
+
+#: ../../user_manual/ekos-scheduler.rst:368
+msgid ""
+"It is important to understand that capture sequences rely to some extent on "
+"the filterwheel and camera being used (e.g. the filter names, the possible "
+"ISO values, ...). The Capture Sequence Editor, which is not connected to the "
+"device drivers, does not have direct access to this information. Instead, "
+"the editor uses the values from the last time the capture tab connected to "
+"its devices. Thus, it may not make sense to try and create a .esq file for a "
+"different camera or filterwheel than the last one connected-to. You may need "
+"to wait until your scheduler job is completed and edit that .esq directly in "
+"the capture tab."
+msgstr ""
+"Важно понимать, что последовательности съёмки в некоторой степени зависят от "
+"используемых камеры и турели светофильтров (например, названия "
+"светофильтров, возможные значения ISO, …). Редактор последовательности "
+"съёмки не подключён к драйверам устройств и не имеет прямого доступа к этой "
+"информации. Вместо этого редактор использует значения, полученные при "
+"последнем подключении модуля «Съёмка» к своим устройствам. Поэтому, "
+"возможно, не имеет смысла создавать файл .esq для камеры или турели "
+"светофильтров, отличных от подключённых последними. Возможно, потребуется "
+"дождаться завершения задания планировщика и отредактировать этот .esq "
+"непосредственно в модуле «Съёмка»."
+
+#: ../../user_manual/ekos-scheduler.rst:381
+msgid ""
+"It is also recommended that you don't overwrite .esq files when scheduler "
+"jobs are currently using those same files. (It is OK if the scheduler is "
+"running, but not running that job.) This can get the scheduler and capture "
+"modules out of sync, as they read the files at different times. Instead, you "
+"can save to a different filename and then edit the scheduler job to use the "
+"new .esq filename."
+msgstr ""
+"Также не рекомендуется перезаписывать файлы .esq, пока задания планировщика "
+"используют эти же файлы. (Это допустимо, если планировщик запущен, но не "
+"выполняет это задание.) Это может привести к рассогласованию планировщика и "
+"модуля «Съёмка», так как они читают файлы в разное время. Вместо этого можно "
+"сохранить файл под другим именем, а затем изменить задание планировщика, "
+"чтобы оно использовало новое имя файла .esq."
+
+#: ../../user_manual/ekos-scheduler.rst:393
+msgid "Workflow"
+msgstr "Рабочий процесс"
+
+#: ../../user_manual/ekos-scheduler.rst:395
+msgid "|Scheduler + Planner|"
+msgstr "|Планировщик + Планирование|"
+
+#: ../../user_manual/ekos-scheduler.rst:397
+msgid ""
+"The description above only tackles the **Data Acquisition** stage of the "
+"observatory workflow. The overall procedure typically utilized in an "
+"observatory can be summarized in three primary stages:"
+msgstr ""
+"Описанное выше охватывает только этап **сбора данных** рабочего процесса "
+"обсерватории. Общая процедура, обычно применяемая в обсерватории, сводится к "
+"трём основным этапам:"
+
+#: ../../user_manual/ekos-scheduler.rst:402
+msgid "Startup"
+msgstr "Запуск"
+
+#: ../../user_manual/ekos-scheduler.rst:404
+msgid "Data Acquisition (including preprocessing and storage)"
+msgstr "Сбор данных (включая предварительную обработку и сохранение)"
+
+#: ../../user_manual/ekos-scheduler.rst:406
+#: ../../user_manual/ekos-scheduler.rst:517
+msgid "Shutdown"
+msgstr "Завершение работы"
+
+#: ../../user_manual/ekos-scheduler.rst:411
+msgid "Startup Procedure"
+msgstr "Процедура запуска"
+
+#: ../../user_manual/ekos-scheduler.rst:413
+msgid "Startup procedure is unique to each observatory but may include:"
+msgstr ""
+"Процедура запуска уникальна для каждой обсерватории, но может включать:"
+
+#: ../../user_manual/ekos-scheduler.rst:416
+msgid "Turning on power to equipment"
+msgstr "Включение питания оборудования"
+
+#: ../../user_manual/ekos-scheduler.rst:418
+msgid "Running safety/sanity checks"
+msgstr "Выполнение проверок безопасности и корректности"
+
+#: ../../user_manual/ekos-scheduler.rst:420
+msgid "Checking weather conditions"
+msgstr "Проверка погодных условий"
+
+#: ../../user_manual/ekos-scheduler.rst:422
+msgid "Turning off light"
+msgstr "Выключение освещения"
+
+#: ../../user_manual/ekos-scheduler.rst:424
+msgid "Fan/Light control"
+msgstr "Управление вентилятором и подсветкой"
+
+#: ../../user_manual/ekos-scheduler.rst:426
+msgid "Unparking dome"
+msgstr "Снятие купола с парковки"
+
+#: ../../user_manual/ekos-scheduler.rst:428
+msgid "Unparking mount"
+msgstr "Снятие монтировки с парковки"
+
+#: ../../user_manual/ekos-scheduler.rst:430
+msgid "etc."
+msgstr "и т. д."
+
+#: ../../user_manual/ekos-scheduler.rst:432
+msgid ""
+"Ekos Scheduler only initiates the startup procedure once the startup time "
+"for the first Scheduler job is close (default *lead* time is 5 minutes "
+"before *startup* time). Once the startup procedure is completed "
+"successfully, the scheduler picks the Scheduler job target and starts the "
+"sequence process."
+msgstr ""
+"Планировщик Ekos начинает процедуру запуска только тогда, когда приближается "
+"время запуска первого задания планировщика (по умолчанию *время упреждения* "
+"— 5 минут до *времени запуска*). После успешного завершения процедуры "
+"запуска планировщик выбирает цель задания планировщика и запускает процесс "
+"последовательности."
+
+#: ../../user_manual/ekos-scheduler.rst:439
+msgid ""
+"The startup and shutdown procedures are made of four task queues (see :doc:"
+"`Task Queue System <ekos-scheduler-taskqueue>`). They run at fixed points "
+"and come in pairs, each queue undoing what its counterpart did:"
+msgstr ""
+"Процедуры запуска и завершения работы состоят из четырёх очередей задач "
+"(см. :doc:`Система очереди задач <ekos-scheduler-taskqueue>`). Они "
+"выполняются в определённых точках и образуют пары, причём каждая очередь "
+"отменяет действия своей парной очереди:"
+
+#: ../../user_manual/ekos-scheduler.rst:444
+msgid ""
+"**Pre-Startup Queue**: runs *before* the Ekos profile is started, for "
+"example to power on equipment. Undone by the Post-Shutdown Queue."
+msgstr ""
+"**Очередь предзапуска**: выполняется *до* запуска профиля Ekos, например, "
+"для включения питания оборудования. Отменяется очередью после завершения "
+"работы."
+
+#: ../../user_manual/ekos-scheduler.rst:448
+msgid ""
+"The Ekos profile is started and INDI devices are connected (skipped if Ekos "
+"is already running)."
+msgstr ""
+"Запуск профиля Ekos и подключение устройств INDI (пропускается, если Ekos "
+"уже запущен)."
+
+#: ../../user_manual/ekos-scheduler.rst:451
+msgid ""
+"**Post-Startup Queue**: runs once the devices are ready, for example to open "
+"the dome, unpark the mount and open the dust cap. Undone by the Pre-Shutdown "
+"Queue."
+msgstr ""
+"**Очередь после запуска**: выполняется, когда устройства готовы, например, "
+"чтобы открыть купол, снять монтировку с парковки и открыть пылезащитную "
+"крышку. Отменяется очередью перед завершением работы."
+
+#: ../../user_manual/ekos-scheduler.rst:455
+msgid "Jobs run."
+msgstr "Выполнение заданий."
+
+#: ../../user_manual/ekos-scheduler.rst:457
+msgid ""
+"**Pre-Shutdown Queue**: runs *before* the Ekos profile is stopped, for "
+"example to close the dust cap, park the mount and close the dome."
+msgstr ""
+"**Очередь перед завершением работы**: выполняется *до* остановки профиля "
+"Ekos, например, чтобы закрыть пылезащитную крышку, припарковать монтировку и "
+"закрыть купол."
+
+#: ../../user_manual/ekos-scheduler.rst:461
+msgid "The Ekos profile is stopped."
+msgstr "Профиль Ekos останавливается."
+
+#: ../../user_manual/ekos-scheduler.rst:463
+msgid ""
+"**Post-Shutdown Queue**: runs *after* the Ekos profile is stopped, for "
+"example to power off equipment."
+msgstr ""
+"**Очередь после завершения работы**: выполняется *после* остановки профиля "
+"Ekos, например, для выключения питания оборудования."
+
+#: ../../user_manual/ekos-scheduler.rst:466
+msgid ""
+"A weather soft shutdown (see :ref:`ekos-scheduler-weather-monitoring`) only "
+"runs the Pre-Shutdown Queue and keeps Ekos running, so recovering from it "
+"only runs the Post-Startup Queue. The Pre-Startup Queue runs again only "
+"after the Post-Shutdown Queue has run."
+msgstr ""
+"При мягком завершении работы по погодным условиям (см. :ref:`ekos-scheduler-"
+"weather-monitoring`) выполняется только очередь перед завершением работы, а "
+"Ekos продолжает работать, поэтому при восстановлении после него выполняется "
+"только очередь после запуска. Очередь предзапуска снова выполняется только "
+"после того, как отработала очередь после завершения работы."
+
+#: ../../user_manual/ekos-scheduler.rst:475
+msgid "Data Acquisition"
+msgstr "Сбор данных"
+
+#: ../../user_manual/ekos-scheduler.rst:477
+msgid ""
+"Depending the on the user selection, the typical workflow proceeds as "
+"follows:"
+msgstr ""
+"В зависимости от выбора пользователя типичный рабочий процесс выполняется "
+"следующим образом:"
+
+#: ../../user_manual/ekos-scheduler.rst:480
+msgid ""
+"Slew mount to target. If a FITS file was specified, it first solves the "
+"files and slew to the file coordinates."
+msgstr ""
+"Наведение монтировки на цель. Если указан файл FITS, сначала выполняется его "
+"астрометрическая привязка, а затем наведение на координаты файла."
+
+#: ../../user_manual/ekos-scheduler.rst:484
+msgid ""
+"Auto-focus target. The autofocus process automatically selects the best star "
+"in the frame and runs the autofocus algorithm against it."
+msgstr ""
+"Автофокусировка на цель. Процесс автофокусировки автоматически выбирает "
+"лучшую звезду в кадре и применяет к ней алгоритм автофокусировки."
+
+#: ../../user_manual/ekos-scheduler.rst:488
+msgid "Perform plate solving, sync mount, and slew to target coordinates."
+msgstr ""
+"Выполнение астрометрической привязки, синхронизация монтировки и наведение "
+"на координаты цели."
+
+#: ../../user_manual/ekos-scheduler.rst:491
+msgid ""
+"Perform post-alignment focusing since the frame might have moved during the "
+"plate solving process."
+msgstr ""
+"Выполнение фокусировки после выравнивания, так как кадр мог сместиться в "
+"процессе астрометрической привязки."
+
+#: ../../user_manual/ekos-scheduler.rst:494
+msgid ""
+"Perform calibration and start auto-guiding: The calibration process "
+"automatically selects the best guide star, performs calibration, and starts "
+"the autoguide process."
+msgstr ""
+"Выполнение калибровки и запуск автогидирования: процесс калибровки "
+"автоматически выбирает лучшую звезду для гидирования, выполняет калибровку и "
+"запускает процесс автогидирования."
+
+#: ../../user_manual/ekos-scheduler.rst:499
+msgid ""
+"Load the sequence file in the :doc:`Capture module  <ekos-capture>` and "
+"start the imaging process."
+msgstr ""
+"Загрузка файла последовательности в :doc:`модуль «Съёмка»  <ekos-capture>` и "
+"запуск процесса съёмки."
+
+#: ../../user_manual/ekos-scheduler.rst:503
+msgid ""
+"Coordinate module issues, such as failures in guiding or alignment. They may "
+"result is Scheduler job suspensions and rescheduling."
+msgstr ""
+"Координация проблем модулей, таких как сбои гидирования или выравнивания. "
+"Они могут приводить к приостановке заданий планировщика и их "
+"перепланированию."
+
+#: ../../user_manual/ekos-scheduler.rst:507
+msgid ""
+"Note--some of the inter-module interactions are initiated by the modules "
+"themselves, but are monitored by the Scheduler. These include meridian "
+"flips, autofocus runs initiated by temperature change or timer expiration, "
+"and minimum guiding deviation requirements for capture."
+msgstr ""
+"Примечание — некоторые взаимодействия между модулями инициируются самими "
+"модулями, но контролируются планировщиком. К ним относятся перевороты через "
+"меридиан, запуски автофокусировки, инициируемые изменением температуры или "
+"истечением таймера, и требования к минимальному отклонению гидирования при "
+"съёмке."
+
+#: ../../user_manual/ekos-scheduler.rst:519
+msgid ""
+"Once the Scheduler job is completed successfully, the scheduler selects the "
+"next Scheduler job. If no job can be scheduled at this time, the mount is "
+"parked until a next job can run. Furthermore, if the next job is not due for "
+"a user-configurable time limit, the scheduler performs a *preemptive* "
+"shutdown to preserve resources and performs the startup procedure again when "
+"the target is due."
+msgstr ""
+"После успешного завершения задания планировщика планировщик выбирает "
+"следующее задание. Если в этот момент ни одно задание не может быть "
+"запланировано, монтировка паркуется до тех пор, пока не сможет выполниться "
+"следующее задание. Кроме того, если до наступления следующего задания "
+"остаётся больше задаваемого пользователем предела времени, планировщик "
+"выполняет *упреждающее* завершение работы для экономии ресурсов и снова "
+"выполняет процедуру запуска, когда наступает время цели."
+
+#: ../../user_manual/ekos-scheduler.rst:527
+msgid ""
+"If an unrecoverable error occurs, the observatory initiates shutdown "
+"procedure. A full shutdown runs the Pre-Shutdown Queue, stops the Ekos "
+"profile, and then runs the Post-Shutdown Queue (see :ref:`ekos-scheduler-"
+"startup-procedure`)."
+msgstr ""
+"При возникновении неустранимой ошибки обсерватория запускает процедуру "
+"завершения работы. Полное завершение работы выполняет очередь перед "
+"завершением работы, останавливает профиль Ekos, а затем выполняет очередь "
+"после завершения работы (см. :ref:`ekos-scheduler-startup-procedure`)."
+
+#: ../../user_manual/ekos-scheduler.rst:532
+msgid ""
+"The following video demonstrates an earlier version of the scheduler, but "
+"the basic principles still apply today:"
+msgstr ""
+"В следующем видео показана более ранняя версия планировщика, однако основные "
+"принципы работы остаются актуальными и сегодня:"
+
+#: ../../user_manual/ekos-scheduler.rst:538
+msgid "Ekos Scheduler (https://youtu.be/v8vIXD1kois)"
+msgstr "Планировщик Ekos (https://youtu.be/v8vIXD1kois)"
+
+#: ../../user_manual/ekos-scheduler.rst:543
+msgid "Weather Monitoring"
+msgstr "Мониторинг погодных условий"
+
+#: ../../user_manual/ekos-scheduler.rst:545
+msgid ""
+"Another critical feature of any remotely operated robotic observatory is "
+"weather monitoring. For weather updates, Ekos relies on the selected INDI "
+"weather driver to continuously monitor the weather conditions. For "
+"simplicity sake, the weather conditions can be summed in three states:"
+msgstr ""
+"Ещё одна важная функция любой роботизированной обсерватории с дистанционным "
+"управлением — контроль погодных условий. Для получения сведений о погоде "
+"Ekos использует выбранный драйвер погоды INDI, который непрерывно следит за "
+"погодными условиями. Для простоты погодные условия можно свести к трём "
+"состояниям:"
+
+#: ../../user_manual/ekos-scheduler.rst:551
+msgid "**Ok**: Weather conditions are clear and optimal for imaging."
+msgstr "**Норма**: погодные условия ясные и оптимальные для съёмки."
+
+#: ../../user_manual/ekos-scheduler.rst:554
+msgid ""
+"**Warning**: Weather conditions are not clear, seeing is subpar, or "
+"partially obstructed and not suitable for imaging. Any further imaging "
+"process is suspended until the weather improves. Warning weather status does "
+"not pose any danger to the observatory equipment so the observatory is kept "
+"operational. The exact behavior to take under Warning status can be "
+"configured."
+msgstr ""
+"**Предупреждение**: погодные условия неясные, сиинг неудовлетворительный "
+"либо небо частично закрыто и не подходит для съёмки. Дальнейший процесс "
+"съёмки приостанавливается до улучшения погоды. Статус «Предупреждение» не "
+"представляет опасности для оборудования обсерватории, поэтому обсерватория "
+"продолжает работу. Точное поведение при этом статусе можно настроить."
+
+#: ../../user_manual/ekos-scheduler.rst:563
+msgid ""
+"**Alert**: Weather conditions are detrimental to the observatory safety and "
+"shutdown must be initiated as soon as possible."
+msgstr ""
+"**Алерт**: погодные условия угрожают безопасности обсерватории, поэтому "
+"необходимо как можно скорее выполнить завершение работы."
+
+#: ../../user_manual/ekos-scheduler.rst:567
+msgid "|Scheduler Weather Settings|"
+msgstr "|Параметры погодных условий планировщика|"
+
+#: ../../user_manual/ekos-scheduler.rst:569
+msgid "Weather monitoring can be configured in two ways:"
+msgstr "Отслеживание погодных условий настраивается двумя способами:"
+
+#: ../../user_manual/ekos-scheduler.rst:571
+msgid ""
+"**Part of the equipment profile** - A weather driver starts with the "
+"observatory equipment"
+msgstr ""
+"**Часть профиля оборудования** — драйвер погоды запускается вместе с "
+"оборудованием обсерватории"
+
+#: ../../user_manual/ekos-scheduler.rst:572
+msgid ""
+"**Standalone INDI Safety Monitor** - An INDI Safety Monitor driver runs "
+"independently on a separate INDI server"
+msgstr ""
+"**Автономный монитор безопасности INDI** — драйвер монитора безопасности "
+"INDI работает независимо на отдельном сервере INDI"
+
+#: ../../user_manual/ekos-scheduler.rst:574
+msgid ""
+"**Important:** If no standalone safety monitor is configured, the scheduler "
+"cannot check safety conditions before starting the observatory. This means "
+"the observatory may start in unsafe conditions. While the equipment "
+"profile's weather driver will activate after startup and immediately trigger "
+"a shutdown if conditions are unsafe, this start-stop cycle is inefficient "
+"and potentially harmful to equipment."
+msgstr ""
+"**Важно:** Если отдельный монитор безопасности не настроен, планировщик не "
+"может проверить условия безопасности перед запуском обсерватории. Это "
+"означает, что обсерватория может запуститься в небезопасных условиях. Хотя "
+"драйвер погоды из профиля оборудования активируется после запуска и при "
+"небезопасных условиях немедленно инициирует завершение работы, такой цикл "
+"запуска и остановки неэффективен и потенциально опасен для оборудования."
+
+#: ../../user_manual/ekos-scheduler.rst:580
+msgid ""
+"**Best practice:** Configure a standalone INDI Safety Monitor. When present, "
+"it always takes precedence over any weather driver in the equipment profile "
+"for determining observatory safety. The monitor can be configured to listen "
+"to any number of Weather or Auxiliary drivers (like UPS) that can pose a "
+"safety risk to the operation of the observatory. Any INDI driver "
+"implementing the INDI Standard Property SAFETY_STATUS can be added to the "
+"Safety Monitor driver. This allows the scheduler to verify conditions are "
+"safe *before* starting up the observatory."
+msgstr ""
+"**Рекомендация:** Настройте отдельный монитор безопасности INDI. Если он "
+"присутствует, то при определении безопасности обсерватории он всегда имеет "
+"приоритет над любым драйвером погоды в профиле оборудования. Монитор можно "
+"настроить на прослушивание любого числа драйверов погоды или вспомогательных "
+"драйверов (например, ИБП), которые могут создавать угрозу безопасности "
+"работы обсерватории. В драйвер монитора безопасности можно добавить любой "
+"драйвер INDI, реализующий стандартное свойство INDI SAFETY_STATUS. Это "
+"позволяет планировщику проверить, что условия безопасны, *до* запуска "
+"обсерватории."
+
+#: ../../user_manual/ekos-scheduler.rst:588
+msgid "Weather Alert Response"
+msgstr "Реакция на состояние «Алерт»"
+
+#: ../../user_manual/ekos-scheduler.rst:590
+msgid ""
+"When weather conditions deteriorate to Alert status during operations, the "
+"scheduler initiates a protective \"soft shutdown\" procedure. Unlike a "
+"complete shutdown where all systems are stopped, a soft shutdown preserves "
+"the Ekos and INDI connections while protecting your equipment, allowing for "
+"quick resumption when conditions improve."
+msgstr ""
+"Когда во время работы состояние погоды ухудшается до «Алерт», планировщик "
+"запускает защитную процедуру «мягкого завершения работы». В отличие от "
+"полного завершения работы, при котором останавливаются все системы, мягкое "
+"завершение сохраняет подключения Ekos и INDI и защищает оборудование, что "
+"позволяет быстро возобновить работу при улучшении условий."
+
+#: ../../user_manual/ekos-scheduler.rst:596
+msgid "**Soft Shutdown Sequence:**"
+msgstr "**Последовательность мягкого завершения работы:**"
+
+#: ../../user_manual/ekos-scheduler.rst:598
+msgid "When a weather alert is detected:"
+msgstr "При обнаружении состояния «Алерт»:"
+
+#: ../../user_manual/ekos-scheduler.rst:600
+msgid ""
+"A configurable delay period (default: 10 seconds) prevents reaction to "
+"momentary sensor issues"
+msgstr ""
+"Настраиваемый период задержки (по умолчанию: 10 секунд) предотвращает "
+"реакцию на кратковременные сбои датчиков"
+
+#: ../../user_manual/ekos-scheduler.rst:603
+msgid ""
+"If the alert persists, the current scheduler job is stopped. It stays in the "
+"schedule and is evaluated again against its constraints before it can "
+"restart."
+msgstr ""
+"Если состояние «Алерт» сохраняется, текущее задание планировщика "
+"останавливается. Оно остаётся в расписании, и перед повторным запуском снова "
+"проверяется на соответствие ограничениям."
+
+#: ../../user_manual/ekos-scheduler.rst:607
+msgid ""
+"The Pre-Shutdown Queue executes to protect equipment (typically closes dust "
+"caps, parks mount, closes dome)"
+msgstr ""
+"Выполняется очередь перед завершением работы для защиты оборудования (обычно "
+"закрываются пылезащитные крышки, паркуется монтировка, закрывается купол)"
+
+#: ../../user_manual/ekos-scheduler.rst:610
+msgid "Ekos and INDI remain running for faster recovery"
+msgstr "Ekos и INDI остаются запущенными для более быстрого восстановления"
+
+#: ../../user_manual/ekos-scheduler.rst:612
+msgid "The scheduler enters a grace period to wait for weather improvement"
+msgstr "Планировщик переходит в льготный период, ожидая улучшения погоды"
+
+#: ../../user_manual/ekos-scheduler.rst:614
+msgid ""
+"The same applies if the alert is already active when the scheduler starts: "
+"if Ekos is already running, the Pre-Shutdown Queue runs before any job "
+"starts. If Ekos is not running yet, nothing needs protecting, and the "
+"scheduler simply waits before starting the observatory."
+msgstr ""
+"То же справедливо, если состояние «Алерт» уже активно к моменту запуска "
+"планировщика: если Ekos уже запущен, очередь перед завершением работы "
+"выполняется до запуска любого задания. Если Ekos ещё не запущен, защищать "
+"нечего, и планировщик просто ожидает, прежде чем запустить обсерваторию."
+
+#: ../../user_manual/ekos-scheduler.rst:623
+msgid "Weather Grace Period"
+msgstr "Льготный период погоды"
+
+#: ../../user_manual/ekos-scheduler.rst:625
+msgid ""
+"The grace period is a configurable waiting time during which the scheduler "
+"monitors weather conditions after initiating a soft shutdown. If weather "
+"improves during this period, operations automatically resume."
+msgstr ""
+"Льготный период — это настраиваемое время ожидания, в течение которого "
+"планировщик контролирует погодные условия после запуска мягкого завершения "
+"работы. Если за это время погода улучшится, работа автоматически "
+"возобновляется."
+
+#: ../../user_manual/ekos-scheduler.rst:630
+msgid "**Special value — Grace Period = 0 (Indefinite Wait):**"
+msgstr "**Особое значение — льготный период = 0 (бессрочное ожидание):**"
+
+#: ../../user_manual/ekos-scheduler.rst:632
+msgid ""
+"Setting the grace period to **0** instructs the scheduler to wait "
+"**indefinitely** for the weather to improve. The scheduler will never give "
+"up or abort jobs due to weather — it simply waits, parked, until safety "
+"conditions return to OK, no matter how long that takes (hours, days, etc.). "
+"This is the recommended setting for fully automated, unattended "
+"observatories."
+msgstr ""
+"Если задать льготный период равным **0**, планировщик будет ждать улучшения "
+"погоды **бесконечно**. Планировщик никогда не откажется от заданий и не "
+"прервёт их из-за погоды — он просто ждёт в припаркованном состоянии, пока "
+"состояние безопасности не вернётся в «Норма», сколько бы времени это ни "
+"заняло (часы, дни и т. д.). Это рекомендуемая настройка для полностью "
+"автоматических обсерваторий без обслуживающего персонала."
+
+#: ../../user_manual/ekos-scheduler.rst:639
+msgid "When the grace period is 0:"
+msgstr "Если льготный период равен 0:"
+
+#: ../../user_manual/ekos-scheduler.rst:641
+msgid ""
+"Equipment is protected immediately (pre-shutdown queue runs: park mount, "
+"close dome, etc.)"
+msgstr ""
+"Оборудование защищается немедленно (выполняется очередь перед завершением "
+"работы: парковка монтировки, закрытие купола и т. д.)"
+
+#: ../../user_manual/ekos-scheduler.rst:643
+msgid "Ekos and INDI **remain running** — no full shutdown occurs"
+msgstr ""
+"Ekos и INDI **остаются запущенными** — полного завершения работы не "
+"происходит"
+
+#: ../../user_manual/ekos-scheduler.rst:644
+msgid ""
+"The scheduler recovers **immediately** when the weather sensor reports OK"
+msgstr ""
+"Планировщик возобновляет работу **немедленно**, как только датчик погоды "
+"сообщает «Норма»"
+
+#: ../../user_manual/ekos-scheduler.rst:646
+msgid ""
+"Every 5 minutes, the scheduler also re-evaluates the jobs, without starting "
+"any. If no job can run any more (for example its end-at time or the dawn "
+"limit has passed), it runs the full shutdown right away, even though the "
+"alert is still active"
+msgstr ""
+"Каждые 5 минут планировщик также повторно оценивает задания, не запуская ни "
+"одного из них. Если ни одно задание больше не может выполняться (например, "
+"прошло время окончания или предел наступления рассвета), он немедленно "
+"выполняет полное завершение работы, даже если состояние «Алерт» сохраняется"
+
+#: ../../user_manual/ekos-scheduler.rst:650
+msgid ""
+"The log will show: *\"Observatory scheduled for soft shutdown. Monitoring "
+"weather indefinitely until safety improves.\"*"
+msgstr ""
+"В журнале будет показано: *«Запланировано мягкое завершение работы "
+"обсерватории. Отслеживание погоды продолжается бессрочно до улучшения "
+"условий безопасности.»*"
+
+#: ../../user_manual/ekos-scheduler.rst:653
+msgid "**Grace Period > 0 behavior:**"
+msgstr "**Поведение при льготном периоде > 0:**"
+
+#: ../../user_manual/ekos-scheduler.rst:655
+msgid ""
+"If a non-zero grace period is configured, the scheduler waits that many "
+"minutes after the soft shutdown for weather to improve. If the grace period "
+"expires while the alert is still active, a full shutdown (INDI/Ekos stop) is "
+"performed and jobs are marked as aborted."
+msgstr ""
+"Если задан ненулевой льготный период, после мягкого завершения работы "
+"планировщик ожидает улучшения погоды указанное число минут. Если льготный "
+"период истекает, пока состояние «Алерт» сохраняется, выполняется полное "
+"завершение работы (остановка INDI/Ekos), а задания помечаются как прерванные."
+
+#: ../../user_manual/ekos-scheduler.rst:661
+msgid "**Configuration:**"
+msgstr "**Настройка:**"
+
+#: ../../user_manual/ekos-scheduler.rst:663
+msgid "In the Scheduler Weather Settings:"
+msgstr "В параметрах погодных условий планировщика:"
+
+#: ../../user_manual/ekos-scheduler.rst:665
+msgid ""
+"**Weather Shutdown Delay**: Seconds to wait after alert detection before "
+"initiating soft shutdown (default: 10). This prevents false alarms from "
+"brief sensor glitches. During this delay, if the weather sensor recovers, no "
+"action is taken at all."
+msgstr ""
+"**Задержка выключения при погодной тревоге**: время ожидания в секундах "
+"после обнаружения состояния «Алерт» до запуска мягкого завершения работы (по "
+"умолчанию: 10). Это предотвращает ложные срабатывания из-за кратковременных "
+"сбоев датчиков. Если за время этой задержки датчик погоды восстановится, "
+"никакие действия не выполняются."
+
+#: ../../user_manual/ekos-scheduler.rst:670
+msgid ""
+"**Weather Grace Period**: Minutes to wait (in the parked/soft-shutdown "
+"state) for weather to improve before giving up with a full shutdown. Set to "
+"**0** for indefinite monitoring — the recommended value for automated "
+"observatories that should always resume on their own."
+msgstr ""
+"**Льготный период погоды**: время ожидания в минутах (в состоянии парковки "
+"или мягкого завершения работы) улучшения погоды, прежде чем перейти к "
+"полному завершению работы. Установите значение **0** для бессрочного "
+"ожидания — рекомендуемого значения для автоматизированных обсерваторий, "
+"которые всегда должны возобновлять работу самостоятельно."
+
+#: ../../user_manual/ekos-scheduler.rst:678
+msgid "Automatic Weather Recovery"
+msgstr "Автоматическое возобновление после непогоды"
+
+#: ../../user_manual/ekos-scheduler.rst:680
+msgid ""
+"When weather improves during the grace period, the scheduler automatically "
+"resumes operations:"
+msgstr ""
+"Если в течение льготного периода погода улучшится, планировщик автоматически "
+"возобновляет работу:"
+
+#: ../../user_manual/ekos-scheduler.rst:683
+msgid "Weather status changes from Alert to Ok"
+msgstr "Состояние погоды меняется с «Алерт» на «Норма»"
+
+#: ../../user_manual/ekos-scheduler.rst:685
+msgid "The scheduler re-evaluates the jobs *before* opening anything"
+msgstr "Планировщик заново оценивает задания *перед* открытием чего-либо"
+
+#: ../../user_manual/ekos-scheduler.rst:687
+msgid ""
+"If a job can run now, the Post-Startup Queue executes to reverse protective "
+"actions (opens dome, unparks mount, opens dust caps) and the job starts"
+msgstr ""
+"Если задание можно запустить сейчас, выполняется очередь после запуска, "
+"отменяющая защитные действия (открывает купол, снимает монтировку с "
+"парковки, открывает пылезащитные крышки), и задание запускается"
+
+#: ../../user_manual/ekos-scheduler.rst:691
+msgid ""
+"If the next job is later (for example the next night), the scheduler sleeps "
+"until then with the observatory still closed, and runs the Post-Startup "
+"Queue when the job is due"
+msgstr ""
+"Если следующее задание предстоит позже (например, следующей ночью), "
+"планировщик ждёт до этого момента при закрытой обсерватории и выполняет "
+"очередь после запуска, когда наступает время задания"
+
+#: ../../user_manual/ekos-scheduler.rst:695
+msgid ""
+"If no job can run any more, the scheduler runs the full shutdown instead"
+msgstr ""
+"Если ни одно задание больше не может выполняться, планировщик вместо этого "
+"выполняет полное завершение работы"
+
+#: ../../user_manual/ekos-scheduler.rst:698
+msgid "**Queue Usage During Weather Events:**"
+msgstr "**Использование очередей при погодных событиях:**"
+
+#: ../../user_manual/ekos-scheduler.rst:700
+msgid "Weather events use specific startup and shutdown queues:"
+msgstr ""
+"Для погодных событий используются определённые очереди запуска и завершения "
+"работы:"
+
+#: ../../user_manual/ekos-scheduler.rst:702
+msgid ""
+"**During Weather Shutdown**: Only Pre-Shutdown Queue executes (runs before "
+"stopping Ekos). Post-Shutdown Queue is skipped since Ekos remains running."
+msgstr ""
+"**При завершении работы по погодным условиям**: выполняется только очередь "
+"перед завершением работы (запускается до остановки Ekos). Очередь после "
+"завершения работы пропускается, поскольку Ekos продолжает работать."
+
+#: ../../user_manual/ekos-scheduler.rst:706
+msgid ""
+"**During Weather Recovery**: Only Post-Startup Queue executes (runs after "
+"devices ready). Pre-Startup Queue is skipped since Ekos never stopped."
+msgstr ""
+"**При возобновлении после непогоды**: выполняется только очередь после "
+"запуска (запускается после готовности устройств). Очередь предзапуска "
+"пропускается, поскольку Ekos не останавливался."
+
+#: ../../user_manual/ekos-scheduler.rst:710
+msgid ""
+"Your Pre-Shutdown and Post-Startup queues should work together symmetrically—"
+"the Post-Startup queue should reverse exactly what the Pre-Shutdown queue "
+"did."
+msgstr ""
+"Очереди перед завершением работы и после запуска должны работать симметрично "
+"— очередь после запуска должна в точности отменять действия очереди перед "
+"завершением работы."
+
+#: ../../user_manual/ekos-scheduler.rst:714
+msgid "**Example Queue Design:**"
+msgstr "**Пример структуры очереди:**"
+
+#: ../../user_manual/ekos-scheduler.rst:717
+msgid "Close dust cap"
+msgstr "Закрыть пылезащитную крышку"
+
+#: ../../user_manual/ekos-scheduler.rst:718
+msgid "Park mount"
+msgstr "Припарковать монтировку"
+
+#: ../../user_manual/ekos-scheduler.rst:719
+msgid "Pre-Shutdown Queue:"
+msgstr "Очередь перед завершением работы:"
+
+#: ../../user_manual/ekos-scheduler.rst:719
+msgid "Close dome shutter"
+msgstr "Закрыть створку купола"
+
+#: ../../user_manual/ekos-scheduler.rst:722
+msgid "Open dome shutter"
+msgstr "Открыть створку купола"
+
+#: ../../user_manual/ekos-scheduler.rst:723
+msgid "Unpark mount"
+msgstr "Снять монтировку с парковки"
+
+#: ../../user_manual/ekos-scheduler.rst:724
+msgid "Post-Startup Queue:"
+msgstr "Очередь после запуска:"
+
+#: ../../user_manual/ekos-scheduler.rst:724
+msgid "Open dust cap"
+msgstr "Открыть пылезащитную крышку"
+
+#: ../../user_manual/ekos-scheduler.rst:729
+msgid "Weather Monitoring Best Practices"
+msgstr "Рекомендации по контролю погодных условий"
+
+#: ../../user_manual/ekos-scheduler.rst:731
+msgid "For reliable weather protection:"
+msgstr "Для надёжной защиты от непогоды:"
+
+#: ../../user_manual/ekos-scheduler.rst:733
+msgid ""
+"**Design Symmetric Queues**: Ensure Pre-Shutdown and Post-Startup queues "
+"mirror each other exactly."
+msgstr ""
+"**Проектируйте симметричные очереди**: убедитесь, что очереди перед "
+"завершением работы и после запуска в точности зеркально повторяют друг друга."
+
+#: ../../user_manual/ekos-scheduler.rst:736
+msgid ""
+"**Set Appropriate Delays**: Configure Weather Shutdown Delay long enough to "
+"avoid false alarms but short enough to protect equipment promptly (10-30 "
+"seconds recommended)."
+msgstr ""
+"**Задайте подходящие задержки**: настройте задержку выключения при погодной "
+"тревоге достаточно длинной, чтобы избежать ложных срабатываний, но "
+"достаточно короткой для своевременной защиты оборудования (рекомендуется 10–"
+"30 секунд)."
+
+#: ../../user_manual/ekos-scheduler.rst:740
+msgid ""
+"**Set Grace Period to 0 for Fully Automated Observatories**: Setting the "
+"grace period to **0** is the recommended configuration for unattended "
+"operation. The scheduler will wait indefinitely for weather to improve — "
+"even across multiple days — and resume automatically without any human "
+"intervention. If you prefer a finite grace period (e.g. to trigger a full "
+"INDI shutdown after N minutes), choose a value based on local weather "
+"patterns (30–120 minutes is typical for passing clouds or showers)."
+msgstr ""
+"**Для полностью автоматических обсерваторий задайте льготный период 0**: "
+"значение **0** — рекомендуемая настройка для работы без присмотра. "
+"Планировщик будет ждать улучшения погоды бесконечно — даже несколько дней — "
+"и автоматически возобновит работу без вмешательства человека. Если нужен "
+"конечный льготный период (например, чтобы выполнить полное завершение работы "
+"INDI через N минут), выберите значение с учётом местной погоды (30–120 минут "
+"— обычное значение при проходящих облаках или ливнях)."
+
+#: ../../user_manual/ekos-scheduler.rst:749
+msgid ""
+"**Test Your Setup**: Manually test weather shutdown and recovery before "
+"unattended operations."
+msgstr ""
+"**Проверьте настройку**: перед работой без присмотра вручную проверьте "
+"завершение работы и возобновление по погодным условиям."
+
+#: ../../user_manual/ekos-scheduler.rst:752
+msgid ""
+"**Monitor Connection Stability**: Ensure reliable weather station "
+"connectivity. The scheduler attempts reconnection if connection is lost."
+msgstr ""
+"**Следите за стабильностью подключения**: обеспечьте надёжное подключение к "
+"метеостанции. При потере связи планировщик пытается подключиться повторно."
+
+#: ../../user_manual/ekos-scheduler.rst:756
+msgid ""
+"**Use Standalone Weather Monitoring**: Configure a standalone weather device "
+"in scheduler settings to monitor conditions even before starting equipment, "
+"preventing unsafe startups."
+msgstr ""
+"**Используйте отдельный контроль погоды**: настройте отдельное устройство "
+"контроля погоды в параметрах планировщика, чтобы контролировать условия ещё "
+"до запуска оборудования и предотвращать небезопасный запуск."
+
+#: ../../user_manual/ekos-scheduler.rst:762
+msgid "Startup & Shutdown Scripts"
+msgstr "Сценарии запуска и завершения работы"
+
+#: ../../user_manual/ekos-scheduler.rst:766
+msgid "**NEW: Task Queue System**"
+msgstr "**Новое: система очереди задач**"
+
+#: ../../user_manual/ekos-scheduler.rst:768
+msgid ""
+"KStars now includes a modern :doc:`Task Queue System <ekos-scheduler-"
+"taskqueue>` that provides a powerful, template-based alternative to "
+"traditional startup and shutdown scripts. The Task Queue offers:"
+msgstr ""
+"В состав KStars теперь входит современная :doc:`система очереди задач <ekos-"
+"scheduler-taskqueue>` — мощная альтернатива традиционным сценариям запуска и "
+"завершения работы на основе шаблонов. Система очереди задач предоставляет:"
+
+#: ../../user_manual/ekos-scheduler.rst:772
+msgid "Visual interface for building automation sequences"
+msgstr "Визуальный интерфейс для построения последовательностей автоматизации"
+
+#: ../../user_manual/ekos-scheduler.rst:773
+msgid "Pre-built templates for common operations"
+msgstr "Готовые шаблоны для типовых операций"
+
+#: ../../user_manual/ekos-scheduler.rst:774
+msgid "Built-in error handling and retry logic"
+msgstr "Встроенная обработка ошибок и логика повторных попыток"
+
+#: ../../user_manual/ekos-scheduler.rst:775
+msgid "Real-time progress monitoring"
+msgstr "Отслеживание хода выполнения в реальном времени"
+
+#: ../../user_manual/ekos-scheduler.rst:776
+msgid "Device-aware task execution"
+msgstr "Выполнение задач с учётом устройства"
+
+#: ../../user_manual/ekos-scheduler.rst:778
+msgid ""
+"For new observatories or those looking to modernize their automation, we "
+"recommend exploring the Task Queue system. See the complete :doc:`Task Queue "
+"documentation <ekos-scheduler-taskqueue>` for details."
+msgstr ""
+"Для новых обсерваторий или тех, кто стремится модернизировать автоматизацию, "
+"рекомендуется изучить систему очереди задач. Подробнее см. в полной :doc:"
+"`документации по системе очереди задач <ekos-scheduler-taskqueue>`."
+
+#: ../../user_manual/ekos-scheduler.rst:782
+#: ../../user_manual/ekos-scheduler.rst:793
+msgid ""
+"Due to the uniqueness of each observatory, Ekos enables the user to select "
+"startup and shutdown scripts. The scripts take care of any necessary "
+"procedures that must take place on startup and shutdown stages. On startup, "
+"Ekos executes the startup scripts and only proceeds to the remainder of the "
+"startup procedure (unpark dome/unpark mount) if the script completes "
+"successfully. Conversely, the shutdown procedure begins with parking the "
+"mount & dome before executing the shutdown script as the final procedure."
+msgstr ""
+"Из-за уникальности каждой обсерватории Ekos позволяет выбрать сценарии "
+"запуска и завершения работы. Сценарии выполняют все необходимые процедуры, "
+"которые должны происходить на этапах запуска и завершения работы. При "
+"запуске Ekos выполняет сценарии запуска и переходит к остальной части "
+"процедуры запуска (снятие с парковки купола и монтировки) только в случае "
+"успешного завершения сценария. И наоборот, процедура завершения работы "
+"начинается с парковки монтировки и купола, а затем в качестве последней "
+"процедуры выполняется сценарий завершения работы."
+
+#: ../../user_manual/ekos-scheduler.rst:803
+msgid ""
+"Startup and shutdown scripts can be written any language that can be "
+"executed on the local machine. It must return 0 to report success, any other "
+"exist value is considered an error indicator. The script's standard output "
+"is also directed to Ekos logger window. The following is an sample demo "
+"startup script in Python:"
+msgstr ""
+"Сценарии запуска и завершения работы можно писать на любом языке, "
+"исполняемом на локальном компьютере. Для сообщения об успехе сценарий должен "
+"вернуть 0; любое другое значение завершения считается признаком ошибки. "
+"Стандартный вывод сценария также направляется в окно журнала Ekos. Ниже "
+"приведён пример демонстрационного сценария запуска на Python:"
+
+#: ../../user_manual/ekos-scheduler.rst:810
+msgid ""
+"#!/usr/bin/env python\n"
+"# -*- coding: utf-8 -*-\n"
+"\n"
+"import os\n"
+"import time\n"
+"import sys\n"
+"\n"
+"print \"Turning on observatory equipment...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"Checking safety switches...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"All systems are GO\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"exit(0)"
+msgstr ""
+"#!/usr/bin/env python\n"
+"# -*- coding: utf-8 -*-\n"
+"\n"
+"import os\n"
+"import time\n"
+"import sys\n"
+"\n"
+"print \"Turning on observatory equipment...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"Checking safety switches...\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"time.sleep(5)\n"
+"\n"
+"print \"All systems are GO\"\n"
+"sys.stdout.flush()\n"
+"\n"
+"exit(0)"
+
+#: ../../user_manual/ekos-scheduler.rst:835
+msgid ""
+"The startup and shutdown scripts must be *executable* in order for Ekos to "
+"invoke them (e.g. use **``chmod +x startup_script.py``** to mark the script "
+"as executable). Ekos Scheduler enables truly simple robotic operation "
+"without the need of any human intervention in any step of the process. "
+"Without human presence, it becomes increasingly critical to gracefully "
+"recover from failures in any stage of the observation run. Using Plasma "
+"notifications, the user can configure audible alarms and email notifications "
+"for the various events in the Scheduler."
+msgstr ""
+"Сценарии запуска и завершения работы должны быть *исполняемыми*, чтобы Ekos "
+"мог их вызывать (например, используйте **``chmod +x startup_script.py``**, "
+"чтобы пометить сценарий как исполняемый). Планировщик Ekos обеспечивает по-"
+"настоящему простое роботизированное управление без вмешательства человека на "
+"любом этапе процесса. Без присутствия человека всё более важным становится "
+"корректное восстановление после сбоев на любом этапе сеанса наблюдений. С "
+"помощью уведомлений Plasma можно настроить звуковые сигналы и уведомления по "
+"электронной почте для различных событий планировщика."
+
+#: ../../user_manual/ekos-scheduler.rst:849
+#: ../../user_manual/ekos-scheduler.rst:1001
+msgid "Mosaic Planner"
+msgstr "Планировщик мозаики"
+
+#: ../../user_manual/ekos-scheduler.rst:851
+msgid "|Mosaic Planner|"
+msgstr "|Планировщик мозаики|"
+
+#: ../../user_manual/ekos-scheduler.rst:853
+msgid ""
+"Hubble-like super wide field images of `galaxies <http://darkskyart.com/?"
+"page_id=96>`__ and nebulae are truly awe-inspiring, and while it takes great "
+"skills to obtain such images and process them; many notable names in the "
+"field of astrophotography employ gear that is not *vastly* different from "
+"yours or mine. I emphasize *vastly* because some do indeed have impressive "
+"equipment and dedicated observatories worth tens of the thousands of "
+"dollars. Nevertheless, many amateurs can obtain stellar wide-field images by "
+"combining smaller images into a single grand mosaic."
+msgstr ""
+"Сверхширокоугольные снимки `галактик <http://darkskyart.com/?page_id=96>`__ "
+"и туманностей, подобные снимкам «Хаббла», поистине впечатляют; и хотя "
+"получение и обработка таких изображений требуют большого мастерства, многие "
+"известные астрофотографы используют оборудование, не *кардинально* "
+"отличающееся от вашего или моего. Я подчёркиваю *кардинально*, потому что у "
+"некоторых действительно впечатляющее оборудование и собственные обсерватории "
+"стоимостью в десятки тысяч долларов. Тем не менее многие любители могут "
+"получать превосходные широкопольные снимки, объединяя небольшие изображения "
+"в одну большую мозаику."
+
+#: ../../user_manual/ekos-scheduler.rst:865
+msgid ""
+"We are often limited by our camera+telescope Field of View (FOV). By "
+"increasing FOV by means of a focal reducer or a shorter tube, we gain a "
+"larger sky coverage at the expense of spatial resolution. At the same time, "
+"many attractive wide-field targets span multiple FOVs across the sky. "
+"Without any changes to your astrophotography gear, it is possible to create "
+"a super mosaic image *stitched* together from several smaller images. There "
+"are two major steps to accomplish a super mosaic image:"
+msgstr ""
+"Возможности съёмки часто ограничены полем зрения (FOV) системы «камера + "
+"телескоп». Увеличивая поле зрения с помощью фокального редуктора или более "
+"короткой трубы, можно получить больший охват неба за счёт пространственного "
+"разрешения. В то же время многие привлекательные широкопольные объекты "
+"занимают на небе несколько полей зрения. Без каких-либо изменений в "
+"астрофотографическом оборудовании можно создать огромную мозаику, *сшитую* "
+"из нескольких небольших изображений. Для этого нужно выполнить два основных "
+"шага:"
+
+#: ../../user_manual/ekos-scheduler.rst:875
+msgid ""
+"Capture multiple images spanning the target with some overlap between "
+"images. The overlap is necessary to enable the processing software from "
+"aligning and joining the sub-images."
+msgstr ""
+"Съёмка нескольких изображений, охватывающих цель, с частичным перекрытием "
+"между изображениями. Перекрытие необходимо, чтобы программа обработки могла "
+"совместить и объединить отдельные изображения."
+
+#: ../../user_manual/ekos-scheduler.rst:880
+msgid "Process the images and *stitch* them into a super mosaic image."
+msgstr "Обработка изображений и их *сшивание* в огромную мозаику."
+
+#: ../../user_manual/ekos-scheduler.rst:883
+msgid ""
+"The 2nd step is handled by image processing applications such as `PixInsight "
+"<https://pixinsight.com>`__, among others, and will not be the topic of "
+"discussion here. The first step can be accomplished in Ekos Scheduler where "
+"it creates a mosaic suitable for your equipment and in accordance with the "
+"desired field of view. Not only Ekos creates the mosaic panels for your "
+"target, but it also constructs the corresponding observatory jobs required "
+"to capture all the images. This greatly facilitates the logistics of "
+"capturing many images with different filters and calibration frames across a "
+"wide area of the sky."
+msgstr ""
+"Второй этап выполняется приложениями для обработки изображений, в частности "
+"`PixInsight <https://pixinsight.com>`__ и другими, и здесь не "
+"рассматривается. Первый этап можно выполнить в планировщике Ekos, где "
+"создаётся мозаика, подходящая для имеющегося оборудования и соответствующая "
+"желаемому полю зрения. Ekos не только создаёт панели мозаики для объекта "
+"съёмки, но и формирует соответствующие задания обсерватории, необходимые для "
+"съёмки всех изображений. Это значительно упрощает организацию съёмки "
+"множества изображений с разными фильтрами и калибровочными кадрами на "
+"большой области неба."
+
+#: ../../user_manual/ekos-scheduler.rst:895
+msgid ""
+"The ``Mosaic Planner`` in the Ekos Scheduler will create multiple Scheduler "
+"jobs based on a central target. To toggle the planner, click on the ``Mosaic "
+"Planner`` button in Ekos Scheduler or KStars INDI toolbar as illustrated in "
+"the screenshot. The planner draws the Mosaic Panel directly unto the sky "
+"map. It is recommended to enable HiPS overlay for the best experience. The "
+"planner is composed of four stages:"
+msgstr ""
+"``Планировщик мозаики`` в планировщике Ekos создаёт несколько заданий "
+"планировщика на основе центральной цели. Чтобы включить или отключить его, "
+"нажмите кнопку ``Планировщик мозаики`` в планировщике Ekos или на панели "
+"инструментов INDI в KStars, как показано на снимке экрана. Планировщик "
+"рисует панели мозаики прямо на карте неба. Для наилучшего результата "
+"рекомендуется включить наложение HiPS. Планировщик состоит из четырёх этапов:"
+
+#: ../../user_manual/ekos-scheduler.rst:903
+msgid ""
+"**Confirm Equipment**: Ekos attempts to load equipment settings from INDI. "
+"If unsuccessful, you need to enter your equipment settings including your "
+"telescope focal length in addition to camera's width, height, and pixel "
+"dimensions. The settings are saved for future sessions."
+msgstr ""
+"**Подтверждение оборудования**: Ekos пытается загрузить параметры "
+"оборудования из INDI. Если это не удалось, потребуется ввести параметры "
+"оборудования, включая фокусное расстояние телескопа, а также ширину, высоту "
+"и размеры пикселей камеры. Параметры сохраняются для будущих сеансов."
+
+#: ../../user_manual/ekos-scheduler.rst:910
+msgid "|Confirm Equipment|"
+msgstr "|Подтверждение оборудования|"
+
+#: ../../user_manual/ekos-scheduler.rst:912
+msgid ""
+"**Adjust Grid**: Select the mosaic panel dimension and overlap percentage. "
+"The Mosaic Panel is updated accordingly on the sky map. Adjust the Position "
+"Angle to match the desired mosaic orientation in the sky. If the Position "
+"Angle is different from your camera's usual orientation, you may need to "
+"rotate the camera either manually or via a mechanized rotator when the "
+"scheduler jobs are executed. Tile transparency is automatically calculated "
+"by default but may be turned off and adjusted manually. To compute the "
+"mosaic field from the number of tiles, click the ``Cover FOV`` button. The "
+"mosaic panel can be centered in the sky map by clicking on the ``Recenter`` "
+"button."
+msgstr ""
+"**Настройка сетки**: выберите размеры мозаики и процент перекрытия. Мозаика "
+"на карте неба обновляется соответствующим образом. Настройте позиционный "
+"угол в соответствии с нужной ориентацией мозаики на небе. Если позиционный "
+"угол отличается от обычной ориентации камеры, при выполнении заданий "
+"планировщика может потребоваться повернуть камеру вручную или с помощью "
+"моторизованного поворотного устройства. Прозрачность панелей по умолчанию "
+"вычисляется автоматически, но её можно отключить и настроить вручную. Чтобы "
+"вычислить поле мозаики по числу панелей, нажмите кнопку ``Покрыть поле "
+"зрения``. Мозаику можно отцентрировать на карте неба, нажав кнопку "
+"``Отцентровать``."
+
+#: ../../user_manual/ekos-scheduler.rst:926
+msgid "|Select Grid|"
+msgstr "|Выбор сетки|"
+
+#: ../../user_manual/ekos-scheduler.rst:928
+msgid ""
+"A large overlap will make frame stitching easier during post-processing, but "
+"it requires more panes to cover the desired extent. However, if you already "
+"know the minimal amount of sub-frames your rejection algorithm will use "
+"during post-processing, you may want to increase the overlap to attain that "
+"amount on the areas covered by multiple panes. For instance, a 4x4 mosaic "
+"grid with 75% overlap has 16 sub-frames covering the central intersection, "
+"which is enough for Winsorized Sigma rejection. Although the resulting stack "
+"does not have the same height on all parts of the final frame, this method "
+"gives you control on signal-to-noise ratio and allows you to provide context "
+"to your target while exposing a relatively low number of captures."
+msgstr ""
+"Большое перекрытие упрощает сшивание кадров при постобработке, но для охвата "
+"нужной области требуется больше панелей. Однако если заранее известно "
+"минимальное число отдельных кадров, которое будет использовать алгоритм "
+"отбраковки при постобработке, перекрытие можно увеличить, чтобы получить "
+"такое число кадров на участках, покрытых несколькими панелями. Например, "
+"мозаичная сетка 4x4 с перекрытием 75 % содержит 16 отдельных кадров, "
+"покрывающих центральное пересечение, чего достаточно для отбраковки методом "
+"Winsorized Sigma. Хотя у получившегося стека высота на разных участках "
+"итогового кадра неодинакова, этот способ позволяет управлять соотношением "
+"сигнал/шум и снимать цель вместе с окружением при относительно небольшом "
+"числе снимков."
+
+#: ../../user_manual/ekos-scheduler.rst:944
+msgid ""
+"The large number drawn in the corner of each grid pane represents the order "
+"in which panes will be captured. The default S-shaped choice (west-east then "
+"alternating high-low/low-high moves), ensures minimal movement of the mount "
+"during observation. Uncheck ``Minimum mount`` move to revert to west-east/"
+"high-low movement only. The coordinates of each pane are rendered in their "
+"center as degrees, minutes and seconds. Finally, the angle each pane rotates "
+"from the center of the mosaic is displayed at the bottom. If your field of "
+"view is large, or if your mosaic is located close to a celestial pole, you "
+"may observe that rendered panes start rotating visibly due their horizontal "
+"position or high declination. Use ``the overlap`` to ensure panes cover the "
+"desired frame extents properly."
+msgstr ""
+"Большое число, нарисованное в углу каждой панели сетки, обозначает порядок, "
+"в котором будут сниматься панели. Выбор по умолчанию в форме буквы S (с "
+"запада на восток, затем чередующиеся переходы вверх-вниз/вниз-вверх) "
+"обеспечивает минимальное перемещение монтировки во время наблюдения. Снимите "
+"флажок перемещения ``Минимальное перемещение монтировки``, чтобы вернуться к "
+"перемещению только «запад — восток / вверх — вниз». Координаты каждой панели "
+"показываются в её центре в градусах, минутах и секундах. Наконец, внизу "
+"показывается угол поворота каждой панели относительно центра мозаики. Если "
+"поле зрения велико или мозаика расположена близко к небесному полюсу, можно "
+"заметить, что показываемые панели начинают заметно поворачиваться из-за их "
+"горизонтального положения или большого склонения. Используйте перекрытие, "
+"чтобы панели правильно покрывали нужные границы кадра."
+
+#: ../../user_manual/ekos-scheduler.rst:961
+msgid "|Scheduler Mosaic Tool - Large rotation|"
+msgstr "|Инструмент мозаики планировщика — большой поворот|"
+
+#: ../../user_manual/ekos-scheduler.rst:963
+msgid ""
+"**Adjust Grid**: Adjust Grid center by manually entering the J2000 center or "
+"by dragging the center of the mosaic on the sky map."
+msgstr ""
+"**Настройка сетки**: центр сетки можно скорректировать, введя вручную центр "
+"в J2000 или перетащив центр мозаики на карте неба."
+
+#: ../../user_manual/ekos-scheduler.rst:967
+msgid "|Adjust Grid|"
+msgstr "|Настройка сетки|"
+
+#: ../../user_manual/ekos-scheduler.rst:969
+msgid ""
+"**Create Jobs**: The final step is to select the sequence file and directory "
+"to store the images. Target field may be automatically filled but may be "
+"changed as desired. Select the steps each scheduler job should execute in "
+"sequence (Track -> Focus -> Align -> Guide -> Capture), and adjust the "
+"frequency of automatic alignment and focus routines that must be executed "
+"during the mosaic operation. For example, if ``Align Every`` is set to 2 "
+"Scheduler Jobs, then the first job will run the astrometry alignment, while "
+"the second job will skip it. When the third job is executed, alignment is "
+"performed again and so forth."
+msgstr ""
+"**Создание заданий**: последний шаг — выбрать файл последовательности и "
+"папку для сохранения изображений. Поле цели может заполняться автоматически, "
+"но его можно изменить по желанию. Выберите шаги, которые каждое задание "
+"планировщика должно выполнять по порядку (слежение -> фокусировка -> "
+"выравнивание -> гидирование -> съёмка), и настройте частоту процедур "
+"автоматического выравнивания и фокусировки, которые должны выполняться во "
+"время мозаичной съёмки. Например, если для ``Align Every`` задано 2 задания "
+"планировщика, первое задание выполнит астрометрическую привязку, а второе "
+"пропустит её. При выполнении третьего задания привязка выполняется снова и "
+"так далее."
+
+#: ../../user_manual/ekos-scheduler.rst:982
+msgid ""
+"If you want the different mosaic tile jobs to alternate, then fill in the "
+"group name with an identifier that all the tile jobs will share, and select "
+"a repeating completion condition."
+msgstr ""
+"Чтобы задания панелей мозаики чередовались, укажите в качестве имени группы "
+"идентификатор, общий для всех заданий панелей, и выберите повторяющееся "
+"условие завершения."
+
+#: ../../user_manual/ekos-scheduler.rst:987
+msgid "|Create Jobs|"
+msgstr "|Создание заданий|"
+
+#: ../../user_manual/ekos-scheduler.rst:989
+msgid ""
+"Click ``Create Jobs`` to generate mosaic scheduler jobs and add them to the "
+"schedule queue. You can further edit the jobs individually, as you would "
+"normal Scheduler jobs."
+msgstr ""
+"Чтобы создать задания планировщика для мозаики и добавить их в очередь "
+"планировщика, нажмите ``Создать задания``. После этого задания можно "
+"редактировать по отдельности, как обычные задания планировщика."
+
+#: ../../user_manual/ekos-scheduler.rst:993
+msgid "Ekos Scheduler Module"
+msgstr "Модуль планировщика Ekos"
+
+#: ../../user_manual/ekos-scheduler.rst:993
+msgid ".. image:: /images/ekos_scheduler.png"
+msgstr ".. image:: /images/ekos_scheduler.png"
+
+#: ../../user_manual/ekos-scheduler.rst:994
+msgid "Scheduler Offset Settings"
+msgstr "Параметры смещения планировщика"
+
+#: ../../user_manual/ekos-scheduler.rst:994
+msgid ".. image:: /images/ekos_scheduler_offset_settings.png"
+msgstr ".. image:: /images/ekos_scheduler_offset_settings.png"
+
+#: ../../user_manual/ekos-scheduler.rst:995
+msgid "Scheduler Alignment Settings"
+msgstr "Параметры выравнивания планировщика"
+
+#: ../../user_manual/ekos-scheduler.rst:995
+msgid ".. image:: /images/ekos_scheduler_alignment_settings.png"
+msgstr ".. image:: /images/ekos_scheduler_alignment_settings.png"
+
+#: ../../user_manual/ekos-scheduler.rst:996
+msgid "Scheduler Jobs Settings"
+msgstr "Параметры заданий планировщика"
+
+#: ../../user_manual/ekos-scheduler.rst:996
+msgid ".. image:: /images/ekos_scheduler_jobs_settings.png"
+msgstr ".. image:: /images/ekos_scheduler_jobs_settings.png"
+
+#: ../../user_manual/ekos-scheduler.rst:997
+msgid "Scheduler Scripts Settings"
+msgstr "Параметры сценариев планировщика"
+
+#: ../../user_manual/ekos-scheduler.rst:997
+msgid ".. image:: /images/ekos_scheduler_scripts_settings.png"
+msgstr ".. image:: /images/ekos_scheduler_scripts_settings.png"
+
+#: ../../user_manual/ekos-scheduler.rst:998
+msgid "Scheduler Weather Settings"
+msgstr "Параметры погодных условий планировщика"
+
+#: ../../user_manual/ekos-scheduler.rst:998
+msgid ".. image:: /images/ekos_scheduler_weather_settings.png"
+msgstr ".. image:: /images/ekos_scheduler_weather_settings.png"
+
+#: ../../user_manual/ekos-scheduler.rst:999
+msgid ".. image:: /images/ekos_capture_sequence_editor.png"
+msgstr ".. image:: /images/ekos_capture_sequence_editor.png"
+
+#: ../../user_manual/ekos-scheduler.rst:1000
+msgid "Scheduler + Planner"
+msgstr "Планировщик + Планирование"
+
+#: ../../user_manual/ekos-scheduler.rst:1000
+msgid ".. image:: /images/scheduler_planner.png"
+msgstr ".. image:: /images/scheduler_planner.png"
+
+#: ../../user_manual/ekos-scheduler.rst:1001
+msgid ".. image:: /images/mosaic_planner.png"
+msgstr ".. image:: /images/mosaic_planner.png"
+
+#: ../../user_manual/ekos-scheduler.rst:1002
+msgid "Confirm Equipment"
+msgstr "Подтверждение оборудования"
+
+#: ../../user_manual/ekos-scheduler.rst:1002
+msgid ".. image:: /images/mosaic_confirm_equipment.png"
+msgstr ".. image:: /images/mosaic_confirm_equipment.png"
+
+#: ../../user_manual/ekos-scheduler.rst:1003
+msgid "Select Grid"
+msgstr "Выбор сетки"
+
+#: ../../user_manual/ekos-scheduler.rst:1003
+msgid ".. image:: /images/mosaic_select_grid.png"
+msgstr ".. image:: /images/mosaic_select_grid.png"
+
+#: ../../user_manual/ekos-scheduler.rst:1004
+msgid "Scheduler Mosaic Tool - Large rotation"
+msgstr "Инструмент мозаики планировщика — большой поворот"
+
+#: ../../user_manual/ekos-scheduler.rst:1004
+msgid ".. image:: /images/mosaic_close_pole.png"
+msgstr ".. image:: /images/mosaic_close_pole.png"
+
+#: ../../user_manual/ekos-scheduler.rst:1005
+msgid "Adjust Grid"
+msgstr "Настройка сетки"
+
+#: ../../user_manual/ekos-scheduler.rst:1005
+msgid ".. image:: /images/mosaic_adjust_grid.png"
+msgstr ".. image:: /images/mosaic_adjust_grid.png"
+
+#: ../../user_manual/ekos-scheduler.rst:1006
+msgid "Create Jobs"
+msgstr "Создание заданий"
+
+#: ../../user_manual/ekos-scheduler.rst:1006
+msgid ".. image:: /images/mosaic_create_jobs.png"
+msgstr ".. image:: /images/mosaic_create_jobs.png"
