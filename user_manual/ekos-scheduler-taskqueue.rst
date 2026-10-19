@@ -110,8 +110,11 @@ Understanding Collections
 
 The system provides two collections:
 
-- **Observatory Startup**: Unparks dome, unparks mount, and opens dust cap (if applicable)
-- **Observatory Shutdown**: Parks mount, parks dome, and closes dust cap (if applicable)
+- **Observatory Startup**: Unparks dome, opens dome shutter, unparks mount, and opens dust cap
+- **Observatory Shutdown**: Closes dust cap, parks mount, closes dome shutter, and parks dome
+
+Tasks for equipment you do not have are skipped. For example, the shutter tasks are skipped for a
+dome without a shutter, such as a roll-off roof.
 
 Collections are loaded as complete queues, ready to execute. You can load a collection and then customize it by adding, removing, or reordering tasks.
 
@@ -128,6 +131,12 @@ For example:
 - A "Set Dome Azimuth" template requires the Dome interface
 
 This ensures you cannot accidentally assign incompatible devices to tasks.
+
+Some templates also need an optional capability that not every device of that type has. For
+example, the "Open Shutter" and "Close Shutter" templates need a dome with a shutter. When the
+queue reaches such a task and the connected device does not have the capability, the task is
+marked **SKIPPED** and the queue continues. If the device has the capability but the operation
+fails, for example a shutter that does not close, the task's failure action applies as usual.
 
 Getting Started
 
@@ -160,7 +169,7 @@ To add a task to your queue:
    
    - **Mount**: Park, unpark.
    - **Camera**: Cooling, warming.
-   - **Dome**: Park, unpark
+   - **Dome**: Park, unpark, open shutter, close shutter
    - **Dust Cap**: Park, unpark
 
 3. Browse or search for the desired template
@@ -270,7 +279,8 @@ Each task and action displays a status indicator:
 - **COMPLETED** (Green): Task finished successfully
 - **FAILED** (Red): Task failed after all retries
 - **ABORTED** (Red): Task manually stopped
-- **SKIPPED** (Gray): Task skipped due to conditions
+- **SKIPPED** (Gray): Task skipped due to conditions, for example no matching device, or a device
+  without the required capability (such as a dome without a shutter)
 
 **Action Status:**
 
@@ -409,21 +419,29 @@ A typical startup sequence prepares all equipment for imaging:
    - Timeout: 60 seconds
    - Failure Action: ABORT_QUEUE (cannot proceed without dome access)
 
-2. **Unpark Mount**
+2. **Open Dome Shutter** (if applicable)
+   
+   - Template: "Dome - Open Shutter"
+   - Device: Your dome controller
+   - Timeout: 120 seconds
+   - Failure Action: ABORT_QUEUE (cannot image with the shutter closed)
+   - Skipped automatically if the dome has no shutter
+
+3. **Unpark Mount**
    
    - Template: "Mount - Unpark"
    - Device: Your telescope mount
    - Timeout: 30 seconds
    - Failure Action: ABORT_QUEUE (critical for all operations)
 
-3. **Enable Mount Tracking**
+4. **Enable Mount Tracking**
    
    - Template: "Mount - Enable Tracking"
    - Device: Your telescope mount
    - Timeout: 10 seconds
    - Failure Action: CONTINUE (can enable later if needed)
 
-4. **Enable Camera Cooling**
+5. **Enable Camera Cooling**
    
    - Template: "Camera - Set Cooling"
    - Device: Your CCD camera
@@ -433,7 +451,7 @@ A typical startup sequence prepares all equipment for imaging:
    - Timeout: 600 seconds (10 minutes for cooling)
    - Failure Action: CONTINUE (can image without optimal cooling)
 
-5. **Wait for Temperature Stabilization**
+6. **Wait for Temperature Stabilization**
    
    - Template: "Camera - Wait for Temperature"
    - Device: Your CCD camera
@@ -443,7 +461,7 @@ A typical startup sequence prepares all equipment for imaging:
    - Timeout: 300 seconds
    - Failure Action: CONTINUE
 
-6. **Turn On Flat Panel** (if applicable)
+7. **Turn On Flat Panel** (if applicable)
    
    - Template: "Flat Panel - Enable"
    - Device: Your flat panel
@@ -479,14 +497,22 @@ A safe shutdown sequence protects equipment and conserves power:
    - Timeout: 60 seconds
    - Failure Action: ABORT_QUEUE (critical for safety)
 
-4. **Park Dome** (if applicable)
+4. **Close Dome Shutter** (if applicable)
+   
+   - Template: "Dome - Close Shutter"
+   - Device: Your dome controller
+   - Timeout: 120 seconds
+   - Failure Action: ABORT_QUEUE (critical for protection)
+   - Skipped automatically if the dome has no shutter
+
+5. **Park Dome** (if applicable)
    
    - Template: "Dome - Park"
    - Device: Your dome controller
    - Timeout: 120 seconds
    - Failure Action: ABORT_QUEUE (critical for protection)
 
-5. **Turn Off Equipment Power** (via script)
+6. **Turn Off Equipment Power** (via script)
    
    - Template: "Script - Execute"
    - Parameters:
