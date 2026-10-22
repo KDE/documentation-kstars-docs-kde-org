@@ -1,21 +1,21 @@
 # Copyright (C) licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
 # This file is distributed under the same license as the KStars Handbook package.
 #
-# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-20 02:35+0000\n"
-"PO-Revision-Date: 2025-11-22 13:59-0300\n"
+"PO-Revision-Date: 2026-10-20 07:40-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:3
 msgid "Task Queue System"
@@ -398,34 +398,30 @@ msgid "The system provides two collections:"
 msgstr "O sistema oferece duas coleções:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:113
-#, fuzzy
-#| msgid ""
-#| "**Observatory Startup**: Unparks dome, unparks mount, and opens dust cap "
-#| "(if applicable)"
 msgid ""
 "**Observatory Startup**: Unparks dome, opens dome shutter, unparks mount, "
 "and opens dust cap"
 msgstr ""
-"**Inicialização do Observatório**: Desbloqueio da cúpula, desbloqueio da "
-"montagem e abertura a tampa anti-poeira (se aplicável)"
+"**Inicialização do Observatório**: Desbloqueio da cúpula, abertura da "
+"cúpula, desbloqueio da montagem e abertura a tampa anti-poeira"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:114
-#, fuzzy
-#| msgid ""
-#| "**Observatory Shutdown**: Parks mount, parks dome, and closes dust cap "
-#| "(if applicable)"
 msgid ""
 "**Observatory Shutdown**: Closes dust cap, parks mount, closes dome shutter, "
 "and parks dome"
 msgstr ""
-"**Desligamento do Observatório**: Bloqueio da montagem, bloqueio da cúpula e "
-"fechamento da tampa anti-poeira (se aplicável)"
+"**Desligamento do Observatório**: Fechamento da tampa anti-poeira, bloqueio "
+"da montagem, fechamento da cúpula e bloqueio da cúpula"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:116
 msgid ""
 "Tasks for equipment you do not have are skipped. For example, the shutter "
 "tasks are skipped for a dome without a shutter, such as a roll-off roof."
 msgstr ""
+"Tarefas referentes a equipamentos que você não possui são ignoradas. Por "
+"exemplo, as tarefas relacionadas à abertura/fechamento são ignoradas no caso "
+"de uma cúpula que não dispõe desse mecanismo, como ocorre com um teto "
+"retrátil."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:119
 msgid ""
@@ -483,6 +479,14 @@ msgid ""
 "the operation fails, for example a shutter that does not close, the task's "
 "failure action applies as usual."
 msgstr ""
+"Alguns modelos também exigem uma funcionalidade opcional que nem todo "
+"dispositivo desse tipo possui. Por exemplo, os modelos \"Abrir obturador\" e "
+"\"Fechar obturador\" requerem uma cúpula equipada com um obturador. Quando a "
+"fila chega a uma tarefa desse tipo e o dispositivo conectado não dispõe da "
+"funcionalidade necessária, a tarefa é marcada como **IGNORADA** e o "
+"processamento da fila continua. Se o dispositivo possuir a funcionalidade, "
+"mas a operação falhar — por exemplo, caso um obturador não feche —, a ação "
+"definida para falhas na tarefa será aplicada normalmente."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:141
 msgid "Getting Started"
@@ -587,10 +591,8 @@ msgid "**Camera**: Cooling, warming."
 msgstr "**Câmera**: Resfriamento, aquecimento."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:172
-#, fuzzy
-#| msgid "**Dome**: Park, unpark"
 msgid "**Dome**: Park, unpark, open shutter, close shutter"
-msgstr "**Cúpula**: Bloqueio, desbloqueio"
+msgstr "**Cúpula**: Bloqueio, desbloqueio, abrir obturador, fechar obturador"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:173
 msgid "**Dust Cap**: Park, unpark"
@@ -914,6 +916,9 @@ msgid ""
 "device, or a device without the required capability (such as a dome without "
 "a shutter)"
 msgstr ""
+"**IGNORADA** (Cinza): Tarefa ignorada devido a certas condições; por "
+"exemplo, ausência de um dispositivo compatível ou um dispositivo que não "
+"possui a funcionalidade necessária (como uma cúpula sem obturador)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:285
 msgid "**Action Status:**"
@@ -1312,16 +1317,12 @@ msgstr ""
 "cúpula)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:422
-#, fuzzy
-#| msgid "**Unpark Dome** (if applicable)"
 msgid "**Open Dome Shutter** (if applicable)"
-msgstr "**Desbloquear a cúpula** (se aplicável)"
+msgstr "**Abrir obturador da cúpula** (se aplicável)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:424
-#, fuzzy
-#| msgid "Template: \"Dome - Unpark\""
 msgid "Template: \"Dome - Open Shutter\""
-msgstr "Modelo: \"Cúpula - Desbloquear\""
+msgstr "Modelo: \"Cúpula - Abrir obturador\""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:426
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:504
@@ -1330,17 +1331,15 @@ msgid "Timeout: 120 seconds"
 msgstr "Tempo limite: 120 segundos"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:427
-#, fuzzy
-#| msgid "Failure Action: ABORT_QUEUE (cannot proceed without dome access)"
 msgid "Failure Action: ABORT_QUEUE (cannot image with the shutter closed)"
 msgstr ""
-"Ação em caso de falha: ABORT_QUEUE (não é possível prosseguir sem acesso à "
-"cúpula)"
+"Ação em caso de falha: ABORT_QUEUE (não é possível obter imagem com o "
+"obturador fechado)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:428
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:506
 msgid "Skipped automatically if the dome has no shutter"
-msgstr ""
+msgstr "Ignorado automaticamente se a cúpula não possuir um obturador"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:430
 msgid "**Unpark Mount**"
@@ -1512,16 +1511,12 @@ msgid "Failure Action: ABORT_QUEUE (critical for safety)"
 msgstr "Ação em caso de falha: ABORT_QUEUE (crítica para segurança)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:500
-#, fuzzy
-#| msgid "**Park Dome** (if applicable)"
 msgid "**Close Dome Shutter** (if applicable)"
-msgstr "**Bloquear a cúpula** (se aplicável)"
+msgstr "**Fechar o obturador da cúpula** (se aplicável)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:502
-#, fuzzy
-#| msgid "Template: \"Dome - Park\""
 msgid "Template: \"Dome - Close Shutter\""
-msgstr "Modelo: \"Cúpula - Bloquear\""
+msgstr "Modelo: \"Cúpula - Fechar obturador\""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:505
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:513

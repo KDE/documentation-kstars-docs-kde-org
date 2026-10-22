@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-20 02:35+0000\n"
-"PO-Revision-Date: 2026-09-29 12:38+0200\n"
+"PO-Revision-Date: 2026-10-20 10:32+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -400,34 +400,29 @@ msgid "The system provides two collections:"
 msgstr "El sistema proporciona dues col·leccions:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:113
-#, fuzzy
-#| msgid ""
-#| "**Observatory Startup**: Unparks dome, unparks mount, and opens dust cap "
-#| "(if applicable)"
 msgid ""
 "**Observatory Startup**: Unparks dome, opens dome shutter, unparks mount, "
 "and opens dust cap"
 msgstr ""
-"**Inici d'observatori**: desaparca la cúpula, desaparca la muntura i obre la "
-"tapa de la pols (si és aplicable)"
+"**Inici d'observatori**: desaparca la cúpula, obre l'obturador de la cúpula, "
+"desaparca la muntura i obre la tapa de la pols"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:114
-#, fuzzy
-#| msgid ""
-#| "**Observatory Shutdown**: Parks mount, parks dome, and closes dust cap "
-#| "(if applicable)"
 msgid ""
 "**Observatory Shutdown**: Closes dust cap, parks mount, closes dome shutter, "
 "and parks dome"
 msgstr ""
-"**Tancament de l'observatori**: aparca la muntura, aparca la cúpula i tanca "
-"la tapa de la pols (si és el cas)"
+"**Tancament de l'observatori**: tanca la tapa de la pols, aparca la muntura, "
+"tanca l'obturador de la cúpula i aparca la cúpula"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:116
 msgid ""
 "Tasks for equipment you do not have are skipped. For example, the shutter "
 "tasks are skipped for a dome without a shutter, such as a roll-off roof."
 msgstr ""
+"S'ometen les tasques per a equips que no teniu. Per exemple, les tasques de "
+"l'obturador s'ometen per a una cúpula sense obturador, com ara un sostre "
+"enrotllable."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:119
 msgid ""
@@ -484,6 +479,13 @@ msgid ""
 "the operation fails, for example a shutter that does not close, the task's "
 "failure action applies as usual."
 msgstr ""
+"Algunes plantilles també necessiten una capacitat opcional que no tots els "
+"dispositius d'aquest tipus tenen. Per exemple, les plantilles «Open Shutter» "
+"i «Close Shutter» necessiten una cúpula amb un obturador. Quan la cua arriba "
+"a aquesta tasca i el dispositiu connectat no té la capacitat, la tasca es "
+"marca **S'ha omès** i la cua continua. Si el dispositiu té la capacitat però "
+"l'operació falla, per exemple un obturador que no es tanca, l'acció de "
+"fallada de la tasca s'aplica com de costum."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:141
 msgid "Getting Started"
@@ -588,10 +590,8 @@ msgid "**Camera**: Cooling, warming."
 msgstr "**Càmera**: refrigeració, escalfament."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:172
-#, fuzzy
-#| msgid "**Dome**: Park, unpark"
 msgid "**Dome**: Park, unpark, open shutter, close shutter"
-msgstr "**Cúpula**: aparca, desaparca"
+msgstr "**Cúpula**: aparca, desaparca, obre l'obturador, tanca l'obturador"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:173
 msgid "**Dust Cap**: Park, unpark"
@@ -913,6 +913,9 @@ msgid ""
 "device, or a device without the required capability (such as a dome without "
 "a shutter)"
 msgstr ""
+"**OMESA** (Gris): La tasca s'ha omès per les condicions, per exemple, no "
+"coincideix cap dispositiu o un dispositiu sense la capacitat requerida (com "
+"una cúpula sense obturador)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:285
 msgid "**Action Status:**"
@@ -1310,16 +1313,12 @@ msgstr ""
 "Fallada de l'acció: ABORT_QUEUE (no es pot continuar sense accés a la cúpula)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:422
-#, fuzzy
-#| msgid "**Unpark Dome** (if applicable)"
 msgid "**Open Dome Shutter** (if applicable)"
-msgstr "**Desaparca la cúpula** (si és aplicable)"
+msgstr "**Obre l'obturador de la cúpula** (si és aplicable)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:424
-#, fuzzy
-#| msgid "Template: \"Dome - Unpark\""
 msgid "Template: \"Dome - Open Shutter\""
-msgstr "Plantilla: «Dome - Unpark»"
+msgstr "Plantilla: «Dome - Open Shutter»"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:426
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:504
@@ -1328,16 +1327,15 @@ msgid "Timeout: 120 seconds"
 msgstr "Temps d'espera: 120 segons"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:427
-#, fuzzy
-#| msgid "Failure Action: ABORT_QUEUE (cannot proceed without dome access)"
 msgid "Failure Action: ABORT_QUEUE (cannot image with the shutter closed)"
 msgstr ""
-"Fallada de l'acció: ABORT_QUEUE (no es pot continuar sense accés a la cúpula)"
+"Fallada de l'acció: ABORT_QUEUE (no pot obtenir imatges amb l'obturador "
+"tancat)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:428
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:506
 msgid "Skipped automatically if the dome has no shutter"
-msgstr ""
+msgstr "S'omet automàticament si la cúpula no té obturador"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:430
 msgid "**Unpark Mount**"
@@ -1506,16 +1504,12 @@ msgid "Failure Action: ABORT_QUEUE (critical for safety)"
 msgstr "Fallada de l'acció: ABORT_QUEUE (crítica per seguretat)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:500
-#, fuzzy
-#| msgid "**Park Dome** (if applicable)"
 msgid "**Close Dome Shutter** (if applicable)"
-msgstr "**Aparca la cúpula** (si és aplicable)"
+msgstr "**Tanca l'obturador de la cúpula** (si és aplicable)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:502
-#, fuzzy
-#| msgid "Template: \"Dome - Park\""
 msgid "Template: \"Dome - Close Shutter\""
-msgstr "Plantilla: «Dome - Park»"
+msgstr "Plantilla: «Dome - Close Shutter»"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:505
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:513

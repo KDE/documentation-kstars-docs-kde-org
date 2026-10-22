@@ -1,13 +1,13 @@
 # Copyright (C) licensed under the GNU Free Documentation License 1.3+ unless stated otherwise
 # This file is distributed under the same license as the KStars Handbook package.
 #
-# SPDX-FileCopyrightText: 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2025-2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: KStars Handbook 3.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-20 02:35+0000\n"
-"PO-Revision-Date: 2025-12-18 11:44+0100\n"
+"PO-Revision-Date: 2026-10-20 13:19+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:3
 msgid "Task Queue System"
@@ -399,34 +399,30 @@ msgid "The system provides two collections:"
 msgstr "Het systeem levert twee verzamelingen:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:113
-#, fuzzy
-#| msgid ""
-#| "**Observatory Startup**: Unparks dome, unparks mount, and opens dust cap "
-#| "(if applicable)"
 msgid ""
 "**Observatory Startup**: Unparks dome, opens dome shutter, unparks mount, "
 "and opens dust cap"
 msgstr ""
-"**Opstartprocedure observatorium**: ontgrendel de koepel, ontgrendel de "
-"opstelling en open de stofkap (indien van toepassing)"
+"**Opstartprocedure observatorium**: ontgrendelt de koepel, opent het "
+"koepelluik, ontgrendelt de opstelling en opent de stofkap"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:114
-#, fuzzy
-#| msgid ""
-#| "**Observatory Shutdown**: Parks mount, parks dome, and closes dust cap "
-#| "(if applicable)"
 msgid ""
 "**Observatory Shutdown**: Closes dust cap, parks mount, closes dome shutter, "
 "and parks dome"
 msgstr ""
-"**Afsluiting van het observatorium**: vergrendel de opstelling, vergrendel "
-"de koepel en sluit de stofkap (indien van toepassing)"
+"**Afsluiting van het observatorium**: sluit de stofkap, vergrendelt de "
+"opstelling, sluit het koepelluik en vergrendelt de koepel"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:116
 msgid ""
 "Tasks for equipment you do not have are skipped. For example, the shutter "
 "tasks are skipped for a dome without a shutter, such as a roll-off roof."
 msgstr ""
+"Taken voor apparatuur waarover u niet beschikt, worden overgeslagen. Zo "
+"worden bijvoorbeeld taken met betrekking tot een koepelluik overgeslagen bij "
+"een koepel die niet over een dergelijk luik beschikt, zoals bij een "
+"verschuifbaar dak."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:119
 msgid ""
@@ -482,6 +478,15 @@ msgid ""
 "the operation fails, for example a shutter that does not close, the task's "
 "failure action applies as usual."
 msgstr ""
+"Sommige sjablonen vereisen een optionele functionaliteit waarover niet elk "
+"apparaat van dat type beschikt. Zo vereisen de sjablonen \"Luik openen\" en "
+"\"Luik sluiten\" een koepel die is uitgerust met een luik. Wanneer de "
+"wachtrij bij een dergelijke taak aankomt en het verbonden apparaat niet over "
+"de benodigde functionaliteit beschikt, wordt de taak gemarkeerd als "
+"**OVERGESLAGEN** (SKIPPED) en wordt de wachtrij voortgezet. Als het apparaat "
+"wel over de functionaliteit beschikt, maar de bewerking mislukt – "
+"bijvoorbeeld omdat een luik niet sluit – dan treedt de bijbehorende "
+"foutafhandeling voor de taak op de gebruikelijke wijze in werking."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:141
 msgid "Getting Started"
@@ -584,10 +589,8 @@ msgid "**Camera**: Cooling, warming."
 msgstr "**Camera**: Koeling, verwarming."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:172
-#, fuzzy
-#| msgid "**Dome**: Park, unpark"
 msgid "**Dome**: Park, unpark, open shutter, close shutter"
-msgstr "**Koepel**: vergrendelen, ontgrendelen"
+msgstr "**Koepel**: vergrendelen, ontgrendelen, luik openen, luik sluiten"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:173
 msgid "**Dust Cap**: Park, unpark"
@@ -914,6 +917,10 @@ msgid ""
 "device, or a device without the required capability (such as a dome without "
 "a shutter)"
 msgstr ""
+"**OVERGESLAGEN** (Grijs): Taak overgeslagen vanwege bepaalde voorwaarden; "
+"bijvoorbeeld omdat er geen passend apparaat is gevonden, of omdat een "
+"apparaat niet over de vereiste functionaliteit beschikt (zoals een koepel "
+"zonder luik)."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:285
 msgid "**Action Status:**"
@@ -1312,16 +1319,12 @@ msgstr ""
 "tot koepel)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:422
-#, fuzzy
-#| msgid "**Unpark Dome** (if applicable)"
 msgid "**Open Dome Shutter** (if applicable)"
-msgstr "**Ontgrendel koepel** (indien van toepassing)"
+msgstr "**Koepelluik openen** (indien van toepassing)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:424
-#, fuzzy
-#| msgid "Template: \"Dome - Unpark\""
 msgid "Template: \"Dome - Open Shutter\""
-msgstr "Sjabloon: \"Koepel - ontgrendelen\""
+msgstr "Sjabloon: \"Koepel - luik openen\""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:426
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:504
@@ -1330,17 +1333,15 @@ msgid "Timeout: 120 seconds"
 msgstr "Timeout: 120 seconden"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:427
-#, fuzzy
-#| msgid "Failure Action: ABORT_QUEUE (cannot proceed without dome access)"
 msgid "Failure Action: ABORT_QUEUE (cannot image with the shutter closed)"
 msgstr ""
-"Actie bij mislukken: WACHTRIJ_AFBREKEN (kan niet doorgaan zonder toegevoegd "
-"tot koepel)"
+"Actie bij mislukken: WACHTRIJ_AFBREKEN (kan niet opnemen met een gesloten "
+"luik)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:428
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:506
 msgid "Skipped automatically if the dome has no shutter"
-msgstr ""
+msgstr "Automatisch overgeslagen als de koepel geen luik heeft"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:430
 msgid "**Unpark Mount**"
@@ -1508,16 +1509,12 @@ msgid "Failure Action: ABORT_QUEUE (critical for safety)"
 msgstr "Actie bij mislukken: WACHTRIJ_AFBREKEN (kritiek voor veiligheid)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:500
-#, fuzzy
-#| msgid "**Park Dome** (if applicable)"
 msgid "**Close Dome Shutter** (if applicable)"
-msgstr "**Vergrendel koepel** (indien van toepassing)"
+msgstr "**Koepelluik sluiten** (indien van toepassing)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:502
-#, fuzzy
-#| msgid "Template: \"Dome - Park\""
 msgid "Template: \"Dome - Close Shutter\""
-msgstr "Sjabloon: \"Koepel - vergrendelen\""
+msgstr "Sjabloon: \"Koepel - luik sluiten\""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:505
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:513

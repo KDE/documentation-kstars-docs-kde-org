@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-20 02:35+0000\n"
-"PO-Revision-Date: 2025-11-07 14:00+0100\n"
+"PO-Revision-Date: 2026-10-20 11:57+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.2\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:3
 msgid "Task Queue System"
@@ -396,34 +396,28 @@ msgid "The system provides two collections:"
 msgstr "Sistem ponuja dve zbirki:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:113
-#, fuzzy
-#| msgid ""
-#| "**Observatory Startup**: Unparks dome, unparks mount, and opens dust cap "
-#| "(if applicable)"
 msgid ""
 "**Observatory Startup**: Unparks dome, opens dome shutter, unparks mount, "
 "and opens dust cap"
 msgstr ""
-"**Zagon observatorija**: Odparkira kupolo, odparkira montažo in odpre "
-"protiprašni pokrov (če je primerno)"
+"**Zagon observatorija**: Odparkira kupolo, odpre kupolo, odparkira montažo "
+"in odpre protiprašni pokrov"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:114
-#, fuzzy
-#| msgid ""
-#| "**Observatory Shutdown**: Parks mount, parks dome, and closes dust cap "
-#| "(if applicable)"
 msgid ""
 "**Observatory Shutdown**: Closes dust cap, parks mount, closes dome shutter, "
 "and parks dome"
 msgstr ""
-"**Zaustavitev observatorija**: Parkira montažo, parkira kupolo in zapre "
-"protiprašni pokrov (Če je primerno)"
+"**Zaustavitev observatorija**: Zapre protiprašni pokrov, parkira montažo in "
+"zapre kupolo"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:116
 msgid ""
 "Tasks for equipment you do not have are skipped. For example, the shutter "
 "tasks are skipped for a dome without a shutter, such as a roll-off roof."
 msgstr ""
+"Opravila za opremo, ki je nimate, so preskočena. Na primer, naloge rolet so "
+"preskočene za kupolo brez rolet, kot je na primer dvižna streha."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:119
 msgid ""
@@ -478,6 +472,13 @@ msgid ""
 "the operation fails, for example a shutter that does not close, the task's "
 "failure action applies as usual."
 msgstr ""
+"Nekatere predloge potrebujejo tudi izbirno zmogljivost, ki je nima vsaka "
+"naprava te vrste. Na primer, predlogi »Odpri zaklop« in »Zapri zaklop« "
+"potrebujeta kupolo z zaklopom. Ko čakalna vrsta doseže takšno opravilo in "
+"povezana naprava nima te zmožnosti, je opravilo označeno kot **PRESKOČENO** "
+"in čakalna vrsta se nadaljuje. Če ima naprava zmožnost, vendar operacija ne "
+"uspe, na primer zaklop, ki se ne zapre, se dejanje ob neuspehu opravila "
+"uporabi kot običajno."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:141
 msgid "Getting Started"
@@ -576,10 +577,9 @@ msgid "**Camera**: Cooling, warming."
 msgstr "**Kamera**: Hlajenje, ogrevanje."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:172
-#, fuzzy
-#| msgid "**Dome**: Park, unpark"
 msgid "**Dome**: Park, unpark, open shutter, close shutter"
-msgstr "**Kupola**: Parkiranje, odparkiranje"
+msgstr ""
+"**Kupola**: Parkiranje, odparkiranje, odpiranje zaklopa, zapiranje zaklopa"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:173
 msgid "**Dust Cap**: Park, unpark"
@@ -895,6 +895,9 @@ msgid ""
 "device, or a device without the required capability (such as a dome without "
 "a shutter)"
 msgstr ""
+"**PRESKOČENO** (Sivo): Opravilo je bilo preskočeno zaradi določenih pogojev, "
+"na primer zaradi odsotnosti ujemajoče se naprave ali zaradi naprave brez "
+"zahtevane zmogljivosti (na primer kupola brez zaklopa)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:285
 msgid "**Action Status:**"
@@ -1289,16 +1292,12 @@ msgstr ""
 "Dejanje ob napaki: ABORT_QUEUE (ni mogoče nadaljujte brez dostopa do kupole)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:422
-#, fuzzy
-#| msgid "**Unpark Dome** (if applicable)"
 msgid "**Open Dome Shutter** (if applicable)"
-msgstr "**Odparkiraj kupolo** (Če je primerno)"
+msgstr "**Odpri zaklop kupole** (Če je primerno)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:424
-#, fuzzy
-#| msgid "Template: \"Dome - Unpark\""
 msgid "Template: \"Dome - Open Shutter\""
-msgstr "Predloga: \"Kupola - Odparkiraj\""
+msgstr "Predloga: \"Kupola - Odpri zaklop\""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:426
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:504
@@ -1307,16 +1306,14 @@ msgid "Timeout: 120 seconds"
 msgstr "Časovna omejitev: 120 sekund"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:427
-#, fuzzy
-#| msgid "Failure Action: ABORT_QUEUE (cannot proceed without dome access)"
 msgid "Failure Action: ABORT_QUEUE (cannot image with the shutter closed)"
 msgstr ""
-"Dejanje ob napaki: ABORT_QUEUE (ni mogoče nadaljujte brez dostopa do kupole)"
+"Dejanje ob napaki: ABORT_QUEUE (ni mogoče snemati z zaprtim zaklopom kupole)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:428
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:506
 msgid "Skipped automatically if the dome has no shutter"
-msgstr ""
+msgstr "Samodejno preskočeno, če kupola nima zaklopa"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:430
 msgid "**Unpark Mount**"
@@ -1483,16 +1480,12 @@ msgid "Failure Action: ABORT_QUEUE (critical for safety)"
 msgstr "Dejanje ob napaki: PREKINI_VRSTA_ČASA (kritično za varnost)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:500
-#, fuzzy
-#| msgid "**Park Dome** (if applicable)"
 msgid "**Close Dome Shutter** (if applicable)"
-msgstr "**Parkiraj kupolo** (Če je primerno)"
+msgstr "**Zapri zaklop kupole** (Če je primerno)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:502
-#, fuzzy
-#| msgid "Template: \"Dome - Park\""
 msgid "Template: \"Dome - Close Shutter\""
-msgstr "Predloga: \"Kupola – Parkiraj\""
+msgstr "Predloga: \"Kupola – Zapri zaklop\""
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:505
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:513

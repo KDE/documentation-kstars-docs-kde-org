@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kstars_docs_user_manual___ekos-scheduler-taskqueue\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-20 02:35+0000\n"
-"PO-Revision-Date: 2026-10-10 16:02+0200\n"
+"PO-Revision-Date: 2026-10-20 11:20+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -396,34 +396,28 @@ msgid "The system provides two collections:"
 msgstr "Система предоставляет две коллекции:"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:113
-#, fuzzy
-#| msgid ""
-#| "**Observatory Startup**: Unparks dome, unparks mount, and opens dust cap "
-#| "(if applicable)"
 msgid ""
 "**Observatory Startup**: Unparks dome, opens dome shutter, unparks mount, "
 "and opens dust cap"
 msgstr ""
-"**Запуск обсерватории**: снимает купол с парковки, снимает монтировку с "
-"парковки и открывает пылезащитную крышку (если применимо)"
+"**Запуск обсерватории**: снимает купол с парковки, открывает затвор купола, "
+"снимает монтировку с парковки и открывает пылезащитную крышку"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:114
-#, fuzzy
-#| msgid ""
-#| "**Observatory Shutdown**: Parks mount, parks dome, and closes dust cap "
-#| "(if applicable)"
 msgid ""
 "**Observatory Shutdown**: Closes dust cap, parks mount, closes dome shutter, "
 "and parks dome"
 msgstr ""
-"**Завершение работы обсерватории**: парковка монтировки, парковка купола и "
-"закрытие пылезащитной крышки (если применимо)"
+"**Завершение работы обсерватории**: закрытие пылезащитной крышки, парковка "
+"монтировки, закрытие затвора купола и парковка купола"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:116
 msgid ""
 "Tasks for equipment you do not have are skipped. For example, the shutter "
 "tasks are skipped for a dome without a shutter, such as a roll-off roof."
 msgstr ""
+"Задачи для отсутствующего оборудования пропускаются. Например, задачи "
+"затвора пропускаются для купола без затвора, такого как откатная крыша."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:119
 msgid ""
@@ -477,6 +471,13 @@ msgid ""
 "the operation fails, for example a shutter that does not close, the task's "
 "failure action applies as usual."
 msgstr ""
+"Некоторым шаблонам также нужна необязательная возможность, которая есть не у "
+"каждого устройства этого типа. Например, шаблонам «Open Shutter» и «Close "
+"Shutter» нужен купол с затвором. Когда очередь доходит до такой задачи, а у "
+"подключённого устройства этой возможности нет, задача помечается как "
+"**SKIPPED** и очередь продолжается. Если возможность у устройства есть, но "
+"операция завершается сбоем (например, затвор не закрывается), как обычно "
+"применяется действие задачи при сбое."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:141
 msgid "Getting Started"
@@ -579,10 +580,9 @@ msgid "**Camera**: Cooling, warming."
 msgstr "**Камера**: охлаждение, нагрев."
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:172
-#, fuzzy
-#| msgid "**Dome**: Park, unpark"
 msgid "**Dome**: Park, unpark, open shutter, close shutter"
-msgstr "**Купол**: парковка, снятие с парковки"
+msgstr ""
+"**Купол**: парковка, снятие с парковки, открытие затвора, закрытие затвора"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:173
 msgid "**Dust Cap**: Park, unpark"
@@ -904,6 +904,9 @@ msgid ""
 "device, or a device without the required capability (such as a dome without "
 "a shutter)"
 msgstr ""
+"**SKIPPED** (серый): задача пропущена из-за условий, например нет "
+"подходящего устройства или у устройства нет нужной возможности (такого как "
+"купол без затвора)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:285
 msgid "**Action Status:**"
@@ -1298,16 +1301,12 @@ msgstr ""
 "Действие при сбое: ABORT_QUEUE (невозможно продолжить без доступа к куполу)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:422
-#, fuzzy
-#| msgid "**Unpark Dome** (if applicable)"
 msgid "**Open Dome Shutter** (if applicable)"
-msgstr "**Снятие купола с парковки** (если применимо)"
+msgstr "**Открытие затвора купола** (если применимо)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:424
-#, fuzzy
-#| msgid "Template: \"Dome - Unpark\""
 msgid "Template: \"Dome - Open Shutter\""
-msgstr "Шаблон: «Купол — снятие с парковки»"
+msgstr "Шаблон: «Купол — открытие затвора»"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:426
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:504
@@ -1316,16 +1315,14 @@ msgid "Timeout: 120 seconds"
 msgstr "Время ожидания: 120 секунд"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:427
-#, fuzzy
-#| msgid "Failure Action: ABORT_QUEUE (cannot proceed without dome access)"
 msgid "Failure Action: ABORT_QUEUE (cannot image with the shutter closed)"
 msgstr ""
-"Действие при сбое: ABORT_QUEUE (невозможно продолжить без доступа к куполу)"
+"Действие при сбое: ABORT_QUEUE (съёмка невозможна при закрытом затворе)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:428
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:506
 msgid "Skipped automatically if the dome has no shutter"
-msgstr ""
+msgstr "Пропускается автоматически, если у купола нет затвора"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:430
 msgid "**Unpark Mount**"
@@ -1495,16 +1492,12 @@ msgid "Failure Action: ABORT_QUEUE (critical for safety)"
 msgstr "Действие при сбое: ABORT_QUEUE (критично для безопасности)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:500
-#, fuzzy
-#| msgid "**Park Dome** (if applicable)"
 msgid "**Close Dome Shutter** (if applicable)"
-msgstr "**Парковка купола** (если применимо)"
+msgstr "**Закрытие затвора купола** (если применимо)"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:502
-#, fuzzy
-#| msgid "Template: \"Dome - Park\""
 msgid "Template: \"Dome - Close Shutter\""
-msgstr "Шаблон: «Купол — парковка»"
+msgstr "Шаблон: «Купол — закрытие затвора»"
 
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:505
 #: ../../user_manual/ekos-scheduler-taskqueue.rst:513
