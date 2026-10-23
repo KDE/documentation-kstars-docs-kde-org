@@ -202,6 +202,71 @@ Running the Aberration Inspector
    R²=0.99. The mosaic mask grid is visible on the star field (right). The
    ``Aberration Inspector`` button in the Tools section triggers the tiled measurement run.
 
+.. _ekos-tilt-star-detection:
+
+Star detection settings for tilted setups
+-----------------------------------------
+
+The default focus star-extraction profile (``1-Focus-Default``) is tuned for normal
+autofocus. With noticeable tilt it can starve the outer tiles of data:
+
+- It keeps only the **100 brightest stars for the whole frame**. A bright cluster in the
+  centre can use up most of that budget, leaving few stars for the corner tiles.
+- It rejects stars that are **more elongated than 1.5** (ratio a/b). The slightly defocused
+  or tilted stars in the corners are exactly the ones that get dropped.
+
+Typical symptoms are corner tiles with few or no stars during the sweep, bumpy per-tile
+V-curves, and tiles that fail to fit (N/A) even though the overall autofocus solves cleanly.
+
+To fix this, create a dedicated profile for Aberration Inspector runs. In the Focus
+**Options**, open the **Process** page, click the edit button next to **SEP Profile**, copy
+the default profile under a new name (for example ``aberration``), and change these values:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 20 20 30
+
+   * - Setting
+     - Default
+     - Suggested
+     - Effect
+   * - **InitialKeep**
+     - 250
+     - 2500
+     - More candidates before filtering
+   * - **stars Keep #**
+     - 100
+     - 1000
+     - Enough stars left for every tile
+   * - **Max Ellipse**
+     - 1.5
+     - 2.5
+     - Keeps elongated off-axis stars
+   * - **Min Area**
+     - 20
+     - 10
+     - Keeps smaller, fainter stars
+
+.. figure:: /images/ekos_tilt_sep_profile.jpg
+   :alt: Focus Options Profile Editor with the aberration profile
+
+   The Focus Options Profile Editor with a copied profile named ``aberration``:
+   InitialKeep 2500, stars Keep # 1000, Min Area 10 and Max Ellipse 2.5. All other values
+   are unchanged from the default.
+
+Leave the other values at their defaults. On a dense star field with a tilted Askar SQA130
+and IMX571 camera, this raised the number of detected stars from 78 to about 670 per frame.
+Every tile, corners included, then carried data through the whole sweep and the
+Aberration Inspector could fit all tiles. You can switch back to the default profile for
+normal autofocus.
+
+.. figure:: /images/ekos_tilt_many_stars.jpg
+   :alt: Aberration Inspector sweep with 679 detected stars across all mosaic tiles
+
+   The same field with the ``aberration`` profile: 679 stars detected (HFR 1.50), spread
+   over every mosaic tile including the corners. The V-curve solves cleanly at 6528 with
+   R²=0.98.
+
 
 Understanding the Results
 =========================
@@ -514,6 +579,10 @@ The advisory needs valid data on enough tiles to compute a correction. When you 
 "No tilt data" state, reduce the tilt manually until the far tiles come back within the
 autofocus sweep:
 
+#. **Check the star detection first.** If the corner tiles are sparse rather than truly
+   out of range, the :ref:`star detection settings <ekos-tilt-star-detection>` may be the
+   limit, not the tilt. A profile that keeps more stars and accepts more elongated stars
+   often brings moderately tilted tiles back without any mechanical change.
 #. **Estimate the direction** from the focus sweep (above) or from which corners are sharp
    vs. bloated in a full-frame image.
 #. **Apply a small manual correction** to the ETA (or tilt screws) in that direction — move
