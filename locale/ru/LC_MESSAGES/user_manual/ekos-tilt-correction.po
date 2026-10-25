@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstars_docs_user_manual___ekos-tilt-correction\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-19 02:09+0000\n"
+"POT-Creation-Date: 2026-10-24 02:18+0000\n"
 "PO-Revision-Date: 2026-10-10 16:02+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -544,11 +544,183 @@ msgstr ""
 "звёздном поле (справа). Кнопка ``Инспектор аберраций`` в разделе «Сервис» "
 "запускает измерение по фрагментам."
 
-#: ../../user_manual/ekos-tilt-correction.rst:207
+#: ../../user_manual/ekos-tilt-correction.rst:208
+msgid "Star detection settings for tilted setups"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:210
+msgid ""
+"The default focus star-extraction profile (``1-Focus-Default``) is tuned for "
+"normal autofocus. With noticeable tilt it can starve the outer tiles of data:"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:213
+msgid ""
+"It keeps only the **100 brightest stars for the whole frame**. A bright "
+"cluster in the centre can use up most of that budget, leaving few stars for "
+"the corner tiles."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:215
+msgid ""
+"It rejects stars that are **more elongated than 1.5** (ratio a/b). The "
+"slightly defocused or tilted stars in the corners are exactly the ones that "
+"get dropped."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:218
+msgid ""
+"Typical symptoms are corner tiles with few or no stars during the sweep, "
+"bumpy per-tile V-curves, and tiles that fail to fit (N/A) even though the "
+"overall autofocus solves cleanly."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:221
+msgid ""
+"To fix this, create a dedicated profile for Aberration Inspector runs. In "
+"the Focus **Options**, open the **Process** page, click the edit button next "
+"to **SEP Profile**, copy the default profile under a new name (for example "
+"``aberration``), and change these values:"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:229
+#: ../../user_manual/ekos-tilt-correction.rst:314
+msgid "Setting"
+msgstr "Параметр"
+
+#: ../../user_manual/ekos-tilt-correction.rst:230
+msgid "Default"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:231
+msgid "Suggested"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:232
+msgid "Effect"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:233
+msgid "**InitialKeep**"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:234
+msgid "250"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:235
+msgid "2500"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:236
+msgid "More candidates before filtering"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:237
+msgid "**stars Keep #**"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:238
+#, fuzzy
+#| msgid "1.00"
+msgid "100"
+msgstr "1,00"
+
+#: ../../user_manual/ekos-tilt-correction.rst:239
+msgid "1000"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:240
+msgid "Enough stars left for every tile"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:241
+msgid "**Max Ellipse**"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:242
+msgid "1.5"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:243
+#, fuzzy
+#| msgid "M2.5"
+msgid "2.5"
+msgstr "M2,5"
+
+#: ../../user_manual/ekos-tilt-correction.rst:244
+msgid "Keeps elongated off-axis stars"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:245
+msgid "**Min Area**"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:246
+#, fuzzy
+#| msgid "2"
+msgid "20"
+msgstr "2"
+
+#: ../../user_manual/ekos-tilt-correction.rst:247
+#, fuzzy
+#| msgid "1"
+msgid "10"
+msgstr "1"
+
+#: ../../user_manual/ekos-tilt-correction.rst:248
+msgid "Keeps smaller, fainter stars"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:253
+msgid "Focus Options Profile Editor with the aberration profile"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:253
+#, fuzzy
+#| msgid ".. image:: /images/ekos_tilt_sweep_early.jpg"
+msgid ".. image:: /images/ekos_tilt_sep_profile.jpg"
+msgstr ".. image:: /images/ekos_tilt_sweep_early.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:253
+msgid ""
+"The Focus Options Profile Editor with a copied profile named ``aberration``: "
+"InitialKeep 2500, stars Keep # 1000, Min Area 10 and Max Ellipse 2.5. All "
+"other values are unchanged from the default."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:257
+msgid ""
+"Leave the other values at their defaults. On a dense star field with a "
+"tilted Askar SQA130 and IMX571 camera, this raised the number of detected "
+"stars from 78 to about 670 per frame. Every tile, corners included, then "
+"carried data through the whole sweep and the Aberration Inspector could fit "
+"all tiles. You can switch back to the default profile for normal autofocus."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:266
+msgid ""
+"Aberration Inspector sweep with 679 detected stars across all mosaic tiles"
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:266
+#, fuzzy
+#| msgid ".. image:: /images/ekos_tilt_run2.jpg"
+msgid ".. image:: /images/ekos_tilt_many_stars.jpg"
+msgstr ".. image:: /images/ekos_tilt_run2.jpg"
+
+#: ../../user_manual/ekos-tilt-correction.rst:266
+msgid ""
+"The same field with the ``aberration`` profile: 679 stars detected (HFR "
+"1.50), spread over every mosaic tile including the corners. The V-curve "
+"solves cleanly at 6528 with R²=0.98."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:272
 msgid "Understanding the Results"
 msgstr "Интерпретация результатов"
 
-#: ../../user_manual/ekos-tilt-correction.rst:209
+#: ../../user_manual/ekos-tilt-correction.rst:274
 msgid ""
 "The Aberration Inspector presents a per-tile table, a set of summary values, "
 "and a multi-tile V-curve graph. (See the :ref:`Aberration Inspector <ekos-"
@@ -560,7 +732,7 @@ msgstr ""
 "управления см. в справочнике :ref:`Инспектор аберраций <ekos-focus-"
 "aberration-inspector>` в документации по модулю «Фокусировка».)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:213
+#: ../../user_manual/ekos-tilt-correction.rst:278
 msgid ""
 "**Tile table** — each row is a mosaic tile (region of the sensor): the focus "
 "``Solution`` (steps), ``Delta (ticks)`` and ``Delta (µm)`` relative to the "
@@ -573,11 +745,11 @@ msgstr ""
 "``Количество звёзд`` — использованных и обнаруженных, а также качество "
 "аппроксимации ``R²``."
 
-#: ../../user_manual/ekos-tilt-correction.rst:217
+#: ../../user_manual/ekos-tilt-correction.rst:282
 msgid "**Summary values**"
 msgstr "**Сводные значения**"
 
-#: ../../user_manual/ekos-tilt-correction.rst:219
+#: ../../user_manual/ekos-tilt-correction.rst:284
 msgid ""
 "``Backfocus Δ`` — how far the sensor is from optimal backfocus distance (± "
 "µm)."
@@ -585,19 +757,19 @@ msgstr ""
 "``Выносное расстояние Δ`` — насколько матрица удалена от оптимального "
 "выносного расстояния (± мкм)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:220
+#: ../../user_manual/ekos-tilt-correction.rst:285
 msgid "``Left-Right Tilt`` — tilt along the horizontal axis (µm and %)."
 msgstr "``Наклон влево-вправо`` — наклон вдоль горизонтальной оси (мкм и %)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:221
+#: ../../user_manual/ekos-tilt-correction.rst:286
 msgid "``Top-Bottom Tilt`` — tilt along the vertical axis (µm and %)."
 msgstr "``Наклон сверху вниз`` — наклон вдоль вертикальной оси (мкм и %)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:222
+#: ../../user_manual/ekos-tilt-correction.rst:287
 msgid "``Total Tilt`` — combined vector magnitude (µm and %)."
 msgstr "``Общий наклон`` — суммарная величина вектора (мкм и %)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:224
+#: ../../user_manual/ekos-tilt-correction.rst:289
 msgid ""
 "**Multi-tile V-curve** — all tiles' V-curves overlaid. In a tilted sensor "
 "the curves are shifted horizontally relative to each other; the minimum of "
@@ -607,15 +779,15 @@ msgstr ""
 "друг на друга. При наклоне матрицы кривые смещены друг относительно друга по "
 "горизонтали; минимум каждой кривой приходится на разное положение фокусёра."
 
-#: ../../user_manual/ekos-tilt-correction.rst:231
+#: ../../user_manual/ekos-tilt-correction.rst:296
 msgid "Aberration Inspector multi-tile view"
 msgstr "Вид инспектора аберраций по нескольким фрагментам"
 
-#: ../../user_manual/ekos-tilt-correction.rst:231
+#: ../../user_manual/ekos-tilt-correction.rst:296
 msgid ".. image:: /images/ekos_tilt_abins_multitile.jpg"
 msgstr ".. image:: /images/ekos_tilt_abins_multitile.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:231
+#: ../../user_manual/ekos-tilt-correction.rst:296
 msgid ""
 "Aberration Inspector showing all 5 tiles (TL, TR, C, BL, BR). The TL curve "
 "(red) diverges significantly from the others, indicating the top-left region "
@@ -628,11 +800,11 @@ msgstr ""
 "наклон: 30 мкм. Трёхмерная визуализация (справа) показывает плоскость "
 "наклона."
 
-#: ../../user_manual/ekos-tilt-correction.rst:237
+#: ../../user_manual/ekos-tilt-correction.rst:302
 msgid "Tilt Correction Advisory"
 msgstr "Рекомендации по коррекции наклона"
 
-#: ../../user_manual/ekos-tilt-correction.rst:239
+#: ../../user_manual/ekos-tilt-correction.rst:304
 msgid ""
 "Below the measurement results, the **Tilt Correction Advisory** translates "
 "the raw measurements into specific mechanical adjustments."
@@ -640,97 +812,93 @@ msgstr ""
 "Ниже результатов измерений **рекомендации по коррекции наклона** преобразуют "
 "необработанные измерения в конкретные механические регулировки."
 
-#: ../../user_manual/ekos-tilt-correction.rst:243
+#: ../../user_manual/ekos-tilt-correction.rst:308
 msgid "Configuration"
 msgstr "Настройка"
 
-#: ../../user_manual/ekos-tilt-correction.rst:249
-msgid "Setting"
-msgstr "Параметр"
-
-#: ../../user_manual/ekos-tilt-correction.rst:250
+#: ../../user_manual/ekos-tilt-correction.rst:315
 msgid "Description"
 msgstr "Описание"
 
-#: ../../user_manual/ekos-tilt-correction.rst:251
+#: ../../user_manual/ekos-tilt-correction.rst:316
 msgid "Example"
 msgstr "Пример"
 
-#: ../../user_manual/ekos-tilt-correction.rst:252
+#: ../../user_manual/ekos-tilt-correction.rst:317
 msgid "**Plate**"
 msgstr "**Плита**"
 
-#: ../../user_manual/ekos-tilt-correction.rst:253
+#: ../../user_manual/ekos-tilt-correction.rst:318
 msgid "3-point or 4-point geometry"
 msgstr "3-точечная или 4-точечная геометрия"
 
-#: ../../user_manual/ekos-tilt-correction.rst:254
+#: ../../user_manual/ekos-tilt-correction.rst:319
 msgid "3-point"
 msgstr "3-точечная"
 
-#: ../../user_manual/ekos-tilt-correction.rst:255
+#: ../../user_manual/ekos-tilt-correction.rst:320
 msgid "**Radius**"
 msgstr "**Радиус**"
 
-#: ../../user_manual/ekos-tilt-correction.rst:256
+#: ../../user_manual/ekos-tilt-correction.rst:321
 msgid "Bolt-circle radius in mm (centre to screw)"
 msgstr "Радиус окружности центров винтов в мм (от центра до винта)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:257
+#: ../../user_manual/ekos-tilt-correction.rst:322
 msgid "64.0 mm (ETA M54)"
 msgstr "64,0 мм (ETA M54)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:258
+#: ../../user_manual/ekos-tilt-correction.rst:323
 msgid "**Thread**"
 msgstr "**Резьба**"
 
-#: ../../user_manual/ekos-tilt-correction.rst:259
+#: ../../user_manual/ekos-tilt-correction.rst:324
 msgid "Screw thread type (determines pitch)"
 msgstr "Тип резьбы винта (определяет шаг резьбы)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:260
+#: ../../user_manual/ekos-tilt-correction.rst:325
 msgid "Wanderer ETA (0.50 mm)"
 msgstr "Wanderer ETA (0,50 мм)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:261
+#: ../../user_manual/ekos-tilt-correction.rst:326
 msgid "**Pitch**"
 msgstr "**Шаг**"
 
-#: ../../user_manual/ekos-tilt-correction.rst:262
+#: ../../user_manual/ekos-tilt-correction.rst:327
 msgid "mm per full turn of the adjustment screw"
 msgstr "мм на полный оборот регулировочного винта"
 
-#: ../../user_manual/ekos-tilt-correction.rst:263
-#: ../../user_manual/ekos-tilt-correction.rst:588
-#: ../../user_manual/ekos-tilt-correction.rst:667
+#: ../../user_manual/ekos-tilt-correction.rst:328
+#: ../../user_manual/ekos-tilt-correction.rst:657
+#: ../../user_manual/ekos-tilt-correction.rst:736
 msgid "0.50 mm/turn"
 msgstr "0,50 мм/оборот"
 
-#: ../../user_manual/ekos-tilt-correction.rst:264
+#: ../../user_manual/ekos-tilt-correction.rst:329
 msgid "**Rotation**"
 msgstr "**Вращение**"
 
-#: ../../user_manual/ekos-tilt-correction.rst:265
+#: ../../user_manual/ekos-tilt-correction.rst:330
 msgid "Camera body rotation (visual aid only)"
 msgstr "Поворот корпуса камеры (только для наглядности)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:266
+#: ../../user_manual/ekos-tilt-correction.rst:331
 msgid "0° or 10°"
 msgstr "0° или 10°"
 
-#: ../../user_manual/ekos-tilt-correction.rst:267
+#: ../../user_manual/ekos-tilt-correction.rst:332
 msgid "**Mode**"
 msgstr "**Режим**"
 
-#: ../../user_manual/ekos-tilt-correction.rst:268
+#: ../../user_manual/ekos-tilt-correction.rst:333
 msgid "How corrections are presented"
 msgstr "Представление поправок"
 
-#: ../../user_manual/ekos-tilt-correction.rst:269
+#: ../../user_manual/ekos-tilt-correction.rst:334
 msgid "Push-only (from zero) or Relative (± deltas)"
 msgstr "Только выталкивание (от нуля) или относительный режим (± приращения)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:273
+#: ../../user_manual/ekos-tilt-correction.rst:338
 msgid ""
 "**Setting the radius and thread for your plate.** The radius is the bolt-"
 "circle radius — the distance from the centre of the plate to an adjustment "
@@ -750,11 +918,11 @@ msgstr ""
 "только для преобразования коррекции в «число оборотов» — приблизительный "
 "радиус всё равно даёт верное направление и близкую величину."
 
-#: ../../user_manual/ekos-tilt-correction.rst:282
+#: ../../user_manual/ekos-tilt-correction.rst:347
 msgid "Modes explained"
 msgstr "Пояснение режимов"
 
-#: ../../user_manual/ekos-tilt-correction.rst:284
+#: ../../user_manual/ekos-tilt-correction.rst:349
 msgid ""
 "**Push-only (from zero)** — all values are shifted positive (minimum = 0). "
 "Use when starting from a fully retracted / zeroed position. Recommended for "
@@ -767,7 +935,7 @@ msgstr ""
 "только с толкающими винтами, таких как ETA, которые не допускают "
 "отрицательных значений."
 
-#: ../../user_manual/ekos-tilt-correction.rst:287
+#: ../../user_manual/ekos-tilt-correction.rst:352
 msgid ""
 "**Relative (± deltas)** — signed values to apply on top of the current "
 "position; the values sum to zero (symmetric correction). Use for iterative "
@@ -778,11 +946,11 @@ msgstr ""
 "Используйте для итеративной точной настройки, когда винты уже находятся в "
 "середине диапазона."
 
-#: ../../user_manual/ekos-tilt-correction.rst:292
+#: ../../user_manual/ekos-tilt-correction.rst:357
 msgid "Visual diagram"
 msgstr "Наглядная диаграмма"
 
-#: ../../user_manual/ekos-tilt-correction.rst:294
+#: ../../user_manual/ekos-tilt-correction.rst:359
 msgid ""
 "The diagram shows the tilt plate as seen from **behind the camera** (the "
 "side facing you when you stand behind the telescope). Points are color-"
@@ -796,15 +964,15 @@ msgstr ""
 "(только для 4-точечных плит). Для 3-точечных плит (ETA): точка 1 — справа "
 "вверху (вид сзади), точка 2 — внизу по центру, точка 3 — слева вверху."
 
-#: ../../user_manual/ekos-tilt-correction.rst:302
+#: ../../user_manual/ekos-tilt-correction.rst:367
 msgid "Tilt Correction Advisory, first measurement"
 msgstr "Рекомендации по коррекции наклона, первое измерение"
 
-#: ../../user_manual/ekos-tilt-correction.rst:302
+#: ../../user_manual/ekos-tilt-correction.rst:367
 msgid ".. image:: /images/ekos_tilt_advisory_run1.jpg"
 msgstr ".. image:: /images/ekos_tilt_advisory_run1.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:302
+#: ../../user_manual/ekos-tilt-correction.rst:367
 msgid ""
 "Aberration Inspector Run 1: total tilt 29 µm. The Tilt Correction Advisory "
 "shows Point 1 (upper-right) +0.119 mm (+0.2 turns), Point 2 (bottom) +0.231 "
@@ -817,11 +985,11 @@ msgstr ""
 "изменений. Кнопка ``Применить к ETA`` отправляет эти поправки "
 "непосредственно в ETA."
 
-#: ../../user_manual/ekos-tilt-correction.rst:307
+#: ../../user_manual/ekos-tilt-correction.rst:372
 msgid "4-point plate example"
 msgstr "Пример 4-точечной плиты"
 
-#: ../../user_manual/ekos-tilt-correction.rst:309
+#: ../../user_manual/ekos-tilt-correction.rst:374
 msgid ""
 "For 4-point push/pull plates (e.g. the ToupTek M42 Tilter) the advisory "
 "shows corrections for all four corner screws. Each screw affects both tilt "
@@ -831,15 +999,15 @@ msgstr ""
 "Tilter) рекомендации содержат поправки для всех четырёх угловых винтов. Из-"
 "за геометрии углов в 45° каждый винт одновременно влияет на обе оси наклона."
 
-#: ../../user_manual/ekos-tilt-correction.rst:316
+#: ../../user_manual/ekos-tilt-correction.rst:381
 msgid "4-point plate advisory"
 msgstr "Рекомендации для 4-точечной плиты"
 
-#: ../../user_manual/ekos-tilt-correction.rst:316
+#: ../../user_manual/ekos-tilt-correction.rst:381
 msgid ".. image:: /images/ekos_tilt_advisory_4point.jpg"
 msgstr ".. image:: /images/ekos_tilt_advisory_4point.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:316
+#: ../../user_manual/ekos-tilt-correction.rst:381
 msgid ""
 "Aberration Inspector with a 4-point plate selected (Radius 46.0 mm, Thread "
 "M4 fine 0.50 mm, Rotation 20°). All 5 tiles fit well (R² 0.91–0.98). Total "
@@ -854,15 +1022,15 @@ msgstr ""
 "−0,012 мм; винт 4, нижний правый: +0,012 мм) и примечание «применить все "
 "вместе либо только винт 1, −0,025 мм»."
 
-#: ../../user_manual/ekos-tilt-correction.rst:323
+#: ../../user_manual/ekos-tilt-correction.rst:388
 msgid "Applying Corrections (WandererAstro ETA)"
 msgstr "Применение коррекций (WandererAstro ETA)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:326
+#: ../../user_manual/ekos-tilt-correction.rst:391
 msgid "The ETA M54 tilt plate"
 msgstr "Плита наклона ETA M54"
 
-#: ../../user_manual/ekos-tilt-correction.rst:328
+#: ../../user_manual/ekos-tilt-correction.rst:393
 msgid ""
 "The WandererAstro ETA M54 is a motorized 3-point tilt adjuster with three "
 "independent stepper motors and encoder feedback, 0–1.200 mm travel per "
@@ -875,11 +1043,11 @@ msgstr ""
 "позиционирования 0,002 мм (2 мкм) и управление по последовательному "
 "интерфейсу через USB в среде INDI."
 
-#: ../../user_manual/ekos-tilt-correction.rst:333
+#: ../../user_manual/ekos-tilt-correction.rst:398
 msgid "INDI control panel"
 msgstr "Панель управления INDI"
 
-#: ../../user_manual/ekos-tilt-correction.rst:335
+#: ../../user_manual/ekos-tilt-correction.rst:400
 msgid ""
 "When connected, the ETA appears in the INDI Control Panel with **Target "
 "Positions** (set each point 0.000–1.200 mm), **Current Positions** (real-"
@@ -897,15 +1065,15 @@ msgstr ""
 "ко всем трём точкам (удобно для быстрой компенсации толщины стекла разных "
 "светофильтров)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:344
+#: ../../user_manual/ekos-tilt-correction.rst:409
 msgid "ETA INDI control panel"
 msgstr "Панель управления INDI ETA"
 
-#: ../../user_manual/ekos-tilt-correction.rst:344
+#: ../../user_manual/ekos-tilt-correction.rst:409
 msgid ".. image:: /images/ekos_tilt_eta_indi_panel.jpg"
 msgstr ".. image:: /images/ekos_tilt_eta_indi_panel.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:344
+#: ../../user_manual/ekos-tilt-correction.rst:409
 msgid ""
 "WandererAstro ETA M54 in the INDI Control Panel. Current positions show "
 "P1=0.200, P2=0.400, P3=0.000 mm; firmware version 20251123."
@@ -913,15 +1081,15 @@ msgstr ""
 "WandererAstro ETA M54 в панели управления INDI. Текущие положения: P1=0,200, "
 "P2=0,400, P3=0,000 мм; версия встроенного ПО 20251123."
 
-#: ../../user_manual/ekos-tilt-correction.rst:350
+#: ../../user_manual/ekos-tilt-correction.rst:415
 msgid "ETA after applying corrections"
 msgstr "ETA после применения поправок"
 
-#: ../../user_manual/ekos-tilt-correction.rst:350
+#: ../../user_manual/ekos-tilt-correction.rst:415
 msgid ".. image:: /images/ekos_tilt_eta_applied.jpg"
 msgstr ".. image:: /images/ekos_tilt_eta_applied.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:350
+#: ../../user_manual/ekos-tilt-correction.rst:415
 msgid ""
 "ETA with a correction applied: P1=0.100, P2=0.330, P3=0.170 mm — different "
 "values per point to compensate for sensor tilt."
@@ -929,11 +1097,11 @@ msgstr ""
 "ETA с применённой коррекцией: P1=0,100, P2=0,330, P3=0,170 мм — разные "
 "значения по точкам, компенсирующие наклон матрицы."
 
-#: ../../user_manual/ekos-tilt-correction.rst:354
+#: ../../user_manual/ekos-tilt-correction.rst:419
 msgid "Automated apply"
 msgstr "Автоматическое применение"
 
-#: ../../user_manual/ekos-tilt-correction.rst:356
+#: ../../user_manual/ekos-tilt-correction.rst:421
 msgid ""
 "When the Aberration Inspector detects a connected ETA (and the plate is set "
 "to 3-point), the ``Apply to ETA`` button becomes active. Clicking it reads "
@@ -951,15 +1119,15 @@ msgstr ""
 "Показывается подтверждение, например: «Applied to ETA: P1→X.XXX P2→X.XXX "
 "P3→X.XXX mm»."
 
-#: ../../user_manual/ekos-tilt-correction.rst:365
+#: ../../user_manual/ekos-tilt-correction.rst:430
 msgid "After Apply to ETA"
 msgstr "После применения к ETA"
 
-#: ../../user_manual/ekos-tilt-correction.rst:365
+#: ../../user_manual/ekos-tilt-correction.rst:430
 msgid ".. image:: /images/ekos_tilt_advisory_applied.jpg"
 msgstr ".. image:: /images/ekos_tilt_advisory_applied.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:365
+#: ../../user_manual/ekos-tilt-correction.rst:430
 msgid ""
 "After clicking ``Apply to ETA`` the status shows \"Applied to ETA: P1→0.119 "
 "P2→0.571 P3→0.065 mm. Run autofocus again to re-measure.\" and the button "
@@ -969,11 +1137,11 @@ msgstr ""
 "сообщение «Applied to ETA: P1→0.119 P2→0.571 P3→0.065 mm. Run autofocus "
 "again to re-measure.», а кнопка меняется на «Готово»."
 
-#: ../../user_manual/ekos-tilt-correction.rst:370
+#: ../../user_manual/ekos-tilt-correction.rst:435
 msgid "Iterative Workflow"
 msgstr "Итеративный рабочий процесс"
 
-#: ../../user_manual/ekos-tilt-correction.rst:372
+#: ../../user_manual/ekos-tilt-correction.rst:437
 msgid ""
 "Tilt correction is iterative — one pass rarely achieves perfect correction, "
 "due to mechanical hysteresis, measurement noise, and the simplification of "
@@ -983,18 +1151,18 @@ msgstr ""
 "добиться идеальной коррекции из-за механического гистерезиса, шума измерений "
 "и упрощения, при котором наклон считается чисто плоским."
 
-#: ../../user_manual/ekos-tilt-correction.rst:377
+#: ../../user_manual/ekos-tilt-correction.rst:442
 msgid "Recommended procedure"
 msgstr "Рекомендуемая процедура"
 
-#: ../../user_manual/ekos-tilt-correction.rst:379
+#: ../../user_manual/ekos-tilt-correction.rst:444
 msgid ""
 "Start with the ETA at zero (or all screws fully retracted for manual plates)."
 msgstr ""
 "Начните с нулевого положения ETA (или полностью вдвинутых винтов для ручных "
 "пластин)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:380
+#: ../../user_manual/ekos-tilt-correction.rst:445
 msgid ""
 "**Run 1**: run the Aberration Inspector → read the tilt → apply the "
 "correction."
@@ -1002,78 +1170,78 @@ msgstr ""
 "**Запуск 1**: запустите инспектор аберраций → считайте наклон → примените "
 "коррекцию."
 
-#: ../../user_manual/ekos-tilt-correction.rst:381
+#: ../../user_manual/ekos-tilt-correction.rst:446
 msgid "**Run 2**: run again → the tilt should be significantly reduced."
 msgstr "**Запуск 2**: запустите снова → наклон должен существенно уменьшиться."
 
-#: ../../user_manual/ekos-tilt-correction.rst:382
+#: ../../user_manual/ekos-tilt-correction.rst:447
 msgid "**Run 3** (if needed): fine-tune to reach the target."
 msgstr ""
 "**Запуск 3** (при необходимости): выполните тонкую настройку для достижения "
 "целевого значения."
 
-#: ../../user_manual/ekos-tilt-correction.rst:385
+#: ../../user_manual/ekos-tilt-correction.rst:450
 msgid "Example — real-world convergence"
 msgstr "Пример — сходимость в реальных условиях"
 
-#: ../../user_manual/ekos-tilt-correction.rst:391
+#: ../../user_manual/ekos-tilt-correction.rst:456
 msgid "Run"
 msgstr "Запуск"
 
-#: ../../user_manual/ekos-tilt-correction.rst:392
-#: ../../user_manual/ekos-tilt-correction.rst:423
+#: ../../user_manual/ekos-tilt-correction.rst:457
+#: ../../user_manual/ekos-tilt-correction.rst:488
 msgid "Total Tilt"
 msgstr "Суммарный наклон"
 
-#: ../../user_manual/ekos-tilt-correction.rst:393
+#: ../../user_manual/ekos-tilt-correction.rst:458
 msgid "Action"
 msgstr "Действие"
 
-#: ../../user_manual/ekos-tilt-correction.rst:394
+#: ../../user_manual/ekos-tilt-correction.rst:459
 msgid "1"
 msgstr "1"
 
-#: ../../user_manual/ekos-tilt-correction.rst:395
+#: ../../user_manual/ekos-tilt-correction.rst:460
 msgid "29 µm"
 msgstr "29 мкм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:396
+#: ../../user_manual/ekos-tilt-correction.rst:461
 msgid "Applied P1=+0.119, P2=+0.231 mm"
 msgstr "Применено: P1=+0,119, P2=+0,231 мм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:397
+#: ../../user_manual/ekos-tilt-correction.rst:462
 msgid "2"
 msgstr "2"
 
-#: ../../user_manual/ekos-tilt-correction.rst:398
+#: ../../user_manual/ekos-tilt-correction.rst:463
 msgid "6 µm"
 msgstr "6 мкм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:399
+#: ../../user_manual/ekos-tilt-correction.rst:464
 msgid "Applied P1=+0.024, P2=+0.046 mm"
 msgstr "Применено: P1=+0,024, P2=+0,046 мм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:400
+#: ../../user_manual/ekos-tilt-correction.rst:465
 msgid "3"
 msgstr "3"
 
-#: ../../user_manual/ekos-tilt-correction.rst:401
+#: ../../user_manual/ekos-tilt-correction.rst:466
 msgid "0 µm"
 msgstr "0 мкм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:402
+#: ../../user_manual/ekos-tilt-correction.rst:467
 msgid "No change needed — perfect"
 msgstr "Изменения не требуются — идеально"
 
-#: ../../user_manual/ekos-tilt-correction.rst:407
+#: ../../user_manual/ekos-tilt-correction.rst:472
 msgid "Run 2, tilt reduced to 6 µm"
 msgstr "Запуск 2, наклон уменьшен до 6 мкм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:407
+#: ../../user_manual/ekos-tilt-correction.rst:472
 msgid ".. image:: /images/ekos_tilt_run2.jpg"
 msgstr ".. image:: /images/ekos_tilt_run2.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:407
+#: ../../user_manual/ekos-tilt-correction.rst:472
 msgid ""
 "After the first correction, Run 2 shows total tilt reduced from 29 µm to "
 "just 6 µm. The advisory now suggests much smaller adjustments (P1=+0.024, P2="
@@ -1083,15 +1251,15 @@ msgstr ""
 "29 мкм всего до 6 мкм. Рекомендации теперь предлагают значительно меньшие "
 "поправки (P1=+0,024, P2=+0,046 мм)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:413
+#: ../../user_manual/ekos-tilt-correction.rst:478
 msgid "Run 3, 0 µm tilt achieved"
 msgstr "Запуск 3, достигнут наклон 0 мкм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:413
+#: ../../user_manual/ekos-tilt-correction.rst:478
 msgid ".. image:: /images/ekos_tilt_run3.jpg"
 msgstr ".. image:: /images/ekos_tilt_run3.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:413
+#: ../../user_manual/ekos-tilt-correction.rst:478
 msgid ""
 "Run 3: total tilt 0 µm. All three points show \"no change\" — the sensor is "
 "perpendicular to the optical axis. This is the target state."
@@ -1099,72 +1267,72 @@ msgstr ""
 "Запуск 3: суммарный наклон 0 мкм. Все три точки показывают «без изменений» — "
 "матрица перпендикулярна оптической оси. Это целевое состояние."
 
-#: ../../user_manual/ekos-tilt-correction.rst:417
+#: ../../user_manual/ekos-tilt-correction.rst:482
 msgid "What counts as \"good\"?"
 msgstr "Что считается «хорошим»?"
 
-#: ../../user_manual/ekos-tilt-correction.rst:424
+#: ../../user_manual/ekos-tilt-correction.rst:489
 msgid "Quality"
 msgstr "Качество"
 
-#: ../../user_manual/ekos-tilt-correction.rst:425
-#: ../../user_manual/ekos-tilt-correction.rst:584
+#: ../../user_manual/ekos-tilt-correction.rst:490
+#: ../../user_manual/ekos-tilt-correction.rst:653
 msgid "Notes"
 msgstr "Примечания"
 
-#: ../../user_manual/ekos-tilt-correction.rst:426
+#: ../../user_manual/ekos-tilt-correction.rst:491
 msgid "< 20 µm"
 msgstr "< 20 мкм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:427
+#: ../../user_manual/ekos-tilt-correction.rst:492
 msgid "Excellent"
 msgstr "Отличный результат"
 
-#: ../../user_manual/ekos-tilt-correction.rst:428
+#: ../../user_manual/ekos-tilt-correction.rst:493
 msgid "Indistinguishable from perfect in most images"
 msgstr "На большинстве изображений неотличимо от идеального"
 
-#: ../../user_manual/ekos-tilt-correction.rst:429
+#: ../../user_manual/ekos-tilt-correction.rst:494
 msgid "20–50 µm"
 msgstr "20–50 мкм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:430
+#: ../../user_manual/ekos-tilt-correction.rst:495
 msgid "Good"
 msgstr "Хорошо"
 
-#: ../../user_manual/ekos-tilt-correction.rst:431
+#: ../../user_manual/ekos-tilt-correction.rst:496
 msgid "Adequate for most setups"
 msgstr "Достаточно для большинства конфигураций"
 
-#: ../../user_manual/ekos-tilt-correction.rst:432
+#: ../../user_manual/ekos-tilt-correction.rst:497
 msgid "50–100 µm"
 msgstr "50–100 мкм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:433
+#: ../../user_manual/ekos-tilt-correction.rst:498
 msgid "Acceptable"
 msgstr "Допустимо"
 
-#: ../../user_manual/ekos-tilt-correction.rst:434
+#: ../../user_manual/ekos-tilt-correction.rst:499
 msgid "OK for short focal length / fast scopes"
 msgstr "Подходит для короткого фокусного расстояния / светосильных телескопов"
 
-#: ../../user_manual/ekos-tilt-correction.rst:435
+#: ../../user_manual/ekos-tilt-correction.rst:500
 msgid "> 100 µm"
 msgstr "> 100 мкм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:436
+#: ../../user_manual/ekos-tilt-correction.rst:501
 msgid "Needs correction"
 msgstr "Требуется коррекция"
 
-#: ../../user_manual/ekos-tilt-correction.rst:437
+#: ../../user_manual/ekos-tilt-correction.rst:502
 msgid "Visible star-shape degradation in corners"
 msgstr "Заметное ухудшение формы звёзд в углах"
 
-#: ../../user_manual/ekos-tilt-correction.rst:440
+#: ../../user_manual/ekos-tilt-correction.rst:505
 msgid "Tips for convergence"
 msgstr "Советы по сходимости"
 
-#: ../../user_manual/ekos-tilt-correction.rst:442
+#: ../../user_manual/ekos-tilt-correction.rst:507
 msgid ""
 "Use the **same star field** for each iteration (different fields can "
 "introduce noise)."
@@ -1172,14 +1340,14 @@ msgstr ""
 "Используйте **одно и то же звёздное поле** для каждой итерации (разные поля "
 "вносят шум)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:443
+#: ../../user_manual/ekos-tilt-correction.rst:508
 msgid ""
 "Wait for **stable seeing** — poor seeing adds noise to the tile measurements."
 msgstr ""
 "Дождитесь **стабильного сиинга** — плохой сиинг вносит шум в измерения по "
 "фрагментам."
 
-#: ../../user_manual/ekos-tilt-correction.rst:444
+#: ../../user_manual/ekos-tilt-correction.rst:509
 msgid ""
 "Don't over-correct: if the advisory says 0.4 mm, consider applying 0.3 mm "
 "first."
@@ -1187,13 +1355,13 @@ msgstr ""
 "Не переусердствуйте с коррекцией: если рекомендации указывают 0,4 мм, "
 "сначала примените 0,3 мм."
 
-#: ../../user_manual/ekos-tilt-correction.rst:445
+#: ../../user_manual/ekos-tilt-correction.rst:510
 msgid "Fix **backfocus first** if ``Backfocus Δ`` is large (> 50 µm)."
 msgstr ""
 "**Сначала исправьте выносное расстояние**, если ``Выносное расстояние Δ`` "
 "велико (> 50 мкм)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:446
+#: ../../user_manual/ekos-tilt-correction.rst:511
 msgid ""
 "Re-run after any mechanical change to the imaging train (camera rotation, "
 "filter swap)."
@@ -1201,15 +1369,15 @@ msgstr ""
 "Повторяйте измерение после любых механических изменений оптической системы "
 "(поворот камеры, замена светофильтра)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:450
+#: ../../user_manual/ekos-tilt-correction.rst:515
 msgid "When Tilt Cannot Be Measured (Large Tilt)"
 msgstr "Невозможность измерения наклона (большой наклон)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:453
+#: ../../user_manual/ekos-tilt-correction.rst:518
 msgid "The problem"
 msgstr "Проблема"
 
-#: ../../user_manual/ekos-tilt-correction.rst:455
+#: ../../user_manual/ekos-tilt-correction.rst:520
 msgid ""
 "When sensor tilt is very large (> ~100 µm), some mosaic tiles' focus falls "
 "entirely outside the autofocus sweep range. Their V-curve cannot be fit (R² "
@@ -1228,11 +1396,11 @@ msgstr ""
 "повторной установки плиты наклона, либо после серьёзного механического "
 "изменения (замена камеры, регулировка поворотного устройства)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:463
+#: ../../user_manual/ekos-tilt-correction.rst:528
 msgid "How it looks in the Aberration Inspector"
 msgstr "Внешний вид в инспекторе аберраций"
 
-#: ../../user_manual/ekos-tilt-correction.rst:465
+#: ../../user_manual/ekos-tilt-correction.rst:530
 msgid ""
 "Some tiles show \"Solution: 0, R²: 0.00\" and the Left-Right, Top-Bottom and "
 "Total Tilt all read **N/A**. The advisory diagram shows \"No tilt data\" and "
@@ -1243,15 +1411,15 @@ msgstr ""
 "схеме рекомендаций показывается «Нет данных о наклоне», а кнопка ``Применить "
 "к ETA`` недоступна."
 
-#: ../../user_manual/ekos-tilt-correction.rst:472
+#: ../../user_manual/ekos-tilt-correction.rst:537
 msgid "Aberration Inspector, no tilt data (Run 6)"
 msgstr "Инспектор аберраций: нет данных о наклоне (запуск 6)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:472
+#: ../../user_manual/ekos-tilt-correction.rst:537
 msgid ".. image:: /images/ekos_tilt_notiltdata_run6.jpg"
 msgstr ".. image:: /images/ekos_tilt_notiltdata_run6.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:472
+#: ../../user_manual/ekos-tilt-correction.rst:537
 msgid ""
 "Run 6: Top Left, Top Right and Bottom Right tiles failed to fit (Solution 0, "
 "R² 0.00, 0 usable stars). Only Centre (R²=0.50) and Bottom Left (R²=0.99) "
@@ -1264,16 +1432,16 @@ msgstr ""
 "фрагментов. Все значения наклона равны «N/A», а на схеме показывается «Нет "
 "данных о наклоне»."
 
-#: ../../user_manual/ekos-tilt-correction.rst:479
+#: ../../user_manual/ekos-tilt-correction.rst:544
 msgid "Aberration Inspector, no tilt data with diverging curves (Run 8)"
 msgstr ""
 "Инспектор аберраций, нет данных о наклоне при расходящихся кривых (запуск 8)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:479
+#: ../../user_manual/ekos-tilt-correction.rst:544
 msgid ".. image:: /images/ekos_tilt_notiltdata_run8.jpg"
 msgstr ".. image:: /images/ekos_tilt_notiltdata_run8.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:479
+#: ../../user_manual/ekos-tilt-correction.rst:544
 msgid ""
 "Run 8: same \"No tilt data\" state, but here three tiles fit (Centre "
 "R²=1.00, Bottom Left R²=1.00, Bottom Right R²=0.79) while the two Top tiles "
@@ -1290,11 +1458,11 @@ msgstr ""
 "существенного наклона, хотя точное значение вычислить невозможно, поскольку "
 "верхние фрагменты так и не достигли фокуса."
 
-#: ../../user_manual/ekos-tilt-correction.rst:486
+#: ../../user_manual/ekos-tilt-correction.rst:551
 msgid "Guessing the direction from the focus sweep"
 msgstr "Определение направления по проходу фокусировки"
 
-#: ../../user_manual/ekos-tilt-correction.rst:488
+#: ../../user_manual/ekos-tilt-correction.rst:553
 msgid ""
 "Even when a precise value is not available, you can often **guess the tilt "
 "direction by watching the focus sweep**. As the focuser moves through its "
@@ -1313,15 +1481,15 @@ msgstr ""
 "кадра ниже получены в ходе **одного и того же прохода** при разных "
 "положениях фокусёра:"
 
-#: ../../user_manual/ekos-tilt-correction.rst:498
+#: ../../user_manual/ekos-tilt-correction.rst:563
 msgid "Focus sweep, early — upper tiles in focus"
 msgstr "Проход фокусировки, начало — верхние фрагменты в фокусе"
 
-#: ../../user_manual/ekos-tilt-correction.rst:498
+#: ../../user_manual/ekos-tilt-correction.rst:563
 msgid ".. image:: /images/ekos_tilt_sweep_early.jpg"
 msgstr ".. image:: /images/ekos_tilt_sweep_early.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:498
+#: ../../user_manual/ekos-tilt-correction.rst:563
 msgid ""
 "Early in the sweep (focuser ~6807): the sharp stars and their HFR values are "
 "concentrated in the **upper** tiles, while the lower tiles are still out of "
@@ -1331,15 +1499,15 @@ msgstr ""
 "сосредоточены в **верхних** фрагментах, тогда как нижние фрагменты ещё не в "
 "фокусе. V-кривая только начинает строиться."
 
-#: ../../user_manual/ekos-tilt-correction.rst:505
+#: ../../user_manual/ekos-tilt-correction.rst:570
 msgid "Focus sweep, later — centre/lower tiles in focus"
 msgstr "Проход фокусировки, позже — центральные и нижние фрагменты в фокусе"
 
-#: ../../user_manual/ekos-tilt-correction.rst:505
+#: ../../user_manual/ekos-tilt-correction.rst:570
 msgid ".. image:: /images/ekos_tilt_sweep_later.jpg"
 msgstr ".. image:: /images/ekos_tilt_sweep_later.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:505
+#: ../../user_manual/ekos-tilt-correction.rst:570
 msgid ""
 "Later in the same sweep (focuser ~6764): the sharp-star region has moved "
 "down into the **centre and lower** tiles and the V-curve is nearly complete. "
@@ -1352,11 +1520,11 @@ msgstr ""
 "матрица наклонена вдоль оси «верх — низ», и на то, какую сторону нужно "
 "поднять."
 
-#: ../../user_manual/ekos-tilt-correction.rst:511
+#: ../../user_manual/ekos-tilt-correction.rst:576
 msgid "What to do"
 msgstr "Дальнейшие действия"
 
-#: ../../user_manual/ekos-tilt-correction.rst:513
+#: ../../user_manual/ekos-tilt-correction.rst:578
 msgid ""
 "The advisory needs valid data on enough tiles to compute a correction. When "
 "you are in the \"No tilt data\" state, reduce the tilt manually until the "
@@ -1367,7 +1535,16 @@ msgstr ""
 "наклон вручную, пока дальние фрагменты не вернутся в область сканирования "
 "автофокуса:"
 
-#: ../../user_manual/ekos-tilt-correction.rst:517
+#: ../../user_manual/ekos-tilt-correction.rst:582
+msgid ""
+"**Check the star detection first.** If the corner tiles are sparse rather "
+"than truly out of range, the :ref:`star detection settings <ekos-tilt-star-"
+"detection>` may be the limit, not the tilt. A profile that keeps more stars "
+"and accepts more elongated stars often brings moderately tilted tiles back "
+"without any mechanical change."
+msgstr ""
+
+#: ../../user_manual/ekos-tilt-correction.rst:586
 msgid ""
 "**Estimate the direction** from the focus sweep (above) or from which "
 "corners are sharp vs. bloated in a full-frame image."
@@ -1375,7 +1552,7 @@ msgstr ""
 "**Оцените направление** по проходу фокусировки (выше) или по тому, какие "
 "углы резкие, а какие раздутые на полнокадровом изображении."
 
-#: ../../user_manual/ekos-tilt-correction.rst:519
+#: ../../user_manual/ekos-tilt-correction.rst:588
 msgid ""
 "**Apply a small manual correction** to the ETA (or tilt screws) in that "
 "direction — move the point on the side that is furthest from focus."
@@ -1383,7 +1560,7 @@ msgstr ""
 "**Внесите небольшую ручную коррекцию** в ETA (или винты наклона) в этом "
 "направлении — переместите точку на стороне, наиболее удалённой от фокуса."
 
-#: ../../user_manual/ekos-tilt-correction.rst:521
+#: ../../user_manual/ekos-tilt-correction.rst:590
 msgid ""
 "**Re-run the Aberration Inspector.** Once all tiles fit within the sweep, "
 "the precise tilt calculation returns and you can proceed with the normal "
@@ -1393,7 +1570,7 @@ msgstr ""
 "диапазон сканирования, возобновится точный расчёт наклона, и можно перейти к "
 "обычному итеративному процессу, описанному выше."
 
-#: ../../user_manual/ekos-tilt-correction.rst:526
+#: ../../user_manual/ekos-tilt-correction.rst:595
 msgid ""
 "An automated coarse pre-correction advisory (which estimates the direction "
 "for you when precise measurement fails) is under development but still needs "
@@ -1404,11 +1581,11 @@ msgstr ""
 "разработке, но по-прежнему требуют дополнительной проверки, прежде чем будут "
 "описаны здесь."
 
-#: ../../user_manual/ekos-tilt-correction.rst:532
+#: ../../user_manual/ekos-tilt-correction.rst:601
 msgid "Verification with External Tools"
 msgstr "Проверка с помощью внешних инструментов"
 
-#: ../../user_manual/ekos-tilt-correction.rst:534
+#: ../../user_manual/ekos-tilt-correction.rst:603
 msgid ""
 "After achieving good tilt correction in Ekos you can verify with external "
 "analysis tools that process full-frame images (CCDInspector, ASTAP, and "
@@ -1426,15 +1603,15 @@ msgstr ""
 "отличной коррекции), а преобладающим остаточным фактором является внеосевая "
 "аберрация, а не наклон."
 
-#: ../../user_manual/ekos-tilt-correction.rst:544
+#: ../../user_manual/ekos-tilt-correction.rst:613
 msgid "Well-focused field after tilt correction"
 msgstr "Поле в хорошем фокусе после коррекции наклона"
 
-#: ../../user_manual/ekos-tilt-correction.rst:544
+#: ../../user_manual/ekos-tilt-correction.rst:613
 msgid ".. image:: /images/ekos_tilt_focus_wellfocused.jpg"
 msgstr ".. image:: /images/ekos_tilt_focus_wellfocused.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:544
+#: ../../user_manual/ekos-tilt-correction.rst:613
 msgid ""
 "After successful tilt correction: 100 detected stars with HFR 1.31 and "
 "uniform focus across the field — the end result of the iterative workflow."
@@ -1443,15 +1620,15 @@ msgstr ""
 "равномерный фокус по всему полю — конечный результат итеративного рабочего "
 "процесса."
 
-#: ../../user_manual/ekos-tilt-correction.rst:550
+#: ../../user_manual/ekos-tilt-correction.rst:619
 msgid "External tilt analysis"
 msgstr "Внешний анализ наклона"
 
-#: ../../user_manual/ekos-tilt-correction.rst:550
+#: ../../user_manual/ekos-tilt-correction.rst:619
 msgid ".. image:: /images/ekos_tilt_external_analysis.jpg"
 msgstr ".. image:: /images/ekos_tilt_external_analysis.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:550
+#: ../../user_manual/ekos-tilt-correction.rst:619
 msgid ""
 "External analysis of a corrected frame: 1269 stars, median HFD 2.8, "
 "Tilt[HFD] 0.10 (3%, classified \"none\"), off-axis aberration 0.03. The per-"
@@ -1462,15 +1639,15 @@ msgstr ""
 "Медианные значения HFD по фрагментам лежат в диапазоне всего от 2,79 до 2,89 "
 "— исключительно однородны."
 
-#: ../../user_manual/ekos-tilt-correction.rst:557
+#: ../../user_manual/ekos-tilt-correction.rst:626
 msgid "M31 frame with corner HFD values"
 msgstr "Кадр M31 со значениями HFD в углах"
 
-#: ../../user_manual/ekos-tilt-correction.rst:557
+#: ../../user_manual/ekos-tilt-correction.rst:626
 msgid ".. image:: /images/ekos_tilt_external_m31.jpg"
 msgstr ".. image:: /images/ekos_tilt_external_m31.jpg"
 
-#: ../../user_manual/ekos-tilt-correction.rst:557
+#: ../../user_manual/ekos-tilt-correction.rst:626
 msgid ""
 "M31 single frame with corner HFD values: TL 2.12, TR 2.14, Centre 2.16, BL "
 "2.15, BR 2.17. The 0.05 variation across the field is negligible — within "
@@ -1480,15 +1657,15 @@ msgstr ""
 "2,16, BL 2,15, BR 2,17. Разброс 0,05 по полю пренебрежимо мал — в пределах "
 "однородности, обусловленной сиингом."
 
-#: ../../user_manual/ekos-tilt-correction.rst:563
+#: ../../user_manual/ekos-tilt-correction.rst:632
 msgid "Reference Tables"
 msgstr "Справочные таблицы"
 
-#: ../../user_manual/ekos-tilt-correction.rst:568
+#: ../../user_manual/ekos-tilt-correction.rst:637
 msgid "Supported Tilt Plates"
 msgstr "Поддерживаемые плиты наклона"
 
-#: ../../user_manual/ekos-tilt-correction.rst:570
+#: ../../user_manual/ekos-tilt-correction.rst:639
 msgid ""
 "**Any 3-point or 4-point tilt plate is supported** — you only need to tell "
 "the advisory the plate's bolt-circle radius and screw thread. The values "
@@ -1503,119 +1680,119 @@ msgstr ""
 "производителя технический чертёж или измерьте плиту самостоятельно "
 "(расстояние от центра плиты до регулировочного винта = радиус)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:580
+#: ../../user_manual/ekos-tilt-correction.rst:649
 msgid "Plate"
 msgstr "Плита"
 
-#: ../../user_manual/ekos-tilt-correction.rst:581
+#: ../../user_manual/ekos-tilt-correction.rst:650
 msgid "Type"
 msgstr "Тип"
 
-#: ../../user_manual/ekos-tilt-correction.rst:582
+#: ../../user_manual/ekos-tilt-correction.rst:651
 msgid "Radius"
 msgstr "Радиус"
 
-#: ../../user_manual/ekos-tilt-correction.rst:583
+#: ../../user_manual/ekos-tilt-correction.rst:652
 msgid "Thread/Pitch"
 msgstr "Резьба/Шаг резьбы"
 
-#: ../../user_manual/ekos-tilt-correction.rst:585
+#: ../../user_manual/ekos-tilt-correction.rst:654
 msgid "WandererAstro ETA M54"
 msgstr "WandererAstro ETA M54"
 
-#: ../../user_manual/ekos-tilt-correction.rst:586
+#: ../../user_manual/ekos-tilt-correction.rst:655
 msgid "3-point motorized"
 msgstr "3-точечная с электроприводом"
 
-#: ../../user_manual/ekos-tilt-correction.rst:587
-#: ../../user_manual/ekos-tilt-correction.rst:665
+#: ../../user_manual/ekos-tilt-correction.rst:656
+#: ../../user_manual/ekos-tilt-correction.rst:734
 msgid "64.0 mm"
 msgstr "64,0 мм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:589
+#: ../../user_manual/ekos-tilt-correction.rst:658
 msgid "Automated Apply; radius/pitch auto-locked when detected"
 msgstr ""
 "Автоматическое применение; радиус/шаг автоматически блокируются при "
 "обнаружении"
 
-#: ../../user_manual/ekos-tilt-correction.rst:590
+#: ../../user_manual/ekos-tilt-correction.rst:659
 msgid "ZWO Tilt Plate (M42/M48/M54/M68)"
 msgstr "Плита наклона ZWO (M42/M48/M54/M68)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:591
-#: ../../user_manual/ekos-tilt-correction.rst:601
+#: ../../user_manual/ekos-tilt-correction.rst:660
+#: ../../user_manual/ekos-tilt-correction.rst:670
 msgid "3-point manual"
 msgstr "Ручная 3-точечная"
 
-#: ../../user_manual/ekos-tilt-correction.rst:592
+#: ../../user_manual/ekos-tilt-correction.rst:661
 msgid "40.0 mm"
 msgstr "40,0 мм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:593
+#: ../../user_manual/ekos-tilt-correction.rst:662
 msgid "Check drawing"
 msgstr "Сверьтесь с чертежом"
 
-#: ../../user_manual/ekos-tilt-correction.rst:594
+#: ../../user_manual/ekos-tilt-correction.rst:663
 msgid "Radius consistent across ZWO's thread sizes"
 msgstr "Радиус одинаков для всех типоразмеров резьбы ZWO"
 
-#: ../../user_manual/ekos-tilt-correction.rst:595
+#: ../../user_manual/ekos-tilt-correction.rst:664
 msgid "ToupTek M42 Tilter (Ø100 mm)"
 msgstr "ToupTek M42 Tilter (Ø100 mm)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:596
+#: ../../user_manual/ekos-tilt-correction.rst:665
 msgid "4-point push/pull"
 msgstr "4-точечная, толкающие/тянущие винты"
 
-#: ../../user_manual/ekos-tilt-correction.rst:597
+#: ../../user_manual/ekos-tilt-correction.rst:666
 msgid "46.0 mm"
 msgstr "46,0 мм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:598
+#: ../../user_manual/ekos-tilt-correction.rst:667
 msgid "M4 push (0.70 mm)"
 msgstr "Толкающий винт M4 (0,70 мм)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:599
+#: ../../user_manual/ekos-tilt-correction.rst:668
 msgid "Screws on Ø92 mm circle; use the push-screw pitch"
 msgstr "Винты на окружности Ø92 мм; используйте шаг резьбы толкающего винта"
 
-#: ../../user_manual/ekos-tilt-correction.rst:600
+#: ../../user_manual/ekos-tilt-correction.rst:669
 msgid "Octopi tilt ring"
 msgstr "Кольцо наклона Octopi"
 
-#: ../../user_manual/ekos-tilt-correction.rst:602
+#: ../../user_manual/ekos-tilt-correction.rst:671
 msgid "Varies"
 msgstr "Зависит от модели"
 
-#: ../../user_manual/ekos-tilt-correction.rst:603
+#: ../../user_manual/ekos-tilt-correction.rst:672
 msgid "M3 (0.50 mm)"
 msgstr "M3 (0,50 мм)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:604
+#: ../../user_manual/ekos-tilt-correction.rst:673
 msgid "Measure your specific unit"
 msgstr "Измерьте вашу конкретную плиту"
 
-#: ../../user_manual/ekos-tilt-correction.rst:605
+#: ../../user_manual/ekos-tilt-correction.rst:674
 msgid "Generic 3-/4-screw plate"
 msgstr "Универсальная плита с 3 или 4 винтами"
 
-#: ../../user_manual/ekos-tilt-correction.rst:606
+#: ../../user_manual/ekos-tilt-correction.rst:675
 msgid "3- or 4-point manual"
 msgstr "Ручная 3- или 4-точечная"
 
-#: ../../user_manual/ekos-tilt-correction.rst:607
+#: ../../user_manual/ekos-tilt-correction.rst:676
 msgid "Measure"
 msgstr "Измерение"
 
-#: ../../user_manual/ekos-tilt-correction.rst:608
+#: ../../user_manual/ekos-tilt-correction.rst:677
 msgid "Measure/drawing"
 msgstr "Измерение/чертёж"
 
-#: ../../user_manual/ekos-tilt-correction.rst:609
+#: ../../user_manual/ekos-tilt-correction.rst:678
 msgid "Any plate works — supply radius + pitch"
 msgstr "Подходит любая плита — укажите радиус и шаг"
 
-#: ../../user_manual/ekos-tilt-correction.rst:613
+#: ../../user_manual/ekos-tilt-correction.rst:682
 msgid ""
 "Manufacturer technical drawings usually give the screw positions in mm from "
 "the optical axis — that distance is exactly the radius the advisory needs. "
@@ -1629,169 +1806,169 @@ msgstr ""
 "расстояние от центра плиты до винта (на направление коррекции небольшие "
 "погрешности радиуса не влияют, а величина изменяется плавно)."
 
-#: ../../user_manual/ekos-tilt-correction.rst:620
+#: ../../user_manual/ekos-tilt-correction.rst:689
 msgid "Thread pitch reference"
 msgstr "Справочные значения шага резьбы"
 
-#: ../../user_manual/ekos-tilt-correction.rst:626
+#: ../../user_manual/ekos-tilt-correction.rst:695
 msgid "Thread"
 msgstr "Резьба"
 
-#: ../../user_manual/ekos-tilt-correction.rst:627
+#: ../../user_manual/ekos-tilt-correction.rst:696
 msgid "Pitch (mm/turn)"
 msgstr "Шаг резьбы (мм/оборот)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:628
+#: ../../user_manual/ekos-tilt-correction.rst:697
 msgid "M2.5"
 msgstr "M2,5"
 
-#: ../../user_manual/ekos-tilt-correction.rst:629
+#: ../../user_manual/ekos-tilt-correction.rst:698
 msgid "0.45"
 msgstr "0,45"
 
-#: ../../user_manual/ekos-tilt-correction.rst:630
+#: ../../user_manual/ekos-tilt-correction.rst:699
 msgid "M3"
 msgstr "M3"
 
-#: ../../user_manual/ekos-tilt-correction.rst:631
-#: ../../user_manual/ekos-tilt-correction.rst:637
-#: ../../user_manual/ekos-tilt-correction.rst:641
-#: ../../user_manual/ekos-tilt-correction.rst:645
+#: ../../user_manual/ekos-tilt-correction.rst:700
+#: ../../user_manual/ekos-tilt-correction.rst:706
+#: ../../user_manual/ekos-tilt-correction.rst:710
+#: ../../user_manual/ekos-tilt-correction.rst:714
 msgid "0.50"
 msgstr "0,50"
 
-#: ../../user_manual/ekos-tilt-correction.rst:632
+#: ../../user_manual/ekos-tilt-correction.rst:701
 msgid "M3 fine"
 msgstr "M3, мелкая резьба"
 
-#: ../../user_manual/ekos-tilt-correction.rst:633
+#: ../../user_manual/ekos-tilt-correction.rst:702
 msgid "0.35"
 msgstr "0,35"
 
-#: ../../user_manual/ekos-tilt-correction.rst:634
+#: ../../user_manual/ekos-tilt-correction.rst:703
 msgid "M4"
 msgstr "M4"
 
-#: ../../user_manual/ekos-tilt-correction.rst:635
+#: ../../user_manual/ekos-tilt-correction.rst:704
 msgid "0.70"
 msgstr "0,70"
 
-#: ../../user_manual/ekos-tilt-correction.rst:636
+#: ../../user_manual/ekos-tilt-correction.rst:705
 msgid "M4 fine"
 msgstr "M4, мелкий шаг"
 
-#: ../../user_manual/ekos-tilt-correction.rst:638
+#: ../../user_manual/ekos-tilt-correction.rst:707
 msgid "M5"
 msgstr "M5"
 
-#: ../../user_manual/ekos-tilt-correction.rst:639
+#: ../../user_manual/ekos-tilt-correction.rst:708
 msgid "0.80"
 msgstr "0,80"
 
-#: ../../user_manual/ekos-tilt-correction.rst:640
+#: ../../user_manual/ekos-tilt-correction.rst:709
 msgid "M5 fine"
 msgstr "M5, мелкий шаг"
 
-#: ../../user_manual/ekos-tilt-correction.rst:642
+#: ../../user_manual/ekos-tilt-correction.rst:711
 msgid "M6"
 msgstr "M6"
 
-#: ../../user_manual/ekos-tilt-correction.rst:643
+#: ../../user_manual/ekos-tilt-correction.rst:712
 msgid "1.00"
 msgstr "1,00"
 
-#: ../../user_manual/ekos-tilt-correction.rst:644
+#: ../../user_manual/ekos-tilt-correction.rst:713
 msgid "Wanderer ETA"
 msgstr "Wanderer ETA"
 
-#: ../../user_manual/ekos-tilt-correction.rst:648
+#: ../../user_manual/ekos-tilt-correction.rst:717
 msgid "ETA M54 specifications"
 msgstr "Характеристики ETA M54"
 
-#: ../../user_manual/ekos-tilt-correction.rst:654
+#: ../../user_manual/ekos-tilt-correction.rst:723
 msgid "Parameter"
 msgstr "Параметр"
 
-#: ../../user_manual/ekos-tilt-correction.rst:655
+#: ../../user_manual/ekos-tilt-correction.rst:724
 msgid "Value"
 msgstr "Значение"
 
-#: ../../user_manual/ekos-tilt-correction.rst:656
+#: ../../user_manual/ekos-tilt-correction.rst:725
 msgid "Connection"
 msgstr "Подключение"
 
-#: ../../user_manual/ekos-tilt-correction.rst:657
+#: ../../user_manual/ekos-tilt-correction.rst:726
 msgid "USB 2.0 Type-B, CH340, 19200 baud"
 msgstr "USB 2.0 тип B, CH340, 19200 бод"
 
-#: ../../user_manual/ekos-tilt-correction.rst:658
+#: ../../user_manual/ekos-tilt-correction.rst:727
 msgid "Travel per point"
 msgstr "Ход на точку"
 
-#: ../../user_manual/ekos-tilt-correction.rst:659
+#: ../../user_manual/ekos-tilt-correction.rst:728
 msgid "0–1.200 mm"
 msgstr "0–1,200 мм"
 
-#: ../../user_manual/ekos-tilt-correction.rst:660
+#: ../../user_manual/ekos-tilt-correction.rst:729
 msgid "Accuracy"
 msgstr "Точность"
 
-#: ../../user_manual/ekos-tilt-correction.rst:661
+#: ../../user_manual/ekos-tilt-correction.rst:730
 msgid "0.002 mm (2 µm)"
 msgstr "0,002 мм (2 мкм)"
 
-#: ../../user_manual/ekos-tilt-correction.rst:662
+#: ../../user_manual/ekos-tilt-correction.rst:731
 msgid "Motor resolution"
 msgstr "Разрешение двигателя"
 
-#: ../../user_manual/ekos-tilt-correction.rst:663
+#: ../../user_manual/ekos-tilt-correction.rst:732
 msgid "0.3 µm/step"
 msgstr "0,3 мкм/шаг"
 
-#: ../../user_manual/ekos-tilt-correction.rst:664
+#: ../../user_manual/ekos-tilt-correction.rst:733
 msgid "Bolt-circle radius"
 msgstr "Радиус окружности центров винтов"
 
-#: ../../user_manual/ekos-tilt-correction.rst:666
+#: ../../user_manual/ekos-tilt-correction.rst:735
 msgid "Thread pitch"
 msgstr "Шаг резьбы"
 
-#: ../../user_manual/ekos-tilt-correction.rst:668
+#: ../../user_manual/ekos-tilt-correction.rst:737
 msgid "Weight"
 msgstr "Вес"
 
-#: ../../user_manual/ekos-tilt-correction.rst:669
+#: ../../user_manual/ekos-tilt-correction.rst:738
 msgid "470 g"
 msgstr "470 г"
 
-#: ../../user_manual/ekos-tilt-correction.rst:670
+#: ../../user_manual/ekos-tilt-correction.rst:739
 msgid "Operating temperature"
 msgstr "Рабочая температура"
 
-#: ../../user_manual/ekos-tilt-correction.rst:671
+#: ../../user_manual/ekos-tilt-correction.rst:740
 msgid "-25°C to 50°C"
 msgstr "от −25 до 50 °C"
 
-#: ../../user_manual/ekos-tilt-correction.rst:672
+#: ../../user_manual/ekos-tilt-correction.rst:741
 msgid "Power"
 msgstr "Питание"
 
-#: ../../user_manual/ekos-tilt-correction.rst:673
+#: ../../user_manual/ekos-tilt-correction.rst:742
 msgid "USB 5V 0.5A"
 msgstr "USB 5 В 0,5 А"
 
-#: ../../user_manual/ekos-tilt-correction.rst:674
+#: ../../user_manual/ekos-tilt-correction.rst:743
 msgid "INDI driver"
 msgstr "Драйвер INDI"
 
-#: ../../user_manual/ekos-tilt-correction.rst:675
+#: ../../user_manual/ekos-tilt-correction.rst:744
 msgid "``indi_wanderer_eta``"
 msgstr "``indi_wanderer_eta``"
 
-#: ../../user_manual/ekos-tilt-correction.rst:676
+#: ../../user_manual/ekos-tilt-correction.rst:745
 msgid "Device name"
 msgstr "Имя устройства"
 
-#: ../../user_manual/ekos-tilt-correction.rst:677
+#: ../../user_manual/ekos-tilt-correction.rst:746
 msgid "\"Wanderer ETA M54\""
 msgstr "\"Wanderer ETA M54\""
