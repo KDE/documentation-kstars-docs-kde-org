@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kstars_docs_user_manual___ekos-tilt-correction\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-24 02:18+0000\n"
-"PO-Revision-Date: 2026-10-10 16:02+0200\n"
+"PO-Revision-Date: 2026-10-24 07:48+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -546,13 +546,16 @@ msgstr ""
 
 #: ../../user_manual/ekos-tilt-correction.rst:208
 msgid "Star detection settings for tilted setups"
-msgstr ""
+msgstr "Параметры обнаружения звёзд при наклоне"
 
 #: ../../user_manual/ekos-tilt-correction.rst:210
 msgid ""
 "The default focus star-extraction profile (``1-Focus-Default``) is tuned for "
 "normal autofocus. With noticeable tilt it can starve the outer tiles of data:"
 msgstr ""
+"Профиль извлечения звёзд для фокусировки по умолчанию (``1-Focus-Default``) "
+"настроен на обычный автофокус. При заметном наклоне внешним фрагментам может "
+"не хватить данных:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:213
 msgid ""
@@ -560,6 +563,9 @@ msgid ""
 "cluster in the centre can use up most of that budget, leaving few stars for "
 "the corner tiles."
 msgstr ""
+"Он сохраняет только **100 самых ярких звёзд на весь кадр**. Яркое скопление "
+"в центре может забрать большую часть этого лимита, и угловым фрагментам "
+"останется мало звёзд."
 
 #: ../../user_manual/ekos-tilt-correction.rst:215
 msgid ""
@@ -567,6 +573,9 @@ msgid ""
 "slightly defocused or tilted stars in the corners are exactly the ones that "
 "get dropped."
 msgstr ""
+"Он отбрасывает звёзды, **вытянутые сильнее чем 1,5** (отношение a/b). "
+"Отбрасываются как раз слегка расфокусированные или искажённые наклоном "
+"звёзды в углах."
 
 #: ../../user_manual/ekos-tilt-correction.rst:218
 msgid ""
@@ -574,6 +583,9 @@ msgid ""
 "bumpy per-tile V-curves, and tiles that fail to fit (N/A) even though the "
 "overall autofocus solves cleanly."
 msgstr ""
+"Типичные признаки: во время прохода в угловых фрагментах мало звёзд или нет "
+"совсем, V-кривые фрагментов неровные, а некоторые фрагменты не "
+"аппроксимируются (N/A), хотя общий автофокус находит решение без труда."
 
 #: ../../user_manual/ekos-tilt-correction.rst:221
 msgid ""
@@ -582,6 +594,11 @@ msgid ""
 "to **SEP Profile**, copy the default profile under a new name (for example "
 "``aberration``), and change these values:"
 msgstr ""
+"Чтобы исправить это, создайте отдельный профиль для запусков инспектора "
+"аберраций. В **Параметрах** модуля «Фокусировка» откройте страницу "
+"**Обработка**, нажмите кнопку изменения рядом с полем **Профиль SEP**, "
+"скопируйте профиль по умолчанию под новым именем (например, ``aberration``) "
+"и измените следующие значения:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:229
 #: ../../user_manual/ekos-tilt-correction.rst:314
@@ -590,97 +607,87 @@ msgstr "Параметр"
 
 #: ../../user_manual/ekos-tilt-correction.rst:230
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
 #: ../../user_manual/ekos-tilt-correction.rst:231
 msgid "Suggested"
-msgstr ""
+msgstr "Рекомендуется"
 
 #: ../../user_manual/ekos-tilt-correction.rst:232
 msgid "Effect"
-msgstr ""
+msgstr "Действие"
 
 #: ../../user_manual/ekos-tilt-correction.rst:233
 msgid "**InitialKeep**"
-msgstr ""
+msgstr "**Кол-во до фильтрации**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:234
 msgid "250"
-msgstr ""
+msgstr "250"
 
 #: ../../user_manual/ekos-tilt-correction.rst:235
 msgid "2500"
-msgstr ""
+msgstr "2500"
 
 #: ../../user_manual/ekos-tilt-correction.rst:236
 msgid "More candidates before filtering"
-msgstr ""
+msgstr "Больше кандидатов до фильтрации"
 
 #: ../../user_manual/ekos-tilt-correction.rst:237
 msgid "**stars Keep #**"
-msgstr ""
+msgstr "**Кол-во сохраняемых** (звёзды)"
 
 #: ../../user_manual/ekos-tilt-correction.rst:238
-#, fuzzy
-#| msgid "1.00"
 msgid "100"
-msgstr "1,00"
+msgstr "100"
 
 #: ../../user_manual/ekos-tilt-correction.rst:239
 msgid "1000"
-msgstr ""
+msgstr "1000"
 
 #: ../../user_manual/ekos-tilt-correction.rst:240
 msgid "Enough stars left for every tile"
-msgstr ""
+msgstr "Звёзд хватает на каждый фрагмент"
 
 #: ../../user_manual/ekos-tilt-correction.rst:241
 msgid "**Max Ellipse**"
-msgstr ""
+msgstr "**Максимальный эллипс**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:242
 msgid "1.5"
-msgstr ""
+msgstr "1,5"
 
 #: ../../user_manual/ekos-tilt-correction.rst:243
-#, fuzzy
-#| msgid "M2.5"
 msgid "2.5"
-msgstr "M2,5"
+msgstr "2,5"
 
 #: ../../user_manual/ekos-tilt-correction.rst:244
 msgid "Keeps elongated off-axis stars"
-msgstr ""
+msgstr "Сохраняются вытянутые внеосевые звёзды"
 
 #: ../../user_manual/ekos-tilt-correction.rst:245
 msgid "**Min Area**"
-msgstr ""
+msgstr "**Минимальная площадь**"
 
 #: ../../user_manual/ekos-tilt-correction.rst:246
-#, fuzzy
-#| msgid "2"
 msgid "20"
-msgstr "2"
+msgstr "20"
 
 #: ../../user_manual/ekos-tilt-correction.rst:247
-#, fuzzy
-#| msgid "1"
 msgid "10"
-msgstr "1"
+msgstr "10"
 
 #: ../../user_manual/ekos-tilt-correction.rst:248
 msgid "Keeps smaller, fainter stars"
-msgstr ""
+msgstr "Сохраняются более мелкие и слабые звёзды"
 
 #: ../../user_manual/ekos-tilt-correction.rst:253
 msgid "Focus Options Profile Editor with the aberration profile"
-msgstr ""
+msgstr "Редактор профилей в параметрах фокусировки с профилем aberration"
 
 #: ../../user_manual/ekos-tilt-correction.rst:253
-#, fuzzy
-#| msgid ".. image:: /images/ekos_tilt_sweep_early.jpg"
 msgid ".. image:: /images/ekos_tilt_sep_profile.jpg"
-msgstr ".. image:: /images/ekos_tilt_sweep_early.jpg"
+msgstr ".. image:: /images/ekos_tilt_sep_profile.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:253
 msgid ""
@@ -688,6 +695,10 @@ msgid ""
 "InitialKeep 2500, stars Keep # 1000, Min Area 10 and Max Ellipse 2.5. All "
 "other values are unchanged from the default."
 msgstr ""
+"Редактор профилей в параметрах фокусировки со скопированным профилем "
+"``aberration``: «Кол-во до фильтрации» 2500, «Кол-во сохраняемых» звёзд "
+"1000, «Минимальная площадь» 10 и «Максимальный эллипс» 2,5. Остальные "
+"значения не изменены."
 
 #: ../../user_manual/ekos-tilt-correction.rst:257
 msgid ""
@@ -697,17 +708,23 @@ msgid ""
 "carried data through the whole sweep and the Aberration Inspector could fit "
 "all tiles. You can switch back to the default profile for normal autofocus."
 msgstr ""
+"Остальные значения оставьте по умолчанию. На плотном звёздном поле с "
+"наклонённым Askar SQA130 и камерой IMX571 это увеличило число обнаруженных "
+"звёзд с 78 примерно до 670 на кадр. После этого каждый фрагмент, включая "
+"угловые, давал данные на протяжении всего прохода, и инспектор аберраций "
+"смог аппроксимировать все фрагменты. Для обычного автофокуса можно вернуться "
+"к профилю по умолчанию."
 
 #: ../../user_manual/ekos-tilt-correction.rst:266
 msgid ""
 "Aberration Inspector sweep with 679 detected stars across all mosaic tiles"
 msgstr ""
+"Проход инспектора аберраций: 679 обнаруженных звёзд во всех фрагментах "
+"мозаики"
 
 #: ../../user_manual/ekos-tilt-correction.rst:266
-#, fuzzy
-#| msgid ".. image:: /images/ekos_tilt_run2.jpg"
 msgid ".. image:: /images/ekos_tilt_many_stars.jpg"
-msgstr ".. image:: /images/ekos_tilt_run2.jpg"
+msgstr ".. image:: /images/ekos_tilt_many_stars.jpg"
 
 #: ../../user_manual/ekos-tilt-correction.rst:266
 msgid ""
@@ -715,6 +732,9 @@ msgid ""
 "1.50), spread over every mosaic tile including the corners. The V-curve "
 "solves cleanly at 6528 with R²=0.98."
 msgstr ""
+"То же поле с профилем ``aberration``: обнаружено 679 звёзд (HFR 1,50), "
+"распределённых по всем фрагментам мозаики, включая угловые. V-кривая "
+"уверенно находит решение в положении 6528 при R²=0,98."
 
 #: ../../user_manual/ekos-tilt-correction.rst:272
 msgid "Understanding the Results"
@@ -1543,6 +1563,12 @@ msgid ""
 "and accepts more elongated stars often brings moderately tilted tiles back "
 "without any mechanical change."
 msgstr ""
+"**Сначала проверьте обнаружение звёзд.** Если в угловых фрагментах просто "
+"мало звёзд, а фокус не вышел за пределы диапазона, ограничением могут быть :"
+"ref:`параметры обнаружения звёзд <ekos-tilt-star-detection>`, а не наклон. "
+"Профиль, сохраняющий больше звёзд и допускающий более вытянутые, часто "
+"возвращает умеренно наклонённые фрагменты без какой-либо механической "
+"регулировки."
 
 #: ../../user_manual/ekos-tilt-correction.rst:586
 msgid ""
