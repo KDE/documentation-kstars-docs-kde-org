@@ -442,7 +442,7 @@ Exposure Calculator
 
 |Exposure calculator|
 
-The exposure calculator is an implementation of a calculation process presented by Dr. Robin Glover in 2019.  This calculation process seeks to establish a sub-exposure time which considers two sources of noise in an image: camera read noise, and noise from background sky brightness (light pollution). The effects of camera thermal noise on images is not considered in this calculation. (Note: Since his presentation in 2019, Dr. Glover has enhanced his calculation process to incorporate the effects of sensor quantum efficiency, and sensor pixel size. At this time, the KStars implementation lacks those features.)
+The exposure calculator is an implementation of a calculation process presented by Dr. Robin Glover in 2019.  This calculation process seeks to establish a sub-exposure time which considers two sources of noise in an image: camera read noise, and noise from background sky brightness (light pollution). The effects of camera thermal noise on images is not considered in this calculation. Since his presentation in 2019, Dr. Glover has enhanced his calculation process to incorporate the effects of sensor quantum efficiency and sensor pixel size. The KStars implementation includes these refinements: the quantum efficiency and pixel size of the sensor are read from the selected camera data file (see :ref:`ekos-capture-exp-calc-camera-data`).
 
 The concept in Dr. Glover's calculation is to provide a sufficiently long exposure so that the effects of camera read-noise are overwhelmed by the signal coming from the target, but not so long an exposure that the effects of light pollution rise to levels which would overwhelm the signal from the target.
 
@@ -450,9 +450,26 @@ The implementation of this process does not consider the strength (magnitude or 
 
 Approaches to imaging can vary greatly in the selection of exposure times, and number of sub-exposures used for integration. A well accepted approach for imaging deep-sky objects utilizes long exposures, requires good guiding, good to excellent seeing conditions, and would typically employ filtering to reduce the effects of light pollution. At the other extreme are approaches such as speckle imaging techniques (commonly 'lucky imaging'), which utilize many hundreds to many thousands of extremely short exposures in an attempt to eliminate the effects of light pollution, poor seeing conditions, and poor guiding. Choices made for values of certain inputs to the exposure calculator will vary depending upon which imaging approach is being employed.
 
+Opening the Exposure Calculator
+-------------------------------
+
+Click the **Exp. Calc.** button in the Capture module to open the calculator. Ekos fills in some of the inputs from the current setup:
+
+-  ``Focal Ratio`` is taken from the telescope of the active optical train. If the optical train includes a reducer or a flattener, its factor is applied to the focal length.
+
+-  ``Camera`` is set to the camera data file whose name matches the name of the active camera device, if such a file is available.
+
+-  ``Sky Quality`` starts at 20.5. KStars does not read this value from a sky quality meter, so adjust it to match your site and conditions.
+
+The first time the calculator is opened and no camera data files can be found, the **Camera Data Download** dialog opens so that data for your camera can be downloaded (see :ref:`ekos-capture-exp-calc-camera-data`).
+
+The calculator only gives advice. It does not change your sequence. To use the results, enter the calculated exposure time, gain and number of sub-exposures in the Capture module yourself.
+
   1. Exposure Calculator Inputs
 
     -  ``Sky Quality``: The Sky Quality selector sets the measurement of the magnitude per square arc-second of the background sky.
+
+      Next to the Sky Quality selector, the calculator shows the approximate `Bortle class <https://en.wikipedia.org/wiki/Bortle_scale>`__ for the selected value, and a color swatch matching the colors commonly used on light pollution maps.
 
       The range for Sky Quality is from 22 for the darkest skies, to 16 for the brightest (most light-polluted) skies. The magnitude scale is non-linear; it is a logarithmic scale based on the 5th root of 100. So 5 steps on the scale represent a change in brightness by a factor of 100. (A Sky Quality of 17 is 100 times as bright as a Sky Quality of 22. Each full integer step on the scale is a change by a factor of approximately 2.512.). `Wikipedia Sky Brightness <https://en.wikipedia.org/wiki/Sky_brightness>`__ `Wikipedia Light Pollution <https://en.wikipedia.org/wiki/Light_pollution>`__
 
@@ -478,7 +495,7 @@ Approaches to imaging can vary greatly in the selection of exposure times, and n
 
       These adjustments slightly increase the focal ratio, and therefore slightly reduce the computed light gathering capability considered in the calculation.
 
-    -  ``Filter Bandwidth``: The selector for ``Filter Bandwidth`` sets the value for the bandwidth (in nanometers), and should be reduced from the default value of 300 when a filter is included in the optical train. The inclusion of filters in the optic train will greatly effect the exposure calculation. The value ranges from 300, for imaging without any filter, down to 2.8 for an extreme narrow-band filter.
+    -  ``Filter Bandwidth``: The selector for ``Filter Bandwidth`` sets the value for the bandwidth (in nanometers), and should be reduced from the default value of 300 when a filter is included in the optical train. The inclusion of filters in the optic train will greatly effect the exposure calculation. The value ranges from 300, for imaging without any filter, down to 2.8 for an extreme narrow-band filter. Internally, the light pollution rate is multiplied by the bandwidth divided by 300, so a 100 nm filter passes one third of the light pollution of an unfiltered exposure, and a 3 nm filter passes one hundredth of it.
 
       Filters fall generally into two categories: single band, or multi-band. The bandwidth for a single band filter should be relatively easy to determine or estimate. Generally a Red, Green or Blue filter is considered to have a bandwidth of 100 nanometers. Documentation of narrow-band filters will frequently state the bandwidth (usually in the range of 3 to 12 nm). But the bandwidth of multi-band astronomy filters, such as light-pollution filters, or filters specifically designed for use on nebulae may be more difficult to determine as their transmission profiles can be far more complex.
 
@@ -490,15 +507,17 @@ Approaches to imaging can vary greatly in the selection of exposure times, and n
 
       Camera sensors are one of two types: "Charge Coupled Device" (CCD) or "Complementary Metal-Oxide Semiconductor" (CMOS). For the exposure calculation the main difference between these sensor types is that CCD sensors do not have a variable gain setting that would impact the read noise; so a CCD sensor will have a single constant value for its read noise. A CMOS sensor does have a variable gain (or ISO value), and changes to that setting usually result in a change to the read noise.
 
-      The exposure calculator relies upon the selection of a camera data file so that it can access an appropriate read noise value for use in the calculation. The camera selection drop down allows the user to select an appropriate camera data file. For a CCD camera the file will only hold a single read noise value, but for a CMOS camera the file includes a table (or a few tables) of values which relate the gain or ISO value to a read noise value. Do not be confused by "CCD" appearing in the names of many dedicated astrophotography cameras, most of these cameras are using CMOS sensors.
+      The exposure calculator relies upon the selection of a camera data file so that it can access an appropriate read noise value for use in the calculation. The camera selection drop down allows the user to select an appropriate camera data file. For a CCD camera the file will only hold a single read noise value, but for a CMOS camera the file includes a table (or a few tables) of values which relate the gain or ISO value to a read noise value. Do not be confused by "CCD" appearing in the names of many dedicated astrophotography cameras, most of these cameras are using CMOS sensors. Click the **+** button next to the camera selector to download data files for other cameras.
+
+      The sensor type (``Mono`` or ``Color``) defined in the camera data file is shown next to the camera selector. For a color (one-shot color) sensor, each pixel sits behind a red, green or blue filter of the Bayer matrix and receives only about one third of the light, so the calculated exposure time for a color sensor is three times longer than for a monochrome sensor with the same read noise.
 
       The camera data files provided in KStars contain values which are transcribed from manufacturers technical documentation. But actual read noise values for a camera may vary from the published data; so a user may which to utilize a tool that can determine the read noise values for their specific camera. Dr. Glover provides a sensor analysis tool in his MS-Windows based product SharpCap `SharpCap Sensor Analysis <https://www.sharpcap.co.uk/sharpcap/features/sensor-analysis>`__ The specific data from such a tool can be used to create a customized camera data file for use with the KStars exposure calculator.
 
     -  ``Read Mode``: Some cameras manufactured by QHY have the capability to function in multiple modes.  These modes alter the read noise values, so the camera data files for these cameras include multiple read noise tables. When using one of these multi-mode cameras the Read Mode dropdown will become enabled, and allow the user to select the read mode table that would correspond to the mode in which the camera will be operated for imaging.
 
-    -  ``Exposure Time Graph``: The calculator will present a graph of the potential exposure times determined from the inputs. In the case of CMOS based cameras, this graph will resemble the underlying read noise data from the camera, but is transformed into an exposure time over the range of possible gain or ISO values. In the case of CCD based cameras, the graph will be a simple bar, because the read noise of a CCD sensor is invariable.
+    -  ``Exposure Time Graph``: The calculator will present a graph of the potential exposure times determined from the inputs. In the case of CMOS based cameras, this graph will resemble the underlying read noise data from the camera, but is transformed into an exposure time over the range of possible gain or ISO values. In the case of CCD based cameras, the graph will be a simple bar, because the read noise of a CCD sensor is invariable. A red marker on the graph shows the gain currently selected.
 
-    -  ``Gain / ISO Selection``: For cameras with CMOS sensors, a Gain or ISO value can be selected. A Gain control will appear for cameras that allow a gain selection, and an ISO selection drop down will appear for DSLR cameras. Adjusting the gain / ISO value will move a selection indicator laterally along the exposure time graph to show how the selected gain value will effect the calculated exposure time.
+    -  ``Gain / ISO Selection``: For cameras with CMOS sensors, a Gain or ISO value can be selected. A Gain control will appear for cameras that allow a gain selection, and an ISO selection drop down will appear for DSLR cameras. For CCD cameras, the label ``Read noise constant`` is shown instead, because there is no gain to select. When the selected gain falls between two values listed in the camera data file, the read noise is interpolated linearly between them. Adjusting the gain / ISO value will move a selection indicator laterally along the exposure time graph to show how the selected gain value will effect the calculated exposure time.
 
       CMOS based cameras tend to have high read noise at low gain / ISO values, and the read noise diminishes as the Gain / ISO value is increased.  So a user might be tempted to select a higher gain value in an attempt to reduce the amount of read noise. But the camera full well capacity would typically be highest when gain / ISO values are lowest. A greater full well capacity provides a greater dynamic range in the image.
 
@@ -546,11 +565,25 @@ Approaches to imaging can vary greatly in the selection of exposure times, and n
 
       -  ``Table``: A table provides details for stacking based upon the number of hours planned for imaging.
 
+        |Exposure calculator integration table|
+
+        The table has one row for each planned session length from 1 to 40 hours. Its columns are:
+
+        -  ``Planned Hours``: The planned imaging time.
+        -  ``Exposure Count``: The number of sub-exposures needed to fill the planned time, rounded up.
+        -  ``Stack Time``: The total integration time of these sub-exposures, in seconds.
+        -  ``Noise``: The total noise (read noise and light pollution noise) in the stacked image.
+        -  ``Ratio``: The stack time divided by the noise, the time/noise ratio of the stacked image.
+
         The table provides a quick reference for finding the approximate number of sub-exposures that might be completed for a given number of hours in an imaging session. But some functions that consume time are not included in this time calculation. For example, USB based cameras typically take some time for data transmission, or if the user has selected automatic dithering, additional time will be consumed in the imaging process, which is not included in this time calculation.
 
         The far right column of the table shows the calculated time/noise ratio of the integrated (stacked) image that would be produced.
 
       -  ``Graph``: An interactive graph allows the user to visualize the relative change in potential quality for integrated images with various counts of sub-exposures applied in image stacking. This graph can be navigated through the adjustment of the time/noise ratio value; adjusting this value will recompute the quantity of sub-exposures required for the integrated image to achieve that specified time/noise ratio.
+
+        |Exposure calculator integration graph|
+
+        The ``Exposures`` field shows the number of sub-exposures required to reach the ``Time/Noise Ratio``, and the red marker shows this point on the curve.
 
         In the selection of a Time/Noise ratio for the calculation of the count of stacked exposures, the user might want consider the incremental change to the potential quality of the image from an additional sub-exposure. To help a user assess the value of increasing the number of sub-exposures for integration; the tool includes a calculation of the slope for the selected point on the time/noise curve (the user interface uses a delta symbol to present this value). This delta value represents the change in potential quality that will result from the addition or subtraction of a single sub-exposure.
 
@@ -573,6 +606,124 @@ Approaches to imaging can vary greatly in the selection of exposure times, and n
         For an integration using the 30 second sub-exposures we find that 637 sub-exposures would be required to achieve a time/noise ratio of 80. So a total integration time of 5.31 hours is required with these shorter exposures to achieve the same time/noise ratio in the integrated image.
 
         |30 Second sub-exposure|
+
+.. _ekos-capture-exp-calc-camera-data:
+
+Camera Data Files
+-----------------
+
+The calculator needs the read noise characteristics of your camera. These are stored in camera data files, one XML file per camera. The files are maintained in the `camera-data repository <https://github.com/indilib/camera-data>`__, where anyone can add a camera. KStars ships with a copy of these files, and cameras added after your KStars release can be downloaded from the calculator.
+
+**Downloading and updating camera data**: Click the **+** button next to the camera selector. The **Camera Data Download** dialog lists every camera in the repository. Cameras you already have are marked *(installed)*, and cameras whose data has changed in the repository since are marked *(update available)*. Updates, and the camera that is active in Ekos, are selected for you. Select the cameras you want and click **Download**. When all downloads are complete, the dialog closes and the cameras are available in the camera selector right away. If a download fails, the dialog stays open and lists the cameras that could not be downloaded. The download needs an Internet connection.
+
+A downloaded file replaces the copy of the same camera that is installed with KStars.
+
+**File names**: The name of the file is the name of the camera device as shown in Ekos, with spaces replaced by underscores. For example, the data for the camera device ``ZWO CCD ASI071MC Pro`` is stored in ``ZWO_CCD_ASI071MC_Pro.xml``. The camera selector shows file names with underscores turned back into spaces. Following this convention lets the calculator select the right camera automatically.
+
+**Adding your camera**: If your camera is not in the list, add it to the repository by filling in the `camera form <https://github.com/indilib/camera-data/issues/new?template=camera.yml>`__ (a free GitHub account is needed). You only enter the values from the manufacturer's specifications and read noise chart; no XML is needed. Your values are checked automatically and turned into a camera data file, and once a maintainer has reviewed it, every KStars user can download your camera. Submitting the form again with the same camera name corrects an existing camera.
+
+**Creating your own file**: You can also write a camera data file yourself, for example to try values you measured with the SharpCap sensor analysis tool. Copy an existing file for a similar camera and edit it. On Linux, place your files in ``~/.local/share/kstars/cameradata/``. A file there replaces the copy of the same camera installed with KStars, for example in ``/usr/share/kstars/cameradata/``.
+
+A camera data file looks like this:
+
+.. code:: xml
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <ExposureCalculatorCameraData>
+       <CameraDataClassVersion>1</CameraDataClassVersion>
+       <CameraId>ZWO CCD ASI071MC Pro</CameraId>
+       <SensorType>COLOR</SensorType>
+       <GainSelectionType>NORMAL</GainSelectionType>
+       <CameraGainSelections>
+           <GainSelection>0</GainSelection>
+           <GainSelection>250</GainSelection>
+       </CameraGainSelections>
+       <CameraGainReadMode>
+           <GainReadModeNumber>0</GainReadModeNumber>
+           <GainReadModeName>Standard</GainReadModeName>
+           <CameraGainReadNoise>
+               <GainReadNoiseValue>
+                   <Gain>0</Gain>
+                   <ReadNoise>3.28</ReadNoise>
+               </GainReadNoiseValue>
+               <GainReadNoiseValue>
+                   <Gain>50</Gain>
+                   <ReadNoise>2.78</ReadNoise>
+               </GainReadNoiseValue>
+               <!-- more gain / read noise pairs, in increasing gain order -->
+           </CameraGainReadNoise>
+       </CameraGainReadMode>
+       <CameraPixelSize>4.78</CameraPixelSize>
+       <CameraQuantumEfficiency>0.5</CameraQuantumEfficiency>
+   </ExposureCalculatorCameraData>
+
+The elements are:
+
+-  ``CameraId``: The camera name.
+
+-  ``SensorType``: ``MONOCHROME`` or ``COLOR``.
+
+-  ``GainSelectionType``: How the gain is selected for this camera:
+
+   -  ``NORMAL``: The gain can be set to any value in a range (most CMOS cameras). ``CameraGainSelections`` holds the minimum and maximum gain.
+   -  ``ISO_DISCRETE``: The gain is selected from a list of ISO values (DSLR cameras). ``CameraGainSelections`` lists each ISO value.
+   -  ``FIXED``: The read noise does not depend on gain (CCD cameras). ``CameraGainSelections`` holds a single value of ``0``.
+
+-  ``CameraGainReadMode``: A table of read noise values, one ``GainReadNoiseValue`` (a ``Gain`` and its ``ReadNoise`` in electrons) per point, listed in increasing gain order. Cameras with several read modes, such as some QHY cameras, have one ``CameraGainReadMode`` element per mode, each with its own ``GainReadModeNumber`` (starting at 0) and ``GainReadModeName``. These modes are offered in the ``Read Mode`` selector.
+
+-  ``CameraPixelSize``: The pixel size in microns.
+
+-  ``CameraQuantumEfficiency``: The peak quantum efficiency of the sensor, as a fraction between 0 and 1 (for example ``0.8`` for 80%).
+
+The repository checks every file for these rules: read modes numbered from 0 in order, whole-number gains in increasing order within each table, a file name matching ``CameraId``, and positive read noise and pixel size. To share a file you wrote, use the camera form above, or open a pull request in the `camera-data repository <https://github.com/indilib/camera-data>`__.
+
+How the Calculation Works
+-------------------------
+
+This section describes the formulas used by the calculator, for users who want to check the results or understand the effect of each input.
+
+1. **Light pollution rate**: The rate at which light pollution electrons accumulate in each pixel, in electrons per second, is calculated from the sky quality (SQM), the sensor quantum efficiency (QE), the pixel size (in microns), the focal ratio (N) and the filter bandwidth (B, in nanometers):
+
+   .. code::
+
+      Base rate        = 3.341e6 × QE × 300 × 10^(−0.4 × SQM) × pixel size²
+      Pollution rate R = Base rate / N² × (B / 300)
+
+   Each step of 1.0 in sky quality changes the pollution rate by a factor of about 2.5. Halving the focal ratio increases the rate four times.
+
+2. **Noise factor**: The ``Noise Increase %`` value (p) is turned into a factor C:
+
+   .. code::
+
+      C = 1 / ((1 + p/100)² − 1)
+
+   For the default of 5%, C is about 9.76.
+
+3. **Sub-exposure time**: For the read noise (RN, in electrons) at the selected gain, the sub-exposure time in seconds is:
+
+   .. code::
+
+      t = C × RN² / R          (monochrome sensor)
+      t = 3 × C × RN² / R      (color sensor)
+
+   This is the exposure at which the light pollution noise is large enough that the read noise only increases the total noise by p percent.
+
+4. **Sub-exposure results**:
+
+   .. code::
+
+      Pollution Electrons = R × t
+      Shot Noise          = √(R × t)
+      Total Noise         = √(RN² + R × t)
+
+5. **Stacking**: For a stack of n sub-exposures, the noise and time/noise ratio of the stacked image are:
+
+   .. code::
+
+      Stack noise      = √(n × RN² + R × n × t)
+      Time/Noise ratio = n × t / Stack noise = (t / Total Noise) × √n
+
+   The time/noise ratio grows with the square root of the number of sub-exposures. To reach a target ratio T, the calculator needs n = (T / (t / Total Noise))² sub-exposures, rounded down, with a minimum of one. The Δ value shown next to the graph is the slope of the curve at this point, (t / Total Noise) / (2 × √n).
 
 .. _ekos-capture-video-tuts:
 
@@ -606,6 +757,8 @@ Filter Wheels (`<https://youtu.be/yfz9_UJIvLY>`__)
 .. |Rotator Settings| image:: /images/ekos_rotator_settings.png
 .. |Calibration settings| image:: /images/calibration_settings.png
 .. |Exposure calculator| image:: /images/exposure-calculator.png
+.. |Exposure calculator integration table| image:: /images/exposure-calculator-integration-table.png
+.. |Exposure calculator integration graph| image:: /images/exposure-calculator-integration-graph.png
 .. |Avoid selecting gain near a step| image:: /images/exposurecalculation_gain_at_step-avoid.png
 .. |Shift gain away from such steps| image:: /images/exposurecalculation_gain_at_step-shift.png
 .. |300 Second sub-exposure| image:: /images/exposurecalculation-example_subexp300.png
