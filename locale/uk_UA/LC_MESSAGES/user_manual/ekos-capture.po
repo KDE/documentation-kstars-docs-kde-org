@@ -3,20 +3,20 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2019, 2021, 2022, 2023, 2024, 2025, 2026.
+# SPDX-FileCopyrightText: 2019, 2021, 2022, 2023, 2024, 2025, 2026 Yuri Chornoivan <yurchor@ukr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kstars_ekos-capture\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-27 02:40+0000\n"
-"PO-Revision-Date: 2026-02-23 18:59+0200\n"
+"PO-Revision-Date: 2026-10-27 18:04+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
@@ -1393,17 +1393,6 @@ msgid "|Exposure calculator|"
 msgstr "|Калькулятор експозиції|"
 
 #: ../../user_manual/ekos-capture.rst:445
-#, fuzzy
-#| msgid ""
-#| "The exposure calculator is an implementation of a calculation process "
-#| "presented by Dr. Robin Glover in 2019.  This calculation process seeks to "
-#| "establish a sub-exposure time which considers two sources of noise in an "
-#| "image: camera read noise, and noise from background sky brightness (light "
-#| "pollution). The effects of camera thermal noise on images is not "
-#| "considered in this calculation. (Note: Since his presentation in 2019, "
-#| "Dr. Glover has enhanced his calculation process to incorporate the "
-#| "effects of sensor quantum efficiency, and sensor pixel size. At this "
-#| "time, the KStars implementation lacks those features.)"
 msgid ""
 "The exposure calculator is an implementation of a calculation process "
 "presented by Dr. Robin Glover in 2019.  This calculation process seeks to "
@@ -1422,10 +1411,12 @@ msgstr ""
 "намагається встановити час підекспозиції, який враховує два джерела шуму на "
 "зображенні: шум читання камери і шум від фонової яскравості неба (світлове "
 "забруднення). Вплив температурного шуму на зображення при цих обчисленнях не "
-"береться до уваги. (Зауваження: з часу представлення у 2019 році д-р Ґловер "
-"удосконалив процес обчислень з метою включення впливу квантової ефективності "
-"датчика і розмір датчика у пікселях. На сьогодні, у реалізації для KStars "
-"удосконалення не реалізовано.)"
+"береться до уваги. (З часу представлення у 2019 році д-р Ґловер удосконалив "
+"процес обчислень з метою включення впливу квантової ефективності датчика і "
+"розмір датчика у пікселях. На сьогодні, у реалізації для KStars "
+"удосконалення не реалізовано.) Реалізація у KStars містить такі "
+"вдосконалення: квантова ефективність і розмір пікселя сенсора зчитуютьсяз "
+"вибраного файла даних камери (див. :ref:`ekos-capture-exp-calc-camera-data`)."
 
 #: ../../user_manual/ekos-capture.rst:447
 msgid ""
@@ -1488,16 +1479,17 @@ msgstr ""
 "змінюватиметься залежно від того, який з підходів до знімання використано."
 
 #: ../../user_manual/ekos-capture.rst:454
-#, fuzzy
-#| msgid "Exposure Calculator"
 msgid "Opening the Exposure Calculator"
-msgstr "Калькулятор експозиції"
+msgstr "Відкриття «Калькулятора експозиції»"
 
 #: ../../user_manual/ekos-capture.rst:456
 msgid ""
 "Click the **Exp. Calc.** button in the Capture module to open the "
 "calculator. Ekos fills in some of the inputs from the current setup:"
 msgstr ""
+"Натисніть кнопку **Кальк. експ.** у модулі Захоплення, щоб відкрити "
+"калькулятор. Ekos автоматично заповнює деякі поля даними з поточних "
+"налаштувань:"
 
 #: ../../user_manual/ekos-capture.rst:458
 msgid ""
@@ -1505,18 +1497,28 @@ msgid ""
 "the optical train includes a reducer or a flattener, its factor is applied "
 "to the focal length."
 msgstr ""
+"«Фокусне співвідношення» визначається для телескопа з урахуванням "
+"використовуваної оптичного тракту. Якщо до складу оптичного тракту входить "
+"редуктор або вирівнювач поля, його коефіцієнт застосовується до фокусної "
+"відстані."
 
 #: ../../user_manual/ekos-capture.rst:460
 msgid ""
 "``Camera`` is set to the camera data file whose name matches the name of the "
 "active camera device, if such a file is available."
 msgstr ""
+"Для параметра «Камера» встановлюється файл даних камери, назва якого "
+"збігається з назвою активного пристрою камери — за умови, що такий файл "
+"існує."
 
 #: ../../user_manual/ekos-capture.rst:462
 msgid ""
 "``Sky Quality`` starts at 20.5. KStars does not read this value from a sky "
 "quality meter, so adjust it to match your site and conditions."
 msgstr ""
+"«Якість неба» починається з 20,5. KStars не зчитує це значення з приладу для "
+"вимірювання якості неба, тому налаштуйте його відповідно до вашого місця "
+"спостереження та умов."
 
 #: ../../user_manual/ekos-capture.rst:464
 msgid ""
@@ -1524,6 +1526,10 @@ msgid ""
 "found, the **Camera Data Download** dialog opens so that data for your "
 "camera can be downloaded (see :ref:`ekos-capture-exp-calc-camera-data`)."
 msgstr ""
+"Під час першого відкриття калькулятора, якщо файли даних камери не вдається "
+"знайти, буде відкрито діалогове вікно **Отримання даних камери**, що надає "
+"змогу отримати дані для вашої камери (див. :ref:`ekos-capture-exp-calc-"
+"camera-data`)."
 
 #: ../../user_manual/ekos-capture.rst:466
 msgid ""
@@ -1531,6 +1537,9 @@ msgid ""
 "the results, enter the calculated exposure time, gain and number of sub-"
 "exposures in the Capture module yourself."
 msgstr ""
+"Калькулятор надає лише рекомендації. Він не змінює вашу послідовність дій. "
+"Щоб скористатися результатами, самостійно введіть розраховані час "
+"експозиції, підсилення та кількість окремих експозицій у модулі захоплення."
 
 #: ../../user_manual/ekos-capture.rst:468
 msgid "Exposure Calculator Inputs"
@@ -1551,6 +1560,10 @@ msgid ""
 "selected value, and a color swatch matching the colors commonly used on "
 "light pollution maps."
 msgstr ""
+"Поруч із засобом вибору якості неба калькулятор показує орієнтовний `клас за "
+"шкалою Бортля <https://en.wikipedia.org/wiki/Bortle_scale>`__ для вибраного "
+"значення, а також зразок кольору, що відповідає кольорам, які зазвичай "
+"використовуються на картах світлового забруднення."
 
 #: ../../user_manual/ekos-capture.rst:474
 msgid ""
@@ -1730,14 +1743,6 @@ msgstr ""
 "обчислену можливість збирання світла, яку враховують в обчисленнях."
 
 #: ../../user_manual/ekos-capture.rst:498
-#, fuzzy
-#| msgid ""
-#| "``Filter Bandwidth``: The selector for ``Filter Bandwidth`` sets the "
-#| "value for the bandwidth (in nanometers), and should be reduced from the "
-#| "default value of 300 when a filter is included in the optical train. The "
-#| "inclusion of filters in the optic train will greatly effect the exposure "
-#| "calculation. The value ranges from 300, for imaging without any filter, "
-#| "down to 2.8 for an extreme narrow-band filter."
 msgid ""
 "``Filter Bandwidth``: The selector for ``Filter Bandwidth`` sets the value "
 "for the bandwidth (in nanometers), and should be reduced from the default "
@@ -1754,7 +1759,11 @@ msgstr ""
 "порівняно із типовим значенням 300, якщо фільтр включено до оптичний тракт. "
 "Включення фільтрів в оптичний тракт значно впливає на обчислення експозиції. "
 "Значення коливається від 300 для зображення без фільтрування до 2,8 для дуже "
-"вузькосмугового фільтрування."
+"вузькосмугового фільтрування. На внутрішньому рівні рівень світлового "
+"забруднення множиться на величину смуги пропускання, поділену на 300; таким "
+"чином, фільтр зі смугою 100 нм пропускає одну третину того обсягу світлового "
+"забруднення, що потрапляє на знімок без фільтра, а фільтр зі смугою 3 нм — "
+"одну соту частину."
 
 #: ../../user_manual/ekos-capture.rst:500
 msgid ""
@@ -1842,17 +1851,6 @@ msgstr ""
 "цього параметра зазвичай призводять до зміни шуму зчитування."
 
 #: ../../user_manual/ekos-capture.rst:510
-#, fuzzy
-#| msgid ""
-#| "The exposure calculator relies upon the selection of a camera data file "
-#| "so that it can access an appropriate read noise value for use in the "
-#| "calculation. The camera selection drop down allows the user to select an "
-#| "appropriate camera data file. For a CCD camera the file will only hold a "
-#| "single read noise value, but for a CMOS camera the file includes a table "
-#| "(or a few tables) of values which relate the gain or ISO value to a read "
-#| "noise value. Do not be confused by \"CCD\" appearing in the names of many "
-#| "dedicated astrophotography cameras, most of these cameras are using CMOS "
-#| "sensors."
 msgid ""
 "The exposure calculator relies upon the selection of a camera data file so "
 "that it can access an appropriate read noise value for use in the "
@@ -1873,7 +1871,8 @@ msgstr ""
 "декілька таблиць) значень, які пов’язують коефіцієнт посилення або значення "
 "ISO зі значенням шуму зчитування. Нехай вас не бентежить слово «ПЗЗ», яке "
 "з'являється в назвах багатьох спеціалізованих камер для астрофотографії, "
-"більшість із них використовують сенсори CMOS."
+"більшість із них використовують сенсори CMOS. Натисніть кнопку **+** поруч "
+"із засобом для вибору камери, щоб завантажити файли даних для інших камер."
 
 #: ../../user_manual/ekos-capture.rst:512
 msgid ""
@@ -1884,6 +1883,12 @@ msgid ""
 "for a color sensor is three times longer than for a monochrome sensor with "
 "the same read noise."
 msgstr ""
+"Тип датчика («Монохромний» або «Кольоровий»), визначений у файлі даних "
+"камери, буде показано поруч із засобом вибору камери. У кольоровому датчику "
+"(типу «одноразовий колір») кожен піксель розташований за червоним, зеленим "
+"або синім фільтром матриці Баєра і отримує лише близько третини світла; тому "
+"розрахований час експозиції для кольорового сенсора утричі довший, ніж для "
+"монохромного датчика з таким самим рівнем шуму зчитування."
 
 #: ../../user_manual/ekos-capture.rst:514
 msgid ""
@@ -1925,15 +1930,6 @@ msgstr ""
 "зображень."
 
 #: ../../user_manual/ekos-capture.rst:518
-#, fuzzy
-#| msgid ""
-#| "``Exposure Time Graph``: The calculator will present a graph of the "
-#| "potential exposure times determined from the inputs. In the case of CMOS "
-#| "based cameras, this graph will resemble the underlying read noise data "
-#| "from the camera, but is transformed into an exposure time over the range "
-#| "of possible gain or ISO values. In the case of CCD based cameras, the "
-#| "graph will be a simple bar, because the read noise of a CCD sensor is "
-#| "invariable."
 msgid ""
 "``Exposure Time Graph``: The calculator will present a graph of the "
 "potential exposure times determined from the inputs. In the case of CMOS "
@@ -1948,17 +1944,10 @@ msgstr ""
 "CMOS цей графік нагадуватиме базові дані шуму зчитування з камери, але "
 "перетворюється на час експозиції в діапазоні можливого підсилення або "
 "значень ISO. У випадку камер на основі ПЗЗ графік буде простим стовпчиком, "
-"оскільки шум зчитування датчика ПЗЗ незмінний."
+"оскільки шум зчитування датчика ПЗЗ незмінний. Червона позначка на графіку "
+"показує вибраний на поточний момент коефіцієнт підсилення."
 
 #: ../../user_manual/ekos-capture.rst:520
-#, fuzzy
-#| msgid ""
-#| "``Gain / ISO Selection``: For cameras with CMOS sensors, a Gain or ISO "
-#| "value can be selected. A Gain control will appear for cameras that allow "
-#| "a gain selection, and an ISO selection drop down will appear for DSLR "
-#| "cameras. Adjusting the gain / ISO value will move a selection indicator "
-#| "laterally along the exposure time graph to show how the selected gain "
-#| "value will effect the calculated exposure time."
 msgid ""
 "``Gain / ISO Selection``: For cameras with CMOS sensors, a Gain or ISO value "
 "can be selected. A Gain control will appear for cameras that allow a gain "
@@ -1973,9 +1962,14 @@ msgstr ""
 "``Вибір підсилення/ISO``: для камер із датчиками CMOS можна вибрати значення "
 "підсилення або ISO. Засіб керування підсиленням з'явиться для камер, які "
 "дозволяють вибрати підсилення, а спадне меню вибору ISO з'явиться для "
-"цифрових дзеркальних камер. Налаштування значення підсилення/ISO призведе до "
-"переміщення індикатора вибору вздовж графіка часу експозиції, щоб показати, "
-"як вибране значення підсилення вплине на розрахований час експозиції."
+"цифрових дзеркальних камер. Для ПЗЗ-камер натомість буде показано напис "
+"«Стала шуму читання», оскільки у них немає параметра підсилення, який можна "
+"було б вибрати. Якщо вибране значення підсилення знаходиться між двома "
+"значеннями, наведеними у файлі даних камери, шум читання визначається шляхом "
+"лінійної інтерполяції між ними. Налаштування значення підсилення/ISO "
+"призведе до переміщення індикатора вибору вздовж графіка часу експозиції, "
+"щоб показати, як вибране значення підсилення вплине на розрахований час "
+"експозиції."
 
 #: ../../user_manual/ekos-capture.rst:522
 msgid ""
@@ -2259,50 +2253,52 @@ msgstr ""
 "кількості годин запланованої зйомки."
 
 #: ../../user_manual/ekos-capture.rst:568
-#, fuzzy
-#| msgid "|Exposure calculator|"
 msgid "|Exposure calculator integration table|"
-msgstr "|Калькулятор експозиції|"
+msgstr "|Таблиця інтеграції Калькулятора експозиції|"
 
 #: ../../user_manual/ekos-capture.rst:570
 msgid ""
 "The table has one row for each planned session length from 1 to 40 hours. "
 "Its columns are:"
 msgstr ""
+"У таблиці є один рядок для кожної запланованої тривалості сеансу — від 1 до "
+"40 годин. Її стовпці:"
 
 #: ../../user_manual/ekos-capture.rst:572
 msgid "``Planned Hours``: The planned imaging time."
-msgstr ""
+msgstr "``Заплановані години``: запланований час знімання."
 
 #: ../../user_manual/ekos-capture.rst:573
 msgid ""
 "``Exposure Count``: The number of sub-exposures needed to fill the planned "
 "time, rounded up."
 msgstr ""
+"``Кількість експозицій``: кількість окремих експозицій, необхідних для "
+"досягнення запланованої тривалості (з округленням у більший бік)."
 
 #: ../../user_manual/ekos-capture.rst:574
 msgid ""
 "``Stack Time``: The total integration time of these sub-exposures, in "
 "seconds."
 msgstr ""
+"``Час стосування``: загальний час інтегрування цих підлеглих експозицій, у "
+"секундах."
 
 #: ../../user_manual/ekos-capture.rst:575
-#, fuzzy
-#| msgid ""
-#| "``Shot Noise``: The calculated noise from light pollution impacting the "
-#| "exposure."
 msgid ""
 "``Noise``: The total noise (read noise and light pollution noise) in the "
 "stacked image."
 msgstr ""
-"``Шумність знімка``: обчислена шумність від світлового забруднення, що "
-"впливає на експозицію."
+"``Шумність``: загальна шумність (шум читання та шум світлового забруднення) "
+"у стосованому зображенні."
 
 #: ../../user_manual/ekos-capture.rst:576
 msgid ""
 "``Ratio``: The stack time divided by the noise, the time/noise ratio of the "
 "stacked image."
 msgstr ""
+"``Співвідношення``: час накопичення, поділений на рівень шумності; "
+"відношення часу до шуму для накопиченого зображення."
 
 #: ../../user_manual/ekos-capture.rst:578
 msgid ""
@@ -2348,16 +2344,17 @@ msgstr ""
 "співвідношення час/шум."
 
 #: ../../user_manual/ekos-capture.rst:584
-#, fuzzy
-#| msgid "|Exposure calculator|"
 msgid "|Exposure calculator integration graph|"
-msgstr "|Калькулятор експозиції|"
+msgstr "|Графік інтеграції Калькулятора експозиції|"
 
 #: ../../user_manual/ekos-capture.rst:586
 msgid ""
 "The ``Exposures`` field shows the number of sub-exposures required to reach "
 "the ``Time/Noise Ratio``, and the red marker shows this point on the curve."
 msgstr ""
+"У полі «Експозиції» буде показано кількість підлеглих експозицій, необхідних "
+"для досягнення «співвідношення часу та шуму», а червона позначка вказує цю "
+"точку на кривій."
 
 #: ../../user_manual/ekos-capture.rst:588
 msgid ""
@@ -2544,7 +2541,7 @@ msgstr "|30-секундна підекспозиція|"
 
 #: ../../user_manual/ekos-capture.rst:613
 msgid "Camera Data Files"
-msgstr ""
+msgstr "Файли даних камери"
 
 #: ../../user_manual/ekos-capture.rst:615
 msgid ""
@@ -2555,6 +2552,13 @@ msgid ""
 "files, and cameras added after your KStars release can be downloaded from "
 "the calculator."
 msgstr ""
+"Для роботи калькулятора потрібні дані про характеристики шумності читання "
+"вашої камери. Ці відомості містяться у файлах даних камер (по одному файлу "
+"XML для кожної моделі). Файли зберігаються у сховищі `camera-data <https://"
+"github.com/indilib/camera-data>`__, до якого будь-хто може додати нову "
+"камеру. KStars постачається з набором таких файлів, а дані про камери, "
+"додані вже після випуску вашої версії KStars, можна отримати безпосередньо "
+"за допомогою вікна калькулятора."
 
 #: ../../user_manual/ekos-capture.rst:617
 msgid ""
@@ -2569,12 +2573,25 @@ msgid ""
 "and lists the cameras that could not be downloaded. The download needs an "
 "Internet connection."
 msgstr ""
+"**Отримання та оновлення даних про камери**: натисніть кнопку **+** поруч із "
+"засобом вибору камери. У діалоговому вікні **Отримання даних про камери** "
+"наведено перелік усіх камер, доступних у сховищі. Камери, які вже "
+"встановлено у вашій системі, позначено як *(встановлено)*, а ті, дані про "
+"які в сховищі змінилися — як *(доступне оновлення)*. Оновлення, а також "
+"камера, яка наразі активна в Ekos, позначаються автоматично. Виберіть "
+"потрібні камери та натисніть **Отримати**. Після завершення всіх завантажень "
+"діалогове вікно закриється, а камери одразу стануть доступними у списку "
+"вибору. Якщо отримати дані не вдалося, діалогове вікно залишиться відкритим, "
+"а в ньому буде перелічено камери, дані яких не вдалося отримати. Для "
+"отримання даних потрібне з'єднання з інтернетом."
 
 #: ../../user_manual/ekos-capture.rst:619
 msgid ""
 "A downloaded file replaces the copy of the same camera that is installed "
 "with KStars."
 msgstr ""
+"Отриманий файл замінює копію даних тієї самої камери, яку встановлено разом "
+"із KStars."
 
 #: ../../user_manual/ekos-capture.rst:621
 msgid ""
@@ -2585,6 +2602,12 @@ msgid ""
 "underscores turned back into spaces. Following this convention lets the "
 "calculator select the right camera automatically."
 msgstr ""
+"**Назви файлів**: назва файлу відповідає назві камери, яку буде показано в "
+"Ekos, причому пробіли замінені на символи підкреслення. Наприклад, дані для "
+"камери «ZWO CCD ASI071MC Pro» зберігаються у файлі «ZWO_CCD_ASI071MC_Pro."
+"xml». У засобі вибору камери назви файлів буде показано зі зворотною заміною "
+"символів підкреслення на пробіли. Дотримання цього правила дозволяє "
+"калькулятору автоматично вибирати потрібну камеру."
 
 #: ../../user_manual/ekos-capture.rst:623
 msgid ""
@@ -2597,6 +2620,16 @@ msgid ""
 "KStars user can download your camera. Submitting the form again with the "
 "same camera name corrects an existing camera."
 msgstr ""
+"**Додавання вашої камери**: Якщо вашої камери немає у списку, додайте її до "
+"сховища, заповнивши `форму для камери <https://github.com/indilib/camera-"
+"data/issues/new?template=camera.yml>`__ (для цього знадобиться безкоштовний "
+"обліковий запис на GitHub). Вам потрібно лише ввести дані зі специфікацій "
+"виробника та таблиці шумів читання; створювати файл XML не потрібно. Введені "
+"вами значення проходять автоматичну перевірку та перетворюються на файл "
+"даних про камеру. Після того як супровідник проєкту перевірить ці дані, "
+"кожен користувач KStars зможе отримати відомості про вашу камеру. Щоб внести "
+"зміни до вже доданої камери, просто надішліть форму ще раз, вказавши ту саму "
+"назву камери."
 
 #: ../../user_manual/ekos-capture.rst:625
 msgid ""
@@ -2607,10 +2640,17 @@ msgid ""
 "replaces the copy of the same camera installed with KStars, for example in "
 "``/usr/share/kstars/cameradata/``."
 msgstr ""
+"**Створення власного файла**: ви також можете самостійно створити файл даних "
+"камери — наприклад, щоб випробувати значення, отримані за допомогою "
+"інструмента аналізу датчика у програмі SharpCap. Скопіюйте наявний файл для "
+"схожої камери та відредагуйте його. У системі Linux розміщуйте такі файли у "
+"каталозі ``~/.local/share/kstars/cameradata/``. Файл, розміщений у цьому "
+"каталозі, замінить відповідний файл для тієї ж камери, який було встановлено "
+"разом із KStars (наприклад, у каталозі ``/usr/share/kstars/cameradata/``)."
 
 #: ../../user_manual/ekos-capture.rst:627
 msgid "A camera data file looks like this:"
-msgstr ""
+msgstr "Файл даних камери виглядає так:"
 
 #: ../../user_manual/ekos-capture.rst:629
 msgid ""
@@ -2643,40 +2683,77 @@ msgid ""
 "    <CameraQuantumEfficiency>0.5</CameraQuantumEfficiency>\n"
 "</ExposureCalculatorCameraData>"
 msgstr ""
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+"<ExposureCalculatorCameraData>\n"
+"    <CameraDataClassVersion>1</CameraDataClassVersion>\n"
+"    <CameraId>ZWO CCD ASI071MC Pro</CameraId>\n"
+"    <SensorType>COLOR</SensorType>\n"
+"    <GainSelectionType>NORMAL</GainSelectionType>\n"
+"    <CameraGainSelections>\n"
+"        <GainSelection>0</GainSelection>\n"
+"        <GainSelection>250</GainSelection>\n"
+"    </CameraGainSelections>\n"
+"    <CameraGainReadMode>\n"
+"        <GainReadModeNumber>0</GainReadModeNumber>\n"
+"        <GainReadModeName>Standard</GainReadModeName>\n"
+"        <CameraGainReadNoise>\n"
+"            <GainReadNoiseValue>\n"
+"                <Gain>0</Gain>\n"
+"                <ReadNoise>3.28</ReadNoise>\n"
+"            </GainReadNoiseValue>\n"
+"            <GainReadNoiseValue>\n"
+"                <Gain>50</Gain>\n"
+"                <ReadNoise>2.78</ReadNoise>\n"
+"            </GainReadNoiseValue>\n"
+"            <!-- more gain / read noise pairs, in increasing gain order -->\n"
+"        </CameraGainReadNoise>\n"
+"    </CameraGainReadMode>\n"
+"    <CameraPixelSize>4.78</CameraPixelSize>\n"
+"    <CameraQuantumEfficiency>0.5</CameraQuantumEfficiency>\n"
+"</ExposureCalculatorCameraData>"
 
 #: ../../user_manual/ekos-capture.rst:660
 msgid "The elements are:"
-msgstr ""
+msgstr "Елементи:"
 
 #: ../../user_manual/ekos-capture.rst:662
 msgid "``CameraId``: The camera name."
-msgstr ""
+msgstr "``CameraId``: назва камери."
 
 #: ../../user_manual/ekos-capture.rst:664
 msgid "``SensorType``: ``MONOCHROME`` or ``COLOR``."
-msgstr ""
+msgstr "``SensorType``: ``MONOCHROME`` або ``COLOR``."
 
 #: ../../user_manual/ekos-capture.rst:666
 msgid "``GainSelectionType``: How the gain is selected for this camera:"
-msgstr ""
+msgstr "``GainSelectionType``: спосіб вибору підсилення для цієї камери:"
 
 #: ../../user_manual/ekos-capture.rst:668
 msgid ""
 "``NORMAL``: The gain can be set to any value in a range (most CMOS cameras). "
 "``CameraGainSelections`` holds the minimum and maximum gain."
 msgstr ""
+"``NORMAL``: коефіцієнт підсилення можна встановити у будь-яке значення в "
+"межах певного діапазону (характерно для більшості CMOS-камер). Параметр "
+"``CameraGainSelections`` містить мінімальне та максимальне значення "
+"підсилення."
 
 #: ../../user_manual/ekos-capture.rst:669
 msgid ""
 "``ISO_DISCRETE``: The gain is selected from a list of ISO values (DSLR "
 "cameras). ``CameraGainSelections`` lists each ISO value."
 msgstr ""
+"``ISO_DISCRETE``: коефіцієнт підсилення буде вибрано зі списку значень ISO "
+"(для дзеркальних цифрових камер — DSLR). У ``CameraGainSelections`` наведено "
+"перелік усіх значень ISO."
 
 #: ../../user_manual/ekos-capture.rst:670
 msgid ""
 "``FIXED``: The read noise does not depend on gain (CCD cameras). "
 "``CameraGainSelections`` holds a single value of ``0``."
 msgstr ""
+"``FIXED``: шум читання не залежить від коефіцієнта підсилення (ПЗЗ-камери). "
+"Параметр «CameraGainSelections» містить одне значення — «0»."
 
 #: ../../user_manual/ekos-capture.rst:672
 msgid ""
@@ -2687,16 +2764,26 @@ msgid ""
 "each with its own ``GainReadModeNumber`` (starting at 0) and "
 "``GainReadModeName``. These modes are offered in the ``Read Mode`` selector."
 msgstr ""
+"``CameraGainReadMode``: таблиця значень шуму читання, що містить по одному "
+"елементу ``GainReadNoiseValue`` (пара «коефіцієнт підсилення» та відповідний "
+"йому «шум читання» в електронах) для кожної точки; записи впорядковані за "
+"зростанням коефіцієнта підсилення. Для камер, що підтримують кілька режимів "
+"зчитування (наприклад, деякі моделі QHY), передбачено окремий елемент "
+"``CameraGainReadMode`` для кожного режиму. Кожен такий елемент має власний "
+"ідентифікатор ``GainReadModeNumber`` (починаючи з 0) та назву "
+"``GainReadModeName``. Ці режими доступні для вибору у меню «Режим читання»."
 
 #: ../../user_manual/ekos-capture.rst:674
 msgid "``CameraPixelSize``: The pixel size in microns."
-msgstr ""
+msgstr "``CameraPixelSize``: розмір пікселя у мікронах."
 
 #: ../../user_manual/ekos-capture.rst:676
 msgid ""
 "``CameraQuantumEfficiency``: The peak quantum efficiency of the sensor, as a "
 "fraction between 0 and 1 (for example ``0.8`` for 80%)."
 msgstr ""
+"``CameraQuantumEfficiency``: пікова квантова ефективність сенсора, виражена "
+"як частка в діапазоні від 0 до 1 (наприклад, «0.8» для 80%)."
 
 #: ../../user_manual/ekos-capture.rst:678
 msgid ""
@@ -2706,16 +2793,27 @@ msgid ""
 "a file you wrote, use the camera form above, or open a pull request in the "
 "`camera-data repository <https://github.com/indilib/camera-data>`__."
 msgstr ""
+"У сховищі кожен файл перевіряється на відповідність таким правилам: режими "
+"зчитування мають бути пронумеровані (починаючи з 0), коефіцієнти підсилення "
+"мають бути цілими числами, розташованими у порядку зростання у межах кожної "
+"таблиці; назва файла має збігатися з параметром ``CameraId``, а значення "
+"шуму читання та розміру пікселя мають бути додатними. Щоб поділитися "
+"створеним вами файлом, скористайтеся наведеною вище формою для камер або "
+"створіть запит на об'єднання) у сховищі `camera-data <https://github.com/"
+"indilib/camera-data>`__."
 
 #: ../../user_manual/ekos-capture.rst:681
 msgid "How the Calculation Works"
-msgstr ""
+msgstr "Як працює Калькулятор"
 
 #: ../../user_manual/ekos-capture.rst:683
 msgid ""
 "This section describes the formulas used by the calculator, for users who "
 "want to check the results or understand the effect of each input."
 msgstr ""
+"У цьому розділі описано формули, які використовує калькулятор — для "
+"користувачів, які хочуть перевірити результати або зрозуміти, як впливає "
+"кожен із введених параметрів."
 
 #: ../../user_manual/ekos-capture.rst:685
 msgid ""
@@ -2724,54 +2822,74 @@ msgid ""
 "sky quality (SQM), the sensor quantum efficiency (QE), the pixel size (in "
 "microns), the focal ratio (N) and the filter bandwidth (B, in nanometers):"
 msgstr ""
+"**Швидкість накопичення світлового забруднення**: швидкість, з якою "
+"електрони, що виникли внаслідок світлового забруднення, накопичуються в "
+"кожному пікселі (в електронах за секунду), розраховується на основі "
+"показника якості неба (SQM), квантової ефективності сенсора (QE), розміру "
+"пікселя (у мікронах), відносного отвору (N) та ширини смуги пропускання "
+"фільтра (B, у нанометрах):"
 
 #: ../../user_manual/ekos-capture.rst:687
 msgid ""
 "Base rate        = 3.341e6 × QE × 300 × 10^(−0.4 × SQM) × pixel size²\n"
 "Pollution rate R = Base rate / N² × (B / 300)"
 msgstr ""
+"Базова швидкість = 3.341e6 × QE × 300 × 10^(−0.4 × SQM) × pixel size²\n"
+"Швидкість забруднення R = Базова швидкість / N² × (B / 300)"
 
 #: ../../user_manual/ekos-capture.rst:692
 msgid ""
 "Each step of 1.0 in sky quality changes the pollution rate by a factor of "
 "about 2.5. Halving the focal ratio increases the rate four times."
 msgstr ""
+"Кожна зміна показника якості неба на 1,0 змінює рівень забруднення приблизно "
+"в 2,5 рази. Зменшення відносного отвору вдвічі збільшує цей рівень у чотири "
+"рази."
 
 #: ../../user_manual/ekos-capture.rst:694
 msgid ""
 "**Noise factor**: The ``Noise Increase %`` value (p) is turned into a factor "
 "C:"
 msgstr ""
+"**Коефіцієнт шумності**: Значення «Збільшення шуму, %» (p) перетворюється на "
+"коефіцієнт C:"
 
 #: ../../user_manual/ekos-capture.rst:696
 msgid "C = 1 / ((1 + p/100)² − 1)"
-msgstr ""
+msgstr "C = 1 / ((1 + p/100)² − 1)"
 
 #: ../../user_manual/ekos-capture.rst:700
 msgid "For the default of 5%, C is about 9.76."
-msgstr ""
+msgstr "Для типового значення 5%, C дорівнює приблизно 9.76."
 
 #: ../../user_manual/ekos-capture.rst:702
 msgid ""
 "**Sub-exposure time**: For the read noise (RN, in electrons) at the selected "
 "gain, the sub-exposure time in seconds is:"
 msgstr ""
+"**Час підекспозиції**: для рівня шуму читання (RN, в електронах) при "
+"вибраному коефіцієнті підсилення час підекспозиції (у секундах) становить:"
 
 #: ../../user_manual/ekos-capture.rst:704
 msgid ""
 "t = C × RN² / R          (monochrome sensor)\n"
 "t = 3 × C × RN² / R      (color sensor)"
 msgstr ""
+"t = C × RN² / R          (чорно-білий датчик)\n"
+"t = 3 × C × RN² / R      (кольоровий датчик)"
 
 #: ../../user_manual/ekos-capture.rst:709
 msgid ""
 "This is the exposure at which the light pollution noise is large enough that "
 "the read noise only increases the total noise by p percent."
 msgstr ""
+"Це така експозиція, за якої шум від світлового забруднення є настільки "
+"значним, що шум зчитування збільшує загальний рівень шуму лише на p "
+"відсотків."
 
 #: ../../user_manual/ekos-capture.rst:711
 msgid "**Sub-exposure results**:"
-msgstr ""
+msgstr "**Результати підекспозиції**:"
 
 #: ../../user_manual/ekos-capture.rst:713
 msgid ""
@@ -2779,18 +2897,25 @@ msgid ""
 "Shot Noise          = √(R × t)\n"
 "Total Noise         = √(RN² + R × t)"
 msgstr ""
+"Електрони забруднення = R × t\n"
+"Шум знімка          = √(R × t)\n"
+"Загальний шум       = √(RN² + R × t)"
 
 #: ../../user_manual/ekos-capture.rst:719
 msgid ""
 "**Stacking**: For a stack of n sub-exposures, the noise and time/noise ratio "
 "of the stacked image are:"
 msgstr ""
+"**Стосування**: для стосу з n підекспозицій шум і відношення часу до шуму "
+"для стосованого зображення становлять:"
 
 #: ../../user_manual/ekos-capture.rst:721
 msgid ""
 "Stack noise      = √(n × RN² + R × n × t)\n"
 "Time/Noise ratio = n × t / Stack noise = (t / Total Noise) × √n"
 msgstr ""
+"Шум стосу        = √(n × RN² + R × n × t)\n"
+"Співвідношення час/шум = n × t / Шум стосу = (t / Загальний шум) × √n"
 
 #: ../../user_manual/ekos-capture.rst:726
 msgid ""
@@ -2800,6 +2925,12 @@ msgid ""
 "value shown next to the graph is the slope of the curve at this point, (t / "
 "Total Noise) / (2 × √n)."
 msgstr ""
+"Відношення часу до шуму зростає пропорційно до квадратного кореня з "
+"кількості підекспозицій. Щоб досягти цільового значення цього відношення "
+"(T), слід виконати n підекспозицій, де n = (T / (t / Загальний шум))² "
+"(результат слід округлити у менший бік; мінімальне значення — 1). Значення "
+"Δ, наведене поруч із графіком, — це нахил кривої у даній точці, що дорівнює "
+"(t / Загальний шум) / (2 × √n)."
 
 #: ../../user_manual/ekos-capture.rst:731
 msgid "Video Tutorials"
@@ -2927,28 +3058,20 @@ msgid ".. image:: /images/exposure-calculator.png"
 msgstr ".. image:: /images/exposure-calculator.png"
 
 #: ../../user_manual/ekos-capture.rst:760
-#, fuzzy
-#| msgid "Exposure calculator"
 msgid "Exposure calculator integration table"
-msgstr "Калькулятор експозиції"
+msgstr "Таблиця інтеграції Калькулятора експозиції"
 
 #: ../../user_manual/ekos-capture.rst:760
-#, fuzzy
-#| msgid ".. image:: /images/exposure-calculator.png"
 msgid ".. image:: /images/exposure-calculator-integration-table.png"
-msgstr ".. image:: /images/exposure-calculator.png"
+msgstr ".. image:: /images/exposure-calculator-integration-table.png"
 
 #: ../../user_manual/ekos-capture.rst:761
-#, fuzzy
-#| msgid "Exposure calculator"
 msgid "Exposure calculator integration graph"
-msgstr "Калькулятор експозиції"
+msgstr "Графік інтеграції Калькулятора експозиції"
 
 #: ../../user_manual/ekos-capture.rst:761
-#, fuzzy
-#| msgid ".. image:: /images/exposure-calculator.png"
 msgid ".. image:: /images/exposure-calculator-integration-graph.png"
-msgstr ".. image:: /images/exposure-calculator.png"
+msgstr ".. image:: /images/exposure-calculator-integration-graph.png"
 
 #: ../../user_manual/ekos-capture.rst:762
 msgid "Avoid selecting gain near a step"
