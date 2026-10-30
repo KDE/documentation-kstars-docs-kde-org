@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-27 02:40+0000\n"
-"PO-Revision-Date: 2026-09-29 12:41+0200\n"
+"PO-Revision-Date: 2026-10-28 18:37+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1403,17 +1403,6 @@ msgstr "|Exposure calculator|"
 
 # skip-rule: t-pu_desp
 #: ../../user_manual/ekos-capture.rst:445
-#, fuzzy
-#| msgid ""
-#| "The exposure calculator is an implementation of a calculation process "
-#| "presented by Dr. Robin Glover in 2019.  This calculation process seeks to "
-#| "establish a sub-exposure time which considers two sources of noise in an "
-#| "image: camera read noise, and noise from background sky brightness (light "
-#| "pollution). The effects of camera thermal noise on images is not "
-#| "considered in this calculation. (Note: Since his presentation in 2019, "
-#| "Dr. Glover has enhanced his calculation process to incorporate the "
-#| "effects of sensor quantum efficiency, and sensor pixel size. At this "
-#| "time, the KStars implementation lacks those features.)"
 msgid ""
 "The exposure calculator is an implementation of a calculation process "
 "presented by Dr. Robin Glover in 2019.  This calculation process seeks to "
@@ -1432,11 +1421,13 @@ msgstr ""
 "establir un temps de subexposició que consideri dues fonts de soroll en una "
 "imatge: el soroll de lectura de la càmera, i el soroll de la brillantor del "
 "fons del cel (contaminació lumínica). Els efectes del soroll tèrmic de la "
-"càmera sobre les imatges no es consideren en aquest càlcul. (Nota: Des de la "
-"seva presentació el 2019, el Dr. Glover ha millorat el seu procés de càlcul "
-"per a incorporar els efectes de l'eficiència quàntica dels sensors, i la "
-"mida dels píxels dels sensors. En aquest moment, la implementació al KStars "
-"li manquen aquestes característiques.)"
+"càmera sobre les imatges no es consideren en aquest càlcul. Des de la seva "
+"presentació el 2019, el Dr. Glover ha millorat el seu procés de càlcul per a "
+"incorporar els efectes de l'eficiència quàntica dels sensors, i la mida dels "
+"píxels dels sensors. La implementació del KStars inclou aquests refinaments: "
+"l'eficiència quàntica i la mida dels píxels del sensor es llegeixen des del "
+"fitxer de dades de la càmera seleccionat (vegeu :ref:`ekos-capture-exp-calc-"
+"camera-data`)."
 
 #: ../../user_manual/ekos-capture.rst:447
 msgid ""
@@ -1501,16 +1492,17 @@ msgstr ""
 "processament d'imatges que s'estigui utilitzant."
 
 #: ../../user_manual/ekos-capture.rst:454
-#, fuzzy
-#| msgid "Exposure Calculator"
 msgid "Opening the Exposure Calculator"
-msgstr "Calculadora d'exposició"
+msgstr "Obrir la calculadora d'exposició"
 
 #: ../../user_manual/ekos-capture.rst:456
 msgid ""
 "Click the **Exp. Calc.** button in the Capture module to open the "
 "calculator. Ekos fills in some of the inputs from the current setup:"
 msgstr ""
+"Feu clic al botó **Calc. exp.** en el mòdul de captura per a obrir la "
+"calculadora. L'Ekos omple algunes entrades a partir de la configuració "
+"actual:"
 
 #: ../../user_manual/ekos-capture.rst:458
 msgid ""
@@ -1518,18 +1510,27 @@ msgid ""
 "the optical train includes a reducer or a flattener, its factor is applied "
 "to the focal length."
 msgstr ""
+"La ``Relació focal`` es pren del telescopi del tren òptic actiu. Si el tren "
+"òptic inclou un reductor o un aplanador, el seu factor s'aplica a la "
+"distància focal."
 
 #: ../../user_manual/ekos-capture.rst:460
 msgid ""
 "``Camera`` is set to the camera data file whose name matches the name of the "
 "active camera device, if such a file is available."
 msgstr ""
+"``Camera`` s'estableix al fitxer de dades de la càmera el nom de la qual "
+"coincideix amb el nom del dispositiu de càmera activa, si aquest fitxer està "
+"disponible."
 
 #: ../../user_manual/ekos-capture.rst:462
 msgid ""
 "``Sky Quality`` starts at 20.5. KStars does not read this value from a sky "
 "quality meter, so adjust it to match your site and conditions."
 msgstr ""
+"``Qualitat del cel`` comença a 20,5. El KStars no llegeix aquest valor des "
+"d'un mesurador de qualitat del cel, així que ajusteu-lo perquè coincideixi "
+"amb el vostre lloc i les condicions."
 
 #: ../../user_manual/ekos-capture.rst:464
 msgid ""
@@ -1537,6 +1538,10 @@ msgid ""
 "found, the **Camera Data Download** dialog opens so that data for your "
 "camera can be downloaded (see :ref:`ekos-capture-exp-calc-camera-data`)."
 msgstr ""
+"La primera vegada que s'obre la calculadora i no es poden trobar fitxers de "
+"dades de la càmera, s'obre el diàleg **Baixada de les dades de càmera** "
+"perquè les dades de la vostra càmera es puguin baixar (vegeu :ref:`ekos-"
+"capture-exp-calc-camera-data`)."
 
 #: ../../user_manual/ekos-capture.rst:466
 msgid ""
@@ -1544,6 +1549,9 @@ msgid ""
 "the results, enter the calculated exposure time, gain and number of sub-"
 "exposures in the Capture module yourself."
 msgstr ""
+"La calculadora només dona consells. No canvia la vostra seqüència. Per "
+"utilitzar els resultats, introduïu el temps d'exposició calculat, el guany i "
+"el nombre de subexposicions en el mòdul de captura."
 
 #: ../../user_manual/ekos-capture.rst:468
 msgid "Exposure Calculator Inputs"
@@ -1554,9 +1562,10 @@ msgid ""
 "``Sky Quality``: The Sky Quality selector sets the measurement of the "
 "magnitude per square arc-second of the background sky."
 msgstr ""
-"``Qualitat del cel``: El selector Qualitat del cel estableix la mesura de la "
-"magnitud en segons d'arc al quadrat del cel de fons."
+"``Qualitat del cel``: El selector de qualitat del cel estableix la mesura de "
+"la magnitud en segons d'arc al quadrat del cel de fons."
 
+# skip-rule: t-acc_obe
 #: ../../user_manual/ekos-capture.rst:472
 msgid ""
 "Next to the Sky Quality selector, the calculator shows the approximate "
@@ -1564,6 +1573,10 @@ msgid ""
 "selected value, and a color swatch matching the colors commonly used on "
 "light pollution maps."
 msgstr ""
+"Al costat del selector de qualitat del cel, la calculadora mostra la `classe "
+"Bortle <https://en.wikipedia.org/wiki/Bortle_scale>`__ aproximada del valor "
+"seleccionat, i una mostra de color que coincideix amb els colors utilitzats "
+"habitualment en els mapes de contaminació lumínica."
 
 # skip-rule: t-acc_obe
 #: ../../user_manual/ekos-capture.rst:474
@@ -1752,14 +1765,6 @@ msgstr ""
 "considerada en el càlcul."
 
 #: ../../user_manual/ekos-capture.rst:498
-#, fuzzy
-#| msgid ""
-#| "``Filter Bandwidth``: The selector for ``Filter Bandwidth`` sets the "
-#| "value for the bandwidth (in nanometers), and should be reduced from the "
-#| "default value of 300 when a filter is included in the optical train. The "
-#| "inclusion of filters in the optic train will greatly effect the exposure "
-#| "calculation. The value ranges from 300, for imaging without any filter, "
-#| "down to 2.8 for an extreme narrow-band filter."
 msgid ""
 "``Filter Bandwidth``: The selector for ``Filter Bandwidth`` sets the value "
 "for the bandwidth (in nanometers), and should be reduced from the default "
@@ -1777,7 +1782,10 @@ msgstr ""
 "tren òptic. La inclusió de filtres en el tren òptic afectarà enormement el "
 "càlcul de l'exposició. El valor abasta des de 300, per al processament "
 "d'imatges sense cap filtre, fins a 2,8 per a un filtre de banda estreta "
-"extrema."
+"extrema. Internament, la taxa de contaminació lumínica es multiplica per "
+"l'ample de banda dividit per 300, de manera que un filtre de 100 nm passa un "
+"terç de la contaminació lumínica d'una exposició sense filtrar i un filtre "
+"de 3 nm passa una centèsima part d'ella."
 
 #: ../../user_manual/ekos-capture.rst:500
 msgid ""
@@ -1869,17 +1877,6 @@ msgstr ""
 "el soroll de lectura."
 
 #: ../../user_manual/ekos-capture.rst:510
-#, fuzzy
-#| msgid ""
-#| "The exposure calculator relies upon the selection of a camera data file "
-#| "so that it can access an appropriate read noise value for use in the "
-#| "calculation. The camera selection drop down allows the user to select an "
-#| "appropriate camera data file. For a CCD camera the file will only hold a "
-#| "single read noise value, but for a CMOS camera the file includes a table "
-#| "(or a few tables) of values which relate the gain or ISO value to a read "
-#| "noise value. Do not be confused by \"CCD\" appearing in the names of many "
-#| "dedicated astrophotography cameras, most of these cameras are using CMOS "
-#| "sensors."
 msgid ""
 "The exposure calculator relies upon the selection of a camera data file so "
 "that it can access an appropriate read noise value for use in the "
@@ -1901,7 +1898,8 @@ msgstr ""
 "taules) de valors que relacionen el guany o el valor ISO amb un valor de "
 "soroll lectura. No us confongueu amb l'aparició de «CCD» en els noms de "
 "moltes càmeres d'astrofotografia dedicades, la majoria d'aquestes càmeres "
-"estan utilitzant sensors CMOS."
+"estan utilitzant sensors CMOS. Feu clic al botó **+** al costat del selector "
+"de la càmera per a baixar fitxers de dades d'altres càmeres."
 
 #: ../../user_manual/ekos-capture.rst:512
 msgid ""
@@ -1912,6 +1910,12 @@ msgid ""
 "for a color sensor is three times longer than for a monochrome sensor with "
 "the same read noise."
 msgstr ""
+"El tipus de sensor (``Mono`` o ``Color``) definit al fitxer de dades de la "
+"càmera es mostra al costat del selector de càmera. Per a un sensor de color "
+"(color d'una sola captura), cada píxel se situa darrere d'un filtre vermell, "
+"verd o blau de la matriu Bayer i només rep un terç de la llum, de manera que "
+"el temps d'exposició calculat per a un sensor de color és tres vegades més "
+"llarg que per a un sensor monocrom amb el mateix soroll de lectura."
 
 # skip-rule: t-acc_obe
 #: ../../user_manual/ekos-capture.rst:514
@@ -1926,10 +1930,10 @@ msgid ""
 "such a tool can be used to create a customized camera data file for use with "
 "the KStars exposure calculator."
 msgstr ""
-"Els fitxers de dades de la càmera proporcionats al KStars contenen valors "
-"que es transcriuen de la documentació tècnica dels fabricants. Però els "
-"valors reals de soroll de lectura per a una càmera poden variar a partir de "
-"les dades publicades; de manera que un usuari pot utilitzar una eina que pot "
+"Els fitxers de dades de càmera proporcionats al KStars contenen valors que "
+"es transcriuen de la documentació tècnica dels fabricants. Però els valors "
+"reals de soroll de lectura per a una càmera poden variar a partir de les "
+"dades publicades; de manera que un usuari pot utilitzar una eina que pot "
 "determinar els valors de soroll de lectura per a la seva càmera específica. "
 "El Dr. Glover proporciona una eina d'anàlisi de sensors en el seu producte "
 "SharpCap basat en el MS-Windows `SharpCap Sensor Analysis <https://www."
@@ -1948,22 +1952,13 @@ msgid ""
 msgstr ""
 "``Mode de lectura``: Algunes càmeres fabricades per QHY tenen la capacitat "
 "de funcionar en diversos modes. Aquests modes alteren els valors de soroll "
-"de lectura, de manera que els fitxers de dades de la càmera per a aquestes "
+"de lectura, de manera que els fitxers de dades de càmera per a aquestes "
 "càmeres inclouen múltiples taules de soroll de lectura. Quan s'utilitza una "
 "d'aquestes càmeres multimode, el desplegable Mode de lectura s'activarà i "
 "permetrà a l'usuari seleccionar la taula de mode de lectura que correspondrà "
 "al mode en què s'operarà la càmera per al processament de les imatges."
 
 #: ../../user_manual/ekos-capture.rst:518
-#, fuzzy
-#| msgid ""
-#| "``Exposure Time Graph``: The calculator will present a graph of the "
-#| "potential exposure times determined from the inputs. In the case of CMOS "
-#| "based cameras, this graph will resemble the underlying read noise data "
-#| "from the camera, but is transformed into an exposure time over the range "
-#| "of possible gain or ISO values. In the case of CCD based cameras, the "
-#| "graph will be a simple bar, because the read noise of a CCD sensor is "
-#| "invariable."
 msgid ""
 "``Exposure Time Graph``: The calculator will present a graph of the "
 "potential exposure times determined from the inputs. In the case of CMOS "
@@ -1979,17 +1974,10 @@ msgstr ""
 "soroll de lectura subjacents de la càmera, però es transforma en un temps "
 "d'exposició sobre l'interval de possibles guanys o valors ISO. En el cas de "
 "les càmeres basades en CCD, el gràfic serà una barra simple, perquè el "
-"soroll de lectura d'un sensor CCD és invariable."
+"soroll de lectura d'un sensor CCD és invariable. Un marcador vermell al "
+"gràfic mostra el guany seleccionat actualment."
 
 #: ../../user_manual/ekos-capture.rst:520
-#, fuzzy
-#| msgid ""
-#| "``Gain / ISO Selection``: For cameras with CMOS sensors, a Gain or ISO "
-#| "value can be selected. A Gain control will appear for cameras that allow "
-#| "a gain selection, and an ISO selection drop down will appear for DSLR "
-#| "cameras. Adjusting the gain / ISO value will move a selection indicator "
-#| "laterally along the exposure time graph to show how the selected gain "
-#| "value will effect the calculated exposure time."
 msgid ""
 "``Gain / ISO Selection``: For cameras with CMOS sensors, a Gain or ISO value "
 "can be selected. A Gain control will appear for cameras that allow a gain "
@@ -2004,10 +1992,14 @@ msgstr ""
 "``Guany / Selecció ISO``: Per a càmeres amb sensors CMOS, es pot seleccionar "
 "un valor de Guany o ISO. Apareixerà un control de Guany per a les càmeres "
 "que permeten una selecció del guany, i apareixerà una llista desplegable de "
-"selecció ISO per a les càmeres DSLR. Ajustant el valor de guany / ISO es "
-"mourà lateralment un indicador de selecció al llarg del gràfic de temps "
-"d'exposició per a mostrar com el valor de guany seleccionat afectarà el "
-"temps d'exposició calculat."
+"selecció ISO per a les càmeres DSLR. Per a les càmeres CCD, en el seu lloc "
+"es mostra l'etiqueta ``Llegeix la constant de soroll``, perquè no hi ha "
+"guany per seleccionar. Quan el guany seleccionat cau entre dos valors "
+"llistats al fitxer de dades de la càmera, el soroll de lectura s'interpola "
+"linealment entre ells. Ajustant el valor de guany / ISO es mourà lateralment "
+"un indicador de selecció al llarg del gràfic de temps d'exposició per a "
+"mostrar com el valor de guany seleccionat afectarà el temps d'exposició "
+"calculat."
 
 #: ../../user_manual/ekos-capture.rst:522
 msgid ""
@@ -2301,50 +2293,52 @@ msgstr ""
 "d'hores previstes per al processament d'imatges."
 
 #: ../../user_manual/ekos-capture.rst:568
-#, fuzzy
-#| msgid "|Exposure calculator|"
 msgid "|Exposure calculator integration table|"
-msgstr "|Exposure calculator|"
+msgstr "|Exposure calculator integration table|"
 
 #: ../../user_manual/ekos-capture.rst:570
 msgid ""
 "The table has one row for each planned session length from 1 to 40 hours. "
 "Its columns are:"
 msgstr ""
+"La taula té una fila per a cada durada prevista de sessió d'1 a 40 hores. "
+"Les seves columnes són:"
 
 #: ../../user_manual/ekos-capture.rst:572
 msgid "``Planned Hours``: The planned imaging time."
-msgstr ""
+msgstr "``Hores planificades``: el temps previst d'obtenció d'imatges."
 
 #: ../../user_manual/ekos-capture.rst:573
 msgid ""
 "``Exposure Count``: The number of sub-exposures needed to fill the planned "
 "time, rounded up."
 msgstr ""
+"``Comptador d'exposicions``: el nombre de subexposicions necessàries per "
+"omplir l'horari planificat, arrodonit per excés."
 
 #: ../../user_manual/ekos-capture.rst:574
 msgid ""
 "``Stack Time``: The total integration time of these sub-exposures, in "
 "seconds."
 msgstr ""
+"``Temps d'apilament``: el temps total d'integració d'aquestes "
+"subexposicions, en segons."
 
 #: ../../user_manual/ekos-capture.rst:575
-#, fuzzy
-#| msgid ""
-#| "``Shot Noise``: The calculated noise from light pollution impacting the "
-#| "exposure."
 msgid ""
 "``Noise``: The total noise (read noise and light pollution noise) in the "
 "stacked image."
 msgstr ""
-"``Soroll de captura``: El soroll calculat de la contaminació lumínica que "
-"afecta l'exposició."
+"``Soroll``: el soroll total (soroll de lectura i soroll de contaminació "
+"lumínica) en la imatge apilada."
 
 #: ../../user_manual/ekos-capture.rst:576
 msgid ""
 "``Ratio``: The stack time divided by the noise, the time/noise ratio of the "
 "stacked image."
 msgstr ""
+"``Relació``: El temps d'apilament dividit pel soroll, la relació temps/"
+"soroll de la imatge apilada."
 
 #: ../../user_manual/ekos-capture.rst:578
 msgid ""
@@ -2390,17 +2384,19 @@ msgstr ""
 "subexposicions necessàries per a la imatge integrada per a evitar aquesta "
 "relació temps/soroll especificada."
 
+# skip-rule: kct-graph
 #: ../../user_manual/ekos-capture.rst:584
-#, fuzzy
-#| msgid "|Exposure calculator|"
 msgid "|Exposure calculator integration graph|"
-msgstr "|Exposure calculator|"
+msgstr "|Exposure calculator integration graph|"
 
 #: ../../user_manual/ekos-capture.rst:586
 msgid ""
 "The ``Exposures`` field shows the number of sub-exposures required to reach "
 "the ``Time/Noise Ratio``, and the red marker shows this point on the curve."
 msgstr ""
+"El camp ``Exposicions`` mostra el nombre de subexposicions necessàries per "
+"arribar a la ``Relació temps/soroll`` i el marcador vermell mostra aquest "
+"punt a la corba."
 
 #: ../../user_manual/ekos-capture.rst:588
 msgid ""
@@ -2499,7 +2495,7 @@ msgid ""
 msgstr ""
 "Depenent de les diferents entrades i condicions del processament d'imatges, "
 "la qualitat potencial d'una subexposició pot variar molt. En mala qualitat "
-"del cel amb poc o cap filtratge, el temps calcular de subexposició serà "
+"del cel amb poc o sense filtratge, el temps calcular de subexposició serà "
 "naturalment curt per a evitar un soroll aclaparador de la contaminació "
 "lumínica, i el temps d'exposició en relació amb el soroll calculat serà baix "
 "(una relació de temps/soroll baixa). Per a aconseguir una imatge integrada "
@@ -2592,8 +2588,9 @@ msgstr "|30 Second sub-exposure|"
 
 #: ../../user_manual/ekos-capture.rst:613
 msgid "Camera Data Files"
-msgstr ""
+msgstr "Fitxers de dades de càmera"
 
+# skip-rule: t-acc_obe
 #: ../../user_manual/ekos-capture.rst:615
 msgid ""
 "The calculator needs the read noise characteristics of your camera. These "
@@ -2603,6 +2600,13 @@ msgid ""
 "files, and cameras added after your KStars release can be downloaded from "
 "the calculator."
 msgstr ""
+"La calculadora necessita les característiques de soroll de lectura de la "
+"càmera. Aquestes s'emmagatzemen en fitxers de dades de càmera, un fitxer XML "
+"per càmera. Els fitxers es mantenen al `repositori de dades de càmera "
+"<https://github.com/indilib/camera-data>`__, on qualsevol pot afegir una "
+"càmera. El KStars es distribueix amb una còpia d'aquests fitxers, i les "
+"càmeres afegides després del llançament del KStars es poden baixar des de la "
+"calculadora."
 
 #: ../../user_manual/ekos-capture.rst:617
 msgid ""
@@ -2617,12 +2621,25 @@ msgid ""
 "and lists the cameras that could not be downloaded. The download needs an "
 "Internet connection."
 msgstr ""
+"**Descàrrega i actualització de les dades de la càmera**: feu clic al botó **"
+"+** al costat del selector de la càmera. El diàleg **Baixada de dades de la "
+"càmera** llista totes les càmeres del repositori. Les càmeres que ja teniu "
+"estan marcades *(instal·lades)*, i les càmeres les dades de les quals han "
+"canviat al repositori des que estan marcades *(actualització disponible)*. "
+"Les actualitzacions, i la càmera que està activa a l'Ekos, estan "
+"seleccionades per a vós. Seleccioneu les càmeres que voleu i feu clic a "
+"**Descarrega**. Quan s'han completat totes les baixades, el diàleg es tanca "
+"i les càmeres estan disponibles al selector de càmera immediatament. Si una "
+"baixada falla, el diàleg roman obert i llista les càmeres que no s'han pogut "
+"baixar. La descàrrega necessita una connexió a Internet."
 
 #: ../../user_manual/ekos-capture.rst:619
 msgid ""
 "A downloaded file replaces the copy of the same camera that is installed "
 "with KStars."
 msgstr ""
+"Un fitxer baixat substitueix la còpia de la mateixa càmera que s'instal·la "
+"amb el KStars."
 
 #: ../../user_manual/ekos-capture.rst:621
 msgid ""
@@ -2633,7 +2650,15 @@ msgid ""
 "underscores turned back into spaces. Following this convention lets the "
 "calculator select the right camera automatically."
 msgstr ""
+"**Noms de fitxer**: El nom del fitxer és el nom del dispositiu de càmera tal "
+"com es mostra a l'Ekos, amb espais reemplaçats per guions baixos. Per "
+"exemple, les dades del dispositiu de càmera ``ZWO CCD ASI071MC Pro`` "
+"s'emmagatzemen a ``ZWO_CCD_ASI071MC_Pro.xml``. El selector de càmera mostra "
+"els noms de fitxer amb guions baixos convertits en espais. Seguint aquesta "
+"convenció permet a la calculadora seleccionar automàticament la càmera "
+"correcta."
 
+# skip-rule: t-acc_obe
 #: ../../user_manual/ekos-capture.rst:623
 msgid ""
 "**Adding your camera**: If your camera is not in the list, add it to the "
@@ -2645,6 +2670,15 @@ msgid ""
 "KStars user can download your camera. Submitting the form again with the "
 "same camera name corrects an existing camera."
 msgstr ""
+"**Afegir la vostra càmera**: Si la vostra càmera no és a la llista, afegiu-"
+"la al repositori omplint el `formulari de càmera <https://github.com/indilib/"
+"camera-data/issues/new?template=camera.yml>`__ (cal un compte de GitHub "
+"gratuït). Només introduïu els valors de les especificacions del fabricant i "
+"llegiu el gràfic de soroll; no cal cap XML. Els valors es revisen "
+"automàticament i es converteixen en un fitxer de dades de càmera, i una "
+"vegada que un mantenidor l'ha revisat, cada usuari del KStars pot baixar la "
+"càmera. L'enviament del formulari de nou amb el mateix nom de càmera "
+"corregeix una càmera existent."
 
 #: ../../user_manual/ekos-capture.rst:625
 msgid ""
@@ -2655,10 +2689,17 @@ msgid ""
 "replaces the copy of the same camera installed with KStars, for example in "
 "``/usr/share/kstars/cameradata/``."
 msgstr ""
+"**Crear el vostre propi fitxer**: També podeu escriure un fitxer de dades de "
+"càmera vostè mateix, per exemple per provar els valors que heu mesurat amb "
+"l'eina d'anàlisi de sensors SharpCap. Copieu un fitxer existent per a una "
+"càmera similar i editeu-lo. Al Linux, situeu els vostres fitxers a ``~/."
+"local/share/kstars/cameradata/``. Un fitxer reemplaça la còpia de la mateixa "
+"càmera instal·lada amb el KStars, per exemple a ``~/usr/share/kstars/"
+"cameradata/``."
 
 #: ../../user_manual/ekos-capture.rst:627
 msgid "A camera data file looks like this:"
-msgstr ""
+msgstr "Un fitxer de dades de la càmera s'assembla a aquest:"
 
 #: ../../user_manual/ekos-capture.rst:629
 msgid ""
@@ -2691,40 +2732,75 @@ msgid ""
 "    <CameraQuantumEfficiency>0.5</CameraQuantumEfficiency>\n"
 "</ExposureCalculatorCameraData>"
 msgstr ""
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+"<ExposureCalculatorCameraData>\n"
+"    <CameraDataClassVersion>1</CameraDataClassVersion>\n"
+"    <CameraId>ZWO CCD ASI071MC Pro</CameraId>\n"
+"    <SensorType>COLOR</SensorType>\n"
+"    <GainSelectionType>NORMAL</GainSelectionType>\n"
+"    <CameraGainSelections>\n"
+"        <GainSelection>0</GainSelection>\n"
+"        <GainSelection>250</GainSelection>\n"
+"    </CameraGainSelections>\n"
+"    <CameraGainReadMode>\n"
+"        <GainReadModeNumber>0</GainReadModeNumber>\n"
+"        <GainReadModeName>Standard</GainReadModeName>\n"
+"        <CameraGainReadNoise>\n"
+"            <GainReadNoiseValue>\n"
+"                <Gain>0</Gain>\n"
+"                <ReadNoise>3.28</ReadNoise>\n"
+"            </GainReadNoiseValue>\n"
+"            <GainReadNoiseValue>\n"
+"                <Gain>50</Gain>\n"
+"                <ReadNoise>2.78</ReadNoise>\n"
+"            </GainReadNoiseValue>\n"
+"            <!-- more gain / read noise pairs, in increasing gain order -->\n"
+"        </CameraGainReadNoise>\n"
+"    </CameraGainReadMode>\n"
+"    <CameraPixelSize>4.78</CameraPixelSize>\n"
+"    <CameraQuantumEfficiency>0.5</CameraQuantumEfficiency>\n"
+"</ExposureCalculatorCameraData>"
 
 #: ../../user_manual/ekos-capture.rst:660
 msgid "The elements are:"
-msgstr ""
+msgstr "Els elements són:"
 
 #: ../../user_manual/ekos-capture.rst:662
 msgid "``CameraId``: The camera name."
-msgstr ""
+msgstr "``CameraId``: El nom de la càmera."
 
 #: ../../user_manual/ekos-capture.rst:664
 msgid "``SensorType``: ``MONOCHROME`` or ``COLOR``."
-msgstr ""
+msgstr "``SensorType``: ``MONOCHROME`` o ``COLOR``."
 
 #: ../../user_manual/ekos-capture.rst:666
 msgid "``GainSelectionType``: How the gain is selected for this camera:"
 msgstr ""
+"``GainSelectionType``: Com se selecciona el guany per a aquesta càmera:"
 
 #: ../../user_manual/ekos-capture.rst:668
 msgid ""
 "``NORMAL``: The gain can be set to any value in a range (most CMOS cameras). "
 "``CameraGainSelections`` holds the minimum and maximum gain."
 msgstr ""
+"``NORMAL``: El guany es pot establir a qualsevol valor en un interval (la "
+"majoria de càmeres CMOS). ``CameraGainSelections`` té el guany mínim i màxim."
 
 #: ../../user_manual/ekos-capture.rst:669
 msgid ""
 "``ISO_DISCRETE``: The gain is selected from a list of ISO values (DSLR "
 "cameras). ``CameraGainSelections`` lists each ISO value."
 msgstr ""
+"``ISO_DISCRETE``: El guany se selecciona a partir d'una llista de valors ISO "
+"(càmeres DSLR). ``CameraGainSelections`` llista cada valor ISO."
 
 #: ../../user_manual/ekos-capture.rst:670
 msgid ""
 "``FIXED``: The read noise does not depend on gain (CCD cameras). "
 "``CameraGainSelections`` holds a single value of ``0``."
 msgstr ""
+"``FIXED``: El soroll de lectura no depèn del guany (càmeres CCD). "
+"``CameraGainSelections`` té un valor únic de ``0``."
 
 #: ../../user_manual/ekos-capture.rst:672
 msgid ""
@@ -2735,16 +2811,25 @@ msgid ""
 "each with its own ``GainReadModeNumber`` (starting at 0) and "
 "``GainReadModeName``. These modes are offered in the ``Read Mode`` selector."
 msgstr ""
+"``CameraGainReadMode``: Una taula de valors de soroll de lectura, un "
+"``GainReadNoiseValue`` (un ``Gain`` i el seu ``ReadNoise`` en electrons) per "
+"punt, llistat en ordre de guany creixent. Les càmeres amb diversos modes de "
+"lectura, com algunes càmeres QHY, tenen un element ``CameraGainReadMode`` "
+"per mode, cadascun amb el seu propi ``GainReadModeNumber`` (començant per 0) "
+"i ``GainReadModeName``. Aquests modes s'ofereixen en el selector ``Mode de "
+"lectura``."
 
 #: ../../user_manual/ekos-capture.rst:674
 msgid "``CameraPixelSize``: The pixel size in microns."
-msgstr ""
+msgstr "``CameraPixelSize``: La mida dels píxels en micres."
 
 #: ../../user_manual/ekos-capture.rst:676
 msgid ""
 "``CameraQuantumEfficiency``: The peak quantum efficiency of the sensor, as a "
 "fraction between 0 and 1 (for example ``0.8`` for 80%)."
 msgstr ""
+"``CameraQuantumEfficiency``: El pic d'eficiència quàntica del sensor, com a "
+"fracció entre 0 i 1 (per exemple ``0.8`` per al 80%)."
 
 #: ../../user_manual/ekos-capture.rst:678
 msgid ""
@@ -2754,16 +2839,26 @@ msgid ""
 "a file you wrote, use the camera form above, or open a pull request in the "
 "`camera-data repository <https://github.com/indilib/camera-data>`__."
 msgstr ""
+"El repositori comprova cada fitxer amb aquestes regles: modes de lectura "
+"numerats des de 0 en ordre, guanys de nombre sencer en ordre creixent dins "
+"de cada taula, un nom de fitxer que coincideixi amb ``CameraId`` i soroll de "
+"lectura i mida de píxel positiu. Per a compartir un fitxer que heu escrit, "
+"utilitzeu el formulari de càmera de dalt o obriu una sol·licitud d'extracció "
+"al `repositori de dades de la càmera <https://github.com/indilib/camera-"
+"data>`__."
 
 #: ../../user_manual/ekos-capture.rst:681
 msgid "How the Calculation Works"
-msgstr ""
+msgstr "Com funciona el càlcul"
 
 #: ../../user_manual/ekos-capture.rst:683
 msgid ""
 "This section describes the formulas used by the calculator, for users who "
 "want to check the results or understand the effect of each input."
 msgstr ""
+"Aquesta secció descriu les fórmules utilitzades per la calculadora, per als "
+"usuaris que volen comprovar els resultats o entendre l'efecte de cada "
+"entrada."
 
 #: ../../user_manual/ekos-capture.rst:685
 msgid ""
@@ -2772,54 +2867,73 @@ msgid ""
 "sky quality (SQM), the sensor quantum efficiency (QE), the pixel size (in "
 "microns), the focal ratio (N) and the filter bandwidth (B, in nanometers):"
 msgstr ""
+"**Relació de contaminació lumínica**: La taxa a la qual s'acumulen els "
+"electrons de contaminació lumínica a cada píxel, en electrons per segon, es "
+"calcula a partir de la qualitat del cel (SQM), l'eficiència quàntica del "
+"sensor (QE), la mida dels píxels (en micres), la relació focal (N) i "
+"l'amplada de banda del filtre (B, en nanòmetres):"
 
 #: ../../user_manual/ekos-capture.rst:687
 msgid ""
 "Base rate        = 3.341e6 × QE × 300 × 10^(−0.4 × SQM) × pixel size²\n"
 "Pollution rate R = Base rate / N² × (B / 300)"
 msgstr ""
+"Relació base        = 3,341e6 × QE × 300 × 10^(−0,4 × SQM) × mida píxels²\n"
+"Relació de contaminació R = Relació base / N² × (B / 300)"
 
 #: ../../user_manual/ekos-capture.rst:692
 msgid ""
 "Each step of 1.0 in sky quality changes the pollution rate by a factor of "
 "about 2.5. Halving the focal ratio increases the rate four times."
 msgstr ""
+"Cada pas d'1,0 en la qualitat del cel canvia la taxa de contaminació per un "
+"factor d'aproximadament 2,5. A la meitat de la relació focal augmenta la "
+"relació quatre vegades."
 
 #: ../../user_manual/ekos-capture.rst:694
 msgid ""
 "**Noise factor**: The ``Noise Increase %`` value (p) is turned into a factor "
 "C:"
 msgstr ""
+"**Factor de soroll**: El valor ``% augment de soroll`` (p) es converteix en "
+"un factor C:"
 
 #: ../../user_manual/ekos-capture.rst:696
 msgid "C = 1 / ((1 + p/100)² − 1)"
-msgstr ""
+msgstr "C = 1 / ((1 + p/100)² − 1)"
 
 #: ../../user_manual/ekos-capture.rst:700
 msgid "For the default of 5%, C is about 9.76."
-msgstr ""
+msgstr "Per al valor predeterminat del 5%, C és aproximadament 9,76."
 
 #: ../../user_manual/ekos-capture.rst:702
 msgid ""
 "**Sub-exposure time**: For the read noise (RN, in electrons) at the selected "
 "gain, the sub-exposure time in seconds is:"
 msgstr ""
+"**Temps de subexposició**: Per al soroll de lectura (RN, en electrons) en el "
+"guany seleccionat, el temps de la subexposició en segons és:"
 
 #: ../../user_manual/ekos-capture.rst:704
 msgid ""
 "t = C × RN² / R          (monochrome sensor)\n"
 "t = 3 × C × RN² / R      (color sensor)"
 msgstr ""
+"t = C × RN² / R          (sensor monocrom)\n"
+"t = 3 × C × RN² / R      (sensor de color)"
 
 #: ../../user_manual/ekos-capture.rst:709
 msgid ""
 "This is the exposure at which the light pollution noise is large enough that "
 "the read noise only increases the total noise by p percent."
 msgstr ""
+"Aquesta és l'exposició a la qual el soroll de contaminació lumínica és prou "
+"gran com perquè el soroll de lectura només augmenti el soroll total en un p "
+"per cent."
 
 #: ../../user_manual/ekos-capture.rst:711
 msgid "**Sub-exposure results**:"
-msgstr ""
+msgstr "**Resultats de subexposició**:"
 
 #: ../../user_manual/ekos-capture.rst:713
 msgid ""
@@ -2827,18 +2941,25 @@ msgid ""
 "Shot Noise          = √(R × t)\n"
 "Total Noise         = √(RN² + R × t)"
 msgstr ""
+"Electrons de contaminació = R × t\n"
+"Soroll de dispar          = √(R × t)\n"
+"Soroll total         = √(RN² + R × t)"
 
 #: ../../user_manual/ekos-capture.rst:719
 msgid ""
 "**Stacking**: For a stack of n sub-exposures, the noise and time/noise ratio "
 "of the stacked image are:"
 msgstr ""
+"**Apilament**: Per a una pila de n subexposicions, el soroll i la relació "
+"temps/soroll de la imatge apilada són:"
 
 #: ../../user_manual/ekos-capture.rst:721
 msgid ""
 "Stack noise      = √(n × RN² + R × n × t)\n"
 "Time/Noise ratio = n × t / Stack noise = (t / Total Noise) × √n"
 msgstr ""
+"Soroll de pila      = √(n × RN² + R × n × t)\n"
+"Relació temps/soroll = n × t / Soroll de pila = (t / Soroll total) × √n"
 
 #: ../../user_manual/ekos-capture.rst:726
 msgid ""
@@ -2848,6 +2969,11 @@ msgid ""
 "value shown next to the graph is the slope of the curve at this point, (t / "
 "Total Noise) / (2 × √n)."
 msgstr ""
+"La relació temps/soroll creix amb l'arrel quadrada del nombre de "
+"subexposicions. Per arribar a una relació de destinació T, la calculadora "
+"necessita n = (T / (t / Soroll total))² subexposicions, arrodonida cap "
+"avall, amb el mínim d'u. El valor Δ mostrat al costat del gràfic és la "
+"pendent de la corba en aquest punt, (t / Soroll total) / (2 × √n)."
 
 #: ../../user_manual/ekos-capture.rst:731
 msgid "Video Tutorials"
@@ -2975,28 +3101,20 @@ msgid ".. image:: /images/exposure-calculator.png"
 msgstr ".. image:: /images/exposure-calculator.png"
 
 #: ../../user_manual/ekos-capture.rst:760
-#, fuzzy
-#| msgid "Exposure calculator"
 msgid "Exposure calculator integration table"
-msgstr "Calculadora d'exposició"
+msgstr "Taula d'integració de la calculadora d'exposició"
 
 #: ../../user_manual/ekos-capture.rst:760
-#, fuzzy
-#| msgid ".. image:: /images/exposure-calculator.png"
 msgid ".. image:: /images/exposure-calculator-integration-table.png"
-msgstr ".. image:: /images/exposure-calculator.png"
+msgstr ".. image:: /images/exposure-calculator-integration-table.png"
 
 #: ../../user_manual/ekos-capture.rst:761
-#, fuzzy
-#| msgid "Exposure calculator"
 msgid "Exposure calculator integration graph"
-msgstr "Calculadora d'exposició"
+msgstr "Gràfic d'integració de la calculadora d'exposició"
 
 #: ../../user_manual/ekos-capture.rst:761
-#, fuzzy
-#| msgid ".. image:: /images/exposure-calculator.png"
 msgid ".. image:: /images/exposure-calculator-integration-graph.png"
-msgstr ".. image:: /images/exposure-calculator.png"
+msgstr ".. image:: /images/exposure-calculator-integration-graph.png"
 
 #: ../../user_manual/ekos-capture.rst:762
 msgid "Avoid selecting gain near a step"

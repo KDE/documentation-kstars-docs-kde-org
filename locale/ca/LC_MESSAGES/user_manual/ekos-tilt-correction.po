@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: documentation-kstars-docs-kde-org\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-24 02:18+0000\n"
-"PO-Revision-Date: 2026-10-26 16:12+0100\n"
+"PO-Revision-Date: 2026-10-28 17:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -563,13 +563,16 @@ msgstr ""
 
 #: ../../user_manual/ekos-tilt-correction.rst:208
 msgid "Star detection settings for tilted setups"
-msgstr ""
+msgstr "Configuració de detecció d'estrelles per a configuracions inclinades"
 
 #: ../../user_manual/ekos-tilt-correction.rst:210
 msgid ""
 "The default focus star-extraction profile (``1-Focus-Default``) is tuned for "
 "normal autofocus. With noticeable tilt it can starve the outer tiles of data:"
 msgstr ""
+"El perfil predeterminat d'extracció d'estrelles (``1-Focus-predeterminat``) "
+"està ajustat per a l'enfocament automàtic normal. Amb una inclinació notable "
+"pot degradar-se a les tessel·les exteriors de les dades:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:213
 msgid ""
@@ -577,6 +580,9 @@ msgid ""
 "cluster in the centre can use up most of that budget, leaving few stars for "
 "the corner tiles."
 msgstr ""
+"Només manté les **100 estrelles més brillants per a tot el marc**. Un cúmul "
+"brillant al centre pot utilitzar la major part d'aquest nombre, deixant "
+"poques estrelles per a les tessel·les de les cantonades."
 
 #: ../../user_manual/ekos-tilt-correction.rst:215
 msgid ""
@@ -584,6 +590,9 @@ msgid ""
 "slightly defocused or tilted stars in the corners are exactly the ones that "
 "get dropped."
 msgstr ""
+"Rebutja les estrelles que són **més allargades que 1,5** (ràtio a/b). Les "
+"estrelles lleugerament desenfocades o inclinades a les cantonades són "
+"exactament les que s'eliminen."
 
 #: ../../user_manual/ekos-tilt-correction.rst:218
 msgid ""
@@ -591,6 +600,10 @@ msgid ""
 "bumpy per-tile V-curves, and tiles that fail to fit (N/A) even though the "
 "overall autofocus solves cleanly."
 msgstr ""
+"Els símptomes típics són les tessel·les cantonades amb poques o cap estrella "
+"durant l'escombrat, les corbes V irregulars per tessel·la, i les tessel·les "
+"que no s'ajusten (N/A) tot i que l'enfocament automàtic general es resol "
+"netament."
 
 #: ../../user_manual/ekos-tilt-correction.rst:221
 msgid ""
@@ -599,6 +612,11 @@ msgid ""
 "to **SEP Profile**, copy the default profile under a new name (for example "
 "``aberration``), and change these values:"
 msgstr ""
+"Per a corregir-ho, creeu un perfil dedicat per a executar l'inspector "
+"d'aberració. A les **Opcions** de focus, obriu la pàgina **Processament**, "
+"feu clic al botó d'edició al costat del **Perfil SEP**, copieu el perfil "
+"predeterminat amb un nom nou (per exemple ``aberració``), i canvieu aquests "
+"valors:"
 
 #: ../../user_manual/ekos-tilt-correction.rst:229
 #: ../../user_manual/ekos-tilt-correction.rst:314
@@ -647,7 +665,7 @@ msgstr "1000"
 
 #: ../../user_manual/ekos-tilt-correction.rst:240
 msgid "Enough stars left for every tile"
-msgstr ""
+msgstr "Queden suficients estrelles per a cada tessel·la"
 
 #: ../../user_manual/ekos-tilt-correction.rst:241
 msgid "**Max Ellipse**"
@@ -663,7 +681,7 @@ msgstr "2,5"
 
 #: ../../user_manual/ekos-tilt-correction.rst:244
 msgid "Keeps elongated off-axis stars"
-msgstr ""
+msgstr "Mantén les estrelles allargades fora de l'eix"
 
 #: ../../user_manual/ekos-tilt-correction.rst:245
 msgid "**Min Area**"
@@ -679,11 +697,11 @@ msgstr "10"
 
 #: ../../user_manual/ekos-tilt-correction.rst:248
 msgid "Keeps smaller, fainter stars"
-msgstr ""
+msgstr "Mantén estrelles més petites i més febles"
 
 #: ../../user_manual/ekos-tilt-correction.rst:253
 msgid "Focus Options Profile Editor with the aberration profile"
-msgstr ""
+msgstr "Editor de perfils d'opcions de focus amb el perfil d'aberració"
 
 #: ../../user_manual/ekos-tilt-correction.rst:253
 msgid ".. image:: /images/ekos_tilt_sep_profile.jpg"
@@ -695,6 +713,10 @@ msgid ""
 "InitialKeep 2500, stars Keep # 1000, Min Area 10 and Max Ellipse 2.5. All "
 "other values are unchanged from the default."
 msgstr ""
+"L'editor de perfils d'opcions de focus amb un perfil copiat anomenat "
+"``aberration``: Mantén a l'inici 2500, nombre d'estrelles a mantenir 1000, "
+"àrea mín. 10 i el·lipse màx. 2,5. Tots els altres valors no es modifiquen "
+"del valor predeterminat."
 
 #: ../../user_manual/ekos-tilt-correction.rst:257
 msgid ""
@@ -704,11 +726,19 @@ msgid ""
 "carried data through the whole sweep and the Aberration Inspector could fit "
 "all tiles. You can switch back to the default profile for normal autofocus."
 msgstr ""
+"Deixeu els altres valors predeterminat. En un camp estel·lar dens amb una "
+"inclinada Askar SQA130 i una càmera IMX571, això elevà el nombre d'estrelles "
+"detectades de 78 a aproximadament 670 per fotograma. Cada tessel·la, "
+"cantonades incloses, llavors portava dades a través de tota l'escombrada i "
+"l'inspector d'aberració podria ajustar totes les tessel·les. Podeu tornar al "
+"perfil predeterminat per a l'enfocament automàtic normal."
 
 #: ../../user_manual/ekos-tilt-correction.rst:266
 msgid ""
 "Aberration Inspector sweep with 679 detected stars across all mosaic tiles"
 msgstr ""
+"Escombrat de l'inspector d'aberració amb 679 estrelles detectades a totes "
+"les tessel·les del mosaic"
 
 #: ../../user_manual/ekos-tilt-correction.rst:266
 msgid ".. image:: /images/ekos_tilt_many_stars.jpg"
@@ -720,6 +750,9 @@ msgid ""
 "1.50), spread over every mosaic tile including the corners. The V-curve "
 "solves cleanly at 6528 with R²=0.98."
 msgstr ""
+"El mateix camp amb el perfil ``aberration``: 679 estrelles detectades (HFR "
+"1,50), repartides per cada tessel·la del mosaic incloent les cantonades. La "
+"corba V es resol netament a 6528 amb R²=0,98."
 
 #: ../../user_manual/ekos-tilt-correction.rst:272
 msgid "Understanding the Results"
@@ -1556,6 +1589,12 @@ msgid ""
 "and accepts more elongated stars often brings moderately tilted tiles back "
 "without any mechanical change."
 msgstr ""
+"**Comproveu primer la detecció d'estrelles.** Si les tessel·les de les "
+"cantonades són escasses en lloc de realment fora d'interval, els :ref:"
+"`arranjaments de detecció d'estrelles <ekos-tilt-star-detection>` poden ser "
+"el límit, no la inclinació. Un perfil que manté més estrelles i accepta "
+"estrelles més allargades sovint porta les tessel·les moderadament inclinades "
+"de tornada sense cap canvi mecànic."
 
 #: ../../user_manual/ekos-tilt-correction.rst:586
 msgid ""
