@@ -1,19 +1,19 @@
 #
-# SPDX-FileCopyrightText: 2019, 2021, 2022, 2023, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2019, 2021-2026 Freek de Kruijf <freekdekruijf@kde.nl>
 # Jaap Woldringh <jjhwoldringh@kde.nl>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-27 02:40+0000\n"
-"PO-Revision-Date: 2026-10-29 13:49+0100\n"
-"Last-Translator: freek <freekdekruijf@kde.nl>\n"
+"PO-Revision-Date: 2026-10-30 16:30+0100\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 26.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../../user_manual/ekos-capture.rst:3
@@ -2655,10 +2655,17 @@ msgid ""
 "replaces the copy of the same camera installed with KStars, for example in "
 "``/usr/share/kstars/cameradata/``."
 msgstr ""
+"**Uw eigen bestand aanmaken**: u kunt ook zelf een cameragegevensbestand "
+"schrijven, bijvoorbeeld om waarden uit te proberen die u hebt gemeten met de "
+"sensoranalysetool van SharpCap. Kopieer een bestaand bestand van een "
+"vergelijkbare camera en pas dit aan. Plaats op Linux uw bestanden in ``~/."
+"local/share/kstars/cameradata/``. Een bestand op die locatie vervangt de "
+"versie van hetzelfde camerabestand die standaard met KStars wordt "
+"meegeleverd (bijvoorbeeld in ``/usr/share/kstars/cameradata/``)."
 
 #: ../../user_manual/ekos-capture.rst:627
 msgid "A camera data file looks like this:"
-msgstr ""
+msgstr "Een cameragegevensbestand ziet er als volgt uit:"
 
 #: ../../user_manual/ekos-capture.rst:629
 msgid ""
@@ -2691,40 +2698,79 @@ msgid ""
 "    <CameraQuantumEfficiency>0.5</CameraQuantumEfficiency>\n"
 "</ExposureCalculatorCameraData>"
 msgstr ""
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+"<ExposureCalculatorCameraData>\n"
+"    <CameraDataClassVersion>1</CameraDataClassVersion>\n"
+"    <CameraId>ZWO CCD ASI071MC Pro</CameraId>\n"
+"    <SensorType>COLOR</SensorType>\n"
+"    <GainSelectionType>NORMAL</GainSelectionType>\n"
+"    <CameraGainSelections>\n"
+"        <GainSelection>0</GainSelection>\n"
+"        <GainSelection>250</GainSelection>\n"
+"    </CameraGainSelections>\n"
+"    <CameraGainReadMode>\n"
+"        <GainReadModeNumber>0</GainReadModeNumber>\n"
+"        <GainReadModeName>Standard</GainReadModeName>\n"
+"        <CameraGainReadNoise>\n"
+"            <GainReadNoiseValue>\n"
+"                <Gain>0</Gain>\n"
+"                <ReadNoise>3.28</ReadNoise>\n"
+"            </GainReadNoiseValue>\n"
+"            <GainReadNoiseValue>\n"
+"                <Gain>50</Gain>\n"
+"                <ReadNoise>2.78</ReadNoise>\n"
+"            </GainReadNoiseValue>\n"
+"            <!-- meer versterking / lees ruisparen, in opvolgende volgorde "
+"van versterking -->\n"
+"        </CameraGainReadNoise>\n"
+"    </CameraGainReadMode>\n"
+"    <CameraPixelSize>4.78</CameraPixelSize>\n"
+"    <CameraQuantumEfficiency>0.5</CameraQuantumEfficiency>\n"
+"</ExposureCalculatorCameraData>"
 
 #: ../../user_manual/ekos-capture.rst:660
 msgid "The elements are:"
-msgstr ""
+msgstr "De elementen zijn:"
 
 #: ../../user_manual/ekos-capture.rst:662
 msgid "``CameraId``: The camera name."
-msgstr ""
+msgstr "``CameraId``: de cameranaam."
 
 #: ../../user_manual/ekos-capture.rst:664
 msgid "``SensorType``: ``MONOCHROME`` or ``COLOR``."
-msgstr ""
+msgstr "``SensorType``: ``MONOCHROME`` of ``COLOR``."
 
 #: ../../user_manual/ekos-capture.rst:666
 msgid "``GainSelectionType``: How the gain is selected for this camera:"
 msgstr ""
+"``GainSelectionType``: de wijze waarop de versterking (gain) voor deze "
+"camera wordt geselecteerd:"
 
 #: ../../user_manual/ekos-capture.rst:668
 msgid ""
 "``NORMAL``: The gain can be set to any value in a range (most CMOS cameras). "
 "``CameraGainSelections`` holds the minimum and maximum gain."
 msgstr ""
+"``NORMAL``: De versterking (gain) kan worden ingesteld op een willekeurige "
+"waarde binnen een bepaald bereik (bij de meeste CMOS-camera's). "
+"``CameraGainSelections`` bevat de minimale en maximale versterkingswaarde."
 
 #: ../../user_manual/ekos-capture.rst:669
 msgid ""
 "``ISO_DISCRETE``: The gain is selected from a list of ISO values (DSLR "
 "cameras). ``CameraGainSelections`` lists each ISO value."
 msgstr ""
+"``ISO_DISCRETE``: De versterkingswaarde (gain) wordt gekozen uit een lijst "
+"met ISO-waarden (bij DSLR-camera's). ``CameraGainSelections`` bevat een "
+"overzicht van de afzonderlijke ISO-waarden."
 
 #: ../../user_manual/ekos-capture.rst:670
 msgid ""
 "``FIXED``: The read noise does not depend on gain (CCD cameras). "
 "``CameraGainSelections`` holds a single value of ``0``."
 msgstr ""
+"``FIXED``: De uitleesruis is niet afhankelijk van de versterking (CCD-"
+"camera's). ``CameraGainSelections`` bevat een enkele waarde van ``0``."
 
 #: ../../user_manual/ekos-capture.rst:672
 msgid ""
@@ -2735,16 +2781,26 @@ msgid ""
 "each with its own ``GainReadModeNumber`` (starting at 0) and "
 "``GainReadModeName``. These modes are offered in the ``Read Mode`` selector."
 msgstr ""
+"``CameraGainReadMode``: een tabel met waarden voor uitleesruis, bestaande "
+"uit een reeks items ``GainReadNoiseValue`` (elk bestaande uit een ``Gain``-"
+"waarde en de bijbehorende ``ReadNoise`` in elektronen), gerangschikt in "
+"volgorde van toenemende versterking (gain). Camera's met meerdere "
+"uitleesmodi – zoals sommige QHY-camera's – bevatten voor elke modus een "
+"afzonderlijk element ``CameraGainReadMode``, elk voorzien van een eigen "
+"``GainReadModeNumber`` (beginnend bij 0) en een ``GainReadModeName``. Deze "
+"modi worden getoond in de keuzelijst ``Read Mode``."
 
 #: ../../user_manual/ekos-capture.rst:674
 msgid "``CameraPixelSize``: The pixel size in microns."
-msgstr ""
+msgstr "``CameraPixelSize``: de pixelgrootte in micrometer."
 
 #: ../../user_manual/ekos-capture.rst:676
 msgid ""
 "``CameraQuantumEfficiency``: The peak quantum efficiency of the sensor, as a "
 "fraction between 0 and 1 (for example ``0.8`` for 80%)."
 msgstr ""
+"``CameraQuantumEfficiency``: De piek-kwantumefficiëntie van de sensor, "
+"uitgedrukt als een fractie tussen 0 en 1 (bijvoorbeeld ``0,8`` voor 80%)."
 
 #: ../../user_manual/ekos-capture.rst:678
 msgid ""
@@ -2754,16 +2810,27 @@ msgid ""
 "a file you wrote, use the camera form above, or open a pull request in the "
 "`camera-data repository <https://github.com/indilib/camera-data>`__."
 msgstr ""
+"De opslagruimte controleert elk bestand aan de hand van de volgende regels: "
+"leesmodi die vanaf 0 genummerd zijn (in volgorde), versterkingswaarden "
+"(gains) in de vorm van gehele getallen die per tabel in oplopende volgorde "
+"staan, een bestandsnaam die overeenkomt met de ``CameraId``, en positieve "
+"waarden voor leesruis (read noise) en pixelgrootte. Om een ​​bestand dat je "
+"zelf hebt gemaakt te delen, kunt u het bovenstaande cameraformulier "
+"gebruiken of een 'pull request' indienen in de `cameragegevensopslagruimte "
+"<https://github.com/indilib/camera-data>`__."
 
 #: ../../user_manual/ekos-capture.rst:681
 msgid "How the Calculation Works"
-msgstr ""
+msgstr "Hoe de berekening werkt"
 
 #: ../../user_manual/ekos-capture.rst:683
 msgid ""
 "This section describes the formulas used by the calculator, for users who "
 "want to check the results or understand the effect of each input."
 msgstr ""
+"Dit onderdeel beschrijft de formules die door de rekenmachine worden "
+"gebruikt, voor gebruikers die de resultaten willen controleren of willen "
+"begrijpen welk effect elke invoer heeft."
 
 #: ../../user_manual/ekos-capture.rst:685
 msgid ""
@@ -2772,54 +2839,73 @@ msgid ""
 "sky quality (SQM), the sensor quantum efficiency (QE), the pixel size (in "
 "microns), the focal ratio (N) and the filter bandwidth (B, in nanometers):"
 msgstr ""
+"**Mate van lichtvervuiling**: de snelheid waarmee elektronen door "
+"lichtvervuiling zich in elke pixel ophopen – uitgedrukt in elektronen per "
+"seconde – wordt berekend aan de hand van de hemelkwaliteit (SQM), de "
+"kwantumefficiëntie (QE) van de sensor, de pixelgrootte (in micrometer), de "
+"openingsverhouding (N) en de bandbreedte van het filter (B, in nanometer):"
 
 #: ../../user_manual/ekos-capture.rst:687
 msgid ""
 "Base rate        = 3.341e6 × QE × 300 × 10^(−0.4 × SQM) × pixel size²\n"
 "Pollution rate R = Base rate / N² × (B / 300)"
 msgstr ""
+"Basissnelheid    = 3,341e6 × QE × 300 × 10^(−0,4 × SQM) × pixelgrootte²\n"
+"Vervuilingsgraad R = Basissnelheid / N² × (B / 300)"
 
 #: ../../user_manual/ekos-capture.rst:692
 msgid ""
 "Each step of 1.0 in sky quality changes the pollution rate by a factor of "
 "about 2.5. Halving the focal ratio increases the rate four times."
 msgstr ""
+"Elke stap van 1,0 in de hemelkwaliteit verandert de mate van lichtvervuiling "
+"met een factor van ongeveer 2,5. Het halveren van de brandpuntsverhouding "
+"verhoogt die mate met een factor vier."
 
 #: ../../user_manual/ekos-capture.rst:694
 msgid ""
 "**Noise factor**: The ``Noise Increase %`` value (p) is turned into a factor "
 "C:"
 msgstr ""
+"**Ruisfactor**: De waarde ``Noise Increase %`` (p) wordt omgezet in een "
+"factor C:"
 
 #: ../../user_manual/ekos-capture.rst:696
 msgid "C = 1 / ((1 + p/100)² − 1)"
-msgstr ""
+msgstr "C = 1 / ((1 + p/100)² − 1)"
 
 #: ../../user_manual/ekos-capture.rst:700
 msgid "For the default of 5%, C is about 9.76."
-msgstr ""
+msgstr "Bij een standaardpercentage van 5% bedraagt ​​C ongeveer 9,76."
 
 #: ../../user_manual/ekos-capture.rst:702
 msgid ""
 "**Sub-exposure time**: For the read noise (RN, in electrons) at the selected "
 "gain, the sub-exposure time in seconds is:"
 msgstr ""
+"**Sub-belichtingstijd**: voor de uitleesruis (RN, in elektronen) bij de "
+"gekozen versterkingsinstelling (gain) geldt voor de sub-belichtingstijd in "
+"seconden:"
 
 #: ../../user_manual/ekos-capture.rst:704
 msgid ""
 "t = C × RN² / R          (monochrome sensor)\n"
 "t = 3 × C × RN² / R      (color sensor)"
 msgstr ""
+"t = C × RN² / R          (monochrome sensor)\n"
+"t = 3 × C × RN² / R      (kleursensor)"
 
 #: ../../user_manual/ekos-capture.rst:709
 msgid ""
 "This is the exposure at which the light pollution noise is large enough that "
 "the read noise only increases the total noise by p percent."
 msgstr ""
+"Dit is de belichtingstijd waarbij de ruis door lichtvervuiling groot genoeg "
+"is, zodat de uitleesruis de totale ruis met slechts p procent verhoogt."
 
 #: ../../user_manual/ekos-capture.rst:711
 msgid "**Sub-exposure results**:"
-msgstr ""
+msgstr "**Resultaten per sub-belichting**:"
 
 #: ../../user_manual/ekos-capture.rst:713
 msgid ""
@@ -2827,18 +2913,26 @@ msgid ""
 "Shot Noise          = √(R × t)\n"
 "Total Noise         = √(RN² + R × t)"
 msgstr ""
+"Vervuilingselectronen = R × t\n"
+"Schotruis             = √(R × t)\n"
+"Totale ruis           = √(RN² + R × t)"
 
 #: ../../user_manual/ekos-capture.rst:719
 msgid ""
 "**Stacking**: For a stack of n sub-exposures, the noise and time/noise ratio "
 "of the stacked image are:"
 msgstr ""
+"**Stapeling**: voor een stapel van n deelopnames (sub-belichtingen) gelden "
+"voor de gestapelde opname de volgende waarden voor de ruis en de verhouding "
+"tussen tijd en ruis:"
 
 #: ../../user_manual/ekos-capture.rst:721
 msgid ""
 "Stack noise      = √(n × RN² + R × n × t)\n"
 "Time/Noise ratio = n × t / Stack noise = (t / Total Noise) × √n"
 msgstr ""
+"Stapelruis          = √(n × RN² + R × n × t)\n"
+"Tijd/ruisverhouding = n × t / Stapelruis = (t / totale ruis) × √n"
 
 #: ../../user_manual/ekos-capture.rst:726
 msgid ""
@@ -2848,6 +2942,11 @@ msgid ""
 "value shown next to the graph is the slope of the curve at this point, (t / "
 "Total Noise) / (2 × √n)."
 msgstr ""
+"De verhouding tussen tijd en ruis neemt toe met de vierkantswortel van het "
+"aantal deelbelichtingen. Om een ​​doelverhouding T te bereiken, zijn er n = "
+"(T / (t / totale Ruis))² deelbelichtingen nodig (afgerond naar beneden, met "
+"een minimum van één). De Δ-waarde die naast de grafiek wordt weergegeven, is "
+"de helling van de curve op dat punt: (t / totale ruis) / (2 × √n)."
 
 #: ../../user_manual/ekos-capture.rst:731
 msgid "Video Tutorials"
