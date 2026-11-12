@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-27 02:40+0000\n"
+"POT-Creation-Date: 2026-11-11 02:32+0000\n"
 "PO-Revision-Date: 2026-10-30 16:30+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -82,7 +82,7 @@ msgstr ""
 "0,1 graad Celsius maar kan worden  gewijzigd in de ``Opname``-opties bij het "
 "instellen van Ekos."
 
-#: ../../user_manual/ekos-capture.rst:25 ../../user_manual/ekos-capture.rst:744
+#: ../../user_manual/ekos-capture.rst:25 ../../user_manual/ekos-capture.rst:754
 msgid "Capture Settings"
 msgstr "Opname-instellingen"
 
@@ -218,7 +218,7 @@ msgstr ""
 "(Video ook beschikbaar online op `<https://www.stellarmate.com/images/fss/"
 "videos/custom_properties.mp4>`__)"
 
-#: ../../user_manual/ekos-capture.rst:70 ../../user_manual/ekos-capture.rst:745
+#: ../../user_manual/ekos-capture.rst:70 ../../user_manual/ekos-capture.rst:755
 msgid "File Settings"
 msgstr "Bestandsinstellingen"
 
@@ -428,7 +428,7 @@ msgstr ""
 "wordt uitgevoerd."
 
 #: ../../user_manual/ekos-capture.rst:129
-#: ../../user_manual/ekos-capture.rst:746
+#: ../../user_manual/ekos-capture.rst:756
 msgid "Limit Settings"
 msgstr "Limiet-instellingen"
 
@@ -502,7 +502,7 @@ msgstr ""
 "opnames automatisch hervat."
 
 #: ../../user_manual/ekos-capture.rst:144
-#: ../../user_manual/ekos-capture.rst:748
+#: ../../user_manual/ekos-capture.rst:758
 msgid "Sequence Queue"
 msgstr "Wachtrij"
 
@@ -694,7 +694,7 @@ msgstr ""
 "afbeelding."
 
 #: ../../user_manual/ekos-capture.rst:197
-#: ../../user_manual/ekos-capture.rst:757
+#: ../../user_manual/ekos-capture.rst:767
 msgid "Rotator Settings"
 msgstr "Instellingen rotator"
 
@@ -850,10 +850,39 @@ msgid "``Manual``: Duration is as specified in the Sequence Queue."
 msgstr "``Handmatig``: Tijdsduur is zoals opgegeven in de wachtrij."
 
 #: ../../user_manual/ekos-capture.rst:237
-msgid "``ADU``: Duration is variable until specified ADU is met."
+#, fuzzy
+#| msgid "``ADU``: Duration is variable until specified ADU is met."
+msgid ""
+"``ADU``: Duration is variable until specified ADU is met. This is selected "
+"by default."
 msgstr "``ADU``: Tijdsduur variabel tot aan opgegeven ADU wordt voldaan."
 
 #: ../../user_manual/ekos-capture.rst:239
+msgid ""
+"The target ADU is either a value you enter, with the accepted deviation set "
+"by ``Tolerance``, or ``Auto``, which you select by setting the value to 0. "
+"With ``Auto``, Ekos takes 40% of the range of the captured image as the "
+"target, for example 26214 for 16-bit images and 102 for 8-bit images, with a "
+"tolerance of 5% of that target. The ``Tolerance`` field is disabled while "
+"``Auto`` is selected. For images with another bit depth, such as floating "
+"point images, set the target manually. ADU calculations need FITS or XISF "
+"images. If the ``Format`` of a flat job that uses ADU is another one, such "
+"as ``Native``, the job is aborted before its first frame, and the log says "
+"how to continue: select ``Manual`` instead, or set the ``Format`` to FITS or "
+"XISF."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:241
+#, fuzzy
+#| msgid ""
+#| "Before the calibration capture process is started, you can request Ekos "
+#| "to park the mount and/or dome. Depending on your flat source selection "
+#| "above, Ekos will use the appropriate flat light source before starting "
+#| "flat frames capture. If ADU is specified, Ekos begins by capturing a "
+#| "couple of preview images to establish the curve required to achieve the "
+#| "desired ADU count. Once an appropriate value is calculated, another "
+#| "capture is taken and ADU is recounted until a satisfactory value is "
+#| "achieved."
 msgid ""
 "Before the calibration capture process is started, you can request Ekos to "
 "park the mount and/or dome. Depending on your flat source selection above, "
@@ -861,7 +890,8 @@ msgid ""
 "capture. If ADU is specified, Ekos begins by capturing a couple of preview "
 "images to establish the curve required to achieve the desired ADU count. "
 "Once an appropriate value is calculated, another capture is taken and ADU is "
-"recounted until a satisfactory value is achieved."
+"recounted until a satisfactory value is achieved. The log states which value "
+"Ekos adjusts and the target ADU when the calibration starts."
 msgstr ""
 "Voordat de calibratie-opnamen worden gestart, kan men Ekos de opstelling en/"
 "of koepel laten parkeren. Afhankelijk van de hierboven geselecteerde flat "
@@ -872,11 +902,85 @@ msgstr ""
 "een opname gemaakt, de ADU opnieuw vastgesteld, totdat een goede waarde is "
 "verkregen."
 
-#: ../../user_manual/ekos-capture.rst:244
+#: ../../user_manual/ekos-capture.rst:243
+msgid ""
+"Ekos chooses on its own whether it adjusts the exposure time or the "
+"brightness of the light box. It adjusts the brightness if the light box is "
+"the flat source, that is if its light is on during the flat frames, for "
+"example with a dust cover with built-in flat light or with a wall panel that "
+"is part of the optical train, and if the INDI driver of the light box "
+"supports brightness control. Ekos works with any brightness range the driver "
+"publishes, and it does not need to know the make or model of the panel. In "
+"all other cases, for example with ``Sky flats``, without a light box or with "
+"a light box that has no brightness control, Ekos adjusts the exposure time. "
+"A preview of a flat frame does not calibrate: it takes a single frame at the "
+"exposure time and light box brightness currently set."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:245
+msgid ""
+"When Ekos adjusts the brightness, the calibration images are taken at the "
+"exposure time entered in the Sequence Queue. After each change, Ekos waits "
+"until the light box confirms the new brightness, and then one more second "
+"for the light to settle. If the light box does not confirm a new brightness "
+"within 30 seconds, or reports an error, the capture is aborted. The "
+"calibration starts from the brightness the light box has when the first "
+"frame is taken. If brightness presets per filter are configured in the INDI "
+"driver of the light box, the driver applies the preset of the job's filter "
+"when the filter changes, so that preset is the starting point and Ekos only "
+"fine tunes it. The filter changes right before the first frame, so if the "
+"light box changes its brightness while a calibration frame is taken, Ekos "
+"takes that frame again. The presets themselves are never changed. If the "
+"brightness range of the light box starts at 0, Ekos never asks for 0, since "
+"some light boxes switch off at 0 and only switch on again when their light "
+"is turned on. Once the target ADU is reached within the tolerance, the light "
+"box stays at that brightness for the remaining flat frames of the job. Each "
+"frame is still checked against the target. If a frame falls outside the "
+"tolerance, for example because the light of the panel drifts while it warms "
+"up, Ekos searches for the right brightness again, starting from that frame."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:247
+msgid ""
+"If the brightness of the light box cannot reach the target, for example "
+"because it is too dim at its maximum brightness or too bright at its "
+"minimum, Ekos keeps the lowest brightness at which the frame was too bright, "
+"which gives light for any target the camera can reach, and shortens the "
+"exposure time. This works with panels that switch off at their lowest "
+"brightness or stay dark below some value as well. If every frame was too "
+"dark, it keeps the highest brightness and lengthens the exposure time, at "
+"first by at most ten times. The log then states the exposure time at which "
+"the flat frames are taken. If the frame at the highest brightness is hardly "
+"brighter than one at a brightness at least four times lower, the light box "
+"gives no light, and the capture is aborted with a message to check the light "
+"source instead. If the calibration reaches the highest brightness without "
+"such a frame, for example because it started at a high preset, it takes one "
+"at the lowest brightness it asks for before it lengthens the exposure time. "
+"When the job ends, or is aborted, the light box returns to the brightness it "
+"had before the job, also when a preset changed it. A brightness of 0, which "
+"Ekos never asks for, is not restored, since a flat job that follows right "
+"away could then start with the light off. The light box stays at the "
+"brightness the job ended at instead, and the log says so."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:249
+msgid ""
+"Ekos stops the calibration and aborts the capture if the target ADU cannot "
+"be reached by adjusting the exposure time either: when the frame is still "
+"too bright at the shortest exposure time the camera accepts or still too "
+"dark at the longest, or when the ADU no longer follows the exposure time, "
+"for example with a target below the bias level of the camera, with a flat "
+"light that is off, or with a camera whose 16-bit images only use 12 or 14 "
+"bits, as with many DSLRs. With ``Auto``, the log then suggests setting the "
+"target ADU manually. With ``Sky flats``, Ekos keeps trying, since the "
+"brightness of the sky keeps changing."
+msgstr ""
+
+#: ../../user_manual/ekos-capture.rst:254
 msgid "Capture Scripts"
 msgstr "Scripts voor opnemen"
 
-#: ../../user_manual/ekos-capture.rst:246
+#: ../../user_manual/ekos-capture.rst:256
 msgid ""
 "Ekos allows you to execute custom scripts at various stages of the capture "
 "process. These scripts can be used to automate tasks such as notifying "
@@ -889,18 +993,18 @@ msgstr ""
 "besturingssoftware van het observatorium of het uitvoeren van aangepaste "
 "bewerkingen op basis van de voortgang van de opname."
 
-#: ../../user_manual/ekos-capture.rst:249
+#: ../../user_manual/ekos-capture.rst:259
 msgid "Script Types"
 msgstr "Typen scripts"
 
-#: ../../user_manual/ekos-capture.rst:251
+#: ../../user_manual/ekos-capture.rst:261
 msgid ""
 "There are four types of scripts that can be configured for each capture job:"
 msgstr ""
 "Er zijn vier soorten scripts die voor elke opnametaak geconfigureerd kunnen "
 "worden:"
 
-#: ../../user_manual/ekos-capture.rst:253
+#: ../../user_manual/ekos-capture.rst:263
 msgid ""
 "``Pre-Job``: Executed once before the job starts. Only runs when no images "
 "have been captured yet for this job (completed count is 0). Useful for setup "
@@ -911,7 +1015,7 @@ msgstr ""
 "(voltooide teller is 0). Handig voor insteltaken zoals het inschakelen van "
 "apparatuur of het verzenden van meldingen."
 
-#: ../../user_manual/ekos-capture.rst:255
+#: ../../user_manual/ekos-capture.rst:265
 msgid ""
 "``Pre-Capture``: Executed before each individual capture. Runs every time an "
 "image is about to be captured. Useful for tasks that need to happen before "
@@ -921,7 +1025,7 @@ msgstr ""
 "keer uitgevoerd wanneer een afbeelding op het punt staat te worden "
 "vastgelegd. Handig voor taken die moeten plaatsvinden vóór elke opname."
 
-#: ../../user_manual/ekos-capture.rst:257
+#: ../../user_manual/ekos-capture.rst:267
 msgid ""
 "``Post-Capture``: Executed after each individual capture completes. Runs "
 "every time an image is successfully captured. Useful for tasks like copying "
@@ -933,7 +1037,7 @@ msgstr ""
 "reservekopie-opslag, het bijwerken van databases of het verzenden van "
 "meldingen."
 
-#: ../../user_manual/ekos-capture.rst:259
+#: ../../user_manual/ekos-capture.rst:269
 msgid ""
 "``Post-Job``: Executed once after the job completes. Runs when all requested "
 "images for the job have been captured. Useful for cleanup tasks or final "
@@ -943,11 +1047,11 @@ msgstr ""
 "uitgevoerd wanneer alle gevraagde afbeeldingen voor de taak zijn vastgelegd. "
 "Handig voor opruimtaken of eindmeldingen."
 
-#: ../../user_manual/ekos-capture.rst:262
+#: ../../user_manual/ekos-capture.rst:272
 msgid "Input Data Format"
 msgstr "Invoerformaat van gegevens"
 
-#: ../../user_manual/ekos-capture.rst:264
+#: ../../user_manual/ekos-capture.rst:274
 msgid ""
 "When a script is executed, Ekos passes JSON-formatted data to the script via "
 "standard input (stdin). The script can read this data to obtain information "
@@ -958,11 +1062,11 @@ msgstr ""
 "gegevens lezen om informatie te verkrijgen over de opnametaak en de "
 "voortgang ervan."
 
-#: ../../user_manual/ekos-capture.rst:266
+#: ../../user_manual/ekos-capture.rst:276
 msgid "The JSON structure contains the following fields:"
 msgstr "De JSON-structuur bevat de volgende velden:"
 
-#: ../../user_manual/ekos-capture.rst:268
+#: ../../user_manual/ekos-capture.rst:278
 msgid ""
 "{\n"
 "  \"script_type\": \"PRE_CAPTURE\",\n"
@@ -1012,7 +1116,7 @@ msgstr ""
 "  }\n"
 "}"
 
-#: ../../user_manual/ekos-capture.rst:294
+#: ../../user_manual/ekos-capture.rst:304
 msgid ""
 "``script_type``: The type of script being executed. One of: ``PRE_CAPTURE``, "
 "``POST_CAPTURE``, ``PRE_JOB``, ``POST_JOB``."
@@ -1020,19 +1124,19 @@ msgstr ""
 "``script_type``: het type script dat wordt uitgevoerd. Een van: "
 "``PRE_CAPTURE``, ``POST_CAPTURE``, ``PRE_JOB``, ``POST_JOB``."
 
-#: ../../user_manual/ekos-capture.rst:296
+#: ../../user_manual/ekos-capture.rst:306
 msgid "``job``: Information about the current capture job:"
 msgstr "``job``: informatie over de huidige opnametaak:"
 
-#: ../../user_manual/ekos-capture.rst:298
+#: ../../user_manual/ekos-capture.rst:308
 msgid "``filter``: The filter name used for this capture."
 msgstr "``filter``: de filternaam gebruikt voor deze opname."
 
-#: ../../user_manual/ekos-capture.rst:299
+#: ../../user_manual/ekos-capture.rst:309
 msgid "``exposure``: Exposure duration in seconds."
 msgstr "``belichting``: belichtingstijd in seconden."
 
-#: ../../user_manual/ekos-capture.rst:300
+#: ../../user_manual/ekos-capture.rst:310
 msgid ""
 "``type``: Frame type - one of ``Light``, ``Dark``, ``Bias``, ``Flat``, "
 "``Video``, or ``None``."
@@ -1040,19 +1144,19 @@ msgstr ""
 "``type``: type van frame - een van ``Light``, ``Dark``, ``Bias``, ``Flat``, "
 "``Video`` of `None``."
 
-#: ../../user_manual/ekos-capture.rst:301
+#: ../../user_manual/ekos-capture.rst:311
 msgid "``binning_x``: Horizontal binning value."
 msgstr "``binning_x``: horizontale binning waarde."
 
-#: ../../user_manual/ekos-capture.rst:302
+#: ../../user_manual/ekos-capture.rst:312
 msgid "``binning_y``: Vertical binning value."
 msgstr "``binning_y``: verticale binning waarde."
 
-#: ../../user_manual/ekos-capture.rst:303
+#: ../../user_manual/ekos-capture.rst:313
 msgid "``target_name``: Name of the target being imaged."
 msgstr "``target_name``: naam van het doel dat wordt opgenomen."
 
-#: ../../user_manual/ekos-capture.rst:305
+#: ../../user_manual/ekos-capture.rst:315
 msgid ""
 "``fits``: (Only available for ``POST_CAPTURE`` scripts) Information about "
 "the captured FITS file:"
@@ -1060,20 +1164,20 @@ msgstr ""
 "``fits``: (alleen beschikbaar voor ``POST_CAPTURE`` scripts) informatie over "
 "het opgenomen FITS-bestand:"
 
-#: ../../user_manual/ekos-capture.rst:307
+#: ../../user_manual/ekos-capture.rst:317
 msgid "``filename``: Full path to the captured image file."
 msgstr "``filename``: volledige pad naar het opgenomen afbeeldingsbestand."
 
-#: ../../user_manual/ekos-capture.rst:308
+#: ../../user_manual/ekos-capture.rst:318
 msgid "``headers``: FITS header key-value pairs from the captured image."
 msgstr ""
 "``headers``: FITS-header sleutel-waardeparen van de opgenomen afbeelding."
 
-#: ../../user_manual/ekos-capture.rst:310
+#: ../../user_manual/ekos-capture.rst:320
 msgid "``progress``: Progress information:"
 msgstr "``progress``: voortgangsinformatie:"
 
-#: ../../user_manual/ekos-capture.rst:312
+#: ../../user_manual/ekos-capture.rst:322
 msgid ""
 "For ``POST_CAPTURE``: Progress of the current job (``completed`` / ``total`` "
 "images)."
@@ -1081,7 +1185,7 @@ msgstr ""
 "Voor ``POST_CAPTURE``: voorgang van de huidige taak (``voltooid`` / "
 "``totaal`` afbeeldingen)."
 
-#: ../../user_manual/ekos-capture.rst:313
+#: ../../user_manual/ekos-capture.rst:323
 msgid ""
 "For ``POST_JOB``: Progress of the entire sequence (``completed`` / ``total`` "
 "jobs)."
@@ -1089,15 +1193,15 @@ msgstr ""
 "Voor ``POST_JOB``: voortgang van de gehele reeks (``voltooid`` / ``totaal`` "
 "taken)."
 
-#: ../../user_manual/ekos-capture.rst:316
+#: ../../user_manual/ekos-capture.rst:326
 msgid "Output and Exit Codes"
 msgstr "Uitvoer en afsluitcode"
 
-#: ../../user_manual/ekos-capture.rst:318
+#: ../../user_manual/ekos-capture.rst:328
 msgid "Scripts communicate their status back to Ekos through exit codes:"
 msgstr "Scripts communiceren hun status terug aan Ekos via afsluitcodes:"
 
-#: ../../user_manual/ekos-capture.rst:320
+#: ../../user_manual/ekos-capture.rst:330
 msgid ""
 "Exit code ``0``: Script completed successfully. Ekos continues with the "
 "capture process."
@@ -1105,7 +1209,7 @@ msgstr ""
 "Afsluitcode ``0``: script met succes voltooid. Ekos gaat door met het "
 "opnameproces."
 
-#: ../../user_manual/ekos-capture.rst:322
+#: ../../user_manual/ekos-capture.rst:332
 msgid ""
 "Any non-zero exit code: Script encountered an error. Ekos logs the error and "
 "may abort the capture depending on the script type."
@@ -1114,7 +1218,7 @@ msgstr ""
 "Ekos registreert de fout en kan de opname afbreken, afhankelijk van het "
 "scripttype."
 
-#: ../../user_manual/ekos-capture.rst:324
+#: ../../user_manual/ekos-capture.rst:334
 msgid ""
 "Any text printed to stdout or stderr by the script is captured and displayed "
 "in the Ekos log window. This is useful for debugging and monitoring script "
@@ -1124,11 +1228,11 @@ msgstr ""
 "vastgelegd en weergegeven in het Ekos-logvenster. Dit is handig voor het "
 "debuggen en bewaken van de scriptuitvoering."
 
-#: ../../user_manual/ekos-capture.rst:327
+#: ../../user_manual/ekos-capture.rst:337
 msgid "Example Python Script"
 msgstr "Voorbeeld Pythonscript"
 
-#: ../../user_manual/ekos-capture.rst:329
+#: ../../user_manual/ekos-capture.rst:339
 msgid ""
 "The following example demonstrates a Python script that processes the JSON "
 "input from Ekos:"
@@ -1136,7 +1240,7 @@ msgstr ""
 "Het volgende voorbeeld laat een Python-script zien dat de JSON-invoer van "
 "Ekos verwerkt:"
 
-#: ../../user_manual/ekos-capture.rst:331
+#: ../../user_manual/ekos-capture.rst:341
 msgid ""
 "#!/usr/bin/env python3\n"
 "\"\"\"\n"
@@ -1302,7 +1406,7 @@ msgstr ""
 "if __name__ == \"__main__\":\n"
 "    main()"
 
-#: ../../user_manual/ekos-capture.rst:415
+#: ../../user_manual/ekos-capture.rst:425
 msgid ""
 "**Making Scripts Executable**: Scripts must be marked as executable before "
 "Ekos can run them. Use the following command to make a script executable:"
@@ -1311,25 +1415,25 @@ msgstr ""
 "gemarkeerd voordat Ekos ze kan uitvoeren. Gebruik de volgende opdracht om "
 "een ​​script uitvoerbaar te maken:"
 
-#: ../../user_manual/ekos-capture.rst:417
+#: ../../user_manual/ekos-capture.rst:427
 msgid "chmod +x /path/to/your_script.py"
 msgstr "chmod +x /pad/naar/uw_script.py"
 
-#: ../../user_manual/ekos-capture.rst:422
+#: ../../user_manual/ekos-capture.rst:432
 msgid "Configuration"
 msgstr "Configuratie"
 
-#: ../../user_manual/ekos-capture.rst:424
+#: ../../user_manual/ekos-capture.rst:434
 msgid "To configure scripts for a capture job:"
 msgstr "Om scripts voor een opnametaak te configureren:"
 
-#: ../../user_manual/ekos-capture.rst:426
+#: ../../user_manual/ekos-capture.rst:436
 msgid "Open the Capture Module and create or edit a job in the Sequence Queue."
 msgstr ""
 "Open de opnamemodule en maak een taak aan of bewerk een taak in de "
 "reeksenwachtrij."
 
-#: ../../user_manual/ekos-capture.rst:428
+#: ../../user_manual/ekos-capture.rst:438
 msgid ""
 "In the job settings, look for the script configuration options where you can "
 "specify the path to your script for each script type."
@@ -1337,18 +1441,18 @@ msgstr ""
 "In de taakinstellingen vindt u de opties voor scriptconfiguratie, waar u "
 "voor elk scripttype het pad naar uw script kunt opgeven."
 
-#: ../../user_manual/ekos-capture.rst:430
+#: ../../user_manual/ekos-capture.rst:440
 msgid ""
 "Enter the full path to your executable script for the desired script types."
 msgstr ""
 "Voer het volledige pad naar uw uitvoerbare script in voor de gewenste typen "
 "scripts."
 
-#: ../../user_manual/ekos-capture.rst:432
+#: ../../user_manual/ekos-capture.rst:442
 msgid "Save the sequence queue to preserve the script configuration."
 msgstr "Sla de reeksenwachtrij op om de scriptconfiguratie te behouden."
 
-#: ../../user_manual/ekos-capture.rst:436
+#: ../../user_manual/ekos-capture.rst:446
 msgid ""
 "Scripts are executed on the computer running Ekos. If Ekos is running on a "
 "remote device (e.g., Stellarmate), ensure your scripts are present on that "
@@ -1358,15 +1462,15 @@ msgstr ""
 "extern apparaat draait (bijv. Stellarmate), zorg er dan voor dat uw scripts "
 "op dat apparaat aanwezig zijn en de juiste machtigingen hebben."
 
-#: ../../user_manual/ekos-capture.rst:441
+#: ../../user_manual/ekos-capture.rst:451
 msgid "Exposure Calculator"
 msgstr "Rekenmachine voor belichting"
 
-#: ../../user_manual/ekos-capture.rst:443
+#: ../../user_manual/ekos-capture.rst:453
 msgid "|Exposure calculator|"
 msgstr "|Exposure calculator|"
 
-#: ../../user_manual/ekos-capture.rst:445
+#: ../../user_manual/ekos-capture.rst:455
 msgid ""
 "The exposure calculator is an implementation of a calculation process "
 "presented by Dr. Robin Glover in 2019.  This calculation process seeks to "
@@ -1393,7 +1497,7 @@ msgstr ""
 "de pixelgrootte van de sensor worden uit het gegevensbestand van de "
 "geselecteerde camera gelezen (zie :ref:`ekos-capture-exp-calc-camera-data`)."
 
-#: ../../user_manual/ekos-capture.rst:447
+#: ../../user_manual/ekos-capture.rst:457
 msgid ""
 "The concept in Dr. Glover's calculation is to provide a sufficiently long "
 "exposure so that the effects of camera read-noise are overwhelmed by the "
@@ -1407,7 +1511,7 @@ msgstr ""
 "belichting dat de effecten van lichtvervuiling niveaus bereiken die het "
 "signaal van het doel overstijgen."
 
-#: ../../user_manual/ekos-capture.rst:449
+#: ../../user_manual/ekos-capture.rst:459
 msgid ""
 "The implementation of this process does not consider the strength (magnitude "
 "or flux) of the intended target, nor does it consider other factors which "
@@ -1427,7 +1531,7 @@ msgstr ""
 "volgen / geleiding, wijzigingen in weercondities die zichtcondities kunnen "
 "verstoren, invloeden van luchtverkeer of passende satellieten."
 
-#: ../../user_manual/ekos-capture.rst:451
+#: ../../user_manual/ekos-capture.rst:461
 msgid ""
 "Approaches to imaging can vary greatly in the selection of exposure times, "
 "and number of sub-exposures used for integration. A well accepted approach "
@@ -1453,11 +1557,11 @@ msgstr ""
 "van bepaalde invoer in de belichtingsrekenmachine zal variëren afhankelijk "
 "van welke benadering voor het maken van een afbeelding wordt gebruikt."
 
-#: ../../user_manual/ekos-capture.rst:454
+#: ../../user_manual/ekos-capture.rst:464
 msgid "Opening the Exposure Calculator"
 msgstr "Belichtingsrekenmachine openen"
 
-#: ../../user_manual/ekos-capture.rst:456
+#: ../../user_manual/ekos-capture.rst:466
 msgid ""
 "Click the **Exp. Calc.** button in the Capture module to open the "
 "calculator. Ekos fills in some of the inputs from the current setup:"
@@ -1466,7 +1570,7 @@ msgstr ""
 "openen. Ekos vult een aantal invoervelden in op basis van de huidige "
 "configuratie:"
 
-#: ../../user_manual/ekos-capture.rst:458
+#: ../../user_manual/ekos-capture.rst:468
 msgid ""
 "``Focal Ratio`` is taken from the telescope of the active optical train. If "
 "the optical train includes a reducer or a flattener, its factor is applied "
@@ -1477,7 +1581,7 @@ msgstr ""
 "'reducer' (brandpuntsverkorter) of een 'flattener' (veldvlakmaker) bevat, "
 "wordt de bijbehorende factor toegepast op de brandpuntsafstand."
 
-#: ../../user_manual/ekos-capture.rst:460
+#: ../../user_manual/ekos-capture.rst:470
 msgid ""
 "``Camera`` is set to the camera data file whose name matches the name of the "
 "active camera device, if such a file is available."
@@ -1486,7 +1590,7 @@ msgstr ""
 "overeenkomt met de naam van het actieve camera-apparaat, mits een dergelijk "
 "bestand beschikbaar is."
 
-#: ../../user_manual/ekos-capture.rst:462
+#: ../../user_manual/ekos-capture.rst:472
 msgid ""
 "``Sky Quality`` starts at 20.5. KStars does not read this value from a sky "
 "quality meter, so adjust it to match your site and conditions."
@@ -1495,7 +1599,7 @@ msgstr ""
 "niet uit een hemelkwaliteitsmeter; pas deze daarom aan op basis van uw "
 "locatie en de heersende omstandigheden."
 
-#: ../../user_manual/ekos-capture.rst:464
+#: ../../user_manual/ekos-capture.rst:474
 msgid ""
 "The first time the calculator is opened and no camera data files can be "
 "found, the **Camera Data Download** dialog opens so that data for your "
@@ -1506,7 +1610,7 @@ msgstr ""
 "**Cameradata downloaden** geopend, zodat gegevens voor uw camera kunnen "
 "worden gedownload (zie :ref:`ekos-capture-exp-calc-camera-data`)."
 
-#: ../../user_manual/ekos-capture.rst:466
+#: ../../user_manual/ekos-capture.rst:476
 msgid ""
 "The calculator only gives advice. It does not change your sequence. To use "
 "the results, enter the calculated exposure time, gain and number of sub-"
@@ -1516,11 +1620,11 @@ msgstr ""
 "resultaten te gebruiken, voert u zelf de berekende belichtingstijd, "
 "versterking (gain) en het aantal deelopnames in de opnamemodule in."
 
-#: ../../user_manual/ekos-capture.rst:468
+#: ../../user_manual/ekos-capture.rst:478
 msgid "Exposure Calculator Inputs"
 msgstr "Invoer voor rekenmachine voor belichting"
 
-#: ../../user_manual/ekos-capture.rst:470
+#: ../../user_manual/ekos-capture.rst:480
 msgid ""
 "``Sky Quality``: The Sky Quality selector sets the measurement of the "
 "magnitude per square arc-second of the background sky."
@@ -1528,7 +1632,7 @@ msgstr ""
 "``Hemelkwaliteit``: De Selector voor hemelkwaliteit stelt de meting in van "
 "de magnitude per vierkante boogseconde van de achtergrondhemel."
 
-#: ../../user_manual/ekos-capture.rst:472
+#: ../../user_manual/ekos-capture.rst:482
 msgid ""
 "Next to the Sky Quality selector, the calculator shows the approximate "
 "`Bortle class <https://en.wikipedia.org/wiki/Bortle_scale>`__ for the "
@@ -1540,7 +1644,7 @@ msgstr ""
 "Bortle_scale>`__, evenals een kleurvlak dat overeenkomt met de kleuren die "
 "doorgaans op lichtvervuilingskaarten worden gebruikt."
 
-#: ../../user_manual/ekos-capture.rst:474
+#: ../../user_manual/ekos-capture.rst:484
 msgid ""
 "The range for Sky Quality is from 22 for the darkest skies, to 16 for the "
 "brightest (most light-polluted) skies. The magnitude scale is non-linear; it "
@@ -1561,7 +1665,7 @@ msgstr ""
 "wikipedia.org/wiki/Sky_brightness>` `Wikipedia Lichtvervuiling <https://nl."
 "wikipedia.org/wiki/Lichtvervuiling>`"
 
-#: ../../user_manual/ekos-capture.rst:476
+#: ../../user_manual/ekos-capture.rst:486
 msgid ""
 "All light scattered in the background sky is considered to be light "
 "pollution regardless of its source, so the effects of moonlight should be "
@@ -1576,7 +1680,7 @@ msgstr ""
 "wolkdekking kan elke bron van licht reflecteren en verstrooien via de "
 "atmosfeer"
 
-#: ../../user_manual/ekos-capture.rst:478
+#: ../../user_manual/ekos-capture.rst:488
 msgid ""
 "A `Sky Quality Meter (SQM) <https://en.wikipedia.org/wiki/"
 "Sky_quality_meter>`__ can provide the most accurate reading of sky quality "
@@ -1600,7 +1704,7 @@ msgstr ""
 "lichtvervuilingswebsites zou alleen beschouwd kunnen worden als een “het "
 "beste scenario” voor een wolkeloze nacht tijdens nieuwe maan."
 
-#: ../../user_manual/ekos-capture.rst:480
+#: ../../user_manual/ekos-capture.rst:490
 msgid ""
 "If a light pollution map value is used for the input value of SQM, but "
 "imaging will be performed with a partial moon, then a decrease in the input "
@@ -1625,7 +1729,7 @@ msgstr ""
 "(maanleeftijd 12,4 en KStars maanmagnitude = -12). De SQM aflezing in het "
 "zenith toont een gemeten SQM waarde van 15.95."
 
-#: ../../user_manual/ekos-capture.rst:482
+#: ../../user_manual/ekos-capture.rst:492
 msgid ""
 "The value of Sky Quality has a drastic impact on the calculated exposure "
 "because of the logarithmic scale involved. An image taken from a location "
@@ -1644,7 +1748,7 @@ msgstr ""
 "met erg weinig lichtvervuiling (een hoge Hemelkwaliteitswaarde) kan "
 "resulteren in een sub-belichtingstijd van een aantal uren."
 
-#: ../../user_manual/ekos-capture.rst:484
+#: ../../user_manual/ekos-capture.rst:494
 msgid ""
 "``Focal Ratio``: The selector for Focal Ratio sets the value from the "
 "optical train, which is needed for the evaluation of light gathering "
@@ -1654,7 +1758,7 @@ msgstr ""
 "waarde in uit de optische systeem, die nodig is voor de evaluatie van de "
 "mogelijkheid van licht vergaren."
 
-#: ../../user_manual/ekos-capture.rst:486
+#: ../../user_manual/ekos-capture.rst:496
 msgid ""
 "The value of the focal ratio of the optic has a direct effect on the "
 "exposure calculation. A lower focal ratio is considered to be a \"faster "
@@ -1670,7 +1774,7 @@ msgstr ""
 "brandpuntverhouding wordt gebruikt en verhoogd wanneer een hogere "
 "brandpuntverhouding wordt gebruikt."
 
-#: ../../user_manual/ekos-capture.rst:488
+#: ../../user_manual/ekos-capture.rst:498
 msgid ""
 "The user might consider making a slight adjustment to the input value of the "
 "focal ratio to compensate for the efficiency or for obstructions in the "
@@ -1680,7 +1784,7 @@ msgstr ""
 "brandpuntverhouding kunnen overwegen om te compenseren voor de efficiëntie "
 "of voor belemmeringen in de optiek."
 
-#: ../../user_manual/ekos-capture.rst:490
+#: ../../user_manual/ekos-capture.rst:500
 msgid ""
 "For example, two optics of the same focal ratio, a refractor (with no "
 "obstruction) and a reflector (with a secondary mirror obstruction) would be "
@@ -1700,7 +1804,7 @@ msgstr ""
 "reflector wordt algemeen beschouwd als het hebben van een efficiëntie van "
 "ongeveer 78%."
 
-#: ../../user_manual/ekos-capture.rst:492
+#: ../../user_manual/ekos-capture.rst:502
 msgid ""
 "An effective / adjusted focal ratio value for a refractor = Optic Focal "
 "Ratio / 0.94"
@@ -1708,7 +1812,7 @@ msgstr ""
 "Een effectieve / aangepaste waarde van de brandpuntverhouding voor een "
 "refractor = Optische brandpuntverhouding / 0.94"
 
-#: ../../user_manual/ekos-capture.rst:494
+#: ../../user_manual/ekos-capture.rst:504
 msgid ""
 "An effective / adjusted focal ratio value for a reflector = Optic Focal "
 "Ratio / 0.78"
@@ -1716,7 +1820,7 @@ msgstr ""
 "Een effectieve / aangepaste waarde van de brandpuntverhouding voor een "
 "reflector = Optische brandpuntverhouding / 0.78"
 
-#: ../../user_manual/ekos-capture.rst:496
+#: ../../user_manual/ekos-capture.rst:506
 msgid ""
 "These adjustments slightly increase the focal ratio, and therefore slightly "
 "reduce the computed light gathering capability considered in the calculation."
@@ -1724,7 +1828,7 @@ msgstr ""
 "Deze aanpassingen verhogen de brandpuntverhouding iets en daarom wordt de "
 "berekende mogelijkheid voor licht verzamelen iets gereduceerd."
 
-#: ../../user_manual/ekos-capture.rst:498
+#: ../../user_manual/ekos-capture.rst:508
 msgid ""
 "``Filter Bandwidth``: The selector for ``Filter Bandwidth`` sets the value "
 "for the bandwidth (in nanometers), and should be reduced from the default "
@@ -1748,7 +1852,7 @@ msgstr ""
 "opname zonder filter, terwijl een filter van 3 nm een ​​honderdste daarvan "
 "doorlaat."
 
-#: ../../user_manual/ekos-capture.rst:500
+#: ../../user_manual/ekos-capture.rst:510
 msgid ""
 "Filters fall generally into two categories: single band, or multi-band. The "
 "bandwidth for a single band filter should be relatively easy to determine or "
@@ -1769,7 +1873,7 @@ msgstr ""
 "gebruik op nevels kunnen moeilijker zijn te bepalen omdat hun "
 "transmissieprofielen veel complexer kunnen zijn."
 
-#: ../../user_manual/ekos-capture.rst:502
+#: ../../user_manual/ekos-capture.rst:512
 msgid ""
 "Even within the bands that filters are intended to pass, filters are not "
 "100% efficient. So a user of the calculator might wish to slightly reduce "
@@ -1786,7 +1890,7 @@ msgstr ""
 "slechts 92%, dan zou een waarde van 92 voor dit filter beter representeren "
 "en resulteren in een lichte meer accurate berekening van de belichting."
 
-#: ../../user_manual/ekos-capture.rst:504
+#: ../../user_manual/ekos-capture.rst:514
 msgid ""
 "The value of the filter bandwidth has an inverse effect on the exposure "
 "calculation. An unfiltered exposure would use the max value of 300 for the "
@@ -1802,7 +1906,7 @@ msgstr ""
 "belichtingstijd produceren. Een extreem small-bandfilter, (bijvoorbeeld een "
 "3 nanometer bandbreedte), zal de langste belichtingstijd produceren."
 
-#: ../../user_manual/ekos-capture.rst:506
+#: ../../user_manual/ekos-capture.rst:516
 msgid ""
 "``Camera``: The exposure calculation requires a value for the read noise of "
 "the camera. Camera read noise is an electronic noise that occurs at the "
@@ -1817,7 +1921,7 @@ msgstr ""
 "waarden converteert. Leesruis wordt niet beïnvloed door de lengte van een "
 "belichting."
 
-#: ../../user_manual/ekos-capture.rst:508
+#: ../../user_manual/ekos-capture.rst:518
 msgid ""
 "Camera sensors are one of two types: \"Charge Coupled Device\" (CCD) or "
 "\"Complementary Metal-Oxide Semiconductor\" (CMOS). For the exposure "
@@ -1836,7 +1940,7 @@ msgstr ""
 "waarde) en wijzigingen in die instelling resulteert gewoonlijk in een "
 "wijziging in de leesruis."
 
-#: ../../user_manual/ekos-capture.rst:510
+#: ../../user_manual/ekos-capture.rst:520
 msgid ""
 "The exposure calculator relies upon the selection of a camera data file so "
 "that it can access an appropriate read noise value for use in the "
@@ -1862,7 +1966,7 @@ msgstr ""
 "sensors. Klik op de **+**-knop naast de camerakiezer om gegevensbestanden "
 "voor andere camera's te downloaden."
 
-#: ../../user_manual/ekos-capture.rst:512
+#: ../../user_manual/ekos-capture.rst:522
 msgid ""
 "The sensor type (``Mono`` or ``Color``) defined in the camera data file is "
 "shown next to the camera selector. For a color (one-shot color) sensor, each "
@@ -1879,7 +1983,7 @@ msgstr ""
 "voor een kleurensensor drie keer zo lang als voor een monochrome sensor met "
 "dezelfde uitleesruis."
 
-#: ../../user_manual/ekos-capture.rst:514
+#: ../../user_manual/ekos-capture.rst:524
 msgid ""
 "The camera data files provided in KStars contain values which are "
 "transcribed from manufacturers technical documentation. But actual read "
@@ -1903,7 +2007,7 @@ msgstr ""
 "camera te maken om te gebruiken met de rekenmachine voor belichting van "
 "KStars."
 
-#: ../../user_manual/ekos-capture.rst:516
+#: ../../user_manual/ekos-capture.rst:526
 msgid ""
 "``Read Mode``: Some cameras manufactured by QHY have the capability to "
 "function in multiple modes.  These modes alter the read noise values, so the "
@@ -1920,7 +2024,7 @@ msgstr ""
 "selecteren van de leesmodustabel die overeen zou komen met de modus waarin "
 "de camera zal gaan werken bij het maken van opnamen."
 
-#: ../../user_manual/ekos-capture.rst:518
+#: ../../user_manual/ekos-capture.rst:528
 msgid ""
 "``Exposure Time Graph``: The calculator will present a graph of the "
 "potential exposure times determined from the inputs. In the case of CMOS "
@@ -1939,7 +2043,7 @@ msgstr ""
 "de leesruis van een CCD-sensor niet variabel is. Een rode markering in de "
 "grafiek geeft de momenteel geselecteerde versterking aan."
 
-#: ../../user_manual/ekos-capture.rst:520
+#: ../../user_manual/ekos-capture.rst:530
 msgid ""
 "``Gain / ISO Selection``: For cameras with CMOS sensors, a Gain or ISO value "
 "can be selected. A Gain control will appear for cameras that allow a gain "
@@ -1964,7 +2068,7 @@ msgstr ""
 "te tonen hoe de geselecteerde versterkingswaarde de berekende "
 "belichtingstijd beïnvloedt."
 
-#: ../../user_manual/ekos-capture.rst:522
+#: ../../user_manual/ekos-capture.rst:532
 msgid ""
 "CMOS based cameras tend to have high read noise at low gain / ISO values, "
 "and the read noise diminishes as the Gain / ISO value is increased.  So a "
@@ -1982,7 +2086,7 @@ msgstr ""
 "volledig goede capaciteit levert een grotere dynamische reeks in de "
 "afbeelding."
 
-#: ../../user_manual/ekos-capture.rst:524
+#: ../../user_manual/ekos-capture.rst:534
 msgid ""
 "Selection of a gain / ISO value would be dependent upon the imaging "
 "technique being employed. When a long exposure is desired (as with 'typical' "
@@ -2003,7 +2107,7 @@ msgstr ""
 "prioriteit geven aan een lage leesruis in de sub-belichting en zal "
 "waarschijnlijk een hoge versterking/ISO-waarde nodig hebben."
 
-#: ../../user_manual/ekos-capture.rst:526
+#: ../../user_manual/ekos-capture.rst:536
 msgid ""
 "Some cameras may show a smooth progressive curve in the read-noise over the "
 "range of gain values, other cameras may have very pronounced steps (and "
@@ -2036,7 +2140,7 @@ msgstr ""
 "dus is het aanbevolen om een versterkingswaarde te selecteren die op een "
 "stap in de leesruis ligt."
 
-#: ../../user_manual/ekos-capture.rst:528
+#: ../../user_manual/ekos-capture.rst:538
 msgid ""
 "When using data from camera manufacturer documentation, avoid selecting a "
 "gain near a step"
@@ -2044,23 +2148,23 @@ msgstr ""
 "Bij gebruik van gegevens in de documentatie van de maker van de camera, "
 "vermijd het selecteren van een versterking dichtbij een stap"
 
-#: ../../user_manual/ekos-capture.rst:530
+#: ../../user_manual/ekos-capture.rst:540
 msgid "|Avoid selecting gain near a step|"
 msgstr "|Avoid selecting gain near a step|"
 
-#: ../../user_manual/ekos-capture.rst:533
+#: ../../user_manual/ekos-capture.rst:543
 msgid "step"
 msgstr "stap"
 
-#: ../../user_manual/ekos-capture.rst:535
+#: ../../user_manual/ekos-capture.rst:545
 msgid "Instead, shift the gain selection away from the"
 msgstr "In plaats hiervan, de selectie van versterking wegschuiven van de"
 
-#: ../../user_manual/ekos-capture.rst:535
+#: ../../user_manual/ekos-capture.rst:545
 msgid "|Shift gain away from such steps|"
 msgstr "|Shift gain away from such steps|"
 
-#: ../../user_manual/ekos-capture.rst:537
+#: ../../user_manual/ekos-capture.rst:547
 msgid ""
 "``Noise Increase %``: The ``'Noise Increase %'`` selector controls a factor "
 "used in Dr Glover's equation. This value will alter the relative balance "
@@ -2075,7 +2179,7 @@ msgstr ""
 "van 5% te gebruiken, maar het verlagen tot 2% wanneer de berekende "
 "belichtingstijd beschouwd wordt als te kort."
 
-#: ../../user_manual/ekos-capture.rst:539
+#: ../../user_manual/ekos-capture.rst:549
 msgid ""
 "The perspective of the \"increase\" is a relative increase in read-noise "
 "compared to noise from light pollution. It may seem counter-intuitive, but "
@@ -2097,7 +2201,7 @@ msgstr ""
 "lichtvervuiling toelaten, (en meer doelsignaal), in de belichting. Dit "
 "reduceert effectief de relatieve invloed van leesruis."
 
-#: ../../user_manual/ekos-capture.rst:541
+#: ../../user_manual/ekos-capture.rst:551
 msgid ""
 "In this implementation of the calculator, the value for the 'Noise Increase "
 "%' can be set to in a very broad range to allow a user a greater range for "
@@ -2123,7 +2227,7 @@ msgstr ""
 "veroorzaken dat de belichting excessieve ruis uit lichtvervuiling "
 "veroorzaakt."
 
-#: ../../user_manual/ekos-capture.rst:543
+#: ../../user_manual/ekos-capture.rst:553
 msgid ""
 "The value selected for the 'noise increase %' is also one which is dependent "
 "upon the imaging technique being employed. When a speckle technique ('lucky "
@@ -2142,15 +2246,15 @@ msgstr ""
 "ruis %' om de tijd omlaag te reduceren van de sub-belichting naar de duur "
 "gevraagd door deze techniek."
 
-#: ../../user_manual/ekos-capture.rst:545
+#: ../../user_manual/ekos-capture.rst:555
 msgid "Exposure Calculator Results"
 msgstr "Resultaat van rekenmachine voor belichting"
 
-#: ../../user_manual/ekos-capture.rst:547
+#: ../../user_manual/ekos-capture.rst:557
 msgid "``Exposure Time (sec)``: The calculated duration of an exposure."
 msgstr "``Belichtingtijd (sec)``: De berekende duur van een belichting."
 
-#: ../../user_manual/ekos-capture.rst:549
+#: ../../user_manual/ekos-capture.rst:559
 msgid ""
 "``Pollution Electrons``: The calculated number of light pollution electrons "
 "per pixel impacting the exposure."
@@ -2158,7 +2262,7 @@ msgstr ""
 "``Vervuilingselectronen``: het berekende aantal lichtvervuilingselectronen "
 "per pixel die invloed hebben op de belichting."
 
-#: ../../user_manual/ekos-capture.rst:551
+#: ../../user_manual/ekos-capture.rst:561
 msgid ""
 "``Shot Noise``: The calculated noise from light pollution impacting the "
 "exposure."
@@ -2166,7 +2270,7 @@ msgstr ""
 "``Schietruis``: de berekende ruis uit lichtvervuiling die invloed heeft op "
 "de belichting."
 
-#: ../../user_manual/ekos-capture.rst:553
+#: ../../user_manual/ekos-capture.rst:563
 msgid ""
 "``Total Noise``: The calculated noise from both light pollution and image "
 "sensor read noise impacting the exposure."
@@ -2174,7 +2278,7 @@ msgstr ""
 "``Totale ruis``: de berekende ruis uit zowel lichtvervuiling en leesruis uit "
 "de afbeeldingssensor die invloed heeft op de belichting."
 
-#: ../../user_manual/ekos-capture.rst:557
+#: ../../user_manual/ekos-capture.rst:567
 msgid ""
 "**Recognize the relationship of exposure time to total noise**: The ratio of "
 "exposure time to exposure total noise can be thought of as a measurement of "
@@ -2193,11 +2297,11 @@ msgstr ""
 "een disproportioneel hoger aantal korte sub-belichtingen zullen nodig zijn "
 "voor integratie om een afbeelding met een gewenste kwaliteit te behalen."
 
-#: ../../user_manual/ekos-capture.rst:560
+#: ../../user_manual/ekos-capture.rst:570
 msgid "Stacking / Image Integration Information"
 msgstr "Informatie over stapeling / afbeeldingsintegratie"
 
-#: ../../user_manual/ekos-capture.rst:562
+#: ../../user_manual/ekos-capture.rst:572
 msgid ""
 "The value of image stacking is that as images are stacked, the accumulation "
 "of exposure time and the data that represents the target signal is increased "
@@ -2217,7 +2321,7 @@ msgstr ""
 "maar deze kromme heeft verminderende opbrengsten wanneer het aantal sub-"
 "belichtingen dat geïntegreerd wordt toeneemt."
 
-#: ../../user_manual/ekos-capture.rst:564
+#: ../../user_manual/ekos-capture.rst:574
 msgid ""
 "Ideally a desired signal to noise ratio (SNR) would be used for the measure "
 "of the level of quality of an image, but the exposure calculator does not "
@@ -2246,7 +2350,7 @@ msgstr ""
 "van alle geïntegreerde afbeeldingen uit alle doelen is omdat een "
 "signaalsterkte (magnitude of flux) geen onderdeel is van deze berekening."
 
-#: ../../user_manual/ekos-capture.rst:566
+#: ../../user_manual/ekos-capture.rst:576
 msgid ""
 "``Table``: A table provides details for stacking based upon the number of "
 "hours planned for imaging."
@@ -2254,11 +2358,11 @@ msgstr ""
 "``Tabel``: een tabel die details levert voor stapeling gebaseerd op het "
 "aantal uren gepland voor maken van opnamen."
 
-#: ../../user_manual/ekos-capture.rst:568
+#: ../../user_manual/ekos-capture.rst:578
 msgid "|Exposure calculator integration table|"
 msgstr "|Integratietabel van belichtingsrekenmachine|"
 
-#: ../../user_manual/ekos-capture.rst:570
+#: ../../user_manual/ekos-capture.rst:580
 msgid ""
 "The table has one row for each planned session length from 1 to 40 hours. "
 "Its columns are:"
@@ -2266,11 +2370,11 @@ msgstr ""
 "De tabel bevat één rij voor elke geplande sessieduur, van 1 tot 40 uur. De "
 "kolommen zijn:"
 
-#: ../../user_manual/ekos-capture.rst:572
+#: ../../user_manual/ekos-capture.rst:582
 msgid "``Planned Hours``: The planned imaging time."
 msgstr "``Geplande uren``: de geplande beeldvormingstijd."
 
-#: ../../user_manual/ekos-capture.rst:573
+#: ../../user_manual/ekos-capture.rst:583
 msgid ""
 "``Exposure Count``: The number of sub-exposures needed to fill the planned "
 "time, rounded up."
@@ -2278,14 +2382,14 @@ msgstr ""
 "``Aantal belichtingen``: Het aantal deelbelichtingen dat nodig is om de "
 "geplande tijd te voltooien, naar boven afgerond."
 
-#: ../../user_manual/ekos-capture.rst:574
+#: ../../user_manual/ekos-capture.rst:584
 msgid ""
 "``Stack Time``: The total integration time of these sub-exposures, in "
 "seconds."
 msgstr ""
 "``Stapeltijd``: de totale integratietijd van deze deelopnames, in seconden."
 
-#: ../../user_manual/ekos-capture.rst:575
+#: ../../user_manual/ekos-capture.rst:585
 msgid ""
 "``Noise``: The total noise (read noise and light pollution noise) in the "
 "stacked image."
@@ -2293,7 +2397,7 @@ msgstr ""
 "``Ruis``: de totale ruis (leesruis en lichtvervuilingsruis) in gestapelde "
 "afbeelding."
 
-#: ../../user_manual/ekos-capture.rst:576
+#: ../../user_manual/ekos-capture.rst:586
 msgid ""
 "``Ratio``: The stack time divided by the noise, the time/noise ratio of the "
 "stacked image."
@@ -2301,7 +2405,7 @@ msgstr ""
 "``Verhouding``: de stapeltijd gedeeld door de ruis; de verhouding tussen "
 "tijd en ruis van het gestapelde beeld."
 
-#: ../../user_manual/ekos-capture.rst:578
+#: ../../user_manual/ekos-capture.rst:588
 msgid ""
 "The table provides a quick reference for finding the approximate number of "
 "sub-exposures that might be completed for a given number of hours in an "
@@ -2320,7 +2424,7 @@ msgstr ""
 "geconsumeerd in het maken van afbeeldingen, die niet zijn meegenomen in deze "
 "berekening van tijd."
 
-#: ../../user_manual/ekos-capture.rst:580
+#: ../../user_manual/ekos-capture.rst:590
 msgid ""
 "The far right column of the table shows the calculated time/noise ratio of "
 "the integrated (stacked) image that would be produced."
@@ -2329,7 +2433,7 @@ msgstr ""
 "ruisverhouding van de geïntegreerde (gestapelde) afbeelding die geproduceerd "
 "zou worden."
 
-#: ../../user_manual/ekos-capture.rst:582
+#: ../../user_manual/ekos-capture.rst:592
 msgid ""
 "``Graph``: An interactive graph allows the user to visualize the relative "
 "change in potential quality for integrated images with various counts of sub-"
@@ -2347,11 +2451,11 @@ msgstr ""
 "afbeelding opnieuw berekenen om die gespecificeerde tijd/ruisverhouding te "
 "bereiken."
 
-#: ../../user_manual/ekos-capture.rst:584
+#: ../../user_manual/ekos-capture.rst:594
 msgid "|Exposure calculator integration graph|"
 msgstr "|Integratiegrafiek van belichtingsrekenmachine|"
 
-#: ../../user_manual/ekos-capture.rst:586
+#: ../../user_manual/ekos-capture.rst:596
 msgid ""
 "The ``Exposures`` field shows the number of sub-exposures required to reach "
 "the ``Time/Noise Ratio``, and the red marker shows this point on the curve."
@@ -2360,7 +2464,7 @@ msgstr ""
 "de 'Verhouding tijd/ruis' te bereiken, en de rode markering geeft dit punt "
 "op de kromme aan."
 
-#: ../../user_manual/ekos-capture.rst:588
+#: ../../user_manual/ekos-capture.rst:598
 msgid ""
 "In the selection of a Time/Noise ratio for the calculation of the count of "
 "stacked exposures, the user might want consider the incremental change to "
@@ -2383,7 +2487,7 @@ msgstr ""
 "potentiële kwaliteit die zal resulteren uit de toevoeging of verwijdering "
 "van een enkele sub-belichting."
 
-#: ../../user_manual/ekos-capture.rst:590
+#: ../../user_manual/ekos-capture.rst:600
 msgid ""
 "As one should expect, at the low-end of exposure counts (when a low value "
 "for the Time/Noise Ratio is input), the delta value will be relatively high, "
@@ -2402,7 +2506,7 @@ msgstr ""
 "verminderen, aangevend dat er weinig gewonnen zal worden bij toevoegen van "
 "meer sub-belichtingen."
 
-#: ../../user_manual/ekos-capture.rst:592
+#: ../../user_manual/ekos-capture.rst:602
 msgid ""
 "The default value for the time / noise ratio is set to 80. This value should "
 "not be construed in any way as an optimal value; it was simply chosen as a "
@@ -2421,7 +2525,7 @@ msgstr ""
 "in de tijd voor het maken van afbeeldingen en verwerking en beperkingen in "
 "opslagcapaciteit voor de afbeeldingen."
 
-#: ../../user_manual/ekos-capture.rst:594
+#: ../../user_manual/ekos-capture.rst:604
 msgid ""
 "For a strong target, (example, Orion Nebula with magnitude 4), would provide "
 "a relatively strong signal. On such a target, the value for the Time/Noise "
@@ -2438,7 +2542,7 @@ msgstr ""
 "Helmet, magnitude 11), zou een hogere tijd/ruisverhouding vereisen om te "
 "compenseren voor het relatief zwakke doelsignaal."
 
-#: ../../user_manual/ekos-capture.rst:596
+#: ../../user_manual/ekos-capture.rst:606
 msgid ""
 "Depending on the various inputs and imaging conditions, the potential "
 "quality of a sub-exposure can vary greatly. In poor sky quality with little "
@@ -2476,7 +2580,7 @@ msgstr ""
 "tijd/ruisverhouding enorm de potentiële kwaliteit zal verbeteren van de "
 "geïntegreerde afbeelding."
 
-#: ../../user_manual/ekos-capture.rst:598
+#: ../../user_manual/ekos-capture.rst:608
 msgid ""
 "Part of the value of using a Time/Noise ratio as the input for the "
 "calculation of the required number of sub-exposures is that it should tend "
@@ -2496,7 +2600,7 @@ msgstr ""
 "belichtingen nodig om een hoger aantal om een gegeven tijd/ruisverhouding in "
 "een geïntegreerde afbeelding te bereiken."
 
-#: ../../user_manual/ekos-capture.rst:600
+#: ../../user_manual/ekos-capture.rst:610
 msgid ""
 "As an example, consider the calculation of the number of sub-exposures "
 "required when two sub-exposures times were compared: a 300 second sub-"
@@ -2521,7 +2625,7 @@ msgstr ""
 "standaard tijd/ruisverhouding van 80 voor integratie in beide van deze "
 "gevallen vragen."
 
-#: ../../user_manual/ekos-capture.rst:602
+#: ../../user_manual/ekos-capture.rst:612
 msgid ""
 "For an integration using the 300 second sub-exposures we find that 34 sub-"
 "exposures are required to achieve a time/noise ratio of 80. So a total "
@@ -2531,11 +2635,11 @@ msgstr ""
 "dat 34 sub-belichtingen vereist zouden zijn om een tijd/ruisverhouding van "
 "80 te bereiken. Dus een totale integratietijd van 2,83 uren is vereist."
 
-#: ../../user_manual/ekos-capture.rst:604
+#: ../../user_manual/ekos-capture.rst:614
 msgid "|300 Second sub-exposure|"
 msgstr "|300 Second sub-exposure|"
 
-#: ../../user_manual/ekos-capture.rst:606
+#: ../../user_manual/ekos-capture.rst:616
 msgid ""
 "For an integration using the 30 second sub-exposures we find that 637 sub-"
 "exposures would be required to achieve a time/noise ratio of 80. So a total "
@@ -2548,15 +2652,15 @@ msgstr ""
 "kortere belichtingen om dezelfde tijd/ruisverhouding in de geïntegreerde "
 "afbeelding te bereiken."
 
-#: ../../user_manual/ekos-capture.rst:608
+#: ../../user_manual/ekos-capture.rst:618
 msgid "|30 Second sub-exposure|"
 msgstr "|30 Second sub-exposure|"
 
-#: ../../user_manual/ekos-capture.rst:613
+#: ../../user_manual/ekos-capture.rst:623
 msgid "Camera Data Files"
 msgstr "Cameragegevensbestanden"
 
-#: ../../user_manual/ekos-capture.rst:615
+#: ../../user_manual/ekos-capture.rst:625
 msgid ""
 "The calculator needs the read noise characteristics of your camera. These "
 "are stored in camera data files, one XML file per camera. The files are "
@@ -2573,7 +2677,7 @@ msgstr ""
 "camera's die na de uitgave van uw versie van KStars zijn toegevoegd, kunnen "
 "vanuit de rekenmachine worden gedownload."
 
-#: ../../user_manual/ekos-capture.rst:617
+#: ../../user_manual/ekos-capture.rst:627
 msgid ""
 "**Downloading and updating camera data**: Click the **+** button next to the "
 "camera selector. The **Camera Data Download** dialog lists every camera in "
@@ -2599,7 +2703,7 @@ msgstr ""
 "getoond die niet konden worden gedownload. Voor het downloaden is een "
 "internetverbinding vereist."
 
-#: ../../user_manual/ekos-capture.rst:619
+#: ../../user_manual/ekos-capture.rst:629
 msgid ""
 "A downloaded file replaces the copy of the same camera that is installed "
 "with KStars."
@@ -2607,7 +2711,7 @@ msgstr ""
 "Een gedownload bestand vervangt het exemplaar van dezelfde camera dat bij "
 "KStars is meegeleverd."
 
-#: ../../user_manual/ekos-capture.rst:621
+#: ../../user_manual/ekos-capture.rst:631
 msgid ""
 "**File names**: The name of the file is the name of the camera device as "
 "shown in Ekos, with spaces replaced by underscores. For example, the data "
@@ -2624,7 +2728,7 @@ msgstr ""
 "terugveranderd in spaties. Door deze conventie te volgen, kan de "
 "rekenmachine automatisch de juiste camera selecteren."
 
-#: ../../user_manual/ekos-capture.rst:623
+#: ../../user_manual/ekos-capture.rst:633
 msgid ""
 "**Adding your camera**: If your camera is not in the list, add it to the "
 "repository by filling in the `camera form <https://github.com/indilib/camera-"
@@ -2646,7 +2750,7 @@ msgstr ""
 "downloaden. Door het formulier opnieuw in te dienen met dezelfde cameranaam, "
 "kun u een bestaande camera-invoer corrigeren."
 
-#: ../../user_manual/ekos-capture.rst:625
+#: ../../user_manual/ekos-capture.rst:635
 msgid ""
 "**Creating your own file**: You can also write a camera data file yourself, "
 "for example to try values you measured with the SharpCap sensor analysis "
@@ -2663,11 +2767,11 @@ msgstr ""
 "versie van hetzelfde camerabestand die standaard met KStars wordt "
 "meegeleverd (bijvoorbeeld in ``/usr/share/kstars/cameradata/``)."
 
-#: ../../user_manual/ekos-capture.rst:627
+#: ../../user_manual/ekos-capture.rst:637
 msgid "A camera data file looks like this:"
 msgstr "Een cameragegevensbestand ziet er als volgt uit:"
 
-#: ../../user_manual/ekos-capture.rst:629
+#: ../../user_manual/ekos-capture.rst:639
 msgid ""
 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 "<ExposureCalculatorCameraData>\n"
@@ -2728,25 +2832,25 @@ msgstr ""
 "    <CameraQuantumEfficiency>0.5</CameraQuantumEfficiency>\n"
 "</ExposureCalculatorCameraData>"
 
-#: ../../user_manual/ekos-capture.rst:660
+#: ../../user_manual/ekos-capture.rst:670
 msgid "The elements are:"
 msgstr "De elementen zijn:"
 
-#: ../../user_manual/ekos-capture.rst:662
+#: ../../user_manual/ekos-capture.rst:672
 msgid "``CameraId``: The camera name."
 msgstr "``CameraId``: de cameranaam."
 
-#: ../../user_manual/ekos-capture.rst:664
+#: ../../user_manual/ekos-capture.rst:674
 msgid "``SensorType``: ``MONOCHROME`` or ``COLOR``."
 msgstr "``SensorType``: ``MONOCHROME`` of ``COLOR``."
 
-#: ../../user_manual/ekos-capture.rst:666
+#: ../../user_manual/ekos-capture.rst:676
 msgid "``GainSelectionType``: How the gain is selected for this camera:"
 msgstr ""
 "``GainSelectionType``: de wijze waarop de versterking (gain) voor deze "
 "camera wordt geselecteerd:"
 
-#: ../../user_manual/ekos-capture.rst:668
+#: ../../user_manual/ekos-capture.rst:678
 msgid ""
 "``NORMAL``: The gain can be set to any value in a range (most CMOS cameras). "
 "``CameraGainSelections`` holds the minimum and maximum gain."
@@ -2755,7 +2859,7 @@ msgstr ""
 "waarde binnen een bepaald bereik (bij de meeste CMOS-camera's). "
 "``CameraGainSelections`` bevat de minimale en maximale versterkingswaarde."
 
-#: ../../user_manual/ekos-capture.rst:669
+#: ../../user_manual/ekos-capture.rst:679
 msgid ""
 "``ISO_DISCRETE``: The gain is selected from a list of ISO values (DSLR "
 "cameras). ``CameraGainSelections`` lists each ISO value."
@@ -2764,7 +2868,7 @@ msgstr ""
 "met ISO-waarden (bij DSLR-camera's). ``CameraGainSelections`` bevat een "
 "overzicht van de afzonderlijke ISO-waarden."
 
-#: ../../user_manual/ekos-capture.rst:670
+#: ../../user_manual/ekos-capture.rst:680
 msgid ""
 "``FIXED``: The read noise does not depend on gain (CCD cameras). "
 "``CameraGainSelections`` holds a single value of ``0``."
@@ -2772,7 +2876,7 @@ msgstr ""
 "``FIXED``: De uitleesruis is niet afhankelijk van de versterking (CCD-"
 "camera's). ``CameraGainSelections`` bevat een enkele waarde van ``0``."
 
-#: ../../user_manual/ekos-capture.rst:672
+#: ../../user_manual/ekos-capture.rst:682
 msgid ""
 "``CameraGainReadMode``: A table of read noise values, one "
 "``GainReadNoiseValue`` (a ``Gain`` and its ``ReadNoise`` in electrons) per "
@@ -2790,11 +2894,11 @@ msgstr ""
 "``GainReadModeNumber`` (beginnend bij 0) en een ``GainReadModeName``. Deze "
 "modi worden getoond in de keuzelijst ``Read Mode``."
 
-#: ../../user_manual/ekos-capture.rst:674
+#: ../../user_manual/ekos-capture.rst:684
 msgid "``CameraPixelSize``: The pixel size in microns."
 msgstr "``CameraPixelSize``: de pixelgrootte in micrometer."
 
-#: ../../user_manual/ekos-capture.rst:676
+#: ../../user_manual/ekos-capture.rst:686
 msgid ""
 "``CameraQuantumEfficiency``: The peak quantum efficiency of the sensor, as a "
 "fraction between 0 and 1 (for example ``0.8`` for 80%)."
@@ -2802,7 +2906,7 @@ msgstr ""
 "``CameraQuantumEfficiency``: De piek-kwantumefficiëntie van de sensor, "
 "uitgedrukt als een fractie tussen 0 en 1 (bijvoorbeeld ``0,8`` voor 80%)."
 
-#: ../../user_manual/ekos-capture.rst:678
+#: ../../user_manual/ekos-capture.rst:688
 msgid ""
 "The repository checks every file for these rules: read modes numbered from 0 "
 "in order, whole-number gains in increasing order within each table, a file "
@@ -2819,11 +2923,11 @@ msgstr ""
 "gebruiken of een 'pull request' indienen in de `cameragegevensopslagruimte "
 "<https://github.com/indilib/camera-data>`__."
 
-#: ../../user_manual/ekos-capture.rst:681
+#: ../../user_manual/ekos-capture.rst:691
 msgid "How the Calculation Works"
 msgstr "Hoe de berekening werkt"
 
-#: ../../user_manual/ekos-capture.rst:683
+#: ../../user_manual/ekos-capture.rst:693
 msgid ""
 "This section describes the formulas used by the calculator, for users who "
 "want to check the results or understand the effect of each input."
@@ -2832,7 +2936,7 @@ msgstr ""
 "gebruikt, voor gebruikers die de resultaten willen controleren of willen "
 "begrijpen welk effect elke invoer heeft."
 
-#: ../../user_manual/ekos-capture.rst:685
+#: ../../user_manual/ekos-capture.rst:695
 msgid ""
 "**Light pollution rate**: The rate at which light pollution electrons "
 "accumulate in each pixel, in electrons per second, is calculated from the "
@@ -2845,7 +2949,7 @@ msgstr ""
 "kwantumefficiëntie (QE) van de sensor, de pixelgrootte (in micrometer), de "
 "openingsverhouding (N) en de bandbreedte van het filter (B, in nanometer):"
 
-#: ../../user_manual/ekos-capture.rst:687
+#: ../../user_manual/ekos-capture.rst:697
 msgid ""
 "Base rate        = 3.341e6 × QE × 300 × 10^(−0.4 × SQM) × pixel size²\n"
 "Pollution rate R = Base rate / N² × (B / 300)"
@@ -2853,7 +2957,7 @@ msgstr ""
 "Basissnelheid    = 3,341e6 × QE × 300 × 10^(−0,4 × SQM) × pixelgrootte²\n"
 "Vervuilingsgraad R = Basissnelheid / N² × (B / 300)"
 
-#: ../../user_manual/ekos-capture.rst:692
+#: ../../user_manual/ekos-capture.rst:702
 msgid ""
 "Each step of 1.0 in sky quality changes the pollution rate by a factor of "
 "about 2.5. Halving the focal ratio increases the rate four times."
@@ -2862,7 +2966,7 @@ msgstr ""
 "met een factor van ongeveer 2,5. Het halveren van de brandpuntsverhouding "
 "verhoogt die mate met een factor vier."
 
-#: ../../user_manual/ekos-capture.rst:694
+#: ../../user_manual/ekos-capture.rst:704
 msgid ""
 "**Noise factor**: The ``Noise Increase %`` value (p) is turned into a factor "
 "C:"
@@ -2870,15 +2974,15 @@ msgstr ""
 "**Ruisfactor**: De waarde ``Noise Increase %`` (p) wordt omgezet in een "
 "factor C:"
 
-#: ../../user_manual/ekos-capture.rst:696
+#: ../../user_manual/ekos-capture.rst:706
 msgid "C = 1 / ((1 + p/100)² − 1)"
 msgstr "C = 1 / ((1 + p/100)² − 1)"
 
-#: ../../user_manual/ekos-capture.rst:700
+#: ../../user_manual/ekos-capture.rst:710
 msgid "For the default of 5%, C is about 9.76."
 msgstr "Bij een standaardpercentage van 5% bedraagt ​​C ongeveer 9,76."
 
-#: ../../user_manual/ekos-capture.rst:702
+#: ../../user_manual/ekos-capture.rst:712
 msgid ""
 "**Sub-exposure time**: For the read noise (RN, in electrons) at the selected "
 "gain, the sub-exposure time in seconds is:"
@@ -2887,7 +2991,7 @@ msgstr ""
 "gekozen versterkingsinstelling (gain) geldt voor de sub-belichtingstijd in "
 "seconden:"
 
-#: ../../user_manual/ekos-capture.rst:704
+#: ../../user_manual/ekos-capture.rst:714
 msgid ""
 "t = C × RN² / R          (monochrome sensor)\n"
 "t = 3 × C × RN² / R      (color sensor)"
@@ -2895,7 +2999,7 @@ msgstr ""
 "t = C × RN² / R          (monochrome sensor)\n"
 "t = 3 × C × RN² / R      (kleursensor)"
 
-#: ../../user_manual/ekos-capture.rst:709
+#: ../../user_manual/ekos-capture.rst:719
 msgid ""
 "This is the exposure at which the light pollution noise is large enough that "
 "the read noise only increases the total noise by p percent."
@@ -2903,11 +3007,11 @@ msgstr ""
 "Dit is de belichtingstijd waarbij de ruis door lichtvervuiling groot genoeg "
 "is, zodat de uitleesruis de totale ruis met slechts p procent verhoogt."
 
-#: ../../user_manual/ekos-capture.rst:711
+#: ../../user_manual/ekos-capture.rst:721
 msgid "**Sub-exposure results**:"
 msgstr "**Resultaten per sub-belichting**:"
 
-#: ../../user_manual/ekos-capture.rst:713
+#: ../../user_manual/ekos-capture.rst:723
 msgid ""
 "Pollution Electrons = R × t\n"
 "Shot Noise          = √(R × t)\n"
@@ -2917,7 +3021,7 @@ msgstr ""
 "Schotruis             = √(R × t)\n"
 "Totale ruis           = √(RN² + R × t)"
 
-#: ../../user_manual/ekos-capture.rst:719
+#: ../../user_manual/ekos-capture.rst:729
 msgid ""
 "**Stacking**: For a stack of n sub-exposures, the noise and time/noise ratio "
 "of the stacked image are:"
@@ -2926,7 +3030,7 @@ msgstr ""
 "voor de gestapelde opname de volgende waarden voor de ruis en de verhouding "
 "tussen tijd en ruis:"
 
-#: ../../user_manual/ekos-capture.rst:721
+#: ../../user_manual/ekos-capture.rst:731
 msgid ""
 "Stack noise      = √(n × RN² + R × n × t)\n"
 "Time/Noise ratio = n × t / Stack noise = (t / Total Noise) × √n"
@@ -2934,7 +3038,7 @@ msgstr ""
 "Stapelruis          = √(n × RN² + R × n × t)\n"
 "Tijd/ruisverhouding = n × t / Stapelruis = (t / totale ruis) × √n"
 
-#: ../../user_manual/ekos-capture.rst:726
+#: ../../user_manual/ekos-capture.rst:736
 msgid ""
 "The time/noise ratio grows with the square root of the number of sub-"
 "exposures. To reach a target ratio T, the calculator needs n = (T / (t / "
@@ -2948,176 +3052,176 @@ msgstr ""
 "een minimum van één). De Δ-waarde die naast de grafiek wordt weergegeven, is "
 "de helling van de curve op dat punt: (t / totale ruis) / (2 × √n)."
 
-#: ../../user_manual/ekos-capture.rst:731
+#: ../../user_manual/ekos-capture.rst:741
 msgid "Video Tutorials"
 msgstr "Video Tutorials"
 
-#: ../../user_manual/ekos-capture.rst:736
+#: ../../user_manual/ekos-capture.rst:746
 msgid "Capture (`<https://youtu.be/Gz07j7VPnpc>`__)"
 msgstr "Opname (`<https://youtu.be/Gz07j7VPnpc>`__)"
 
-#: ../../user_manual/ekos-capture.rst:741
+#: ../../user_manual/ekos-capture.rst:751
 msgid "Filter Wheels (`<https://youtu.be/yfz9_UJIvLY>`__)"
 msgstr "Filterwielen (`<https://youtu.be/yfz9_UJIvLY>`__)"
 
-#: ../../user_manual/ekos-capture.rst:743
+#: ../../user_manual/ekos-capture.rst:753
 msgid "Ekos Capture"
 msgstr "Opname met Ekos"
 
-#: ../../user_manual/ekos-capture.rst:743
+#: ../../user_manual/ekos-capture.rst:753
 msgid ".. image:: /images/ekos_capture.png"
 msgstr ".. image:: /images/ekos_capture.png"
 
-#: ../../user_manual/ekos-capture.rst:744
+#: ../../user_manual/ekos-capture.rst:754
 msgid ".. image:: /images/capture_settings.png"
 msgstr ".. image:: /images/capture_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:745
+#: ../../user_manual/ekos-capture.rst:755
 msgid ".. image:: /images/file_settings.png"
 msgstr ".. image:: /images/file_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:746
+#: ../../user_manual/ekos-capture.rst:756
 msgid ".. image:: /images/limit_settings.png"
 msgstr ".. image:: /images/limit_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:747
+#: ../../user_manual/ekos-capture.rst:757
 msgid "image2"
 msgstr "image2"
 
-#: ../../user_manual/ekos-capture.rst:747
-#: ../../user_manual/ekos-capture.rst:753
+#: ../../user_manual/ekos-capture.rst:757
+#: ../../user_manual/ekos-capture.rst:763
 msgid ".. image:: /images/list-add.png"
 msgstr ".. image:: /images/list-add.png"
 
-#: ../../user_manual/ekos-capture.rst:748
+#: ../../user_manual/ekos-capture.rst:758
 msgid ".. image:: /images/sequence_settings.png"
 msgstr ".. image:: /images/sequence_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:749
+#: ../../user_manual/ekos-capture.rst:759
 msgid "image3"
 msgstr "image3"
 
-#: ../../user_manual/ekos-capture.rst:749
+#: ../../user_manual/ekos-capture.rst:759
 msgid ".. image:: /images/media-playback-start.png"
 msgstr ".. image:: /images/media-playback-start.png"
 
-#: ../../user_manual/ekos-capture.rst:750
+#: ../../user_manual/ekos-capture.rst:760
 msgid "image4"
 msgstr "image4"
 
-#: ../../user_manual/ekos-capture.rst:750
+#: ../../user_manual/ekos-capture.rst:760
 msgid ".. image:: /images/media-playback-pause.png"
 msgstr ".. image:: /images/media-playback-pause.png"
 
-#: ../../user_manual/ekos-capture.rst:751
+#: ../../user_manual/ekos-capture.rst:761
 msgid "image5"
 msgstr "image5"
 
-#: ../../user_manual/ekos-capture.rst:751
+#: ../../user_manual/ekos-capture.rst:761
 msgid ".. image:: /images/view-refresh.png"
 msgstr ".. image:: /images/view-refresh.png"
 
-#: ../../user_manual/ekos-capture.rst:752
+#: ../../user_manual/ekos-capture.rst:762
 msgid "image6"
 msgstr "image6"
 
-#: ../../user_manual/ekos-capture.rst:752
+#: ../../user_manual/ekos-capture.rst:762
 msgid ".. image:: /images/document-open.png"
 msgstr ".. image:: /images/document-open.png"
 
-#: ../../user_manual/ekos-capture.rst:753
+#: ../../user_manual/ekos-capture.rst:763
 msgid "image7"
 msgstr "image7"
 
-#: ../../user_manual/ekos-capture.rst:754
+#: ../../user_manual/ekos-capture.rst:764
 msgid "image8"
 msgstr "image8"
 
-#: ../../user_manual/ekos-capture.rst:754
+#: ../../user_manual/ekos-capture.rst:764
 msgid ".. image:: /images/dialog-ok-apply.png"
 msgstr ".. image:: /images/dialog-ok-apply.png"
 
-#: ../../user_manual/ekos-capture.rst:755
+#: ../../user_manual/ekos-capture.rst:765
 msgid "image9"
 msgstr "image9"
 
-#: ../../user_manual/ekos-capture.rst:755
+#: ../../user_manual/ekos-capture.rst:765
 msgid ".. image:: /images/ekos_live_overlay.png"
 msgstr ".. image:: /images/ekos_live_overlay.png"
 
-#: ../../user_manual/ekos-capture.rst:756
+#: ../../user_manual/ekos-capture.rst:766
 msgid "image10"
 msgstr "image10"
 
-#: ../../user_manual/ekos-capture.rst:756
+#: ../../user_manual/ekos-capture.rst:766
 msgid ".. image:: /images/ekos_live_overlay_options.png"
 msgstr ".. image:: /images/ekos_live_overlay_options.png"
 
-#: ../../user_manual/ekos-capture.rst:757
+#: ../../user_manual/ekos-capture.rst:767
 msgid ".. image:: /images/ekos_rotator_settings.png"
 msgstr ".. image:: /images/ekos_rotator_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:758
+#: ../../user_manual/ekos-capture.rst:768
 msgid "Calibration settings"
 msgstr "Calibratie instellingen"
 
-#: ../../user_manual/ekos-capture.rst:758
+#: ../../user_manual/ekos-capture.rst:768
 msgid ".. image:: /images/calibration_settings.png"
 msgstr ".. image:: /images/calibration_settings.png"
 
-#: ../../user_manual/ekos-capture.rst:759
+#: ../../user_manual/ekos-capture.rst:769
 msgid "Exposure calculator"
 msgstr "Rekenmachine voor belichting"
 
-#: ../../user_manual/ekos-capture.rst:759
+#: ../../user_manual/ekos-capture.rst:769
 msgid ".. image:: /images/exposure-calculator.png"
 msgstr ".. image:: /images/exposure-calculator.png"
 
-#: ../../user_manual/ekos-capture.rst:760
+#: ../../user_manual/ekos-capture.rst:770
 msgid "Exposure calculator integration table"
 msgstr "Integratietabel van belichtingsrekenmachine"
 
-#: ../../user_manual/ekos-capture.rst:760
+#: ../../user_manual/ekos-capture.rst:770
 msgid ".. image:: /images/exposure-calculator-integration-table.png"
 msgstr ".. image:: /images/exposure-calculator-integration-table.png"
 
-#: ../../user_manual/ekos-capture.rst:761
+#: ../../user_manual/ekos-capture.rst:771
 msgid "Exposure calculator integration graph"
 msgstr "Integratiegrafiek van belichtingsrekenmachine"
 
-#: ../../user_manual/ekos-capture.rst:761
+#: ../../user_manual/ekos-capture.rst:771
 msgid ".. image:: /images/exposure-calculator-integration-graph.png"
 msgstr ".. image:: /images/exposure-calculator-integration-graph.png"
 
-#: ../../user_manual/ekos-capture.rst:762
+#: ../../user_manual/ekos-capture.rst:772
 msgid "Avoid selecting gain near a step"
 msgstr "Versterking selecteren nabij een stap vermijden"
 
-#: ../../user_manual/ekos-capture.rst:762
+#: ../../user_manual/ekos-capture.rst:772
 msgid ".. image:: /images/exposurecalculation_gain_at_step-avoid.png"
 msgstr ".. image:: /images/exposurecalculation_gain_at_step-avoid.png"
 
-#: ../../user_manual/ekos-capture.rst:763
+#: ../../user_manual/ekos-capture.rst:773
 msgid "Shift gain away from such steps"
 msgstr "Versterking weg van zulke stappen schuiven"
 
-#: ../../user_manual/ekos-capture.rst:763
+#: ../../user_manual/ekos-capture.rst:773
 msgid ".. image:: /images/exposurecalculation_gain_at_step-shift.png"
 msgstr ".. image:: /images/exposurecalculation_gain_at_step-shift.png"
 
-#: ../../user_manual/ekos-capture.rst:764
+#: ../../user_manual/ekos-capture.rst:774
 msgid "300 Second sub-exposure"
 msgstr "300 seconden sub-belichting"
 
-#: ../../user_manual/ekos-capture.rst:764
+#: ../../user_manual/ekos-capture.rst:774
 msgid ".. image:: /images/exposurecalculation-example_subexp300.png"
 msgstr ".. image:: /images/exposurecalculation-example_subexp300.png"
 
-#: ../../user_manual/ekos-capture.rst:765
+#: ../../user_manual/ekos-capture.rst:775
 msgid "30 Second sub-exposure"
 msgstr "30 seconden sub-belichting"
 
-#: ../../user_manual/ekos-capture.rst:765
+#: ../../user_manual/ekos-capture.rst:775
 msgid ".. image:: /images/exposurecalculation-example_subexp30.png"
 msgstr ".. image:: /images/exposurecalculation-example_subexp30.png"
 
